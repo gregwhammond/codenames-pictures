@@ -31,7 +31,13 @@ To try it with several players on one computer, open the site in a few private w
 
 The server is a single small binary with the web app and pictures built in. Game state lives in memory, so run **one instance** (restarting it ends games in progress). Rooms are cleaned up after 6 hours without activity.
 
-### Fly.io (recommended, cheapest)
+### Render (easiest, free)
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/gregwhammond/codenames-pictures)
+
+Click the button, sign in with GitHub, and approve. Render builds the `Dockerfile` using `render.yaml` and gives you an `https://….onrender.com` address to share. It redeploys on every push to `master`. The free plan sleeps after about 15 minutes with nobody connected, so the first visit after that takes about a minute to wake up, and any game in progress is lost.
+
+### Fly.io
 
 ```sh
 fly launch --no-deploy        # accept the Dockerfile, pick a region near you
@@ -41,7 +47,7 @@ fly deploy
 
 A single shared-cpu-1x machine with 256 MB is plenty. Fly can stop the machine when idle and start it on the next visit, which keeps cost near zero.
 
-### Render, Railway, or any Docker host
+### Railway or any other Docker host
 
 Point the service at this repo and use the `Dockerfile`. The app listens on `$PORT` (default `8080`). Health check: `GET /api/health`.
 

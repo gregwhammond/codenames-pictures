@@ -1,0 +1,10 @@
+# One-click deploy on Render: https://render.com/deploy?repo=https://github.com/gregwhammond/codenames-pictures
+services:
+  - type: web
+    name: codenames-pictures
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    # Games live in memory, so keep a single instance.
+    numInstances: 1
+    autoDeploy: true
