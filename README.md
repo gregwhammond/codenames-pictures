@@ -1,96 +1,90 @@
-# Codenames Pictures 🕵🏼‍♂️🕵🏾‍♀️
+# Codenames Pictures
 
-[![GoDoc](https://godoc.org/github.com/jbowens/codenames?status.svg)](https://godoc.org/github.com/jbowens/codenames)
+Play [Codenames Pictures](https://en.wikipedia.org/wiki/Codenames_(board_game)) live with friends, each person on their own phone. One person creates a game and shares the link or 4-letter room code, everyone picks a seat, and the board updates on every phone as soon as anyone plays.
 
-**99% of the credit belongs to [jbowens](https://github.com/jbowens) for this wonderful creation!**
+It's built for **2 teams of 2** (one spymaster and one guesser per team). Teams can have extra guessers, and anyone else who joins can watch. It installs as an app on phones (a PWA): open the site, then use "Add to Home Screen".
 
-Codenames implements a web app for generating and displaying boards for the <a href="https://en.wikipedia.org/wiki/Codenames_(board_game)">Codenames</a> board game. Generated boards are shareable and will update as words are revealed. The board can be viewed either as a spymaster or an ordinary player.
+## How to play
 
-This is a modified version of the original Codenames game where you use pictures instead of words. Look below for instructions on how to use your own images!
+1. Split into **Red** and **Blue**. Each team has one **spymaster** and at least one **guesser**.
+2. Only the spymasters see which pictures belong to which team (the coloured frames).
+3. On your turn, your spymaster types a **one-word clue** and a number: how many pictures it points to.
+4. Guessers tap a picture to zoom in, then tap **Guess this picture**. A correct guess lets you keep going, up to one more than the number. You can end the turn after at least one guess.
+5. A beige bystander or the other team's picture ends your turn. The **black assassin** loses the game instantly.
+6. The first team to find all their pictures wins. The team that goes first has 8 pictures, the other has 7.
 
-A hosted version of the app is available at [codenames.dport.me](https://codenames.dport.me). This is just running on a crusty old laptop that also hosts like 10 other sites so go easy on it.
+A clue of **0** or **∞** gives unlimited guesses, as in the board game.
 
-![Spymaster view of board](https://raw.githubusercontent.com/banool/codenames-pictures/master/screenshot.png)
+## Running it locally
 
-## How to run this yourself
-Firstly, make sure you have go installed. There are good resources for this [on](https://ahmadawais.com/install-go-lang-on-macos-with-homebrew/) [the](https://www.digitalocean.com/community/tutorials/how-to-install-go-on-ubuntu-18-04) [net](https://www.reddit.com/r/golang/comments/79nnq2/go_development_using_wsl_in_win_10/). 
+You need [Go](https://go.dev/dl/) 1.22 or newer. There are no other dependencies.
 
-### Just installing
-These instructions will just grab the binary for you:
-```
-cd $GOPATH
-go get github.com/banool/codenames-pictures/...
-go install github.com/banool/codenames-pictures/...
-```
-You'll still need to set up dependencies following this:
-```
-cd bin
-ln -s ../src/github.com/banool/codenames-pictures/assets_codenames
-./codenames
+```sh
+go run .                # serves on http://localhost:8080
+PORT=9000 go run .      # pick a port
+go test ./...           # rules and server tests
 ```
 
-Now go follow the instructions for adding images below.
+To try it with several players on one computer, open the site in a few private windows. To try it on phones on the same Wi-Fi, open `http://<your-computer's-ip>:8080`. Installing as an app needs HTTPS, which any of the hosts below give you.
 
+## Deploying
 
-### Developing
-If you plan to make changes, you'll want to grab the source and build it yourself:
-```
-cd $GOPATH
-go get github.com/banool/codenames-pictures/...
-cd src/github.com/banool/codenames-pictures
-# To build the server code.
-go build github.com/banool/codenames-pictures/...
-# To build the binary.
-go build github.com/banool/codenames-pictures/cmd/...
-# Run the binary.
-./codenames
-```
+The server is a single small binary with the web app and pictures built in. Game state lives in memory, so run **one instance** (restarting it ends games in progress). Rooms are cleaned up after 6 hours without activity.
 
-I just use this little one liner for the last three steps:
-```
-go build github.com/banool/codenames-pictures/... && go build github.com/banool/codenames-pictures/cmd/... && ./codenames 9000; rm codenames
+### Render (easiest, free)
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/gregwhammond/codenames-pictures)
+
+Click the button, sign in with GitHub, and approve. Render builds the `Dockerfile` using `render.yaml` and gives you an `https://….onrender.com` address to share. It redeploys on every push to `master`. The free plan sleeps after about 15 minutes with nobody connected, so the first visit after that takes about a minute to wake up, and any game in progress is lost.
+
+### Fly.io
+
+```sh
+fly launch --no-deploy        # accept the Dockerfile, pick a region near you
+fly scale count 1             # keep a single instance; games live in memory
+fly deploy
 ```
 
-You can optionally specify a port (the default is 9001):
-```
-./codenames 8000
+A single shared-cpu-1x machine with 256 MB is plenty. Fly can stop the machine when idle and start it on the next visit, which keeps cost near zero.
+
+### Railway or any other Docker host
+
+Point the service at this repo and use the `Dockerfile`. The app listens on `$PORT` (default `8080`). Health check: `GET /api/health`.
+
+### A plain server
+
+```sh
+CGO_ENABLED=0 GOOS=linux go build -o codenames-pictures .
+./codenames-pictures -addr :8080
 ```
 
-Now go follow the instructions for adding images below.
+Put it behind a reverse proxy that provides HTTPS (for example Caddy). Live updates use Server-Sent Events, so turn off response buffering for `/api/rooms/*/events` if your proxy buffers (nginx: `proxy_buffering off;`).
 
-## Loading up images
-If you followed the steps above, you should now have a `codenames` binary with an `assets` folder. You can add your own images to `assets/images`. You can also add further sub-directories, it's scanned recursively. They should be square, but beyond that you can really do what you want. It's okay for the image to have transparent backgrounds, both work :) There need to be at least 20 images, but of course the more the better! 🏙🛣🛤🏭🖼🗾🌁🌃🌄🌅🌆🌇🌈🌉🌌🌠🎆🎇🎑!!!
+## Changing the pictures
 
-There is support for using remote images! You specify the link for this when creating the game in the lobby. There are 3 types of supported links:
+The pictures shipped with the app live in `web/cards/` as small square JPEGs, built from the originals in `art/source/`.
 
-### Text file with absolute links
-```
-https://mysite.com/links.txt
-```
-This is a file with absolute website links in it, one per line. For example:
-```
-https://site.com/image.jpg
-http://images.org/cat.png
-```
-The way I check for it being absolute is whether the link on the first line contains `http`. Janky I know but Go is hard okay.
+- **Swap the built-in set:** put your originals in `art/source/` (any size, any common format), then run
+  ```sh
+  python3 -m pip install pillow
+  python3 scripts/build_cards.py            # or: python3 scripts/build_cards.py path/to/folder another/folder
+  ```
+  This trims borders, makes each picture square, and writes 400×400 JPEGs to `web/cards/`. Rebuild or redeploy afterwards.
+- **Use a folder without rebuilding:** `./codenames-pictures -cards /path/to/pictures` serves pictures straight from a folder (square images work best).
 
-### Text file with relative links
-```
-https://mysite.com/links.txt
-```
-This is a file with links relative to the location of the text file, one per line. For example:
-```
-image.jpg
-cat.png
-```
-These will resolve to:
-```
-https://mysite.com/image.jpg
-https://mysite.com/cat.png
-```
+You need at least 20 pictures; more gives more variety between games. `art/doodles-from-upstream/` holds the hand-drawn doodles from the project this was forked from, which aren't in the default set.
 
-### Link to directory listing
-```
-https://mysite.com/images/
-```
-This has the worst support. I try to parse a directory listing (like what is produced by nginx for a directory of files) and extract any link by looking for anchor (`<a>`) tags.
+## How it works
+
+| Piece | What it does |
+|---|---|
+| `game.go` | The rules: dealing 20 cards (8/7/4/1), clues, guesses, turn passing, winning. |
+| `room.go` | Rooms, seats, and what each player is allowed to see (guessers never receive the key). |
+| `main.go` | HTTP API (`POST /api/rooms/{code}/{action}`) and the live event stream (`GET /api/rooms/{code}/events`). |
+| `web/` | The phone app: plain HTML, CSS and JavaScript with no build step, a service worker for offline loading, and the app manifest. |
+
+Each browser keeps a private random token in local storage, so refreshing or reopening the app puts you back in your seat.
+
+## Credits
+
+Originally forked from [banool/codenames-pictures](https://github.com/banool/codenames-pictures), itself based on [jbowens/codenames](https://github.com/jbowens/codenames). The server and app were rewritten for live multiplayer on phones.

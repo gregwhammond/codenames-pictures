@@ -1,212 +1,252 @@
-package codenames
+package main
 
 import (
-	"bytes"
-	"encoding/base64"
-	"encoding/gob"
-	"encoding/json"
 	"errors"
-	"fmt"
 	"math/rand"
-	"time"
+	"strings"
+	"unicode/utf8"
 )
 
-const imagesPerGame = 20
+// Codenames Pictures uses a 5x4 grid: the starting team has 8 agents, the
+// other team 7, plus 4 bystanders and 1 assassin.
+const (
+	CardCount       = 20
+	StartingAgents  = 8
+	SecondAgents    = 7
+	BystanderCount  = 4
+	Unlimited       = -1 // clue number meaning "any number of guesses"
+	maxClueWordSize = 40
+)
 
-type Team int
+type Team string
 
 const (
-	Neutral Team = iota
-	Red
-	Blue
-	Black
+	Red      Team = "red"
+	Blue     Team = "blue"
+	Neutral  Team = "neutral"
+	Assassin Team = "assassin"
 )
 
-func (t Team) String() string {
+func (t Team) Other() Team {
 	switch t {
 	case Red:
-		return "red"
-	case Blue:
-		return "blue"
-	case Black:
-		return "black"
-	default:
-		return "neutral"
-	}
-}
-
-func (t Team) Other() Team {
-	if t == Red {
 		return Blue
-	}
-	if t == Blue {
+	case Blue:
 		return Red
 	}
 	return t
 }
 
-func (t Team) MarshalJSON() ([]byte, error) {
-	return json.Marshal(t.String())
+func (t Team) Playable() bool { return t == Red || t == Blue }
+
+type Phase string
+
+const (
+	PhaseClue  Phase = "clue"  // waiting for the current spymaster's clue
+	PhaseGuess Phase = "guess" // current team's guessers are guessing
+	PhaseOver  Phase = "over"
+)
+
+type Card struct {
+	Image    string
+	Team     Team
+	Revealed bool
+	// RevealedBy is the team whose guess revealed the card.
+	RevealedBy Team
 }
 
-func (t Team) Repeat(n int) []Team {
-	s := make([]Team, n)
-	for i := 0; i < n; i++ {
-		s[i] = t
-	}
-	return s
+type Clue struct {
+	Team   Team   `json:"team"`
+	Word   string `json:"word"`
+	Number int    `json:"number"`
 }
 
-// GameState encapsulates enough data to reconstruct
-// a Game's state. It's used to recreate games after
-// a process restart.
-type GameState struct {
-	Seed     int64  `json:"seed"`
-	Round    int    `json:"round"`
-	Revealed []bool `json:"revealed"`
-}
-
-func (gs GameState) ID() string {
-	var buf bytes.Buffer
-	err := gob.NewEncoder(&buf).Encode(gs)
-	if err != nil {
-		return ""
-	}
-	return base64.URLEncoding.EncodeToString(buf.Bytes())
-}
-
-func decodeGameState(s string) (GameState, bool) {
-	data, err := base64.URLEncoding.DecodeString(s)
-	if err != nil {
-		return GameState{}, false
-	}
-	var state GameState
-	err = gob.NewDecoder(bytes.NewReader(data)).Decode(&state)
-	return state, err == nil
-}
-
-func randomState() GameState {
-	return GameState{
-		Seed:     rand.Int63(),
-		Revealed: make([]bool, imagesPerGame),
-	}
+// LogEntry records one clue and the guesses made for it.
+type LogEntry struct {
+	Clue    Clue     `json:"clue"`
+	Guesses []string `json:"guesses"` // team of each guessed card, in order
 }
 
 type Game struct {
-	GameState
-	ID           string    `json:"id"`
-	CreatedAt    time.Time `json:"created_at"`
-	StartingTeam Team      `json:"starting_team"`
-	WinningTeam  *Team     `json:"winning_team,omitempty"`
-	Images       []string  `json:"-"`
-	RoundImages  []string  `json:"words"`
-	Layout       []Team    `json:"layout"`
+	Cards        []Card
+	StartingTeam Team
+	Turn         Team
+	Phase        Phase
+	Clue         *Clue
+	GuessesLeft  int // Unlimited, or guesses remaining this turn
+	GuessesMade  int // guesses made this turn
+	Winner       Team
+	WinReason    string // "agents" or "assassin"
+	Log          []LogEntry
 }
 
-func (g *Game) checkWinningCondition() {
-	if g.WinningTeam != nil {
-		return
+var (
+	ErrGameOver    = errors.New("the game is over")
+	ErrNotYourTurn = errors.New("it is not your team's turn")
+	ErrWrongPhase  = errors.New("that can't be done right now")
+	ErrBadCard     = errors.New("no such card")
+	ErrRevealed    = errors.New("that picture is already revealed")
+	ErrBadClue     = errors.New("a clue must be a single word")
+	ErrBadNumber   = errors.New("the clue number must be 0 to 9, or unlimited")
+	ErrMustGuess   = errors.New("make at least one guess before ending the turn")
+	ErrTooFewCards = errors.New("not enough pictures to deal a board")
+)
+
+// NewGame deals a board from the given image pool.
+func NewGame(images []string, rnd *rand.Rand) (*Game, error) {
+	if len(images) < CardCount {
+		return nil, ErrTooFewCards
 	}
-	var redRemaining, blueRemaining bool
-	for i, t := range g.Layout {
-		if g.Revealed[i] {
-			continue
-		}
-		switch t {
-		case Red:
-			redRemaining = true
-		case Blue:
-			blueRemaining = true
-		}
+	start := Red
+	if rnd.Intn(2) == 1 {
+		start = Blue
 	}
-	if !redRemaining {
-		winners := Red
-		g.WinningTeam = &winners
+
+	teams := make([]Team, 0, CardCount)
+	for i := 0; i < StartingAgents; i++ {
+		teams = append(teams, start)
 	}
-	if !blueRemaining {
-		winners := Blue
-		g.WinningTeam = &winners
+	for i := 0; i < SecondAgents; i++ {
+		teams = append(teams, start.Other())
 	}
+	for i := 0; i < BystanderCount; i++ {
+		teams = append(teams, Neutral)
+	}
+	teams = append(teams, Assassin)
+	rnd.Shuffle(len(teams), func(i, j int) { teams[i], teams[j] = teams[j], teams[i] })
+
+	picks := rnd.Perm(len(images))[:CardCount]
+	cards := make([]Card, CardCount)
+	for i, p := range picks {
+		cards[i] = Card{Image: images[p], Team: teams[i]}
+	}
+
+	return &Game{
+		Cards:        cards,
+		StartingTeam: start,
+		Turn:         start,
+		Phase:        PhaseClue,
+		Log:          []LogEntry{},
+	}, nil
 }
 
-func (g *Game) NextTurn() error {
-	if g.WinningTeam != nil {
-		return errors.New("game is already over")
+// Remaining counts the unrevealed agents of a team.
+func (g *Game) Remaining(t Team) int {
+	n := 0
+	for _, c := range g.Cards {
+		if c.Team == t && !c.Revealed {
+			n++
+		}
 	}
-	g.Round++
+	return n
+}
+
+// GiveClue is played by the current team's spymaster.
+func (g *Game) GiveClue(team Team, word string, number int) error {
+	if g.Phase == PhaseOver {
+		return ErrGameOver
+	}
+	if team != g.Turn {
+		return ErrNotYourTurn
+	}
+	if g.Phase != PhaseClue {
+		return ErrWrongPhase
+	}
+	word = strings.TrimSpace(word)
+	if word == "" || strings.ContainsAny(word, " \t\n") || utf8.RuneCountInString(word) > maxClueWordSize {
+		return ErrBadClue
+	}
+	if number != Unlimited && (number < 0 || number > 9) {
+		return ErrBadNumber
+	}
+
+	g.Clue = &Clue{Team: team, Word: word, Number: number}
+	g.Phase = PhaseGuess
+	g.GuessesMade = 0
+	if number == Unlimited || number == 0 {
+		g.GuessesLeft = Unlimited
+	} else {
+		g.GuessesLeft = number + 1
+	}
+	g.Log = append(g.Log, LogEntry{Clue: *g.Clue, Guesses: []string{}})
 	return nil
 }
 
-func (g *Game) Guess(idx int) error {
-	if idx > len(g.Layout) || idx < 0 {
-		return fmt.Errorf("index %d is invalid", idx)
+// Guess reveals a card on behalf of the current team.
+func (g *Game) Guess(team Team, idx int) error {
+	if g.Phase == PhaseOver {
+		return ErrGameOver
 	}
-	if g.Revealed[idx] {
-		return errors.New("cell has already been revealed")
+	if team != g.Turn {
+		return ErrNotYourTurn
 	}
-	g.Revealed[idx] = true
+	if g.Phase != PhaseGuess {
+		return ErrWrongPhase
+	}
+	if idx < 0 || idx >= len(g.Cards) {
+		return ErrBadCard
+	}
+	card := &g.Cards[idx]
+	if card.Revealed {
+		return ErrRevealed
+	}
 
-	if g.Layout[idx] == Black {
-		winners := g.CurrentTeam().Other()
-		g.WinningTeam = &winners
-		return nil
+	card.Revealed = true
+	card.RevealedBy = team
+	g.GuessesMade++
+	if n := len(g.Log); n > 0 {
+		g.Log[n-1].Guesses = append(g.Log[n-1].Guesses, string(card.Team))
 	}
 
-	g.checkWinningCondition()
-	if g.Layout[idx] != g.CurrentTeam() {
-		g.Round = g.Round + 1
+	switch {
+	case card.Team == Assassin:
+		g.finish(team.Other(), "assassin")
+	case g.Remaining(Red) == 0:
+		g.finish(Red, "agents")
+	case g.Remaining(Blue) == 0:
+		g.finish(Blue, "agents")
+	case card.Team != team:
+		g.passTurn()
+	default:
+		if g.GuessesLeft != Unlimited {
+			g.GuessesLeft--
+			if g.GuessesLeft == 0 {
+				g.passTurn()
+			}
+		}
 	}
 	return nil
 }
 
-func (g *Game) CurrentTeam() Team {
-	if g.Round%2 == 0 {
-		return g.StartingTeam
+// EndTurn lets the guessing team stop after at least one guess.
+func (g *Game) EndTurn(team Team) error {
+	if g.Phase == PhaseOver {
+		return ErrGameOver
 	}
-	return g.StartingTeam.Other()
+	if team != g.Turn {
+		return ErrNotYourTurn
+	}
+	if g.Phase != PhaseGuess {
+		return ErrWrongPhase
+	}
+	if g.GuessesMade == 0 {
+		return ErrMustGuess
+	}
+	g.passTurn()
+	return nil
 }
 
-func newGame(id string, imagePaths []string, state GameState) *Game {
-	rnd := rand.New(rand.NewSource(state.Seed))
-	game := &Game{
-		ID:           id,
-		CreatedAt:    time.Now(),
-		StartingTeam: Team(rnd.Intn(2)) + Red,
-		Images:       imagePaths,
-		RoundImages:  make([]string, 0, imagesPerGame),
-		Layout:       make([]Team, 0, imagesPerGame),
-		GameState:    state,
-	}
-
-	// Pick 25 random images.
-	used := map[string]struct{}{}
-	for len(used) < imagesPerGame {
-		w := imagePaths[rnd.Intn(len(imagePaths))]
-		if _, ok := used[w]; !ok {
-			used[w] = struct{}{}
-			game.RoundImages = append(game.RoundImages, w)
-		}
-	}
-
-	// Pick a random permutation of team assignments.
-	var teamAssignments []Team
-	teamAssignments = append(teamAssignments, Red.Repeat(7)...)
-	teamAssignments = append(teamAssignments, Blue.Repeat(7)...)
-	teamAssignments = append(teamAssignments, Neutral.Repeat(4)...)
-	teamAssignments = append(teamAssignments, Black)
-	teamAssignments = append(teamAssignments, game.StartingTeam)
-
-	shuffleCount := rnd.Intn(5) + 5
-	for i := 0; i < shuffleCount; i++ {
-		shuffle(rnd, teamAssignments)
-	}
-	game.Layout = teamAssignments
-	return game
+func (g *Game) passTurn() {
+	g.Turn = g.Turn.Other()
+	g.Phase = PhaseClue
+	g.Clue = nil
+	g.GuessesLeft = 0
+	g.GuessesMade = 0
 }
 
-func shuffle(rnd *rand.Rand, teamAssignments []Team) {
-	for i := range teamAssignments {
-		j := rnd.Intn(i + 1)
-		teamAssignments[i], teamAssignments[j] = teamAssignments[j], teamAssignments[i]
-	}
+func (g *Game) finish(winner Team, reason string) {
+	g.Winner = winner
+	g.WinReason = reason
+	g.Phase = PhaseOver
+	g.Clue = nil
 }
