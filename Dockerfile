@@ -1,15 +1,12 @@
-FROM golang:1.13-stretch
+FROM golang:1.24-alpine AS build
+WORKDIR /src
+COPY go.mod ./
+COPY *.go ./
+COPY web ./web
+RUN CGO_ENABLED=0 go build -trimpath -ldflags="-s -w" -o /codenames-pictures .
 
-# Copy project into docker instance
-WORKDIR /go/src/app
-COPY . .
-
-# Build and install backend
-RUN go get -d -v ./...
-RUN go install -v ./...
-
-# Expose 9091 port
-EXPOSE 9091
-
-# Set run command
-CMD codenames 9091
+FROM gcr.io/distroless/static-debian12
+COPY --from=build /codenames-pictures /codenames-pictures
+ENV PORT=8080
+EXPOSE 8080
+ENTRYPOINT ["/codenames-pictures"]
