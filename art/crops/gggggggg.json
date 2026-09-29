@@ -1,0 +1,19 @@
+{
+  "id": "gggggggg",
+  "source": "art/source/gggggggg.png",
+  "source_sha256": "352df0b0a5769a30374e4257d2b29b1063c26b3cd7159ed7defde7f4dc828f3d",
+  "source_size": [
+    776,
+    776
+  ],
+  "rotate": 0,
+  "crops": [
+    {
+      "tile": "gggggggg",
+      "mode": "legacy",
+      "box": null,
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

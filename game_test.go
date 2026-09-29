@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"strings"
 	"testing"
 )
 
@@ -173,5 +174,101 @@ func TestRevealingOpponentsLastAgentGivesThemTheWin(t *testing.T) {
 	_ = g.Guess(team, find(g, other))
 	if g.Winner != other {
 		t.Fatalf("winner %s", g.Winner)
+	}
+}
+
+func TestImageGroup(t *testing.T) {
+	cases := map[string]string{
+		"/cards/S014-07-b.3fa2c1d0.jpg": "S014-07",
+		"/cards/S014-07.3fa2c1d0.jpg":   "S014-07",
+		"/cards/S014-07-c.jpg":          "S014-07",
+		"/cards/S014-07.jpg":            "S014-07",
+		"/cards/aaaaaa.4b1c2d3e.jpg":    "aaaaaa",
+		"/cards/aaaaaa.jpg":             "aaaaaa",
+		"/cards/sub/x-a.12345678.png":   "x-a",
+		"/cards/x.1234567.jpg":          "x.1234567",
+		"/cards/9.jpg":                  "9",
+	}
+	for in, want := range cases {
+		if got := imageGroup(in); got != want {
+			t.Errorf("imageGroup(%q) = %q, want %q", in, got, want)
+		}
+	}
+}
+
+// groupedImages makes n sources with extras crops each (S000-00, S000-00-b ...).
+func groupedImages(n, extras int) []string {
+	var images []string
+	for i := 0; i < n; i++ {
+		for e := 0; e <= extras; e++ {
+			name := fmt.Sprintf("S%03d-%02d", i/10, i%10)
+			if e > 0 {
+				name += "-" + string(rune('a'+e))
+			}
+			images = append(images, fmt.Sprintf("/cards/%s.%08x.jpg", name, i*31+e))
+		}
+	}
+	return images
+}
+
+func TestDealOnePerGroup(t *testing.T) {
+	images := groupedImages(25, 2) // 75 images, 25 groups
+	seenExtra := false
+	for seed := int64(0); seed < 200; seed++ {
+		g, err := NewGame(images, rand.New(rand.NewSource(seed)))
+		if err != nil {
+			t.Fatal(err)
+		}
+		groups := map[string]bool{}
+		for _, c := range g.Cards {
+			grp := imageGroup(c.Image)
+			if groups[grp] {
+				t.Fatalf("seed %d: two pictures from %s", seed, grp)
+			}
+			groups[grp] = true
+			if strings.Contains(c.Image, "-b.") || strings.Contains(c.Image, "-c.") {
+				seenExtra = true
+			}
+		}
+	}
+	if !seenExtra {
+		t.Fatal("extra crops were never dealt")
+	}
+}
+
+func TestDealFewGroupsFallsBack(t *testing.T) {
+	images := groupedImages(12, 2) // 36 images, only 12 groups
+	for seed := int64(0); seed < 50; seed++ {
+		g, err := NewGame(images, rand.New(rand.NewSource(seed)))
+		if err != nil {
+			t.Fatal(err)
+		}
+		seen := map[string]bool{}
+		groups := map[string]bool{}
+		for _, c := range g.Cards {
+			if seen[c.Image] {
+				t.Fatalf("duplicate image %s", c.Image)
+			}
+			seen[c.Image] = true
+			groups[imageGroup(c.Image)] = true
+		}
+		if len(g.Cards) != CardCount || len(groups) != 12 {
+			t.Fatalf("seed %d: %d cards from %d groups", seed, len(g.Cards), len(groups))
+		}
+	}
+}
+
+func TestDealIsRandom(t *testing.T) {
+	images := groupedImages(40, 1)
+	a, _ := NewGame(images, rand.New(rand.NewSource(1)))
+	b, _ := NewGame(images, rand.New(rand.NewSource(2)))
+	same := true
+	for i := range a.Cards {
+		if a.Cards[i].Image != b.Cards[i].Image {
+			same = false
+		}
+	}
+	if same {
+		t.Fatal("different seeds dealt the same board")
 	}
 }

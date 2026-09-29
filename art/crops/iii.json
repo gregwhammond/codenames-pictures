@@ -1,0 +1,19 @@
+{
+  "id": "iii",
+  "source": "art/source/iii.png",
+  "source_sha256": "daa41b9039f8ec375816ec4034cf27afd64b3a5ce8d85ae15d66449af5e31806",
+  "source_size": [
+    1021,
+    1021
+  ],
+  "rotate": 0,
+  "crops": [
+    {
+      "tile": "iii",
+      "mode": "legacy",
+      "box": null,
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

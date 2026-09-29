@@ -3,3 +3,4 @@
 *.prof
 __pycache__/
 .DS_Store
+originals/

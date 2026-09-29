@@ -25,6 +25,7 @@ var imageExtensions = map[string]bool{".jpg": true, ".jpeg": true, ".png": true,
 func main() {
 	addr := flag.String("addr", "", "listen address (default :$PORT or :8080)")
 	cardsDir := flag.String("cards", "", "serve card pictures from this folder instead of the built-in set")
+	largeDir := flag.String("large", "cards-large", "folder of zoom-size card pictures served at /cards-large/")
 	flag.Parse()
 
 	if *addr == "" {
@@ -43,7 +44,10 @@ func main() {
 		cards, _ = fs.Sub(web, "cards")
 	}
 
-	srv, err := NewServer(web, cards)
+	if st, err := os.Stat(*largeDir); err != nil || !st.IsDir() {
+		log.Printf("no large pictures folder %q: /cards-large/ will return 404", *largeDir)
+	}
+	srv, err := NewServer(web, cards, os.DirFS(*largeDir))
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -78,7 +82,10 @@ func listImages(cards fs.FS) ([]string, error) {
 	return images, err
 }
 
-func NewServer(web, cards fs.FS) (*Server, error) {
+// NewServer builds the HTTP handler. large holds the zoom-size pictures served
+// at /cards-large/ under the same file names as /cards/; it may be nil or point
+// at a missing folder, in which case those requests get 404.
+func NewServer(web, cards, large fs.FS) (*Server, error) {
 	images, err := listImages(cards)
 	if err != nil {
 		return nil, err
@@ -96,6 +103,12 @@ func NewServer(web, cards fs.FS) (*Server, error) {
 	static := http.FileServerFS(web)
 	cardServer := http.StripPrefix("/cards/", http.FileServerFS(cards))
 	s.mux.Handle("GET /cards/", cacheFor(30*24*time.Hour, cardServer))
+	if large != nil {
+		largeServer := http.StripPrefix("/cards-large/", http.FileServerFS(large))
+		s.mux.Handle("GET /cards-large/", cacheFor(30*24*time.Hour, largeServer))
+	} else {
+		s.mux.Handle("GET /cards-large/", http.NotFoundHandler())
+	}
 	s.mux.Handle("GET /", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		// Room links like /r/ABCD load the app shell.
 		if strings.HasPrefix(r.URL.Path, "/r/") {
@@ -111,11 +124,36 @@ func NewServer(web, cards fs.FS) (*Server, error) {
 
 func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) { s.mux.ServeHTTP(w, r) }
 
+// cacheFor marks successful responses as cacheable for d. Errors (a picture
+// that isn't there yet) are left uncached so they don't stick in browsers.
 func cacheFor(d time.Duration, h http.Handler) http.Handler {
+	value := fmt.Sprintf("public, max-age=%d", int(d.Seconds()))
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Cache-Control", fmt.Sprintf("public, max-age=%d", int(d.Seconds())))
-		h.ServeHTTP(w, r)
+		h.ServeHTTP(&cachingWriter{ResponseWriter: w, value: value}, r)
 	})
+}
+
+type cachingWriter struct {
+	http.ResponseWriter
+	value       string
+	wroteHeader bool
+}
+
+func (c *cachingWriter) WriteHeader(status int) {
+	if !c.wroteHeader {
+		c.wroteHeader = true
+		if status < 400 {
+			c.Header().Set("Cache-Control", c.value)
+		}
+	}
+	c.ResponseWriter.WriteHeader(status)
+}
+
+func (c *cachingWriter) Write(b []byte) (int, error) {
+	if !c.wroteHeader {
+		c.WriteHeader(http.StatusOK)
+	}
+	return c.ResponseWriter.Write(b)
 }
 
 func writeJSON(w http.ResponseWriter, status int, v any) {

@@ -1,0 +1,19 @@
+{
+  "id": "kkkk",
+  "source": "art/source/kkkk.png",
+  "source_sha256": "e9f06b871ec0e291754d42837f11a4860571939413e00abcbf8141b8145663fb",
+  "source_size": [
+    495,
+    495
+  ],
+  "rotate": 0,
+  "crops": [
+    {
+      "tile": "kkkk",
+      "mode": "legacy",
+      "box": null,
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

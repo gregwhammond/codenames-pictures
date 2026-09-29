@@ -1,0 +1,19 @@
+{
+  "id": "yyyyyy",
+  "source": "art/source/yyyyyy.png",
+  "source_sha256": "5f6e6a7c1183bf41ae0f2f15ef4c6d321bc41b1e55332b19944d333ca2d9e748",
+  "source_size": [
+    1170,
+    1170
+  ],
+  "rotate": 0,
+  "crops": [
+    {
+      "tile": "yyyyyy",
+      "mode": "legacy",
+      "box": null,
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

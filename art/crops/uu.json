@@ -1,0 +1,19 @@
+{
+  "id": "uu",
+  "source": "art/source/uu.png",
+  "source_sha256": "2ec1c761debd4578a1259cd87b8e0072e10320e0283c47c20ee1a9963bd631b3",
+  "source_size": [
+    562,
+    562
+  ],
+  "rotate": 0,
+  "crops": [
+    {
+      "tile": "uu",
+      "mode": "legacy",
+      "box": null,
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

@@ -3,6 +3,8 @@ package main
 import (
 	"errors"
 	"math/rand"
+	"path"
+	"regexp"
 	"strings"
 	"unicode/utf8"
 )
@@ -115,7 +117,7 @@ func NewGame(images []string, rnd *rand.Rand) (*Game, error) {
 	teams = append(teams, Assassin)
 	rnd.Shuffle(len(teams), func(i, j int) { teams[i], teams[j] = teams[j], teams[i] })
 
-	picks := rnd.Perm(len(images))[:CardCount]
+	picks := pickImages(images, rnd)
 	cards := make([]Card, CardCount)
 	for i, p := range picks {
 		cards[i] = Card{Image: images[p], Team: teams[i]}
@@ -128,6 +130,50 @@ func NewGame(images []string, rnd *rand.Rand) (*Game, error) {
 		Phase:        PhaseClue,
 		Log:          []LogEntry{},
 	}, nil
+}
+
+var (
+	hashSuffix  = regexp.MustCompile(`\.[0-9a-f]{8}$`)
+	extraSuffix = regexp.MustCompile(`-[b-z]$`)
+)
+
+// imageGroup names the source picture an image was cropped from, so that
+// /cards/S014-07.3fa2c1d0.jpg and /cards/S014-07-b.9c0d1e2f.jpg share the
+// group "S014-07" (matching croplib.group_of in scripts/).
+func imageGroup(image string) string {
+	name := path.Base(image)
+	name = strings.TrimSuffix(name, path.Ext(name))
+	name = hashSuffix.ReplaceAllString(name, "")
+	return extraSuffix.ReplaceAllString(name, "")
+}
+
+// pickImages chooses CardCount distinct image indexes at random, at most one
+// per source group. If the pool has too few groups it fills the rest of the
+// board with other crops rather than failing.
+func pickImages(images []string, rnd *rand.Rand) []int {
+	order := rnd.Perm(len(images))
+	picks := make([]int, 0, CardCount)
+	used := map[string]bool{}
+	var spare []int
+	for _, i := range order {
+		if len(picks) == CardCount {
+			break
+		}
+		g := imageGroup(images[i])
+		if used[g] {
+			spare = append(spare, i)
+			continue
+		}
+		used[g] = true
+		picks = append(picks, i)
+	}
+	for _, i := range spare {
+		if len(picks) == CardCount {
+			break
+		}
+		picks = append(picks, i)
+	}
+	return picks
 }
 
 // Remaining counts the unrevealed agents of a team.

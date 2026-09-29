@@ -1,0 +1,19 @@
+{
+  "id": "jjjjj",
+  "source": "art/source/jjjjj.png",
+  "source_sha256": "89fdfd39e583c10fe0b0bead493f3e68965924b5aa236a707376ec26fe57df16",
+  "source_size": [
+    900,
+    900
+  ],
+  "rotate": 0,
+  "crops": [
+    {
+      "tile": "jjjjj",
+      "mode": "legacy",
+      "box": null,
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

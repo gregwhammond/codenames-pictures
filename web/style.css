@@ -418,3 +418,78 @@ body.offline::before {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ---------- Full-screen picture viewer (press and hold) ---------- */
+
+/* No iOS callout, context menu or text selection when holding a picture. */
+.tile, .tile img {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 15;
+  background: rgba(6, 7, 12, calc(.96 * var(--dim, 1)));
+  display: flex;
+  flex-direction: column;
+  animation: fade .15s ease;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.viewer-stage {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  padding: calc(56px + var(--safe-top)) 10px calc(48px + var(--safe-bottom));
+  overflow: hidden;
+  container-type: size;
+  touch-action: none;
+  cursor: zoom-in;
+}
+.viewer-img {
+  /* Fill the stage whether the 400px tile or the large picture is showing. */
+  width: min(100cqw, 100cqh);
+  height: auto;
+  max-height: 100cqh;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #fff;
+  transform-origin: center center;
+  will-change: transform;
+  pointer-events: none;
+}
+.viewer.k-red .viewer-img, .viewer.k-blue .viewer-img,
+.viewer.k-neutral .viewer-img, .viewer.k-assassin .viewer-img { outline: 6px solid var(--frame); }
+.viewer-tag {
+  position: absolute;
+  left: 50%;
+  bottom: calc(10px + var(--safe-bottom));
+  transform: translateX(-50%);
+  background: var(--frame, var(--panel));
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.viewer.k-neutral .viewer-tag { color: #1b1b1b; }
+.viewer.k-assassin .viewer-tag { border: 1px solid #555; }
+.viewer-close {
+  position: absolute;
+  top: calc(8px + var(--safe-top));
+  right: calc(8px + env(safe-area-inset-right, 0px));
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: rgba(46, 52, 73, .85);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.viewer-close:focus:not(:focus-visible) { outline: none; }

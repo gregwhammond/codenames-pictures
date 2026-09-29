@@ -39,10 +39,32 @@ const ui = {
 
 const $app = document.getElementById('app');
 const $modal = document.getElementById('modal');
+const $viewer = document.getElementById('viewer');
 const $toast = document.getElementById('toast');
 
 const TEAM_NAME = { red: 'Red', blue: 'Blue' };
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+// Zoom-size pictures live at /cards-large/ under the same file name.
+const largeURL = (src) => String(src).replace(/^\/cards\//, '/cards-large/');
+const largeFailed = new Set();
+window.addEventListener('online', () => largeFailed.clear());
+
+// Show the tile (already cached) straight away, then swap in the large
+// picture once it has loaded. If it is missing, keep the tile.
+function upgradeImage(img, tileSrc) {
+  const big = largeURL(tileSrc);
+  if (!img || big === tileSrc || largeFailed.has(big)) return;
+  const pre = new Image();
+  pre.decoding = 'async';
+  pre.onload = () => { if (img.isConnected && img.getAttribute('src') === tileSrc) img.src = big; };
+  // Remember only failures that look permanent (a 404 while online). A
+  // dropped connection must not keep the picture at tile size all session.
+  pre.onerror = () => {
+    if (navigator.onLine !== false && !document.body.classList.contains('offline')) largeFailed.add(big);
+  };
+  pre.src = big;
+}
 
 function roomCodeFromURL() {
   const m = location.pathname.match(/^\/r\/([A-Za-z]{4})\/?$/);
@@ -133,12 +155,17 @@ function connect() {
     // The browser retries by itself unless the server refused us outright.
     if (es.readyState === EventSource.CLOSED) setTimeout(() => ui.events === es && rejoin(), 1500);
   };
-  es.onopen = () => document.body.classList.remove('offline');
+  es.onopen = () => {
+    // Back in touch with the server: let failed large pictures try again.
+    if (document.body.classList.contains('offline')) largeFailed.clear();
+    document.body.classList.remove('offline');
+  };
 }
 
 function leaveLocal(message) {
   if (ui.events) ui.events.close();
   Object.assign(ui, { code: null, room: null, events: null, selected: null, showMenu: false });
+  closeViewer();
   store.set('room', '');
   history.replaceState(null, '', '/');
   render();
@@ -224,6 +251,7 @@ function render() {
   else if (!ui.room.game) renderLobby();
   else renderGame();
   renderModal();
+  syncViewer();
 }
 
 // ---------- Home ----------
@@ -273,6 +301,7 @@ function howToPlay() {
       <li>Only spymasters see which pictures belong to which team.</li>
       <li>On your turn, your spymaster gives a <b>one-word clue</b> and a number: how many pictures it points to.</li>
       <li>Guessers tap pictures. A correct guess lets you keep going, up to one more than the number.</li>
+      <li>Tap a picture to see it bigger. <b>Press and hold</b> (or right-click) to open it full screen and pinch to zoom into the details.</li>
       <li>Hit a beige bystander or the other team's picture and your turn ends. Hit the <b>black assassin</b> and you lose instantly.</li>
       <li>The first team to find all their pictures wins. The team that goes first has 8, the other has 7.</li>
     </ol>`;
@@ -520,8 +549,277 @@ function renderModal() {
   if ($modal._html !== html) {
     $modal.innerHTML = html;
     $modal._html = html;
+    upgradeImage($modal.querySelector('.zoom img'), c.image);
   }
 }
+
+// ---------- Full-screen picture viewer (press and hold) ----------
+// Lives in its own #viewer element outside the board, so server updates that
+// re-render the board don't disturb it.
+
+const HOLD_MS = 450;
+const MOVE_SLOP = 10;
+const MAX_SCALE = 6;
+const view = { index: null, image: null, phase: null, scale: 1, x: 0, y: 0 };
+
+function openViewer(index) {
+  const g = ui.room?.game;
+  const c = g?.cards[index];
+  if (!c) return;
+  if (view.index === index && view.image === c.image) return;
+  Object.assign(view, { index, image: c.image, phase: g.phase, scale: 1, x: 0, y: 0 });
+  $viewer.innerHTML = `
+    <div class="viewer" role="dialog" aria-modal="true" aria-label="Picture ${index + 1}, full screen">
+      <div class="viewer-stage"><img class="viewer-img" src="${esc(c.image)}" alt="" draggable="false"></div>
+      <span class="viewer-tag"></span>
+      <button class="viewer-close" data-close-viewer aria-label="Close">✕</button>
+    </div>`;
+  const img = $viewer.querySelector('.viewer-img');
+  upgradeImage(img, c.image);
+  bindViewerGestures($viewer.querySelector('.viewer-stage'), img);
+  $viewer.querySelector('.viewer-close').focus({ preventScroll: true });
+  syncViewer();
+}
+
+function closeViewer() {
+  if (view.index == null) return;
+  view.index = null;
+  view.image = null;
+  $viewer.innerHTML = '';
+}
+
+// Keep the open viewer in step with the game: update the key colour, and
+// close it when the game ends, a new board is dealt or we leave.
+function syncViewer() {
+  if (view.index == null) return;
+  const g = ui.room?.game;
+  const c = g?.cards[view.index];
+  if (!ui.code || !c || c.image !== view.image || (g.phase === 'over' && view.phase !== 'over')) {
+    closeViewer();
+    return;
+  }
+  const box = $viewer.querySelector('.viewer');
+  box.className = `viewer ${c.team ? `k-${c.team}` : ''}`;
+  const tag = $viewer.querySelector('.viewer-tag');
+  const label = c.team ? `${{ red: 'Red agent', blue: 'Blue agent', neutral: 'Bystander', assassin: 'Assassin' }[c.team]}${c.revealed ? ' (revealed)' : ''}` : '';
+  tag.textContent = label;
+  tag.hidden = !label;
+}
+
+function bindViewerGestures(stage, img) {
+  const pointers = new Map();
+  let start = null;      // single-finger gesture start
+  let pinch = null;      // two-finger gesture start
+  let lastTap = null;    // for double tap
+  let tapTimer = null;
+
+  // The transform origin: the image's own untransformed centre in viewport
+  // coordinates. The stage's padding is uneven (top bar vs bottom tag and
+  // safe areas), so the stage's centre is not the image's.
+  const center = () => {
+    const p = img.offsetParent ? img.offsetParent.getBoundingClientRect() : { left: 0, top: 0 };
+    return {
+      x: p.left + img.offsetLeft + img.offsetWidth / 2,
+      y: p.top + img.offsetTop + img.offsetHeight / 2,
+    };
+  };
+  // Keep the zoomed image covering the stage: an edge may reach the stage's
+  // edge but not come inside it. Measured from the image's real centre.
+  const clampAxis = (v, size, lo, hi, c) => {
+    if (size <= hi - lo) return 0;
+    const min = hi - c - size / 2; // right/bottom edge at the stage's far edge
+    const max = lo - c + size / 2; // left/top edge at the stage's near edge
+    return Math.min(max, Math.max(min, v));
+  };
+  const clamp = () => {
+    const r = stage.getBoundingClientRect();
+    const c = center();
+    view.x = clampAxis(view.x, img.offsetWidth * view.scale, r.left, r.right, c.x);
+    view.y = clampAxis(view.y, img.offsetHeight * view.scale, r.top, r.bottom, c.y);
+  };
+  const apply = (animate) => {
+    img.style.transition = animate ? 'transform .2s ease' : 'none';
+    img.style.transform = `translate(${view.x}px, ${view.y}px) scale(${view.scale})`;
+  };
+  // Zoom to scale s keeping the screen point (px, py) where it is.
+  const zoomAt = (s, px, py, from = view) => {
+    s = Math.min(MAX_SCALE, Math.max(1, s));
+    const c = center();
+    const ox = px - c.x;
+    const oy = py - c.y;
+    view.x = ox - (ox - from.x) * (s / from.scale);
+    view.y = oy - (oy - from.y) * (s / from.scale);
+    view.scale = s;
+    if (s === 1) { view.x = 0; view.y = 0; }
+  };
+  const pair = () => {
+    const [a, b] = [...pointers.values()];
+    return { d: Math.hypot(a.x - b.x, a.y - b.y) || 1, x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+  };
+  const beginSingle = (p) => {
+    start = { x: p.x, y: p.y, t: Date.now(), vx: view.x, vy: view.y, moved: false };
+  };
+
+  stage.addEventListener('pointerdown', (e) => {
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    stage.setPointerCapture?.(e.pointerId);
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pointers.size === 1) {
+      beginSingle(pointers.get(e.pointerId));
+    } else if (pointers.size === 2) {
+      const p = pair();
+      pinch = { d: p.d, x: p.x, y: p.y, scale: view.scale, vx: view.x, vy: view.y };
+      if (start) start.moved = true;
+      clearTimeout(tapTimer);
+    }
+  });
+
+  stage.addEventListener('pointermove', (e) => {
+    if (!pointers.has(e.pointerId)) return;
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pointers.size >= 2 && pinch) {
+      const p = pair();
+      const s = Math.min(MAX_SCALE, Math.max(1, pinch.scale * (p.d / pinch.d)));
+      const c = center();
+      const ox = pinch.x - c.x;
+      const oy = pinch.y - c.y;
+      view.scale = s;
+      view.x = ox - (ox - pinch.vx) * (s / pinch.scale) + (p.x - pinch.x);
+      view.y = oy - (oy - pinch.vy) * (s / pinch.scale) + (p.y - pinch.y);
+      apply(false);
+      return;
+    }
+    if (!start) return;
+    const dx = e.clientX - start.x;
+    const dy = e.clientY - start.y;
+    if (!start.moved && Math.hypot(dx, dy) > MOVE_SLOP) start.moved = true;
+    if (!start.moved) return;
+    if (view.scale > 1) {
+      view.x = start.vx + dx;
+      view.y = start.vy + dy;
+      clamp();
+      apply(false);
+    } else if (dy > 0) {
+      // Swipe down to dismiss.
+      img.style.transition = 'none';
+      img.style.transform = `translateY(${dy}px) scale(${1 - Math.min(dy, 400) / 2000})`;
+      stage.parentElement.style.setProperty('--dim', String(Math.max(0.3, 1 - dy / 500)));
+    }
+  });
+
+  const end = (e) => {
+    if (!pointers.has(e.pointerId)) return;
+    pointers.delete(e.pointerId);
+    if (pointers.size === 1) {
+      // Pinch finished with one finger still down: carry on panning from here.
+      pinch = null;
+      if (view.scale <= 1.02) { view.scale = 1; view.x = 0; view.y = 0; }
+      clamp();
+      apply(true);
+      beginSingle([...pointers.values()][0]);
+      start.moved = true;
+      return;
+    }
+    if (pointers.size > 0) return;
+    const s = start;
+    start = null;
+    pinch = null;
+    if (!s || e.type === 'pointercancel') {
+      stage.parentElement.style.removeProperty('--dim');
+      clamp();
+      apply(true);
+      return;
+    }
+    const dy = e.clientY - s.y;
+    const quick = Date.now() - s.t;
+    if (s.moved) {
+      if (view.scale <= 1 && dy > 0) {
+        if (dy > 110 || (dy > 40 && dy / quick > 0.6)) { closeViewer(); return; }
+        stage.parentElement.style.removeProperty('--dim');
+        view.x = 0; view.y = 0;
+      }
+      clamp();
+      apply(true);
+      return;
+    }
+    // A tap: double tap zooms in or out, a single tap (unzoomed) closes.
+    const now = Date.now();
+    if (lastTap && now - lastTap.t < 300 && Math.hypot(e.clientX - lastTap.x, e.clientY - lastTap.y) < 30) {
+      clearTimeout(tapTimer);
+      lastTap = null;
+      if (view.scale > 1) { view.scale = 1; view.x = 0; view.y = 0; } else zoomAt(2.5, e.clientX, e.clientY);
+      clamp();
+      apply(true);
+      return;
+    }
+    lastTap = { t: now, x: e.clientX, y: e.clientY };
+    if (view.scale === 1) {
+      clearTimeout(tapTimer);
+      tapTimer = setTimeout(() => { if (lastTap?.t === now) closeViewer(); }, 300);
+    }
+  };
+  stage.addEventListener('pointerup', end);
+  stage.addEventListener('pointercancel', end);
+
+  // Mouse wheel / trackpad pinch on desktop.
+  stage.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    zoomAt(view.scale * Math.exp(-e.deltaY / 300), e.clientX, e.clientY);
+    clamp();
+    apply(false);
+  }, { passive: false });
+}
+
+// Press and hold on a board picture opens the viewer. The finger may wander a
+// little; moving further means the player is scrolling, so the hold is off.
+const hold = { timer: null, id: null, x: 0, y: 0, fired: false };
+
+function cancelHold() {
+  clearTimeout(hold.timer);
+  hold.timer = null;
+  hold.id = null;
+}
+
+// Any new press starts afresh (a long press doesn't always end in a click).
+document.addEventListener('pointerdown', () => { hold.fired = false; }, true);
+$app.addEventListener('pointerdown', (e) => {
+  const tile = e.target.closest('.tile[data-card]');
+  if (!tile || (e.pointerType === 'mouse' && e.button !== 0) || !e.isPrimary) { cancelHold(); return; }
+  cancelHold();
+  Object.assign(hold, { id: e.pointerId, x: e.clientX, y: e.clientY });
+  hold.timer = setTimeout(() => {
+    hold.timer = null;
+    hold.fired = true;
+    navigator.vibrate?.(15);
+    openViewer(Number(tile.dataset.card));
+  }, HOLD_MS);
+});
+// Listen on the document: the board may be re-rendered mid-press.
+document.addEventListener('pointermove', (e) => {
+  if (e.pointerId === hold.id && hold.timer && Math.hypot(e.clientX - hold.x, e.clientY - hold.y) > MOVE_SLOP) cancelHold();
+});
+for (const type of ['pointerup', 'pointercancel']) {
+  document.addEventListener(type, (e) => { if (e.pointerId === hold.id) cancelHold(); });
+}
+// The click that ends a hold must not also open the sheet.
+document.addEventListener('click', (e) => {
+  if (hold.fired) {
+    hold.fired = false;
+    e.preventDefault();
+    e.stopPropagation();
+  }
+}, true);
+// Right-click on desktop; also stops the long-press menu on phones.
+$app.addEventListener('contextmenu', (e) => {
+  const tile = e.target.closest('.tile[data-card]');
+  if (!tile) return;
+  e.preventDefault();
+  cancelHold();
+  if (view.index == null) {
+    hold.fired = true; // swallow a click that may follow on touch screens
+    openViewer(Number(tile.dataset.card));
+  }
+});
 
 // ---------- Events ----------
 
@@ -529,6 +827,10 @@ document.addEventListener('click', async (e) => {
   const t = e.target.closest('button, [data-close], [data-close-menu]');
   if (!t) return;
 
+  if (t.dataset.closeViewer != null) {
+    closeViewer();
+    return;
+  }
   if (t.dataset.card != null) {
     ui.selected = Number(t.dataset.card);
     renderModal();
@@ -602,6 +904,10 @@ document.addEventListener('click', async (e) => {
 });
 
 document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && view.index != null) {
+    closeViewer();
+    return;
+  }
   if (e.key === 'Escape' && (ui.selected != null || ui.showMenu)) {
     ui.selected = null;
     ui.showMenu = false;

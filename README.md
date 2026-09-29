@@ -9,7 +9,7 @@ It's built for **2 teams of 2** (one spymaster and one guesser per team). Teams 
 1. Split into **Red** and **Blue**. Each team has one **spymaster** and at least one **guesser**.
 2. Only the spymasters see which pictures belong to which team (the coloured frames).
 3. On your turn, your spymaster types a **one-word clue** and a number: how many pictures it points to.
-4. Guessers tap a picture to zoom in, then tap **Guess this picture**. A correct guess lets you keep going, up to one more than the number. You can end the turn after at least one guess.
+4. Guessers tap a picture to zoom in, then tap **Guess this picture**. Press and hold any picture to see it full screen and pinch to zoom into the detail. A correct guess lets you keep going, up to one more than the number. You can end the turn after at least one guess.
 5. A beige bystander or the other team's picture ends your turn. The **black assassin** loses the game instantly.
 6. The first team to find all their pictures wins. The team that goes first has 8 pictures, the other has 7.
 
@@ -62,17 +62,19 @@ Put it behind a reverse proxy that provides HTTPS (for example Caddy). Live upda
 
 ## Changing the pictures
 
-The pictures shipped with the app live in `web/cards/` as small square JPEGs, built from the originals in `art/source/`.
+Every picture has an **original** that is never edited and a **crop record** in `art/crops/<id>.json` that says how to cut it into square tiles. The build turns each *approved* crop into a 400 px tile in `web/cards/` and a zoom version (up to 1200 px) in `cards-large/`. File names carry a hash of the crop, so phones pick up a changed crop straight away. Install the tools once with `python3 -m pip install pillow numpy`.
 
-- **Swap the built-in set:** put your originals in `art/source/` (any size, any common format), then run
+- **Accepted pictures from the Fantastical Sources page:** export the picks, then on a machine that can reach the picture hosts run
   ```sh
-  python3 -m pip install pillow
-  python3 scripts/build_cards.py            # or: python3 scripts/build_cards.py path/to/folder another/folder
+  python3 scripts/import_picks.py --picks picks.json --bundles path/to/img --fetch
   ```
-  This trims borders, makes each picture square, and writes 400×400 JPEGs to `web/cards/`. Rebuild or redeploy afterwards.
+  Full-size originals go to `originals/` (git-ignored, so back that folder up). Each gets a crop record with automatic proposals from `scripts/autocrop.py`, occasionally several crops when one source holds separate scenes.
+- **Review the crops:** `python3 scripts/studio.py` opens Crop Studio on http://127.0.0.1:8765. Drag and resize boxes, try other proposals, rotate, add or remove boxes, and approve. Add `--lan` to use it from a phone on the same Wi-Fi (the printed link carries a one-time token).
+- **Pictures in `art/source/`:** run `python3 scripts/make_legacy_records.py` to give new files a record that keeps the classic treatment (trimmed, squared, or letterboxed on a blurred background).
+- **Build:** `python3 scripts/build_cards.py` writes the tiles, and `--check` reports anything out of date. If an original is missing, the build skips that record and deletes nothing. Commit `art/crops/`, `web/cards/` and `cards-large/`, then redeploy.
 - **Use a folder without rebuilding:** `./codenames-pictures -cards /path/to/pictures` serves pictures straight from a folder (square images work best).
 
-You need at least 20 pictures; more gives more variety between games. `art/doodles-from-upstream/` holds the hand-drawn doodles from the project this was forked from, which aren't in the default set.
+You need at least 20 pictures; more gives more variety between games. Two crops of the same source are never dealt onto one board. `art/doodles-from-upstream/` holds the hand-drawn doodles from the project this was forked from, which aren't in the default set.
 
 ## How it works
 

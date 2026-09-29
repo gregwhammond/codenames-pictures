@@ -4,8 +4,12 @@ import (
 	"bufio"
 	"bytes"
 	"encoding/json"
+	"io"
+	"io/fs"
 	"net/http"
 	"net/http/httptest"
+	"os"
+	"path/filepath"
 	"strings"
 	"testing"
 	"testing/fstest"
@@ -14,12 +18,17 @@ import (
 
 func testServer(t *testing.T) *httptest.Server {
 	t.Helper()
+	return testServerWithLarge(t, fstest.MapFS{"0.jpg": &fstest.MapFile{Data: []byte("big")}})
+}
+
+func testServerWithLarge(t *testing.T, large fs.FS) *httptest.Server {
+	t.Helper()
 	cards := fstest.MapFS{}
 	for _, img := range testImages(25) {
 		cards[strings.TrimPrefix(img, "/cards/")] = &fstest.MapFile{Data: []byte("x")}
 	}
 	web := fstest.MapFS{"index.html": &fstest.MapFile{Data: []byte("<html>app</html>")}}
-	s, err := NewServer(web, cards)
+	s, err := NewServer(web, cards, large)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -188,5 +197,52 @@ func TestUnknownPlayerAndRoom(t *testing.T) {
 	resp, _ := http.Get(ts.URL + "/r/" + created.Code)
 	if resp.StatusCode != 200 {
 		t.Fatalf("room link: %d", resp.StatusCode)
+	}
+}
+
+func TestLargeCards(t *testing.T) {
+	ts := testServer(t)
+	resp, err := http.Get(ts.URL + "/cards-large/0.jpg")
+	if err != nil {
+		t.Fatal(err)
+	}
+	body, _ := io.ReadAll(resp.Body)
+	resp.Body.Close()
+	if resp.StatusCode != 200 || string(body) != "big" {
+		t.Fatalf("large card: %d %q", resp.StatusCode, body)
+	}
+	if cc := resp.Header.Get("Cache-Control"); cc != "public, max-age=2592000" {
+		t.Fatalf("cache-control %q", cc)
+	}
+	resp, _ = http.Get(ts.URL + "/cards-large/1.jpg")
+	resp.Body.Close()
+	if resp.StatusCode != 404 {
+		t.Fatalf("missing large card: %d", resp.StatusCode)
+	}
+	if cc := resp.Header.Get("Cache-Control"); strings.Contains(cc, "max-age") {
+		t.Fatalf("404 should not be cached long: %q", cc)
+	}
+}
+
+func TestLargeCardsFolderMissing(t *testing.T) {
+	missing := filepath.Join(t.TempDir(), "nope")
+	for _, large := range []fs.FS{os.DirFS(missing), nil} {
+		ts := testServerWithLarge(t, large)
+		for _, p := range []string{"/cards-large/0.jpg", "/cards-large/"} {
+			resp, err := http.Get(ts.URL + p)
+			if err != nil {
+				t.Fatal(err)
+			}
+			resp.Body.Close()
+			if resp.StatusCode != 404 {
+				t.Fatalf("%s with no large folder: %d", p, resp.StatusCode)
+			}
+		}
+		// The rest of the server still works.
+		resp, _ := http.Get(ts.URL + "/cards/0.jpg")
+		resp.Body.Close()
+		if resp.StatusCode != 200 {
+			t.Fatalf("card: %d", resp.StatusCode)
+		}
 	}
 }

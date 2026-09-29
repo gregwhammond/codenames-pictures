@@ -1,0 +1,19 @@
+{
+  "id": "zz",
+  "source": "art/source/zz.png",
+  "source_sha256": "79d65df2af0635c302029dc115b5966613ed133650dc1c2c3af9f068edf32e4b",
+  "source_size": [
+    314,
+    314
+  ],
+  "rotate": 0,
+  "crops": [
+    {
+      "tile": "zz",
+      "mode": "legacy",
+      "box": null,
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}
