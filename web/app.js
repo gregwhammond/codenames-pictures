@@ -134,8 +134,6 @@ async function joinRoom(code, name) {
   if (location.pathname !== `/r/${code}`) history.replaceState(null, '', `/r/${code}${location.search}`);
   setRoom(view);
   connect();
-  ui.tallSent = undefined;
-  syncScreen();
 }
 
 async function rejoin() {
@@ -144,8 +142,6 @@ async function rejoin() {
     const view = await api(`/${ui.code}/join`, { name: store.get('name') || 'Player' });
     setRoom(view);
     connect();
-    ui.tallSent = undefined; // the server may have forgotten us (a restart), so tell it again
-    syncScreen();
   } catch (err) {
     if (err.status === 404) {
       leaveLocal('That game has ended. Start a new one!');
@@ -171,27 +167,9 @@ function connect() {
   };
 }
 
-// A phone held upright fits a 6x4 board better than a 5x5 one. Each player
-// tells the room which shape their screen is; the room deals 24 pictures
-// when every seated player is on an upright phone, otherwise 25.
-const tallScreen = matchMedia('(max-aspect-ratio: 2/3)');
-
-async function syncScreen() {
-  if (!ui.code || !ui.room) return;
-  const tall = tallScreen.matches;
-  if (ui.tallSent === tall) return;
-  ui.tallSent = tall;
-  try {
-    await api(`/${ui.code}/screen`, { tall });
-  } catch {
-    ui.tallSent = undefined; // try again on the next join or turn of the phone
-  }
-}
-tallScreen.addEventListener('change', syncScreen);
-
 function leaveLocal(message) {
   if (ui.events) ui.events.close();
-  Object.assign(ui, { code: null, room: null, events: null, selected: null, showMenu: false, tallSent: undefined });
+  Object.assign(ui, { code: null, room: null, events: null, selected: null, showMenu: false });
   closeViewer();
   store.set('room', '');
   history.replaceState(null, '', `/${location.search}`);
@@ -332,7 +310,6 @@ function howToPlay() {
       <li>Tap a picture to see it bigger. <b>Press and hold</b> (or right-click) to open it full screen and pinch to zoom into the details.</li>
       <li>Hit a beige bystander or the other team's picture and your turn ends. Hit the <b>black assassin</b> and you lose instantly.</li>
       <li>The first team to find all their pictures wins. The team that goes first has 9, the other has 8.</li>
-      <li>The board has 25 pictures, or 24 when everyone is on a phone held upright, so the pictures stay big.</li>
     </ol>`;
 }
 
@@ -449,7 +426,7 @@ function renderGame() {
   `);
 
   region($app, 'board', `
-    <div class="board n${g.cards.length} ${spy ? 'spy' : ''} ${g.phase === 'over' ? 'over' : ''} ${canGuess() ? 'can-guess' : ''}">
+    <div class="board ${spy ? 'spy' : ''} ${g.phase === 'over' ? 'over' : ''} ${canGuess() ? 'can-guess' : ''}">
       ${g.cards.map((c, i) => `
         <button class="tile ${c.team ? `k-${c.team}` : ''} ${c.revealed ? 'revealed' : ''}" data-card="${i}" aria-label="Picture ${i + 1}${c.revealed ? `, ${c.team}` : ''}">
           <img src="${esc(c.image)}" alt="" loading="eager" decoding="async" draggable="false">

@@ -9,31 +9,16 @@ import (
 	"unicode/utf8"
 )
 
-// A board has 25 pictures (a 5x5 grid) when the players' screens have room
-// for it, or 24 (6x4, for phones held upright). Either way the starting team
-// has 9 agents and the other team 8, and there is always exactly one
-// assassin; the 24-picture board just has one bystander fewer.
+// Codenames Pictures uses a 5x5 grid: the starting team has 9 agents, the
+// other team 8, plus 7 bystanders and 1 assassin.
 const (
-	BigBoard        = 25
-	TallBoard       = 24
+	CardCount       = 25
 	StartingAgents  = 9
 	SecondAgents    = 8
+	BystanderCount  = 7
 	Unlimited       = -1 // clue number meaning "any number of guesses"
 	maxClueWordSize = 40
 )
-
-// MinImages is the smallest picture pool that can deal any board.
-const MinImages = TallBoard
-
-// Bystanders is how many neutral cards a board of the given size holds.
-func Bystanders(size int) int {
-	return size - StartingAgents - SecondAgents - 1
-}
-
-// ValidBoardSize reports whether size is a board this game can deal.
-func ValidBoardSize(size int) bool {
-	return size == BigBoard || size == TallBoard
-}
 
 type Team string
 
@@ -107,15 +92,11 @@ var (
 	ErrBadNumber   = errors.New("the clue number must be 0 to 9, or unlimited")
 	ErrMustGuess   = errors.New("make at least one guess before ending the turn")
 	ErrTooFewCards = errors.New("not enough pictures to deal a board")
-	ErrBadSize     = errors.New("a board has 24 or 25 pictures")
 )
 
-// NewGame deals a board of size cards from the given image pool.
-func NewGame(images []string, rnd *rand.Rand, size int) (*Game, error) {
-	if !ValidBoardSize(size) {
-		return nil, ErrBadSize
-	}
-	if len(images) < size {
+// NewGame deals a board from the given image pool.
+func NewGame(images []string, rnd *rand.Rand) (*Game, error) {
+	if len(images) < CardCount {
 		return nil, ErrTooFewCards
 	}
 	start := Red
@@ -123,21 +104,21 @@ func NewGame(images []string, rnd *rand.Rand, size int) (*Game, error) {
 		start = Blue
 	}
 
-	teams := make([]Team, 0, size)
+	teams := make([]Team, 0, CardCount)
 	for i := 0; i < StartingAgents; i++ {
 		teams = append(teams, start)
 	}
 	for i := 0; i < SecondAgents; i++ {
 		teams = append(teams, start.Other())
 	}
-	for i := 0; i < Bystanders(size); i++ {
+	for i := 0; i < BystanderCount; i++ {
 		teams = append(teams, Neutral)
 	}
 	teams = append(teams, Assassin)
 	rnd.Shuffle(len(teams), func(i, j int) { teams[i], teams[j] = teams[j], teams[i] })
 
-	picks := pickImages(images, rnd, size)
-	cards := make([]Card, size)
+	picks := pickImages(images, rnd)
+	cards := make([]Card, CardCount)
 	for i, p := range picks {
 		cards[i] = Card{Image: images[p], Team: teams[i]}
 	}
@@ -166,16 +147,16 @@ func imageGroup(image string) string {
 	return extraSuffix.ReplaceAllString(name, "")
 }
 
-// pickImages chooses n distinct image indexes at random, at most one per
-// source group. If the pool has too few groups it fills the rest of the board
-// with other crops rather than failing.
-func pickImages(images []string, rnd *rand.Rand, n int) []int {
+// pickImages chooses CardCount distinct image indexes at random, at most one
+// per source group. If the pool has too few groups it fills the rest of the
+// board with other crops rather than failing.
+func pickImages(images []string, rnd *rand.Rand) []int {
 	order := rnd.Perm(len(images))
-	picks := make([]int, 0, n)
+	picks := make([]int, 0, CardCount)
 	used := map[string]bool{}
 	var spare []int
 	for _, i := range order {
-		if len(picks) == n {
+		if len(picks) == CardCount {
 			break
 		}
 		g := imageGroup(images[i])
@@ -187,7 +168,7 @@ func pickImages(images []string, rnd *rand.Rand, n int) []int {
 		picks = append(picks, i)
 	}
 	for _, i := range spare {
-		if len(picks) == n {
+		if len(picks) == CardCount {
 			break
 		}
 		picks = append(picks, i)

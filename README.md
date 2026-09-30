@@ -13,7 +13,7 @@ It's built for **2 teams of 2** (one spymaster and one guesser per team). Teams 
 5. A beige bystander or the other team's picture ends your turn. The **black assassin** loses the game instantly.
 6. The first team to find all their pictures wins. The team that goes first has 9 pictures, the other has 8.
 
-The board has 25 pictures (5×5) when someone at the table has room for it, or 24 (6×4) when every player is on a phone held upright, so the pictures stay big. Either way there is exactly one assassin; the smaller board just has one bystander fewer.
+The board is always 25 pictures in a 5×5 grid: 9 for the starting team, 8 for the other, 7 bystanders and 1 assassin.
 
 A clue of **0** or **∞** gives unlimited guesses, as in the board game.
 
@@ -80,13 +80,13 @@ Every picture has an **original** that is never edited and a **crop record** in 
 - **Build:** `python3 scripts/build_cards.py` writes the tiles, and `--check` reports anything out of date. If an original is missing, the build skips that record and deletes nothing. Commit `art/crops/`, `web/cards/` and `cards-large/`, then redeploy.
 - **Use a folder without rebuilding:** `./codenames-pictures -cards /path/to/pictures` serves pictures straight from a folder (square images work best).
 
-You need at least 24 pictures (25 for the 5×5 board); more gives more variety between games. Two crops of the same source are never dealt onto one board. `art/doodles-from-upstream/` holds the hand-drawn doodles from the project this was forked from, which aren't in the default set.
+You need at least 25 pictures; more gives more variety between games. Two crops of the same source are never dealt onto one board. `art/doodles-from-upstream/` holds the hand-drawn doodles from the project this was forked from, which aren't in the default set.
 
 ## How it works
 
 | Piece | What it does |
 |---|---|
-| `game.go` | The rules: dealing 25 cards (9/8/7/1) or 24 (9/8/6/1), clues, guesses, turn passing, winning. |
+| `game.go` | The rules: dealing 25 cards (9/8/7/1), clues, guesses, turn passing, winning. |
 | `room.go` | Rooms, seats, and what each player is allowed to see (guessers never receive the key). |
 | `main.go` | HTTP API (`POST /api/rooms/{code}/{action}`) and the live event stream (`GET /api/rooms/{code}/events`). |
 | `web/` | The phone app: plain HTML, CSS and JavaScript with no build step, a service worker for offline loading, and the app manifest. |

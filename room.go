@@ -40,13 +40,10 @@ var (
 )
 
 type Player struct {
-	ID   string
-	Name string
-	Team Team // "" when not seated
-	Role Role
-	// Tall is set by phones held upright, whose screens fit a 6x4 board
-	// better than a 5x5 one.
-	Tall  bool
+	ID    string
+	Name  string
+	Team  Team // "" when not seated
+	Role  Role
 	token string
 	conns int
 }
@@ -173,34 +170,6 @@ func (r *Room) seatsReady() bool {
 	return spy[Red] == 1 && spy[Blue] == 1 && guess[Red] >= 1 && guess[Blue] >= 1
 }
 
-// SetScreen records whether a player's screen is a tall phone.
-func (r *Room) SetScreen(p *Player, tall bool) {
-	p.Tall = tall
-}
-
-// boardSize is 25 pictures whenever someone at the table has room for a 5x5
-// board, and 24 (6x4) when every seated player is on a phone held upright
-// or the picture pool is too small for 25.
-func (r *Room) boardSize() int {
-	if len(r.images) < BigBoard {
-		return TallBoard // a small picture folder can still deal the 6x4 board
-	}
-	seated := 0
-	for _, p := range r.players {
-		if p.Role == "" {
-			continue
-		}
-		seated++
-		if !p.Tall {
-			return BigBoard
-		}
-	}
-	if seated == 0 {
-		return BigBoard
-	}
-	return TallBoard
-}
-
 // Start deals a new board. It is also used for "play again".
 func (r *Room) Start() error {
 	if r.game != nil && r.game.Phase != PhaseOver {
@@ -209,7 +178,7 @@ func (r *Room) Start() error {
 	if !r.seatsReady() {
 		return ErrNotReady
 	}
-	g, err := NewGame(r.images, r.rnd, r.boardSize())
+	g, err := NewGame(r.images, r.rnd)
 	if err != nil {
 		return err
 	}

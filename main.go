@@ -102,8 +102,8 @@ func NewServer(web, cards, large fs.FS) (*Server, error) {
 	if err != nil {
 		return nil, err
 	}
-	if len(images) < MinImages {
-		return nil, fmt.Errorf("need at least %d pictures, found %d", MinImages, len(images))
+	if len(images) < CardCount {
+		return nil, fmt.Errorf("need at least %d pictures, found %d", CardCount, len(images))
 	}
 	s := &Server{mux: http.NewServeMux(), rooms: NewRooms(images), images: images, web: web}
 
@@ -213,7 +213,6 @@ type actionRequest struct {
 	Word   string `json:"word"`
 	Number int    `json:"number"`
 	Index  int    `json:"index"`
-	Tall   bool   `json:"tall"`
 }
 
 func (s *Server) handleAction(w http.ResponseWriter, r *http.Request) {
@@ -234,8 +233,6 @@ func (s *Server) handleAction(w http.ResponseWriter, r *http.Request) {
 		_, err = room.Join(req.Token, req.Name)
 	case "sit":
 		err = room.Do(req.Token, func(p *Player) error { return room.Sit(p, req.Team, req.Role) })
-	case "screen":
-		err = room.Do(req.Token, func(p *Player) error { room.SetScreen(p, req.Tall); return nil })
 	case "start":
 		err = room.Do(req.Token, func(*Player) error { return room.Start() })
 	case "lobby":

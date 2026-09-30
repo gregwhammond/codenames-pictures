@@ -85,9 +85,6 @@ func TestFullGameOverHTTP(t *testing.T) {
 		if status, _, raw := post(t, base+"sit", map[string]any{"token": s.token, "team": s.team, "role": s.role}); status != 200 {
 			t.Fatalf("sit: %s", raw)
 		}
-		if status, _, raw := post(t, base+"screen", map[string]any{"token": s.token, "tall": true}); status != 200 {
-			t.Fatalf("screen: %s", raw)
-		}
 	}
 	if status, _, _ := post(t, base+"sit", map[string]any{"token": seats[1].token, "team": Red, "role": Spymaster}); status != http.StatusConflict {
 		t.Fatal("second red spymaster should be refused")
@@ -132,8 +129,8 @@ func TestFullGameOverHTTP(t *testing.T) {
 		t.Fatalf("start: %s", raw)
 	}
 	g := waitFor(func(v RoomView) bool { return v.Game != nil }).Game
-	if len(g.Cards) != TallBoard {
-		t.Fatalf("four upright phones should get a 6x4 board, got %d cards", len(g.Cards))
+	if len(g.Cards) != CardCount {
+		t.Fatalf("got %d cards", len(g.Cards))
 	}
 	for _, c := range g.Cards {
 		if c.Team != "" {
@@ -184,13 +181,8 @@ func TestFullGameOverHTTP(t *testing.T) {
 		}
 	}
 
-	// One player turns their phone sideways: the rematch gets the 5x5 board.
-	if status, _, raw := post(t, base+"screen", map[string]any{"token": seats[2].token, "tall": false}); status != 200 {
-		t.Fatalf("screen: %s", raw)
-	}
-	status, view, raw = post(t, base+"start", map[string]string{"token": seats[2].token})
-	if status != 200 || view.Game == nil || len(view.Game.Cards) != BigBoard {
-		t.Fatalf("rematch: %d %s", status, raw)
+	if status, _, raw := post(t, base+"start", map[string]string{"token": seats[2].token}); status != 200 {
+		t.Fatalf("rematch: %s", raw)
 	}
 }
 
