@@ -17,7 +17,7 @@ func testImages(n int) []string {
 
 func newTestGame(t *testing.T, seed int64) *Game {
 	t.Helper()
-	g, err := NewGame(testImages(40), rand.New(rand.NewSource(seed)))
+	g, err := NewGame(testImages(40), rand.New(rand.NewSource(seed)), BigBoard)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -35,30 +35,47 @@ func find(g *Game, team Team) int {
 }
 
 func TestDealComposition(t *testing.T) {
-	for seed := int64(0); seed < 50; seed++ {
-		g := newTestGame(t, seed)
-		counts := map[Team]int{}
-		seen := map[string]bool{}
-		for _, c := range g.Cards {
-			counts[c.Team]++
-			if seen[c.Image] {
-				t.Fatalf("duplicate image %s", c.Image)
+	for _, tc := range []struct{ size, bystanders int }{{BigBoard, 7}, {TallBoard, 6}} {
+		for seed := int64(0); seed < 50; seed++ {
+			g, err := NewGame(testImages(40), rand.New(rand.NewSource(seed)), tc.size)
+			if err != nil {
+				t.Fatal(err)
 			}
-			seen[c.Image] = true
-		}
-		if len(g.Cards) != 20 || counts[g.StartingTeam] != 8 || counts[g.StartingTeam.Other()] != 7 ||
-			counts[Neutral] != 4 || counts[Assassin] != 1 {
-			t.Fatalf("bad deal: %v", counts)
-		}
-		if g.Turn != g.StartingTeam || g.Phase != PhaseClue {
-			t.Fatalf("bad start state")
+			counts := map[Team]int{}
+			seen := map[string]bool{}
+			for _, c := range g.Cards {
+				counts[c.Team]++
+				if seen[c.Image] {
+					t.Fatalf("duplicate image %s", c.Image)
+				}
+				seen[c.Image] = true
+			}
+			if len(g.Cards) != tc.size || counts[g.StartingTeam] != 9 || counts[g.StartingTeam.Other()] != 8 ||
+				counts[Neutral] != tc.bystanders || counts[Assassin] != 1 {
+				t.Fatalf("bad %d-card deal: %v", tc.size, counts)
+			}
+			if g.Turn != g.StartingTeam || g.Phase != PhaseClue {
+				t.Fatalf("bad start state")
+			}
 		}
 	}
 }
 
 func TestTooFewImages(t *testing.T) {
-	if _, err := NewGame(testImages(19), rand.New(rand.NewSource(1))); err != ErrTooFewCards {
-		t.Fatalf("got %v", err)
+	rnd := rand.New(rand.NewSource(1))
+	if _, err := NewGame(testImages(24), rnd, BigBoard); err != ErrTooFewCards {
+		t.Fatalf("25 cards from 24 pictures: got %v", err)
+	}
+	if _, err := NewGame(testImages(24), rnd, TallBoard); err != nil {
+		t.Fatalf("24 cards from 24 pictures: got %v", err)
+	}
+	if _, err := NewGame(testImages(23), rnd, TallBoard); err != ErrTooFewCards {
+		t.Fatalf("24 cards from 23 pictures: got %v", err)
+	}
+	for _, size := range []int{0, 20, 26} {
+		if _, err := NewGame(testImages(40), rnd, size); err != ErrBadSize {
+			t.Fatalf("size %d: got %v", size, err)
+		}
 	}
 }
 
@@ -155,7 +172,7 @@ func TestFindingAllAgentsWins(t *testing.T) {
 	if g.Winner != team || g.WinReason != "agents" {
 		t.Fatalf("winner %s reason %s", g.Winner, g.WinReason)
 	}
-	if len(g.Log) != 1 || len(g.Log[0].Guesses) != 8 {
+	if len(g.Log) != 1 || len(g.Log[0].Guesses) != StartingAgents {
 		t.Fatalf("log: %+v", g.Log)
 	}
 }
@@ -212,10 +229,10 @@ func groupedImages(n, extras int) []string {
 }
 
 func TestDealOnePerGroup(t *testing.T) {
-	images := groupedImages(25, 2) // 75 images, 25 groups
+	images := groupedImages(30, 2) // 90 images, 30 groups
 	seenExtra := false
 	for seed := int64(0); seed < 200; seed++ {
-		g, err := NewGame(images, rand.New(rand.NewSource(seed)))
+		g, err := NewGame(images, rand.New(rand.NewSource(seed)), BigBoard)
 		if err != nil {
 			t.Fatal(err)
 		}
@@ -239,7 +256,7 @@ func TestDealOnePerGroup(t *testing.T) {
 func TestDealFewGroupsFallsBack(t *testing.T) {
 	images := groupedImages(12, 2) // 36 images, only 12 groups
 	for seed := int64(0); seed < 50; seed++ {
-		g, err := NewGame(images, rand.New(rand.NewSource(seed)))
+		g, err := NewGame(images, rand.New(rand.NewSource(seed)), BigBoard)
 		if err != nil {
 			t.Fatal(err)
 		}
@@ -252,7 +269,7 @@ func TestDealFewGroupsFallsBack(t *testing.T) {
 			seen[c.Image] = true
 			groups[imageGroup(c.Image)] = true
 		}
-		if len(g.Cards) != CardCount || len(groups) != 12 {
+		if len(g.Cards) != BigBoard || len(groups) != 12 {
 			t.Fatalf("seed %d: %d cards from %d groups", seed, len(g.Cards), len(groups))
 		}
 	}
@@ -260,8 +277,8 @@ func TestDealFewGroupsFallsBack(t *testing.T) {
 
 func TestDealIsRandom(t *testing.T) {
 	images := groupedImages(40, 1)
-	a, _ := NewGame(images, rand.New(rand.NewSource(1)))
-	b, _ := NewGame(images, rand.New(rand.NewSource(2)))
+	a, _ := NewGame(images, rand.New(rand.NewSource(1)), BigBoard)
+	b, _ := NewGame(images, rand.New(rand.NewSource(2)), BigBoard)
 	same := true
 	for i := range a.Cards {
 		if a.Cards[i].Image != b.Cards[i].Image {

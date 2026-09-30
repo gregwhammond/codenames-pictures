@@ -221,14 +221,19 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   padding: 4px 8px;
 }
 
+/* 25 pictures are a 5x5 square. 24 pictures are 4 across and 6 down on an
+   upright phone, or 6 across and 4 down when the space is wider than tall.
+   The widths keep the whole board inside the container (cqh is its height;
+   the 6px gaps make the 24-board slightly taller than 3:2, hence 66/150). */
 .board {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 6px;
-  width: min(100cqw, 79cqh);
+  width: min(100cqw, 100cqh);
 }
+.board.n24 { grid-template-columns: repeat(4, 1fr); width: min(100cqw, 66cqh); }
 @container (orientation: landscape) {
-  .board { grid-template-columns: repeat(5, 1fr); width: min(100cqw, 123cqh); }
+  .board.n24 { grid-template-columns: repeat(6, 1fr); width: min(100cqw, 150cqh); }
 }
 
 .tile {
