@@ -1,0 +1,19 @@
+{
+  "id": "j",
+  "source": "art/source/j.png",
+  "source_sha256": "4e7a1d24308d59a548948c2bf35def297406eb5c36df53effa84d715f8be2a9e",
+  "source_size": [
+    1053,
+    1053
+  ],
+  "rotate": 0,
+  "crops": [
+    {
+      "tile": "j",
+      "mode": "legacy",
+      "box": null,
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

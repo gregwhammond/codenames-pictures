@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Crop Studio</title>
+<link rel="stylesheet" href="studio.css">
+</head>
+<body>
+
+<main id="queue-view">
+  <header class="qhead">
+    <div class="qtitle">
+      <h1>Crop Studio</h1>
+      <p id="counts" class="counts">Loading…</p>
+    </div>
+    <div class="qactions">
+      <button id="review-next" class="primary" type="button">Review next</button>
+      <button id="reload" type="button" title="Reload records from disk">Reload</button>
+    </div>
+  </header>
+  <div class="filters">
+    <div id="chips" class="chips" role="radiogroup" aria-label="Filter by status"></div>
+    <input id="text-filter" type="search" placeholder="Collection or name, e.g. S014" autocomplete="off" spellcheck="false" aria-label="Filter by collection or name">
+  </div>
+  <p id="showing" class="showing"></p>
+  <div id="groups" class="groups"></div>
+</main>
+
+<main id="editor-view" hidden>
+  <header class="ehead">
+    <button id="back" type="button" title="Back to queue (Esc)">&larr; Queue</button>
+    <div class="etitle">
+      <strong id="ed-id"></strong>
+      <span id="ed-meta" class="muted"></span>
+    </div>
+    <span id="save-state" class="save-state" aria-live="polite"></span>
+  </header>
+  <nav id="tabs" class="tabs" aria-label="Crops of this picture"></nav>
+  <div class="emain">
+    <div class="stage-wrap">
+      <div id="stage" class="stage">
+        <img id="src" alt="" draggable="false">
+        <img id="heat" alt="" draggable="false" hidden>
+        <svg id="ov" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"></svg>
+        <div id="stage-note" class="stage-note" hidden></div>
+      </div>
+      <p id="stage-msg" class="stage-msg" hidden></p>
+    </div>
+    <aside class="panel">
+      <div class="previews">
+        <figure><div class="pv pv80"><canvas id="pv80c"></canvas><img id="pv80i" alt="" hidden></div><figcaption>as a card</figcaption></figure>
+        <figure class="big"><div class="pv pv400"><canvas id="pv400c"></canvas><img id="pv400i" alt="" hidden></div><figcaption id="pv-cap">400 px tile</figcaption></figure>
+      </div>
+      <div id="info" class="info"></div>
+      <div id="warn" class="warn" hidden></div>
+      <label class="size-row">Size <input id="size" type="range" min="5" max="100" step="0.5" aria-label="Box size"></label>
+      <div class="buttons">
+        <button id="b-approve" class="primary" type="button">Approve <kbd>Enter</kbd></button>
+        <button id="b-skip" type="button">Skip <kbd>S</kbd></button>
+        <button id="b-reset" type="button">Reset to auto <kbd>R</kbd></button>
+        <button id="b-another" type="button">Try another <kbd>N</kbd></button>
+        <button id="b-fit" type="button">Fit whole picture <kbd>F</kbd></button>
+        <button id="b-rotate" type="button">Rotate 90° <kbd>T</kbd></button>
+        <button id="b-heat" type="button" aria-pressed="false">Heat map <kbd>H</kbd></button>
+        <button id="b-add" type="button">Add box <kbd>A</kbd></button>
+        <button id="b-remove" type="button" class="danger">Remove box</button>
+      </div>
+      <details class="help">
+        <summary>Keys and gestures</summary>
+        <p>Drag inside a box to move it, drag a corner to resize. Wheel, pinch, <kbd>+</kbd>/<kbd>-</kbd> or the slider resize; arrows nudge (<kbd>Shift</kbd> for bigger steps). <kbd>1</kbd>–<kbd>9</kbd> pick a box, <kbd>Esc</kbd> goes back. Changes save by themselves.</p>
+      </details>
+    </aside>
+  </div>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<script src="studio.js"></script>
+</body>
+</html>

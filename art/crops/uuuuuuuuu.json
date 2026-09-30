@@ -1,0 +1,19 @@
+{
+  "id": "uuuuuuuuu",
+  "source": "art/source/uuuuuuuuu.png",
+  "source_sha256": "9a5dc791c7308d24afce72750383606004058c9fab4a9b1d5ba7e9d5745f66ac",
+  "source_size": [
+    200,
+    200
+  ],
+  "rotate": 0,
+  "crops": [
+    {
+      "tile": "uuuuuuuuu",
+      "mode": "legacy",
+      "box": null,
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

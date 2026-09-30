@@ -1,0 +1,19 @@
+{
+  "id": "eee",
+  "source": "art/source/eee.png",
+  "source_sha256": "4bfb3319e17fd9ae9b719dec611ccfe5f5723253d6f84f918c51d11f9549fb2c",
+  "source_size": [
+    931,
+    931
+  ],
+  "rotate": 0,
+  "crops": [
+    {
+      "tile": "eee",
+      "mode": "legacy",
+      "box": null,
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

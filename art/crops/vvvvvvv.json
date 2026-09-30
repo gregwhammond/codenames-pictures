@@ -1,0 +1,19 @@
+{
+  "id": "vvvvvvv",
+  "source": "art/source/vvvvvvv.png",
+  "source_sha256": "a70282dcc10f3e06a0f702bd10c779bed719d492627c80271df2c7eb13a33187",
+  "source_size": [
+    466,
+    466
+  ],
+  "rotate": 0,
+  "crops": [
+    {
+      "tile": "vvvvvvv",
+      "mode": "legacy",
+      "box": null,
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

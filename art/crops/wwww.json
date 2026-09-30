@@ -1,0 +1,19 @@
+{
+  "id": "wwww",
+  "source": "art/source/wwww.png",
+  "source_sha256": "6ea3d0cf0b505904ba44abf60204fe273175e3999bafdd3dd5aae7390cd59c38",
+  "source_size": [
+    834,
+    834
+  ],
+  "rotate": 0,
+  "crops": [
+    {
+      "tile": "wwww",
+      "mode": "legacy",
+      "box": null,
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

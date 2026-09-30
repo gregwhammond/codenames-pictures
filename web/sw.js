@@ -1,9 +1,11 @@
 // Service worker: keeps the app shell and card pictures available offline so
 // the game loads instantly on repeat visits. Game state always comes live
 // from the server.
-const VERSION = 'v1';
+const VERSION = 'v2';
 const SHELL = `shell-${VERSION}`;
 const CARDS = 'cards-v1';
+const LARGE = 'cards-large-v1';
+const LARGE_MAX = 150; // zoom pictures are big: keep only the most recent
 const SHELL_FILES = [
   '/',
   '/app.js',
@@ -20,7 +22,7 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((k) => k !== SHELL && k !== CARDS).map((k) => caches.delete(k))))
+      .then((keys) => Promise.all(keys.filter((k) => k !== SHELL && k !== CARDS && k !== LARGE).map((k) => caches.delete(k))))
       .then(() => self.clients.claim()),
   );
 });
@@ -44,6 +46,20 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Zoom-size pictures: cache first too, in their own trimmed cache.
+  if (url.pathname.startsWith('/cards-large/')) {
+    event.respondWith(
+      caches.open(LARGE).then(async (cache) => {
+        const hit = await cache.match(req);
+        if (hit) return hit;
+        const res = await fetch(req);
+        if (res.ok) event.waitUntil(cache.put(req, res.clone()).then(() => trim(cache, LARGE_MAX)));
+        return res;
+      }),
+    );
+    return;
+  }
+
   // App shell: network first so updates land right away, cache when offline.
   const key = req.mode === 'navigate' ? '/' : req;
   event.respondWith(
@@ -55,3 +71,9 @@ self.addEventListener('fetch', (event) => {
       .catch(() => caches.match(key)),
   );
 });
+
+// Drop the oldest entries (cache keys come back in insertion order).
+async function trim(cache, max) {
+  const keys = await cache.keys();
+  await Promise.all(keys.slice(0, Math.max(0, keys.length - max)).map((k) => cache.delete(k)));
+}

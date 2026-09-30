@@ -1,0 +1,19 @@
+{
+  "id": "uuu",
+  "source": "art/source/uuu.png",
+  "source_sha256": "7ee699074c628264e1a5afc4ecc2fad975c61fc73d6af881c96caad7dc6890d3",
+  "source_size": [
+    944,
+    944
+  ],
+  "rotate": 0,
+  "crops": [
+    {
+      "tile": "uuu",
+      "mode": "legacy",
+      "box": null,
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}
