@@ -26,6 +26,7 @@ func main() {
 	addr := flag.String("addr", "", "listen address (default :$PORT or :8080)")
 	cardsDir := flag.String("cards", "", "serve card pictures from this folder instead of the built-in set")
 	largeDir := flag.String("large", "cards-large", "folder of zoom-size card pictures served at /cards-large/")
+	dev := flag.Bool("dev", false, "serve the four-phone development harness at /dev")
 	flag.Parse()
 
 	if *addr == "" {
@@ -51,6 +52,9 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	if *dev {
+		srv.EnableDev()
+	}
 	go func() {
 		for range time.Tick(10 * time.Minute) {
 			srv.rooms.Sweep(6 * time.Hour)
@@ -58,6 +62,13 @@ func main() {
 	}()
 
 	log.Printf("Codenames Pictures listening on %s with %d pictures", *addr, len(srv.images))
+	if *dev {
+		host := *addr
+		if strings.HasPrefix(host, ":") {
+			host = "localhost" + host
+		}
+		log.Printf("development harness at http://%s/dev", host)
+	}
 	log.Fatal(http.ListenAndServe(*addr, srv))
 }
 
@@ -65,6 +76,7 @@ type Server struct {
 	mux    *http.ServeMux
 	rooms  *Rooms
 	images []string
+	web    fs.FS
 }
 
 func listImages(cards fs.FS) ([]string, error) {
@@ -93,7 +105,7 @@ func NewServer(web, cards, large fs.FS) (*Server, error) {
 	if len(images) < CardCount {
 		return nil, fmt.Errorf("need at least %d pictures, found %d", CardCount, len(images))
 	}
-	s := &Server{mux: http.NewServeMux(), rooms: NewRooms(images), images: images}
+	s := &Server{mux: http.NewServeMux(), rooms: NewRooms(images), images: images, web: web}
 
 	s.mux.HandleFunc("POST /api/rooms", s.handleCreate)
 	s.mux.HandleFunc("POST /api/rooms/{code}/{action}", s.handleAction)
@@ -110,6 +122,11 @@ func NewServer(web, cards, large fs.FS) (*Server, error) {
 		s.mux.Handle("GET /cards-large/", http.NotFoundHandler())
 	}
 	s.mux.Handle("GET /", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		// The dev harness lives at /dev (see EnableDev), never as a plain file.
+		if r.URL.Path == "/dev.html" {
+			http.NotFound(w, r)
+			return
+		}
 		// Room links like /r/ABCD load the app shell.
 		if strings.HasPrefix(r.URL.Path, "/r/") {
 			r2 := r.Clone(r.Context())
@@ -123,6 +140,23 @@ func NewServer(web, cards, large fs.FS) (*Server, error) {
 }
 
 func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) { s.mux.ServeHTTP(w, r) }
+
+// EnableDev serves the four-phone development harness (web/dev.html) at /dev.
+// Without it the path falls through to the app's file server, which has no
+// file called "dev" and answers 404; /dev.html is refused there too, so the
+// harness is reachable only through this route. Call it once, before serving.
+func (s *Server) EnableDev() {
+	s.mux.HandleFunc("GET /dev", func(w http.ResponseWriter, r *http.Request) {
+		b, err := fs.ReadFile(s.web, "dev.html")
+		if err != nil {
+			http.NotFound(w, r)
+			return
+		}
+		w.Header().Set("Cache-Control", "no-cache")
+		w.Header().Set("Content-Type", "text/html; charset=utf-8")
+		_, _ = w.Write(b)
+	})
+}
 
 // cacheFor marks successful responses as cacheable for d. Errors (a picture
 // that isn't there yet) are left uncached so they don't stick in browsers.

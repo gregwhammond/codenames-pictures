@@ -200,6 +200,55 @@ func TestUnknownPlayerAndRoom(t *testing.T) {
 	}
 }
 
+func TestDevHarness(t *testing.T) {
+	cards := fstest.MapFS{}
+	for _, img := range testImages(25) {
+		cards[strings.TrimPrefix(img, "/cards/")] = &fstest.MapFile{Data: []byte("x")}
+	}
+	web := fstest.MapFS{
+		"index.html": &fstest.MapFile{Data: []byte("<html>app</html>")},
+		"dev.html":   &fstest.MapFile{Data: []byte("<html>harness</html>")},
+	}
+	for _, enabled := range []bool{false, true} {
+		s, err := NewServer(web, cards, nil)
+		if err != nil {
+			t.Fatal(err)
+		}
+		if enabled {
+			s.EnableDev()
+		}
+		ts := httptest.NewServer(s)
+		// The raw file is never served, with or without the harness enabled.
+		raw, err := http.Get(ts.URL + "/dev.html")
+		if err != nil {
+			t.Fatal(err)
+		}
+		raw.Body.Close()
+		if raw.StatusCode != 404 {
+			t.Fatalf("dev=%v: /dev.html gave %d, want 404", enabled, raw.StatusCode)
+		}
+		resp, err := http.Get(ts.URL + "/dev")
+		if err != nil {
+			t.Fatal(err)
+		}
+		body, _ := io.ReadAll(resp.Body)
+		resp.Body.Close()
+		ts.Close()
+		served := resp.StatusCode == 200 && string(body) == "<html>harness</html>"
+		if served != enabled {
+			t.Fatalf("dev=%v: /dev gave %d %q", enabled, resp.StatusCode, body)
+		}
+		if enabled {
+			if ct := resp.Header.Get("Content-Type"); !strings.HasPrefix(ct, "text/html") {
+				t.Fatalf("content-type %q", ct)
+			}
+			if cc := resp.Header.Get("Cache-Control"); cc != "no-cache" {
+				t.Fatalf("cache-control %q", cc)
+			}
+		}
+	}
+}
+
 func TestLargeCards(t *testing.T) {
 	ts := testServer(t)
 	resp, err := http.Get(ts.URL + "/cards-large/0.jpg")
