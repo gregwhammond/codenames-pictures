@@ -1,0 +1,28 @@
+{
+  "id": "yokai08",
+  "source": "art/source/night-parade/yokai08.jpg",
+  "source_sha256": "f1eacfc91dcf576741f07ffc0d60d61809ba6cad9248d55ecc08a7c709278bd1",
+  "source_size": [
+    1280,
+    884
+  ],
+  "rotate": 0,
+  "meta": {
+    "title": "Inugami (Edo-period scroll)",
+    "from": "phone photo from Greg (Screenshot_2026-09-29_at_22.40.47.png), straightened, trimmed and evened out"
+  },
+  "crops": [
+    {
+      "tile": "yokai08",
+      "mode": "crop",
+      "box": {
+        "x": 0.17469,
+        "y": 0.0,
+        "w": 0.69063,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}
