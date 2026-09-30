@@ -31,6 +31,8 @@ self.addEventListener('fetch', (event) => {
   const req = event.request;
   const url = new URL(req.url);
   if (req.method !== 'GET' || url.origin !== location.origin || url.pathname.startsWith('/api/')) return;
+  // The dev harness page is a navigation too; keep it out of the shell cache.
+  if (url.pathname === '/dev' || url.pathname === '/dev.html') return;
 
   // Pictures never change for a given name: cache first.
   if (url.pathname.startsWith('/cards/')) {

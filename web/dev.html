@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codenames Pictures — dev harness</title>
+<style>
+  :root {
+    --bg: #1d2130;
+    --panel: #2e3449;
+    --line: #3d4560;
+    --text: #f3f1ea;
+    --muted: #a7adc2;
+    --accent: #f4c84a;
+    --red: #e5483c;
+    --blue: #2f80e4;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font: 14px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+
+  button, select { font: inherit; color: inherit; }
+
+  /* ---------- Toolbar ---------- */
+
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 16px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+  }
+  .toolbar h1 { margin: 0 8px 0 0; font-size: 1rem; font-weight: 700; }
+
+  .btn {
+    appearance: none;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    border-radius: 999px;
+    padding: 7px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    min-height: 34px;
+  }
+  .btn:disabled { opacity: .45; cursor: not-allowed; }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #1b1b1b; }
+
+  select {
+    appearance: none;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    border-radius: 999px;
+    padding: 7px 14px;
+    min-height: 34px;
+    cursor: pointer;
+  }
+
+  label.check { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+  label.check input { width: 16px; height: 16px; accent-color: var(--accent); }
+
+  .code {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+  }
+  .code b {
+    font: 700 1.1rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    letter-spacing: .12em;
+    color: var(--accent);
+    user-select: all;
+    -webkit-user-select: all;
+  }
+  .error { width: 100%; color: var(--red); font-weight: 600; }
+  .error:empty { display: none; }
+
+  /* ---------- Phones ---------- */
+
+  .phones {
+    display: flex;
+    gap: 24px;
+    padding: 20px 16px 28px;
+    overflow-x: auto;
+    align-items: flex-start;
+  }
+
+  .phone { flex: 0 0 auto; }
+  .phone header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .phone header::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--dot);
+  }
+  .phone.red { --dot: var(--red); }
+  .phone.blue { --dot: var(--blue); }
+
+  .bezel {
+    padding: 12px;
+    border-radius: 36px;
+    background: #0d0f16;
+    border: 1px solid var(--line);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .45);
+  }
+  .bezel iframe {
+    display: block;
+    width: var(--w);
+    height: var(--h);
+    border: 0;
+    border-radius: 26px;
+    background: var(--bg);
+  }
+  .landscape .bezel iframe { width: var(--h); height: var(--w); }
+
+  .status {
+    margin-top: 8px;
+    color: var(--muted);
+    font: 12px/1.3 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: var(--w);
+  }
+  .landscape .status { max-width: var(--h); }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <h1>Dev harness</h1>
+  <button class="btn primary" id="new">New game</button>
+  <button class="btn" id="start">Start</button>
+  <select id="size" aria-label="Phone size">
+    <option value="390x844">390×844 iPhone 14</option>
+    <option value="360x780">360×780 Android</option>
+    <option value="430x932">430×932 iPhone 15 Pro Max</option>
+  </select>
+  <label class="check"><input type="checkbox" id="landscape"> Landscape</label>
+  <button class="btn" id="reset">Reset</button>
+  <span class="code">Room <b id="code">—</b></span>
+  <div class="error" id="error"></div>
+</div>
+
+<div class="phones" id="phones">
+  <div class="phone red">
+    <header>Red spymaster</header>
+    <div class="bezel"><iframe id="f1" src="/?dev=1" title="Red spymaster"></iframe></div>
+    <div class="status" id="s1">not seated</div>
+  </div>
+  <div class="phone red">
+    <header>Red guesser</header>
+    <div class="bezel"><iframe id="f2" src="/?dev=2" title="Red guesser"></iframe></div>
+    <div class="status" id="s2">not seated</div>
+  </div>
+  <div class="phone blue">
+    <header>Blue spymaster</header>
+    <div class="bezel"><iframe id="f3" src="/?dev=3" title="Blue spymaster"></iframe></div>
+    <div class="status" id="s3">not seated</div>
+  </div>
+  <div class="phone blue">
+    <header>Blue guesser</header>
+    <div class="bezel"><iframe id="f4" src="/?dev=4" title="Blue guesser"></iframe></div>
+    <div class="status" id="s4">not seated</div>
+  </div>
+</div>
+
+<script>
+  'use strict';
+
+  // One seat per frame; frame N runs the app with ?dev=N so its storage is isolated.
+  const SEATS = [
+    { name: 'Ann', team: 'red', role: 'spymaster' },
+    { name: 'Bob', team: 'red', role: 'guesser' },
+    { name: 'Cat', team: 'blue', role: 'spymaster' },
+    { name: 'Dan', team: 'blue', role: 'guesser' },
+  ];
+
+  const $ = (id) => document.getElementById(id);
+  const frames = SEATS.map((_, i) => $('f' + (i + 1)));
+  const statuses = SEATS.map((_, i) => $('s' + (i + 1)));
+
+  let code = null;      // current room code, or null before New game
+  let busy = false;     // a POST /api/rooms is in flight
+
+  function post(frame, msg) {
+    if (frame.contentWindow) frame.contentWindow.postMessage(msg, location.origin);
+  }
+
+  function setError(text) {
+    $('error').textContent = text || '';
+  }
+
+  function setCode(c) {
+    code = c;
+    $('code').textContent = c || '—';
+  }
+
+  // Attach the load handlers once, before any src changes. Each handler seats
+  // its player only for the room the frame just loaded (guarded by `code`).
+  frames.forEach((frame, i) => {
+    frame.addEventListener('load', () => {
+      let path = '';
+      try { path = frame.contentWindow.location.pathname; } catch (_) { return; }
+      if (!code || path !== '/r/' + code) return;
+      post(frame, { type: 'dev-seat', ...SEATS[i] });
+      statuses[i].textContent = SEATS[i].name + ' · joining ' + code + '…';
+    });
+  });
+
+  // ---------- Toolbar actions ----------
+
+  async function newGame() {
+    if (busy) return;
+    busy = true;
+    $('new').disabled = true;
+    setError('');
+    try {
+      const res = await fetch('/api/rooms', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: '{}',
+      });
+      if (!res.ok) throw new Error('POST /api/rooms failed: ' + res.status + ' ' + res.statusText);
+      const data = await res.json();
+      if (!data || !data.code) throw new Error('POST /api/rooms returned no room code');
+      setCode(String(data.code).toUpperCase());
+      frames.forEach((frame, i) => {
+        statuses[i].textContent = SEATS[i].name + ' · loading…';
+        frame.src = '/r/' + code + '?dev=' + (i + 1);
+      });
+    } catch (err) {
+      setError(err && err.message ? err.message : String(err));
+    } finally {
+      busy = false;
+      $('new').disabled = false;
+    }
+  }
+
+  function startGame() {
+    if (!code) { setError('Create a room first.'); return; }
+    setError('');
+    post(frames[0], { type: 'dev-start' });
+  }
+
+  function reset() {
+    setError('');
+    setCode(null);
+    try {
+      const doomed = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith('cnp.dev')) doomed.push(k);
+      }
+      doomed.forEach((k) => localStorage.removeItem(k));
+    } catch (_) { /* storage unavailable; frames still reload */ }
+    frames.forEach((frame, i) => {
+      statuses[i].textContent = 'not seated';
+      frame.src = '/?dev=' + (i + 1);
+    });
+  }
+
+  function applySize() {
+    const [w, h] = $('size').value.split('x');
+    const phones = $('phones');
+    phones.style.setProperty('--w', w + 'px');
+    phones.style.setProperty('--h', h + 'px');
+    phones.classList.toggle('landscape', $('landscape').checked);
+  }
+
+  $('new').addEventListener('click', newGame);
+  $('start').addEventListener('click', startGame);
+  $('reset').addEventListener('click', reset);
+  $('size').addEventListener('change', applySize);
+  $('landscape').addEventListener('change', applySize);
+  applySize();
+
+  // ---------- Status from frames ----------
+
+  window.addEventListener('message', (e) => {
+    if (e.origin !== location.origin) return;
+    const msg = e.data;
+    if (!msg || msg.type !== 'dev-state') return;
+    const i = frames.findIndex((f) => f.contentWindow === e.source);
+    if (i < 0) return;
+    // After a harness reload the frames rejoin their room on their own; pick
+    // the code back up from them so the toolbar and Start keep working.
+    if (msg.code && msg.code !== code && !busy) setCode(msg.code);
+    const parts = [SEATS[i].name];
+    if (msg.code) {
+      parts.push('in ' + msg.code);
+      const seat = msg.seat;
+      parts.push(seat && seat.team ? seat.team + ' ' + (seat.role || '') : 'unseated');
+      parts.push(msg.phase || 'lobby');
+    } else {
+      parts.push('not seated');
+    }
+    statuses[i].textContent = parts.join(' · ');
+  });
+</script>
+</body>
+</html>

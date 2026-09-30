@@ -27,6 +27,10 @@ go test ./...           # rules and server tests
 
 To try it with several players on one computer, open the site in a few private windows. To try it on phones on the same Wi-Fi, open `http://<your-computer's-ip>:8080`. Installing as an app needs HTTPS, which any of the hosts below give you.
 
+### Developing
+
+Run `go run . -dev` and open http://localhost:8080/dev for a harness that shows four phone-sized frames side by side, one per seat, each with its own identity (`?dev=1` to `?dev=4`, kept apart in local storage). **New game** creates a room and seats all four players; **Start** begins the game from the red spymaster's phone; the size select and **Landscape** change the phone shape; **Reset** forgets the dev identities and returns every frame to the home screen. The harness is only served with `-dev`.
+
 ## Deploying
 
 The server is a single small binary with the web app and pictures built in. Game state lives in memory, so run **one instance** (restarting it ends games in progress). Rooms are cleaned up after 6 hours without activity.

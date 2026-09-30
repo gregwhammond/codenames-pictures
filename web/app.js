@@ -2,12 +2,17 @@
 
 // ---------- Local identity ----------
 
+// Dev harness: "?dev=N" runs this frame as player N with its own storage, so
+// four copies of the app can share one browser. Read once; the URL keeps it.
+const DEV = ((new URLSearchParams(location.search).get('dev') || '').match(/^[1-9]$/) || [null])[0];
+const STORE_PREFIX = DEV ? `cnp.dev${DEV}.` : 'cnp.';
+
 const store = {
   get(key, fallback = '') {
-    try { return localStorage.getItem(`cnp.${key}`) ?? fallback; } catch { return fallback; }
+    try { return localStorage.getItem(`${STORE_PREFIX}${key}`) ?? fallback; } catch { return fallback; }
   },
   set(key, value) {
-    try { localStorage.setItem(`cnp.${key}`, value); } catch { /* private mode */ }
+    try { localStorage.setItem(`${STORE_PREFIX}${key}`, value); } catch { /* private mode */ }
   },
 };
 
@@ -126,7 +131,7 @@ async function joinRoom(code, name) {
   const view = await api(`/${code}/join`, { name });
   ui.code = code;
   store.set('room', code);
-  if (location.pathname !== `/r/${code}`) history.replaceState(null, '', `/r/${code}`);
+  if (location.pathname !== `/r/${code}`) history.replaceState(null, '', `/r/${code}${location.search}`);
   setRoom(view);
   connect();
 }
@@ -167,7 +172,7 @@ function leaveLocal(message) {
   Object.assign(ui, { code: null, room: null, events: null, selected: null, showMenu: false });
   closeViewer();
   store.set('room', '');
-  history.replaceState(null, '', '/');
+  history.replaceState(null, '', `/${location.search}`);
   render();
   if (message) toast(message);
 }
@@ -219,6 +224,7 @@ function setRoom(view) {
   ui.lastNeedsMe = nowNeedsMe;
   keepAwake();
   render();
+  if (DEV) postDevState();
 }
 
 // ---------- Rendering helpers ----------
@@ -873,7 +879,7 @@ document.addEventListener('click', async (e) => {
 
   switch (t.id) {
     case 'forget-code':
-      history.replaceState(null, '', '/');
+      history.replaceState(null, '', `/${location.search}`);
       renderHome();
       break;
     case 'share':
@@ -917,7 +923,7 @@ document.addEventListener('keydown', (e) => {
 
 // ---------- Boot ----------
 
-(async function boot() {
+const booted = (async function boot() {
   const urlCode = roomCodeFromURL();
   const saved = store.get('room');
   const name = store.get('name');
@@ -928,7 +934,7 @@ document.addEventListener('keydown', (e) => {
       await joinRoom(code, name);
     } catch {
       store.set('room', '');
-      if (!urlCode) history.replaceState(null, '', '/');
+      if (!urlCode) history.replaceState(null, '', `/${location.search}`);
       render();
     }
   } else {
@@ -936,6 +942,51 @@ document.addEventListener('keydown', (e) => {
   }
 })();
 
-if ('serviceWorker' in navigator) {
+// A dev frame skips the service worker: four frames sharing one shell cache
+// would fight over it, and the harness wants a fresh app every reload.
+if ('serviceWorker' in navigator && !DEV) {
   window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+}
+
+// ---------- Dev harness ----------
+// The harness page (/dev) drives each frame from the parent window: seat a
+// named player, start the game, and read back where the frame is.
+
+function postDevState() {
+  // A dev frame opened as a top-level page has no parent: posting to ourselves
+  // would re-enter the listener below and loop forever.
+  if (window.parent === window) return;
+  const p = me();
+  try {
+    window.parent.postMessage({
+      type: 'dev-state',
+      dev: DEV,
+      code: ui.code,
+      you: ui.room && ui.room.you,
+      seat: p ? { name: p.name, team: p.team, role: p.role } : null,
+      phase: ui.room && ui.room.game ? ui.room.game.phase : null,
+    }, location.origin);
+  } catch { /* no parent */ }
+}
+
+if (DEV) {
+  window.addEventListener('message', async (e) => {
+    if (window.parent === window) return;
+    if (e.origin !== location.origin || e.source !== window.parent) return;
+    const msg = e.data;
+    if (!msg || typeof msg !== 'object') return;
+    if (msg.type !== 'dev-seat' && msg.type !== 'dev-start') return;
+    try {
+      await booted;
+      if (msg.type === 'dev-seat') {
+        if (!ui.code) await joinRoom(roomCodeFromURL(), msg.name);
+        await act('sit', { team: msg.team, role: msg.role });
+      } else if (msg.type === 'dev-start') {
+        await act('start');
+      }
+    } catch (err) {
+      toast(err.message);
+    }
+    postDevState();
+  });
 }
