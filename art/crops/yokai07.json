@@ -1,0 +1,28 @@
+{
+  "id": "yokai07",
+  "source": "art/source/night-parade/yokai07.jpg",
+  "source_sha256": "c86ade4e18b8a4b677cea382eea48858b6b0e80d1604d82c19d71feeb89cc32d",
+  "source_size": [
+    1120,
+    1410
+  ],
+  "rotate": 0,
+  "meta": {
+    "title": "Night Parade of 100 Demons book page",
+    "from": "phone photo from Greg (Screenshot_2026-09-29_at_22.40.39.png), straightened, trimmed and evened out"
+  },
+  "crops": [
+    {
+      "tile": "yokai07",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.18284,
+        "w": 1.0,
+        "h": 0.79433
+      },
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}
