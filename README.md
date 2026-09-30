@@ -11,7 +11,9 @@ It's built for **2 teams of 2** (one spymaster and one guesser per team). Teams 
 3. On your turn, your spymaster types a **one-word clue** and a number: how many pictures it points to.
 4. Guessers tap a picture to zoom in, then tap **Guess this picture**. Press and hold any picture to see it full screen and pinch to zoom into the detail. A correct guess lets you keep going, up to one more than the number. You can end the turn after at least one guess.
 5. A beige bystander or the other team's picture ends your turn. The **black assassin** loses the game instantly.
-6. The first team to find all their pictures wins. The team that goes first has 8 pictures, the other has 7.
+6. The first team to find all their pictures wins. The team that goes first has 9 pictures, the other has 8.
+
+The board is always 25 pictures in a 5×5 grid: 9 for the starting team, 8 for the other, 7 bystanders and 1 assassin.
 
 A clue of **0** or **∞** gives unlimited guesses, as in the board game.
 
@@ -78,13 +80,13 @@ Every picture has an **original** that is never edited and a **crop record** in 
 - **Build:** `python3 scripts/build_cards.py` writes the tiles, and `--check` reports anything out of date. If an original is missing, the build skips that record and deletes nothing. Commit `art/crops/`, `web/cards/` and `cards-large/`, then redeploy.
 - **Use a folder without rebuilding:** `./codenames-pictures -cards /path/to/pictures` serves pictures straight from a folder (square images work best).
 
-You need at least 20 pictures; more gives more variety between games. Two crops of the same source are never dealt onto one board. `art/doodles-from-upstream/` holds the hand-drawn doodles from the project this was forked from, which aren't in the default set.
+You need at least 25 pictures; more gives more variety between games. Two crops of the same source are never dealt onto one board. `art/doodles-from-upstream/` holds the hand-drawn doodles from the project this was forked from, which aren't in the default set.
 
 ## How it works
 
 | Piece | What it does |
 |---|---|
-| `game.go` | The rules: dealing 20 cards (8/7/4/1), clues, guesses, turn passing, winning. |
+| `game.go` | The rules: dealing 25 cards (9/8/7/1), clues, guesses, turn passing, winning. |
 | `room.go` | Rooms, seats, and what each player is allowed to see (guessers never receive the key). |
 | `main.go` | HTTP API (`POST /api/rooms/{code}/{action}`) and the live event stream (`GET /api/rooms/{code}/events`). |
 | `web/` | The phone app: plain HTML, CSS and JavaScript with no build step, a service worker for offline loading, and the app manifest. |

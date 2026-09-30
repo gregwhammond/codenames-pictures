@@ -221,14 +221,12 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   padding: 4px 8px;
 }
 
+/* 25 pictures in a 5x5 square that fills the shorter side of its container. */
 .board {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 6px;
-  width: min(100cqw, 79cqh);
-}
-@container (orientation: landscape) {
-  .board { grid-template-columns: repeat(5, 1fr); width: min(100cqw, 123cqh); }
+  width: min(100cqw, 100cqh);
 }
 
 .tile {

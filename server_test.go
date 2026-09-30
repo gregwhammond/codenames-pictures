@@ -129,6 +129,9 @@ func TestFullGameOverHTTP(t *testing.T) {
 		t.Fatalf("start: %s", raw)
 	}
 	g := waitFor(func(v RoomView) bool { return v.Game != nil }).Game
+	if len(g.Cards) != CardCount {
+		t.Fatalf("got %d cards", len(g.Cards))
+	}
 	for _, c := range g.Cards {
 		if c.Team != "" {
 			t.Fatal("guesser must not see the key")

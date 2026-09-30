@@ -270,7 +270,7 @@ function renderHome() {
     <section class="home">
       <div class="logo" aria-hidden="true">${logoTiles()}</div>
       <h1>Codenames <span>Pictures</span></h1>
-      <p class="tagline">Two teams. Twenty pictures. One-word clues.</p>
+      <p class="tagline">Two teams. Twenty-five pictures. One-word clues.</p>
       <form id="home-form" class="card-panel" autocomplete="off">
         <label for="name">Your name</label>
         <input id="name" name="name" maxlength="20" value="${esc(name)}" placeholder="e.g. Greg" required>
@@ -309,7 +309,7 @@ function howToPlay() {
       <li>Guessers tap pictures. A correct guess lets you keep going, up to one more than the number.</li>
       <li>Tap a picture to see it bigger. <b>Press and hold</b> (or right-click) to open it full screen and pinch to zoom into the details.</li>
       <li>Hit a beige bystander or the other team's picture and your turn ends. Hit the <b>black assassin</b> and you lose instantly.</li>
-      <li>The first team to find all their pictures wins. The team that goes first has 8, the other has 7.</li>
+      <li>The first team to find all their pictures wins. The team that goes first has 9, the other has 8.</li>
     </ol>`;
 }
 

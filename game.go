@@ -9,13 +9,13 @@ import (
 	"unicode/utf8"
 )
 
-// Codenames Pictures uses a 5x4 grid: the starting team has 8 agents, the
-// other team 7, plus 4 bystanders and 1 assassin.
+// Codenames Pictures uses a 5x5 grid: the starting team has 9 agents, the
+// other team 8, plus 7 bystanders and 1 assassin.
 const (
-	CardCount       = 20
-	StartingAgents  = 8
-	SecondAgents    = 7
-	BystanderCount  = 4
+	CardCount       = 25
+	StartingAgents  = 9
+	SecondAgents    = 8
+	BystanderCount  = 7
 	Unlimited       = -1 // clue number meaning "any number of guesses"
 	maxClueWordSize = 40
 )

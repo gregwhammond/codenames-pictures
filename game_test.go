@@ -46,8 +46,8 @@ func TestDealComposition(t *testing.T) {
 			}
 			seen[c.Image] = true
 		}
-		if len(g.Cards) != 20 || counts[g.StartingTeam] != 8 || counts[g.StartingTeam.Other()] != 7 ||
-			counts[Neutral] != 4 || counts[Assassin] != 1 {
+		if len(g.Cards) != 25 || counts[g.StartingTeam] != 9 || counts[g.StartingTeam.Other()] != 8 ||
+			counts[Neutral] != 7 || counts[Assassin] != 1 {
 			t.Fatalf("bad deal: %v", counts)
 		}
 		if g.Turn != g.StartingTeam || g.Phase != PhaseClue {
@@ -57,8 +57,12 @@ func TestDealComposition(t *testing.T) {
 }
 
 func TestTooFewImages(t *testing.T) {
-	if _, err := NewGame(testImages(19), rand.New(rand.NewSource(1))); err != ErrTooFewCards {
-		t.Fatalf("got %v", err)
+	rnd := rand.New(rand.NewSource(1))
+	if _, err := NewGame(testImages(24), rnd); err != ErrTooFewCards {
+		t.Fatalf("24 pictures: got %v", err)
+	}
+	if _, err := NewGame(testImages(25), rnd); err != nil {
+		t.Fatalf("25 pictures: got %v", err)
 	}
 }
 
@@ -155,7 +159,7 @@ func TestFindingAllAgentsWins(t *testing.T) {
 	if g.Winner != team || g.WinReason != "agents" {
 		t.Fatalf("winner %s reason %s", g.Winner, g.WinReason)
 	}
-	if len(g.Log) != 1 || len(g.Log[0].Guesses) != 8 {
+	if len(g.Log) != 1 || len(g.Log[0].Guesses) != StartingAgents {
 		t.Fatalf("log: %+v", g.Log)
 	}
 }
@@ -212,7 +216,7 @@ func groupedImages(n, extras int) []string {
 }
 
 func TestDealOnePerGroup(t *testing.T) {
-	images := groupedImages(25, 2) // 75 images, 25 groups
+	images := groupedImages(30, 2) // 90 images, 30 groups
 	seenExtra := false
 	for seed := int64(0); seed < 200; seed++ {
 		g, err := NewGame(images, rand.New(rand.NewSource(seed)))
