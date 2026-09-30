@@ -179,8 +179,12 @@ func (r *Room) SetScreen(p *Player, tall bool) {
 }
 
 // boardSize is 25 pictures whenever someone at the table has room for a 5x5
-// board, and 24 (6x4) when every seated player is on a phone held upright.
+// board, and 24 (6x4) when every seated player is on a phone held upright
+// or the picture pool is too small for 25.
 func (r *Room) boardSize() int {
+	if len(r.images) < BigBoard {
+		return TallBoard // a small picture folder can still deal the 6x4 board
+	}
 	seated := 0
 	for _, p := range r.players {
 		if p.Role == "" {

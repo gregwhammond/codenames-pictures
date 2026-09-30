@@ -6,9 +6,9 @@ import (
 )
 
 // seatedRoom seats two spymasters and two guessers.
-func seatedRoom(t *testing.T) (*Room, []*Player) {
+func seatedRoom(t *testing.T, pictures int) (*Room, []*Player) {
 	t.Helper()
-	r := &Room{Code: "TEST", byToken: map[string]*Player{}, images: testImages(40), rnd: rand.New(rand.NewSource(1))}
+	r := &Room{Code: "TEST", byToken: map[string]*Player{}, images: testImages(pictures), rnd: rand.New(rand.NewSource(1))}
 	seats := []struct {
 		team Team
 		role Role
@@ -28,7 +28,7 @@ func seatedRoom(t *testing.T) (*Room, []*Player) {
 }
 
 func TestBoardSizeFollowsScreens(t *testing.T) {
-	r, players := seatedRoom(t)
+	r, players := seatedRoom(t, 40)
 	deal := func() int {
 		t.Helper()
 		r.game = nil
@@ -56,5 +56,15 @@ func TestBoardSizeFollowsScreens(t *testing.T) {
 	r.SetScreen(watcher, false)
 	if n := deal(); n != TallBoard {
 		t.Fatalf("spectator on a wide screen: %d cards", n)
+	}
+}
+
+func TestSmallPoolDealsTallBoard(t *testing.T) {
+	r, _ := seatedRoom(t, MinImages) // nobody is on a tall phone
+	if err := r.Start(); err != nil {
+		t.Fatal(err)
+	}
+	if n := len(r.game.Cards); n != TallBoard {
+		t.Fatalf("%d pictures should deal the 6x4 board, got %d cards", MinImages, n)
 	}
 }
