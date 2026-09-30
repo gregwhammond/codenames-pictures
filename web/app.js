@@ -975,13 +975,17 @@ if (DEV) {
     if (e.origin !== location.origin || e.source !== window.parent) return;
     const msg = e.data;
     if (!msg || typeof msg !== 'object') return;
-    if (msg.type !== 'dev-seat' && msg.type !== 'dev-start') return;
+    if (!['dev-seat', 'dev-start', 'dev-redeal'].includes(msg.type)) return;
     try {
       await booted;
       if (msg.type === 'dev-seat') {
         if (!ui.code) await joinRoom(roomCodeFromURL(), msg.name);
         await act('sit', { team: msg.team, role: msg.role });
       } else if (msg.type === 'dev-start') {
+        await act('start');
+      } else if (msg.type === 'dev-redeal') {
+        // Start refuses while a game is running, so pass through the lobby.
+        if (ui.room && ui.room.game) await act('lobby');
         await act('start');
       }
     } catch (err) {

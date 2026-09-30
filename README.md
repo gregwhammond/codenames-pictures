@@ -29,7 +29,7 @@ To try it with several players on one computer, open the site in a few private w
 
 ### Developing
 
-Run `go run . -dev` and open http://localhost:8080/dev for a harness that shows four phone-sized frames side by side, one per seat, each with its own identity (`?dev=1` to `?dev=4`, kept apart in local storage). **New game** creates a room and seats all four players; **Start** begins the game from the red spymaster's phone; the size select and **Landscape** change the phone shape; **Reset** forgets the dev identities and returns every frame to the home screen. The harness is only served with `-dev`.
+Run `go run . -dev` and open http://localhost:8080/dev for a harness that shows four phone-sized frames side by side, one per seat, each with its own identity (`?dev=1` to `?dev=4`, kept apart in local storage). **New game** creates a room and seats all four players; **Start** begins the game from the red spymaster's phone; **New board** (top right) deals fresh cards in the same room, keeping the seats; the size select and **Landscape** change the phone shape; **Reset** forgets the dev identities and returns every frame to the home screen. The harness is only served with `-dev`.
 
 ## Deploying
 

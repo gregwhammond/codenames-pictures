@@ -44,6 +44,7 @@
     border-bottom: 1px solid var(--line);
   }
   .toolbar h1 { margin: 0 8px 0 0; font-size: 1rem; font-weight: 700; }
+  .toolbar #redeal { margin-left: auto; }
 
   .btn {
     appearance: none;
@@ -160,6 +161,7 @@
   <button class="btn" id="reset">Reset</button>
   <span class="code">Room <b id="code">—</b></span>
   <div class="error" id="error"></div>
+  <button class="btn primary" id="redeal" title="Deal a fresh board in this room, keeping the seats">New board</button>
 </div>
 
 <div class="phones" id="phones">
@@ -263,6 +265,14 @@
     post(frames[0], { type: 'dev-start' });
   }
 
+  // A fresh board in the same room: the red spymaster's frame sends the room
+  // back to the lobby (seats are kept) and starts again.
+  function redeal() {
+    if (!code) { setError('Create a room first.'); return; }
+    setError('');
+    post(frames[0], { type: 'dev-redeal' });
+  }
+
   function reset() {
     setError('');
     setCode(null);
@@ -290,6 +300,7 @@
 
   $('new').addEventListener('click', newGame);
   $('start').addEventListener('click', startGame);
+  $('redeal').addEventListener('click', redeal);
   $('reset').addEventListener('click', reset);
   $('size').addEventListener('change', applySize);
   $('landscape').addEventListener('change', applySize);
