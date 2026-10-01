@@ -108,7 +108,7 @@ def unrecorded_sources(records):
     known = {r.get("source") for r in records}
     out = []
     for _, path in make_legacy_records.source_files(folder):
-        rel = path.relative_to(croplib.REPO).as_posix()
+        rel = croplib.repo_relative(path)
         if rel not in known:
             out.append(rel)
     return out

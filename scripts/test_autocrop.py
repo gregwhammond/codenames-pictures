@@ -327,5 +327,21 @@ class UpdateRecordTest(unittest.TestCase):
             croplib.validate_record(rec)
 
 
+class ThinPictureTest(unittest.TestCase):
+    def test_very_thin_pictures_get_the_centred_square(self):
+        # so thin that no window fits the working copy: used to crash propose()
+        for size in ((5000, 40), (40, 5000), (3000, 2), (2, 3000), (900, 5), (1, 1)):
+            p = autocrop.propose(Image.new("RGB", size, PAPER))
+            self.assertEqual(len(p["boxes"]), 1, size)
+            box = p["boxes"][0]["box"]
+            croplib.check_box(box)
+            w, h = size
+            self.assertTrue(is_square(box, w, h), (size, box))
+            self.assertAlmostEqual(box["x"] + box["w"] / 2, 0.5, delta=0.01)
+            self.assertAlmostEqual(box["y"] + box["h"] / 2, 0.5, delta=0.01)
+            self.assertEqual(p["mode"], "crop" if w == h else "fit", size)
+            self.assertEqual(p["candidates"], [])
+
+
 if __name__ == "__main__":
     unittest.main()

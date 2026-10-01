@@ -24,18 +24,18 @@ import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import croplib  # noqa: E402
-from PIL import Image  # noqa: E402
 
 EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".bmp"}
 
 
 def legacy_record(path):
     rid = path.stem.replace(" ", "_")
-    with Image.open(path) as im:
-        size = list(im.size)
+    # The size as displayed (after EXIF orientation), like import_picks.py
+    # and the Crop Studio use.
+    size = list(croplib.oriented_size(path))
     return {
         "id": rid,
-        "source": path.relative_to(croplib.REPO).as_posix(),
+        "source": croplib.repo_relative(path),
         "source_sha256": croplib.sha256_file(path),
         "source_size": size,
         "rotate": 0,
@@ -60,8 +60,7 @@ def refresh(record, path):
               f"(check it in the Crop Studio, or delete {croplib.record_path(record['id'])} to start again)",
               file=sys.stderr)
         return False
-    with Image.open(path) as im:
-        size = list(im.size)
+    size = list(croplib.oriented_size(path))
     record["source_sha256"] = sha
     record["source_size"] = size
     croplib.save_record(record)
@@ -71,7 +70,7 @@ def refresh(record, path):
 def orphans(source_dir, present):
     """Records whose source lies under source_dir but whose file is gone."""
     try:
-        prefix = source_dir.relative_to(croplib.REPO).as_posix().rstrip("/") + "/"
+        prefix = croplib.repo_relative(source_dir).rstrip("/") + "/"
     except ValueError:
         return []
     if prefix == "./":
@@ -92,7 +91,7 @@ def make_records(source_dir, prune=False):
             continue
         seen[rid] = path
         try:
-            rel = path.relative_to(croplib.REPO).as_posix()
+            rel = croplib.repo_relative(path)
             present.add(rel)
             rpath = croplib.record_path(rid)
             if rpath.exists():
@@ -108,6 +107,13 @@ def make_records(source_dir, prune=False):
                     kept += 1
                 continue
             croplib.save_record(legacy_record(path))
+            if croplib.group_of(rid) != rid:
+                # The build and the game take a trailing -b ... -z for "another
+                # crop of the same picture", so this one would never be dealt
+                # on the same board as its namesake.
+                print(f"warning: {path} is named like an extra crop of {croplib.group_of(rid)!r} "
+                      f"(the -{rid[-1]} ending); it will be treated as the same picture when dealing. "
+                      f"Rename the file if it is a different picture", file=sys.stderr)
         except Exception as err:  # noqa: BLE001 - report and carry on
             print(f"error: {path}: {err}", file=sys.stderr)
             failed += 1

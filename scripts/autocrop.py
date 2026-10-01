@@ -652,6 +652,21 @@ def propose(im, min_side_px=0):
     h, w, _ = rgb.shape
     W, H = im.size
     scale = W / w
+
+    def centred():
+        # Nothing to score: offer the centred square, and letterbox the
+        # picture rather than crop it when it is far from square.
+        box = croplib.square_box(W / 2, H / 2, min(W, H), W, H)
+        return {
+            "mode": "fit" if max(W, H) / min(W, H) >= FIT_ASPECT else "crop",
+            "boxes": [{"box": {k: float(v) for k, v in box.items()}, "score": 0.0}],
+            "candidates": [],
+            "confidence": 0.0,
+        }
+
+    if min(h, w) < 4:
+        # Too thin for the features (a few pixels across at working size).
+        return centred()
     feats = _features(rgb, _work(im, 2 * WORK))
     interest, text = feats["interest"], feats["text"]
     ints = _integrals(interest, text)
@@ -661,6 +676,9 @@ def propose(im, min_side_px=0):
     # whole picture
     win = _windows(interest, text, content, min(cx1 - cx0, cy1 - cy0),
                    MIN_FRAC * min(cx1 - cx0, cy1 - cy0), ints, local=True)
+    if not len(win):
+        # No window fits (the content is only a few pixels across).
+        return centred()
     best = win[np.argmax(win[:, 3])]
     chosen = [best]
 

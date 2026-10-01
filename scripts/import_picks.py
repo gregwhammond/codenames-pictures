@@ -493,7 +493,7 @@ def _meta(cid, index, entry, collection, obtained, image_url):
 def new_record(pid, path, size, meta):
     return {
         "id": pid,
-        "source": path.relative_to(croplib.REPO).as_posix(),
+        "source": croplib.repo_relative(path),
         "source_sha256": croplib.sha256_file(path),
         "source_size": list(size),
         "rotate": 0,
@@ -757,7 +757,7 @@ def import_one(item, bundles, args, stats):
     stats["records_updated"].append(pid)
     if dry:
         return
-    record["source"] = target.relative_to(croplib.REPO).as_posix()
+    record["source"] = croplib.repo_relative(target)
     record["source_sha256"] = sha
     record["source_size"] = list(size)
     old_meta = record.get("meta") if isinstance(record.get("meta"), dict) else {}

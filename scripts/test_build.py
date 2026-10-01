@@ -373,6 +373,103 @@ class BuildTest(unittest.TestCase):
         rgb = Image.new("RGB", (4, 4), (10, 20, 30))
         self.assertIs(self.croplib.to_8bit(rgb), rgb)
 
+    def test_exif_rotated_picture_gets_its_displayed_size(self):
+        src = self.repo / "art" / "source"
+        src.mkdir(parents=True)
+        exif = Image.Exif()
+        exif[0x0112] = 6  # rotate 90 degrees to display
+        Image.new("RGB", (600, 400), (40, 120, 200)).save(src / "turned.jpg", exif=exif)
+        Image.new("RGB", (600, 400), (40, 120, 200)).save(src / "plain.jpg")
+        code, log = self.legacy_run(src)
+        self.assertEqual(code, 0, log)
+        rec = self.croplib.load_record(self.croplib.record_path("turned"))
+        self.assertEqual(rec["source_size"], [400, 600])
+        self.assertEqual(self.croplib.open_source(rec).size, (400, 600))
+        self.assertEqual(self.croplib.load_record(self.croplib.record_path("plain"))["source_size"], [600, 400])
+        # a replaced picture is measured the same way
+        exif[0x0112] = 8
+        Image.new("RGB", (900, 500), (200, 120, 40)).save(src / "turned.jpg", exif=exif)
+        code, log = self.legacy_run(src)
+        self.assertEqual(code, 0, log)
+        self.assertIn("updated 1", log)
+        rec = self.croplib.load_record(self.croplib.record_path("turned"))
+        self.assertEqual(rec["source_size"], [500, 900])
+
+    def test_leftover_temp_record_is_ignored(self):
+        self.add_record("A1")
+        crops = self.repo / "art" / "crops"
+        (crops / ".tmp-abc123.json").write_text("{ half written")
+        self.assertEqual([r["id"] for r in self.croplib.load_all_records()], ["A1"])
+        self.assertEqual([p.name for p in self.croplib.record_files()], ["A1.json"])
+        code, log = self.run_build()
+        self.assertEqual(code, 0, log)
+        self.assertEqual(len(self.tiles()), 1)
+
+    def test_source_named_like_an_extra_crop_is_reported(self):
+        src = self.repo / "art" / "source"
+        picture(src / "foo.png", (500, 500))
+        picture(src / "foo-b.png", (500, 500), color=(10, 200, 10))
+        picture(src / "plain-name.png", (500, 500), color=(10, 10, 200))
+        code, log = self.legacy_run(src)
+        self.assertEqual(code, 0, log)
+        warnings = [line for line in log.splitlines() if line.startswith("warning")]
+        self.assertEqual(len(warnings), 1, log)
+        self.assertIn("foo-b.png", warnings[0])
+        self.assertIn("'foo'", warnings[0])
+        # the record is still made, and nothing is renamed
+        self.assertTrue(self.croplib.record_path("foo-b").exists())
+        self.assertTrue((src / "foo-b.png").exists())
+        # only when the record is created, not on every later run
+        code, log = self.legacy_run(src)
+        self.assertNotIn("warning", log)
+
+    def test_repo_relative(self):
+        inside = self.repo / "art" / "source" / "a b.png"
+        self.assertEqual(self.croplib.repo_relative(inside), "art/source/a b.png")
+        self.assertEqual(self.croplib.repo_relative(inside.resolve()), "art/source/a b.png")
+        self.assertEqual(self.croplib.repo_relative(self.croplib.REPO / "originals" / "x.jpg"), "originals/x.jpg")
+        with self.assertRaises(ValueError):
+            self.croplib.repo_relative(self.repo.parent / "elsewhere.png")
+
+
+class SymlinkedRepoTest(BuildTest):
+    """Every build test again, with the repo reached through a symlink (as
+    macOS temp folders are, and as a linked checkout would be)."""
+
+    def setUp(self):
+        super().setUp()
+        self.real = self.repo
+        self.repo = self.real.parent / (self.real.name + "-link")
+        os.symlink(self.real, self.repo, target_is_directory=True)
+        os.environ["CROP_REPO"] = str(self.repo)
+        self.croplib = importlib.reload(self.croplib)
+        self.build = importlib.reload(self.build)
+        self.legacy = importlib.reload(self.legacy)
+
+    def tearDown(self):
+        link, self.repo = self.repo, self.real
+        with contextlib.suppress(OSError):
+            os.unlink(link)
+        super().tearDown()
+
+    def test_paths_through_the_link_and_around_it(self):
+        self.assertNotEqual(str(self.repo), str(self.repo.resolve()))
+        for src in (self.repo / "art" / "source", (self.repo / "art" / "source").resolve()):
+            picture(self.repo / "art" / "source" / "p1.png", (600, 400))
+            code, log = self.legacy_run(src)
+            self.assertEqual(code, 0, log)
+            rec = self.croplib.load_record(self.croplib.record_path("p1"))
+            self.assertEqual(rec["source"], "art/source/p1.png")
+            self.assertEqual(self.build.unrecorded_sources(self.croplib.load_all_records()), [])
+            code, log = self.run_build()
+            self.assertEqual(code, 0, log)
+            self.assertEqual(len(self.tiles()), 1)
+            (self.repo / "art" / "source" / "p1.png").unlink()
+            code, log = self.legacy_run(src, prune=True)
+            self.assertEqual(code, 0, log)
+            self.assertIn("pruned 1", log)
+            self.assertFalse(self.croplib.record_path("p1").exists())
+
 
 if __name__ == "__main__":
     unittest.main()
