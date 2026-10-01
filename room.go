@@ -24,6 +24,11 @@ const (
 	roomCodeLength = 4
 	// Letters that are hard to misread when spoken or typed.
 	roomCodeAlphabet = "ABCDEFGHJKLMNPQRSTUVWXYZ"
+	// maxRooms caps the rooms alive at once, so a loop of "create" requests
+	// can't use up the server's memory. Idle rooms are swept after 6 hours.
+	maxRooms = 2000
+	// maxCodeTries bounds the search for a free room code.
+	maxCodeTries = 64
 )
 
 var (
@@ -37,6 +42,7 @@ var (
 	ErrNotReady      = errors.New("each team needs a spymaster and at least one guesser")
 	ErrNotSpymaster  = errors.New("only the spymaster can do that")
 	ErrNotGuesser    = errors.New("only guessers can do that")
+	ErrTooManyRooms  = errors.New("the server is full right now, please try again in a few minutes")
 )
 
 type Player struct {
@@ -59,9 +65,17 @@ type Room struct {
 	byToken  map[string]*Player
 	game     *Game
 	images   []string
-	rnd      *mrand.Rand
+	seed     int64
+	rnd      *mrand.Rand // made from seed on the first deal: a source is ~5 KB
 	lastSeen time.Time
 	subs     map[chan struct{}]struct{}
+	// rev counts changes, so a client can tell a stale view from a newer one.
+	rev uint64
+	// sawKey remembers the tokens of spymasters who left their seat (by
+	// leaving the room or by being replaced while away) during the running
+	// game, and which team's seat it was. They have seen the key, so they may
+	// only take that seat back or watch until the game is over.
+	sawKey map[string]Team
 }
 
 func newRoom(code string, images []string, seed int64) *Room {
@@ -69,11 +83,14 @@ func newRoom(code string, images []string, seed int64) *Room {
 		Code:     code,
 		byToken:  map[string]*Player{},
 		images:   images,
-		rnd:      mrand.New(mrand.NewSource(seed)),
+		seed:     seed,
 		lastSeen: time.Now(),
 		subs:     map[chan struct{}]struct{}{},
+		sawKey:   map[string]Team{},
 	}
 }
+
+func (r *Room) gameRunning() bool { return r.game != nil && r.game.Phase != PhaseOver }
 
 func randomID() string {
 	b := make([]byte, 8)
@@ -134,23 +151,44 @@ func (r *Room) Do(token string, fn func(p *Player) error) error {
 	return nil
 }
 
+// Sit moves a player to a seat; an empty team and role means standing up.
+//
+// A spymaster seat whose holder has no live connection (their phone died, or
+// they came back as a new player from another browser) can be taken over: the
+// holder is moved out of the seat.
 func (r *Room) Sit(p *Player, team Team, role Role) error {
-	if team == "" && role == "" { // stand up
+	standing := team == "" && role == ""
+	if !standing && (!team.Playable() || (role != Spymaster && role != Guesser)) {
+		return ErrBadSeat
+	}
+	if r.gameRunning() {
+		// A spymaster has seen the key, so they can't move mid-game: not to
+		// another seat, and not by standing up first.
+		if p.Role == Spymaster && (role != Spymaster || team != p.Team) {
+			return ErrGameRunning
+		}
+		// The same goes for one who left the seat earlier in this game: they
+		// may take their own seat back, or watch.
+		if keyTeam, saw := r.sawKey[p.token]; saw && !standing && (role != Spymaster || team != keyTeam) {
+			return ErrGameRunning
+		}
+	}
+	if standing {
 		p.Team, p.Role = "", ""
 		return nil
 	}
-	if !team.Playable() || (role != Spymaster && role != Guesser) {
-		return ErrBadSeat
-	}
-	if r.game != nil && r.game.Phase != PhaseOver && p.Role == Spymaster && (role != Spymaster || team != p.Team) {
-		// A spymaster has seen the key, so they can't move mid-game.
-		return ErrGameRunning
-	}
 	if role == Spymaster {
 		for _, o := range r.players {
-			if o != p && o.Team == team && o.Role == Spymaster {
+			if o == p || o.Team != team || o.Role != Spymaster {
+				continue
+			}
+			if o.Connected() {
 				return ErrSeatTaken
 			}
+			if r.gameRunning() {
+				r.sawKey[o.token] = o.Team
+			}
+			o.Team, o.Role = "", ""
 		}
 	}
 	p.Team, p.Role = team, role
@@ -178,17 +216,22 @@ func (r *Room) Start() error {
 	if !r.seatsReady() {
 		return ErrNotReady
 	}
+	if r.rnd == nil {
+		r.rnd = mrand.New(mrand.NewSource(r.seed))
+	}
 	g, err := NewGame(r.images, r.rnd)
 	if err != nil {
 		return err
 	}
 	r.game = g
+	clear(r.sawKey)
 	return nil
 }
 
 // BackToLobby ends the current game so seats can be changed.
 func (r *Room) BackToLobby() {
 	r.game = nil
+	clear(r.sawKey)
 }
 
 func (r *Room) Clue(p *Player, word string, number int) error {
@@ -221,7 +264,12 @@ func (r *Room) EndTurn(p *Player) error {
 	return r.game.EndTurn(p.Team)
 }
 
+// Leave removes a player from the room. A spymaster who leaves a running game
+// is remembered by token, so rejoining doesn't let them guess with the key.
 func (r *Room) Leave(p *Player) {
+	if r.gameRunning() && p.Role == Spymaster {
+		r.sawKey[p.token] = p.Team
+	}
 	for i, o := range r.players {
 		if o == p {
 			r.players = append(r.players[:i], r.players[i+1:]...)
@@ -257,6 +305,7 @@ func (r *Room) Unsubscribe(token string, ch chan struct{}) {
 }
 
 func (r *Room) changedLocked() {
+	r.rev++
 	r.lastSeen = time.Now()
 	for ch := range r.subs {
 		select {
@@ -304,7 +353,9 @@ type GameView struct {
 }
 
 type RoomView struct {
-	Code    string       `json:"code"`
+	Code string `json:"code"`
+	// Rev grows with every change to the room; clients drop older views.
+	Rev     uint64       `json:"rev"`
 	You     string       `json:"you"`
 	Players []PlayerView `json:"players"`
 	Ready   bool         `json:"ready"`
@@ -319,7 +370,7 @@ func (r *Room) View(token string) (RoomView, bool) {
 	if !ok {
 		return RoomView{}, false
 	}
-	v := RoomView{Code: r.Code, You: me.ID, Ready: r.seatsReady()}
+	v := RoomView{Code: r.Code, Rev: r.rev, You: me.ID, Ready: r.seatsReady()}
 	for _, p := range r.players {
 		v.Players = append(v.Players, PlayerView{p.ID, p.Name, p.Team, p.Role, p.Connected()})
 	}
@@ -329,13 +380,21 @@ func (r *Room) View(token string) (RoomView, bool) {
 			StartingTeam: g.StartingTeam,
 			Turn:         g.Turn,
 			Phase:        g.Phase,
-			Clue:         g.Clue,
 			GuessesLeft:  g.GuessesLeft,
 			GuessesMade:  g.GuessesMade,
 			Remaining:    map[Team]int{Red: g.Remaining(Red), Blue: g.Remaining(Blue)},
 			Winner:       g.Winner,
 			WinReason:    g.WinReason,
-			Log:          g.Log,
+			Log:          make([]LogEntry, len(g.Log)),
+		}
+		// The view is encoded after the lock is released, so it must not
+		// share memory with the game: copy the clue and the whole log.
+		if g.Clue != nil {
+			c := *g.Clue
+			gv.Clue = &c
+		}
+		for i, e := range g.Log {
+			gv.Log[i] = LogEntry{Clue: e.Clue, Guesses: append([]string{}, e.Guesses...)}
 		}
 		for _, c := range g.Cards {
 			cv := CardView{Image: c.Image, Revealed: c.Revealed, RevealedBy: c.RevealedBy}
@@ -352,25 +411,37 @@ func (r *Room) View(token string) (RoomView, bool) {
 // ---- Registry of rooms ----
 
 type Rooms struct {
-	mu     sync.Mutex
-	rooms  map[string]*Room
-	images []string
+	mu      sync.Mutex
+	rooms   map[string]*Room
+	images  []string
+	max     int           // most rooms alive at once
+	newCode func() string // proposes a room code; replaced in tests
 }
 
 func NewRooms(images []string) *Rooms {
-	return &Rooms{rooms: map[string]*Room{}, images: images}
+	return &Rooms{rooms: map[string]*Room{}, images: images, max: maxRooms, newCode: randomCode}
 }
 
-func (rs *Rooms) Create() *Room {
+func randomCode() string {
+	b := make([]byte, roomCodeLength)
+	_, _ = rand.Read(b)
+	for i := range b {
+		b[i] = roomCodeAlphabet[int(b[i])%len(roomCodeAlphabet)]
+	}
+	return string(b)
+}
+
+// Create opens a new room. It fails with ErrTooManyRooms when the server
+// already holds the most rooms it allows, or no free code turns up in a
+// bounded number of tries.
+func (rs *Rooms) Create() (*Room, error) {
 	rs.mu.Lock()
 	defer rs.mu.Unlock()
-	for {
-		b := make([]byte, roomCodeLength)
-		_, _ = rand.Read(b)
-		for i := range b {
-			b[i] = roomCodeAlphabet[int(b[i])%len(roomCodeAlphabet)]
-		}
-		code := string(b)
+	if len(rs.rooms) >= rs.max {
+		return nil, ErrTooManyRooms
+	}
+	for try := 0; try < maxCodeTries; try++ {
+		code := rs.newCode()
 		if _, taken := rs.rooms[code]; taken {
 			continue
 		}
@@ -382,8 +453,9 @@ func (rs *Rooms) Create() *Room {
 		}
 		room := newRoom(code, rs.images, s)
 		rs.rooms[code] = room
-		return room
+		return room, nil
 	}
+	return nil, ErrTooManyRooms
 }
 
 func (rs *Rooms) Get(code string) (*Room, bool) {

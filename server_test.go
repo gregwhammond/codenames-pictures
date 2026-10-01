@@ -86,6 +86,12 @@ func TestFullGameOverHTTP(t *testing.T) {
 			t.Fatalf("sit: %s", raw)
 		}
 	}
+	// The red spymaster is connected, so the seat can't be taken from them.
+	spyEvents, err := http.Get(base + "events?token=" + seats[0].token)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer spyEvents.Body.Close()
 	if status, _, _ := post(t, base+"sit", map[string]any{"token": seats[1].token, "team": Red, "role": Spymaster}); status != http.StatusConflict {
 		t.Fatal("second red spymaster should be refused")
 	}
@@ -296,5 +302,233 @@ func TestLargeCardsFolderMissing(t *testing.T) {
 		if resp.StatusCode != 200 {
 			t.Fatalf("card: %d", resp.StatusCode)
 		}
+	}
+}
+
+func get(t *testing.T, url string) (*http.Response, string) {
+	t.Helper()
+	resp, err := http.Get(url)
+	if err != nil {
+		t.Fatal(err)
+	}
+	body, _ := io.ReadAll(resp.Body)
+	resp.Body.Close()
+	return resp, string(body)
+}
+
+func TestManifestContentType(t *testing.T) {
+	cards := fstest.MapFS{}
+	for _, img := range testImages(25) {
+		cards[strings.TrimPrefix(img, "/cards/")] = &fstest.MapFile{Data: []byte("x")}
+	}
+	web := fstest.MapFS{
+		"index.html":           &fstest.MapFile{Data: []byte("<html>app</html>")},
+		"manifest.webmanifest": &fstest.MapFile{Data: []byte(`{"name":"x"}`)},
+	}
+	s, err := NewServer(web, cards, nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	ts := httptest.NewServer(s)
+	defer ts.Close()
+	resp, body := get(t, ts.URL+"/manifest.webmanifest")
+	if resp.StatusCode != 200 || body != `{"name":"x"}` {
+		t.Fatalf("manifest: %d %q", resp.StatusCode, body)
+	}
+	if ct := resp.Header.Get("Content-Type"); ct != "application/manifest+json" {
+		t.Fatalf("content-type %q", ct)
+	}
+}
+
+// A folder of pictures given with -cards: only the pictures that can be dealt
+// are served, whatever their names, and nothing is listed.
+func TestCardsFolder(t *testing.T) {
+	pic := func(s string) *fstest.MapFile { return &fstest.MapFile{Data: []byte(s)} }
+	cards := fstest.MapFS{
+		"odd #1?.jpg":         pic("hash"),
+		"100% sure.png":       pic("percent"),
+		"sub/in a folder.jpg": pic("sub"),
+		"notes.txt":           pic("private notes"),
+		".hidden.jpg":         pic("hidden file"),
+		".private/secret.jpg": pic("hidden folder"),
+		".private/config":     pic("config"),
+		"sub/.cache/old.jpg":  pic("nested hidden folder"),
+	}
+	for _, img := range testImages(25) {
+		cards[strings.TrimPrefix(img, "/cards/")] = pic("x")
+	}
+	large := fstest.MapFS{"0.jpg": pic("big"), "sub/in a folder.jpg": pic("bigsub")}
+	web := fstest.MapFS{
+		"index.html":     pic("<html>app</html>"),
+		"icons/icon.png": pic("icon"),
+	}
+	s, err := NewServer(web, cards, large)
+	if err != nil {
+		t.Fatal(err)
+	}
+	ts := httptest.NewServer(s)
+	defer ts.Close()
+
+	if len(s.images) != 28 {
+		t.Fatalf("dealing %d pictures, want 28: %v", len(s.images), s.images)
+	}
+	want := map[string]string{
+		"/cards/odd%20%231%3F.jpg":       "hash",
+		"/cards/100%25%20sure.png":       "percent",
+		"/cards/sub/in%20a%20folder.jpg": "sub",
+		"/cards/0.jpg":                   "x",
+	}
+	dealt := map[string]bool{}
+	for _, img := range s.images {
+		dealt[img] = true
+		if strings.Contains(img, "/.") {
+			t.Fatalf("hidden picture %s would be dealt", img)
+		}
+	}
+	for u, content := range want {
+		if !dealt[u] {
+			t.Fatalf("%s is not in the dealt list %v", u, s.images)
+		}
+		resp, body := get(t, ts.URL+u)
+		if resp.StatusCode != 200 || body != content {
+			t.Fatalf("%s: %d %q", u, resp.StatusCode, body)
+		}
+		if cc := resp.Header.Get("Cache-Control"); cc != "public, max-age=2592000" {
+			t.Fatalf("%s: cache-control %q", u, cc)
+		}
+	}
+	// The app asks for the zoom picture under the same encoded name.
+	if resp, body := get(t, ts.URL+"/cards-large/sub/in%20a%20folder.jpg"); resp.StatusCode != 200 || body != "bigsub" {
+		t.Fatalf("large picture in a folder: %d %q", resp.StatusCode, body)
+	}
+	if g := imageGroup("/cards/odd%20%231%3F.jpg"); g != "odd #1?" {
+		t.Fatalf("group %q", g)
+	}
+
+	for _, p := range []string{
+		"/cards/", "/cards/sub/", "/cards/sub", "/cards/notes.txt", "/cards/.hidden.jpg",
+		"/cards/.private/secret.jpg", "/cards/.private/config", "/cards/.private/", "/cards/sub/.cache/old.jpg",
+		"/cards/nope.jpg", "/cards-large/", "/cards-large/sub/", "/cards-large/sub", "/icons/", "/icons",
+	} {
+		resp, body := get(t, ts.URL+p)
+		if resp.StatusCode != 404 {
+			t.Fatalf("%s: got %d %q, want 404", p, resp.StatusCode, body)
+		}
+		if strings.Contains(body, "<a href") || strings.Contains(body, "<pre>") {
+			t.Fatalf("%s lists the folder: %q", p, body)
+		}
+		if cc := resp.Header.Get("Cache-Control"); strings.Contains(cc, "max-age") {
+			t.Fatalf("%s: a 404 should not be cached long: %q", p, cc)
+		}
+	}
+	for p, content := range map[string]string{"/": "<html>app</html>", "/icons/icon.png": "icon", "/r/ABCD": "<html>app</html>"} {
+		if resp, body := get(t, ts.URL+p); resp.StatusCode != 200 || body != content {
+			t.Fatalf("%s: %d %q", p, resp.StatusCode, body)
+		}
+	}
+}
+
+// In -cards mode the picture URLs carry a version, so a replaced file gets a
+// new URL and phones (which cache pictures by URL) fetch it again.
+func TestCardsFolderVersions(t *testing.T) {
+	stamp := time.Date(2026, 1, 2, 3, 4, 5, 0, time.UTC)
+	cards := fstest.MapFS{}
+	for _, img := range testImages(25) {
+		cards[strings.TrimPrefix(img, "/cards/")] = &fstest.MapFile{Data: []byte("x"), ModTime: stamp}
+	}
+	cards["S014-07-b #2.jpg"] = &fstest.MapFile{Data: []byte("x"), ModTime: stamp}
+	web := fstest.MapFS{"index.html": &fstest.MapFile{Data: []byte("<html>app</html>")}}
+
+	list := func(versioned bool) map[string]string {
+		t.Helper()
+		s, err := newServer(web, cards, nil, versioned)
+		if err != nil {
+			t.Fatal(err)
+		}
+		byName := map[string]string{}
+		for _, img := range s.images {
+			name, _, _ := strings.Cut(img, "?")
+			byName[name] = img
+		}
+		return byName
+	}
+
+	if got := list(false)["/cards/0.jpg"]; got != "/cards/0.jpg" {
+		t.Fatalf("built-in pictures should keep their plain names, got %s", got)
+	}
+	before := list(true)
+	if !strings.HasPrefix(before["/cards/0.jpg"], "/cards/0.jpg?v=") {
+		t.Fatalf("no version on %s", before["/cards/0.jpg"])
+	}
+	if again := list(true); again["/cards/0.jpg"] != before["/cards/0.jpg"] {
+		t.Fatal("version changed although the file did not")
+	}
+	cards["0.jpg"] = &fstest.MapFile{Data: []byte("x"), ModTime: stamp.Add(time.Second)}
+	cards["1.jpg"] = &fstest.MapFile{Data: []byte("xy"), ModTime: stamp}
+	after := list(true)
+	for _, name := range []string{"/cards/0.jpg", "/cards/1.jpg"} {
+		if after[name] == before[name] {
+			t.Fatalf("%s kept the version %s after the file changed", name, after[name])
+		}
+	}
+	if after["/cards/2.jpg"] != before["/cards/2.jpg"] {
+		t.Fatal("an untouched file changed version")
+	}
+
+	// A versioned URL still loads and still groups by source picture.
+	s, err := newServer(web, cards, nil, true)
+	if err != nil {
+		t.Fatal(err)
+	}
+	ts := httptest.NewServer(s)
+	defer ts.Close()
+	extra := after["/cards/S014-07-b%20%232.jpg"]
+	if extra == "" {
+		t.Fatalf("missing encoded name in %v", after)
+	}
+	if resp, body := get(t, ts.URL+extra); resp.StatusCode != 200 || body != "x" {
+		t.Fatalf("%s: %d %q", extra, resp.StatusCode, body)
+	}
+	if g := imageGroup("/cards/S014-07-b.jpg?v=0123abcd"); g != "S014-07" {
+		t.Fatalf("group %q", g)
+	}
+}
+
+func TestRoomCapOverHTTP(t *testing.T) {
+	cards := fstest.MapFS{}
+	for _, img := range testImages(25) {
+		cards[strings.TrimPrefix(img, "/cards/")] = &fstest.MapFile{Data: []byte("x")}
+	}
+	s, err := NewServer(fstest.MapFS{"index.html": &fstest.MapFile{Data: []byte("app")}}, cards, nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	s.rooms.max = 2
+	ts := httptest.NewServer(s)
+	defer ts.Close()
+	for i := 0; i < 2; i++ {
+		if status, _, raw := post(t, ts.URL+"/api/rooms", nil); status != http.StatusCreated {
+			t.Fatalf("create %d: %d %s", i, status, raw)
+		}
+	}
+	status, _, raw := post(t, ts.URL+"/api/rooms", nil)
+	var body struct{ Error string }
+	_ = json.Unmarshal([]byte(raw), &body)
+	if status != http.StatusServiceUnavailable || body.Error != ErrTooManyRooms.Error() {
+		t.Fatalf("over the cap: %d %s", status, raw)
+	}
+}
+
+// A view sent over HTTP carries the room's revision.
+func TestViewsCarryRev(t *testing.T) {
+	ts := testServer(t)
+	_, _, raw := post(t, ts.URL+"/api/rooms", nil)
+	var created struct{ Code string }
+	_ = json.Unmarshal([]byte(raw), &created)
+	base := ts.URL + "/api/rooms/" + created.Code + "/"
+	_, first, _ := post(t, base+"join", map[string]string{"token": "a-player-token-0001", "name": "A"})
+	_, second, _ := post(t, base+"sit", map[string]any{"token": "a-player-token-0001", "team": Red, "role": Guesser})
+	if first.Rev == 0 || second.Rev <= first.Rev {
+		t.Fatalf("rev %d then %d", first.Rev, second.Rev)
 	}
 }

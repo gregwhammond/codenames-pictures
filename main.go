@@ -7,9 +7,12 @@ import (
 	"errors"
 	"flag"
 	"fmt"
+	"hash/fnv"
 	"io/fs"
 	"log"
+	"mime"
 	"net/http"
+	"net/url"
 	"os"
 	"path"
 	"sort"
@@ -21,6 +24,12 @@ import (
 var embedded embed.FS
 
 var imageExtensions = map[string]bool{".jpg": true, ".jpeg": true, ".png": true, ".webp": true, ".gif": true, ".svg": true}
+
+func init() {
+	// Go's built-in table has no entry for the app manifest, and the
+	// distroless image has no /etc/mime.types to fall back on.
+	_ = mime.AddExtensionType(".webmanifest", "application/manifest+json")
+}
 
 func main() {
 	addr := flag.String("addr", "", "listen address (default :$PORT or :8080)")
@@ -48,7 +57,10 @@ func main() {
 	if st, err := os.Stat(*largeDir); err != nil || !st.IsDir() {
 		log.Printf("no large pictures folder %q: /cards-large/ will return 404", *largeDir)
 	}
-	srv, err := NewServer(web, cards, os.DirFS(*largeDir))
+	// Built-in tiles carry a hash of their crop in the file name. Pictures
+	// from a folder don't, so their URLs get a version that changes when the
+	// file does: phones cache pictures for a long time.
+	srv, err := newServer(web, cards, os.DirFS(*largeDir), *cardsDir != "")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -79,26 +91,78 @@ type Server struct {
 	web    fs.FS
 }
 
-func listImages(cards fs.FS) ([]string, error) {
+// listImages finds the pictures to deal. It returns their URLs (each path
+// segment percent-encoded, so names with "#", "?" or "%" still load) and the
+// set of file paths those URLs stand for. Hidden files and folders are left
+// out. With versioned set, each URL ends in "?v=" plus a short hash of the
+// file's size and modification time.
+func listImages(cards fs.FS, versioned bool) ([]string, map[string]bool, error) {
 	var images []string
+	files := map[string]bool{}
 	err := fs.WalkDir(cards, ".", func(p string, d fs.DirEntry, err error) error {
 		if err != nil {
 			return err
 		}
-		if !d.IsDir() && imageExtensions[strings.ToLower(path.Ext(p))] && !strings.HasPrefix(d.Name(), ".") {
-			images = append(images, "/cards/"+p)
+		hidden := strings.HasPrefix(d.Name(), ".") && p != "."
+		if d.IsDir() {
+			if hidden {
+				return fs.SkipDir
+			}
+			return nil
 		}
+		if hidden || !imageExtensions[strings.ToLower(path.Ext(p))] {
+			return nil
+		}
+		segments := strings.Split(p, "/")
+		for i, s := range segments {
+			segments[i] = url.PathEscape(s)
+		}
+		u := "/cards/" + strings.Join(segments, "/")
+		if versioned {
+			if info, err := d.Info(); err == nil {
+				h := fnv.New32a()
+				fmt.Fprintf(h, "%d %d", info.Size(), info.ModTime().UnixNano())
+				u += fmt.Sprintf("?v=%08x", h.Sum32())
+			}
+		}
+		images = append(images, u)
+		files[p] = true
 		return nil
 	})
 	sort.Strings(images)
-	return images, err
+	return images, files, err
+}
+
+// noListing answers 404 for folders instead of letting the file server list
+// their contents. The root is let through when allowRoot is set (it serves
+// index.html).
+func noListing(fsys fs.FS, prefix string, allowRoot bool, h http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		name := strings.Trim(path.Clean("/"+strings.TrimPrefix(r.URL.Path, prefix)), "/")
+		if name == "" {
+			name = "."
+		}
+		if name != "." || !allowRoot {
+			if st, err := fs.Stat(fsys, name); err == nil && st.IsDir() {
+				http.NotFound(w, r)
+				return
+			}
+		}
+		h.ServeHTTP(w, r)
+	})
 }
 
 // NewServer builds the HTTP handler. large holds the zoom-size pictures served
 // at /cards-large/ under the same file names as /cards/; it may be nil or point
 // at a missing folder, in which case those requests get 404.
 func NewServer(web, cards, large fs.FS) (*Server, error) {
-	images, err := listImages(cards)
+	return newServer(web, cards, large, false)
+}
+
+// newServer is NewServer with the choice of versioned picture URLs (see
+// listImages), used when the pictures come from a folder.
+func newServer(web, cards, large fs.FS, versioned bool) (*Server, error) {
+	images, cardFiles, err := listImages(cards, versioned)
 	if err != nil {
 		return nil, err
 	}
@@ -112,11 +176,20 @@ func NewServer(web, cards, large fs.FS) (*Server, error) {
 	s.mux.HandleFunc("GET /api/rooms/{code}/events", s.handleEvents)
 	s.mux.HandleFunc("GET /api/health", func(w http.ResponseWriter, r *http.Request) { fmt.Fprintln(w, "ok") })
 
-	static := http.FileServerFS(web)
-	cardServer := http.StripPrefix("/cards/", http.FileServerFS(cards))
+	static := noListing(web, "/", true, http.FileServerFS(web))
+	// Only the pictures that can be dealt are served: nothing else that
+	// happens to be in the folder, and no listing of it.
+	cardServer := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		name := strings.TrimPrefix(r.URL.Path, "/cards/")
+		if !cardFiles[name] {
+			http.NotFound(w, r)
+			return
+		}
+		http.ServeFileFS(w, r, cards, name)
+	})
 	s.mux.Handle("GET /cards/", cacheFor(30*24*time.Hour, cardServer))
 	if large != nil {
-		largeServer := http.StripPrefix("/cards-large/", http.FileServerFS(large))
+		largeServer := noListing(large, "/cards-large/", false, http.StripPrefix("/cards-large/", http.FileServerFS(large)))
 		s.mux.Handle("GET /cards-large/", cacheFor(30*24*time.Hour, largeServer))
 	} else {
 		s.mux.Handle("GET /cards-large/", http.NotFoundHandler())
@@ -201,7 +274,11 @@ func writeError(w http.ResponseWriter, status int, err error) {
 }
 
 func (s *Server) handleCreate(w http.ResponseWriter, r *http.Request) {
-	room := s.rooms.Create()
+	room, err := s.rooms.Create()
+	if err != nil {
+		writeError(w, http.StatusServiceUnavailable, err)
+		return
+	}
 	writeJSON(w, http.StatusCreated, map[string]string{"code": room.Code})
 }
 
