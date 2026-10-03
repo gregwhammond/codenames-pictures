@@ -6,7 +6,7 @@ It's built for **2 teams of 2** (one spymaster and one guesser per team). Teams 
 
 ## How to play
 
-1. Split into **Red** and **Blue**. Each team has one **spymaster** and at least one **guesser**.
+1. Split into **Orange** and **Purple**. Each team has one **spymaster** and at least one **guesser**.
 2. Only the spymasters see which pictures belong to which team (the coloured frames).
 3. On your turn, your spymaster types a **one-word clue** and a number: how many pictures it points to.
 4. Guessers tap a picture to zoom in, then tap **Guess this picture**. Press and hold any picture to see it full screen and pinch to zoom into the detail. A correct guess lets you keep going, up to one more than the number. You can end the turn after at least one guess.
@@ -31,7 +31,7 @@ To try it with several players on one computer, open the site in a few private w
 
 ### Developing
 
-Run `go run . -dev` and open http://localhost:8080/dev for a harness that shows four phone-sized frames side by side, one per seat, each with its own identity (`?dev=1` to `?dev=4`, kept apart in local storage). **New game** creates a room and seats all four players; **Start** begins the game from the red spymaster's phone; **New board** (top right) deals fresh cards in the same room, keeping the seats; the size select and **Landscape** change the phone shape; **Reset** forgets the dev identities and returns every frame to the home screen. The harness is only served with `-dev`.
+Run `go run . -dev` and open http://localhost:8080/dev for a harness that shows four phone-sized frames side by side, one per seat, each with its own identity (`?dev=1` to `?dev=4`, kept apart in local storage). **New game** creates a room and seats all four players; **Start** begins the game from the orange spymaster's phone; **New board** (top right) deals fresh cards in the same room, keeping the seats; the size select and **Landscape** change the phone shape; **Reset** forgets the dev identities and returns every frame to the home screen. The harness is only served with `-dev`.
 
 ## Deploying
 
