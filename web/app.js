@@ -47,7 +47,7 @@ const $modal = document.getElementById('modal');
 const $viewer = document.getElementById('viewer');
 const $toast = document.getElementById('toast');
 
-const TEAM_NAME = { red: 'Red', blue: 'Blue' };
+const TEAM_NAME = { red: 'Orange', blue: 'Purple' };
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 // Zoom-size pictures live at /cards-large/ under the same file name.
@@ -303,12 +303,12 @@ function logoTiles() {
 function howToPlay() {
   return `
     <ol>
-      <li>Split into <b>Red</b> and <b>Blue</b>. Each team has one <b>spymaster</b> and one or more <b>guessers</b>.</li>
+      <li>Split into <b>Orange</b> and <b>Purple</b>. Each team has one <b>spymaster</b> and one or more <b>guessers</b>.</li>
       <li>Only spymasters see which pictures belong to which team.</li>
       <li>On your turn, your spymaster gives a <b>one-word clue</b> and a number: how many pictures it points to.</li>
       <li>Guessers tap pictures. A correct guess lets you keep going, up to one more than the number.</li>
       <li>Tap a picture to see it bigger. <b>Press and hold</b> (or right-click) to open it full screen and pinch to zoom into the details.</li>
-      <li>Hit a beige bystander or the other team's picture and your turn ends. Hit the <b>black assassin</b> and you lose instantly.</li>
+      <li>Hit a white bystander or the other team's picture and your turn ends. Hit the <b>checkered assassin</b> and you lose instantly.</li>
       <li>The first team to find all their pictures wins. The team that goes first has 9, the other has 8.</li>
     </ol>`;
 }
@@ -373,8 +373,8 @@ function renderLobby() {
         <button class="btn" id="share">Invite friends</button>
       </header>
       <div class="teams">
-        <div class="team team-red"><h2>Red team</h2>${slot('red', 'spymaster')}${slot('red', 'guesser')}</div>
-        <div class="team team-blue"><h2>Blue team</h2>${slot('blue', 'spymaster')}${slot('blue', 'guesser')}</div>
+        <div class="team team-red"><h2>Orange team</h2>${slot('red', 'spymaster')}${slot('red', 'guesser')}</div>
+        <div class="team team-blue"><h2>Purple team</h2>${slot('blue', 'spymaster')}${slot('blue', 'guesser')}</div>
       </div>
       ${unseated.length ? `<p class="muted waiting">Not on a team yet: ${unseated.map(person).join(', ')}</p>` : ''}
       <div class="lobby-actions">
@@ -418,9 +418,9 @@ function renderGame() {
 
   region($app, 'top', `
     <header class="scorebar">
-      <div class="score red ${g.turn === 'red' && g.phase !== 'over' ? 'active' : ''}"><b>${g.remaining.red}</b><span>Red left</span></div>
+      <div class="score red ${g.turn === 'red' && g.phase !== 'over' ? 'active' : ''}"><b>${g.remaining.red}</b><span>Orange left</span></div>
       <div class="status">${statusLine(g, p)}</div>
-      <div class="score blue ${g.turn === 'blue' && g.phase !== 'over' ? 'active' : ''}"><b>${g.remaining.blue}</b><span>Blue left</span></div>
+      <div class="score blue ${g.turn === 'blue' && g.phase !== 'over' ? 'active' : ''}"><b>${g.remaining.blue}</b><span>Purple left</span></div>
       <button class="menu-btn" id="menu" aria-label="Menu">☰</button>
     </header>
   `);
@@ -516,8 +516,8 @@ function menuSheet(room, g) {
       </ul>
       ${!p?.team && g.phase !== 'over' ? `
         <div class="row">
-          <button class="btn" data-sit="red:guesser">Join Red</button>
-          <button class="btn" data-sit="blue:guesser">Join Blue</button>
+          <button class="btn" data-sit="red:guesser">Join Orange</button>
+          <button class="btn" data-sit="blue:guesser">Join Purple</button>
         </div>` : ''}
       <h4>Clues</h4>
       ${log ? `<ul class="log">${log}</ul>` : '<p class="muted">No clues yet.</p>'}
@@ -540,7 +540,7 @@ function renderModal() {
   const c = g.cards[ui.selected];
   const guessable = canGuess() && !c.revealed;
   const tag = c.team && (c.revealed || me()?.role === 'spymaster' || g.phase === 'over')
-    ? `<span class="key-tag k-${c.team}">${{ red: 'Red agent', blue: 'Blue agent', neutral: 'Bystander', assassin: 'Assassin' }[c.team]}${c.revealed ? ' (revealed)' : ''}</span>`
+    ? `<span class="key-tag k-${c.team}">${{ red: 'Orange agent', blue: 'Purple agent', neutral: 'Bystander', assassin: 'Assassin' }[c.team]}${c.revealed ? ' (revealed)' : ''}</span>`
     : '';
   const html = `
     <div class="zoom-backdrop" data-close></div>
@@ -607,7 +607,7 @@ function syncViewer() {
   const box = $viewer.querySelector('.viewer');
   box.className = `viewer ${c.team ? `k-${c.team}` : ''}`;
   const tag = $viewer.querySelector('.viewer-tag');
-  const label = c.team ? `${{ red: 'Red agent', blue: 'Blue agent', neutral: 'Bystander', assassin: 'Assassin' }[c.team]}${c.revealed ? ' (revealed)' : ''}` : '';
+  const label = c.team ? `${{ red: 'Orange agent', blue: 'Purple agent', neutral: 'Bystander', assassin: 'Assassin' }[c.team]}${c.revealed ? ' (revealed)' : ''}` : '';
   tag.textContent = label;
   tag.hidden = !label;
 }
