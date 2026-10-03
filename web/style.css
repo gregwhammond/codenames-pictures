@@ -223,12 +223,14 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   padding: 4px 8px;
 }
 
-/* 25 pictures in a 5x5 square that fills the shorter side of its container. */
+/* 24 square pictures, always 4 columns by 6 rows, as large as the container
+   allows. Width is capped so the 6 rows (plus 5 gaps) fit the height. */
 .board {
+  --gap: 6px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 6px;
-  width: min(100cqw, 100cqh);
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+  width: min(100cqw, (100cqh - 5 * var(--gap)) * 4 / 6 + 3 * var(--gap));
 }
 
 .tile {
