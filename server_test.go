@@ -24,7 +24,7 @@ func testServer(t *testing.T) *httptest.Server {
 func testServerWithLarge(t *testing.T, large fs.FS) *httptest.Server {
 	t.Helper()
 	cards := fstest.MapFS{}
-	for _, img := range testImages(25) {
+	for _, img := range testImages(24) {
 		cards[strings.TrimPrefix(img, "/cards/")] = &fstest.MapFile{Data: []byte("x")}
 	}
 	web := fstest.MapFS{"index.html": &fstest.MapFile{Data: []byte("<html>app</html>")}}
@@ -205,7 +205,7 @@ func TestUnknownPlayerAndRoom(t *testing.T) {
 
 func TestDevHarness(t *testing.T) {
 	cards := fstest.MapFS{}
-	for _, img := range testImages(25) {
+	for _, img := range testImages(24) {
 		cards[strings.TrimPrefix(img, "/cards/")] = &fstest.MapFile{Data: []byte("x")}
 	}
 	web := fstest.MapFS{
