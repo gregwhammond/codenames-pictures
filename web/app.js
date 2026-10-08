@@ -270,7 +270,7 @@ function renderHome() {
     <section class="home">
       <div class="logo" aria-hidden="true">${logoTiles()}</div>
       <h1>Codenames <span>Pictures</span></h1>
-      <p class="tagline">Two teams. Twenty-five pictures. One-word clues.</p>
+      <p class="tagline">Two teams. Twenty-four pictures. One-word clues.</p>
       <form id="home-form" class="card-panel" autocomplete="off">
         <label for="name">Your name</label>
         <input id="name" name="name" maxlength="20" value="${esc(name)}" placeholder="e.g. Greg" required>
