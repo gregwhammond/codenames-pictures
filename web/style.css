@@ -265,19 +265,16 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .board.spy .tile.k-neutral:not(.revealed)::after, .board.over .tile.k-neutral:not(.revealed)::after {
   display: none;
 }
-/* Orange frame: only the corners, each bracket a quarter of the side long;
-   the straight middle of every side is left transparent. */
+/* Orange team mark: a small black dot tucked into each corner of the
+   picture, about a tenth of the side across; no frame. */
 .board.spy .tile.k-red:not(.revealed)::after, .board.over .tile.k-red:not(.revealed)::after {
-  -webkit-mask:
-    linear-gradient(#000 0 0) left top / 25% 25% no-repeat,
-    linear-gradient(#000 0 0) right top / 25% 25% no-repeat,
-    linear-gradient(#000 0 0) left bottom / 25% 25% no-repeat,
-    linear-gradient(#000 0 0) right bottom / 25% 25% no-repeat;
-  mask:
-    linear-gradient(#000 0 0) left top / 25% 25% no-repeat,
-    linear-gradient(#000 0 0) right top / 25% 25% no-repeat,
-    linear-gradient(#000 0 0) left bottom / 25% 25% no-repeat,
-    linear-gradient(#000 0 0) right bottom / 25% 25% no-repeat;
+  border: 0;
+  --dot: radial-gradient(circle, #000 0 70%, transparent calc(70% + 1px));
+  background:
+    var(--dot) 6% 6% / 10% 10% no-repeat,
+    var(--dot) 94% 6% / 10% 10% no-repeat,
+    var(--dot) 6% 94% / 10% 10% no-repeat,
+    var(--dot) 94% 94% / 10% 10% no-repeat;
 }
 /* Purple team frame: a solid black square on the picture at the middle of
    each edge, about an eighth of the side wide; nothing else. Like every
