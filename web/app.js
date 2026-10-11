@@ -35,7 +35,7 @@ const ui = {
   room: null,        // latest RoomView from the server
   events: null,      // EventSource
   selected: null,    // card index open in the zoom sheet
-  clueNumber: 1,
+  clueNumber: null, // number picked for the clue being written; none until the spymaster taps one
   showMenu: false,
   error: '',
   busy: false,
@@ -215,10 +215,12 @@ function canGuess() {
 }
 
 function setRoom(view) {
-  const hadGame = !!ui.room?.game;
+  const prev = ui.room?.game;
   ui.room = view;
   if (!view.game) ui.selected = null;
-  if (!hadGame && view.game) ui.clueNumber = 1;
+  // Start every new clue with no number picked.
+  const g = view.game;
+  if (g?.phase === 'clue' && (prev?.phase !== 'clue' || prev.turn !== g.turn)) ui.clueNumber = null;
   const nowNeedsMe = needsMe();
   if (nowNeedsMe && !ui.lastNeedsMe && navigator.vibrate) navigator.vibrate([80, 60, 80]);
   ui.lastNeedsMe = nowNeedsMe;
@@ -339,6 +341,7 @@ $app.addEventListener('submit', async (e) => {
     const word = e.target.word.value.trim();
     if (!word) return;
     if (/\s/.test(word)) { toast('Clues are a single word.'); return; }
+    if (ui.clueNumber == null) { toast('Pick a number for your clue.'); return; }
     await act('clue', { word, number: ui.clueNumber });
   }
 });
