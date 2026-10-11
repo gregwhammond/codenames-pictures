@@ -1,7 +1,7 @@
 // Service worker: keeps the app shell and card pictures available offline so
 // the game loads instantly on repeat visits. Game state always comes live
 // from the server.
-const VERSION = 'v6';
+const VERSION = 'v7';
 const SHELL = `shell-${VERSION}`;
 const CARDS = 'cards-v1';
 const LARGE = 'cards-large-v1';

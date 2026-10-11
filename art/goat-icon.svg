@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="96" fill="#1d2130"/><g transform="translate(256 270) scale(1.0) translate(-256 -270)">
+  <!-- horns -->
+  <path d="M196 150 C150 120 120 70 150 30 C165 70 190 100 225 130 Z" fill="#c9a26b" stroke="#3a2a17" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M316 150 C362 120 392 70 362 30 C347 70 322 100 287 130 Z" fill="#c9a26b" stroke="#3a2a17" stroke-width="10" stroke-linejoin="round"/>
+  <!-- ears -->
+  <path d="M175 205 C120 190 70 205 50 235 C90 260 140 255 185 240 Z" fill="#efe6d6" stroke="#3a2a17" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M337 205 C392 190 442 205 462 235 C422 260 372 255 327 240 Z" fill="#efe6d6" stroke="#3a2a17" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M85 233 C115 222 145 224 170 230" stroke="#f2a7a7" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <path d="M427 233 C397 222 367 224 342 230" stroke="#f2a7a7" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <!-- beard -->
+  <path d="M226 400 C230 450 248 485 256 495 C264 485 282 450 286 400 Z" fill="#efe6d6" stroke="#3a2a17" stroke-width="10" stroke-linejoin="round"/>
+  <!-- head -->
+  <path d="M256 120 C330 120 345 190 340 260 C335 330 312 410 256 420 C200 410 177 330 172 260 C167 190 182 120 256 120 Z" fill="#ffffff" stroke="#3a2a17" stroke-width="10" stroke-linejoin="round"/>
+  <!-- tuft -->
+  <path d="M226 130 C232 105 246 98 256 108 C266 96 282 104 286 130 Z" fill="#f4c84a" stroke="#3a2a17" stroke-width="8" stroke-linejoin="round"/>
+  <!-- eyes -->
+  <circle cx="218" cy="235" r="30" fill="#f4c84a" stroke="#3a2a17" stroke-width="8"/>
+  <circle cx="294" cy="235" r="30" fill="#f4c84a" stroke="#3a2a17" stroke-width="8"/>
+  <rect x="198" y="229" width="40" height="12" rx="6" fill="#1b1b1b"/>
+  <rect x="274" y="229" width="40" height="12" rx="6" fill="#1b1b1b"/>
+  <circle cx="228" cy="222" r="6" fill="#fff"/>
+  <circle cx="304" cy="222" r="6" fill="#fff"/>
+  <!-- muzzle -->
+  <ellipse cx="256" cy="355" rx="56" ry="44" fill="#f6c9c9" stroke="#3a2a17" stroke-width="8"/>
+  <ellipse cx="238" cy="345" rx="8" ry="11" fill="#3a2a17"/>
+  <ellipse cx="274" cy="345" rx="8" ry="11" fill="#3a2a17"/>
+  <path d="M232 375 C245 388 267 388 280 375" stroke="#3a2a17" stroke-width="8" stroke-linecap="round" fill="none"/>
+</g></svg>
