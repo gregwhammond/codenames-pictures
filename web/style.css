@@ -279,15 +279,17 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
     linear-gradient(#000 0 0) left bottom / 25% 25% no-repeat,
     linear-gradient(#000 0 0) right bottom / 25% 25% no-repeat;
 }
-/* Purple frame: the reverse, only the middle half of each side; the quarter
-   at each corner is left transparent. */
+/* Purple team frame: black, only a short mark in the middle of each side
+   (a sixth of the side long); the rest is transparent. Like every frame it
+   sits on top of the picture, which fills the whole tile. */
 .board.spy .tile.k-blue:not(.revealed)::after, .board.over .tile.k-blue:not(.revealed)::after {
+  border-color: #000;
   -webkit-mask:
-    linear-gradient(#000 0 0) center / 50% 100% no-repeat,
-    linear-gradient(#000 0 0) center / 100% 50% no-repeat;
+    linear-gradient(#000 0 0) center / 16.7% 100% no-repeat,
+    linear-gradient(#000 0 0) center / 100% 16.7% no-repeat;
   mask:
-    linear-gradient(#000 0 0) center / 50% 100% no-repeat,
-    linear-gradient(#000 0 0) center / 100% 50% no-repeat;
+    linear-gradient(#000 0 0) center / 16.7% 100% no-repeat,
+    linear-gradient(#000 0 0) center / 100% 16.7% no-repeat;
 }
 /* Assassin frame: a black and white checkerboard, cut to a 5px ring. */
 .board.spy .tile.k-assassin:not(.revealed)::after, .board.over .tile.k-assassin:not(.revealed)::after {
