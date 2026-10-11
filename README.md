@@ -1,6 +1,6 @@
-# Codenames Pictures
+# Goat Pic
 
-Play [Codenames Pictures](https://en.wikipedia.org/wiki/Codenames_(board_game)) live with friends, each person on their own phone. One person creates a game and shares the link or 4-letter room code, everyone picks a seat, and the board updates on every phone as soon as anyone plays.
+Goat Pic is [Codenames](https://en.wikipedia.org/wiki/Codenames_(board_game)) played with pictures, live with friends, each person on their own phone. One person creates a game and shares the link or 4-letter room code, everyone picks a seat, and the board updates on every phone as soon as anyone plays.
 
 It's built for **2 teams of 2** (one spymaster and one guesser per team). Teams can have extra guessers, and anyone else who joins can watch. It installs as an app on phones (a PWA): open the site, then use "Add to Home Screen".
 

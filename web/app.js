@@ -269,7 +269,7 @@ function renderHome() {
   region($app, 'home', `
     <section class="home">
       <div class="logo" aria-hidden="true">${logoTiles()}</div>
-      <h1>Codenames <span>Pictures</span></h1>
+      <h1>Goat <span>Pic</span></h1>
       <p class="tagline">Two teams. Twenty-four pictures. One-word clues.</p>
       <form id="home-form" class="card-panel" autocomplete="off">
         <label for="name">Your name</label>
@@ -392,9 +392,9 @@ function renderLobby() {
 
 async function share() {
   const url = inviteURL(ui.code);
-  const text = `Join my Codenames Pictures game! Room code ${ui.code}`;
+  const text = `Join my Goat Pic game! Room code ${ui.code}`;
   if (navigator.share) {
-    try { await navigator.share({ title: 'Codenames Pictures', text, url }); return; } catch { /* cancelled */ }
+    try { await navigator.share({ title: 'Goat Pic', text, url }); return; } catch { /* cancelled */ }
   }
   try {
     await navigator.clipboard.writeText(url);
