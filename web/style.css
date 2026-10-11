@@ -279,9 +279,13 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
     linear-gradient(#000 0 0) left bottom / 25% 25% no-repeat,
     linear-gradient(#000 0 0) right bottom / 25% 25% no-repeat;
 }
-/* Purple frame: the reverse, only the middle half of each side; the quarter
-   at each corner is left transparent. */
+/* Purple team frame: black, only the middle half of each side; the quarter
+   at each corner is left transparent. Like every frame it sits on top of the
+   picture, which fills the whole tile. A thin light line inside keeps the
+   black visible on dark pictures. */
 .board.spy .tile.k-blue:not(.revealed)::after, .board.over .tile.k-blue:not(.revealed)::after {
+  border-color: #000;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .7);
   -webkit-mask:
     linear-gradient(#000 0 0) center / 50% 100% no-repeat,
     linear-gradient(#000 0 0) center / 100% 50% no-repeat;
