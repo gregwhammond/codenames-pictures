@@ -46,8 +46,8 @@ func TestDealComposition(t *testing.T) {
 			}
 			seen[c.Image] = true
 		}
-		if len(g.Cards) != 25 || counts[g.StartingTeam] != 9 || counts[g.StartingTeam.Other()] != 8 ||
-			counts[Neutral] != 7 || counts[Assassin] != 1 {
+		if len(g.Cards) != 24 || counts[g.StartingTeam] != 9 || counts[g.StartingTeam.Other()] != 8 ||
+			counts[Neutral] != 6 || counts[Assassin] != 1 {
 			t.Fatalf("bad deal: %v", counts)
 		}
 		if g.Turn != g.StartingTeam || g.Phase != PhaseClue {
@@ -58,11 +58,11 @@ func TestDealComposition(t *testing.T) {
 
 func TestTooFewImages(t *testing.T) {
 	rnd := rand.New(rand.NewSource(1))
-	if _, err := NewGame(testImages(24), rnd); err != ErrTooFewCards {
-		t.Fatalf("24 pictures: got %v", err)
+	if _, err := NewGame(testImages(23), rnd); err != ErrTooFewCards {
+		t.Fatalf("23 pictures: got %v", err)
 	}
-	if _, err := NewGame(testImages(25), rnd); err != nil {
-		t.Fatalf("25 pictures: got %v", err)
+	if _, err := NewGame(testImages(24), rnd); err != nil {
+		t.Fatalf("24 pictures: got %v", err)
 	}
 }
 
