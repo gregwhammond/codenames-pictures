@@ -534,15 +534,23 @@ body.offline::before {
   transform: translate(-50%, -50%);
   border-radius: 50%;
   background: #000;
+  box-shadow: inset 0 0 0 1px #fff; /* 1px white line inside the edge */
 }
-/* Square team: a black square in each corner, flush with the edges. */
+/* Square team: a black square in each corner, flush with the edges, with a
+   1px white line along its two sides on the picture (each black square is
+   drawn over a white one 1px larger). */
 .viewer.k-blue:not(.revealed) .viewer-pic::after {
   inset: 0;
+  --sq: 11.8%;
   background:
-    linear-gradient(#000 0 0) left top / 9.1% 9.1% no-repeat,
-    linear-gradient(#000 0 0) right top / 9.1% 9.1% no-repeat,
-    linear-gradient(#000 0 0) left bottom / 9.1% 9.1% no-repeat,
-    linear-gradient(#000 0 0) right bottom / 9.1% 9.1% no-repeat;
+    linear-gradient(#000 0 0) left top / calc(var(--sq) - 1px) calc(var(--sq) - 1px) no-repeat,
+    linear-gradient(#000 0 0) right top / calc(var(--sq) - 1px) calc(var(--sq) - 1px) no-repeat,
+    linear-gradient(#000 0 0) left bottom / calc(var(--sq) - 1px) calc(var(--sq) - 1px) no-repeat,
+    linear-gradient(#000 0 0) right bottom / calc(var(--sq) - 1px) calc(var(--sq) - 1px) no-repeat,
+    linear-gradient(#fff 0 0) left top / var(--sq) var(--sq) no-repeat,
+    linear-gradient(#fff 0 0) right top / var(--sq) var(--sq) no-repeat,
+    linear-gradient(#fff 0 0) left bottom / var(--sq) var(--sq) no-repeat,
+    linear-gradient(#fff 0 0) right bottom / var(--sq) var(--sq) no-repeat;
 }
 /* Assassin: a thin black X from corner to corner. */
 .viewer.k-assassin:not(.revealed) .viewer-pic::after {
