@@ -525,27 +525,69 @@ body.offline::before {
   touch-action: none;
   cursor: zoom-in;
 }
-.viewer-img {
-  /* Fill the stage whether the 400px tile or the large picture is showing. */
+.viewer-pic {
+  /* Pictures are square. Fill the stage whether the 400px tile or the large
+     picture is showing; the key mark is drawn on top and zooms with it. */
+  position: relative;
   width: min(100cqw, 100cqh);
-  height: auto;
-  max-height: 100cqh;
-  object-fit: contain;
-  border-radius: 10px;
-  background: #fff;
+  aspect-ratio: 1;
   transform-origin: center center;
   will-change: transform;
   pointer-events: none;
 }
-.viewer.k-red .viewer-img, .viewer.k-blue .viewer-img,
-.viewer.k-neutral .viewer-img, .viewer.k-assassin .viewer-img { outline: 6px solid var(--frame); }
-.viewer.k-assassin .viewer-img { outline: 6px dashed #fff; box-shadow: 0 0 0 6px #000; }
+.viewer-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #fff;
+}
+/* The same black key marks as the board, in the same proportions. Revealed
+   and neutral pictures carry no mark. */
+.viewer:not(.revealed) .viewer-pic::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+/* Circle team: one round black dot at the centre. */
+.viewer.k-red:not(.revealed) .viewer-pic::after {
+  top: 50%; left: 50%;
+  width: 13%; aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #000;
+  box-shadow: inset 0 0 0 1px #fff; /* 1px white line inside the edge */
+}
+/* Square team: a black square in each corner, flush with the edges, with a
+   1px white line along its two sides on the picture (each black square is
+   drawn over a white one 1px larger). */
+.viewer.k-blue:not(.revealed) .viewer-pic::after {
+  inset: 0;
+  --sq: 11.8%;
+  background:
+    linear-gradient(#000 0 0) left top / calc(var(--sq) - 1px) calc(var(--sq) - 1px) no-repeat,
+    linear-gradient(#000 0 0) right top / calc(var(--sq) - 1px) calc(var(--sq) - 1px) no-repeat,
+    linear-gradient(#000 0 0) left bottom / calc(var(--sq) - 1px) calc(var(--sq) - 1px) no-repeat,
+    linear-gradient(#000 0 0) right bottom / calc(var(--sq) - 1px) calc(var(--sq) - 1px) no-repeat,
+    linear-gradient(#fff 0 0) left top / var(--sq) var(--sq) no-repeat,
+    linear-gradient(#fff 0 0) right top / var(--sq) var(--sq) no-repeat,
+    linear-gradient(#fff 0 0) left bottom / var(--sq) var(--sq) no-repeat,
+    linear-gradient(#fff 0 0) right bottom / var(--sq) var(--sq) no-repeat;
+}
+/* Assassin: a thin black X from corner to corner. */
+.viewer.k-assassin:not(.revealed) .viewer-pic::after {
+  inset: 0;
+  background:
+    linear-gradient(to top right, transparent calc(50% - 1.5px), #000 calc(50% - 1.5px) calc(50% + 1.5px), transparent calc(50% + 1.5px)),
+    linear-gradient(to bottom right, transparent calc(50% - 1.5px), #000 calc(50% - 1.5px) calc(50% + 1.5px), transparent calc(50% + 1.5px));
+}
 .viewer-tag {
   position: absolute;
   left: 50%;
   bottom: calc(10px + var(--safe-bottom));
   transform: translateX(-50%);
-  background: var(--frame, var(--panel));
+  background: #3a3f4f;
   color: #fff;
   padding: 4px 12px;
   border-radius: 999px;
@@ -553,8 +595,6 @@ body.offline::before {
   white-space: nowrap;
   pointer-events: none;
 }
-.viewer.k-neutral .viewer-tag { color: #1b1b1b; }
-.viewer.k-assassin .viewer-tag { border: 2px dashed #fff; }
 .viewer-close {
   position: absolute;
   top: calc(8px + var(--safe-top));
@@ -568,3 +608,36 @@ body.offline::before {
   cursor: pointer;
 }
 .viewer-close:focus:not(:focus-visible) { outline: none; }
+
+/* Carousel (menu > Browse pictures) */
+.viewer-count {
+  position: absolute;
+  top: calc(18px + var(--safe-top));
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 700;
+  color: var(--muted, #aab);
+  pointer-events: none;
+}
+.viewer-step {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 64px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(46, 52, 73, .5);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.viewer-step.prev { left: calc(4px + env(safe-area-inset-left, 0px)); }
+.viewer-step.next { right: calc(4px + env(safe-area-inset-right, 0px)); }
+.viewer-step:focus:not(:focus-visible) { outline: none; }
+.viewer.carousel .viewer-stage { cursor: grab; }
+.viewer-pic.from-right { animation: from-right .2s ease; }
+.viewer-pic.from-left { animation: from-left .2s ease; }
+/* Animate `translate`, not `transform`, so a drag straight after a step isn't overridden. */
+@keyframes from-right { from { translate: 40% 0; opacity: 0; } }
+@keyframes from-left { from { translate: -40% 0; opacity: 0; } }
