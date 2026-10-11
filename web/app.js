@@ -47,7 +47,8 @@ const $modal = document.getElementById('modal');
 const $viewer = document.getElementById('viewer');
 const $toast = document.getElementById('toast');
 
-const TEAM_NAME = { red: 'Orange', blue: 'Purple' };
+const TEAM_NAME = { red: 'Circle', blue: 'Square' };
+const TEAM_ICON = { red: '●', blue: '■' };
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 // Zoom-size pictures live at /cards-large/ under the same file name.
@@ -271,7 +272,7 @@ function renderHome() {
   region($app, 'home', `
     <section class="home">
       <div class="logo" aria-hidden="true">${logoTiles()}</div>
-      <h1>Codenames <span>Pictures</span></h1>
+      <h1>Goat <span>Pic</span></h1>
       <p class="tagline">Two teams. Twenty-four pictures. One-word clues.</p>
       <form id="home-form" class="card-panel" autocomplete="off">
         <label for="name">Your name</label>
@@ -305,7 +306,7 @@ function logoTiles() {
 function howToPlay() {
   return `
     <ol>
-      <li>Split into <b>Orange</b> and <b>Purple</b>. Each team has one <b>spymaster</b> and one or more <b>guessers</b>.</li>
+      <li>Split into <b>Circle</b> and <b>Square</b>. Each team has one <b>spymaster</b> and one or more <b>guessers</b>.</li>
       <li>Only spymasters see which pictures belong to which team.</li>
       <li>On your turn, your spymaster gives a <b>one-word clue</b> and a number: how many pictures it points to.</li>
       <li>Guessers tap pictures. A correct guess lets you keep going, up to one more than the number.</li>
@@ -376,8 +377,8 @@ function renderLobby() {
         <button class="btn" id="share">Invite friends</button>
       </header>
       <div class="teams">
-        <div class="team team-red"><h2>Orange team</h2>${slot('red', 'spymaster')}${slot('red', 'guesser')}</div>
-        <div class="team team-blue"><h2>Purple team</h2>${slot('blue', 'spymaster')}${slot('blue', 'guesser')}</div>
+        <div class="team team-red"><h2>● Circle team</h2>${slot('red', 'spymaster')}${slot('red', 'guesser')}</div>
+        <div class="team team-blue"><h2>■ Square team</h2>${slot('blue', 'spymaster')}${slot('blue', 'guesser')}</div>
       </div>
       ${unseated.length ? `<p class="muted waiting">Not on a team yet: ${unseated.map(person).join(', ')}</p>` : ''}
       <div class="lobby-actions">
@@ -395,9 +396,9 @@ function renderLobby() {
 
 async function share() {
   const url = inviteURL(ui.code);
-  const text = `Join my Codenames Pictures game! Room code ${ui.code}`;
+  const text = `Join my Goat Pic game! Room code ${ui.code}`;
   if (navigator.share) {
-    try { await navigator.share({ title: 'Codenames Pictures', text, url }); return; } catch { /* cancelled */ }
+    try { await navigator.share({ title: 'Goat Pic', text, url }); return; } catch { /* cancelled */ }
   }
   try {
     await navigator.clipboard.writeText(url);
@@ -421,9 +422,9 @@ function renderGame() {
 
   region($app, 'top', `
     <header class="scorebar">
-      <div class="score red ${g.turn === 'red' && g.phase !== 'over' ? 'active' : ''}"><b>${g.remaining.red}</b><span>Orange left</span></div>
+      <div class="score red ${g.turn === 'red' && g.phase !== 'over' ? 'active' : ''}"><i>●</i><b>${g.remaining.red}</b><span>Circle<br>left</span></div>
       <div class="status">${statusLine(g, p)}</div>
-      <div class="score blue ${g.turn === 'blue' && g.phase !== 'over' ? 'active' : ''}"><b>${g.remaining.blue}</b><span>Purple left</span></div>
+      <div class="score blue ${g.turn === 'blue' && g.phase !== 'over' ? 'active' : ''}"><i>■</i><b>${g.remaining.blue}</b><span>Square<br>left</span></div>
       <button class="menu-btn" id="menu" aria-label="Menu">☰</button>
     </header>
   `);
@@ -433,7 +434,7 @@ function renderGame() {
       ${g.cards.map((c, i) => `
         <button class="tile ${c.team ? `k-${c.team}` : ''} ${c.revealed ? 'revealed' : ''}" data-card="${i}" aria-label="Picture ${i + 1}${c.revealed ? `, ${c.team}` : ''}">
           <img src="${esc(c.image)}" alt="" loading="eager" decoding="async" draggable="false">
-          ${c.revealed ? `<span class="cover">${c.team === 'assassin' ? '☠' : ''}</span>` : ''}
+          ${c.revealed ? `<span class="cover">${{ assassin: '☠', red: '●', blue: '■' }[c.team] || ''}</span>` : ''}
         </button>`).join('')}
     </div>
   `);
@@ -443,7 +444,7 @@ function renderGame() {
 }
 
 function teamLabel(t) {
-  return `<span class="team-word ${t}">${TEAM_NAME[t]}</span>`;
+  return `<span class="team-word ${t}">${TEAM_ICON[t]} ${TEAM_NAME[t]}</span>`;
 }
 
 function clueText(c) {
@@ -519,8 +520,8 @@ function menuSheet(room, g) {
       </ul>
       ${!p?.team && g.phase !== 'over' ? `
         <div class="row">
-          <button class="btn" data-sit="red:guesser">Join Orange</button>
-          <button class="btn" data-sit="blue:guesser">Join Purple</button>
+          <button class="btn" data-sit="red:guesser">Join Circle</button>
+          <button class="btn" data-sit="blue:guesser">Join Square</button>
         </div>` : ''}
       <h4>Clues</h4>
       ${log ? `<ul class="log">${log}</ul>` : '<p class="muted">No clues yet.</p>'}
@@ -543,7 +544,7 @@ function renderModal() {
   const c = g.cards[ui.selected];
   const guessable = canGuess() && !c.revealed;
   const tag = c.team && (c.revealed || me()?.role === 'spymaster' || g.phase === 'over')
-    ? `<span class="key-tag k-${c.team}">${{ red: 'Orange agent', blue: 'Purple agent', neutral: 'Bystander', assassin: 'Assassin' }[c.team]}${c.revealed ? ' (revealed)' : ''}</span>`
+    ? `<span class="key-tag k-${c.team}">${{ red: 'Circle agent', blue: 'Square agent', neutral: 'Bystander', assassin: 'Assassin' }[c.team]}${c.revealed ? ' (revealed)' : ''}</span>`
     : '';
   const html = `
     <div class="zoom-backdrop" data-close></div>
@@ -610,7 +611,7 @@ function syncViewer() {
   const box = $viewer.querySelector('.viewer');
   box.className = `viewer ${c.team ? `k-${c.team}` : ''}`;
   const tag = $viewer.querySelector('.viewer-tag');
-  const label = c.team ? `${{ red: 'Orange agent', blue: 'Purple agent', neutral: 'Bystander', assassin: 'Assassin' }[c.team]}${c.revealed ? ' (revealed)' : ''}` : '';
+  const label = c.team ? `${{ red: 'Circle agent', blue: 'Square agent', neutral: 'Bystander', assassin: 'Assassin' }[c.team]}${c.revealed ? ' (revealed)' : ''}` : '';
   tag.textContent = label;
   tag.hidden = !label;
 }
