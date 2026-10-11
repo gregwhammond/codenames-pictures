@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="96" fill="#1d2130"/><g transform="translate(256 256) scale(1.05) translate(-256 -270)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="96" fill="#1d2130"/><g transform="translate(256 256) scale(0.62) translate(-252 -241.5)">
   <!-- ground shadow -->
   <ellipse cx="240" cy="436" rx="150" ry="14" fill="#000" opacity=".35"/>
   <!-- far legs -->
@@ -46,4 +46,11 @@
   <circle cx="364" cy="160" r="4" fill="#fff"/>
   <!-- tuft -->
   <path d="M318 140 C320 124 332 118 342 126 C334 132 328 138 326 146 Z" fill="#f4c84a" stroke="#3a2a17" stroke-width="10" stroke-linejoin="round" stroke-linecap="round" stroke-width="7"/>
+</g><defs>
+  <path id="top" d="M 70 256 A 186 186 0 0 1 442 256"/>
+  <path id="bot" d="M 24 256 A 232 232 0 0 0 488 256"/>
+</defs>
+<g font-family="Inter, DejaVu Sans, Arial, sans-serif" font-weight="bold" font-size="60" letter-spacing="10" text-anchor="middle" stroke="#1d2130" stroke-width="8" paint-order="stroke">
+  <text fill="#ffffff"><textPath href="#top" startOffset="50%">GOAT</textPath></text>
+  <text fill="#ffffff"><textPath href="#bot" startOffset="50%">PIC</textPath></text>
 </g></svg>
