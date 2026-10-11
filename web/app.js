@@ -521,6 +521,7 @@ function menuSheet(room, g) {
         </div>` : ''}
       <h4>Clues</h4>
       ${log ? `<ul class="log">${log}</ul>` : '<p class="muted">No clues yet.</p>'}
+      <button class="btn" id="browse">Browse pictures</button>
       <div class="row">
         <button class="btn" id="share">Invite</button>
         <button class="btn" id="to-lobby">Back to lobby</button>
@@ -561,23 +562,31 @@ function renderModal() {
 
 // ---------- Full-screen picture viewer (press and hold) ----------
 // Lives in its own #viewer element outside the board, so server updates that
-// re-render the board don't disturb it.
+// re-render the board don't disturb it. Opened from the menu's "Browse
+// pictures" it is a carousel: swipe left and right (or the arrows) to step
+// through every picture on the board. Browsing never makes a guess.
 
 const HOLD_MS = 450;
 const MOVE_SLOP = 10;
 const MAX_SCALE = 6;
-const view = { index: null, image: null, phase: null, scale: 1, x: 0, y: 0 };
+const SWIPE_MIN = 60;
+const view = { index: null, image: null, phase: null, carousel: false, scale: 1, x: 0, y: 0 };
 
-function openViewer(index) {
+function openViewer(index, { carousel = false, from = 0 } = {}) {
   const g = ui.room?.game;
   const c = g?.cards[index];
   if (!c) return;
-  if (view.index === index && view.image === c.image) return;
-  Object.assign(view, { index, image: c.image, phase: g.phase, scale: 1, x: 0, y: 0 });
+  if (view.index === index && view.image === c.image && view.carousel === carousel) return;
+  const n = g.cards.length;
+  Object.assign(view, { index, image: c.image, phase: g.phase, carousel, scale: 1, x: 0, y: 0 });
   $viewer.innerHTML = `
-    <div class="viewer" role="dialog" aria-modal="true" aria-label="Picture ${index + 1}, full screen">
-      <div class="viewer-stage"><img class="viewer-img" src="${esc(c.image)}" alt="" draggable="false"></div>
+    <div class="viewer ${carousel ? 'carousel' : ''}" role="dialog" aria-modal="true" aria-label="Picture ${index + 1}${carousel ? ` of ${n}` : ''}, full screen">
+      <div class="viewer-stage"><img class="viewer-img ${from > 0 ? 'from-right' : from < 0 ? 'from-left' : ''}" src="${esc(c.image)}" alt="" draggable="false"></div>
       <span class="viewer-tag"></span>
+      ${carousel ? `
+        <span class="viewer-count">${index + 1} / ${n}</span>
+        <button class="viewer-step prev" data-step="-1" aria-label="Previous picture">‹</button>
+        <button class="viewer-step next" data-step="1" aria-label="Next picture">›</button>` : ''}
       <button class="viewer-close" data-close-viewer aria-label="Close">✕</button>
     </div>`;
   const img = $viewer.querySelector('.viewer-img');
@@ -585,12 +594,30 @@ function openViewer(index) {
   bindViewerGestures($viewer.querySelector('.viewer-stage'), img);
   $viewer.querySelector('.viewer-close').focus({ preventScroll: true });
   syncViewer();
+  if (carousel) {
+    // Fetch the neighbours' large pictures so the next swipe is sharp at once.
+    for (const d of [1, -1]) {
+      const big = largeURL(g.cards[(index + d + n) % n].image);
+      if (!largeFailed.has(big)) new Image().src = big;
+    }
+  }
+}
+
+// Carousel: move by d pictures, wrapping round at either end.
+function stepViewer(d) {
+  const n = ui.room?.game?.cards.length;
+  if (view.index == null || !view.carousel || !n) return;
+  // Keep keyboard focus on the arrow just used, so Enter keeps stepping.
+  const onStep = document.activeElement?.dataset?.step;
+  openViewer((view.index + d + n) % n, { carousel: true, from: d });
+  if (onStep != null) $viewer.querySelector(`[data-step="${onStep}"]`)?.focus({ preventScroll: true });
 }
 
 function closeViewer() {
   if (view.index == null) return;
   view.index = null;
   view.image = null;
+  view.carousel = false;
   $viewer.innerHTML = '';
 }
 
@@ -605,7 +632,7 @@ function syncViewer() {
     return;
   }
   const box = $viewer.querySelector('.viewer');
-  box.className = `viewer ${c.team ? `k-${c.team}` : ''}`;
+  box.className = `viewer ${view.carousel ? 'carousel' : ''} ${c.team ? `k-${c.team}` : ''}`;
   const tag = $viewer.querySelector('.viewer-tag');
   const label = c.team ? `${{ red: 'Orange agent', blue: 'Purple agent', neutral: 'Bystander', assassin: 'Assassin' }[c.team]}${c.revealed ? ' (revealed)' : ''}` : '';
   tag.textContent = label;
@@ -663,7 +690,7 @@ function bindViewerGestures(stage, img) {
     return { d: Math.hypot(a.x - b.x, a.y - b.y) || 1, x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
   };
   const beginSingle = (p) => {
-    start = { x: p.x, y: p.y, t: Date.now(), vx: view.x, vy: view.y, moved: false };
+    start = { x: p.x, y: p.y, t: Date.now(), vx: view.x, vy: view.y, moved: false, axis: null };
   };
 
   stage.addEventListener('pointerdown', (e) => {
@@ -698,9 +725,16 @@ function bindViewerGestures(stage, img) {
     if (!start) return;
     const dx = e.clientX - start.x;
     const dy = e.clientY - start.y;
-    if (!start.moved && Math.hypot(dx, dy) > MOVE_SLOP) start.moved = true;
+    if (!start.moved && Math.hypot(dx, dy) > MOVE_SLOP) {
+      start.moved = true;
+      // In the carousel a sideways drag at normal size flips pictures.
+      start.axis = view.carousel && view.scale <= 1 && Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+    }
     if (!start.moved) return;
-    if (view.scale > 1) {
+    if (start.axis === 'x') {
+      img.style.transition = 'none';
+      img.style.transform = `translateX(${dx}px)`;
+    } else if (view.scale > 1) {
       view.x = start.vx + dx;
       view.y = start.vy + dy;
       clamp();
@@ -738,6 +772,15 @@ function bindViewerGestures(stage, img) {
     }
     const dy = e.clientY - s.y;
     const quick = Date.now() - s.t;
+    if (s.moved && s.axis === 'x') {
+      const dx = e.clientX - s.x;
+      if (Math.abs(dx) > SWIPE_MIN || (Math.abs(dx) > 20 && Math.abs(dx) / quick > 0.5)) {
+        stepViewer(dx < 0 ? 1 : -1);
+        return;
+      }
+      apply(true);
+      return;
+    }
     if (s.moved) {
       if (view.scale <= 1 && dy > 0) {
         if (dy > 110 || (dy > 40 && dy / quick > 0.6)) { closeViewer(); return; }
@@ -759,7 +802,8 @@ function bindViewerGestures(stage, img) {
       return;
     }
     lastTap = { t: now, x: e.clientX, y: e.clientY };
-    if (view.scale === 1) {
+    // A stray tap shouldn't end a browse: the carousel closes with ✕ or a swipe down.
+    if (view.scale === 1 && !view.carousel) {
       clearTimeout(tapTimer);
       tapTimer = setTimeout(() => { if (lastTap?.t === now) closeViewer(); }, 300);
     }
@@ -837,6 +881,10 @@ document.addEventListener('click', async (e) => {
     closeViewer();
     return;
   }
+  if (t.dataset.step != null) {
+    stepViewer(Number(t.dataset.step));
+    return;
+  }
   if (t.dataset.card != null) {
     ui.selected = Number(t.dataset.card);
     renderModal();
@@ -897,6 +945,11 @@ document.addEventListener('click', async (e) => {
     case 'end-turn':
       await act('end-turn');
       break;
+    case 'browse':
+      ui.showMenu = false;
+      render();
+      openViewer(0, { carousel: true });
+      break;
     case 'menu':
       ui.showMenu = !ui.showMenu;
       render();
@@ -912,6 +965,11 @@ document.addEventListener('click', async (e) => {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && view.index != null) {
     closeViewer();
+    return;
+  }
+  if (view.carousel && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+    e.preventDefault();
+    stepViewer(e.key === 'ArrowLeft' ? -1 : 1);
     return;
   }
   if (e.key === 'Escape' && (ui.selected != null || ui.showMenu)) {

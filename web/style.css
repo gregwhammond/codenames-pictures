@@ -538,3 +538,36 @@ body.offline::before {
   cursor: pointer;
 }
 .viewer-close:focus:not(:focus-visible) { outline: none; }
+
+/* Carousel (menu > Browse pictures) */
+.viewer-count {
+  position: absolute;
+  top: calc(18px + var(--safe-top));
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 700;
+  color: var(--muted, #aab);
+  pointer-events: none;
+}
+.viewer-step {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 64px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(46, 52, 73, .5);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.viewer-step.prev { left: calc(4px + env(safe-area-inset-left, 0px)); }
+.viewer-step.next { right: calc(4px + env(safe-area-inset-right, 0px)); }
+.viewer-step:focus:not(:focus-visible) { outline: none; }
+.viewer.carousel .viewer-stage { cursor: grab; }
+.viewer-img.from-right { animation: from-right .2s ease; }
+.viewer-img.from-left { animation: from-left .2s ease; }
+/* Animate `translate`, not `transform`, so a drag straight after a step isn't overridden. */
+@keyframes from-right { from { translate: 40% 0; opacity: 0; } }
+@keyframes from-left { from { translate: -40% 0; opacity: 0; } }
