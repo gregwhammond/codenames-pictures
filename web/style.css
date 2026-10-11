@@ -261,9 +261,9 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .k-blue { --frame: var(--blue); --cover: var(--blue); }
 .k-neutral { --frame: var(--neutral); --cover: var(--neutral); }
 .k-assassin { --frame: var(--assassin); --cover: var(--checker); }
-/* White frame: a thin dark line inside keeps it visible on pale pictures. */
+/* Neutral pictures have no frame: no mark means neutral. */
 .board.spy .tile.k-neutral:not(.revealed)::after, .board.over .tile.k-neutral:not(.revealed)::after {
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .45);
+  display: none;
 }
 /* Orange frame: only the corners, each bracket a quarter of the side long;
    the straight middle of every side is left transparent. */
