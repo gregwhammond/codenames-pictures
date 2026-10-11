@@ -281,8 +281,11 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 }
 /* Purple team frame: a solid black square on the picture at the middle of
    each edge, about an eighth of the side wide; nothing else. Like every
-   frame it sits on top of the picture, which fills the whole tile. */
+   frame it sits on top of the picture, which fills the whole tile. The
+   layer overhangs the tile by 2px (clipped away) so rounding on phones
+   can never leave a gap between a square and the edge. */
 .board.spy .tile.k-blue:not(.revealed)::after, .board.over .tile.k-blue:not(.revealed)::after {
+  inset: -2px;
   border: 0;
   background:
     linear-gradient(#000 0 0) top / 13% 13% no-repeat,
