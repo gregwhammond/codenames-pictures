@@ -265,16 +265,18 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .board.spy .tile.k-neutral:not(.revealed)::after, .board.over .tile.k-neutral:not(.revealed)::after {
   display: none;
 }
-/* Orange team mark: a small black dot tucked into each corner of the
-   picture, about a tenth of the side across; no frame. */
+/* Circle team mark: one round black dot at the centre of the picture,
+   about an eighth of the side across (the size of the Square team's
+   squares); no frame. border-radius on a square box keeps it a true
+   circle at any tile size. */
 .board.spy .tile.k-red:not(.revealed)::after, .board.over .tile.k-red:not(.revealed)::after {
   border: 0;
-  --dot: radial-gradient(circle, #000 0 70%, transparent calc(70% + 1px));
-  background:
-    var(--dot) 6% 6% / 10% 10% no-repeat,
-    var(--dot) 94% 6% / 10% 10% no-repeat,
-    var(--dot) 6% 94% / 10% 10% no-repeat,
-    var(--dot) 94% 94% / 10% 10% no-repeat;
+  inset: auto;
+  top: 50%; left: 50%;
+  width: 13%; aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #000;
 }
 /* Purple team frame: a solid black square on the picture at the middle of
    each edge, about an eighth of the side wide; nothing else. Like every

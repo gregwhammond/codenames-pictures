@@ -7,7 +7,7 @@ It's built for **2 teams of 2** (one spymaster and one guesser per team). Teams 
 ## How to play
 
 1. Split into **Circle** and **Square**. Each team has one **spymaster** and at least one **guesser**.
-2. Only the spymasters see which pictures belong to which team (the corner dots, edge squares and X).
+2. Only the spymasters see which pictures belong to which team (the centre dot, edge squares and X).
 3. On your turn, your spymaster types a **one-word clue** and a number: how many pictures it points to.
 4. Guessers tap a picture to zoom in, then tap **Guess this picture**. Press and hold any picture to see it full screen and pinch to zoom into the detail. A correct guess lets you keep going, up to one more than the number. You can end the turn after at least one guess.
 5. A beige bystander or the other team's picture ends your turn. The **black assassin** loses the game instantly.
