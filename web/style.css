@@ -265,6 +265,30 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .board.spy .tile.k-neutral:not(.revealed)::after, .board.over .tile.k-neutral:not(.revealed)::after {
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .45);
 }
+/* Orange frame: only the corners, each bracket a quarter of the side long;
+   the straight middle of every side is left transparent. */
+.board.spy .tile.k-red:not(.revealed)::after, .board.over .tile.k-red:not(.revealed)::after {
+  -webkit-mask:
+    linear-gradient(#000 0 0) left top / 25% 25% no-repeat,
+    linear-gradient(#000 0 0) right top / 25% 25% no-repeat,
+    linear-gradient(#000 0 0) left bottom / 25% 25% no-repeat,
+    linear-gradient(#000 0 0) right bottom / 25% 25% no-repeat;
+  mask:
+    linear-gradient(#000 0 0) left top / 25% 25% no-repeat,
+    linear-gradient(#000 0 0) right top / 25% 25% no-repeat,
+    linear-gradient(#000 0 0) left bottom / 25% 25% no-repeat,
+    linear-gradient(#000 0 0) right bottom / 25% 25% no-repeat;
+}
+/* Purple frame: the reverse, only the middle half of each side; the quarter
+   at each corner is left transparent. */
+.board.spy .tile.k-blue:not(.revealed)::after, .board.over .tile.k-blue:not(.revealed)::after {
+  -webkit-mask:
+    linear-gradient(#000 0 0) center / 50% 100% no-repeat,
+    linear-gradient(#000 0 0) center / 100% 50% no-repeat;
+  mask:
+    linear-gradient(#000 0 0) center / 50% 100% no-repeat,
+    linear-gradient(#000 0 0) center / 100% 50% no-repeat;
+}
 /* Assassin frame: a black and white checkerboard, cut to a 5px ring. */
 .board.spy .tile.k-assassin:not(.revealed)::after, .board.over .tile.k-assassin:not(.revealed)::after {
   border: 0;
