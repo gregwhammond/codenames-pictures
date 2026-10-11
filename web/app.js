@@ -48,6 +48,7 @@ const $viewer = document.getElementById('viewer');
 const $toast = document.getElementById('toast');
 
 const TEAM_NAME = { red: 'Circle', blue: 'Square' };
+const TEAM_ICON = { red: '●', blue: '■' };
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 // Zoom-size pictures live at /cards-large/ under the same file name.
@@ -373,8 +374,8 @@ function renderLobby() {
         <button class="btn" id="share">Invite friends</button>
       </header>
       <div class="teams">
-        <div class="team team-red"><h2>Circle team</h2>${slot('red', 'spymaster')}${slot('red', 'guesser')}</div>
-        <div class="team team-blue"><h2>Square team</h2>${slot('blue', 'spymaster')}${slot('blue', 'guesser')}</div>
+        <div class="team team-red"><h2>● Circle team</h2>${slot('red', 'spymaster')}${slot('red', 'guesser')}</div>
+        <div class="team team-blue"><h2>■ Square team</h2>${slot('blue', 'spymaster')}${slot('blue', 'guesser')}</div>
       </div>
       ${unseated.length ? `<p class="muted waiting">Not on a team yet: ${unseated.map(person).join(', ')}</p>` : ''}
       <div class="lobby-actions">
@@ -418,9 +419,9 @@ function renderGame() {
 
   region($app, 'top', `
     <header class="scorebar">
-      <div class="score red ${g.turn === 'red' && g.phase !== 'over' ? 'active' : ''}"><b>${g.remaining.red}</b><span>Circle left</span></div>
+      <div class="score red ${g.turn === 'red' && g.phase !== 'over' ? 'active' : ''}"><i>●</i><b>${g.remaining.red}</b><span>Circle<br>left</span></div>
       <div class="status">${statusLine(g, p)}</div>
-      <div class="score blue ${g.turn === 'blue' && g.phase !== 'over' ? 'active' : ''}"><b>${g.remaining.blue}</b><span>Square left</span></div>
+      <div class="score blue ${g.turn === 'blue' && g.phase !== 'over' ? 'active' : ''}"><i>■</i><b>${g.remaining.blue}</b><span>Square<br>left</span></div>
       <button class="menu-btn" id="menu" aria-label="Menu">☰</button>
     </header>
   `);
@@ -430,7 +431,7 @@ function renderGame() {
       ${g.cards.map((c, i) => `
         <button class="tile ${c.team ? `k-${c.team}` : ''} ${c.revealed ? 'revealed' : ''}" data-card="${i}" aria-label="Picture ${i + 1}${c.revealed ? `, ${c.team}` : ''}">
           <img src="${esc(c.image)}" alt="" loading="eager" decoding="async" draggable="false">
-          ${c.revealed ? `<span class="cover">${c.team === 'assassin' ? '☠' : ''}</span>` : ''}
+          ${c.revealed ? `<span class="cover">${{ assassin: '☠', red: '●', blue: '■' }[c.team] || ''}</span>` : ''}
         </button>`).join('')}
     </div>
   `);
@@ -440,7 +441,7 @@ function renderGame() {
 }
 
 function teamLabel(t) {
-  return `<span class="team-word ${t}">${TEAM_NAME[t]}</span>`;
+  return `<span class="team-word ${t}">${TEAM_ICON[t]} ${TEAM_NAME[t]}</span>`;
 }
 
 function clueText(c) {

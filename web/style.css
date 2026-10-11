@@ -5,11 +5,13 @@
   --line: #3d4560;
   --text: #f3f1ea;
   --muted: #a7adc2;
-  /* Team ids stay red/blue in code; on screen they are orange and purple. */
-  --red: #f07c1e;
-  --red-deep: #c45f0c;
-  --blue: #8b46d6;
-  --blue-deep: #6a2fae;
+  /* Team ids stay red/blue in code; on screen they are the Circle and
+     Square teams, told apart by shape (● and ■), not colour. Both share
+     one plain grey: no orange or purple anywhere. */
+  --red: #5d6475;
+  --red-deep: #3a3f4f;
+  --blue: #5d6475;
+  --blue-deep: #3a3f4f;
   --neutral: #ffffff;
   --neutral-deep: #d8d8d8;
   --assassin: #15161b;
@@ -111,8 +113,8 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 }
 .logo i { width: 34px; height: 34px; border-radius: 7px; }
 
-.t-red { background: var(--red); }
-.t-blue { background: var(--blue); }
+.t-red { background: var(--red); border-radius: 50% !important; }
+.t-blue { background: var(--blue); border-radius: 0 !important; }
 .t-neutral { background: var(--neutral); }
 .t-assassin { background: repeating-conic-gradient(#000 0 25%, #fff 0 50%) 0 0 / 17px 17px; }
 .t-none { background: var(--line); }
@@ -136,8 +138,7 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .teams { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .team { border-radius: var(--radius); padding: 12px; display: flex; flex-direction: column; gap: 10px; }
 .team h2 { font-size: 1.05rem; text-transform: uppercase; letter-spacing: .08em; }
-.team-red { background: linear-gradient(160deg, var(--red-deep), #7a3606); }
-.team-blue { background: linear-gradient(160deg, var(--blue-deep), #3f1a6e); }
+.team-red, .team-blue { background: var(--panel); border: 1px solid var(--line); }
 
 .seat {
   appearance: none;
@@ -171,32 +172,40 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   display: flex;
   flex-direction: column;
   padding: var(--safe-top) 0 var(--safe-bottom);
-  background: #000; /* same black as the purple team marks */
+  background: #000; /* same black as the card marks */
   transition: box-shadow .3s ease;
 }
-#app.turn-red[data-screen="game"] { box-shadow: inset 0 4px 0 var(--red); }
-#app.turn-blue[data-screen="game"] { box-shadow: inset 0 4px 0 var(--blue); }
 
 .scorebar {
   display: grid;
-  grid-template-columns: 64px 1fr 64px 40px;
+  grid-template-columns: 76px 1fr 76px 40px;
   align-items: center;
   gap: 6px;
   padding: 10px 10px 6px;
 }
 .score {
-  border-radius: 10px;
-  padding: 4px 0;
+  /* The Circle score sits inside a circle, the Square score inside a
+     square; the team whose turn it is is filled white. */
+  width: 76px;
+  aspect-ratio: 1;
+  border: 2px solid #fff;
+  color: #fff;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  line-height: 1.05;
-  opacity: .55;
+  line-height: 1;
+  opacity: .5;
   transition: opacity .2s, transform .2s;
 }
-.score b { font-size: 1.6rem; display: block; }
-.score span { font-size: .65rem; text-transform: uppercase; letter-spacing: .06em; }
-.score.red { background: var(--red); }
-.score.blue { background: var(--blue); }
-.score.active { opacity: 1; transform: scale(1.06); }
+.score i { font-style: normal; font-size: .8rem; }
+.score b { font-size: 1.5rem; display: block; margin: 1px 0; }
+.score span { font-size: .5rem; text-transform: uppercase; letter-spacing: .06em; }
+.score.red { border-radius: 50%; }
+.score.blue { border-radius: 0; }
+.score.active { opacity: 1; transform: scale(1.04); background: #fff; color: #000; }
 .status { text-align: center; font-weight: 600; font-size: 1rem; }
 .clue-word {
   display: inline-block;
@@ -210,8 +219,7 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 }
 .clue-num { font-weight: 800; font-size: 1.15em; }
 .team-word { font-weight: 800; }
-.team-word.red { color: #ffa25a; }
-.team-word.blue { color: #c49bff; }
+
 .menu-btn { background: none; border: none; font-size: 1.5rem; width: 40px; height: 40px; cursor: pointer; }
 
 [data-screen="game"] > [data-region="board"] {

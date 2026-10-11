@@ -12,8 +12,8 @@
     --text: #f3f1ea;
     --muted: #a7adc2;
     --accent: #f4c84a;
-    --red: #f07c1e;
-    --blue: #8b46d6;
+    --red: #5d6475;
+    --blue: #5d6475;
     color-scheme: dark;
   }
 
@@ -86,7 +86,7 @@
     user-select: all;
     -webkit-user-select: all;
   }
-  .error { width: 100%; color: var(--red); font-weight: 600; }
+  .error { width: 100%; color: #ff8a80; font-weight: 600; }
   .error:empty { display: none; }
 
   /* ---------- Phones ---------- */
@@ -111,11 +111,11 @@
     content: "";
     width: 10px;
     height: 10px;
-    border-radius: 50%;
+    border-radius: var(--dot-radius, 50%);
     background: var(--dot);
   }
-  .phone.red { --dot: var(--red); }
-  .phone.blue { --dot: var(--blue); }
+  .phone.red { --dot: #fff; }
+  .phone.blue { --dot: #fff; --dot-radius: 0; }
 
   .bezel {
     padding: 12px;
