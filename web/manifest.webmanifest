@@ -1,7 +1,7 @@
 {
-  "name": "Codenames Pictures",
-  "short_name": "Codenames",
-  "description": "Play Codenames with pictures, live with friends on your phones.",
+  "name": "Goat Pic",
+  "short_name": "Goat Pic",
+  "description": "Goat Pic: a picture clue game, live with friends on your phones.",
   "id": "/",
   "start_url": "/",
   "scope": "/",

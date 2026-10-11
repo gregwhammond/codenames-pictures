@@ -265,24 +265,32 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .board.spy .tile.k-neutral:not(.revealed)::after, .board.over .tile.k-neutral:not(.revealed)::after {
   display: none;
 }
-/* Orange frame: only the corners, each bracket a quarter of the side long;
-   the straight middle of every side is left transparent. */
+/* Orange team mark: a small black dot tucked into each corner of the
+   picture, about a tenth of the side across; no frame. */
 .board.spy .tile.k-red:not(.revealed)::after, .board.over .tile.k-red:not(.revealed)::after {
-  -webkit-mask:
-    linear-gradient(#000 0 0) left top / 25% 25% no-repeat,
-    linear-gradient(#000 0 0) right top / 25% 25% no-repeat,
-    linear-gradient(#000 0 0) left bottom / 25% 25% no-repeat,
-    linear-gradient(#000 0 0) right bottom / 25% 25% no-repeat;
-  mask:
-    linear-gradient(#000 0 0) left top / 25% 25% no-repeat,
-    linear-gradient(#000 0 0) right top / 25% 25% no-repeat,
-    linear-gradient(#000 0 0) left bottom / 25% 25% no-repeat,
-    linear-gradient(#000 0 0) right bottom / 25% 25% no-repeat;
+  border: 0;
+  --dot: radial-gradient(circle, #000 0 70%, transparent calc(70% + 1px));
+  background:
+    var(--dot) 6% 6% / 10% 10% no-repeat,
+    var(--dot) 94% 6% / 10% 10% no-repeat,
+    var(--dot) 6% 94% / 10% 10% no-repeat,
+    var(--dot) 94% 94% / 10% 10% no-repeat;
 }
 /* Purple team frame: a solid black square on the picture at the middle of
    each edge, about an eighth of the side wide; nothing else. Like every
-   frame it sits on top of the picture, which fills the whole tile. */
+   frame it sits on top of the picture, which fills the whole tile. The
+   squares overhang the tile by 2px into the black gap between pictures,
+   and the tile does not clip them, so the picture's anti-aliased edge can
+   never show as a sliver beside a square. The picture is rounded itself. */
+.board.spy .tile.k-blue:not(.revealed), .board.over .tile.k-blue:not(.revealed) {
+  overflow: visible;
+  background: transparent;
+}
+.board.spy .tile.k-blue:not(.revealed) img, .board.over .tile.k-blue:not(.revealed) img {
+  border-radius: 9px;
+}
 .board.spy .tile.k-blue:not(.revealed)::after, .board.over .tile.k-blue:not(.revealed)::after {
+  inset: -2px;
   border: 0;
   background:
     linear-gradient(#000 0 0) top / 13% 13% no-repeat,
@@ -290,14 +298,12 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
     linear-gradient(#000 0 0) left / 13% 13% no-repeat,
     linear-gradient(#000 0 0) right / 13% 13% no-repeat;
 }
-/* Assassin frame: a black and white checkerboard, cut to a 5px ring. */
+/* Assassin mark: a thin black X from corner to corner over the picture. */
 .board.spy .tile.k-assassin:not(.revealed)::after, .board.over .tile.k-assassin:not(.revealed)::after {
   border: 0;
-  padding: 5px;
-  background: var(--checker);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  background:
+    linear-gradient(to top right, transparent calc(50% - 1px), #000 calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)),
+    linear-gradient(to bottom right, transparent calc(50% - 1px), #000 calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px));
 }
 .tile.k-neutral .cover { color: #1b1b1b; }
 .tile.k-assassin .cover { text-shadow: 0 0 6px #000, 0 0 2px #000; }
