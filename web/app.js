@@ -581,7 +581,7 @@ function openViewer(index, { carousel = false, from = 0 } = {}) {
   Object.assign(view, { index, image: c.image, phase: g.phase, carousel, scale: 1, x: 0, y: 0 });
   $viewer.innerHTML = `
     <div class="viewer ${carousel ? 'carousel' : ''}" role="dialog" aria-modal="true" aria-label="Picture ${index + 1}${carousel ? ` of ${n}` : ''}, full screen">
-      <div class="viewer-stage"><img class="viewer-img ${from > 0 ? 'from-right' : from < 0 ? 'from-left' : ''}" src="${esc(c.image)}" alt="" draggable="false"></div>
+      <div class="viewer-stage"><div class="viewer-pic ${from > 0 ? 'from-right' : from < 0 ? 'from-left' : ''}"><img class="viewer-img" src="${esc(c.image)}" alt="" draggable="false"></div></div>
       <span class="viewer-tag"></span>
       ${carousel ? `
         <span class="viewer-count">${index + 1} / ${n}</span>
@@ -591,7 +591,8 @@ function openViewer(index, { carousel = false, from = 0 } = {}) {
     </div>`;
   const img = $viewer.querySelector('.viewer-img');
   upgradeImage(img, c.image);
-  bindViewerGestures($viewer.querySelector('.viewer-stage'), img);
+  // Gestures move the picture together with its key mark drawn on top.
+  bindViewerGestures($viewer.querySelector('.viewer-stage'), $viewer.querySelector('.viewer-pic'));
   $viewer.querySelector('.viewer-close').focus({ preventScroll: true });
   syncViewer();
   if (carousel) {
@@ -632,9 +633,9 @@ function syncViewer() {
     return;
   }
   const box = $viewer.querySelector('.viewer');
-  box.className = `viewer ${view.carousel ? 'carousel' : ''} ${c.team ? `k-${c.team}` : ''}`;
+  box.className = `viewer ${view.carousel ? 'carousel' : ''} ${c.team ? `k-${c.team}` : ''} ${c.revealed ? 'revealed' : ''}`;
   const tag = $viewer.querySelector('.viewer-tag');
-  const label = c.team ? `${{ red: 'Orange agent', blue: 'Purple agent', neutral: 'Bystander', assassin: 'Assassin' }[c.team]}${c.revealed ? ' (revealed)' : ''}` : '';
+  const label = c.team ? `${{ red: '● Circle agent', blue: '■ Square agent', neutral: 'Bystander', assassin: '☠ Assassin' }[c.team]}${c.revealed ? ' (revealed)' : ''}` : '';
   tag.textContent = label;
   tag.hidden = !label;
 }
