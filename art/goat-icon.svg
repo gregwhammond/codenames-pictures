@@ -13,6 +13,9 @@
   <!-- body -->
   <ellipse cx="205" cy="285" rx="112" ry="62" fill="#ffffff" stroke="#3a2a17" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M268 255 C286 214 302 190 319 177 L352 200 C338 226 324 258 298 292 C285 290 270 275 268 255 Z" fill="#ffffff"/>
+  <!-- team marks on the body -->
+  <circle cx="178" cy="283" r="19" fill="#000"/>
+  <rect x="210" y="264" width="38" height="38" fill="#000"/>
   <!-- near legs -->
   <path d="M128 330 L120 422" stroke="#3a2a17" stroke-width="10" stroke-linejoin="round" stroke-linecap="round" stroke-width="28" fill="none"/>
   <path d="M268 330 L276 422" stroke="#3a2a17" stroke-width="10" stroke-linejoin="round" stroke-linecap="round" stroke-width="28" fill="none"/>
