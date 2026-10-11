@@ -274,9 +274,9 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   display: none;
 }
 /* Circle team mark: one round black dot at the centre of the picture,
-   about an eighth of the side across (a little larger than the Square team's
-   squares); no frame. border-radius on a square box keeps it a true
-   circle at any tile size. */
+   about an eighth of the side across, with a 1px white inner line; no
+   frame. border-radius on a square box keeps it a true circle at any
+   tile size. */
 .board.spy .tile.k-red:not(.revealed)::after, .board.over .tile.k-red:not(.revealed)::after {
   border: 0;
   inset: auto;
@@ -285,10 +285,11 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   transform: translate(-50%, -50%);
   border-radius: 50%;
   background: #000;
+  box-shadow: inset 0 0 0 1px #fff; /* 1px white line inside the edge */
 }
 /* Square team mark: a solid black square in each corner of the picture,
-   about an eleventh of the side wide; nothing else. Like every
-   frame it sits on top of the picture, which fills the whole tile. The
+   about an eighth of the side wide, with a 1px white line along its two
+   sides on the picture; nothing else. Like every frame it sits on top of the picture, which fills the whole tile. The
    squares overhang the tile by 2px into the black gap between pictures,
    and the tile does not clip them, so the picture's anti-aliased edge can
    never show as a sliver beside a square. The picture is rounded itself. */
@@ -302,11 +303,23 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .board.spy .tile.k-blue:not(.revealed)::after, .board.over .tile.k-blue:not(.revealed)::after {
   inset: -2px;
   border: 0;
+  /* Each black square is drawn over a white one 1px larger, leaving a 1px
+     white line along its two sides that lie on the picture. */
+  --sq: 11.8%;
   background:
-    linear-gradient(#000 0 0) left top / 9.1% 9.1% no-repeat,
-    linear-gradient(#000 0 0) right top / 9.1% 9.1% no-repeat,
-    linear-gradient(#000 0 0) left bottom / 9.1% 9.1% no-repeat,
-    linear-gradient(#000 0 0) right bottom / 9.1% 9.1% no-repeat;
+    /* keep the white lines off the 2px overhang into the gap */
+    linear-gradient(#000 0 0) top / 100% 2px no-repeat,
+    linear-gradient(#000 0 0) bottom / 100% 2px no-repeat,
+    linear-gradient(#000 0 0) left / 2px 100% no-repeat,
+    linear-gradient(#000 0 0) right / 2px 100% no-repeat,
+    linear-gradient(#000 0 0) left top / calc(var(--sq) - 1px) calc(var(--sq) - 1px) no-repeat,
+    linear-gradient(#000 0 0) right top / calc(var(--sq) - 1px) calc(var(--sq) - 1px) no-repeat,
+    linear-gradient(#000 0 0) left bottom / calc(var(--sq) - 1px) calc(var(--sq) - 1px) no-repeat,
+    linear-gradient(#000 0 0) right bottom / calc(var(--sq) - 1px) calc(var(--sq) - 1px) no-repeat,
+    linear-gradient(#fff 0 0) left top / var(--sq) var(--sq) no-repeat,
+    linear-gradient(#fff 0 0) right top / var(--sq) var(--sq) no-repeat,
+    linear-gradient(#fff 0 0) left bottom / var(--sq) var(--sq) no-repeat,
+    linear-gradient(#fff 0 0) right bottom / var(--sq) var(--sq) no-repeat;
 }
 /* Assassin mark: a thin black X from corner to corner over the picture. */
 .board.spy .tile.k-assassin:not(.revealed)::after, .board.over .tile.k-assassin:not(.revealed)::after {
