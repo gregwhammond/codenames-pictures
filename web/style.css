@@ -282,8 +282,16 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 /* Purple team frame: a solid black square on the picture at the middle of
    each edge, about an eighth of the side wide; nothing else. Like every
    frame it sits on top of the picture, which fills the whole tile. The
-   layer overhangs the tile by 2px (clipped away) so rounding on phones
-   can never leave a gap between a square and the edge. */
+   squares overhang the tile by 2px into the black gap between pictures,
+   and the tile does not clip them, so the picture's anti-aliased edge can
+   never show as a sliver beside a square. The picture is rounded itself. */
+.board.spy .tile.k-blue:not(.revealed), .board.over .tile.k-blue:not(.revealed) {
+  overflow: visible;
+  background: transparent;
+}
+.board.spy .tile.k-blue:not(.revealed) img, .board.over .tile.k-blue:not(.revealed) img {
+  border-radius: 9px;
+}
 .board.spy .tile.k-blue:not(.revealed)::after, .board.over .tile.k-blue:not(.revealed)::after {
   inset: -2px;
   border: 0;
