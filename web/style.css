@@ -266,7 +266,7 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   display: none;
 }
 /* Circle team mark: one round black dot at the centre of the picture,
-   about an eighth of the side across (the size of the Square team's
+   about an eighth of the side across (a little larger than the Square team's
    squares); no frame. border-radius on a square box keeps it a true
    circle at any tile size. */
 .board.spy .tile.k-red:not(.revealed)::after, .board.over .tile.k-red:not(.revealed)::after {
@@ -278,8 +278,8 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   border-radius: 50%;
   background: #000;
 }
-/* Purple team frame: a solid black square on the picture at the middle of
-   each edge, about an eighth of the side wide; nothing else. Like every
+/* Square team mark: a solid black square on the picture at the middle of
+   each edge, about an eleventh of the side wide; nothing else. Like every
    frame it sits on top of the picture, which fills the whole tile. The
    squares overhang the tile by 2px into the black gap between pictures,
    and the tile does not clip them, so the picture's anti-aliased edge can
@@ -295,10 +295,10 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   inset: -2px;
   border: 0;
   background:
-    linear-gradient(#000 0 0) top / 13% 13% no-repeat,
-    linear-gradient(#000 0 0) bottom / 13% 13% no-repeat,
-    linear-gradient(#000 0 0) left / 13% 13% no-repeat,
-    linear-gradient(#000 0 0) right / 13% 13% no-repeat;
+    linear-gradient(#000 0 0) top / 9.1% 9.1% no-repeat,
+    linear-gradient(#000 0 0) bottom / 9.1% 9.1% no-repeat,
+    linear-gradient(#000 0 0) left / 9.1% 9.1% no-repeat,
+    linear-gradient(#000 0 0) right / 9.1% 9.1% no-repeat;
 }
 /* Assassin mark: a thin black X from corner to corner over the picture. */
 .board.spy .tile.k-assassin:not(.revealed)::after, .board.over .tile.k-assassin:not(.revealed)::after {
