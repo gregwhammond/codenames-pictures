@@ -98,7 +98,6 @@
     if (g.phase === 'over') throw new Error('the game is over');
     if (team !== g.turn) throw new Error("it is not your team's turn");
     if (g.phase !== 'guess') throw new Error("that can't be done right now");
-    if (g.guessesMade === 0) throw new Error('make at least one guess before ending the turn');
     passTurn(g);
   }
 

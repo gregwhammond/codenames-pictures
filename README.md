@@ -9,7 +9,7 @@ It's built for **2 teams of 2** (one spymaster and one guesser per team). Teams 
 1. Split into **● Circle** and **■ Square**. Each team has one **spymaster** and at least one **guesser**.
 2. Only the spymasters see which pictures belong to which team: Circle pictures have a black dot in the centre, Square pictures a black square in each corner, and the **dead goat** a black X. Plain goats have no mark.
 3. On your turn, your spymaster types a **one-word clue** and picks a number: how many pictures it points to. The number starts blank each time, so it must be chosen.
-4. Guessers tap a picture to zoom in, use **‹ ›** to flip through the pictures still in play, then tap **Guess this picture**. A correct guess lets you keep going, up to one more than the number. You can end the turn after at least one guess.
+4. Guessers tap a picture to zoom in, use **‹ ›** to flip through the pictures still in play, then tap **Guess this picture**. A correct guess lets you keep going, up to one more than the number. You can end the turn at any time, even before guessing (you are asked to confirm).
 5. Press and hold any picture to see it full screen and pinch to zoom into the detail. **☰ → Browse pictures** swipes through the whole board without guessing.
 6. Found pictures turn grey with a white ● or ■, and goats turn white. A goat or the other team's picture ends your turn. The **dead goat** ☠ loses the game instantly.
 7. The scores at the top show each team's pictures left out of its total, for example 6/9. The first team to find all their pictures wins. The team that goes first has 9 pictures, the other has 8.

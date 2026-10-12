@@ -319,7 +319,7 @@ function howToPlay() {
       <li>Split into <b>● Circle</b> and <b>■ Square</b>. Each team has one <b>spymaster</b> and one or more <b>guessers</b>.</li>
       <li>Only spymasters see which pictures belong to which team: Circle pictures have a black dot in the centre, Square pictures a black square in each corner, and the <b>dead goat</b> a black X. Plain goats have no mark.</li>
       <li>On your turn, your spymaster gives a <b>one-word clue</b> and picks a number: how many pictures it points to. <b>0</b> or <b>∞</b> gives unlimited guesses.</li>
-      <li>Guessers tap a picture to see it bigger, use <b>‹ ›</b> to flip through the pictures still in play, and tap <b>Guess this picture</b>. A correct guess lets you keep going, up to one more than the number. You can <b>End turn</b> after at least one guess.</li>
+      <li>Guessers tap a picture to see it bigger, use <b>‹ ›</b> to flip through the pictures still in play, and tap <b>Guess this picture</b>. A correct guess lets you keep going, up to one more than the number. You can <b>End turn</b> at any time, even before guessing.</li>
       <li><b>Press and hold</b> a picture (or right-click) to see it full screen and pinch to zoom into the details. <b>☰ → Browse pictures</b> lets you swipe through the whole board.</li>
       <li>Found pictures turn grey with a white ● or ■, and goats turn white. Hit a goat or the other team's picture and your turn ends. Hit the <b>dead goat</b> ☠ and you lose instantly.</li>
       <li>The scores at the top show each team's pictures left out of its total, like 6/9. The first team to find all theirs wins. The team that goes first has 9, the other has 8.</li>
@@ -506,7 +506,7 @@ function actionsPanel(g, p) {
     return `
       <div class="guess-panel">
         <span>Tap a picture to guess. <b>${left}</b></span>
-        <button class="btn" id="end-turn" ${g.guessesMade ? '' : 'disabled'}>End turn</button>
+        <button class="btn" id="end-turn">End turn</button>
       </div>`;
   }
   if (g.phase === 'guess') {
@@ -1000,6 +1000,8 @@ document.addEventListener('click', async (e) => {
       await act('lobby');
       break;
     case 'end-turn':
+      // Ending the turn before any guess is allowed, but ask first.
+      if (!ui.room.game.guessesMade && !confirm('End your turn without guessing?')) return;
       await act('end-turn');
       break;
     case 'browse':

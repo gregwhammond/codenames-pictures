@@ -93,9 +93,6 @@ func TestGuessLimitAndEndTurn(t *testing.T) {
 	g := newTestGame(t, 2)
 	team := g.Turn
 	_ = g.GiveClue(team, "fish", 1)
-	if err := g.EndTurn(team); err != ErrMustGuess {
-		t.Fatalf("end before guessing: %v", err)
-	}
 	if err := g.Guess(team, find(g, team)); err != nil {
 		t.Fatal(err)
 	}
@@ -274,5 +271,19 @@ func TestDealIsRandom(t *testing.T) {
 	}
 	if same {
 		t.Fatal("different seeds dealt the same board")
+	}
+}
+
+func TestEndTurnWithoutGuessing(t *testing.T) {
+	g := newTestGame(t, 2)
+	team := g.Turn
+	if err := g.GiveClue(team, "fish", 2); err != nil {
+		t.Fatal(err)
+	}
+	if err := g.EndTurn(team); err != nil {
+		t.Fatalf("end turn with no guesses: %v", err)
+	}
+	if g.Turn != team.Other() || g.Phase != PhaseClue {
+		t.Fatalf("turn should pass to the other team")
 	}
 }
