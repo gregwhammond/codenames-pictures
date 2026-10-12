@@ -428,9 +428,7 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   border-radius: 14px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, .5);
 }
-.zoom.k-red img, .zoom.k-blue img, .zoom.k-neutral img, .zoom.k-assassin img { outline: 6px solid var(--frame); }
-/* Assassin: white dashes over a black ring read as a checkerboard edge. */
-.zoom.k-assassin img { outline: 6px dashed #fff; box-shadow: 0 0 0 6px #000, 0 10px 40px rgba(0, 0, 0, .5); }
+/* No border round an enlarged picture: its tag (● ■ goat ☠) says what it is. */
 .key-tag { background: var(--frame); color: #fff; padding: 4px 12px; border-radius: 999px; font-weight: 700; }
 .key-tag.k-neutral { background: var(--red); color: #fff; } /* white goat, like the ● and ■ tags */
 .goat-icon { height: 1em; width: 1.15em; vertical-align: -.12em; fill: currentColor; }
