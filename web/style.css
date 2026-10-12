@@ -344,6 +344,15 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 }
 .tile.revealed img { filter: grayscale(1); }
 .board.spy .tile.revealed .cover { opacity: .93; }
+/* Revealed team pictures: a white circle or square drawn as a shape (not a
+   text character) so it sits exactly in the middle of the card. */
+.tile.k-red .cover::before, .tile.k-blue .cover::before {
+  content: "";
+  width: 32%;
+  aspect-ratio: 1;
+  background: #fff;
+}
+.tile.k-red .cover::before { border-radius: 50%; }
 .tile.revealed { animation: flip .4s ease; }
 @keyframes flip { from { transform: rotateY(90deg); } to { transform: rotateY(0); } }
 
@@ -423,7 +432,8 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 /* Assassin: white dashes over a black ring read as a checkerboard edge. */
 .zoom.k-assassin img { outline: 6px dashed #fff; box-shadow: 0 0 0 6px #000, 0 10px 40px rgba(0, 0, 0, .5); }
 .key-tag { background: var(--frame); color: #fff; padding: 4px 12px; border-radius: 999px; font-weight: 700; }
-.key-tag.k-neutral { color: #1b1b1b; }
+.key-tag.k-neutral { background: var(--red); color: #fff; } /* white goat, like the ● and ■ tags */
+.goat-icon { height: 1em; width: 1.15em; vertical-align: -.12em; fill: currentColor; }
 .key-tag.k-assassin { border: 2px dashed #fff; }
 
 @keyframes fade { from { opacity: 0; } }
