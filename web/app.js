@@ -49,6 +49,10 @@ const $toast = document.getElementById('toast');
 
 const TEAM_NAME = { red: 'Circle', blue: 'Square' };
 const TEAM_ICON = { red: '●', blue: '■' };
+// What a picture is, shown on its tag when zoomed: an icon for each kind
+// (the words stay for screen readers).
+const KEY_ICON = { red: '●', blue: '■', neutral: '🐐', assassin: '☠ Assassin' };
+const KEY_NAME = { red: 'Circle agent', blue: 'Square agent', neutral: 'Bystander', assassin: 'Assassin' };
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 // Zoom-size pictures live at /cards-large/ under the same file name.
@@ -545,7 +549,7 @@ function renderModal() {
   const c = g.cards[ui.selected];
   const guessable = canGuess() && !c.revealed;
   const tag = c.team && (c.revealed || me()?.role === 'spymaster' || g.phase === 'over')
-    ? `<span class="key-tag k-${c.team}">${{ red: 'Circle agent', blue: 'Square agent', neutral: 'Bystander', assassin: 'Assassin' }[c.team]}${c.revealed ? ' (revealed)' : ''}</span>`
+    ? `<span class="key-tag k-${c.team}" aria-label="${KEY_NAME[c.team]}${c.revealed ? ' (revealed)' : ''}">${KEY_ICON[c.team]}${c.revealed ? ' (revealed)' : ''}</span>`
     : '';
   const html = `
     <div class="zoom-backdrop" data-close></div>
@@ -639,8 +643,10 @@ function syncViewer() {
   const box = $viewer.querySelector('.viewer');
   box.className = `viewer ${view.carousel ? 'carousel' : ''} ${c.team ? `k-${c.team}` : ''} ${c.revealed ? 'revealed' : ''}`;
   const tag = $viewer.querySelector('.viewer-tag');
-  const label = c.team ? `${{ red: '● Circle agent', blue: '■ Square agent', neutral: 'Bystander', assassin: '☠ Assassin' }[c.team]}${c.revealed ? ' (revealed)' : ''}` : '';
+  const revealed = c.revealed ? ' (revealed)' : '';
+  const label = c.team ? `${KEY_ICON[c.team]}${revealed}` : '';
   tag.textContent = label;
+  if (c.team) tag.setAttribute('aria-label', `${KEY_NAME[c.team]}${revealed}`);
   tag.hidden = !label;
 }
 
