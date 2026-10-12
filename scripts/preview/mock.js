@@ -218,6 +218,7 @@
     #app { min-height: calc(100dvh - 40px) !important; }
     #app[data-screen="game"] { height: calc(100dvh - 40px) !important; }
     html, body { height: auto; }
+    .viewer { top: calc(40px + env(safe-area-inset-top, 0px)) !important; }
     #preview-panel { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; right: 0; height: 40px; z-index: 50;
       display: flex; gap: 4px; align-items: center; justify-content: center; padding: 0 6px;
       background: #2e3449; border-bottom: 1px solid #3d4560; font: 600 12px system-ui, sans-serif; }

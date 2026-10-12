@@ -589,7 +589,7 @@ function openViewer(index, { carousel = false, from = 0 } = {}) {
   const n = g.cards.length;
   Object.assign(view, { index, image: c.image, phase: g.phase, carousel, scale: 1, x: 0, y: 0 });
   $viewer.innerHTML = `
-    <div class="viewer ${carousel ? 'carousel' : ''}" role="dialog" aria-modal="true" aria-label="Picture ${index + 1}${carousel ? ` of ${n}` : ''}, full screen">
+    <div class="viewer ${carousel ? 'carousel' : ''} ${from ? 'stepped' : ''}" role="dialog" aria-modal="true" aria-label="Picture ${index + 1}${carousel ? ` of ${n}` : ''}, full screen">
       <div class="viewer-stage"><div class="viewer-pic ${from > 0 ? 'from-right' : from < 0 ? 'from-left' : ''}"><img class="viewer-img" src="${esc(c.image)}" alt="" draggable="false"></div></div>
       <span class="viewer-tag"></span>
       ${carousel ? `
@@ -642,7 +642,8 @@ function syncViewer() {
     return;
   }
   const box = $viewer.querySelector('.viewer');
-  box.className = `viewer ${view.carousel ? 'carousel' : ''} ${c.team ? `k-${c.team}` : ''} ${c.revealed ? 'revealed' : ''}`;
+  const stepped = box.classList.contains('stepped');
+  box.className = `viewer ${view.carousel ? 'carousel' : ''} ${stepped ? 'stepped' : ''} ${c.team ? `k-${c.team}` : ''} ${c.revealed ? 'revealed' : ''}`;
   const tag = $viewer.querySelector('.viewer-tag');
   const revealed = c.revealed ? ' (revealed)' : '';
   const label = c.team ? `${KEY_ICON[c.team]}${revealed}` : '';

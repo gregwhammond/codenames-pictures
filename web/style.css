@@ -646,6 +646,10 @@ body.offline::before {
 .viewer-step.next { right: calc(4px + env(safe-area-inset-right, 0px)); }
 .viewer-step:focus:not(:focus-visible) { outline: none; }
 .viewer.carousel .viewer-stage { cursor: grab; }
+/* Stepping to the next picture rebuilds the viewer: don't fade it in again,
+   or the board shows through for a moment. Solid black behind the pictures. */
+.viewer.carousel { background: rgba(0, 0, 0, var(--dim, 1)); }
+.viewer.stepped { animation: none; }
 .viewer-pic.from-right { animation: from-right .2s ease; }
 .viewer-pic.from-left { animation: from-left .2s ease; }
 /* Animate `translate`, not `transform`, so a drag straight after a step isn't overridden. */
