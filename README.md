@@ -10,10 +10,10 @@ It's built for **2 teams of 2** (one spymaster and one guesser per team). Teams 
 2. Only the spymasters see which pictures belong to which team (the centre dot, corner squares and X).
 3. On your turn, your spymaster types a **one-word clue** and a number: how many pictures it points to.
 4. Guessers tap a picture to zoom in, then tap **Guess this picture**. Press and hold any picture to see it full screen and pinch to zoom into the detail. A correct guess lets you keep going, up to one more than the number. You can end the turn after at least one guess.
-5. A beige bystander or the other team's picture ends your turn. The **black assassin** loses the game instantly.
+5. A beige bystander or the other team's picture ends your turn. The **dead goat** (marked with an X) loses the game instantly.
 6. The first team to find all their pictures wins. The team that goes first has 9 pictures, the other has 8.
 
-The board is always 24 pictures in a grid 4 columns wide and 6 rows tall: 9 for the starting team, 8 for the other, 6 bystanders and 1 assassin.
+The board is always 24 pictures in a grid 4 columns wide and 6 rows tall: 9 for the starting team, 8 for the other, 6 bystanders and 1 dead goat.
 
 A clue of **0** or **∞** gives unlimited guesses, as in the board game.
 
