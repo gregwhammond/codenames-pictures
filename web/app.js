@@ -50,7 +50,7 @@ const $toast = document.getElementById('toast');
 const TEAM_NAME = { red: 'Circle', blue: 'Square' };
 const TEAM_ICON = { red: '●', blue: '■' };
 // What a picture is, shown on its tag when zoomed: an icon for each kind
-// (the words stay for screen readers). Bystanders get a goat silhouette.
+// (the words stay for screen readers). Goats (bystanders) get a goat silhouette.
 const GOAT_ICON = '<svg class="goat-icon" viewBox="0 0 32 28" aria-hidden="true"><path d="M8.2 5.2C7.6 2.4 9.6.4 12.6 1c-1.8.6-2.7 2.2-2.4 4.4zM7.4 4.6c1.6-.6 3.4 0 4 1.6l1.8 5.2-3.6.8-1-2.6c-1 .6-2.6 1-4.2.8-1.2-.2-1.6-1.2-.8-2zM10.6 6l3.8-.2-3 1.8zM5 10l1.6.2L5.4 13zM9.6 10.6c2.4-.6 10.4-1 16-.2 2 .4 2.8 2 2.6 4.2-.2 2.4-1.6 3.6-3.8 3.8l-11.8.2c-2-.2-3.2-1.6-3.4-3.6zM26.8 11c.8-1.4 2-2.2 3.2-2.2-.6 1-1.2 2-1.8 3.4zM10.6 17h2l.4 9.4h-1.8zM13.8 17.4h2l-.2 9h-1.8zM22.2 17.4h2l-.2 9h-1.8zM25 16.6h2l.4 9.8h-1.8z"/></svg>';
 const KEY_ICON = { red: '●', blue: '■', neutral: GOAT_ICON, assassin: '☠ dead goat' };
 // A team's starting agent count: those still hidden plus those already found.
@@ -58,7 +58,7 @@ function teamTotal(g, team) {
   return g.remaining[team] + g.cards.filter(c => c.revealed && c.team === team).length;
 }
 
-const KEY_NAME = { red: 'Circle agent', blue: 'Square agent', neutral: 'Bystander', assassin: 'dead goat' };
+const KEY_NAME = { red: 'Circle agent', blue: 'Square agent', neutral: 'goat', assassin: 'dead goat' };
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 // Zoom-size pictures live at /cards-large/ under the same file name.
@@ -317,11 +317,11 @@ function howToPlay() {
   return `
     <ol>
       <li>Split into <b>● Circle</b> and <b>■ Square</b>. Each team has one <b>spymaster</b> and one or more <b>guessers</b>.</li>
-      <li>Only spymasters see which pictures belong to which team: Circle pictures have a black dot in the centre, Square pictures a black square in each corner, and the <b>dead goat</b> a black X. Bystanders have no mark.</li>
+      <li>Only spymasters see which pictures belong to which team: Circle pictures have a black dot in the centre, Square pictures a black square in each corner, and the <b>dead goat</b> a black X. Plain goats have no mark.</li>
       <li>On your turn, your spymaster gives a <b>one-word clue</b> and picks a number: how many pictures it points to. <b>0</b> or <b>∞</b> gives unlimited guesses.</li>
       <li>Guessers tap a picture to see it bigger, use <b>‹ ›</b> to flip through the pictures still in play, and tap <b>Guess this picture</b>. A correct guess lets you keep going, up to one more than the number. You can <b>End turn</b> after at least one guess.</li>
       <li><b>Press and hold</b> a picture (or right-click) to see it full screen and pinch to zoom into the details. <b>☰ → Browse pictures</b> lets you swipe through the whole board.</li>
-      <li>Found pictures turn grey with a white ● or ■, and bystanders turn white. Hit a bystander or the other team's picture and your turn ends. Hit the <b>dead goat</b> ☠ and you lose instantly.</li>
+      <li>Found pictures turn grey with a white ● or ■, and goats turn white. Hit a goat or the other team's picture and your turn ends. Hit the <b>dead goat</b> ☠ and you lose instantly.</li>
       <li>The scores at the top show each team's pictures left out of its total, like 6/9. The first team to find all theirs wins. The team that goes first has 9, the other has 8.</li>
     </ol>`;
 }
