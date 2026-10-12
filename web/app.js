@@ -566,6 +566,13 @@ function stepZoom(d) {
   $modal.querySelector(`[data-zoom-step="${d}"]`)?.focus({ preventScroll: true });
 }
 
+// The label under an enlarged picture (● ■ goat ☠) is for spymasters, and
+// for everyone once the game is over. Guessers never see it, not even on
+// revealed pictures.
+function showKeyTag(g) {
+  return me()?.role === 'spymaster' || g?.phase === 'over';
+}
+
 function renderModal() {
   const g = ui.room?.game;
   if (ui.selected == null || !g) {
@@ -574,7 +581,7 @@ function renderModal() {
   }
   const c = g.cards[ui.selected];
   const guessable = canGuess() && !c.revealed;
-  const tag = c.team && (c.revealed || me()?.role === 'spymaster' || g.phase === 'over')
+  const tag = c.team && showKeyTag(g)
     ? `<span class="key-tag k-${c.team}" aria-label="${KEY_NAME[c.team]}${c.revealed ? ' (revealed)' : ''}">${KEY_ICON[c.team]}${c.revealed ? ' (revealed)' : ''}</span>`
     : '';
   // After an arrow step the new picture appears in place, without the
@@ -678,9 +685,9 @@ function syncViewer() {
   box.className = `viewer ${view.carousel ? 'carousel' : ''} ${stepped ? 'stepped' : ''} ${c.team ? `k-${c.team}` : ''} ${c.revealed ? 'revealed' : ''}`;
   const tag = $viewer.querySelector('.viewer-tag');
   const revealed = c.revealed ? ' (revealed)' : '';
-  const label = c.team ? `${KEY_ICON[c.team]}${revealed}` : '';
+  const label = c.team && showKeyTag(g) ? `${KEY_ICON[c.team]}${revealed}` : '';
   tag.innerHTML = label;
-  if (c.team) tag.setAttribute('aria-label', `${KEY_NAME[c.team]}${revealed}`);
+  if (label) tag.setAttribute('aria-label', `${KEY_NAME[c.team]}${revealed}`);
   tag.hidden = !label;
 }
 

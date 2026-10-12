@@ -146,6 +146,38 @@
     const data = JSON.stringify(view());
     setTimeout(() => streams.forEach((s) => s.onmessage && s.onmessage({ data })), 0);
     renderPanel();
+    scheduleBot();
+  }
+
+  // The pretend players take their turns, so whichever seat you pick the
+  // game keeps moving: their spymaster gives a clue when it is not yours to
+  // give, and their guessers guess when it is not yours to guess.
+  const CLUES = ['night', 'beast', 'gold', 'fire', 'wings', 'king', 'sea', 'saint', 'horns', 'feast'];
+  let botTimer = null;
+  function scheduleBot() {
+    clearTimeout(botTimer);
+    const g = game;
+    if (!g || g.phase === 'over') return;
+    const me = myTeam() === g.turn ? seat.role : null;
+    if (g.phase === 'clue' && me === 'spymaster') return;
+    if (g.phase === 'guess' && me === 'guesser') return;
+    botTimer = setTimeout(botMove, 1500);
+  }
+  function botMove() {
+    const g = game;
+    if (!g || g.phase === 'over') return;
+    const t = g.turn;
+    if (g.phase === 'clue') {
+      giveClue(g, t, CLUES[Math.floor(Math.random() * CLUES.length)], Math.min(2, remaining(g, t)));
+    } else if (g.guessesMade >= (g.clue.number === 0 || g.clue.number === UNLIMITED ? 2 : g.clue.number)) {
+      endTurn(g, t);
+    } else {
+      const hidden = g.cards.map((c, i) => i).filter((i) => !g.cards[i].revealed);
+      const ours = hidden.filter((i) => g.cards[i].team === t);
+      const pool = Math.random() < 0.75 && ours.length ? ours : hidden.filter((i) => g.cards[i].team !== 'assassin');
+      guess(g, t, pool[Math.floor(Math.random() * pool.length)]);
+    }
+    broadcast();
   }
 
   function myTeam() { return players(game)[0].team; }
