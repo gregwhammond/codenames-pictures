@@ -50,8 +50,9 @@ const $toast = document.getElementById('toast');
 const TEAM_NAME = { red: 'Circle', blue: 'Square' };
 const TEAM_ICON = { red: '●', blue: '■' };
 // What a picture is, shown on its tag when zoomed: an icon for each kind
-// (the words stay for screen readers).
-const KEY_ICON = { red: '●', blue: '■', neutral: '🐐', assassin: '☠ Assassin' };
+// (the words stay for screen readers). Bystanders get a goat silhouette.
+const GOAT_ICON = '<svg class="goat-icon" viewBox="0 0 32 28" aria-hidden="true"><path d="M8.2 5.2C7.6 2.4 9.6.4 12.6 1c-1.8.6-2.7 2.2-2.4 4.4zM7.4 4.6c1.6-.6 3.4 0 4 1.6l1.8 5.2-3.6.8-1-2.6c-1 .6-2.6 1-4.2.8-1.2-.2-1.6-1.2-.8-2zM10.6 6l3.8-.2-3 1.8zM5 10l1.6.2L5.4 13zM9.6 10.6c2.4-.6 10.4-1 16-.2 2 .4 2.8 2 2.6 4.2-.2 2.4-1.6 3.6-3.8 3.8l-11.8.2c-2-.2-3.2-1.6-3.4-3.6zM26.8 11c.8-1.4 2-2.2 3.2-2.2-.6 1-1.2 2-1.8 3.4zM10.6 17h2l.4 9.4h-1.8zM13.8 17.4h2l-.2 9h-1.8zM22.2 17.4h2l-.2 9h-1.8zM25 16.6h2l.4 9.8h-1.8z"/></svg>';
+const KEY_ICON = { red: '●', blue: '■', neutral: GOAT_ICON, assassin: '☠ Assassin' };
 const KEY_NAME = { red: 'Circle agent', blue: 'Square agent', neutral: 'Bystander', assassin: 'Assassin' };
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
@@ -438,7 +439,7 @@ function renderGame() {
       ${g.cards.map((c, i) => `
         <button class="tile ${c.team ? `k-${c.team}` : ''} ${c.revealed ? 'revealed' : ''}" data-card="${i}" aria-label="Picture ${i + 1}${c.revealed ? `, ${c.team}` : ''}">
           <img src="${esc(c.image)}" alt="" loading="eager" decoding="async" draggable="false">
-          ${c.revealed ? `<span class="cover">${{ assassin: '☠', red: '●', blue: '■' }[c.team] || ''}</span>` : ''}
+          ${c.revealed ? `<span class="cover">${c.team === 'assassin' ? '☠' : ''}</span>` : ''}
         </button>`).join('')}
     </div>
   `);
@@ -645,7 +646,7 @@ function syncViewer() {
   const tag = $viewer.querySelector('.viewer-tag');
   const revealed = c.revealed ? ' (revealed)' : '';
   const label = c.team ? `${KEY_ICON[c.team]}${revealed}` : '';
-  tag.textContent = label;
+  tag.innerHTML = label;
   if (c.team) tag.setAttribute('aria-label', `${KEY_NAME[c.team]}${revealed}`);
   tag.hidden = !label;
 }
