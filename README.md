@@ -6,12 +6,13 @@ It's built for **2 teams of 2** (one spymaster and one guesser per team). Teams 
 
 ## How to play
 
-1. Split into **Circle** and **Square**. Each team has one **spymaster** and at least one **guesser**.
-2. Only the spymasters see which pictures belong to which team (the centre dot, corner squares and X).
-3. On your turn, your spymaster types a **one-word clue** and a number: how many pictures it points to.
-4. Guessers tap a picture to zoom in, then tap **Guess this picture**. Press and hold any picture to see it full screen and pinch to zoom into the detail. A correct guess lets you keep going, up to one more than the number. You can end the turn after at least one guess.
-5. A beige bystander or the other team's picture ends your turn. The **dead goat** (marked with an X) loses the game instantly.
-6. The first team to find all their pictures wins. The team that goes first has 9 pictures, the other has 8.
+1. Split into **● Circle** and **■ Square**. Each team has one **spymaster** and at least one **guesser**.
+2. Only the spymasters see which pictures belong to which team: Circle pictures have a black dot in the centre, Square pictures a black square in each corner, and the **dead goat** a black X. Bystanders have no mark.
+3. On your turn, your spymaster types a **one-word clue** and picks a number: how many pictures it points to. The number starts blank each time, so it must be chosen.
+4. Guessers tap a picture to zoom in, use **‹ ›** to flip through the pictures still in play, then tap **Guess this picture**. A correct guess lets you keep going, up to one more than the number. You can end the turn after at least one guess.
+5. Press and hold any picture to see it full screen and pinch to zoom into the detail. **☰ → Browse pictures** swipes through the whole board without guessing.
+6. Found pictures turn grey with a white ● or ■, and bystanders turn white. A bystander or the other team's picture ends your turn. The **dead goat** ☠ loses the game instantly.
+7. The scores at the top show each team's pictures left out of its total, for example 6/9. The first team to find all their pictures wins. The team that goes first has 9 pictures, the other has 8.
 
 The board is always 24 pictures in a grid 4 columns wide and 6 rows tall: 9 for the starting team, 8 for the other, 6 bystanders and 1 dead goat.
 

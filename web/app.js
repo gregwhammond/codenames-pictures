@@ -316,13 +316,13 @@ function logoTiles() {
 function howToPlay() {
   return `
     <ol>
-      <li>Split into <b>Circle</b> and <b>Square</b>. Each team has one <b>spymaster</b> and one or more <b>guessers</b>.</li>
-      <li>Only spymasters see which pictures belong to which team.</li>
-      <li>On your turn, your spymaster gives a <b>one-word clue</b> and a number: how many pictures it points to.</li>
-      <li>Guessers tap pictures. A correct guess lets you keep going, up to one more than the number.</li>
-      <li>Tap a picture to see it bigger. <b>Press and hold</b> (or right-click) to open it full screen and pinch to zoom into the details.</li>
-      <li>Hit a white bystander or the other team's picture and your turn ends. Hit the <b>dead goat</b> and you lose instantly.</li>
-      <li>The first team to find all their pictures wins. The team that goes first has 9, the other has 8.</li>
+      <li>Split into <b>● Circle</b> and <b>■ Square</b>. Each team has one <b>spymaster</b> and one or more <b>guessers</b>.</li>
+      <li>Only spymasters see which pictures belong to which team: Circle pictures have a black dot in the centre, Square pictures a black square in each corner, and the <b>dead goat</b> a black X. Bystanders have no mark.</li>
+      <li>On your turn, your spymaster gives a <b>one-word clue</b> and picks a number: how many pictures it points to. <b>0</b> or <b>∞</b> gives unlimited guesses.</li>
+      <li>Guessers tap a picture to see it bigger, use <b>‹ ›</b> to flip through the pictures still in play, and tap <b>Guess this picture</b>. A correct guess lets you keep going, up to one more than the number. You can <b>End turn</b> after at least one guess.</li>
+      <li><b>Press and hold</b> a picture (or right-click) to see it full screen and pinch to zoom into the details. <b>☰ → Browse pictures</b> lets you swipe through the whole board.</li>
+      <li>Found pictures turn grey with a white ● or ■, and bystanders turn white. Hit a bystander or the other team's picture and your turn ends. Hit the <b>dead goat</b> ☠ and you lose instantly.</li>
+      <li>The scores at the top show each team's pictures left out of its total, like 6/9. The first team to find all theirs wins. The team that goes first has 9, the other has 8.</li>
     </ol>`;
 }
 
@@ -432,9 +432,11 @@ function renderGame() {
 
   region($app, 'top', `
     <header class="scorebar">
-      <div aria-label="Circle: ${g.remaining.red} of ${teamTotal(g, 'red')} left" class="score red ${g.turn === 'red' && g.phase !== 'over' ? 'active' : ''}"><i>●</i><b>${g.remaining.red}/${teamTotal(g, 'red')}</b></div>
+      <div class="scores">
+        <div aria-label="Circle: ${g.remaining.red} of ${teamTotal(g, 'red')} left" class="score red ${g.turn === 'red' && g.phase !== 'over' ? 'active' : ''}"><i>●</i> ${g.remaining.red}/${teamTotal(g, 'red')}</div>
+        <div aria-label="Square: ${g.remaining.blue} of ${teamTotal(g, 'blue')} left" class="score blue ${g.turn === 'blue' && g.phase !== 'over' ? 'active' : ''}"><i>■</i> ${g.remaining.blue}/${teamTotal(g, 'blue')}</div>
+      </div>
       <div class="status">${statusLine(g, p)}</div>
-      <div aria-label="Square: ${g.remaining.blue} of ${teamTotal(g, 'blue')} left" class="score blue ${g.turn === 'blue' && g.phase !== 'over' ? 'active' : ''}"><i>■</i><b>${g.remaining.blue}/${teamTotal(g, 'blue')}</b></div>
       <button class="menu-btn" id="menu" aria-label="Menu">☰</button>
     </header>
   `);
