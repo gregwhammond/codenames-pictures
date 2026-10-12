@@ -34,7 +34,7 @@ To try it with several players on one computer, open the site in a few private w
 
 Run `go run . -dev` and open http://localhost:8080/dev for a harness that shows four phone-sized frames side by side, one per seat, each with its own identity (`?dev=1` to `?dev=4`, kept apart in local storage). **New game** creates a room and seats all four players; **Start** begins the game from the Circle spymaster's phone; **New board** (top right) deals fresh cards in the same room, keeping the seats; the size select and **Landscape** change the phone shape; **Reset** forgets the dev identities and returns every frame to the home screen. The harness is only served with `-dev`.
 
-For a preview that needs no server, `python3 scripts/build_preview.py -o preview.html` writes one self-contained page: the real app with a made-up game already under way and three pretend players. A bar across the top switches between the **Spymaster** and **Guesser** view, picks your team (**Team: turn** follows whichever team is playing, so you can play both sides), and deals a **New game**. Add `--artifact` to publish it as a Claude Artifact and try changes on a phone.
+For a preview that needs no server, `python3 scripts/build_preview.py -o preview.html` writes one self-contained page: the real app with a made-up game already under way and three pretend players, who give clues and guess whenever it isn't your move. A bar across the top switches between the **Spymaster** and **Guesser** view, picks your team (**Team: turn** follows whichever team is playing, so you can play both sides), and deals a **New game**. Add `--artifact` to publish it as a Claude Artifact and try changes on a phone.
 
 ## Deploying
 
