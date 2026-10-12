@@ -135,13 +135,14 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .lobby-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 .room-code { font-size: 2.4rem; font-weight: 800; letter-spacing: .18em; }
 
-.teams { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.teams { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
 .team { border-radius: var(--radius); padding: 12px; display: flex; flex-direction: column; gap: 10px; }
 .team h2 { font-size: 1.05rem; text-transform: uppercase; letter-spacing: .08em; }
 .team-red, .team-blue { background: var(--panel); border: 1px solid var(--line); }
 
 .seat {
   appearance: none;
+  min-width: 0;
   text-align: left;
   border: 2px dashed rgba(255, 255, 255, .35);
   background: rgba(0, 0, 0, .18);
@@ -156,7 +157,7 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .seat.mine { border-style: solid; border-color: #fff; background: rgba(255, 255, 255, .14); }
 .seat:disabled { cursor: default; border-style: solid; border-color: rgba(255, 255, 255, .2); }
 .seat-role { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; opacity: .85; }
-.seat-people { display: flex; flex-direction: column; font-weight: 600; }
+.seat-people { display: flex; flex-direction: column; font-weight: 600; overflow-wrap: anywhere; } /* long names wrap inside the seat */
 .seat .empty { font-weight: 400; opacity: .7; font-style: italic; }
 .person.away { opacity: .5; }
 .person.away::after { content: " · away"; font-weight: 400; font-size: .85em; }
