@@ -645,6 +645,9 @@ body.offline::before {
 .viewer-step.prev { left: calc(4px + env(safe-area-inset-left, 0px)); }
 .viewer-step.next { right: calc(4px + env(safe-area-inset-right, 0px)); }
 .viewer-step:focus:not(:focus-visible) { outline: none; }
+/* The same arrows on a tapped picture, above its dimmed backdrop. */
+.zoom-step { position: fixed; z-index: 13; }
+.zoom.stepped, .zoom-backdrop.stepped { animation: none; }
 .viewer.carousel .viewer-stage { cursor: grab; }
 /* Stepping to the next picture rebuilds the viewer: don't fade it in again,
    or the board shows through for a moment. Solid black behind the pictures. */

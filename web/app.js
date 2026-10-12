@@ -541,6 +541,24 @@ function menuSheet(room, g) {
 
 // ---------- Zoom sheet ----------
 
+// Tapped picture: the ‹ › arrows flip through the pictures still in play
+// (revealed ones are skipped), wrapping round at either end.
+function stepZoom(d) {
+  const cards = ui.room?.game?.cards;
+  if (ui.selected == null || !cards) return;
+  const n = cards.length;
+  let i = ui.selected;
+  for (let k = 0; k < n; k++) {
+    i = (i + d + n) % n;
+    if (!cards[i].revealed) break;
+  }
+  if (i === ui.selected || cards[i].revealed) return;
+  ui.selected = i;
+  ui.zoomStepped = true;
+  renderModal();
+  $modal.querySelector(`[data-zoom-step="${d}"]`)?.focus({ preventScroll: true });
+}
+
 function renderModal() {
   const g = ui.room?.game;
   if (ui.selected == null || !g) {
@@ -552,9 +570,16 @@ function renderModal() {
   const tag = c.team && (c.revealed || me()?.role === 'spymaster' || g.phase === 'over')
     ? `<span class="key-tag k-${c.team}" aria-label="${KEY_NAME[c.team]}${c.revealed ? ' (revealed)' : ''}">${KEY_ICON[c.team]}${c.revealed ? ' (revealed)' : ''}</span>`
     : '';
+  // After an arrow step the new picture appears in place, without the
+  // open animation, so the board doesn't flash behind it.
+  const still = ui.zoomStepped ? 'stepped' : '';
+  const others = g.cards.some((x, i) => i !== ui.selected && !x.revealed);
   const html = `
-    <div class="zoom-backdrop" data-close></div>
-    <div class="zoom ${c.team ? `k-${c.team}` : ''}" role="dialog" aria-label="Picture">
+    <div class="zoom-backdrop ${still}" data-close></div>
+    ${others ? `
+    <button class="viewer-step zoom-step prev" data-zoom-step="-1" aria-label="Previous picture">‹</button>
+    <button class="viewer-step zoom-step next" data-zoom-step="1" aria-label="Next picture">›</button>` : ''}
+    <div class="zoom ${still} ${c.team ? `k-${c.team}` : ''}" role="dialog" aria-label="Picture">
       <img src="${esc(c.image)}" alt="">
       ${tag}
       <div class="row">
@@ -900,7 +925,12 @@ document.addEventListener('click', async (e) => {
   }
   if (t.dataset.card != null) {
     ui.selected = Number(t.dataset.card);
+    ui.zoomStepped = false;
     renderModal();
+    return;
+  }
+  if (t.dataset.zoomStep != null) {
+    stepZoom(Number(t.dataset.zoomStep));
     return;
   }
   if (t.dataset.close != null) {
@@ -983,6 +1013,11 @@ document.addEventListener('keydown', (e) => {
   if (view.carousel && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
     e.preventDefault();
     stepViewer(e.key === 'ArrowLeft' ? -1 : 1);
+    return;
+  }
+  if (ui.selected != null && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+    e.preventDefault();
+    stepZoom(e.key === 'ArrowLeft' ? -1 : 1);
     return;
   }
   if (e.key === 'Escape' && (ui.selected != null || ui.showMenu)) {
