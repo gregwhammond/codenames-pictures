@@ -198,7 +198,7 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 }
 .score i { font-style: normal; display: inline-block; width: 1.1em; text-align: center; }
 .score.active { opacity: 1; }
-.status { text-align: center; font-weight: 600; font-size: 1rem; }
+.status { text-align: center; font-weight: 600; font-size: 1rem; min-width: 0; }
 .clue-word {
   display: inline-block;
   background: var(--text);
@@ -208,6 +208,8 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   text-transform: uppercase;
   letter-spacing: .06em;
   font-weight: 800;
+  max-width: 100%;
+  overflow-wrap: anywhere; /* a very long clue wraps instead of pushing ☰ off screen */
 }
 .clue-num { font-weight: 800; font-size: 1.15em; }
 .team-word { font-weight: 800; }

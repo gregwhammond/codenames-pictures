@@ -108,18 +108,32 @@ async function api(path, body = {}) {
   return data;
 }
 
-async function act(action, body) {
-  if (ui.busy) return;
-  ui.busy = true;
-  try {
-    const view = await api(`/${ui.code}/${action}`, body);
-    if (view && view.code) setRoom(view);
-  } catch (err) {
-    if (err.status === 403) await rejoin();
-    else toast(err.message);
-  } finally {
-    ui.busy = false;
-  }
+// Requests go one at a time, in the order they were tapped. A tap made while
+// another request is on its way waits for it rather than being lost; tapping
+// the very same thing again while it is still pending does nothing.
+let queue = Promise.resolve();
+let pending = '';
+function act(action, body) {
+  const key = `${action} ${JSON.stringify(body ?? {})}`;
+  if (key === pending) return queue;
+  const code = ui.code;
+  queue = queue.then(async () => {
+    if (!code || ui.code !== code) return; // left the room meanwhile
+    pending = key;
+    ui.busy = true;
+    try {
+      const view = await api(`/${code}/${action}`, body);
+      if (view && view.code && ui.code === code) setRoom(view);
+    } catch (err) {
+      if (ui.code !== code) return;
+      if (err.status === 403) await rejoin();
+      else toast(err.message);
+    } finally {
+      ui.busy = false;
+      pending = '';
+    }
+  });
+  return queue;
 }
 
 function toast(message) {
@@ -148,13 +162,15 @@ async function joinRoom(code, name) {
 }
 
 async function rejoin() {
-  if (!ui.code) return;
+  const code = ui.code;
+  if (!code) return;
   try {
-    const view = await api(`/${ui.code}/join`, { name: store.get('name') || 'Player' });
+    const view = await api(`/${code}/join`, { name: store.get('name') || 'Player' });
+    if (ui.code !== code) return; // left while the join was on its way
     setRoom(view);
     connect();
   } catch (err) {
-    if (err.status === 404) {
+    if (err.status === 404 && ui.code === code) {
       leaveLocal('That game has ended. Start a new one!');
     }
   }
@@ -165,7 +181,9 @@ function connect() {
   const es = new EventSource(`/api/rooms/${ui.code}/events?token=${token}`);
   ui.events = es;
   es.onmessage = (e) => setRoom(JSON.parse(e.data));
-  es.addEventListener('gone', () => { es.close(); rejoin(); });
+  // "gone": this player is no longer in the room, because they left it (perhaps
+  // from another tab). Follow them out rather than joining again as someone new.
+  es.addEventListener('gone', () => { if (ui.events === es) leaveLocal('You left this game.'); else es.close(); });
   es.onerror = () => {
     document.body.classList.add('offline');
     // The browser retries by itself unless the server refused us outright.
@@ -228,12 +246,15 @@ function canGuess() {
 function setRoom(view) {
   const prev = ui.room?.game;
   ui.room = view;
-  if (!view.game) ui.selected = null;
+  // A zoom sheet belongs to one picture: close it when a new board is dealt
+  // or the game ends for everyone. The menu only lives on the game screen.
+  if (ui.selected != null && view.game?.cards[ui.selected]?.image !== prev?.cards[ui.selected]?.image) ui.selected = null;
+  if (!view.game) ui.showMenu = false;
   // Start every new clue with no number picked.
   const g = view.game;
   if (g?.phase === 'clue' && (prev?.phase !== 'clue' || prev.turn !== g.turn)) ui.clueNumber = null;
   const nowNeedsMe = needsMe();
-  if (nowNeedsMe && !ui.lastNeedsMe && navigator.vibrate) navigator.vibrate([80, 60, 80]);
+  if (nowNeedsMe && !ui.lastNeedsMe && navigator.vibrate && navigator.userActivation?.hasBeenActive !== false) navigator.vibrate([80, 60, 80]);
   ui.lastNeedsMe = nowNeedsMe;
   keepAwake();
   render();
@@ -325,6 +346,15 @@ function howToPlay() {
       <li>The scores at the top show each team's pictures left out of its total, like 6/9. The first team to find all theirs wins. The team that goes first has 9, the other has 8.</li>
     </ol>`;
 }
+
+// Enter (or Go) in the room-code field means Join, not the form's first
+// button, Create.
+$app.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && e.target.id === 'code' && e.target.value.trim()) {
+    e.preventDefault();
+    e.target.form.querySelector('button[value="join"]')?.click();
+  }
+});
 
 $app.addEventListener('submit', async (e) => {
   if (e.target.id === 'home-form') {
@@ -534,7 +564,9 @@ function menuSheet(room, g) {
         <div class="row">
           <button class="btn" data-sit="red:guesser">Join Circle</button>
           <button class="btn" data-sit="blue:guesser">Join Square</button>
-        </div>` : ''}
+        </div>
+        ${['red', 'blue'].filter((t) => !room.players.some((x) => x.team === t && x.role === 'spymaster' && x.connected)).map((t) => `
+        <button class="btn" data-sit="${t}:spymaster">Be ${TEAM_NAME[t]} spymaster</button>`).join('')}` : ''}
       <h4>Clues</h4>
       ${log ? `<ul class="log">${log}</ul>` : '<p class="muted">No clues yet.</p>'}
       <button class="btn" id="browse">Browse pictures</button>
@@ -971,6 +1003,10 @@ document.addEventListener('click', async (e) => {
       b.classList.toggle('on', on);
       b.setAttribute('aria-checked', on);
     });
+    // The buttons now match what render would draw; record that, so the next
+    // update from the server doesn't rebuild the form and wipe the typed word.
+    const actions = t.closest('[data-region="actions"]');
+    if (actions) actions._html = `<footer class="actions">${actionsPanel(ui.room.game, me())}</footer>`;
     return;
   }
   if (t.dataset.sit != null) {
@@ -1011,11 +1047,14 @@ document.addEventListener('click', async (e) => {
       ui.showMenu = !ui.showMenu;
       render();
       break;
-    case 'leave':
+    case 'leave': {
       if (!confirm('Leave this room?')) return;
-      await act('leave');
+      // Close the stream first: its "gone" must not make us join again.
+      const code = ui.code;
       leaveLocal();
+      api(`/${code}/leave`).catch(() => {});
       break;
+    }
   }
 });
 
