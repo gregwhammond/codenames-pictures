@@ -200,9 +200,8 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   opacity: .5;
   transition: opacity .2s, transform .2s;
 }
-.score i { font-style: normal; font-size: .8rem; }
-.score b { font-size: 1.5rem; display: block; margin: 1px 0; }
-.score span { font-size: .5rem; text-transform: uppercase; letter-spacing: .06em; }
+.score i { font-style: normal; font-size: 1rem; }
+.score b { font-size: 1.35rem; display: block; margin: 2px 0 0; letter-spacing: -.02em; }
 .score.red { border-radius: 50%; }
 .score.blue { border-radius: 0; }
 .score.active { opacity: 1; transform: scale(1.04); background: #fff; color: #000; }
