@@ -90,7 +90,6 @@ var (
 	ErrRevealed    = errors.New("that picture is already revealed")
 	ErrBadClue     = errors.New("a clue must be a single word")
 	ErrBadNumber   = errors.New("the clue number must be 0 to 9, or unlimited")
-	ErrMustGuess   = errors.New("make at least one guess before ending the turn")
 	ErrTooFewCards = errors.New("not enough pictures to deal a board")
 )
 
@@ -264,7 +263,7 @@ func (g *Game) Guess(team Team, idx int) error {
 	return nil
 }
 
-// EndTurn lets the guessing team stop after at least one guess.
+// EndTurn lets the guessing team stop, even before its first guess.
 func (g *Game) EndTurn(team Team) error {
 	if g.Phase == PhaseOver {
 		return ErrGameOver
@@ -274,9 +273,6 @@ func (g *Game) EndTurn(team Team) error {
 	}
 	if g.Phase != PhaseGuess {
 		return ErrWrongPhase
-	}
-	if g.GuessesMade == 0 {
-		return ErrMustGuess
 	}
 	g.passTurn()
 	return nil
