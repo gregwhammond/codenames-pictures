@@ -274,6 +274,52 @@ func TestDealIsRandom(t *testing.T) {
 	}
 }
 
+// A clue is one word: no kind of whitespace or invisible separator inside it.
+func TestClueRejectsAllWhitespace(t *testing.T) {
+	separators := map[string]rune{
+		"space": 0x20, "tab": 0x09, "line feed": 0x0A, "carriage return": 0x0D, "vertical tab": 0x0B,
+		"form feed": 0x0C, "no-break space": 0x00A0, "next line": 0x0085, "en space": 0x2002,
+		"line separator": 0x2028, "ideographic space": 0x3000, "zero-width space": 0x200B,
+		"word joiner": 0x2060, "zero-width no-break space": 0xFEFF, "null": 0,
+	}
+	for name, sep := range separators {
+		g := newTestGame(t, 1)
+		word := "two" + string(sep) + "words"
+		if err := g.GiveClue(g.Turn, word, 1); err != ErrBadClue {
+			t.Errorf("%s (%U) inside a clue: got %v, want ErrBadClue", name, sep, err)
+		}
+		if g.Phase != PhaseClue || len(g.Log) != 0 {
+			t.Fatalf("%s: a refused clue changed the game", name)
+		}
+	}
+	// Surrounding whitespace is trimmed, and ordinary words in any script pass.
+	crlf := string([]rune{0x0D, 0x0A})
+	for _, word := range []string{"dragon", " dragon" + crlf, "naïve", "ドラゴン", "well-known", "l'eau"} {
+		g := newTestGame(t, 1)
+		if err := g.GiveClue(g.Turn, word, 1); err != nil {
+			t.Errorf("clue %q: %v", word, err)
+		} else if g.Clue.Word != strings.TrimSpace(word) {
+			t.Errorf("clue %q stored as %q", word, g.Clue.Word)
+		}
+	}
+}
+
+func TestImageGroupOfEncodedAndVersionedURLs(t *testing.T) {
+	cases := map[string]string{
+		"/cards/S014-07.3fa2c1d0.jpg?v=12345678": "S014-07",
+		"/cards/S014-07-b.jpg?v=12345678":        "S014-07",
+		"/cards/my%20cat-b.png":                  "my cat",
+		"/cards/100%25.png":                      "100%",
+		"/cards/what%3F-c.jpg?v=0000ffff":        "what?",
+		"/cards/sub%20dir/plain.jpg":             "plain",
+	}
+	for image, want := range cases {
+		if got := imageGroup(image); got != want {
+			t.Errorf("imageGroup(%q) = %q, want %q", image, got, want)
+		}
+	}
+}
+
 func TestEndTurnWithoutGuessing(t *testing.T) {
 	g := newTestGame(t, 2)
 	team := g.Turn

@@ -36,7 +36,8 @@ def draw(size, padding, rounded):
 
 
 def main():
-    out = pathlib.Path("web/icons")
+    # Anchored on the repo, like the other scripts, not on the current folder.
+    out = pathlib.Path(__file__).resolve().parent.parent / "web" / "icons"
     out.mkdir(parents=True, exist_ok=True)
     draw(192, 34, True).save(out / "icon-192.png")
     draw(512, 90, True).save(out / "icon-512.png")

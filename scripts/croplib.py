@@ -41,7 +41,10 @@ import tempfile
 from PIL import Image, ImageChops, ImageFilter, ImageOps
 
 # CROP_REPO lets tests point everything at a temporary copy of the repo.
-REPO = pathlib.Path(os.environ.get("CROP_REPO") or pathlib.Path(__file__).resolve().parent.parent)
+# REPO is resolved, so it compares equal to other resolved paths even when the
+# repo is reached through a symlink (macOS temp folders, a linked checkout).
+REPO_AS_GIVEN = pathlib.Path(os.environ.get("CROP_REPO") or pathlib.Path(__file__).resolve().parent.parent)
+REPO = REPO_AS_GIVEN.resolve()
 CROPS_DIR = REPO / "art" / "crops"
 TILES_DIR = REPO / "web" / "cards"
 LARGE_DIR = REPO / "cards-large"
@@ -56,6 +59,24 @@ STATUSES = ("auto", "adjusted", "approved", "rejected")
 ROTATIONS = (0, 90, 180, 270)
 TILE_RE = re.compile(r"^[A-Za-z0-9_]+(?:-[A-Za-z0-9_]+)*$")
 EXTRA_SUFFIX_RE = re.compile(r"-[b-z]$")  # S014-07-b is an extra crop of S014-07
+
+
+def repo_relative(path):
+    """Path of a file inside the repo, relative to its root, as a posix string.
+
+    Works whether path (or the repo) was spelled through a symlink or not, and
+    keeps a symlinked folder inside the repo under its own name. Raises
+    ValueError for a path outside the repo."""
+    path = pathlib.Path(path)
+    absolute = pathlib.Path(os.path.abspath(path))
+    bases = (REPO, pathlib.Path(os.path.abspath(REPO_AS_GIVEN)))
+    for candidate in (absolute, path.resolve()):
+        for base in bases:
+            try:
+                return candidate.relative_to(base).as_posix()
+            except ValueError:
+                continue
+    raise ValueError(f"{path} is not inside the repo {REPO}")
 
 
 def group_of(tile):
@@ -83,10 +104,16 @@ def load_record(path):
         return json.load(f)
 
 
-def load_all_records():
+def record_files():
+    """The record files in art/crops, sorted. Dot-files are not records: an
+    interrupted save_record() can leave a .tmp-*.json behind."""
     if not CROPS_DIR.is_dir():
         return []
-    return [load_record(p) for p in sorted(CROPS_DIR.glob("*.json"))]
+    return sorted(p for p in CROPS_DIR.glob("*.json") if not p.name.startswith("."))
+
+
+def load_all_records():
+    return [load_record(p) for p in record_files()]
 
 
 def save_record(record):
@@ -202,6 +229,18 @@ def to_8bit(im):
     elif top > 65535:
         arr = arr * (255.0 / top)
     return Image.fromarray(np.clip(np.rint(arr), 0, 255).astype(np.uint8), "L")
+
+
+def oriented_size(path):
+    """(width, height) of a picture as it is displayed: after applying its
+    EXIF orientation, which is how open_source() and the Crop Studio see it."""
+    with Image.open(path) as im:
+        w, h = im.size
+        try:
+            orient = im.getexif().get(0x0112)
+        except Exception:  # noqa: BLE001 - broken EXIF is not fatal
+            orient = None
+    return (h, w) if orient in (5, 6, 7, 8) else (w, h)
 
 
 def open_rgba(path):

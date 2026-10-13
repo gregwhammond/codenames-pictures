@@ -538,7 +538,7 @@ def main(argv=None):
     ap.add_argument("--quiet", action="store_true", help="do not log requests")
     args = ap.parse_args(argv)
     srv, url = make_server(args.port, args.lan, quiet=args.quiet)
-    n = len(list(croplib.CROPS_DIR.glob("*.json"))) if croplib.CROPS_DIR.is_dir() else 0
+    n = len(croplib.record_files())
     print(f"Crop Studio: {n} records in {croplib.CROPS_DIR}")
     print(f"Open {url}")
     if args.lan:

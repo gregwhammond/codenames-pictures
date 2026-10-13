@@ -3,9 +3,11 @@ package main
 import (
 	"errors"
 	"math/rand"
+	"net/url"
 	"path"
 	"regexp"
 	"strings"
+	"unicode"
 	"unicode/utf8"
 )
 
@@ -138,8 +140,14 @@ var (
 
 // imageGroup names the source picture an image was cropped from, so that
 // /cards/S014-07.3fa2c1d0.jpg and /cards/S014-07-b.9c0d1e2f.jpg share the
-// group "S014-07" (matching croplib.group_of in scripts/).
+// group "S014-07" (matching croplib.group_of in scripts/). Image URLs are
+// percent-encoded and may carry a "?v=" version, neither of which is part of
+// the name.
 func imageGroup(image string) string {
+	image, _, _ = strings.Cut(image, "?")
+	if plain, err := url.PathUnescape(image); err == nil {
+		image = plain
+	}
 	name := path.Base(image)
 	name = strings.TrimSuffix(name, path.Ext(name))
 	name = hashSuffix.ReplaceAllString(name, "")
@@ -198,7 +206,7 @@ func (g *Game) GiveClue(team Team, word string, number int) error {
 		return ErrWrongPhase
 	}
 	word = strings.TrimSpace(word)
-	if word == "" || strings.ContainsAny(word, " \t\n") || utf8.RuneCountInString(word) > maxClueWordSize {
+	if word == "" || strings.ContainsFunc(word, isSeparator) || utf8.RuneCountInString(word) > maxClueWordSize {
 		return ErrBadClue
 	}
 	if number != Unlimited && (number < 0 || number > 9) {
@@ -215,6 +223,23 @@ func (g *Game) GiveClue(team Team, word string, number int) error {
 	}
 	g.Log = append(g.Log, LogEntry{Clue: *g.Clue, Guesses: []string{}})
 	return nil
+}
+
+// isSeparator reports whether r would split a clue into more than one word:
+// any whitespace (including CR, vertical tab and no-break space), control
+// characters, and the invisible separators that aren't classed as spaces.
+func isSeparator(r rune) bool {
+	if unicode.IsSpace(r) || unicode.IsControl(r) {
+		return true
+	}
+	switch r {
+	case 0x180E, // Mongolian vowel separator
+		0x200B, // zero-width space
+		0x2060, // word joiner
+		0xFEFF: // zero-width no-break space
+		return true
+	}
+	return false
 }
 
 // Guess reveals a card on behalf of the current team.
