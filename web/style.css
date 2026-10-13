@@ -5,13 +5,17 @@
   --line: #3d4560;
   --text: #f3f1ea;
   --muted: #a7adc2;
-  --red: #e5483c;
-  --red-deep: #b8302a;
-  --blue: #2f80e4;
-  --blue-deep: #1f5fb3;
-  --neutral: #d9c9a3;
-  --neutral-deep: #b7a47a;
+  /* Team ids stay red/blue in code; on screen they are the Circle and
+     Square teams, told apart by shape (● and ■), not colour. Both share
+     one plain grey: no orange or purple anywhere. */
+  --red: #5d6475;
+  --red-deep: #3a3f4f;
+  --blue: #5d6475;
+  --blue-deep: #3a3f4f;
+  --neutral: #ffffff;
+  --neutral-deep: #d8d8d8;
   --assassin: #15161b;
+  --checker: repeating-conic-gradient(#000 0 25%, #fff 0 50%) 0 0 / 10px 10px;
   --accent: #f4c84a;
   --radius: 12px;
   --safe-top: env(safe-area-inset-top, 0px);
@@ -109,10 +113,10 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 }
 .logo i { width: 34px; height: 34px; border-radius: 7px; }
 
-.t-red { background: var(--red); }
-.t-blue { background: var(--blue); }
+.t-red { background: var(--red); border-radius: 50% !important; }
+.t-blue { background: var(--blue); border-radius: 0 !important; }
 .t-neutral { background: var(--neutral); }
-.t-assassin { background: var(--assassin); border: 1px solid #555; }
+.t-assassin { background: repeating-conic-gradient(#000 0 25%, #fff 0 50%) 0 0 / 17px 17px; }
 .t-none { background: var(--line); }
 
 .how summary { cursor: pointer; font-weight: 600; }
@@ -131,14 +135,14 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .lobby-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 .room-code { font-size: 2.4rem; font-weight: 800; letter-spacing: .18em; }
 
-.teams { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.teams { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
 .team { border-radius: var(--radius); padding: 12px; display: flex; flex-direction: column; gap: 10px; }
 .team h2 { font-size: 1.05rem; text-transform: uppercase; letter-spacing: .08em; }
-.team-red { background: linear-gradient(160deg, var(--red-deep), #7c2020); }
-.team-blue { background: linear-gradient(160deg, var(--blue-deep), #173d78); }
+.team-red, .team-blue { background: var(--panel); border: 1px solid var(--line); }
 
 .seat {
   appearance: none;
+  min-width: 0;
   text-align: left;
   border: 2px dashed rgba(255, 255, 255, .35);
   background: rgba(0, 0, 0, .18);
@@ -153,7 +157,7 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .seat.mine { border-style: solid; border-color: #fff; background: rgba(255, 255, 255, .14); }
 .seat:disabled { cursor: default; border-style: solid; border-color: rgba(255, 255, 255, .2); }
 .seat-role { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; opacity: .85; }
-.seat-people { display: flex; flex-direction: column; font-weight: 600; }
+.seat-people { display: flex; flex-direction: column; font-weight: 600; overflow-wrap: anywhere; } /* long names wrap inside the seat */
 .seat .empty { font-weight: 400; opacity: .7; font-style: italic; }
 .person.away { opacity: .5; }
 .person.away::after { content: " · away"; font-weight: 400; font-size: .85em; }
@@ -169,33 +173,33 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   display: flex;
   flex-direction: column;
   padding: var(--safe-top) 0 var(--safe-bottom);
-  background: radial-gradient(ellipse at top, var(--bg-2), var(--bg) 70%);
+  background: #000; /* same black as the card marks */
   transition: box-shadow .3s ease;
 }
-#app.turn-red[data-screen="game"] { box-shadow: inset 0 4px 0 var(--red); }
-#app.turn-blue[data-screen="game"] { box-shadow: inset 0 4px 0 var(--blue); }
 
 .scorebar {
   display: grid;
-  grid-template-columns: 64px 1fr 64px 40px;
+  grid-template-columns: auto 1fr 40px;
   align-items: center;
-  gap: 6px;
-  padding: 10px 10px 6px;
+  gap: 8px;
+  padding: 8px 10px 6px;
 }
+/* The two team scores, stacked on the left: icon then left/total. The
+   team whose turn it is is bright, the other dimmed. */
+.scores { display: flex; flex-direction: column; gap: 2px; }
 .score {
-  border-radius: 10px;
-  padding: 4px 0;
-  text-align: center;
-  line-height: 1.05;
-  opacity: .55;
-  transition: opacity .2s, transform .2s;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.15;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  opacity: .45;
+  transition: opacity .2s;
 }
-.score b { font-size: 1.6rem; display: block; }
-.score span { font-size: .65rem; text-transform: uppercase; letter-spacing: .06em; }
-.score.red { background: var(--red); }
-.score.blue { background: var(--blue); }
-.score.active { opacity: 1; transform: scale(1.06); }
-.status { text-align: center; font-weight: 600; font-size: 1rem; }
+.score i { font-style: normal; display: inline-block; width: 1.1em; text-align: center; }
+.score.active { opacity: 1; }
+.status { text-align: center; font-weight: 600; font-size: 1rem; min-width: 0; }
 .clue-word {
   display: inline-block;
   background: var(--text);
@@ -205,11 +209,12 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   text-transform: uppercase;
   letter-spacing: .06em;
   font-weight: 800;
+  max-width: 100%;
+  overflow-wrap: anywhere; /* a very long clue wraps instead of pushing ☰ off screen */
 }
 .clue-num { font-weight: 800; font-size: 1.15em; }
 .team-word { font-weight: 800; }
-.team-word.red { color: #ff766b; }
-.team-word.blue { color: #6fb0ff; }
+
 .menu-btn { background: none; border: none; font-size: 1.5rem; width: 40px; height: 40px; cursor: pointer; }
 
 [data-screen="game"] > [data-region="board"] {
@@ -221,12 +226,14 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   padding: 4px 8px;
 }
 
-/* 25 pictures in a 5x5 square that fills the shorter side of its container. */
+/* 24 square pictures, always 4 columns by 6 rows, as large as the container
+   allows. Width is capped so the 6 rows (plus 5 gaps) fit the height. */
 .board {
+  --gap: 6px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 6px;
-  width: min(100cqw, 100cqh);
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+  width: min(100cqw, (100cqh - 5 * var(--gap)) * 4 / 6 + 3 * var(--gap));
 }
 
 .tile {
@@ -256,7 +263,68 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .k-red { --frame: var(--red); --cover: var(--red); }
 .k-blue { --frame: var(--blue); --cover: var(--blue); }
 .k-neutral { --frame: var(--neutral); --cover: var(--neutral); }
-.k-assassin { --frame: var(--assassin); --cover: var(--assassin); }
+.k-assassin { --frame: var(--assassin); --cover: var(--checker); }
+/* Neutral pictures have no frame: no mark means neutral. */
+.board.spy .tile.k-neutral:not(.revealed)::after, .board.over .tile.k-neutral:not(.revealed)::after {
+  display: none;
+}
+/* Circle team mark: one round black dot at the centre of the picture,
+   about an eighth of the side across, with a 1px white inner line; no
+   frame. border-radius on a square box keeps it a true circle at any
+   tile size. */
+.board.spy .tile.k-red:not(.revealed)::after, .board.over .tile.k-red:not(.revealed)::after {
+  border: 0;
+  inset: auto;
+  top: 50%; left: 50%;
+  width: 13%; aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #000;
+  box-shadow: inset 0 0 0 1px #fff; /* 1px white line inside the edge */
+}
+/* Square team mark: a solid black square in each corner of the picture,
+   about an eighth of the side wide, with a 1px white line along its two
+   sides on the picture; nothing else. Like every frame it sits on top of the picture, which fills the whole tile. The
+   squares overhang the tile by 2px into the black gap between pictures,
+   and the tile does not clip them, so the picture's anti-aliased edge can
+   never show as a sliver beside a square. The picture is rounded itself. */
+.board.spy .tile.k-blue:not(.revealed), .board.over .tile.k-blue:not(.revealed) {
+  overflow: visible;
+  background: transparent;
+}
+.board.spy .tile.k-blue:not(.revealed) img, .board.over .tile.k-blue:not(.revealed) img {
+  border-radius: 9px;
+}
+.board.spy .tile.k-blue:not(.revealed)::after, .board.over .tile.k-blue:not(.revealed)::after {
+  inset: -2px;
+  border: 0;
+  /* Each black square is drawn over a white one 1px larger, leaving a 1px
+     white line along its two sides that lie on the picture. */
+  --sq: 11.8%;
+  background:
+    /* keep the white lines off the 2px overhang into the gap */
+    linear-gradient(#000 0 0) top / 100% 2px no-repeat,
+    linear-gradient(#000 0 0) bottom / 100% 2px no-repeat,
+    linear-gradient(#000 0 0) left / 2px 100% no-repeat,
+    linear-gradient(#000 0 0) right / 2px 100% no-repeat,
+    linear-gradient(#000 0 0) left top / calc(var(--sq) - 1px) calc(var(--sq) - 1px) no-repeat,
+    linear-gradient(#000 0 0) right top / calc(var(--sq) - 1px) calc(var(--sq) - 1px) no-repeat,
+    linear-gradient(#000 0 0) left bottom / calc(var(--sq) - 1px) calc(var(--sq) - 1px) no-repeat,
+    linear-gradient(#000 0 0) right bottom / calc(var(--sq) - 1px) calc(var(--sq) - 1px) no-repeat,
+    linear-gradient(#fff 0 0) left top / var(--sq) var(--sq) no-repeat,
+    linear-gradient(#fff 0 0) right top / var(--sq) var(--sq) no-repeat,
+    linear-gradient(#fff 0 0) left bottom / var(--sq) var(--sq) no-repeat,
+    linear-gradient(#fff 0 0) right bottom / var(--sq) var(--sq) no-repeat;
+}
+/* Assassin mark: a thin black X from corner to corner over the picture. */
+.board.spy .tile.k-assassin:not(.revealed)::after, .board.over .tile.k-assassin:not(.revealed)::after {
+  border: 0;
+  background:
+    linear-gradient(to top right, transparent calc(50% - 1px), #000 calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)),
+    linear-gradient(to bottom right, transparent calc(50% - 1px), #000 calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px));
+}
+.tile.k-neutral .cover { color: #1b1b1b; }
+.tile.k-assassin .cover { text-shadow: 0 0 6px #000, 0 0 2px #000; }
 .board.over .tile:not(.revealed) { opacity: .75; }
 
 .tile .cover {
@@ -271,6 +339,15 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 }
 .tile.revealed img { filter: grayscale(1); }
 .board.spy .tile.revealed .cover { opacity: .93; }
+/* Revealed team pictures: a white circle or square drawn as a shape (not a
+   text character) so it sits exactly in the middle of the card. */
+.tile.k-red .cover::before, .tile.k-blue .cover::before {
+  content: "";
+  width: 32%;
+  aspect-ratio: 1;
+  background: #fff;
+}
+.tile.k-red .cover::before { border-radius: 50%; }
 .tile.revealed { animation: flip .4s ease; }
 @keyframes flip { from { transform: rotateY(90deg); } to { transform: rotateY(0); } }
 
@@ -346,9 +423,11 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   border-radius: 14px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, .5);
 }
-.zoom.k-red img, .zoom.k-blue img, .zoom.k-neutral img, .zoom.k-assassin img { outline: 6px solid var(--frame); }
+/* No border round an enlarged picture: its tag (● ■ goat ☠) says what it is. */
 .key-tag { background: var(--frame); color: #fff; padding: 4px 12px; border-radius: 999px; font-weight: 700; }
-.key-tag.k-neutral { color: #1b1b1b; }
+.key-tag.k-neutral { background: var(--red); color: #fff; } /* white goat, like the ● and ■ tags */
+.goat-icon { height: 1em; width: 1.15em; vertical-align: -.12em; fill: currentColor; }
+.key-tag.k-assassin { border: 2px dashed #fff; }
 
 @keyframes fade { from { opacity: 0; } }
 @keyframes slide { from { transform: translateX(100%); } }
@@ -389,7 +468,7 @@ body.offline::before {
 }
 
 @media (min-width: 700px) {
-  .scorebar { max-width: 820px; margin: 0 auto; width: 100%; grid-template-columns: 90px 1fr 90px 40px; }
+  .scorebar { max-width: 820px; margin: 0 auto; width: 100%; grid-template-columns: auto 1fr 40px; }
   .status { font-size: 1.2rem; }
 }
 
@@ -406,7 +485,7 @@ body.offline::before {
   [data-screen="game"] > [data-region="top"] { grid-area: top; }
   [data-screen="game"] > [data-region="board"] { grid-area: board; padding: 8px; }
   [data-screen="game"] > [data-region="actions"] { grid-area: actions; align-self: end; }
-  .scorebar { grid-template-columns: 56px 1fr 56px 36px; }
+  .scorebar { grid-template-columns: auto 1fr 36px; }
   .status { font-size: .9rem; }
   .nums { flex-wrap: wrap; }
   .num { flex: 0 0 calc((100% - 20px) / 6); height: 34px; }
@@ -449,26 +528,69 @@ body.offline::before {
   touch-action: none;
   cursor: zoom-in;
 }
-.viewer-img {
-  /* Fill the stage whether the 400px tile or the large picture is showing. */
+.viewer-pic {
+  /* Pictures are square. Fill the stage whether the 400px tile or the large
+     picture is showing; the key mark is drawn on top and zooms with it. */
+  position: relative;
   width: min(100cqw, 100cqh);
-  height: auto;
-  max-height: 100cqh;
-  object-fit: contain;
-  border-radius: 10px;
-  background: #fff;
+  aspect-ratio: 1;
   transform-origin: center center;
   will-change: transform;
   pointer-events: none;
 }
-.viewer.k-red .viewer-img, .viewer.k-blue .viewer-img,
-.viewer.k-neutral .viewer-img, .viewer.k-assassin .viewer-img { outline: 6px solid var(--frame); }
+.viewer-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #fff;
+}
+/* The same black key marks as the board, in the same proportions. Revealed
+   and neutral pictures carry no mark. */
+.viewer:not(.revealed) .viewer-pic::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+/* Circle team: one round black dot at the centre. */
+.viewer.k-red:not(.revealed) .viewer-pic::after {
+  top: 50%; left: 50%;
+  width: 13%; aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #000;
+  box-shadow: inset 0 0 0 1px #fff; /* 1px white line inside the edge */
+}
+/* Square team: a black square in each corner, flush with the edges, with a
+   1px white line along its two sides on the picture (each black square is
+   drawn over a white one 1px larger). */
+.viewer.k-blue:not(.revealed) .viewer-pic::after {
+  inset: 0;
+  --sq: 11.8%;
+  background:
+    linear-gradient(#000 0 0) left top / calc(var(--sq) - 1px) calc(var(--sq) - 1px) no-repeat,
+    linear-gradient(#000 0 0) right top / calc(var(--sq) - 1px) calc(var(--sq) - 1px) no-repeat,
+    linear-gradient(#000 0 0) left bottom / calc(var(--sq) - 1px) calc(var(--sq) - 1px) no-repeat,
+    linear-gradient(#000 0 0) right bottom / calc(var(--sq) - 1px) calc(var(--sq) - 1px) no-repeat,
+    linear-gradient(#fff 0 0) left top / var(--sq) var(--sq) no-repeat,
+    linear-gradient(#fff 0 0) right top / var(--sq) var(--sq) no-repeat,
+    linear-gradient(#fff 0 0) left bottom / var(--sq) var(--sq) no-repeat,
+    linear-gradient(#fff 0 0) right bottom / var(--sq) var(--sq) no-repeat;
+}
+/* Assassin: a thin black X from corner to corner. */
+.viewer.k-assassin:not(.revealed) .viewer-pic::after {
+  inset: 0;
+  background:
+    linear-gradient(to top right, transparent calc(50% - 1.5px), #000 calc(50% - 1.5px) calc(50% + 1.5px), transparent calc(50% + 1.5px)),
+    linear-gradient(to bottom right, transparent calc(50% - 1.5px), #000 calc(50% - 1.5px) calc(50% + 1.5px), transparent calc(50% + 1.5px));
+}
 .viewer-tag {
   position: absolute;
   left: 50%;
   bottom: calc(10px + var(--safe-bottom));
   transform: translateX(-50%);
-  background: var(--frame, var(--panel));
+  background: #3a3f4f;
   color: #fff;
   padding: 4px 12px;
   border-radius: 999px;
@@ -476,8 +598,6 @@ body.offline::before {
   white-space: nowrap;
   pointer-events: none;
 }
-.viewer.k-neutral .viewer-tag { color: #1b1b1b; }
-.viewer.k-assassin .viewer-tag { border: 1px solid #555; }
 .viewer-close {
   position: absolute;
   top: calc(8px + var(--safe-top));
@@ -491,3 +611,43 @@ body.offline::before {
   cursor: pointer;
 }
 .viewer-close:focus:not(:focus-visible) { outline: none; }
+
+/* Carousel (menu > Browse pictures) */
+.viewer-count {
+  position: absolute;
+  top: calc(18px + var(--safe-top));
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 700;
+  color: var(--muted, #aab);
+  pointer-events: none;
+}
+.viewer-step {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 64px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(46, 52, 73, .5);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.viewer-step.prev { left: calc(4px + env(safe-area-inset-left, 0px)); }
+.viewer-step.next { right: calc(4px + env(safe-area-inset-right, 0px)); }
+.viewer-step:focus:not(:focus-visible) { outline: none; }
+/* The same arrows on a tapped picture, above its dimmed backdrop. */
+.zoom-step { position: fixed; z-index: 13; }
+.zoom.stepped, .zoom-backdrop.stepped { animation: none; }
+.viewer.carousel .viewer-stage { cursor: grab; }
+/* Stepping to the next picture rebuilds the viewer: don't fade it in again,
+   or the board shows through for a moment. Solid black behind the pictures. */
+.viewer.carousel { background: rgba(0, 0, 0, var(--dim, 1)); }
+.viewer.stepped { animation: none; }
+.viewer-pic.from-right { animation: from-right .2s ease; }
+.viewer-pic.from-left { animation: from-left .2s ease; }
+/* Animate `translate`, not `transform`, so a drag straight after a step isn't overridden. */
+@keyframes from-right { from { translate: 40% 0; opacity: 0; } }
+@keyframes from-left { from { translate: -40% 0; opacity: 0; } }

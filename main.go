@@ -1,4 +1,4 @@
-// Command codenames-pictures serves a realtime Codenames Pictures game.
+// Command codenames-pictures serves Goat Pic, a realtime Codenames-style picture game.
 package main
 
 import (
@@ -73,7 +73,7 @@ func main() {
 		}
 	}()
 
-	log.Printf("Codenames Pictures listening on %s with %d pictures", *addr, len(srv.images))
+	log.Printf("Goat Pic listening on %s with %d pictures", *addr, len(srv.images))
 	if *dev {
 		host := *addr
 		if strings.HasPrefix(host, ":") {

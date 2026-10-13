@@ -46,8 +46,8 @@ func TestDealComposition(t *testing.T) {
 			}
 			seen[c.Image] = true
 		}
-		if len(g.Cards) != 25 || counts[g.StartingTeam] != 9 || counts[g.StartingTeam.Other()] != 8 ||
-			counts[Neutral] != 7 || counts[Assassin] != 1 {
+		if len(g.Cards) != 24 || counts[g.StartingTeam] != 9 || counts[g.StartingTeam.Other()] != 8 ||
+			counts[Neutral] != 6 || counts[Assassin] != 1 {
 			t.Fatalf("bad deal: %v", counts)
 		}
 		if g.Turn != g.StartingTeam || g.Phase != PhaseClue {
@@ -58,11 +58,11 @@ func TestDealComposition(t *testing.T) {
 
 func TestTooFewImages(t *testing.T) {
 	rnd := rand.New(rand.NewSource(1))
-	if _, err := NewGame(testImages(24), rnd); err != ErrTooFewCards {
-		t.Fatalf("24 pictures: got %v", err)
+	if _, err := NewGame(testImages(23), rnd); err != ErrTooFewCards {
+		t.Fatalf("23 pictures: got %v", err)
 	}
-	if _, err := NewGame(testImages(25), rnd); err != nil {
-		t.Fatalf("25 pictures: got %v", err)
+	if _, err := NewGame(testImages(24), rnd); err != nil {
+		t.Fatalf("24 pictures: got %v", err)
 	}
 }
 
@@ -93,9 +93,6 @@ func TestGuessLimitAndEndTurn(t *testing.T) {
 	g := newTestGame(t, 2)
 	team := g.Turn
 	_ = g.GiveClue(team, "fish", 1)
-	if err := g.EndTurn(team); err != ErrMustGuess {
-		t.Fatalf("end before guessing: %v", err)
-	}
 	if err := g.Guess(team, find(g, team)); err != nil {
 		t.Fatal(err)
 	}
@@ -320,5 +317,19 @@ func TestImageGroupOfEncodedAndVersionedURLs(t *testing.T) {
 		if got := imageGroup(image); got != want {
 			t.Errorf("imageGroup(%q) = %q, want %q", image, got, want)
 		}
+	}
+}
+
+func TestEndTurnWithoutGuessing(t *testing.T) {
+	g := newTestGame(t, 2)
+	team := g.Turn
+	if err := g.GiveClue(team, "fish", 2); err != nil {
+		t.Fatal(err)
+	}
+	if err := g.EndTurn(team); err != nil {
+		t.Fatalf("end turn with no guesses: %v", err)
+	}
+	if g.Turn != team.Other() || g.Phase != PhaseClue {
+		t.Fatalf("turn should pass to the other team")
 	}
 }

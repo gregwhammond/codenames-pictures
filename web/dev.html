@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Codenames Pictures — dev harness</title>
+<title>Goat Pic — dev harness</title>
 <style>
   :root {
     --bg: #1d2130;
@@ -12,8 +12,8 @@
     --text: #f3f1ea;
     --muted: #a7adc2;
     --accent: #f4c84a;
-    --red: #e5483c;
-    --blue: #2f80e4;
+    --red: #5d6475;
+    --blue: #5d6475;
     color-scheme: dark;
   }
 
@@ -86,7 +86,7 @@
     user-select: all;
     -webkit-user-select: all;
   }
-  .error { width: 100%; color: var(--red); font-weight: 600; }
+  .error { width: 100%; color: #ff8a80; font-weight: 600; }
   .error:empty { display: none; }
 
   /* ---------- Phones ---------- */
@@ -111,11 +111,11 @@
     content: "";
     width: 10px;
     height: 10px;
-    border-radius: 50%;
+    border-radius: var(--dot-radius, 50%);
     background: var(--dot);
   }
-  .phone.red { --dot: var(--red); }
-  .phone.blue { --dot: var(--blue); }
+  .phone.red { --dot: #fff; }
+  .phone.blue { --dot: #fff; --dot-radius: 0; }
 
   .bezel {
     padding: 12px;
@@ -166,23 +166,23 @@
 
 <div class="phones" id="phones">
   <div class="phone red">
-    <header>Red spymaster</header>
-    <div class="bezel"><iframe id="f1" src="/?dev=1" title="Red spymaster"></iframe></div>
+    <header>Circle spymaster</header>
+    <div class="bezel"><iframe id="f1" src="/?dev=1" title="Circle spymaster"></iframe></div>
     <div class="status" id="s1">not seated</div>
   </div>
   <div class="phone red">
-    <header>Red guesser</header>
-    <div class="bezel"><iframe id="f2" src="/?dev=2" title="Red guesser"></iframe></div>
+    <header>Circle guesser</header>
+    <div class="bezel"><iframe id="f2" src="/?dev=2" title="Circle guesser"></iframe></div>
     <div class="status" id="s2">not seated</div>
   </div>
   <div class="phone blue">
-    <header>Blue spymaster</header>
-    <div class="bezel"><iframe id="f3" src="/?dev=3" title="Blue spymaster"></iframe></div>
+    <header>Square spymaster</header>
+    <div class="bezel"><iframe id="f3" src="/?dev=3" title="Square spymaster"></iframe></div>
     <div class="status" id="s3">not seated</div>
   </div>
   <div class="phone blue">
-    <header>Blue guesser</header>
-    <div class="bezel"><iframe id="f4" src="/?dev=4" title="Blue guesser"></iframe></div>
+    <header>Square guesser</header>
+    <div class="bezel"><iframe id="f4" src="/?dev=4" title="Square guesser"></iframe></div>
     <div class="status" id="s4">not seated</div>
   </div>
 </div>

@@ -11,13 +11,13 @@ import (
 	"unicode/utf8"
 )
 
-// Codenames Pictures uses a 5x5 grid: the starting team has 9 agents, the
-// other team 8, plus 7 bystanders and 1 assassin.
+// Codenames Pictures uses a 4-column by 6-row grid: the starting team has 9
+// agents, the other team 8, plus 6 bystanders and 1 assassin.
 const (
-	CardCount       = 25
+	CardCount       = 24
 	StartingAgents  = 9
 	SecondAgents    = 8
-	BystanderCount  = 7
+	BystanderCount  = 6
 	Unlimited       = -1 // clue number meaning "any number of guesses"
 	maxClueWordSize = 40
 )
@@ -92,7 +92,6 @@ var (
 	ErrRevealed    = errors.New("that picture is already revealed")
 	ErrBadClue     = errors.New("a clue must be a single word")
 	ErrBadNumber   = errors.New("the clue number must be 0 to 9, or unlimited")
-	ErrMustGuess   = errors.New("make at least one guess before ending the turn")
 	ErrTooFewCards = errors.New("not enough pictures to deal a board")
 )
 
@@ -289,7 +288,7 @@ func (g *Game) Guess(team Team, idx int) error {
 	return nil
 }
 
-// EndTurn lets the guessing team stop after at least one guess.
+// EndTurn lets the guessing team stop, even before its first guess.
 func (g *Game) EndTurn(team Team) error {
 	if g.Phase == PhaseOver {
 		return ErrGameOver
@@ -299,9 +298,6 @@ func (g *Game) EndTurn(team Team) error {
 	}
 	if g.Phase != PhaseGuess {
 		return ErrWrongPhase
-	}
-	if g.GuessesMade == 0 {
-		return ErrMustGuess
 	}
 	g.passTurn()
 	return nil

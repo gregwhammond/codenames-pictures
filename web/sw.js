@@ -1,7 +1,7 @@
 // Service worker: keeps the app shell and card pictures available offline so
 // the game loads instantly on repeat visits. Game state always comes live
 // from the server.
-const VERSION = 'v4';
+const VERSION = 'v11';
 const SHELL = `shell-${VERSION}`;
 const CARDS = 'cards-v1';
 const LARGE = 'cards-large-v1';
@@ -67,7 +67,11 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     fetch(req)
       .then((res) => {
-        if (res.ok) caches.open(SHELL).then((c) => c.put(key, res.clone()));
+        // Copy the response now, before the page starts reading it.
+        if (res.ok) {
+          const copy = res.clone();
+          event.waitUntil(caches.open(SHELL).then((c) => c.put(key, copy)));
+        }
         return res;
       })
       .catch(() => caches.match(key)),

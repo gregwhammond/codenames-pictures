@@ -1,19 +1,20 @@
-# Codenames Pictures
+# Goat Pic
 
-Play [Codenames Pictures](https://en.wikipedia.org/wiki/Codenames_(board_game)) live with friends, each person on their own phone. One person creates a game and shares the link or 4-letter room code, everyone picks a seat, and the board updates on every phone as soon as anyone plays.
+Goat Pic is [Codenames](https://en.wikipedia.org/wiki/Codenames_(board_game)) played with pictures, live with friends, each person on their own phone. One person creates a game and shares the link or 4-letter room code, everyone picks a seat, and the board updates on every phone as soon as anyone plays.
 
 It's built for **2 teams of 2** (one spymaster and one guesser per team). Teams can have extra guessers, and anyone else who joins can watch. It installs as an app on phones (a PWA): open the site, then use "Add to Home Screen".
 
 ## How to play
 
-1. Split into **Red** and **Blue**. Each team has one **spymaster** and at least one **guesser**.
-2. Only the spymasters see which pictures belong to which team (the coloured frames).
-3. On your turn, your spymaster types a **one-word clue** and a number: how many pictures it points to.
-4. Guessers tap a picture to zoom in, then tap **Guess this picture**. Press and hold any picture to see it full screen and pinch to zoom into the detail. A correct guess lets you keep going, up to one more than the number. You can end the turn after at least one guess.
-5. A beige bystander or the other team's picture ends your turn. The **black assassin** loses the game instantly.
-6. The first team to find all their pictures wins. The team that goes first has 9 pictures, the other has 8.
+1. Split into **● Circle** and **■ Square**. Each team has one **spymaster** and at least one **guesser**.
+2. Only the spymasters see which pictures belong to which team: Circle pictures have a black dot in the centre, Square pictures a black square in each corner, and the **dead goat** a black X. Plain goats have no mark.
+3. On your turn, your spymaster types a **one-word clue** and picks a number: how many pictures it points to. The number starts blank each time, so it must be chosen.
+4. Guessers tap a picture to zoom in, use **‹ ›** to flip through the pictures still in play, then tap **Guess this picture**. A correct guess lets you keep going, up to one more than the number. You can end the turn at any time, even before guessing (you are asked to confirm).
+5. Press and hold any picture to see it full screen and pinch to zoom into the detail. **☰ → Browse pictures** swipes through the whole board without guessing.
+6. Found pictures turn grey with a white ● or ■, and goats turn white. A goat or the other team's picture ends your turn. The **dead goat** ☠ loses the game instantly.
+7. The scores at the top show each team's pictures left out of its total, for example 6/9. The first team to find all their pictures wins. The team that goes first has 9 pictures, the other has 8.
 
-The board is always 25 pictures in a 5×5 grid: 9 for the starting team, 8 for the other, 7 bystanders and 1 assassin.
+The board is always 24 pictures in a grid 4 columns wide and 6 rows tall: 9 for the starting team, 8 for the other, 6 goats and 1 dead goat.
 
 A clue of **0** or **∞** gives unlimited guesses, as in the board game.
 
@@ -31,7 +32,9 @@ To try it with several players on one computer, open the site in a few private w
 
 ### Developing
 
-Run `go run . -dev` and open http://localhost:8080/dev for a harness that shows four phone-sized frames side by side, one per seat, each with its own identity (`?dev=1` to `?dev=4`, kept apart in local storage). **New game** creates a room and seats all four players; **Start** begins the game from the red spymaster's phone; **New board** (top right) deals fresh cards in the same room, keeping the seats; the size select and **Landscape** change the phone shape; **Reset** forgets the dev identities and returns every frame to the home screen. The harness is only served with `-dev`.
+Run `go run . -dev` and open http://localhost:8080/dev for a harness that shows four phone-sized frames side by side, one per seat, each with its own identity (`?dev=1` to `?dev=4`, kept apart in local storage). **New game** creates a room and seats all four players; **Start** begins the game from the Circle spymaster's phone; **New board** (top right) deals fresh cards in the same room, keeping the seats; the size select and **Landscape** change the phone shape; **Reset** forgets the dev identities and returns every frame to the home screen. The harness is only served with `-dev`.
+
+For a preview that needs no server, `python3 scripts/build_preview.py -o preview.html` writes one self-contained page: the real app with a made-up game already under way and three pretend players, who give clues and guess whenever it isn't your move. A bar across the top switches between the **Spymaster** and **Guesser** view, picks your team (**Team: turn** follows whichever team is playing, so you can play both sides), and deals a **New game**. Add `--artifact` to publish it as a Claude Artifact and try changes on a phone.
 
 ## Deploying
 
@@ -80,13 +83,13 @@ Every picture has an **original** that is never edited and a **crop record** in 
 - **Build:** `python3 scripts/build_cards.py` writes the tiles, and `--check` reports anything out of date. If an original is missing, the build skips that record and deletes nothing. Commit `art/crops/`, `web/cards/` and `cards-large/`, then redeploy.
 - **Use a folder without rebuilding:** `./codenames-pictures -cards /path/to/pictures` serves pictures straight from a folder (square images work best).
 
-You need at least 25 pictures; more gives more variety between games. Two crops of the same source are never dealt onto one board. `art/doodles-from-upstream/` holds the hand-drawn doodles from the project this was forked from, which aren't in the default set.
+You need at least 24 pictures; more gives more variety between games. Two crops of the same source are never dealt onto one board. `art/doodles-from-upstream/` holds the hand-drawn doodles from the project this was forked from, which aren't in the default set.
 
 ## How it works
 
 | Piece | What it does |
 |---|---|
-| `game.go` | The rules: dealing 25 cards (9/8/7/1), clues, guesses, turn passing, winning. |
+| `game.go` | The rules: dealing 24 cards (9/8/6/1), clues, guesses, turn passing, winning. |
 | `room.go` | Rooms, seats, and what each player is allowed to see (guessers never receive the key). |
 | `main.go` | HTTP API (`POST /api/rooms/{code}/{action}`) and the live event stream (`GET /api/rooms/{code}/events`). |
 | `web/` | The phone app: plain HTML, CSS and JavaScript with no build step, a service worker for offline loading, and the app manifest. |

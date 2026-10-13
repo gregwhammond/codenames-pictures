@@ -35,7 +35,7 @@ const ui = {
   room: null,        // latest RoomView from the server
   events: null,      // EventSource
   selected: null,    // card index open in the zoom sheet
-  clueNumber: 1,
+  clueNumber: null, // number picked for the clue being written; none until the spymaster taps one
   showMenu: false,
   error: '',
   busy: false,
@@ -47,7 +47,18 @@ const $modal = document.getElementById('modal');
 const $viewer = document.getElementById('viewer');
 const $toast = document.getElementById('toast');
 
-const TEAM_NAME = { red: 'Red', blue: 'Blue' };
+const TEAM_NAME = { red: 'Circle', blue: 'Square' };
+const TEAM_ICON = { red: '●', blue: '■' };
+// What a picture is, shown on its tag when zoomed: an icon for each kind
+// (the words stay for screen readers). Goats (bystanders) get a goat silhouette.
+const GOAT_ICON = '<svg class="goat-icon" viewBox="0 0 32 28" aria-hidden="true"><path d="M8.2 5.2C7.6 2.4 9.6.4 12.6 1c-1.8.6-2.7 2.2-2.4 4.4zM7.4 4.6c1.6-.6 3.4 0 4 1.6l1.8 5.2-3.6.8-1-2.6c-1 .6-2.6 1-4.2.8-1.2-.2-1.6-1.2-.8-2zM10.6 6l3.8-.2-3 1.8zM5 10l1.6.2L5.4 13zM9.6 10.6c2.4-.6 10.4-1 16-.2 2 .4 2.8 2 2.6 4.2-.2 2.4-1.6 3.6-3.8 3.8l-11.8.2c-2-.2-3.2-1.6-3.4-3.6zM26.8 11c.8-1.4 2-2.2 3.2-2.2-.6 1-1.2 2-1.8 3.4zM10.6 17h2l.4 9.4h-1.8zM13.8 17.4h2l-.2 9h-1.8zM22.2 17.4h2l-.2 9h-1.8zM25 16.6h2l.4 9.8h-1.8z"/></svg>';
+const KEY_ICON = { red: '●', blue: '■', neutral: GOAT_ICON, assassin: '☠ dead goat' };
+// A team's starting agent count: those still hidden plus those already found.
+function teamTotal(g, team) {
+  return g.remaining[team] + g.cards.filter(c => c.revealed && c.team === team).length;
+}
+
+const KEY_NAME = { red: 'Circle agent', blue: 'Square agent', neutral: 'goat', assassin: 'dead goat' };
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 // Zoom-size pictures live at /cards-large/ under the same file name.
@@ -97,18 +108,32 @@ async function api(path, body = {}) {
   return data;
 }
 
-async function act(action, body) {
-  if (ui.busy) return;
-  ui.busy = true;
-  try {
-    const view = await api(`/${ui.code}/${action}`, body);
-    if (view && view.code) setRoom(view);
-  } catch (err) {
-    if (err.status === 403) await rejoin();
-    else toast(err.message);
-  } finally {
-    ui.busy = false;
-  }
+// Requests go one at a time, in the order they were tapped. A tap made while
+// another request is on its way waits for it rather than being lost; tapping
+// the very same thing again while it is still pending does nothing.
+let queue = Promise.resolve();
+let pending = '';
+function act(action, body) {
+  const key = `${action} ${JSON.stringify(body ?? {})}`;
+  if (key === pending) return queue;
+  const code = ui.code;
+  queue = queue.then(async () => {
+    if (!code || ui.code !== code) return; // left the room meanwhile
+    pending = key;
+    ui.busy = true;
+    try {
+      const view = await api(`/${code}/${action}`, body);
+      if (view && view.code && ui.code === code) setRoom(view);
+    } catch (err) {
+      if (ui.code !== code) return;
+      if (err.status === 403) await rejoin();
+      else toast(err.message);
+    } finally {
+      ui.busy = false;
+      pending = '';
+    }
+  });
+  return queue;
 }
 
 function toast(message) {
@@ -137,13 +162,15 @@ async function joinRoom(code, name) {
 }
 
 async function rejoin() {
-  if (!ui.code) return;
+  const code = ui.code;
+  if (!code) return;
   try {
-    const view = await api(`/${ui.code}/join`, { name: store.get('name') || 'Player' });
+    const view = await api(`/${code}/join`, { name: store.get('name') || 'Player' });
+    if (ui.code !== code) return; // left while the join was on its way
     setRoom(view);
     connect();
   } catch (err) {
-    if (err.status === 404) {
+    if (err.status === 404 && ui.code === code) {
       leaveLocal('That game has ended. Start a new one!');
     }
   }
@@ -154,7 +181,9 @@ function connect() {
   const es = new EventSource(`/api/rooms/${ui.code}/events?token=${token}`);
   ui.events = es;
   es.onmessage = (e) => setRoom(JSON.parse(e.data));
-  es.addEventListener('gone', () => { es.close(); rejoin(); });
+  // "gone": this player is no longer in the room, because they left it (perhaps
+  // from another tab). Follow them out rather than joining again as someone new.
+  es.addEventListener('gone', () => { if (ui.events === es) leaveLocal('You left this game.'); else es.close(); });
   es.onerror = () => {
     document.body.classList.add('offline');
     // The browser retries by itself unless the server refused us outright.
@@ -215,12 +244,17 @@ function canGuess() {
 }
 
 function setRoom(view) {
-  const hadGame = !!ui.room?.game;
+  const prev = ui.room?.game;
   ui.room = view;
-  if (!view.game) ui.selected = null;
-  if (!hadGame && view.game) ui.clueNumber = 1;
+  // A zoom sheet belongs to one picture: close it when a new board is dealt
+  // or the game ends for everyone. The menu only lives on the game screen.
+  if (ui.selected != null && view.game?.cards[ui.selected]?.image !== prev?.cards[ui.selected]?.image) ui.selected = null;
+  if (!view.game) ui.showMenu = false;
+  // Start every new clue with no number picked.
+  const g = view.game;
+  if (g?.phase === 'clue' && (prev?.phase !== 'clue' || prev.turn !== g.turn)) ui.clueNumber = null;
   const nowNeedsMe = needsMe();
-  if (nowNeedsMe && !ui.lastNeedsMe && navigator.vibrate) navigator.vibrate([80, 60, 80]);
+  if (nowNeedsMe && !ui.lastNeedsMe && navigator.vibrate && navigator.userActivation?.hasBeenActive !== false) navigator.vibrate([80, 60, 80]);
   ui.lastNeedsMe = nowNeedsMe;
   keepAwake();
   render();
@@ -269,8 +303,8 @@ function renderHome() {
   region($app, 'home', `
     <section class="home">
       <div class="logo" aria-hidden="true">${logoTiles()}</div>
-      <h1>Codenames <span>Pictures</span></h1>
-      <p class="tagline">Two teams. Twenty-five pictures. One-word clues.</p>
+      <h1>Goat <span>Pic</span></h1>
+      <p class="tagline">Two teams. Twenty-four pictures. One-word clues.</p>
       <form id="home-form" class="card-panel" autocomplete="off">
         <label for="name">Your name</label>
         <input id="name" name="name" maxlength="20" value="${esc(name)}" placeholder="e.g. Greg" required>
@@ -303,15 +337,24 @@ function logoTiles() {
 function howToPlay() {
   return `
     <ol>
-      <li>Split into <b>Red</b> and <b>Blue</b>. Each team has one <b>spymaster</b> and one or more <b>guessers</b>.</li>
-      <li>Only spymasters see which pictures belong to which team.</li>
-      <li>On your turn, your spymaster gives a <b>one-word clue</b> and a number: how many pictures it points to.</li>
-      <li>Guessers tap pictures. A correct guess lets you keep going, up to one more than the number.</li>
-      <li>Tap a picture to see it bigger. <b>Press and hold</b> (or right-click) to open it full screen and pinch to zoom into the details.</li>
-      <li>Hit a beige bystander or the other team's picture and your turn ends. Hit the <b>black assassin</b> and you lose instantly.</li>
-      <li>The first team to find all their pictures wins. The team that goes first has 9, the other has 8.</li>
+      <li>Split into <b>● Circle</b> and <b>■ Square</b>. Each team has one <b>spymaster</b> and one or more <b>guessers</b>.</li>
+      <li>Only spymasters see which pictures belong to which team: Circle pictures have a black dot in the centre, Square pictures a black square in each corner, and the <b>dead goat</b> a black X. Plain goats have no mark.</li>
+      <li>On your turn, your spymaster gives a <b>one-word clue</b> and picks a number: how many pictures it points to. <b>0</b> or <b>∞</b> gives unlimited guesses.</li>
+      <li>Guessers tap a picture to see it bigger, use <b>‹ ›</b> to flip through the pictures still in play, and tap <b>Guess this picture</b>. A correct guess lets you keep going, up to one more than the number. You can <b>End turn</b> at any time, even before guessing.</li>
+      <li><b>Press and hold</b> a picture (or right-click) to see it full screen and pinch to zoom into the details. <b>☰ → Browse pictures</b> lets you swipe through the whole board.</li>
+      <li>Found pictures turn grey with a white ● or ■, and goats turn white. Hit a goat or the other team's picture and your turn ends. Hit the <b>dead goat</b> ☠ and you lose instantly.</li>
+      <li>The scores at the top show each team's pictures left out of its total, like 6/9. The first team to find all theirs wins. The team that goes first has 9, the other has 8.</li>
     </ol>`;
 }
+
+// Enter (or Go) in the room-code field means Join, not the form's first
+// button, Create.
+$app.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && e.target.id === 'code' && e.target.value.trim()) {
+    e.preventDefault();
+    e.target.form.querySelector('button[value="join"]')?.click();
+  }
+});
 
 $app.addEventListener('submit', async (e) => {
   if (e.target.id === 'home-form') {
@@ -339,6 +382,7 @@ $app.addEventListener('submit', async (e) => {
     const word = e.target.word.value.trim();
     if (!word) return;
     if (/\s/.test(word)) { toast('Clues are a single word.'); return; }
+    if (ui.clueNumber == null) { toast('Pick a number for your clue.'); return; }
     await act('clue', { word, number: ui.clueNumber });
   }
 });
@@ -373,8 +417,8 @@ function renderLobby() {
         <button class="btn" id="share">Invite friends</button>
       </header>
       <div class="teams">
-        <div class="team team-red"><h2>Red team</h2>${slot('red', 'spymaster')}${slot('red', 'guesser')}</div>
-        <div class="team team-blue"><h2>Blue team</h2>${slot('blue', 'spymaster')}${slot('blue', 'guesser')}</div>
+        <div class="team team-red"><h2>● Circle team</h2>${slot('red', 'spymaster')}${slot('red', 'guesser')}</div>
+        <div class="team team-blue"><h2>■ Square team</h2>${slot('blue', 'spymaster')}${slot('blue', 'guesser')}</div>
       </div>
       ${unseated.length ? `<p class="muted waiting">Not on a team yet: ${unseated.map(person).join(', ')}</p>` : ''}
       <div class="lobby-actions">
@@ -392,9 +436,9 @@ function renderLobby() {
 
 async function share() {
   const url = inviteURL(ui.code);
-  const text = `Join my Codenames Pictures game! Room code ${ui.code}`;
+  const text = `Join my Goat Pic game! Room code ${ui.code}`;
   if (navigator.share) {
-    try { await navigator.share({ title: 'Codenames Pictures', text, url }); return; } catch { /* cancelled */ }
+    try { await navigator.share({ title: 'Goat Pic', text, url }); return; } catch { /* cancelled */ }
   }
   try {
     await navigator.clipboard.writeText(url);
@@ -418,9 +462,11 @@ function renderGame() {
 
   region($app, 'top', `
     <header class="scorebar">
-      <div class="score red ${g.turn === 'red' && g.phase !== 'over' ? 'active' : ''}"><b>${g.remaining.red}</b><span>Red left</span></div>
+      <div class="scores">
+        <div aria-label="Circle: ${g.remaining.red} of ${teamTotal(g, 'red')} left" class="score red ${g.turn === 'red' && g.phase !== 'over' ? 'active' : ''}"><i>●</i> ${g.remaining.red}/${teamTotal(g, 'red')}</div>
+        <div aria-label="Square: ${g.remaining.blue} of ${teamTotal(g, 'blue')} left" class="score blue ${g.turn === 'blue' && g.phase !== 'over' ? 'active' : ''}"><i>■</i> ${g.remaining.blue}/${teamTotal(g, 'blue')}</div>
+      </div>
       <div class="status">${statusLine(g, p)}</div>
-      <div class="score blue ${g.turn === 'blue' && g.phase !== 'over' ? 'active' : ''}"><b>${g.remaining.blue}</b><span>Blue left</span></div>
       <button class="menu-btn" id="menu" aria-label="Menu">☰</button>
     </header>
   `);
@@ -440,7 +486,7 @@ function renderGame() {
 }
 
 function teamLabel(t) {
-  return `<span class="team-word ${t}">${TEAM_NAME[t]}</span>`;
+  return `<span class="team-word ${t}">${TEAM_ICON[t]} ${TEAM_NAME[t]}</span>`;
 }
 
 function clueText(c) {
@@ -462,7 +508,7 @@ function statusLine(g, p) {
 function actionsPanel(g, p) {
   if (g.phase === 'over') {
     const why = g.winReason === 'assassin'
-      ? `${teamLabel(g.winner === 'red' ? 'blue' : 'red')} found the assassin.`
+      ? `${teamLabel(g.winner === 'red' ? 'blue' : 'red')} found the dead goat.`
       : `${teamLabel(g.winner)} found all their pictures.`;
     return `
       <div class="over-panel">
@@ -490,7 +536,7 @@ function actionsPanel(g, p) {
     return `
       <div class="guess-panel">
         <span>Tap a picture to guess. <b>${left}</b></span>
-        <button class="btn" id="end-turn" ${g.guessesMade ? '' : 'disabled'}>End turn</button>
+        <button class="btn" id="end-turn">End turn</button>
       </div>`;
   }
   if (g.phase === 'guess') {
@@ -516,11 +562,14 @@ function menuSheet(room, g) {
       </ul>
       ${!p?.team && g.phase !== 'over' ? `
         <div class="row">
-          <button class="btn" data-sit="red:guesser">Join Red</button>
-          <button class="btn" data-sit="blue:guesser">Join Blue</button>
-        </div>` : ''}
+          <button class="btn" data-sit="red:guesser">Join Circle</button>
+          <button class="btn" data-sit="blue:guesser">Join Square</button>
+        </div>
+        ${['red', 'blue'].filter((t) => !room.players.some((x) => x.team === t && x.role === 'spymaster' && x.connected)).map((t) => `
+        <button class="btn" data-sit="${t}:spymaster">Be ${TEAM_NAME[t]} spymaster</button>`).join('')}` : ''}
       <h4>Clues</h4>
       ${log ? `<ul class="log">${log}</ul>` : '<p class="muted">No clues yet.</p>'}
+      <button class="btn" id="browse">Browse pictures</button>
       <div class="row">
         <button class="btn" id="share">Invite</button>
         <button class="btn" id="to-lobby">Back to lobby</button>
@@ -531,6 +580,31 @@ function menuSheet(room, g) {
 
 // ---------- Zoom sheet ----------
 
+// Tapped picture: the ‹ › arrows flip through the pictures still in play
+// (revealed ones are skipped), wrapping round at either end.
+function stepZoom(d) {
+  const cards = ui.room?.game?.cards;
+  if (ui.selected == null || !cards) return;
+  const n = cards.length;
+  let i = ui.selected;
+  for (let k = 0; k < n; k++) {
+    i = (i + d + n) % n;
+    if (!cards[i].revealed) break;
+  }
+  if (i === ui.selected || cards[i].revealed) return;
+  ui.selected = i;
+  ui.zoomStepped = true;
+  renderModal();
+  $modal.querySelector(`[data-zoom-step="${d}"]`)?.focus({ preventScroll: true });
+}
+
+// The label under an enlarged picture (● ■ goat ☠) is for spymasters, and
+// for everyone once the game is over. Guessers never see it, not even on
+// revealed pictures.
+function showKeyTag(g) {
+  return me()?.role === 'spymaster' || g?.phase === 'over';
+}
+
 function renderModal() {
   const g = ui.room?.game;
   if (ui.selected == null || !g) {
@@ -539,12 +613,19 @@ function renderModal() {
   }
   const c = g.cards[ui.selected];
   const guessable = canGuess() && !c.revealed;
-  const tag = c.team && (c.revealed || me()?.role === 'spymaster' || g.phase === 'over')
-    ? `<span class="key-tag k-${c.team}">${{ red: 'Red agent', blue: 'Blue agent', neutral: 'Bystander', assassin: 'Assassin' }[c.team]}${c.revealed ? ' (revealed)' : ''}</span>`
+  const tag = c.team && showKeyTag(g)
+    ? `<span class="key-tag k-${c.team}" aria-label="${KEY_NAME[c.team]}${c.revealed ? ' (revealed)' : ''}">${KEY_ICON[c.team]}${c.revealed ? ' (revealed)' : ''}</span>`
     : '';
+  // After an arrow step the new picture appears in place, without the
+  // open animation, so the board doesn't flash behind it.
+  const still = ui.zoomStepped ? 'stepped' : '';
+  const others = g.cards.some((x, i) => i !== ui.selected && !x.revealed);
   const html = `
-    <div class="zoom-backdrop" data-close></div>
-    <div class="zoom ${c.team ? `k-${c.team}` : ''}" role="dialog" aria-label="Picture">
+    <div class="zoom-backdrop ${still}" data-close></div>
+    ${others ? `
+    <button class="viewer-step zoom-step prev" data-zoom-step="-1" aria-label="Previous picture">‹</button>
+    <button class="viewer-step zoom-step next" data-zoom-step="1" aria-label="Next picture">›</button>` : ''}
+    <div class="zoom ${still} ${c.team ? `k-${c.team}` : ''}" role="dialog" aria-label="Picture">
       <img src="${esc(c.image)}" alt="">
       ${tag}
       <div class="row">
@@ -561,36 +642,63 @@ function renderModal() {
 
 // ---------- Full-screen picture viewer (press and hold) ----------
 // Lives in its own #viewer element outside the board, so server updates that
-// re-render the board don't disturb it.
+// re-render the board don't disturb it. Opened from the menu's "Browse
+// pictures" it is a carousel: swipe left and right (or the arrows) to step
+// through every picture on the board. Browsing never makes a guess.
 
 const HOLD_MS = 450;
 const MOVE_SLOP = 10;
 const MAX_SCALE = 6;
-const view = { index: null, image: null, phase: null, scale: 1, x: 0, y: 0 };
+const SWIPE_MIN = 60;
+const view = { index: null, image: null, phase: null, carousel: false, scale: 1, x: 0, y: 0 };
 
-function openViewer(index) {
+function openViewer(index, { carousel = false, from = 0 } = {}) {
   const g = ui.room?.game;
   const c = g?.cards[index];
   if (!c) return;
-  if (view.index === index && view.image === c.image) return;
-  Object.assign(view, { index, image: c.image, phase: g.phase, scale: 1, x: 0, y: 0 });
+  if (view.index === index && view.image === c.image && view.carousel === carousel) return;
+  const n = g.cards.length;
+  Object.assign(view, { index, image: c.image, phase: g.phase, carousel, scale: 1, x: 0, y: 0 });
   $viewer.innerHTML = `
-    <div class="viewer" role="dialog" aria-modal="true" aria-label="Picture ${index + 1}, full screen">
-      <div class="viewer-stage"><img class="viewer-img" src="${esc(c.image)}" alt="" draggable="false"></div>
+    <div class="viewer ${carousel ? 'carousel' : ''} ${from ? 'stepped' : ''}" role="dialog" aria-modal="true" aria-label="Picture ${index + 1}${carousel ? ` of ${n}` : ''}, full screen">
+      <div class="viewer-stage"><div class="viewer-pic ${from > 0 ? 'from-right' : from < 0 ? 'from-left' : ''}"><img class="viewer-img" src="${esc(c.image)}" alt="" draggable="false"></div></div>
       <span class="viewer-tag"></span>
+      ${carousel ? `
+        <span class="viewer-count">${index + 1} / ${n}</span>
+        <button class="viewer-step prev" data-step="-1" aria-label="Previous picture">‹</button>
+        <button class="viewer-step next" data-step="1" aria-label="Next picture">›</button>` : ''}
       <button class="viewer-close" data-close-viewer aria-label="Close">✕</button>
     </div>`;
   const img = $viewer.querySelector('.viewer-img');
   upgradeImage(img, c.image);
-  bindViewerGestures($viewer.querySelector('.viewer-stage'), img);
+  // Gestures move the picture together with its key mark drawn on top.
+  bindViewerGestures($viewer.querySelector('.viewer-stage'), $viewer.querySelector('.viewer-pic'));
   $viewer.querySelector('.viewer-close').focus({ preventScroll: true });
   syncViewer();
+  if (carousel) {
+    // Fetch the neighbours' large pictures so the next swipe is sharp at once.
+    for (const d of [1, -1]) {
+      const big = largeURL(g.cards[(index + d + n) % n].image);
+      if (!largeFailed.has(big)) new Image().src = big;
+    }
+  }
+}
+
+// Carousel: move by d pictures, wrapping round at either end.
+function stepViewer(d) {
+  const n = ui.room?.game?.cards.length;
+  if (view.index == null || !view.carousel || !n) return;
+  // Keep keyboard focus on the arrow just used, so Enter keeps stepping.
+  const onStep = document.activeElement?.dataset?.step;
+  openViewer((view.index + d + n) % n, { carousel: true, from: d });
+  if (onStep != null) $viewer.querySelector(`[data-step="${onStep}"]`)?.focus({ preventScroll: true });
 }
 
 function closeViewer() {
   if (view.index == null) return;
   view.index = null;
   view.image = null;
+  view.carousel = false;
   $viewer.innerHTML = '';
 }
 
@@ -605,10 +713,13 @@ function syncViewer() {
     return;
   }
   const box = $viewer.querySelector('.viewer');
-  box.className = `viewer ${c.team ? `k-${c.team}` : ''}`;
+  const stepped = box.classList.contains('stepped');
+  box.className = `viewer ${view.carousel ? 'carousel' : ''} ${stepped ? 'stepped' : ''} ${c.team ? `k-${c.team}` : ''} ${c.revealed ? 'revealed' : ''}`;
   const tag = $viewer.querySelector('.viewer-tag');
-  const label = c.team ? `${{ red: 'Red agent', blue: 'Blue agent', neutral: 'Bystander', assassin: 'Assassin' }[c.team]}${c.revealed ? ' (revealed)' : ''}` : '';
-  tag.textContent = label;
+  const revealed = c.revealed ? ' (revealed)' : '';
+  const label = c.team && showKeyTag(g) ? `${KEY_ICON[c.team]}${revealed}` : '';
+  tag.innerHTML = label;
+  if (label) tag.setAttribute('aria-label', `${KEY_NAME[c.team]}${revealed}`);
   tag.hidden = !label;
 }
 
@@ -663,7 +774,7 @@ function bindViewerGestures(stage, img) {
     return { d: Math.hypot(a.x - b.x, a.y - b.y) || 1, x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
   };
   const beginSingle = (p) => {
-    start = { x: p.x, y: p.y, t: Date.now(), vx: view.x, vy: view.y, moved: false };
+    start = { x: p.x, y: p.y, t: Date.now(), vx: view.x, vy: view.y, moved: false, axis: null };
   };
 
   stage.addEventListener('pointerdown', (e) => {
@@ -698,9 +809,16 @@ function bindViewerGestures(stage, img) {
     if (!start) return;
     const dx = e.clientX - start.x;
     const dy = e.clientY - start.y;
-    if (!start.moved && Math.hypot(dx, dy) > MOVE_SLOP) start.moved = true;
+    if (!start.moved && Math.hypot(dx, dy) > MOVE_SLOP) {
+      start.moved = true;
+      // In the carousel a sideways drag at normal size flips pictures.
+      start.axis = view.carousel && view.scale <= 1 && Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+    }
     if (!start.moved) return;
-    if (view.scale > 1) {
+    if (start.axis === 'x') {
+      img.style.transition = 'none';
+      img.style.transform = `translateX(${dx}px)`;
+    } else if (view.scale > 1) {
       view.x = start.vx + dx;
       view.y = start.vy + dy;
       clamp();
@@ -738,6 +856,15 @@ function bindViewerGestures(stage, img) {
     }
     const dy = e.clientY - s.y;
     const quick = Date.now() - s.t;
+    if (s.moved && s.axis === 'x') {
+      const dx = e.clientX - s.x;
+      if (Math.abs(dx) > SWIPE_MIN || (Math.abs(dx) > 20 && Math.abs(dx) / quick > 0.5)) {
+        stepViewer(dx < 0 ? 1 : -1);
+        return;
+      }
+      apply(true);
+      return;
+    }
     if (s.moved) {
       if (view.scale <= 1 && dy > 0) {
         if (dy > 110 || (dy > 40 && dy / quick > 0.6)) { closeViewer(); return; }
@@ -759,7 +886,8 @@ function bindViewerGestures(stage, img) {
       return;
     }
     lastTap = { t: now, x: e.clientX, y: e.clientY };
-    if (view.scale === 1) {
+    // A stray tap shouldn't end a browse: the carousel closes with ✕ or a swipe down.
+    if (view.scale === 1 && !view.carousel) {
       clearTimeout(tapTimer);
       tapTimer = setTimeout(() => { if (lastTap?.t === now) closeViewer(); }, 300);
     }
@@ -837,9 +965,18 @@ document.addEventListener('click', async (e) => {
     closeViewer();
     return;
   }
+  if (t.dataset.step != null) {
+    stepViewer(Number(t.dataset.step));
+    return;
+  }
   if (t.dataset.card != null) {
     ui.selected = Number(t.dataset.card);
+    ui.zoomStepped = false;
     renderModal();
+    return;
+  }
+  if (t.dataset.zoomStep != null) {
+    stepZoom(Number(t.dataset.zoomStep));
     return;
   }
   if (t.dataset.close != null) {
@@ -866,6 +1003,10 @@ document.addEventListener('click', async (e) => {
       b.classList.toggle('on', on);
       b.setAttribute('aria-checked', on);
     });
+    // The buttons now match what render would draw; record that, so the next
+    // update from the server doesn't rebuild the form and wipe the typed word.
+    const actions = t.closest('[data-region="actions"]');
+    if (actions) actions._html = `<footer class="actions">${actionsPanel(ui.room.game, me())}</footer>`;
     return;
   }
   if (t.dataset.sit != null) {
@@ -895,23 +1036,43 @@ document.addEventListener('click', async (e) => {
       await act('lobby');
       break;
     case 'end-turn':
+      // Ending the turn before any guess is allowed, but ask first.
+      if (!ui.room.game.guessesMade && !confirm('End your turn without guessing?')) return;
       await act('end-turn');
+      break;
+    case 'browse':
+      ui.showMenu = false;
+      render();
+      openViewer(0, { carousel: true });
       break;
     case 'menu':
       ui.showMenu = !ui.showMenu;
       render();
       break;
-    case 'leave':
+    case 'leave': {
       if (!confirm('Leave this room?')) return;
-      await act('leave');
+      // Close the stream first: its "gone" must not make us join again.
+      const code = ui.code;
       leaveLocal();
+      api(`/${code}/leave`).catch(() => {});
       break;
+    }
   }
 });
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && view.index != null) {
     closeViewer();
+    return;
+  }
+  if (view.carousel && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+    e.preventDefault();
+    stepViewer(e.key === 'ArrowLeft' ? -1 : 1);
+    return;
+  }
+  if (ui.selected != null && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+    e.preventDefault();
+    stepZoom(e.key === 'ArrowLeft' ? -1 : 1);
     return;
   }
   if (e.key === 'Escape' && (ui.selected != null || ui.showMenu)) {
