@@ -1,0 +1,20 @@
+{
+  "name": "codenames-pictures-e2e",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Four-phone end-to-end tests for Codenames Pictures (Playwright Test).",
+  "scripts": {
+    "test": "playwright test",
+    "test:games": "playwright test tests/full-game.spec.js",
+    "test:edge": "playwright test tests/edge.spec.js",
+    "test:layout": "playwright test tests/layout.spec.js",
+    "test:soak": "playwright test tests/soak.spec.js",
+    "show-bugs": "E2E_SHOW_BUGS=1 playwright test tests/edge.spec.js tests/touch.spec.js tests/layout.spec.js",
+    "race-hunt": "E2E_RACE_HUNT=1 E2E_STRICT_RACES=1 playwright test tests/race-hunt.spec.js --project=android-chromium",
+    "watch": "WATCH=1 playwright test tests/full-game.spec.js --project=android-chromium",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1"
+  }
+}
