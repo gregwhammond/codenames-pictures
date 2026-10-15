@@ -127,7 +127,7 @@ function act(action, body) {
     } catch (err) {
       if (ui.code !== code) return;
       if (err.status === 403) await rejoin();
-      else toast(err.message);
+      else { toast(err.message); render(); }
     } finally {
       ui.busy = false;
       pending = '';
@@ -244,6 +244,9 @@ function canGuess() {
 }
 
 function setRoom(view) {
+  // Replies and the event stream can arrive out of order: never step back to
+  // an older view of the same room (the server numbers them with rev).
+  if (ui.room && view.code === ui.room.code && view.rev < ui.room.rev) return;
   const prev = ui.room?.game;
   ui.room = view;
   // A zoom sheet belongs to one picture: close it when a new board is dealt
