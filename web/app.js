@@ -35,8 +35,8 @@ const ui = {
   room: null,        // latest RoomView from the server
   events: null,      // EventSource
   selected: null,    // card index open in the zoom sheet
-  zoomOpenedAt: -Infinity, // when the zoom sheet last opened or closed (performance.now()),
-  zoomClosedAt: -Infinity, // to ignore the second tap of a double tap
+  zoomOpenedAt: -Infinity, // when the zoom sheet last opened, and
+  zoomClosedAt: -Infinity, // closed (performance.now()): see TAP_GUARD_MS
   clueNumber: null, // number picked for the clue being written; none until the spymaster taps one
   showMenu: false,
   error: '',
@@ -1002,9 +1002,11 @@ document.addEventListener('click', async (e) => {
   }
   if (t.dataset.close != null) {
     // ...and a Close or backdrop tap just after the sheet opened.
-    if (ui.selected != null && performance.now() - ui.zoomOpenedAt < TAP_GUARD_MS) return;
+    if (ui.selected != null) {
+      if (performance.now() - ui.zoomOpenedAt < TAP_GUARD_MS) return;
+      ui.zoomClosedAt = performance.now();
+    }
     ui.selected = null;
-    ui.zoomClosedAt = performance.now();
     renderModal();
     return;
   }
