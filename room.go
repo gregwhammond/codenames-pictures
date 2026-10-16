@@ -38,6 +38,7 @@ var (
 	ErrBadSeat       = errors.New("pick red or blue, and spymaster or guesser")
 	ErrSeatTaken     = errors.New("that team already has a spymaster")
 	ErrGameRunning   = errors.New("a game is already in progress")
+	ErrSawKey        = errors.New("you've seen the key this game: you can take your spymaster seat back, or watch")
 	ErrNoGame        = errors.New("the game hasn't started")
 	ErrNotReady      = errors.New("each team needs a spymaster and at least one guesser")
 	ErrNotSpymaster  = errors.New("only the spymaster can do that")
@@ -170,7 +171,7 @@ func (r *Room) Sit(p *Player, team Team, role Role) error {
 		// The same goes for one who left the seat earlier in this game: they
 		// may take their own seat back, or watch.
 		if keyTeam, saw := r.sawKey[p.token]; saw && !standing && (role != Spymaster || team != keyTeam) {
-			return ErrGameRunning
+			return ErrSawKey
 		}
 	}
 	if standing {
@@ -360,6 +361,9 @@ type RoomView struct {
 	Players []PlayerView `json:"players"`
 	Ready   bool         `json:"ready"`
 	Game    *GameView    `json:"game,omitempty"`
+	// KeyTeam is set for a player who has seen this game's key and left the
+	// spymaster seat: the only seat they may take is that one again.
+	KeyTeam Team `json:"keyTeam,omitempty"`
 }
 
 // View renders the room as seen by the player with token.
@@ -370,7 +374,7 @@ func (r *Room) View(token string) (RoomView, bool) {
 	if !ok {
 		return RoomView{}, false
 	}
-	v := RoomView{Code: r.Code, Rev: r.rev, You: me.ID, Ready: r.seatsReady()}
+	v := RoomView{Code: r.Code, Rev: r.rev, You: me.ID, Ready: r.seatsReady(), KeyTeam: r.sawKey[token]}
 	for _, p := range r.players {
 		v.Players = append(v.Players, PlayerView{p.ID, p.Name, p.Team, p.Role, p.Connected()})
 	}

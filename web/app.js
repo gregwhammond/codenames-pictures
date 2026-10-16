@@ -35,6 +35,8 @@ const ui = {
   room: null,        // latest RoomView from the server
   events: null,      // EventSource
   selected: null,    // card index open in the zoom sheet
+  zoomOpenedAt: -Infinity, // when the zoom sheet last opened or closed (performance.now()),
+  zoomClosedAt: -Infinity, // to ignore the second tap of a double tap
   clueNumber: null, // number picked for the clue being written; none until the spymaster taps one
   showMenu: false,
   error: '',
@@ -57,6 +59,10 @@ const KEY_ICON = { red: '●', blue: '■', neutral: GOAT_ICON, assassin: '☠ d
 function teamTotal(g, team) {
   return g.remaining[team] + g.cards.filter(c => c.revealed && c.team === team).length;
 }
+
+// How long after the zoom sheet opens or closes a tap on it, or on the board
+// under it, is taken as the second half of a double tap and ignored.
+const TAP_GUARD_MS = 400;
 
 const KEY_NAME = { red: 'Circle agent', blue: 'Square agent', neutral: 'goat', assassin: 'dead goat' };
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -161,7 +167,7 @@ async function joinRoom(code, name) {
   connect();
 }
 
-async function rejoin() {
+async function rejoin(delay = 1500) {
   const code = ui.code;
   if (!code) return;
   try {
@@ -170,9 +176,16 @@ async function rejoin() {
     setRoom(view);
     connect();
   } catch (err) {
-    if (err.status === 404 && ui.code === code) {
+    if (ui.code !== code) return;
+    if (err.status === 404) {
       leaveLocal('That game has ended. Start a new one!');
+      return;
     }
+    // The server or the network is having a moment: keep trying, more slowly
+    // each time, until a stream is open again.
+    setTimeout(() => {
+      if (ui.code === code && (!ui.events || ui.events.readyState === EventSource.CLOSED)) rejoin(Math.min(delay * 2, 15000));
+    }, delay);
   }
 }
 
@@ -198,6 +211,7 @@ function connect() {
 
 function leaveLocal(message) {
   if (ui.events) ui.events.close();
+  document.body.classList.remove('offline');
   Object.assign(ui, { code: null, room: null, events: null, selected: null, showMenu: false });
   closeViewer();
   store.set('room', '');
@@ -350,10 +364,10 @@ function howToPlay() {
     </ol>`;
 }
 
-// Enter (or Go) in the room-code field means Join, not the form's first
-// button, Create.
+// Enter (or Go) in the room-code field, or in the name field once a code is
+// typed, means Join, not the form's first button, Create.
 $app.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' && e.target.id === 'code' && e.target.value.trim()) {
+  if (e.key === 'Enter' && (e.target.id === 'code' || e.target.id === 'name') && e.target.form?.code?.value.trim()) {
     e.preventDefault();
     e.target.form.querySelector('button[value="join"]')?.click();
   }
@@ -365,7 +379,7 @@ $app.addEventListener('submit', async (e) => {
     const form = e.target;
     const name = form.name.value.trim();
     const go = e.submitter?.value || 'create';
-    if (!name) return;
+    if (!name) { form.name.value = ''; form.name.reportValidity(); return; }
     const code = roomCodeFromURL() || form.code?.value.trim().toUpperCase();
     ui.error = '';
     try {
@@ -384,7 +398,7 @@ $app.addEventListener('submit', async (e) => {
     e.preventDefault();
     const word = e.target.word.value.trim();
     if (!word) return;
-    if (/\s/.test(word)) { toast('Clues are a single word.'); return; }
+    if (/\s/.test(word) || !/[\p{L}\p{N}\p{S}\p{P}]/u.test(word)) { toast('Clues are a single word.'); return; }
     if (ui.clueNumber == null) { toast('Pick a number for your clue.'); return; }
     await act('clue', { word, number: ui.clueNumber });
   }
@@ -401,7 +415,7 @@ function renderLobby() {
   const slot = (team, role) => {
     const people = seat(team, role);
     const mine = p?.team === team && p?.role === role;
-    const full = role === 'spymaster' && people.length > 0 && !mine;
+    const full = role === 'spymaster' && people.some((x) => x.connected) && !mine;
     return `
       <button class="seat ${mine ? 'mine' : ''}" data-sit="${team}:${role}" ${full ? 'disabled' : ''}>
         <span class="seat-role">${role === 'spymaster' ? 'Spymaster' : 'Guessers'}</span>
@@ -477,7 +491,7 @@ function renderGame() {
   region($app, 'board', `
     <div class="board ${spy ? 'spy' : ''} ${g.phase === 'over' ? 'over' : ''} ${canGuess() ? 'can-guess' : ''}">
       ${g.cards.map((c, i) => `
-        <button class="tile ${c.team ? `k-${c.team}` : ''} ${c.revealed ? 'revealed' : ''}" data-card="${i}" aria-label="Picture ${i + 1}${c.revealed ? `, ${c.team}` : ''}">
+        <button class="tile ${c.team ? `k-${c.team}` : ''} ${c.revealed ? 'revealed' : ''}" data-card="${i}" aria-label="Picture ${i + 1}${c.revealed ? `, ${KEY_NAME[c.team]}` : ''}">
           <img src="${esc(c.image)}" alt="" loading="eager" decoding="async" draggable="false">
           ${c.revealed ? `<span class="cover">${c.team === 'assassin' ? '☠' : ''}</span>` : ''}
         </button>`).join('')}
@@ -564,11 +578,11 @@ function menuSheet(room, g) {
         ${room.players.map((x) => `<li class="${x.connected ? '' : 'away'}"><i class="t-${x.team || 'none'}"></i>${esc(x.name)}${x.id === room.you ? ' (you)' : ''} <span class="muted">${x.role || 'watching'}</span></li>`).join('')}
       </ul>
       ${!p?.team && g.phase !== 'over' ? `
-        <div class="row">
+        ${room.keyTeam ? '' : `<div class="row">
           <button class="btn" data-sit="red:guesser">Join Circle</button>
           <button class="btn" data-sit="blue:guesser">Join Square</button>
-        </div>
-        ${['red', 'blue'].filter((t) => !room.players.some((x) => x.team === t && x.role === 'spymaster' && x.connected)).map((t) => `
+        </div>`}
+        ${(room.keyTeam ? [room.keyTeam] : ['red', 'blue']).filter((t) => !room.players.some((x) => x.team === t && x.role === 'spymaster' && x.connected)).map((t) => `
         <button class="btn" data-sit="${t}:spymaster">Be ${TEAM_NAME[t]} spymaster</button>`).join('')}` : ''}
       <h4>Clues</h4>
       ${log ? `<ul class="log">${log}</ul>` : '<p class="muted">No clues yet.</p>'}
@@ -973,6 +987,10 @@ document.addEventListener('click', async (e) => {
     return;
   }
   if (t.dataset.card != null) {
+    // The second tap of a double tap lands on whatever was just drawn under the
+    // finger: ignore a tile tap just after the zoom sheet closed.
+    if (performance.now() - ui.zoomClosedAt < TAP_GUARD_MS) return;
+    ui.zoomOpenedAt = performance.now();
     ui.selected = Number(t.dataset.card);
     ui.zoomStepped = false;
     renderModal();
@@ -983,7 +1001,10 @@ document.addEventListener('click', async (e) => {
     return;
   }
   if (t.dataset.close != null) {
+    // ...and a Close or backdrop tap just after the sheet opened.
+    if (ui.selected != null && performance.now() - ui.zoomOpenedAt < TAP_GUARD_MS) return;
     ui.selected = null;
+    ui.zoomClosedAt = performance.now();
     renderModal();
     return;
   }
@@ -993,8 +1014,11 @@ document.addEventListener('click', async (e) => {
     return;
   }
   if (t.dataset.guess != null) {
+    // A double tap on a picture must never guess it.
+    if (performance.now() - ui.zoomOpenedAt < TAP_GUARD_MS) return;
     const index = Number(t.dataset.guess);
     ui.selected = null;
+    ui.zoomClosedAt = performance.now();
     renderModal();
     await act('guess', { index });
     return;
@@ -1096,9 +1120,14 @@ const booted = (async function boot() {
   if (code && name && (!urlCode || urlCode === saved)) {
     try {
       await joinRoom(code, name);
-    } catch {
-      store.set('room', '');
-      if (!urlCode) history.replaceState(null, '', `/${location.search}`);
+    } catch (err) {
+      if (err.status === 404) {
+        store.set('room', '');
+        if (!urlCode) history.replaceState(null, '', `/${location.search}`);
+        ui.error = 'That game has ended. Start a new one!';
+      } else {
+        ui.error = 'Could not reconnect. Tap Join to try again.';
+      }
       render();
     }
   } else {
