@@ -194,6 +194,7 @@ function connect() {
   const es = new EventSource(`/api/rooms/${ui.code}/events?token=${token}`);
   ui.events = es;
   es.onmessage = (e) => setRoom(JSON.parse(e.data));
+  es.addEventListener('signal', onSignal);
   // "gone": this player is no longer in the room, because they left it (perhaps
   // from another tab). Follow them out rather than joining again as someone new.
   es.addEventListener('gone', () => { if (ui.events === es) leaveLocal('You left this game.'); else es.close(); });
@@ -202,7 +203,13 @@ function connect() {
     // The browser retries by itself unless the server refused us outright.
     if (es.readyState === EventSource.CLOSED) setTimeout(() => ui.events === es && rejoin(), 1500);
   };
+  call.streamOpen = false;
   es.onopen = () => {
+    // Messages sent to this phone while it had no stream were lost: say again
+    // what this phone is sending, and let the call start or carry on.
+    call.streamOpen = true;
+    for (const peer of call.peers.values()) sendState(peer);
+    syncCall();
     // Back in touch with the server: let failed large pictures try again.
     if (document.body.classList.contains('offline')) largeFailed.clear();
     document.body.classList.remove('offline');
@@ -211,6 +218,7 @@ function connect() {
 
 function leaveLocal(message) {
   if (ui.events) ui.events.close();
+  endCall();
   document.body.classList.remove('offline');
   Object.assign(ui, { code: null, room: null, events: null, selected: null, showMenu: false });
   closeViewer();
@@ -309,6 +317,7 @@ function render() {
   else renderGame();
   renderModal();
   syncViewer();
+  syncCall();
 }
 
 // ---------- Home ----------
@@ -361,6 +370,7 @@ function howToPlay() {
       <li><b>Press and hold</b> a picture (or right-click) to see it full screen and pinch to zoom into the details. <b>☰ → Browse pictures</b> lets you swipe through the whole board.</li>
       <li>Found pictures turn grey with a white ● or ■, and goats turn white. Hit a goat or the other team's picture and your turn ends. Hit the <b>dead goat</b> ☠ and you lose instantly.</li>
       <li>The scores at the top show each team's pictures left out of its total, like 6/9. The first team to find all theirs wins. The team that goes first has 9, the other has 8.</li>
+      <li>The small squares above the board show everyone's camera, with sound. Tap your own square 📷 to turn yours on. <b>☰ → Camera off</b> or <b>Mute me</b> turns it off again.</li>
     </ol>`;
 }
 
@@ -488,6 +498,8 @@ function renderGame() {
     </header>
   `);
 
+  region($app, 'video', CAN_CALL ? '<div class="video-strip" aria-label="Players’ cameras"></div>' : '');
+
   region($app, 'board', `
     <div class="board ${spy ? 'spy' : ''} ${g.phase === 'over' ? 'over' : ''} ${canGuess() ? 'can-guess' : ''}">
       ${g.cards.map((c, i) => `
@@ -587,6 +599,10 @@ function menuSheet(room, g) {
       <h4>Clues</h4>
       ${log ? `<ul class="log">${log}</ul>` : '<p class="muted">No clues yet.</p>'}
       <button class="btn" id="browse">Browse pictures</button>
+      ${CAN_CALL && CAN_FILM ? `<div class="row">
+        <button class="btn" id="camera">${call.local || call.starting ? 'Camera off' : 'Camera on'}</button>
+        ${call.local ? `<button class="btn" id="mic">${call.mic ? 'Mute me' : 'Unmute me'}</button>` : ''}
+      </div>` : ''}
       <div class="row">
         <button class="btn" id="share">Invite</button>
         <button class="btn" id="to-lobby">Back to lobby</button>
@@ -972,6 +988,446 @@ $app.addEventListener('contextmenu', (e) => {
   }
 });
 
+// ---------- Video and sound ----------
+// During a game each phone can show the players' front cameras in a strip of
+// small squares above the board, with sound. The video goes straight between
+// the phones (WebRTC); the server only passes on the messages that set each
+// connection up (see /signal). Every pair of players has one connection. The
+// player with the lower id (the "impolite" one) offers it; both sides follow
+// the "perfect negotiation" pattern, so offers that cross are sorted out.
+
+const CAN_CALL = typeof RTCPeerConnection === 'function';
+const CAN_FILM = !!navigator.mediaDevices?.getUserMedia;
+const VIDEO_MAX_BITRATE = 150000; // small squares don't need more
+const CONNECT_PATIENCE_MS = 20000; // a connection still not up after this is rebuilt
+
+const call = {
+  code: null,          // room the call belongs to
+  local: null,         // this phone's camera and microphone (MediaStream)
+  want: store.get('camera') === 'on', // the player turned their camera on
+  mic: store.get('mic') !== 'off',    // their sound is on
+  starting: false,
+  failed: false,       // the camera couldn't start (refused, or none)
+  peers: new Map(),    // player id -> peer
+  ice: null,           // ICE servers, once fetched
+  blocked: false,      // a remote video couldn't play until the next tap
+  // Marks this page's messages. When a player reloads, the others see a new
+  // one and start their connection to that player afresh.
+  session: makeToken().slice(0, 12),
+  streamOpen: false,   // this phone's event stream is open, so replies can reach it
+  paused: false,       // the camera stopped by itself: wait for a tap or a return
+  sound: !!navigator.userActivation?.hasBeenActive, // a tap has let sound play
+  soundHint: false,    // told the player to tap to hear the others
+};
+
+async function iceServers() {
+  if (call.ice) return call.ice;
+  try {
+    const res = await fetch('/api/ice', { cache: 'no-store' });
+    const list = await res.json();
+    if (Array.isArray(list)) call.ice = list;
+  } catch { /* use the default below */ }
+  return call.ice || [{ urls: 'stun:stun.l.google.com:19302' }];
+}
+
+// Only seated players are in the call: every pair of them is connected, so
+// people watching would add to every phone's load.
+function callActive() {
+  return CAN_CALL && !!ui.code && !!ui.room?.game && !!me()?.team;
+}
+
+// Keep the call in step with the room: called after every render.
+function syncCall() {
+  if (!callActive() || call.code !== ui.code) endCall();
+  if (!callActive()) return;
+  call.code = ui.code;
+  if (call.want && !call.local && !call.starting && !call.failed && !call.paused && document.visibilityState === 'visible') startCamera();
+  const seated = ui.room.players.filter((p) => p.team);
+  const here = new Set(seated.map((p) => p.id));
+  for (const id of call.peers.keys()) if (!here.has(id)) closePeer(id);
+  if (call.streamOpen) {
+    for (const p of seated) {
+      if (p.id === ui.room.you) continue;
+      const peer = call.peers.get(p.id);
+      if (!peer) { if (p.connected) makePeer(p.id); continue; }
+      // Back after losing touch: they may have missed what this phone sends.
+      if (p.connected && !peer.wasConnected) sendState(peer);
+      peer.wasConnected = p.connected;
+    }
+  }
+  renderVideo();
+}
+
+function endCall() {
+  for (const id of [...call.peers.keys()]) closePeer(id);
+  stopCamera();
+  call.code = null;
+}
+
+// ---- This phone's camera ----
+
+async function startCamera() {
+  if (!CAN_FILM || call.starting) return;
+  call.starting = true;
+  call.failed = false;
+  renderVideo();
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: 'user', width: { ideal: 320 }, height: { ideal: 320 }, frameRate: { ideal: 15, max: 24 } },
+      audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true },
+    });
+    // Left the game, or turned the camera off, while the phone was asking.
+    if (!callActive() || !call.want) { stream.getTracks().forEach((t) => t.stop()); return; }
+    call.local = stream;
+    for (const t of stream.getAudioTracks()) t.enabled = call.mic;
+    // iOS stops the camera when the app goes to the background: start it
+    // again when the player comes back.
+    // It can also be taken by a phone call or another app. Don't keep asking
+    // for it: wait for the player to come back to the app, or to tap.
+    for (const t of stream.getTracks()) t.addEventListener('ended', () => {
+      if (call.local !== stream) return;
+      call.local = null;
+      call.paused = true;
+      stream.getTracks().forEach((x) => x.stop());
+      shareLocal();
+      renderVideo();
+    });
+  } catch (err) {
+    console.warn('camera', err);
+    call.failed = true;
+    toast(err?.name === 'NotAllowedError' ? 'The camera wasn’t allowed. You can still see and hear the others.' : 'Couldn’t start the camera.');
+  } finally {
+    call.starting = false;
+  }
+  shareLocal();
+  renderVideo();
+}
+
+function stopCamera() {
+  if (!call.local) return;
+  call.local.getTracks().forEach((t) => t.stop());
+  call.local = null;
+  shareLocal();
+}
+
+function setCamera(on) {
+  call.want = on;
+  store.set('camera', on ? 'on' : 'off');
+  if (on) { call.failed = false; call.paused = false; startCamera(); } else { stopCamera(); renderVideo(); }
+}
+
+function setMic(on) {
+  call.mic = on;
+  store.set('mic', on ? 'on' : 'off');
+  for (const t of call.local?.getAudioTracks() ?? []) t.enabled = on;
+  shareLocal();
+  renderVideo();
+}
+
+// Put the current camera and microphone (or nothing) on every connection and
+// tell the others whether to show this player's picture.
+function shareLocal() {
+  for (const peer of call.peers.values()) {
+    attachLocal(peer);
+    sendState(peer);
+  }
+}
+
+function sendState(peer) {
+  signal(peer, { type: 'state', cam: !!call.local, mic: !!call.local && call.mic });
+}
+
+// ---- Connections to the other phones ----
+
+function makePeer(id) {
+  const peer = {
+    id,
+    polite: ui.room.you > id,
+    pc: null,
+    stream: new MediaStream(),
+    cam: false, mic: false, // what the other phone says it is sending
+    makingOffer: false,
+    ignoreOffer: false,
+    outbox: Promise.resolve(),
+    inbox: Promise.resolve(),
+    timer: null,
+    sid: '',             // the other phone's page, from its messages
+    cid: '',             // this phone's current connection to them
+    remoteCid: '',       // their current connection, from their messages
+    wasConnected: true,
+    patience: CONNECT_PATIENCE_MS,
+    ready: iceServers(),
+  };
+  call.peers.set(id, peer);
+  peer.ready = peer.ready.then((servers) => {
+    if (call.peers.get(id) !== peer) return;
+    buildConnection(peer, servers);
+  });
+  return peer;
+}
+
+function buildConnection(peer, servers) {
+  const pc = new RTCPeerConnection({ iceServers: servers });
+  peer.pc = pc;
+  peer.cid = makeToken().slice(0, 8);
+  peer.stream = new MediaStream();
+  peer.makingOffer = false;
+  peer.ignoreOffer = false;
+  pc.ontrack = (e) => {
+    if (peer.pc !== pc) return;
+    for (const t of peer.stream.getTracks()) if (t.kind === e.track.kind) peer.stream.removeTrack(t);
+    peer.stream.addTrack(e.track);
+    renderVideo();
+  };
+  pc.onicecandidate = (e) => { if (e.candidate && peer.pc === pc) signal(peer, { candidate: e.candidate }); };
+  pc.onnegotiationneeded = async () => {
+    try {
+      peer.makingOffer = true;
+      await pc.setLocalDescription();
+      if (peer.pc === pc) signal(peer, { description: pc.localDescription });
+    } catch (err) {
+      console.warn('offer', err);
+    } finally {
+      if (peer.pc === pc) peer.makingOffer = false;
+    }
+  };
+  pc.onconnectionstatechange = () => {
+    if (peer.pc !== pc) return;
+    if (pc.connectionState === 'connected') {
+      peer.patience = CONNECT_PATIENCE_MS;
+      limitBitrate(pc);
+      sendState(peer);
+    }
+    watch(peer);
+    renderVideo();
+  };
+  // The impolite side owns the media lines: one for sound, one for video, in
+  // both directions. The other side answers onto them (see onSignal).
+  if (!peer.polite) {
+    pc.addTransceiver('audio', { direction: 'sendrecv' });
+    pc.addTransceiver('video', { direction: 'sendrecv', sendEncodings: [{ maxBitrate: VIDEO_MAX_BITRATE }] });
+    attachLocal(peer);
+  }
+  sendState(peer);
+  watch(peer);
+}
+
+function attachLocal(peer) {
+  const pc = peer.pc;
+  if (!pc || pc.signalingState === 'closed') return;
+  for (const tr of pc.getTransceivers()) {
+    const kind = tr.receiver.track?.kind;
+    if (!kind || tr.stopped) continue;
+    if (tr.direction !== 'sendrecv') tr.direction = 'sendrecv';
+    const track = (kind === 'audio' ? call.local?.getAudioTracks() : call.local?.getVideoTracks())?.[0] ?? null;
+    if (tr.sender.track !== track) tr.sender.replaceTrack(track).catch(() => {});
+  }
+}
+
+function limitBitrate(pc) {
+  for (const tr of pc.getTransceivers()) {
+    if (tr.receiver.track?.kind !== 'video' || tr.stopped) continue;
+    const s = tr.sender;
+    try {
+      const p = s.getParameters();
+      if (!p.encodings?.length) continue;
+      p.encodings.forEach((e) => { e.maxBitrate = VIDEO_MAX_BITRATE; });
+      s.setParameters(p).catch(() => {});
+    } catch { /* not supported */ }
+  }
+}
+
+// A connection that doesn't come up (or drops) is rebuilt on both phones.
+// Only the impolite side keeps watch, so the two don't rebuild at once.
+function watch(peer) {
+  clearTimeout(peer.timer);
+  if (peer.polite || !peer.pc) return;
+  if (peer.pc.connectionState === 'connected') return;
+  peer.timer = setTimeout(() => {
+    if (call.peers.get(peer.id) !== peer || peer.pc?.connectionState === 'connected') return;
+    const other = ui.room?.players.find((p) => p.id === peer.id);
+    if (!other?.connected) { watch(peer); return; }
+    peer.patience = Math.min(peer.patience * 2, 120000);
+    signal(peer, { type: 'reset' });
+    rebuild(peer);
+  }, peer.patience);
+}
+
+function rebuild(peer) {
+  peer.pc?.close();
+  peer.pc = null;
+  peer.ready = iceServers().then((servers) => {
+    if (call.peers.get(peer.id) === peer) buildConnection(peer, servers);
+  });
+  renderVideo();
+  return peer.ready;
+}
+
+function closePeer(id) {
+  const peer = call.peers.get(id);
+  if (!peer) return;
+  call.peers.delete(id);
+  clearTimeout(peer.timer);
+  peer.pc?.close();
+  peer.pc = null;
+}
+
+// Messages to one phone go one at a time, so they arrive in order: an offer
+// before the network addresses that follow it.
+function signal(peer, data) {
+  const code = call.code || ui.code;
+  peer.outbox = peer.outbox.then(() => fetch(`/api/rooms/${code}/signal`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ token, to: peer.id, data: { ...data, sid: call.session, toSid: peer.sid, cid: peer.cid, toCid: peer.remoteCid } }),
+  })).catch(() => {});
+}
+
+function onSignal(e) {
+  let msg;
+  try { msg = JSON.parse(e.data); } catch { return; }
+  if (!callActive() || !msg?.from || !msg.data) return;
+  let peer = call.peers.get(msg.from);
+  if (!peer) {
+    if (!ui.room.players.some((p) => p.id === msg.from)) return;
+    peer = makePeer(msg.from);
+  }
+  peer.inbox = peer.inbox.then(() => handleSignal(peer, msg.data)).catch((err) => console.warn('signal', err));
+}
+
+async function handleSignal(peer, data) {
+  await peer.ready;
+  if (call.peers.get(peer.id) !== peer) return;
+  // Meant for another tab of this game on the same phone.
+  if (data.toSid && data.toSid !== call.session) return;
+  if (peer.sid && data.sid !== peer.sid) {
+    // An older tab of theirs that is still open: ignore it.
+    if (data.toSid) return;
+    // The other phone reloaded the game: its old connection is gone.
+    peer.sid = data.sid;
+    await rebuild(peer);
+    if (data.type === 'reset') return;
+  }
+  peer.sid = data.sid;
+  // An answer (or addresses) for a connection this phone has since rebuilt.
+  // Only the offering side rebuilds on its own, so only it needs to check.
+  if (!peer.polite && (data.description || data.candidate) && data.toCid && data.toCid !== peer.cid) return;
+  if (data.cid) peer.remoteCid = data.cid;
+  if (data.type === 'state') {
+    peer.cam = !!data.cam;
+    peer.mic = !!data.mic;
+    renderVideo();
+    return;
+  }
+  if (data.type === 'reset') {
+    await rebuild(peer);
+    return;
+  }
+  const pc = peer.pc;
+  if (!pc) return;
+  if (data.description) {
+    const collision = data.description.type === 'offer' && (peer.makingOffer || pc.signalingState !== 'stable');
+    peer.ignoreOffer = !peer.polite && collision;
+    if (peer.ignoreOffer) return;
+    await pc.setRemoteDescription(data.description);
+    if (data.description.type === 'offer') {
+      attachLocal(peer); // answer with this phone's camera on the same lines
+      await pc.setLocalDescription();
+      signal(peer, { description: pc.localDescription });
+    }
+  } else if (data.candidate) {
+    try {
+      await pc.addIceCandidate(data.candidate);
+    } catch (err) {
+      if (!peer.ignoreOffer) console.warn('candidate', err);
+    }
+  }
+}
+
+// ---- The strip of squares ----
+
+function videoOrder() {
+  const rank = (p) => (p.team === 'red' ? 0 : p.team === 'blue' ? 2 : 4) + (p.role === 'spymaster' ? 0 : 1);
+  return ui.room.players.slice().sort((a, b) => rank(a) - rank(b));
+}
+
+// The squares hold <video> elements that must survive re-renders, so the
+// strip is kept up to date by hand instead of being redrawn from markup.
+function renderVideo() {
+  const strip = $app.querySelector('.video-strip');
+  if (!strip) return;
+  if (!callActive()) { strip.replaceChildren(); return; }
+  const players = videoOrder();
+  const keep = new Set(players.map((p) => p.id));
+  for (const el of [...strip.children]) if (!keep.has(el.dataset.player)) el.remove();
+  players.forEach((p, i) => {
+    let el = strip.querySelector(`:scope > [data-player="${p.id}"]`);
+    if (!el) {
+      el = document.createElement('div');
+      el.dataset.player = p.id;
+      el.innerHTML = '<video autoplay playsinline></video><span class="v-face"></span><span class="v-name"></span><span class="v-badge"></span>';
+      el.querySelector('video').addEventListener('pause', () => resumeVideos());
+    }
+    if (strip.children[i] !== el) strip.insertBefore(el, strip.children[i] || null);
+    const mine = p.id === ui.room.you;
+    const peer = call.peers.get(p.id);
+    const stream = mine ? call.local : peer?.stream;
+    const live = mine ? !!call.local : !!peer && peer.cam && peer.pc?.connectionState === 'connected';
+    const video = el.querySelector('video');
+    // Phones only play sound after a tap, and a video with sound that isn't
+    // allowed yet doesn't play at all: show the picture silently until then.
+    // (The dev harness's four frames would echo, so they stay silent.)
+    video.muted = mine || !!DEV || !call.sound;
+    if (live && !mine && !call.sound && !call.soundHint && !DEV) {
+      call.soundHint = true;
+      toast('Tap anywhere to hear the others.');
+    }
+    if (video.srcObject !== (stream || null)) video.srcObject = stream || null;
+    if (stream && video.paused) video.play().catch(() => { call.blocked = true; });
+    el.className = `vtile vt-${p.team || 'none'} ${mine ? 'me' : ''} ${live ? 'live' : ''} ${p.connected ? '' : 'away'}`;
+    let face = (p.name || '?').trim().charAt(0).toUpperCase();
+    if (mine && !call.local) face = call.starting ? '…' : '📷';
+    el.querySelector('.v-face').textContent = face;
+    el.querySelector('.v-name').textContent = mine && !call.local && CAN_FILM && !call.starting ? 'Tap for camera' : p.name;
+    const quiet = mine ? call.local && !call.mic : live && !peer.mic;
+    el.querySelector('.v-badge').textContent = quiet ? '🔇' : '';
+    el.setAttribute('role', mine && !call.local ? 'button' : 'img');
+    el.setAttribute('aria-label', mine && !call.local ? 'Turn on your camera and sound' : `${p.name}${live ? '' : ', no video'}`);
+    if (mine && !call.local) el.tabIndex = 0; else el.removeAttribute('tabindex');
+  });
+}
+
+// Phones only play sound after a tap: try again on the next one.
+function resumeVideos() {
+  for (const v of $app.querySelectorAll('.video-strip video')) {
+    if (v.srcObject && v.paused) v.play().catch(() => { call.blocked = true; });
+  }
+}
+// Sound and playback are only allowed from a tap that ends (click, touchend),
+// not one that starts.
+for (const type of ['click', 'touchend', 'keydown']) {
+  document.addEventListener(type, () => {
+    if (call.sound && !call.blocked) return;
+    call.sound = true;
+    call.blocked = false;
+    for (const v of $app.querySelectorAll('.video-strip .vtile:not(.me) video')) v.muted = !!DEV;
+    resumeVideos();
+  }, true);
+}
+
+$app.addEventListener('click', (e) => {
+  const own = e.target.closest('.vtile.me');
+  if (own && !call.local && !call.starting) setCamera(true);
+});
+$app.addEventListener('keydown', (e) => {
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.matches?.('.vtile.me[tabindex]')) { e.preventDefault(); setCamera(true); }
+});
+// The camera and microphone stop while the game is in the background (iOS
+// stops them anyway) and start again on return.
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') { call.paused = false; syncCall(); } else stopCamera();
+});
+
 // ---------- Events ----------
 
 document.addEventListener('click', async (e) => {
@@ -1068,6 +1524,16 @@ document.addEventListener('click', async (e) => {
       // Ending the turn before any guess is allowed, but ask first.
       if (!ui.room.game.guessesMade && !confirm('End your turn without guessing?')) return;
       await act('end-turn');
+      break;
+    case 'camera':
+      ui.showMenu = false;
+      setCamera(!(call.local || call.starting));
+      render();
+      break;
+    case 'mic':
+      ui.showMenu = false;
+      setMic(!call.mic);
+      render();
       break;
     case 'browse':
       ui.showMenu = false;

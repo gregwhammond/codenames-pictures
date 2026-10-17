@@ -217,6 +217,77 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 
 .menu-btn { background: none; border: none; font-size: 1.5rem; width: 40px; height: 40px; cursor: pointer; }
 
+/* Players' cameras: a row of small squares between the top bar and the
+   board, in seat order (Circle spymaster, Circle guesser, Square spymaster,
+   Square guesser, then anyone watching). */
+.video-strip {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 2px 8px 4px;
+}
+.video-strip:empty { display: none; }
+.vtile {
+  position: relative;
+  /* Smaller on short screens, so the board keeps most of the room. */
+  flex: 0 1 clamp(36px, 7.5dvh, 64px);
+  min-width: 0;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #1d2130;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #fff;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.vtile video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  pointer-events: none;
+}
+.vtile.live video { opacity: 1; }
+.vtile.me video { transform: scaleX(-1); } /* your own picture, like a mirror */
+.vtile.live .v-face { visibility: hidden; }
+.vtile.away { opacity: .4; }
+.vtile.me:not(.live) { cursor: pointer; outline: 1px dashed rgba(255, 255, 255, .45); outline-offset: -1px; }
+.v-face { font-size: 1.3rem; line-height: 1; }
+.v-name {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1px 3px;
+  font-size: .58rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: rgba(0, 0, 0, .55);
+}
+.v-badge { position: absolute; top: 1px; right: 2px; font-size: .7rem; line-height: 1; }
+/* The team's mark in the top left corner. */
+.vtile.vt-red::before, .vtile.vt-blue::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 7px;
+  height: 7px;
+  background: #fff;
+  box-shadow: 0 0 0 1px #000;
+  z-index: 1;
+}
+.vtile.vt-red::before { border-radius: 50%; }
+
 [data-screen="game"] > [data-region="board"] {
   flex: 1;
   min-height: 0;
@@ -480,12 +551,13 @@ body.offline::before {
   #app[data-screen="game"] {
     display: grid;
     grid-template-columns: 1fr minmax(240px, 34%);
-    grid-template-rows: auto 1fr;
-    grid-template-areas: "board top" "board actions";
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas: "board top" "board video" "board actions";
     padding-left: env(safe-area-inset-left, 0px);
     padding-right: env(safe-area-inset-right, 0px);
   }
   [data-screen="game"] > [data-region="top"] { grid-area: top; }
+  [data-screen="game"] > [data-region="video"] { grid-area: video; }
   [data-screen="game"] > [data-region="board"] { grid-area: board; padding: 8px; }
   [data-screen="game"] > [data-region="actions"] { grid-area: actions; align-self: end; }
   .scorebar { grid-template-columns: auto 1fr 36px; }
