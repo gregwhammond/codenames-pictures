@@ -288,8 +288,8 @@ type actionRequest struct {
 	Team   Team   `json:"team"`
 	Role   Role   `json:"role"`
 	Word   string `json:"word"`
-	Number int    `json:"number"`
-	Index  int    `json:"index"`
+	Number *int   `json:"number"`
+	Index  *int   `json:"index"`
 }
 
 func (s *Server) handleAction(w http.ResponseWriter, r *http.Request) {
@@ -315,9 +315,19 @@ func (s *Server) handleAction(w http.ResponseWriter, r *http.Request) {
 	case "lobby":
 		err = room.Do(req.Token, func(*Player) error { room.BackToLobby(); return nil })
 	case "clue":
-		err = room.Do(req.Token, func(p *Player) error { return room.Clue(p, req.Word, req.Number) })
+		err = room.Do(req.Token, func(p *Player) error {
+			if req.Number == nil { // a missing number is not 0
+				return ErrBadNumber
+			}
+			return room.Clue(p, req.Word, *req.Number)
+		})
 	case "guess":
-		err = room.Do(req.Token, func(p *Player) error { return room.Guess(p, req.Index) })
+		err = room.Do(req.Token, func(p *Player) error {
+			if req.Index == nil { // a missing card is not card 0
+				return ErrBadCard
+			}
+			return room.Guess(p, *req.Index)
+		})
 	case "end-turn":
 		err = room.Do(req.Token, func(p *Player) error { return room.EndTurn(p) })
 	case "leave":

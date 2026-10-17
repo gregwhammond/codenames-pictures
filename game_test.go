@@ -75,6 +75,11 @@ func TestClueValidation(t *testing.T) {
 	if err := g.GiveClue(team, "two words", 1); err != ErrBadClue {
 		t.Fatalf("two words: %v", err)
 	}
+	for _, w := range []string{"\u200c", "\u200d\u200e", "\u00ad", "\u061c", "\u202a\u202c"} {
+		if err := g.GiveClue(team, w, 1); err != ErrBadClue {
+			t.Fatalf("invisible clue %q: %v", w, err)
+		}
+	}
 	if err := g.GiveClue(team, "fish", 10); err != ErrBadNumber {
 		t.Fatalf("number: %v", err)
 	}

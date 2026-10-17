@@ -206,7 +206,7 @@ func (g *Game) GiveClue(team Team, word string, number int) error {
 		return ErrWrongPhase
 	}
 	word = strings.TrimSpace(word)
-	if word == "" || strings.ContainsFunc(word, isSeparator) || utf8.RuneCountInString(word) > maxClueWordSize {
+	if word == "" || strings.ContainsFunc(word, isSeparator) || !strings.ContainsFunc(word, isVisible) || utf8.RuneCountInString(word) > maxClueWordSize {
 		return ErrBadClue
 	}
 	if number != Unlimited && (number < 0 || number > 9) {
@@ -240,6 +240,13 @@ func isSeparator(r rune) bool {
 		return true
 	}
 	return false
+}
+
+// isVisible reports whether r is something a player can see: a clue made only
+// of invisible format characters (joiners, direction marks, soft hyphens)
+// would show as a blank.
+func isVisible(r rune) bool {
+	return unicode.IsLetter(r) || unicode.IsNumber(r) || unicode.IsSymbol(r) || unicode.IsPunct(r)
 }
 
 // Guess reveals a card on behalf of the current team.

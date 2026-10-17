@@ -357,11 +357,12 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .over-panel { text-align: center; }
 .over-panel p { margin: 0 0 10px; font-size: 1.05rem; }
 
-.clue-form { display: grid; gap: 8px; width: 100%; max-width: 520px; }
+.clue-form { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; width: 100%; max-width: 520px; }
 .nums { display: flex; gap: 4px; justify-content: space-between; }
 .num {
   flex: 1;
   min-width: 0;
+  padding: 0;
   height: 38px;
   border-radius: 8px;
   border: 1px solid var(--line);
@@ -370,6 +371,8 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   cursor: pointer;
 }
 .num.on { background: var(--accent); color: #1b1b1b; border-color: var(--accent); }
+/* The narrowest phones (320px): a little less space between the numbers keeps each one big enough to tap. */
+@media (max-width: 340px) { .nums { gap: 3px; } }
 
 /* ---------- Sheets & modals ---------- */
 
@@ -490,6 +493,9 @@ body.offline::before {
   .nums { flex-wrap: wrap; }
   .num { flex: 0 0 calc((100% - 20px) / 6); height: 34px; }
   .guess-panel { flex-direction: column; }
+  /* A small phone on its side: keep the zoom sheet and its buttons on screen. */
+  .zoom { width: min(92vw, 48dvh, 520px); gap: 8px; }
+  .zoom .btn.big { padding: 10px 18px; white-space: nowrap; }
 }
 
 @media (prefers-reduced-motion: reduce) {

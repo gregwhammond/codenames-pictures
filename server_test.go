@@ -163,6 +163,10 @@ func TestFullGameOverHTTP(t *testing.T) {
 	if status, _, _ := post(t, base+"clue", map[string]any{"token": guesser.token, "word": "x", "number": 1}); status != http.StatusConflict {
 		t.Fatal("guesser can't give clues")
 	}
+	// A clue with no number, or a guess with no card, is refused rather than read as 0.
+	if status, _, _ := post(t, base+"clue", map[string]any{"token": spy.token, "word": "dragon", "number": nil}); status != http.StatusConflict {
+		t.Fatalf("clue with no number: got %d", status)
+	}
 	if status, _, raw := post(t, base+"clue", map[string]any{"token": spy.token, "word": "dragon", "number": 1}); status != 200 {
 		t.Fatalf("clue: %s", raw)
 	}
@@ -173,6 +177,9 @@ func TestFullGameOverHTTP(t *testing.T) {
 		if c.Team == Assassin {
 			idx = i
 		}
+	}
+	if status, _, _ := post(t, base+"guess", map[string]any{"token": guesser.token}); status != http.StatusConflict {
+		t.Fatalf("guess with no card: got %d", status)
 	}
 	if status, _, raw := post(t, base+"guess", map[string]any{"token": guesser.token, "index": idx}); status != 200 {
 		t.Fatalf("guess: %s", raw)

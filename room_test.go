@@ -174,9 +174,9 @@ func TestSpymasterCannotLeaveAndRejoinAsGuesser(t *testing.T) {
 		}
 	}
 	leave()
-	sit(t, r, redSpyToken, Red, Guesser, ErrGameRunning)
-	sit(t, r, redSpyToken, Blue, Guesser, ErrGameRunning)
-	sit(t, r, redSpyToken, Blue, Spymaster, ErrGameRunning)
+	sit(t, r, redSpyToken, Red, Guesser, ErrSawKey)
+	sit(t, r, redSpyToken, Blue, Guesser, ErrSawKey)
+	sit(t, r, redSpyToken, Blue, Spymaster, ErrSawKey)
 	sit(t, r, redSpyToken, "", "", nil) // watching is allowed
 	sit(t, r, redSpyToken, Red, Spymaster, nil)
 	if team, role := seatOf(r, redSpyToken); team != Red || role != Spymaster {
@@ -186,7 +186,7 @@ func TestSpymasterCannotLeaveAndRejoinAsGuesser(t *testing.T) {
 	// Leaving twice changes nothing.
 	leave()
 	leave()
-	sit(t, r, redSpyToken, Blue, Guesser, ErrGameRunning)
+	sit(t, r, redSpyToken, Blue, Guesser, ErrSawKey)
 
 	// The lobby forgets who saw the key.
 	_ = r.Do(redGuessToken, func(*Player) error { r.BackToLobby(); return nil })
@@ -259,8 +259,8 @@ func TestAwaySpymasterSeatCanBeTakenMidGame(t *testing.T) {
 
 	// The spymaster who was replaced has seen the key: no guessing for them,
 	// and their old seat is held by someone who is connected.
-	sit(t, r, redSpyToken, Red, Guesser, ErrGameRunning)
-	sit(t, r, redSpyToken, Blue, Guesser, ErrGameRunning)
+	sit(t, r, redSpyToken, Red, Guesser, ErrSawKey)
+	sit(t, r, redSpyToken, Blue, Guesser, ErrSawKey)
 	sit(t, r, redSpyToken, Red, Spymaster, ErrSeatTaken)
 	old, _ := r.View(redSpyToken)
 	for _, c := range old.Game.Cards {
