@@ -539,3 +539,89 @@ func TestViewsCarryRev(t *testing.T) {
 		t.Fatalf("rev %d then %d", first.Rev, second.Rev)
 	}
 }
+
+// A video-call message posted by one player arrives, untouched, on the other
+// player's event stream as a "signal" event naming the sender.
+func TestSignalOverHTTP(t *testing.T) {
+	ts := testServer(t)
+	_, _, raw := post(t, ts.URL+"/api/rooms", map[string]string{})
+	var created struct{ Code string }
+	_ = json.Unmarshal([]byte(raw), &created)
+	base := ts.URL + "/api/rooms/" + created.Code + "/"
+	_, a, _ := post(t, base+"join", map[string]string{"token": "aaaaaaaaaaaaaaaaaaaa", "name": "A"})
+	_, b, _ := post(t, base+"join", map[string]string{"token": "bbbbbbbbbbbbbbbbbbbb", "name": "B"})
+
+	resp, err := http.Get(base + "events?token=bbbbbbbbbbbbbbbbbbbb")
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer resp.Body.Close()
+	lines := make(chan string, 64)
+	go func() {
+		sc := bufio.NewScanner(resp.Body)
+		for sc.Scan() {
+			lines <- sc.Text()
+		}
+		close(lines)
+	}()
+
+	status, _, raw := post(t, base+"signal", map[string]any{"token": "aaaaaaaaaaaaaaaaaaaa", "to": b.You, "data": map[string]string{"type": "state"}})
+	if status != http.StatusNoContent {
+		t.Fatalf("signal: %d %s", status, raw)
+	}
+	deadline := time.After(3 * time.Second)
+	for event := ""; ; {
+		select {
+		case line, ok := <-lines:
+			if !ok {
+				t.Fatal("stream closed")
+			}
+			if line == "event: signal" {
+				event = "signal"
+				continue
+			}
+			if event == "signal" && strings.HasPrefix(line, "data: ") {
+				want := `{"from":"` + a.You + `","data":{"type":"state"}}`
+				if got := strings.TrimPrefix(line, "data: "); got != want {
+					t.Fatalf("got %s, want %s", got, want)
+				}
+				goto refused
+			}
+		case <-deadline:
+			t.Fatal("no signal event")
+		}
+	}
+
+refused:
+	for _, c := range []struct {
+		body   map[string]any
+		status int
+	}{
+		{map[string]any{"token": "nobodynobodynobody", "to": b.You, "data": 1}, http.StatusForbidden},
+		{map[string]any{"token": "aaaaaaaaaaaaaaaaaaaa", "to": "someone", "data": 1}, http.StatusConflict},
+		{map[string]any{"token": "aaaaaaaaaaaaaaaaaaaa", "to": a.You, "data": 1}, http.StatusConflict},
+		{map[string]any{"token": "aaaaaaaaaaaaaaaaaaaa", "to": b.You}, http.StatusBadRequest},
+		{map[string]any{"token": "aaaaaaaaaaaaaaaaaaaa", "to": b.You, "data": strings.Repeat("x", maxSignalBytes)}, http.StatusBadRequest},
+	} {
+		if status, _, raw := post(t, base+"signal", c.body); status != c.status {
+			t.Errorf("%v: got %d %s, want %d", c.body["to"], status, raw, c.status)
+		}
+	}
+}
+
+func TestICEServers(t *testing.T) {
+	ts := testServer(t)
+	_, body := get(t, ts.URL+"/api/ice")
+	var list []map[string]any
+	if err := json.Unmarshal([]byte(body), &list); err != nil || len(list) == 0 {
+		t.Fatalf("default: %q", body)
+	}
+	t.Setenv("ICE_SERVERS", `[{"urls":"turn:example.com","username":"u","credential":"c"}]`)
+	if _, body := get(t, ts.URL+"/api/ice"); !strings.Contains(body, "turn:example.com") {
+		t.Fatalf("from env: %q", body)
+	}
+	t.Setenv("ICE_SERVERS", `not json`)
+	if _, body := get(t, ts.URL+"/api/ice"); !strings.Contains(body, "stun:") {
+		t.Fatalf("bad env falls back: %q", body)
+	}
+}

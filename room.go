@@ -3,6 +3,7 @@ package main
 import (
 	"crypto/rand"
 	"encoding/hex"
+	"encoding/json"
 	"errors"
 	mrand "math/rand"
 	"strings"
@@ -44,6 +45,7 @@ var (
 	ErrNotSpymaster  = errors.New("only the spymaster can do that")
 	ErrNotGuesser    = errors.New("only guessers can do that")
 	ErrTooManyRooms  = errors.New("the server is full right now, please try again in a few minutes")
+	ErrNoSuchPlayer  = errors.New("that player isn't in this room")
 )
 
 type Player struct {
@@ -69,7 +71,7 @@ type Room struct {
 	seed     int64
 	rnd      *mrand.Rand // made from seed on the first deal: a source is ~5 KB
 	lastSeen time.Time
-	subs     map[chan struct{}]struct{}
+	subs     map[*Sub]struct{}
 	// rev counts changes, so a client can tell a stale view from a newer one.
 	rev uint64
 	// sawKey remembers the tokens of spymasters who left their seat (by
@@ -86,7 +88,7 @@ func newRoom(code string, images []string, seed int64) *Room {
 		images:   images,
 		seed:     seed,
 		lastSeen: time.Now(),
-		subs:     map[chan struct{}]struct{}{},
+		subs:     map[*Sub]struct{}{},
 		sawKey:   map[string]Team{},
 	}
 }
@@ -280,37 +282,88 @@ func (r *Room) Leave(p *Player) {
 	delete(r.byToken, p.token)
 }
 
+// Sub is one open event stream. Changed is poked whenever the room changes;
+// Signals carries video-call messages addressed to the stream's player.
+type Sub struct {
+	Changed chan struct{}
+	Signals chan []byte
+	token   string
+}
+
+// signalBuffer is how many video-call messages may wait for a slow stream
+// before more are dropped (the phones recover from a lost one).
+const signalBuffer = 64
+
 // Subscribe registers a listener that is poked whenever the room changes.
-func (r *Room) Subscribe(token string) (chan struct{}, error) {
+func (r *Room) Subscribe(token string) (*Sub, error) {
 	r.mu.Lock()
 	defer r.mu.Unlock()
 	p, ok := r.byToken[token]
 	if !ok {
 		return nil, ErrUnknownPlayer
 	}
-	ch := make(chan struct{}, 1)
-	r.subs[ch] = struct{}{}
+	sub := &Sub{Changed: make(chan struct{}, 1), Signals: make(chan []byte, signalBuffer), token: token}
+	r.subs[sub] = struct{}{}
 	p.conns++
 	r.changedLocked()
-	return ch, nil
+	return sub, nil
 }
 
-func (r *Room) Unsubscribe(token string, ch chan struct{}) {
+func (r *Room) Unsubscribe(sub *Sub) {
 	r.mu.Lock()
 	defer r.mu.Unlock()
-	delete(r.subs, ch)
-	if p, ok := r.byToken[token]; ok && p.conns > 0 {
+	delete(r.subs, sub)
+	if p, ok := r.byToken[sub.token]; ok && p.conns > 0 {
 		p.conns--
 	}
 	r.changedLocked()
 }
 
+// Signal passes a video-call message (the phones' offers, answers and
+// network addresses) from one player to another, on every stream the
+// receiver has open. The server never reads it. A stream whose queue is full
+// misses the message.
+func (r *Room) Signal(token, to string, data json.RawMessage) error {
+	r.mu.Lock()
+	defer r.mu.Unlock()
+	from, ok := r.byToken[token]
+	if !ok {
+		return ErrUnknownPlayer
+	}
+	var target *Player
+	for _, p := range r.players {
+		if p.ID == to && p != from {
+			target = p
+		}
+	}
+	if target == nil {
+		return ErrNoSuchPlayer
+	}
+	msg, err := json.Marshal(struct {
+		From string          `json:"from"`
+		Data json.RawMessage `json:"data"`
+	}{from.ID, data})
+	if err != nil {
+		return err
+	}
+	for sub := range r.subs {
+		if sub.token != target.token {
+			continue
+		}
+		select {
+		case sub.Signals <- msg:
+		default:
+		}
+	}
+	return nil
+}
+
 func (r *Room) changedLocked() {
 	r.rev++
 	r.lastSeen = time.Now()
-	for ch := range r.subs {
+	for sub := range r.subs {
 		select {
-		case ch <- struct{}{}:
+		case sub.Changed <- struct{}{}:
 		default: // already has a pending poke
 		}
 	}

@@ -174,6 +174,8 @@ func newServer(web, cards, large fs.FS, versioned bool) (*Server, error) {
 	s.mux.HandleFunc("POST /api/rooms", s.handleCreate)
 	s.mux.HandleFunc("POST /api/rooms/{code}/{action}", s.handleAction)
 	s.mux.HandleFunc("GET /api/rooms/{code}/events", s.handleEvents)
+	s.mux.HandleFunc("POST /api/rooms/{code}/signal", s.handleSignal)
+	s.mux.HandleFunc("GET /api/ice", s.handleICE)
 	s.mux.HandleFunc("GET /api/health", func(w http.ResponseWriter, r *http.Request) { fmt.Fprintln(w, "ok") })
 
 	static := noListing(web, "/", true, http.FileServerFS(web))
@@ -351,6 +353,56 @@ func (s *Server) handleAction(w http.ResponseWriter, r *http.Request) {
 	writeJSON(w, http.StatusOK, map[string]bool{"ok": true})
 }
 
+// maxSignalBytes bounds one video-call message. A phone's offer describing
+// its camera and microphone is a few kilobytes.
+const maxSignalBytes = 16 << 10
+
+type signalRequest struct {
+	Token string          `json:"token"`
+	To    string          `json:"to"`
+	Data  json.RawMessage `json:"data"`
+}
+
+// handleSignal passes a video-call message from one player's phone to
+// another's; the video itself goes straight between the phones.
+func (s *Server) handleSignal(w http.ResponseWriter, r *http.Request) {
+	room, ok := s.rooms.Get(r.PathValue("code"))
+	if !ok {
+		writeError(w, http.StatusNotFound, errors.New("no room with that code"))
+		return
+	}
+	var req signalRequest
+	if err := json.NewDecoder(http.MaxBytesReader(w, r.Body, maxSignalBytes)).Decode(&req); err != nil || len(req.Data) == 0 {
+		writeError(w, http.StatusBadRequest, errors.New("bad request"))
+		return
+	}
+	if err := room.Signal(req.Token, req.To, req.Data); err != nil {
+		status := http.StatusConflict
+		if errors.Is(err, ErrUnknownPlayer) {
+			status = http.StatusForbidden
+		}
+		writeError(w, status, err)
+		return
+	}
+	w.WriteHeader(http.StatusNoContent)
+}
+
+// defaultICEServers lets phones find their own public address. Phones on
+// networks that block direct connections also need a relay (TURN) server,
+// which can be given in the ICE_SERVERS environment variable as the JSON
+// list a browser's RTCPeerConnection takes.
+const defaultICEServers = `[{"urls":["stun:stun.l.google.com:19302","stun:stun1.l.google.com:19302"]}]`
+
+func (s *Server) handleICE(w http.ResponseWriter, r *http.Request) {
+	servers := strings.TrimSpace(os.Getenv("ICE_SERVERS"))
+	if servers == "" || !json.Valid([]byte(servers)) {
+		servers = defaultICEServers
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Cache-Control", "no-store")
+	fmt.Fprint(w, servers)
+}
+
 // handleEvents streams the room state to one player with Server-Sent Events.
 func (s *Server) handleEvents(w http.ResponseWriter, r *http.Request) {
 	room, ok := s.rooms.Get(r.PathValue("code"))
@@ -359,12 +411,12 @@ func (s *Server) handleEvents(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	token := r.URL.Query().Get("token")
-	ch, err := room.Subscribe(token)
+	sub, err := room.Subscribe(token)
 	if err != nil {
 		writeError(w, http.StatusForbidden, err)
 		return
 	}
-	defer room.Unsubscribe(token, ch)
+	defer room.Unsubscribe(sub)
 
 	flusher, ok := w.(http.Flusher)
 	if !ok {
@@ -397,10 +449,13 @@ func (s *Server) handleEvents(w http.ResponseWriter, r *http.Request) {
 		select {
 		case <-r.Context().Done():
 			return
-		case <-ch:
+		case <-sub.Changed:
 			if !send() {
 				return
 			}
+		case msg := <-sub.Signals:
+			fmt.Fprintf(w, "event: signal\ndata: %s\n\n", msg)
+			flusher.Flush()
 		case <-heartbeat.C:
 			fmt.Fprint(w, ": ping\n\n")
 			flusher.Flush()

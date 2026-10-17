@@ -13,6 +13,7 @@ It's built for **2 teams of 2** (one spymaster and one guesser per team). Teams 
 5. Press and hold any picture to see it full screen and pinch to zoom into the detail. **☰ → Browse pictures** swipes through the whole board without guessing.
 6. Found pictures turn grey with a white ● or ■, and goats turn white. A goat or the other team's picture ends your turn. The **dead goat** ☠ loses the game instantly.
 7. The scores at the top show each team's pictures left out of its total, for example 6/9. The first team to find all their pictures wins. The team that goes first has 9 pictures, the other has 8.
+8. The small squares above the board show each player's front camera, with sound. Tap your own square (📷) to turn your camera on; the phone asks to allow the camera and microphone the first time. **☰ → Camera off** and **Mute me** turn them off again. A 🔇 shows who is muted.
 
 The board is always 24 pictures in a grid 4 columns wide and 6 rows tall: 9 for the starting team, 8 for the other, 6 goats and 1 dead goat.
 
@@ -39,6 +40,8 @@ For a preview that needs no server, `python3 scripts/build_preview.py -o preview
 ## Deploying
 
 The server is a single small binary with the web app and pictures built in. Game state lives in memory, so run **one instance** (restarting it ends games in progress). Rooms are cleaned up after 6 hours without activity.
+
+Phones only allow the camera on an `https://` address (or `localhost`). Video connects phone to phone; on mobile networks that block direct connections a player's square can stay blank. To fix that, add a relay (TURN) server by setting the `ICE_SERVERS` environment variable to the list a browser's `RTCPeerConnection` takes, for example `[{"urls":"stun:stun.l.google.com:19302"},{"urls":"turn:turn.example.com:3478","username":"…","credential":"…"}]`.
 
 ### Render (easiest, free)
 
@@ -92,6 +95,7 @@ You need at least 24 pictures; more gives more variety between games. Two crops 
 | `game.go` | The rules: dealing 24 cards (9/8/6/1), clues, guesses, turn passing, winning. |
 | `room.go` | Rooms, seats, and what each player is allowed to see (guessers never receive the key). |
 | `main.go` | HTTP API (`POST /api/rooms/{code}/{action}`) and the live event stream (`GET /api/rooms/{code}/events`). |
+| Video | Each pair of phones sends camera and sound straight to each other (WebRTC). The server only passes on the short messages that set each connection up (`POST /api/rooms/{code}/signal`, delivered on the event stream), and hands out the address-finding (STUN) servers at `GET /api/ice`. |
 | `web/` | The phone app: plain HTML, CSS and JavaScript with no build step, a service worker for offline loading, and the app manifest. |
 
 Each browser keeps a private random token in local storage, so refreshing or reopening the app puts you back in your seat.
