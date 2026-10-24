@@ -8,6 +8,7 @@ import (
 	"strings"
 	"sync"
 	"time"
+	"unicode"
 	"unicode/utf8"
 )
 
@@ -35,7 +36,7 @@ var (
 	ErrRoomFull      = errors.New("this room is full")
 	ErrBadName       = errors.New("please enter a name")
 	ErrUnknownPlayer = errors.New("join the room first")
-	ErrBadSeat       = errors.New("pick red or blue, and spymaster or guesser")
+	ErrBadSeat       = errors.New("pick Circle or Square, and spymaster or guesser")
 	ErrSeatTaken     = errors.New("that team already has a spymaster")
 	ErrGameRunning   = errors.New("a game is already in progress")
 	ErrSawKey        = errors.New("you've seen the key this game: you can take your spymaster seat back, or watch")
@@ -100,8 +101,19 @@ func randomID() string {
 }
 
 func cleanName(name string) (string, error) {
+	// Control and format characters (zero-width spaces, direction overrides)
+	// would make a name blank or turn the text around it backwards. The
+	// joiners stay (family emoji and Persian or Indic spellings need them),
+	// and so do the tag characters that make the England or Scotland flag.
+	name = strings.Map(func(r rune) rune {
+		keep := r == 0x200C || r == 0x200D || (r >= 0xE0020 && r <= 0xE007F)
+		if !keep && (unicode.Is(unicode.Cc, r) && !unicode.IsSpace(r) || unicode.Is(unicode.Cf, r)) {
+			return -1
+		}
+		return r
+	}, name)
 	name = strings.Join(strings.Fields(name), " ")
-	if name == "" {
+	if name == "" || !strings.ContainsFunc(name, isVisible) {
 		return "", ErrBadName
 	}
 	if utf8.RuneCountInString(name) > maxNameLength {
@@ -280,26 +292,30 @@ func (r *Room) Leave(p *Player) {
 	delete(r.byToken, p.token)
 }
 
-// Subscribe registers a listener that is poked whenever the room changes.
-func (r *Room) Subscribe(token string) (chan struct{}, error) {
+// Subscribe registers a listener that is poked whenever the room changes,
+// and counts it as a connection of the player who holds token now.
+func (r *Room) Subscribe(token string) (chan struct{}, *Player, error) {
 	r.mu.Lock()
 	defer r.mu.Unlock()
 	p, ok := r.byToken[token]
 	if !ok {
-		return nil, ErrUnknownPlayer
+		return nil, nil, ErrUnknownPlayer
 	}
 	ch := make(chan struct{}, 1)
 	r.subs[ch] = struct{}{}
 	p.conns++
 	r.changedLocked()
-	return ch, nil
+	return ch, p, nil
 }
 
-func (r *Room) Unsubscribe(token string, ch chan struct{}) {
+// Unsubscribe removes a listener. It takes the connection off the player it
+// was counted for, not whoever holds the token by now: after a leave and a
+// re-join with the same token that is a different player.
+func (r *Room) Unsubscribe(p *Player, ch chan struct{}) {
 	r.mu.Lock()
 	defer r.mu.Unlock()
 	delete(r.subs, ch)
-	if p, ok := r.byToken[token]; ok && p.conns > 0 {
+	if p.conns > 0 {
 		p.conns--
 	}
 	r.changedLocked()
@@ -367,11 +383,15 @@ type RoomView struct {
 }
 
 // View renders the room as seen by the player with token.
-func (r *Room) View(token string) (RoomView, bool) {
+func (r *Room) View(token string) (RoomView, bool) { return r.ViewOf(token, nil) }
+
+// ViewOf is View for a stream opened by player want: it fails once token no
+// longer belongs to that player. A nil want accepts whoever holds token.
+func (r *Room) ViewOf(token string, want *Player) (RoomView, bool) {
 	r.mu.Lock()
 	defer r.mu.Unlock()
 	me, ok := r.byToken[token]
-	if !ok {
+	if !ok || (want != nil && me != want) {
 		return RoomView{}, false
 	}
 	v := RoomView{Code: r.Code, Rev: r.rev, You: me.ID, Ready: r.seatsReady(), KeyTeam: r.sawKey[token]}

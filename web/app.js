@@ -99,15 +99,35 @@ function inviteURL(code) {
 
 // ---------- Server calls ----------
 
-async function api(path, body = {}) {
-  const res = await fetch(`/api/rooms${path}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ token, ...body }),
-  });
+const NO_CONNECTION = 'No connection. Check your network and try again.';
+const SLOW_REPLY = 'Still waiting for the server. Check your network.';
+
+// timeout (ms) gives up on a reply that never comes, so one stalled request
+// can't hold up every tap queued behind it. (AbortSignal.timeout is missing
+// before iOS 16, hence the controller.)
+async function api(path, body = {}, { timeout = 20000 } = {}) {
+  const ctrl = typeof AbortController === 'function' ? new AbortController() : null;
+  const timer = ctrl && setTimeout(() => ctrl.abort(), timeout);
+  let res;
+  try {
+    res = await fetch(`/api/rooms${path}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token, ...body }),
+      signal: ctrl?.signal,
+    });
+  } catch {
+    // Offline, or the reply took too long (the server may still have done it).
+    const err = new Error(ctrl?.signal.aborted ? SLOW_REPLY : NO_CONNECTION);
+    err.timedOut = !!ctrl?.signal.aborted;
+    throw err;
+  } finally {
+    clearTimeout(timer);
+  }
   const data = await res.json().catch(() => ({}));
   if (!res.ok) {
-    const err = new Error(data.error || 'Something went wrong');
+    const text = data.error || (res.status >= 500 ? 'The server is busy. Try again in a moment.' : 'Something went wrong');
+    const err = new Error(text.charAt(0).toUpperCase() + text.slice(1));
     err.status = res.status;
     throw err;
   }
@@ -128,11 +148,11 @@ function act(action, body) {
     pending = key;
     ui.busy = true;
     try {
-      const view = await api(`/${code}/${action}`, body);
+      const view = await api(`/${code}/${action}`, body, { timeout: 8000 });
       if (view && view.code && ui.code === code) setRoom(view);
     } catch (err) {
       if (ui.code !== code) return;
-      if (err.status === 403) await rejoin();
+      if (err.status === 403) leaveLocal('You left this game.');
       else { toast(err.message); render(); }
     } finally {
       ui.busy = false;
@@ -156,10 +176,13 @@ async function createRoom(name) {
   await joinRoom(code, name);
 }
 
-async function joinRoom(code, name) {
+// stillWanted, if given, is asked once the reply is in: the player may have
+// moved on while it was on its way.
+async function joinRoom(code, name, stillWanted) {
   code = code.toUpperCase();
   store.set('name', name);
   const view = await api(`/${code}/join`, { name });
+  if (stillWanted && !stillWanted()) return;
   ui.code = code;
   store.set('room', code);
   if (location.pathname !== `/r/${code}`) history.replaceState(null, '', `/r/${code}${location.search}`);
@@ -171,7 +194,10 @@ async function rejoin(delay = 1500) {
   const code = ui.code;
   if (!code) return;
   try {
-    const view = await api(`/${code}/join`, { name: store.get('name') || 'Player' });
+    // "view" only answers for a player still in the room. Unknown (403)
+    // means they left, perhaps from another tab: follow them out rather than
+    // joining again as someone new.
+    const view = await api(`/${code}/view`);
     if (ui.code !== code) return; // left while the join was on its way
     setRoom(view);
     connect();
@@ -179,6 +205,10 @@ async function rejoin(delay = 1500) {
     if (ui.code !== code) return;
     if (err.status === 404) {
       leaveLocal('That game has ended. Start a new one!');
+      return;
+    }
+    if (err.status === 403) {
+      leaveLocal('You left this game.');
       return;
     }
     // The server or the network is having a moment: keep trying, more slowly
@@ -1128,7 +1158,10 @@ const booted = (async function boot() {
         if (!urlCode) history.replaceState(null, '', `/${location.search}`);
         ui.error = 'That game has ended. Start a new one!';
       } else {
-        ui.error = 'Could not reconnect. Tap Join to try again.';
+        // Keep the room on screen ("Join game CODE") and keep trying.
+        if (!urlCode) history.replaceState(null, '', `/r/${code}${location.search}`);
+        ui.error = 'Could not reconnect. Trying again…';
+        retryBoot(code, name);
       }
       render();
     }
@@ -1136,6 +1169,57 @@ const booted = (async function boot() {
     render();
   }
 })();
+
+// After a failed reconnect at start-up, try again on our own, more slowly each
+// time, and straight away when the network comes back or the app is shown.
+function retryBoot(code, name, delay = 2000) {
+  let timer = null;
+  let trying = false;
+  // Not if the player has moved on: joined by hand, chose "Start a different
+  // game", or left the room in another tab (which clears the saved room).
+  const stillWaiting = () => !ui.code && roomCodeFromURL() === code && store.get('room') === code;
+  const attempt = async () => {
+    clearTimeout(timer);
+    if (trying) return;
+    if (!stillWaiting()) { stop(); return; }
+    trying = true;
+    try {
+      await joinRoom(code, store.get('name') || name, stillWaiting);
+      if (ui.code === code) ui.error = '';
+      stop();
+    } catch (err) {
+      if (!stillWaiting()) { stop(); return; }
+      if (err.status === 404) {
+        store.set('room', '');
+        history.replaceState(null, '', `/${location.search}`);
+        ui.error = 'That game has ended. Start a new one!';
+        stop();
+        renderHome();
+        return;
+      }
+      if (err.status && err.status < 500) {
+        // Refused for good (a room that's full, say): say why and stop.
+        ui.error = err.message;
+        stop();
+        renderHome();
+        return;
+      }
+      delay = Math.min(delay * 2, 15000);
+      timer = setTimeout(attempt, delay);
+    } finally {
+      trying = false;
+    }
+  };
+  const onVisible = () => { if (document.visibilityState === 'visible') attempt(); };
+  function stop() {
+    clearTimeout(timer);
+    window.removeEventListener('online', attempt);
+    document.removeEventListener('visibilitychange', onVisible);
+  }
+  window.addEventListener('online', attempt);
+  document.addEventListener('visibilitychange', onVisible);
+  timer = setTimeout(attempt, delay);
+}
 
 // A dev frame skips the service worker: four frames sharing one shell cache
 // would fight over it, and the harness wants a fresh app every reload.

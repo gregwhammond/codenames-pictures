@@ -1,7 +1,7 @@
 // Service worker: keeps the app shell and card pictures available offline so
 // the game loads instantly on repeat visits. Game state always comes live
 // from the server.
-const VERSION = 'v12';
+const VERSION = 'v13';
 const SHELL = `shell-${VERSION}`;
 const CARDS = 'cards-v1';
 const LARGE = 'cards-large-v1';
@@ -62,16 +62,19 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // App shell: network first so updates land right away, cache when offline.
+  // App shell: network first so updates land right away, cache when offline
+  // or when the server answers with an error (a 502 or 503 during a deploy).
   const key = req.mode === 'navigate' ? '/' : req;
   event.respondWith(
     fetch(req)
-      .then((res) => {
+      .then(async (res) => {
         // Copy the response now, before the page starts reading it.
         if (res.ok) {
           const copy = res.clone();
           event.waitUntil(caches.open(SHELL).then((c) => c.put(key, copy)));
+          return res;
         }
+        if (res.status >= 500) return (await caches.match(key)) || res;
         return res;
       })
       .catch(() => caches.match(key)),
