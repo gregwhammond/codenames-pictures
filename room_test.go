@@ -33,7 +33,7 @@ func seatedRoom(t *testing.T) *Room {
 		if _, err := r.Join(s.token, "P"); err != nil {
 			t.Fatal(err)
 		}
-		if _, err := r.Subscribe(s.token); err != nil {
+		if _, _, err := r.Subscribe(s.token); err != nil {
 			t.Fatal(err)
 		}
 		sit(t, r, s.token, s.team, s.role, nil)
@@ -239,7 +239,7 @@ func TestAwaySpymasterSeatCanBeTakenMidGame(t *testing.T) {
 	if _, err := r.Join(newcomer, "New"); err != nil {
 		t.Fatal(err)
 	}
-	if _, err := r.Subscribe(newcomer); err != nil {
+	if _, _, err := r.Subscribe(newcomer); err != nil {
 		t.Fatal(err)
 	}
 	sit(t, r, newcomer, Red, Spymaster, ErrSeatTaken)
@@ -346,5 +346,62 @@ func TestRoomMakesItsRandomSourceOnFirstDeal(t *testing.T) {
 	start(t, r)
 	if r.rnd == nil {
 		t.Fatal("no random source after dealing")
+	}
+}
+
+// A stream opened before a leave belongs to the player who left: when it
+// closes after the same token has joined again, the new player stays connected.
+func TestStreamOutlivesLeaveAndRejoin(t *testing.T) {
+	r := newRoom("TEST", testImages(40), 1)
+	const tok = "same-token-for-both-joins"
+	if _, err := r.Join(tok, "Ann"); err != nil {
+		t.Fatal(err)
+	}
+	old, oldP, err := r.Subscribe(tok)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := r.Do(tok, func(p *Player) error { r.Leave(p); return nil }); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := r.Join(tok, "Ann"); err != nil {
+		t.Fatal(err)
+	}
+	if _, ok := r.ViewOf(tok, oldP); ok {
+		t.Fatal("the old stream should be told it is gone, not see the new player")
+	}
+	_, newP, err := r.Subscribe(tok)
+	if err != nil {
+		t.Fatal(err)
+	}
+	r.Unsubscribe(oldP, old)
+	if v, _ := r.View(tok); len(v.Players) != 1 || !v.Players[0].Connected {
+		t.Fatalf("re-joined player shown as away: %+v", v.Players)
+	}
+	if newP.conns != 1 {
+		t.Fatalf("conns = %d, want 1", newP.conns)
+	}
+}
+
+func TestCleanName(t *testing.T) {
+	for in, want := range map[string]string{
+		"  Greg  ":      "Greg",
+		"Ann\u200bie":   "Annie",
+		"\u202eEvil":    "Evil",
+		"a\u00adb":      "ab",
+		"x\x01y":        "xy",
+		"Mehr\u200cnaz": "Mehr\u200cnaz",
+		"\U0001F3F4\U000E0067\U000E0062\U000E0073\U000E0063\U000E0074\U000E007F": "\U0001F3F4\U000E0067\U000E0062\U000E0073\U000E0063\U000E0074\U000E007F",
+		"tab\tname":       "tab name",
+		"👨\u200d👩\u200d👧": "👨\u200d👩\u200d👧",
+	} {
+		if got, err := cleanName(in); err != nil || got != want {
+			t.Errorf("cleanName(%q) = %q, %v; want %q", in, got, err, want)
+		}
+	}
+	for _, in := range []string{"", "   ", "\u200b", "\u2060\ufeff", "\x01\x02", "\u200d", "\u200c", "\u034f"} {
+		if got, err := cleanName(in); !errors.Is(err, ErrBadName) {
+			t.Errorf("cleanName(%q) = %q, %v; want ErrBadName", in, got, err)
+		}
 	}
 }

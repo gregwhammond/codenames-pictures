@@ -189,7 +189,16 @@ func newServer(web, cards, large fs.FS, versioned bool) (*Server, error) {
 	})
 	s.mux.Handle("GET /cards/", cacheFor(30*24*time.Hour, cardServer))
 	if large != nil {
-		largeServer := noListing(large, "/cards-large/", false, http.StripPrefix("/cards-large/", http.FileServerFS(large)))
+		// Zoom pictures share the tiles' names, so only those are served:
+		// nothing else that happens to be in the folder (notes, dotfiles).
+		largeServer := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			name := strings.TrimPrefix(r.URL.Path, "/cards-large/")
+			if !cardFiles[name] {
+				http.NotFound(w, r)
+				return
+			}
+			http.ServeFileFS(w, r, large, name)
+		})
 		s.mux.Handle("GET /cards-large/", cacheFor(30*24*time.Hour, largeServer))
 	} else {
 		s.mux.Handle("GET /cards-large/", http.NotFoundHandler())
@@ -332,6 +341,12 @@ func (s *Server) handleAction(w http.ResponseWriter, r *http.Request) {
 		err = room.Do(req.Token, func(p *Player) error { return room.EndTurn(p) })
 	case "leave":
 		err = room.Do(req.Token, func(p *Player) error { room.Leave(p); return nil })
+	case "view":
+		// Changes nothing: a reconnecting phone asks for its view, and learns
+		// from a 403 that it has left the room (perhaps from another tab).
+		if _, ok := room.View(req.Token); !ok {
+			err = ErrUnknownPlayer
+		}
 	default:
 		writeError(w, http.StatusNotFound, errors.New("unknown action"))
 		return
@@ -359,12 +374,12 @@ func (s *Server) handleEvents(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	token := r.URL.Query().Get("token")
-	ch, err := room.Subscribe(token)
+	ch, player, err := room.Subscribe(token)
 	if err != nil {
 		writeError(w, http.StatusForbidden, err)
 		return
 	}
-	defer room.Unsubscribe(token, ch)
+	defer room.Unsubscribe(player, ch)
 
 	flusher, ok := w.(http.Flusher)
 	if !ok {
@@ -376,7 +391,9 @@ func (s *Server) handleEvents(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("X-Accel-Buffering", "no")
 
 	send := func() bool {
-		v, ok := room.View(token)
+		// The stream belongs to the player it was opened for: if they left,
+		// even if the same token has joined again since, it is over.
+		v, ok := room.ViewOf(token, player)
 		if !ok {
 			fmt.Fprint(w, "event: gone\ndata: {}\n\n")
 			flusher.Flush()

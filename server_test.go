@@ -539,3 +539,49 @@ func TestViewsCarryRev(t *testing.T) {
 		t.Fatalf("rev %d then %d", first.Rev, second.Rev)
 	}
 }
+
+// Only zoom pictures of dealt tiles are served, not other files in the folder.
+func TestLargeCardsOnlyPictures(t *testing.T) {
+	large := fstest.MapFS{
+		"0.jpg":       &fstest.MapFile{Data: []byte("big")},
+		".env":        &fstest.MapFile{Data: []byte("secret")},
+		".git/config": &fstest.MapFile{Data: []byte("secret")},
+		"notes.txt":   &fstest.MapFile{Data: []byte("secret")},
+		"extra.jpg":   &fstest.MapFile{Data: []byte("secret")},
+	}
+	ts := testServerWithLarge(t, large)
+	if resp, body := get(t, ts.URL+"/cards-large/0.jpg"); resp.StatusCode != 200 || body != "big" {
+		t.Fatalf("large card: %d %q", resp.StatusCode, body)
+	}
+	for _, p := range []string{"/cards-large/.env", "/cards-large/.git/config", "/cards-large/notes.txt", "/cards-large/extra.jpg"} {
+		if resp, body := get(t, ts.URL+p); resp.StatusCode != 404 || strings.Contains(body, "secret") {
+			t.Fatalf("%s: %d %q", p, resp.StatusCode, body)
+		}
+	}
+}
+
+// "view" answers a player in the room and changes nothing; after a leave it
+// refuses with 403 instead of joining them again.
+func TestViewAction(t *testing.T) {
+	ts := testServer(t)
+	_, _, raw := post(t, ts.URL+"/api/rooms", map[string]string{})
+	var created struct{ Code string }
+	_ = json.Unmarshal([]byte(raw), &created)
+	base := ts.URL + "/api/rooms/" + created.Code + "/"
+	tok := map[string]string{"token": "view-action-token-1", "name": "Ann"}
+	if status, _, _ := post(t, base+"view", tok); status != http.StatusForbidden {
+		t.Fatalf("view before join: %d", status)
+	}
+	_, joined, _ := post(t, base+"join", tok)
+	status, v, _ := post(t, base+"view", tok)
+	if status != 200 || v.You != joined.You || v.Rev != joined.Rev {
+		t.Fatalf("view: %d %+v (joined rev %d)", status, v, joined.Rev)
+	}
+	post(t, base+"leave", tok)
+	if status, _, _ := post(t, base+"view", tok); status != http.StatusForbidden {
+		t.Fatalf("view after leave: %d", status)
+	}
+	if _, v, _ := post(t, base+"join", map[string]string{"token": "view-action-token-2", "name": "Bob"}); len(v.Players) != 1 {
+		t.Fatalf("view must not have joined anyone: %+v", v.Players)
+	}
+}

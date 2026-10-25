@@ -161,7 +161,7 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .seat .empty { font-weight: 400; opacity: .7; font-style: italic; }
 .person.away { opacity: .5; }
 .person.away::after { content: " · away"; font-weight: 400; font-size: .85em; }
-.waiting { margin: 0; }
+.waiting { margin: 0; overflow-wrap: anywhere; }
 .lobby-actions { display: flex; flex-direction: column; align-items: center; gap: 6px; }
 .lobby-actions .btn.primary { width: 100%; }
 .lobby-actions p { margin: 0; }
@@ -398,8 +398,8 @@ input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   gap: 14px;
   animation: slide .2s ease;
 }
-.players, .log { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
-.players li, .log li { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.players, .log { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+.players li, .log li { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; min-width: 0; overflow-wrap: anywhere; }
 .players li.away { opacity: .5; }
 .players i { width: 12px; height: 12px; border-radius: 3px; }
 .dots { display: inline-flex; gap: 3px; }
