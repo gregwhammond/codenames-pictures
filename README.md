@@ -36,6 +36,21 @@ Run `go run . -dev` and open http://localhost:8080/dev for a harness that shows 
 
 For a preview that needs no server, `python3 scripts/build_preview.py -o preview.html` writes one self-contained page: the real app with a made-up game already under way and three pretend players, who give clues and guess whenever it isn't your move. A bar across the top switches between the **Spymaster** and **Guesser** view, picks your team (**Team: turn** follows whichever team is playing, so you can play both sides), and deals a **New game**. Add `--artifact` to publish it as a Claude Artifact and try changes on a phone.
 
+### End-to-end tests
+
+`e2e/` holds tests that start the real server (built with Go's race detector), open four phone-sized browsers in Chromium and WebKit, and play whole games by tapping. After every move they check that all phones agree, that guessers never receive the key, and that the game followed the rules. They need Node 18 or newer and are separate from the Go module.
+
+```sh
+cd e2e
+npm install
+npx playwright install chromium webkit
+npm test              # everything, headless
+npm run watch         # watch four windows play
+npm run report        # open the report of the last run
+```
+
+The tests use port 8791, never 8080. [e2e/README.md](e2e/README.md) explains how to run parts of the suite, replay a failure and add a scenario. [e2e/BUGS.md](e2e/BUGS.md) lists the bugs the tests have found; each has a test marked as an expected failure, so the suite stays green until the bug is fixed.
+
 ## Deploying
 
 The server is a single small binary with the web app and pictures built in. Game state lives in memory, so run **one instance** (restarting it ends games in progress). Rooms are cleaned up after 6 hours without activity.
