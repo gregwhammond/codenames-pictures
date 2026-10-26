@@ -1,10 +1,10 @@
 {
   "id": "S005-00",
   "source": "originals/S005-00.jpg",
-  "source_sha256": "9aa7fb17cd5ccb044665403a7d02e055215751ee1d87b1a68ccbc12fe2ea463c",
+  "source_sha256": "6c66f6560dbb1c841179d5a5d9737382f46e74a6a88ffc8aff7d8e6e1632cf22",
   "source_size": [
-    960,
-    1378
+    1260,
+    1808
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:B_Facundus_135.jpg",
     "licence": "Wikimedia Commons PD-Art (manuscript of 1047); the two Met leaves are Met Open Access CC0. Some Beatus episodes feature the seven-headed dragon, so pick folios by eye.",
     "note": "Full-page Apocalypse miniature, fol. 135; exact subject not checked",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/B_Facundus_135.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

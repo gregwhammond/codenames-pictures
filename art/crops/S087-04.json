@@ -1,10 +1,10 @@
 {
   "id": "S087-04",
   "source": "originals/S087-04.jpg",
-  "source_sha256": "d1c6edf5fde6a301d8af6389163cd4c09a977b19bea8b74cc80c1d47f253c11f",
+  "source_sha256": "1ec6ffee2cc48542c40219bd3546d3d15be9b213ddc7da59b3b335030a9fca47",
   "source_size": [
-    960,
-    547
+    1500,
+    854
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Battle_Roy_Alixandre_with_one-eyed_giants_(cyclops)_-_British_Library_Royal_MS_20_B_xx_f79v_(detail).jpg",
     "licence": "Public domain (Commons PD-Art tags; BL images released to public domain). Digital Bodleian images of Bodley 264 are CC-BY-NC; use the Commons copies.",
     "note": "Knights fight cyclopes",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Battle_Roy_Alixandre_with_one-eyed_giants_%28cyclops%29_-_British_Library_Royal_MS_20_B_xx_f79v_%28detail%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

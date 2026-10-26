@@ -1,10 +1,10 @@
 {
   "id": "S041-03",
   "source": "originals/S041-03.jpg",
-  "source_sha256": "bf36857b01d8d347445d3da7669383ee09706f81e3b0c13625151665a0c8091a",
+  "source_sha256": "c14ef9bedeaee2b822b05622526c53d256b2c66ed9fd88cfc7c64a87b3100883",
   "source_size": [
-    960,
-    1294
+    1610,
+    2170
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Northumberlandbestiaryf46v.jpg",
     "licence": "Getty Open Content (free reuse); Commons copies PD-old Added pictures: Getty Open Content: images of PD works free to use (Getty MS 100, English c.1250-60).",
     "note": "Bestiary animal miniature",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Northumberlandbestiaryf46v.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

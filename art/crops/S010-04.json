@@ -1,10 +1,10 @@
 {
   "id": "S010-04",
   "source": "originals/S010-04.jpg",
-  "source_sha256": "04d180d97235fd5df0d07cc9bc166c51df98b06accdea28954d1ffeb5215339a",
+  "source_sha256": "2976b04e9dd8e032c1a0f5bddf17f147928f6a4f676cf9a6bcfeb406e201d633",
   "source_size": [
-    960,
-    1281
+    1177,
+    1571
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Hortus_Sanitatis;_mandrake_Wellcome_L0008134.jpg",
     "licence": "Public domain (1491/1497); Commons PD-old. Wellcome L-number files are CC BY 4.0 (credit Wellcome Collection). Wider category: https://commons.wikimedia.org/wiki/Category:Hortus_Sanitatis Added pictures: Wellcome images CC-BY/PD; LoC Rare Book and Prints items generally 'no known restrictions'. The 1514 and unicorn/apes items are related Hortus editions; check the attribution before using. The Twin-tailed Siren/mermaid woodcut exists but was found only on stock sites (Alamy, Bridgeman), so it is not included.",
     "note": "Another mandrake woodcut (male/female root figures), Wellcome copy",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Hortus_Sanitatis%3B_mandrake_Wellcome_L0008134.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

@@ -1,10 +1,10 @@
 {
   "id": "S014-08",
   "source": "originals/S014-08.jpg",
-  "source_sha256": "59f87392dd0aeb98ed6aa0eceeede2e494323883cdbae7c3b465f371ad9588e9",
+  "source_sha256": "3e0ac1c5650deb39f4761506408e875d8fc7f533eef0a5f8d6027d3d24ec500c",
   "source_size": [
-    960,
-    742
+    2230,
+    1724
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Albertus_Seba_-_Hydra.jpg",
     "licence": "Wikimedia Commons public domain (PD-old / PD-Art; engravings 1734-1765). The Google Art Project scans come from Museum Victoria.",
     "note": "Seven-headed Hamburg hydra, a faked specimen; dragon-like, so use sparingly",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Albertus_Seba_-_Hydra.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

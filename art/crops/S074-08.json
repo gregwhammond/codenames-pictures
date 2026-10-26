@@ -1,10 +1,10 @@
 {
   "id": "S074-08",
   "source": "originals/S074-08.jpg",
-  "source_sha256": "29813cc195dcc52f4f96a441260167f9c6b4c33e0a3251f40b440cfc53fa4e91",
+  "source_sha256": "246ff60014fffd2dfcaeac9902380cd6232693a45487230d4bc9705ad52aa448",
   "source_size": [
-    960,
-    1302
+    1248,
+    1692
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Image-%C3%89pinal_-_La_Petite_aux_grelots_13.jpg",
     "licence": "Public domain; LoC no known restrictions, Met Open Access CC0, NYPL public domain (check each item), Commons PD tags",
     "note": "Panel from a children's story sheet",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Image-%C3%89pinal_-_La_Petite_aux_grelots_13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

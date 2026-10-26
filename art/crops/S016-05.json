@@ -1,10 +1,10 @@
 {
   "id": "S016-05",
   "source": "originals/S016-05.jpg",
-  "source_sha256": "229833c23935c65278608b2fd7993a67e0a7393e8fa9b05f9979902f12f53393",
+  "source_sha256": "93132a62874d68b48ae7082511c072acd6698e2678e924eaa0a73c2b32a78b30",
   "source_size": [
-    960,
-    748
+    9362,
+    7290
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Trouvelot_-_Total_eclipse_of_the_sun_-_1878.jpg",
     "licence": "Public domain (Trouvelot died 1895; published 1881-82); Commons PD tags. NYPL originals are also marked public domain.",
     "note": "Black disc ringed by pearly streaming corona",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Trouvelot_-_Total_eclipse_of_the_sun_-_1878.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

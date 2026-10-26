@@ -1,10 +1,10 @@
 {
   "id": "S098-01",
   "source": "originals/S098-01.png",
-  "source_sha256": "12733e670189316a7cc786e08a65b9f7d832c08c6adca9986c4b18f1b66ff566",
+  "source_sha256": "495e09de78cbd3241b4565992721d78cd0b12408c37da5ce2e0f8ccf4b4173be",
   "source_size": [
-    960,
-    483
+    4798,
+    2416
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:%E4%BD%99%E7%9C%81%E3%80%81%E5%BC%A0%E4%B8%BA%E9%82%A6%E5%90%88%E7%94%BB%E5%85%BD%E8%B0%B1%E5%86%8C1.png",
     "licence": "Artwork public domain; Palace Museum Beijing claims copyright on its photos and asks for image licensing, so prefer Commons copies. Google Arts & Culture is view-only. Full scans also at shuge.org/view/shou_pu_ce/ (landing page). Per-volume viewers: minghuaji.dpm.org.cn volumes 1, 2, 3, 5.",
     "note": "Leaf from the beast album; subject not confirmed",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/%E4%BD%99%E7%9C%81%E3%80%81%E5%BC%A0%E4%B8%BA%E9%82%A6%E5%90%88%E7%94%BB%E5%85%BD%E8%B0%B1%E5%86%8C1.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

@@ -1,10 +1,10 @@
 {
   "id": "S023-00",
   "source": "originals/S023-00.jpg",
-  "source_sha256": "7d6fe5d6df155ca11a93d2c9472ff1583f5f70629fa2ccb2b626a6df7939566e",
+  "source_sha256": "9c6d9d830696e578ee9110cccfc60f8175c2f9b1fb9b97fce5c934509b55f254",
   "source_size": [
-    960,
-    1440
+    1333,
+    1999
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Abe_Seimei_and_Ashiya_Doman_Hokusaimanga.jpg",
     "licence": "Commons public-domain tags (Hokusai died 1849); Rijksmuseum copy CC0. Whole volumes: Met Open Access https://www.metmuseum.org/art/collection/search/57804 and LoC https://www.loc.gov/item/j67001705/. Several page subjects below were not checked; pick visually.",
     "note": "Two rival sorcerers in a magic duel",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Abe_Seimei_and_Ashiya_Doman_Hokusaimanga.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

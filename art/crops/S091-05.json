@@ -1,10 +1,10 @@
 {
   "id": "S091-05",
   "source": "originals/S091-05.jpg",
-  "source_sha256": "21f859a6c0245172bbdaeff25cd15d534af3d9bf666b380453bf4129d767baac",
+  "source_sha256": "8436c84d1bb282a2faccf0fe9fa33fbd45a15b16f5002ae67c01d66195d1fadc",
   "source_size": [
-    960,
-    1388
+    3604,
+    5212
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Woodcut_of_marine_monsters_Wellcome_L0033061.jpg",
     "licence": "Commons PD tags; Wellcome images PD mark / CC-BY for photos of PD works; NLM exhibition images are PD US-government-held scans (check per image). Few single monster woodcuts were findable; most hits were stock-photo sites (Alamy, Bridgeman) which were excluded.",
     "note": "Wellcome sea-monster woodcut; source book not confirmed as Paré",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Woodcut_of_marine_monsters_Wellcome_L0033061.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

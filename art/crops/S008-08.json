@@ -1,10 +1,10 @@
 {
   "id": "S008-08",
   "source": "originals/S008-08.jpg",
-  "source_sha256": "bcc12e5cd8d8d1945c5d527aa5f6e79a1733d2790fc562e3d929bbe4f3601a11",
+  "source_sha256": "6aa857efd78c80ab82295402b69e46432d2aabdbc6fa52fa6c199583df8d7001",
   "source_size": [
-    960,
-    461
+    1180,
+    567
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Gesner,_Conrad_%E2%80%94_Historia_animalium_1563_%E2%80%94_Seite_97_recto_2._Abb.jpg",
     "licence": "Public domain (16th century). Commons PD-old; PD Image Archive items are public domain; BHL scan on Commons is PD. PDIA artist gallery: https://pdimagearchive.org/galleries/artists/conrad-gessner/random/desc",
     "note": "Single woodcut from the 1563 edition; subject not confirmed",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Gesner%2C_Conrad_%E2%80%94_Historia_animalium_1563_%E2%80%94_Seite_97_recto_2._Abb.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

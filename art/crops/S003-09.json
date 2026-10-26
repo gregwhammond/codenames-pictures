@@ -1,10 +1,10 @@
 {
   "id": "S003-09",
   "source": "originals/S003-09.jpg",
-  "source_sha256": "6b566d8b1d9c8f1430839f1d72ac644ab9135f499a59a9962353871bfdb7660c",
+  "source_sha256": "8220a3980c6478b5f661a31202725f6b9781176fedfc38b3d0d9090f5ea0699b",
   "source_size": [
-    500,
-    498
+    800,
+    796
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,7 @@
     "source_url": "https://discardingimages.tumblr.com/post/151989899923/dancing-rabbit-gorleston-psalter-england-14th",
     "licence": "Original c. 1320, public domain; BL digitised manuscript images generally marked public domain; Commons files PD-Art (verify tag). The two tumblr pages are reposts of BL images, not the host; prefer a BL/Commons copy. Note: some Gorleston margins are bawdy (see BL blog https://britishlibrary.typepad.co.uk/digitisedmanuscripts/2012/10/more-gorleston-psalter-virility-profane-images-in-a-sacred-space.html). Added pictures: Manuscript is PD (c.1310-24); these are discardingimages Tumblr reposts of BL images, not a primary host. BL digitised manuscripts viewer images are generally PD/CC0 for pre-1900 items; Commons copies preferred where they exist.",
     "note": "Rabbit dancing in the margin",
-    "obtained": "review-page download"
+    "obtained": "full-size download"
   },
   "crops": [
     {

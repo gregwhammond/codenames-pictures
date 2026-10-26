@@ -1,10 +1,10 @@
 {
   "id": "S001-00",
   "source": "originals/S001-00.jpg",
-  "source_sha256": "3c397da348d4baee42fbe891268506893ed92160e08c550716799e9fba8d0404",
+  "source_sha256": "1fbcb94bc2f2b37d673d30435d0de674f5fd1047d930fe78970265fd28ce3934",
   "source_size": [
-    960,
-    560
+    1605,
+    937
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:AberdeenBestiaryFolio008rTigerDetail.jpg",
     "licence": "Original c. 1200, public domain. abdn.ac.uk page images are University of Aberdeen photography (reuse terms not confirmed, possibly non-commercial); Commons copies are PD-Art (verify tag per file). Commons category: https://commons.wikimedia.org/wiki/Category:Aberdeen_Bestiary",
     "note": "Hunter steals a tiger cub, distracting the tigress with a mirror.",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/AberdeenBestiaryFolio008rTigerDetail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

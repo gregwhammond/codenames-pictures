@@ -1,10 +1,10 @@
 {
   "id": "S065-00",
   "source": "originals/S065-00.jpg",
-  "source_sha256": "27f4d28f71ed4dec7c5bf874e6b985ef8d5aa9031d84059ddf425fc5681bf00b",
+  "source_sha256": "25674b0a227d5a0eb2f76442fa2a06f83eba0fd38a12f1a094a1ac0e55d621e6",
   "source_size": [
-    960,
-    765
+    3561,
+    2838
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Kyoka_Hyaku_Monogatari-Poems_on_One_Hundred_Ghost_Stories_MET_JIB27_005_crd.jpg",
     "licence": "Public domain (1853); Met copy is Open Access CC0",
     "note": "Page from the Met copy with a yokai and poem",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Kyoka_Hyaku_Monogatari-Poems_on_One_Hundred_Ghost_Stories_MET_JIB27_005_crd.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

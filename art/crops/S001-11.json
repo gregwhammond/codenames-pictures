@@ -1,10 +1,10 @@
 {
   "id": "S001-11",
   "source": "originals/S001-11.jpg",
-  "source_sha256": "f52962c73648444b4abee74734d51167bfa1e056ffbec66a8a37f5f8467652bb",
+  "source_sha256": "c298d993a18ac99e7d5defc2d57fae3db8d03530f582a65086717438640f284c",
   "source_size": [
-    960,
-    804
+    1174,
+    983
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Aberdeen_Bestiary_Basilisk.jpg",
     "licence": "Original c. 1200, public domain. abdn.ac.uk page images are University of Aberdeen photography (reuse terms not confirmed, possibly non-commercial); Commons copies are PD-Art (verify tag per file). Commons category: https://commons.wikimedia.org/wiki/Category:Aberdeen_Bestiary",
     "note": "Crowned basilisk, king of serpents (serpentine; list last).",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Aberdeen_Bestiary_Basilisk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

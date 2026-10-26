@@ -1,10 +1,10 @@
 {
   "id": "S096-00",
   "source": "originals/S096-00.jpg",
-  "source_sha256": "18fc9d31653759a4c6b65468c5af5021a52f06fa63de7ae70a3ea523ca551ad9",
+  "source_sha256": "d24b6982cfdcb84ae0e19501ffdb96c3f611ff89c10f45c2438179646267f97a",
   "source_size": [
-    960,
-    1243
+    1153,
+    1493
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:%E6%B5%B7%E9%8C%AF%E5%9C%96_%E7%AC%AC%E4%B8%80%E5%86%8A_%E4%BA%BA%E9%AD%9A.jpg",
     "licence": "NPM Taipei open data: CC BY 4.0 for medium-resolution images (free for any use, credit NPM). Mermaid leaf is from a Beijing album via Commons (PD-old). Full scans of all albums also at shuge.org/view/hai_cuo_tu/ (landing page).",
     "note": "Chinese merman/mermaid; from earlier lead, Commons",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/%E6%B5%B7%E9%8C%AF%E5%9C%96_%E7%AC%AC%E4%B8%80%E5%86%8A_%E4%BA%BA%E9%AD%9A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

@@ -1,10 +1,10 @@
 {
   "id": "S011-01",
   "source": "originals/S011-01.jpg",
-  "source_sha256": "7bfffc3910390ac429bfba98a0b8ec0a220f9f448e241e743cecd63d8074f856",
+  "source_sha256": "75a4f82274ddb7667efe73e1bfd0bb49057c4a9a2851951057f1085ea2af8c25",
   "source_size": [
-    960,
-    889
+    2336,
+    2163
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Michael_Maier_-_Atalanta_Fugiens_-_Mother_Earth.jpg",
     "licence": "Public domain (1618; PD-old on Commons). Science History Institute digital collections are also openly reusable.",
     "note": "Woman whose body is the globe breastfeeding a child",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Michael_Maier_-_Atalanta_Fugiens_-_Mother_Earth.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

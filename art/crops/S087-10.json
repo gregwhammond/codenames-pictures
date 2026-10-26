@@ -1,10 +1,10 @@
 {
   "id": "S087-10",
   "source": "originals/S087-10.jpg",
-  "source_sha256": "83a5228ec43845685f8c8f286bd3c1c9e292c7ffbdcc721ec02af2a2aff59618",
+  "source_sha256": "fff53644071db767d6254f8d6fb3e89a5d1da2f0a66d6df29188e3885d9137bb",
   "source_size": [
-    960,
-    458
+    1200,
+    573
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Musicians_from_the_MS_Bodley_264,_bagpipes,_shawm,_vielle,_harp.jpg",
     "licence": "Public domain (Commons PD-Art tags; BL images released to public domain). Digital Bodleian images of Bodley 264 are CC-BY-NC; use the Commons copies.",
     "note": "Bagpipes, shawm, vielle and harp players",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Musicians_from_the_MS_Bodley_264%2C_bagpipes%2C_shawm%2C_vielle%2C_harp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

@@ -1,10 +1,10 @@
 {
   "id": "S044-02",
   "source": "originals/S044-02.jpg",
-  "source_sha256": "69ec93c24b50a55c548b2424399dd18f6041121a24757513c7d405717cab8a22",
+  "source_sha256": "cc5077e846f14653d8e473857b8676188f04c9b14eedc08a0ac11eaa3209994a",
   "source_size": [
-    960,
-    1476
+    1925,
+    2960
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:January_-_Aquarius_-_Book_of_hours_Simon_de_Varie_-_KB_74_G37a_-_088r_det_randv_2.jpg",
     "licence": "Public domain on Commons (PD-old)",
     "note": "Water-bearer zodiac sign",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/January_-_Aquarius_-_Book_of_hours_Simon_de_Varie_-_KB_74_G37a_-_088r_det_randv_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

@@ -1,10 +1,10 @@
 {
   "id": "S076-05",
   "source": "originals/S076-05.jpg",
-  "source_sha256": "931d5674db54a4f6e1fdf54db53820087cd8cd027f22a1df8d284ce44baf3698",
+  "source_sha256": "dff9f41ac8302a60b8be882fba1a6c93a64fcfbfce2ee13bc620cc9cf3a3412e",
   "source_size": [
-    960,
-    1326
+    1086,
+    1500
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Gustave_Dor%C3%A9_-_Baron_von_M%C3%BCnchhausen_-_067.jpg",
     "licence": "Public domain (Doré d. 1883); Commons PD tags",
     "note": "Munchausen plate",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Gustave_Dor%C3%A9_-_Baron_von_M%C3%BCnchhausen_-_067.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

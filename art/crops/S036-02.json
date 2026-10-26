@@ -1,10 +1,10 @@
 {
   "id": "S036-02",
   "source": "originals/S036-02.jpg",
-  "source_sha256": "18122451c501cc4cafe0e6328e8654d2f7b43f5f74b36c699a55b6eacbfac36d",
+  "source_sha256": "c44b9f0c31fc0a248877fd627c2c481d4647317ff725be35a4142c5e53164f56",
   "source_size": [
-    600,
-    476
+    3171,
+    2516
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://www.metmuseum.org/art/collection/search/681443",
     "licence": "Met Open Access (CC0) for public-domain works. Callot died 1635. Check the OA badge on each record. Item 418173 is a later copy after Callot, also old and public domain.",
     "note": "Franca Trippa and Fritellino, a masked pair caught mid-dance",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://images.metmuseum.org/CRDImages/dp/original/DP846867.jpg"
   },
   "crops": [
     {

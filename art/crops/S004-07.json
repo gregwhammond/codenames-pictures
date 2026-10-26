@@ -1,10 +1,10 @@
 {
   "id": "S004-07",
   "source": "originals/S004-07.jpg",
-  "source_sha256": "44ff328ee39a1e05f79158106bed60949a24e71022f79147b7b57b1d202000b6",
+  "source_sha256": "f69db92d5e4eb6626745c4144a8a90a21a25144d968e7f2d99e09342e542996e",
   "source_size": [
-    500,
-    648
+    617,
+    800
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,7 @@
     "source_url": "https://discardingimages.tumblr.com/post/165192095598/the-edge-of-the-margin-rutland-psalter-england",
     "licence": "Original c. 1260, public domain; Commons files PD-Art (verify tag). Only 3 distinct pictures found (two URLs are the same folio). Butt-trumpet image is crude. Added pictures: Manuscript PD (c.1260). Tumblr links are reposts of BL images. BL Images Online is a commercial picture library (licensed downloads) - treat as reference only.",
     "note": "Figure peering around the page edge",
-    "obtained": "review-page download"
+    "obtained": "full-size download"
   },
   "crops": [
     {

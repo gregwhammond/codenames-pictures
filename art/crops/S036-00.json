@@ -1,10 +1,10 @@
 {
   "id": "S036-00",
   "source": "originals/S036-00.jpg",
-  "source_sha256": "b474448e2f0958b93356fb0755ea3c88f76d3bd2c74895af59a33bc584e0cf46",
+  "source_sha256": "3f02c2242fd3b85362d8ed34c41fb2b83a2cc1f1b1df3f9a57a2b74c73fc3363",
   "source_size": [
-    600,
-    464
+    3298,
+    2551
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://www.metmuseum.org/art/collection/search/681449",
     "licence": "Met Open Access (CC0) for public-domain works. Callot died 1635. Check the OA badge on each record. Item 418173 is a later copy after Callot, also old and public domain.",
     "note": "Title plate of the series with masked commedia comedians",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://images.metmuseum.org/CRDImages/dp/original/DP846869.jpg"
   },
   "crops": [
     {

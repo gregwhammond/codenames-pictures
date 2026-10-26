@@ -1,10 +1,10 @@
 {
   "id": "S057-00",
   "source": "originals/S057-00.jpg",
-  "source_sha256": "f10e1aed3946401a10e420bf837d1d5e85155b7733af258501410e4e9a264d76",
+  "source_sha256": "e4c06a165749e2eb2dee5e946ebfdd541d47f51b1d4bfb39588a96b380fd5bdb",
   "source_size": [
-    960,
-    737
+    1248,
+    958
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Defehrt_epinglier_pl2.jpg",
     "licence": "Public domain (Commons PD tags; Wellcome copy CC-BY/PD).",
     "note": "Pin-maker's workshop and tools",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Defehrt_epinglier_pl2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

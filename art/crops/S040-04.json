@@ -1,10 +1,10 @@
 {
   "id": "S040-04",
   "source": "originals/S040-04.jpg",
-  "source_sha256": "7beeb7da59db7bdab85620baca05f07d91fae78673450e8142e76c73f7ccafea",
+  "source_sha256": "027699cce158f6cff0e3faf3c22c60af83b21443a7556be6363e55524fab09a9",
   "source_size": [
-    960,
-    1429
+    1008,
+    1500
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:God_and_Lucifer_-_The_Queen_Mary_Psalter_(1310-1320),_f.1v_-_BL_Royal_MS_2_B_VII.jpg",
     "licence": "Public domain on Commons (PD-old) Added pictures: BL manuscript images released as PD on Commons; PICRYL marks these public domain.",
     "note": "Fall of Lucifer (demon subject, use sparingly)",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/God_and_Lucifer_-_The_Queen_Mary_Psalter_%281310-1320%29%2C_f.1v_-_BL_Royal_MS_2_B_VII.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

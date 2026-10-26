@@ -1,10 +1,10 @@
 {
   "id": "S010-03",
   "source": "originals/S010-03.jpg",
-  "source_sha256": "b276c4a9b6ee221634ec5081098d211b400ae186774d07cc40206d0000de597e",
+  "source_sha256": "0eee0d1cddbf560d7990cd9730c1f30610673190b5f1137d88179a45702161ce",
   "source_size": [
-    960,
-    1505
+    1139,
+    1786
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Hortus_Sanitatis,_Strasbourg,_c._1497_Wellcome_L0031231.jpg",
     "licence": "Public domain (1491/1497); Commons PD-old. Wellcome L-number files are CC BY 4.0 (credit Wellcome Collection). Wider category: https://commons.wikimedia.org/wiki/Category:Hortus_Sanitatis Added pictures: Wellcome images CC-BY/PD; LoC Rare Book and Prints items generally 'no known restrictions'. The 1514 and unicorn/apes items are related Hortus editions; check the attribution before using. The Twin-tailed Siren/mermaid woodcut exists but was found only on stock sites (Alamy, Bridgeman), so it is not included.",
     "note": "Woodcut from the Strasbourg edition; subject not confirmed",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Hortus_Sanitatis%2C_Strasbourg%2C_c._1497_Wellcome_L0031231.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

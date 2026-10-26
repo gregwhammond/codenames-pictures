@@ -1,10 +1,10 @@
 {
   "id": "S082-03",
   "source": "originals/S082-03.jpg",
-  "source_sha256": "dc9bb6fd271915535663f644c680c5194375486872557f66013562225c3f2904",
+  "source_sha256": "4abfd56729bea1a4e584dffa39f39a25e1b2d312b5fa4b4bf09ef9919d963176",
   "source_size": [
-    390,
-    624
+    2499,
+    4000
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://www.metmuseum.org/art/collection/search/436888",
     "licence": "Public domain (Ligozzi d. 1627); NGA and Met CC0; Commons PD-Art",
     "note": "Strange allegorical figure of greed",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://images.metmuseum.org/CRDImages/ep/original/DP-17371-001.jpg"
   },
   "crops": [
     {

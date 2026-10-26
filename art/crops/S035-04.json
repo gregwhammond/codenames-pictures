@@ -1,10 +1,10 @@
 {
   "id": "S035-04",
   "source": "originals/S035-04.jpg",
-  "source_sha256": "1e5bf4e77185b808b37b5415e0aca7d63ad0ff1f497a801a9746ec3dcf54df67",
+  "source_sha256": "21a4ce31cf63942070e16a258a73965461cf7482e9fdedb9f50a6118ad90cabf",
   "source_size": [
-    960,
-    975
+    2899,
+    2944
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Sc%C3%A8nes_de_la_vie_priv%C3%A9e_et_publique_des_animaux,_tome_1_0188.jpg",
     "licence": "Public domain (Grandville died 1847; published 1840-42 and 1877). PD Image Archive and PDR mark the images public domain. The Commons page scan has a PD-old tag. Added pictures: Grandville d.1847, so PD. Met Open Access CC0 applies where the page shows the OA badge (typical for these prints). PD Image Archive and Commons are PD. Titles are from the Met; content notes are inferred from titles.",
     "note": "Page scan from volume 1; subject not seen in search results",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Sc%C3%A8nes_de_la_vie_priv%C3%A9e_et_publique_des_animaux%2C_tome_1_0188.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

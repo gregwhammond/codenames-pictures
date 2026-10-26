@@ -1,10 +1,10 @@
 {
   "id": "S094-10",
   "source": "originals/S094-10.jpg",
-  "source_sha256": "7d98ea14c660a1958222d06c31d214585230df6b54a1557959c3655947eb75ad",
+  "source_sha256": "73acfd4774aa609fe1473fd4104e39d372e9604effc3c331db5c075238513a83",
   "source_size": [
-    960,
-    716
+    4096,
+    3054
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Print,_Plate_17_from_Theatrum_instrumentorum_et_machinarum_by_Jacques_Besson,_after_1578_(CH_18449433).jpg",
     "licence": "Smithsonian Libraries: PD book, Smithsonian Open Access / no known restrictions; Cooper Hewitt image CC0 via Commons.",
     "note": "Cooper Hewitt impression of plate 17",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Print%2C_Plate_17_from_Theatrum_instrumentorum_et_machinarum_by_Jacques_Besson%2C_after_1578_%28CH_18449433%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

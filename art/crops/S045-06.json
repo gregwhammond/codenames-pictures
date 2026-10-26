@@ -1,10 +1,10 @@
 {
   "id": "S045-06",
   "source": "originals/S045-06.jpg",
-  "source_sha256": "6a3a98920c8088cfcb1f33ce71847a03a7b5fb6ed235348217bc237be1196f7e",
+  "source_sha256": "dfe18e0f98f5cd056db41039659a4a3f528b9ff73d65c0ea8019a5f91c01e722",
   "source_size": [
-    960,
-    1263
+    982,
+    1292
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Saint-Sever_Beatus_f._166r_-_Beast_from_the_earth.jpg",
     "licence": "Public domain on Commons (PD-old); Gallica images free for non-commercial use",
     "note": "Horned apocalyptic beast",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Saint-Sever_Beatus_f._166r_-_Beast_from_the_earth.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

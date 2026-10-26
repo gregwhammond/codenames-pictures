@@ -1,10 +1,10 @@
 {
   "id": "S056-02",
   "source": "originals/S056-02.jpg",
-  "source_sha256": "49332057c64330a9eda745a34eab7fda3bdf0504195ae013053ca5175b56e917",
+  "source_sha256": "4cc1529e7deca33a7015ac73884b979df99003f3d751ef518c2dafcca8d5d9c7",
   "source_size": [
-    960,
-    1142
+    1183,
+    1407
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Wasserkraft_fuer_die_Orgelmaschine_im_Hortus_Palatinus_Stich_von_Salomon_de_Caus.jpg",
     "licence": "Public domain (Commons PD tags). Two images are from de Caus's Hortus Palatinus, a related book.",
     "note": "Water wheel driving a garden organ",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Wasserkraft_fuer_die_Orgelmaschine_im_Hortus_Palatinus_Stich_von_Salomon_de_Caus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

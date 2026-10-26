@@ -1,10 +1,10 @@
 {
   "id": "S004-01",
   "source": "originals/S004-01.jpg",
-  "source_sha256": "ea9387ab80cc476be82603feb5c47f141f2bfb46fbddde6e4103fe04925b84de",
+  "source_sha256": "048d55cf18c45173cd01a09a52d84fade4fa953461d7d0f169b9b3099f415f08",
   "source_size": [
-    960,
-    924
+    1029,
+    990
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Salterio_de_Rutland_('The_Rutland_Psalter'),_c._1260,_el_rey_David_tocando_el_%C3%B3rgano,_F._97v,_Add_MS_62925,_British_Library,_detalle.jpg",
     "licence": "Original c. 1260, public domain; Commons files PD-Art (verify tag). Only 3 distinct pictures found (two URLs are the same folio). Butt-trumpet image is crude. Added pictures: Manuscript PD (c.1260). Tumblr links are reposts of BL images. BL Images Online is a commercial picture library (licensed downloads) - treat as reference only.",
     "note": "King David plays an organ while helpers pump the bellows.",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Salterio_de_Rutland_%28%27The_Rutland_Psalter%27%29%2C_c._1260%2C_el_rey_David_tocando_el_%C3%B3rgano%2C_F._97v%2C_Add_MS_62925%2C_British_Library%2C_detalle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

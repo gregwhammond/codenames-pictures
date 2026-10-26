@@ -1,10 +1,10 @@
 {
   "id": "S015-00",
   "source": "originals/S015-00.jpg",
-  "source_sha256": "3f97c07c9df292c5b71811692a4c9a5578ff15b0aa587f2f683fe2a45f190ede",
+  "source_sha256": "6c3e9f6bcbfb3d142bea8efda3f2f36e9b87c62aff1b4afa784d19e01cc24ae0",
   "source_size": [
-    960,
-    728
+    2691,
+    2040
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Bertuch-fabelwesen.JPG",
     "licence": "Wikimedia Commons public domain (1790-1830 prints). The full volumes are also on BHL (https://www.biodiversitylibrary.org/bibliography/95815) and the Internet Archive (https://archive.org/details/BilderbuchfuYrK89Bert), both public domain. The Royal Collection Trust copies are restricted, so do not use them. Added pictures: PD (1790-1830). Commons has few single plates. Full volumes exist at BHL (biodiversitylibrary.org/bibliography/95815), Internet Archive and Heidelberg digi (digi.ub.uni-heidelberg.de/diglit/bertuch1790ga). Plates can be picked from those volumes, but no page URLs came up in search.",
     "note": "Plate of mythical hybrid beasts, numbered panels",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Bertuch-fabelwesen.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

@@ -1,10 +1,10 @@
 {
   "id": "S015-01",
   "source": "originals/S015-01.jpg",
-  "source_sha256": "8c8fd1ea0f246ab2adde5751dbfa2e485608db79f1a99a0e05689bf0c98586e4",
+  "source_sha256": "d72011b6a3d211786e8042d0abe7f3665657bf2539d0cbf8a778ea1154c306f3",
   "source_size": [
-    960,
-    1309
+    2121,
+    2892
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:J.F.Bertuch-Fabelwesen2.JPG",
     "licence": "Wikimedia Commons public domain (1790-1830 prints). The full volumes are also on BHL (https://www.biodiversitylibrary.org/bibliography/95815) and the Internet Archive (https://archive.org/details/BilderbuchfuYrK89Bert), both public domain. The Royal Collection Trust copies are restricted, so do not use them. Added pictures: PD (1790-1830). Commons has few single plates. Full volumes exist at BHL (biodiversitylibrary.org/bibliography/95815), Internet Archive and Heidelberg digi (digi.ub.uni-heidelberg.de/diglit/bertuch1790ga). Plates can be picked from those volumes, but no page URLs came up in search.",
     "note": "Second plate of fabulous creatures",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/J.F.Bertuch-Fabelwesen2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

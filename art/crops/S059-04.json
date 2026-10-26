@@ -1,10 +1,10 @@
 {
   "id": "S059-04",
   "source": "originals/S059-04.webp",
-  "source_sha256": "0eca5d7835df52e8809fa01fa8ae0039c390ce7e31e05965bc585702c0314ee8",
+  "source_sha256": "c3871b777662b6eaa605a1edb75ffc0409ec747cc84a53e5a2ef8e9e0b39c85f",
   "source_size": [
-    960,
-    983
+    1080,
+    1106
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Metali-%C3%BCl_saadet_ve_yenabi-%C3%BCl_siyadet_%C4%B0blis.webp",
     "licence": "Morgan images: check Morgan terms (generally non-commercial reuse); Commons copy of BnF MS is PD. Commons category: https://commons.wikimedia.org/wiki/Category:Metali%CA%BF%C3%BC'l-saadet_ve_yenabi%CA%BF%C3%BC-l-siyadet_(BnF_Suppl%C3%A9ment_turc_242)",
     "note": "Iblis refusing to bow; demon, list last",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Metali-%C3%BCl_saadet_ve_yenabi-%C3%BCl_siyadet_%C4%B0blis.webp?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

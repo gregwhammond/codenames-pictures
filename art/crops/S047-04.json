@@ -1,10 +1,10 @@
 {
   "id": "S047-04",
   "source": "originals/S047-04.jpg",
-  "source_sha256": "2913146ff619b05563768dba236e287f4b5a8a57e09afc48803a2f0e61fb8b23",
+  "source_sha256": "468145f1ec5d58e826e96a05b1f1a87fef9fc81edc71f254c04b90169fe6a177",
   "source_size": [
-    300,
-    327
+    800,
+    873
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://wellcomecollection.org/works/x64uptn4",
     "licence": "Wellcome images CC BY 4.0 (manuscript itself PD); Commons copies",
     "note": "Famous multi-headed monster born at Cracow (somewhat demonic)",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://iiif.wellcomecollection.org/image/L0068411/full/800%2C/0/default.jpg"
   },
   "crops": [
     {

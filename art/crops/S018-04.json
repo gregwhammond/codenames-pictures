@@ -1,10 +1,10 @@
 {
   "id": "S018-04",
   "source": "originals/S018-04.jpg",
-  "source_sha256": "559fbc08cd8d7a549b7f9e14a73dd672b711b1db5ed7bb3f4666e679ed18015d",
+  "source_sha256": "3a655ef2f90099680bf760c976122742f3976dbef73fe216235ca7aa50e39d9d",
   "source_size": [
-    457,
-    624
+    1050,
+    1433
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://www.metmuseum.org/art/collection/search/451299",
     "licence": "Met folios: Open Access (CC0). Freer/NMAA folios: Smithsonian Open Access (CC0) for images marked as such; check each object page. Commons copies: PD-Art (13th/14th-century works).",
     "note": "Automaton figure that serves drinks to party guests",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://images.metmuseum.org/CRDImages/is/original/sf55-121-12a.jpg"
   },
   "crops": [
     {

@@ -1,10 +1,10 @@
 {
   "id": "S045-00",
   "source": "originals/S045-00.png",
-  "source_sha256": "664caf1f2a04a58d2d154c8966aa8e7fe797ec5207a0f8fb02988aba71324fd0",
+  "source_sha256": "efccb4c13078430e98f452aac5f5cf871d7f31c14330937143e65cb8f226acbb",
   "source_size": [
-    960,
-    1233
+    1861,
+    2391
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Enluminure_de_l%27oiseau_du_beatus_de_Saint-Sever.png",
     "licence": "Public domain on Commons (PD-old); Gallica images free for non-commercial use",
     "note": "Large decorative bird",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Enluminure_de_l%27oiseau_du_beatus_de_Saint-Sever.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

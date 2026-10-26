@@ -1,10 +1,10 @@
 {
   "id": "S006-06",
   "source": "originals/S006-06.jpg",
-  "source_sha256": "3ba3b28864509a0c90ce62cad6b95049b47feb33817f1c238a456c031fbe41a6",
+  "source_sha256": "21ce24ae86d11485e83de819f0d7f0959b2ff732c7ac7afcb15bc3963c0644a3",
   "source_size": [
-    960,
-    1404
+    1354,
+    1980
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Hildegard_von_Bingen.jpg",
     "licence": "Wikimedia Commons PD-Art (12th-13th century originals; the 'Meister des Hildegardis-Codex' files come from The Yorck Project, PD-Art).",
     "note": "Probably the Scivias author portrait: Hildegard receiving visions as flames",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Hildegard_von_Bingen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

@@ -1,10 +1,10 @@
 {
   "id": "S003-05",
   "source": "originals/S003-05.jpg",
-  "source_sha256": "074b30512dbe4adadad60b83b02d1b14537ae6a88737a48a8e30efe23eeb3717",
+  "source_sha256": "084e3d0c9a1d8ed364ffb553ad54ec43bc053176cba172f508927cf847b29578",
   "source_size": [
-    500,
-    357
+    800,
+    571
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,7 @@
     "source_url": "https://discardingimages.tumblr.com/post/47034569188/queck-gloss-gorleston-psalter-england-14th",
     "licence": "Original c. 1320, public domain; BL digitised manuscript images generally marked public domain; Commons files PD-Art (verify tag). The two tumblr pages are reposts of BL images, not the host; prefer a BL/Commons copy. Note: some Gorleston margins are bawdy (see BL blog https://britishlibrary.typepad.co.uk/digitisedmanuscripts/2012/10/more-gorleston-psalter-virility-profane-images-in-a-sacred-space.html). Added pictures: Manuscript is PD (c.1310-24); these are discardingimages Tumblr reposts of BL images, not a primary host. BL digitised manuscripts viewer images are generally PD/CC0 for pre-1900 items; Commons copies preferred where they exist.",
     "note": "Probably fox carrying off a goose that cries 'queck' (not a lone duck)",
-    "obtained": "review-page download"
+    "obtained": "full-size download"
   },
   "crops": [
     {

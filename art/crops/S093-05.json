@@ -1,10 +1,10 @@
 {
   "id": "S093-05",
   "source": "originals/S093-05.jpg",
-  "source_sha256": "c2d3b456944e52bdc5e40aa4182c7fd0657d013f983897d532354ccf60200f40",
+  "source_sha256": "4e67bf4bfe9725df6575b2b729270c765791bc811a4a938e84fc3d38264ddb28",
   "source_size": [
-    960,
-    1442
+    2056,
+    3088
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Musaeum_Hermeticum_1678_p_353_Dragon_0049.JPG",
     "licence": "Commons PD tags; Science History Institute images are public domain/free to use. Only 3 Lambspring plates found as single files; others filled from the same volume.",
     "note": "Lambspring dragon emblem; deck already has many dragons",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Musaeum_Hermeticum_1678_p_353_Dragon_0049.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

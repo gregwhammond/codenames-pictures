@@ -1,10 +1,10 @@
 {
   "id": "S044-01",
   "source": "originals/S044-01.jpg",
-  "source_sha256": "77f95831c4aac64437c552af3e768ec02888a9f53131b8fb860415400055b2ea",
+  "source_sha256": "8b43883751ede6898a0fc1c421ff86aa5e6a088f160dd768dcc118084a5b6afc",
   "source_size": [
-    960,
-    1472
+    1931,
+    2960
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:August_-_two_men_threshing_-_Book_of_hours_Simon_de_Varie_-_KB_74_G37a_-_095r_det_randv_1.jpg",
     "licence": "Public domain on Commons (PD-old)",
     "note": "Two men threshing grain with flails",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/August_-_two_men_threshing_-_Book_of_hours_Simon_de_Varie_-_KB_74_G37a_-_095r_det_randv_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

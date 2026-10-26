@@ -1,10 +1,10 @@
 {
   "id": "S010-07",
   "source": "originals/S010-07.jpg",
-  "source_sha256": "fbc43993227394fbdc2cfd58b508a93566a62b5380f2a68deb95908ce07d693e",
+  "source_sha256": "3cd484489cff5d453d4983b8b2621218f8fcd6296db7961b286288aa1c1abbf2",
   "source_size": [
-    640,
-    394
+    800,
+    492
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,7 @@
     "source_url": "https://www.loc.gov/item/2005692099",
     "licence": "Public domain (1491/1497); Commons PD-old. Wellcome L-number files are CC BY 4.0 (credit Wellcome Collection). Wider category: https://commons.wikimedia.org/wiki/Category:Hortus_Sanitatis Added pictures: Wellcome images CC-BY/PD; LoC Rare Book and Prints items generally 'no known restrictions'. The 1514 and unicorn/apes items are related Hortus editions; check the attribution before using. The Twin-tailed Siren/mermaid woodcut exists but was found only on stock sites (Alamy, Bridgeman), so it is not included.",
     "note": "Two woodcuts: man slicing wafers, a hawk (Antwerp Groot Herbarius)",
-    "obtained": "review-page download"
+    "obtained": "full-size download"
   },
   "crops": [
     {

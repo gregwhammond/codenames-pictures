@@ -1,10 +1,10 @@
 {
   "id": "S009-00",
   "source": "originals/S009-00.jpg",
-  "source_sha256": "452a2da31037d58a821164babdd9b2d7076ec483865a4c5270b10091a57601d0",
+  "source_sha256": "12d24c5b7cde0f81ef94712c729eb279d3d27755ab9c764cf71a80641c0105ef",
   "source_size": [
-    960,
-    662
+    1112,
+    767
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Sebastian_M%C3%BCnster,_Illustrations_of_monstrous_humans_from_Cosmographia_(1544).jpg",
     "licence": "Public domain (16th-17th century); Commons PD-old tags. Also see https://commons.wikimedia.org/wiki/Category:Animals_in_M%C3%BCnster's_Cosmographia",
     "note": "Sciapod, cyclops, conjoined twins, headless man and dog-head in one woodcut",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Sebastian_M%C3%BCnster%2C_Illustrations_of_monstrous_humans_from_Cosmographia_%281544%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

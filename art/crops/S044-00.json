@@ -1,10 +1,10 @@
 {
   "id": "S044-00",
   "source": "originals/S044-00.jpg",
-  "source_sha256": "73b34f05ace8a4cc060358f6fbd2b36c79363b5ff78811b81af2e2b739522a23",
+  "source_sha256": "d35d0863faa54e288e1459d89e6aab0562a245209d789cae551edfcb0e20710d",
   "source_size": [
-    960,
-    1472
+    1931,
+    2960
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:December_-_a_man_slaughtering_a_pig_-_Book_of_hours_Simon_de_Varie_-_KB_74_G37a_-_099r_det_randv_1.jpg",
     "licence": "Public domain on Commons (PD-old)",
     "note": "Man slaughtering a pig for winter",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/December_-_a_man_slaughtering_a_pig_-_Book_of_hours_Simon_de_Varie_-_KB_74_G37a_-_099r_det_randv_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

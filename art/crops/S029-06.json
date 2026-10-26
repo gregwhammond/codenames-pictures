@@ -1,10 +1,10 @@
 {
   "id": "S029-06",
   "source": "originals/S029-06.jpg",
-  "source_sha256": "d3d91437f81c3c015fb5e994360bc948323aa328da86a32cd54ea3e5cb40cf66",
+  "source_sha256": "272ac50d1399edbeb15efd60c9506c1c95d61f7fc861c2564e7de2107daef23d",
   "source_size": [
-    960,
-    692
+    1270,
+    915
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Codex_Magliabechiano_(folio_38r).jpg",
     "licence": "The work is public domain and the Commons files are tagged PD-Art. Some pages show sacrifice or cannibalism, so check pages for gore before using them.",
     "note": "Monthly festival page: costumed ritual figure; not verified",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Codex_Magliabechiano_%28folio_38r%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

@@ -1,10 +1,10 @@
 {
   "id": "S007-07",
   "source": "originals/S007-07.jpg",
-  "source_sha256": "9b5b857ebcd16971772b7cbdcdb6b325b4e751338d01c09be6726d3bc98dbeac",
+  "source_sha256": "04e55db025ed4e54053e699a7ed8d6709a0f14b3b7fc212a04fe42f083f64c2a",
   "source_size": [
-    960,
-    597
+    1872,
+    1164
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Edward_Topsell,_The_Historie_of_Foure_Footed_Beasts_Wellcome_L0028393.jpg",
     "licence": "Public domain (1607/1658); Commons PD-old tags. Files from Wellcome (L-numbers) are CC BY 4.0 on Commons (credit Wellcome Collection). The 1658 edition has its own Commons category: https://commons.wikimedia.org/wiki/Category:The_History_of_Four-footed_Beasts_and_Serpents,_1658",
     "note": "Wellcome scan of a Topsell page; subject not confirmed, may be text-heavy",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Edward_Topsell%2C_The_Historie_of_Foure_Footed_Beasts_Wellcome_L0028393.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

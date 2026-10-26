@@ -1,10 +1,10 @@
 {
   "id": "S002-01",
   "source": "originals/S002-01.jpg",
-  "source_sha256": "3d527859736c980eea3f8ae0b709920e9c6464495a7c2a853b5203f60049b0eb",
+  "source_sha256": "4fc3c35a75e11bec809c4dca629feaed050fc1a018257fd8a3402e9955263253",
   "source_size": [
-    960,
-    1329
+    4420,
+    6119
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Gathering_of_the_Manna_-_Hours_of_Catherine_of_Cleves_-_MS_M._917-945_137v_-_Morgan_Library_New_York,_around_1440.jpg",
     "licence": "Original c. 1440, public domain. Morgan online images: reuse terms not confirmed (Morgan rights-and-reproductions policy applies); Commons copies PD-Art (verify tag). Commons category: https://commons.wikimedia.org/wiki/Category:Hours_of_Catherine_of_Cleves",
     "note": "Israelites collecting manna falling from the sky.",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Gathering_of_the_Manna_-_Hours_of_Catherine_of_Cleves_-_MS_M._917-945_137v_-_Morgan_Library_New_York%2C_around_1440.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

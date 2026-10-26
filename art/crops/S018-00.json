@@ -1,10 +1,10 @@
 {
   "id": "S018-00",
   "source": "originals/S018-00.jpg",
-  "source_sha256": "cca3f5a90c3b1441fed2618da895e7877e36ed3b4810eab0f46c92c90fc38de7",
+  "source_sha256": "d7081c4980c071f8cfc6abfe95635f03b895886ec10eb7ec6c8c6cc707c6bf12",
   "source_size": [
-    438,
-    625
+    2522,
+    3596
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://www.metmuseum.org/art/collection/search/451402",
     "licence": "Met folios: Open Access (CC0). Freer/NMAA folios: Smithsonian Open Access (CC0) for images marked as such; check each object page. Commons copies: PD-Art (13th/14th-century works).",
     "note": "Elephant carrying a tower clock, with mahout, birds and turbaned figures",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://images.metmuseum.org/CRDImages/is/original/DP234075.jpg"
   },
   "crops": [
     {

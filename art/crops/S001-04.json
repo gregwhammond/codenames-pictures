@@ -1,10 +1,10 @@
 {
   "id": "S001-04",
   "source": "originals/S001-04.jpg",
-  "source_sha256": "4d9940ccb4adeb0605dddb3c043b2428abd05e4d6170c8a7864804c92a502f29",
+  "source_sha256": "13cf4469ecbac232a5318ccdae75ed2a90e404a5871ac838824d3b15e92ed311",
   "source_size": [
-    960,
-    938
+    1058,
+    1034
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Aberdeen_Bestiary_-_Owl.JPG",
     "licence": "Original c. 1200, public domain. abdn.ac.uk page images are University of Aberdeen photography (reuse terms not confirmed, possibly non-commercial); Commons copies are PD-Art (verify tag per file). Commons category: https://commons.wikimedia.org/wiki/Category:Aberdeen_Bestiary",
     "note": "Staring bestiary owl on gold ground.",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Aberdeen_Bestiary_-_Owl.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

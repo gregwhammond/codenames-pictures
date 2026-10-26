@@ -1,10 +1,10 @@
 {
   "id": "S004-06",
   "source": "originals/S004-06.jpg",
-  "source_sha256": "f13621e8817308a5feadd0b99f2779606a77109d1aad0086e853bae96a425fa5",
+  "source_sha256": "ea081e74de1847eace1af86cf542786ccfe257c0e1b121dac731986071c90dd1",
   "source_size": [
-    500,
-    462
+    800,
+    739
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,7 @@
     "source_url": "https://discardingimages.tumblr.com/post/125658470718/cowardly-lion-the-rutland-psalter-england-ca",
     "licence": "Original c. 1260, public domain; Commons files PD-Art (verify tag). Only 3 distinct pictures found (two URLs are the same folio). Butt-trumpet image is crude. Added pictures: Manuscript PD (c.1260). Tumblr links are reposts of BL images. BL Images Online is a commercial picture library (licensed downloads) - treat as reference only.",
     "note": "Lion fleeing/cowering in margin",
-    "obtained": "review-page download"
+    "obtained": "full-size download"
   },
   "crops": [
     {

@@ -1,10 +1,10 @@
 {
   "id": "S087-06",
   "source": "originals/S087-06.jpg",
-  "source_sha256": "c3eb1c87d6bd1dcc754ffb46c45e7e9d3b04ecd7b4b4da5f47c24a2ed72c4c89",
+  "source_sha256": "e6684ab75f4ba477f25177f8f0fa4ee572ed2391aa91b4c34b9f6d1a3acfc6ed",
   "source_size": [
-    960,
-    593
+    1785,
+    1103
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Alexander_burns_a_wild_man_-_La_Vraye_Histoire_du_Bon_Roy_Alixandre_(early_15th_C),_f.64_-_BL_Royal_MS_20_B_XX.jpg",
     "licence": "Public domain (Commons PD-Art tags; BL images released to public domain). Digital Bodleian images of Bodley 264 are CC-BY-NC; use the Commons copies.",
     "note": "Hairy wild man burned on a pyre",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Alexander_burns_a_wild_man_-_La_Vraye_Histoire_du_Bon_Roy_Alixandre_%28early_15th_C%29%2C_f.64_-_BL_Royal_MS_20_B_XX.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {

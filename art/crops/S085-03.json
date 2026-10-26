@@ -1,10 +1,10 @@
 {
   "id": "S085-03",
   "source": "originals/S085-03.jpg",
-  "source_sha256": "869291c543dbdd8c66e9a80f2dc1a8be5f9d9e590492bd08d5ba5a0fadee6f85",
+  "source_sha256": "26eeb6b805ae383e89130ecfd7c5b0a775c8c4c6d9bfb9e6be116aead3b07f49",
   "source_size": [
-    960,
-    667
+    1008,
+    700
   ],
   "rotate": 0,
   "meta": {
@@ -14,7 +14,8 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Codex_Duran,_page_1.jpg",
     "licence": "Public domain; Commons PD",
     "note": "Opening painted page",
-    "obtained": "review-page download"
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Codex_Duran%2C_page_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
   },
   "crops": [
     {
