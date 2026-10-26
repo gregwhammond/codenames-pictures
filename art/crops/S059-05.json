@@ -1,0 +1,75 @@
+{
+  "id": "S059-05",
+  "source": "originals/S059-05.png",
+  "source_sha256": "386a46a841e4479af0697afef2cf3ace8978c64e2cc5cdc4080e6378fbdf2742",
+  "source_size": [
+    280,
+    339
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S059",
+    "index": 5,
+    "title": "Suppl. turc 242 fol. 14v - Cancer (crop), Osman 1582",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Suppl%C3%A9ment_turc._242,_fol._14v_-_Osman,_Cancer_1582_crop.png",
+    "licence": "Morgan images: check Morgan terms (generally non-commercial reuse); Commons copy of BnF MS is PD. Commons category: https://commons.wikimedia.org/wiki/Category:Metali%CA%BF%C3%BC'l-saadet_ve_yenabi%CA%BF%C3%BC-l-siyadet_(BnF_Suppl%C3%A9ment_turc_242)",
+    "note": "BnF copy on Commons [check: Evidence is the file name only. The page was not viewed, so the PD-Art tag is not confirmed.]",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S059-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.82596
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.82596
+        },
+        "engine": "autocrop v1",
+        "score": 0.5153,
+        "confidence": 0.868
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.09735,
+          "w": 1.0,
+          "h": 0.82596
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.78214,
+          "h": 0.64602
+        },
+        {
+          "x": 0.27143,
+          "y": 0.0,
+          "w": 0.72857,
+          "h": 0.60177
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.51071,
+          "h": 0.42183
+        },
+        {
+          "x": 0.48929,
+          "y": 0.0,
+          "w": 0.51071,
+          "h": 0.42183
+        }
+      ]
+    }
+  ]
+}

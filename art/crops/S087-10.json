@@ -1,0 +1,78 @@
+{
+  "id": "S087-10",
+  "source": "originals/S087-10.jpg",
+  "source_sha256": "fff53644071db767d6254f8d6fb3e89a5d1da2f0a66d6df29188e3885d9137bb",
+  "source_size": [
+    1200,
+    573
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S087",
+    "index": 10,
+    "title": "Musicians from Bodley 264",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Musicians_from_the_MS_Bodley_264,_bagpipes,_shawm,_vielle,_harp.jpg",
+    "licence": "Public domain (Commons PD-Art tags; BL images released to public domain). Digital Bodleian images of Bodley 264 are CC-BY-NC; use the Commons copies.",
+    "note": "Bagpipes, shawm, vielle and harp players",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Musicians_from_the_MS_Bodley_264%2C_bagpipes%2C_shawm%2C_vielle%2C_harp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S087-10",
+      "mode": "crop",
+      "box": {
+        "x": 0.50646,
+        "y": 0.0,
+        "w": 0.47708,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.3309,
+        "confidence": 0.044,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.52344,
+          "y": 0.0,
+          "w": 0.47656,
+          "h": 0.99891
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.47656,
+          "h": 0.99891
+        },
+        {
+          "x": 0.57552,
+          "y": 0.10917,
+          "w": 0.42448,
+          "h": 0.88974
+        },
+        {
+          "x": 0.29167,
+          "y": 0.0,
+          "w": 0.47656,
+          "h": 0.99891
+        },
+        {
+          "x": 0.11719,
+          "y": 0.10917,
+          "w": 0.32031,
+          "h": 0.6714
+        },
+        {
+          "x": 0.15625,
+          "y": 0.16376,
+          "w": 0.39844,
+          "h": 0.83515
+        }
+      ]
+    }
+  ]
+}

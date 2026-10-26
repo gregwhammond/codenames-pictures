@@ -1,0 +1,88 @@
+{
+  "id": "S065-01",
+  "source": "originals/S065-01.jpg",
+  "source_sha256": "7e01d6315c9cad97f488061a0f910b78d0931bf3e55b74ed5c140a0143a807fe",
+  "source_size": [
+    3561,
+    2849
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S065",
+    "index": 1,
+    "title": "MET JIB27 006",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Kyoka_Hyaku_Monogatari-Poems_on_One_Hundred_Ghost_Stories_MET_JIB27_006.jpg",
+    "licence": "Public domain (1853); Met copy is Open Access CC0",
+    "note": "Another page from the Met copy",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Kyoka_Hyaku_Monogatari-Poems_on_One_Hundred_Ghost_Stories_MET_JIB27_006.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S065-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.064,
+        "y": 0.38,
+        "w": 0.424,
+        "h": 0.53
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.20052,
+          "y": 0.0,
+          "w": 0.79948,
+          "h": 0.99935
+        },
+        "engine": "autocrop v1",
+        "score": 0.4047,
+        "confidence": 0.453
+      },
+      "candidates": [
+        {
+          "x": 0.28646,
+          "y": 0.10742,
+          "w": 0.71354,
+          "h": 0.89193
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.79948,
+          "h": 0.99935
+        },
+        {
+          "x": 0.54948,
+          "y": 0.4362,
+          "w": 0.45052,
+          "h": 0.56315
+        },
+        {
+          "x": 0.0,
+          "y": 0.32552,
+          "w": 0.53906,
+          "h": 0.67383
+        },
+        {
+          "x": 0.63542,
+          "y": 0.35807,
+          "w": 0.36458,
+          "h": 0.45573
+        }
+      ]
+    },
+    {
+      "tile": "S065-01-b",
+      "mode": "crop",
+      "box": {
+        "x": 0.536,
+        "y": 0.39,
+        "w": 0.424,
+        "h": 0.53
+      },
+      "status": "rejected",
+      "auto": null
+    }
+  ]
+}

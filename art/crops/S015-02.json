@@ -1,0 +1,76 @@
+{
+  "id": "S015-02",
+  "source": "originals/S015-02.jpg",
+  "source_sha256": "fe09df9681bffb5b228547865d96b99bda26d90bb46cebcbdb1965ecd0e9c289",
+  "source_size": [
+    1024,
+    896
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S015",
+    "index": 2,
+    "title": "Phoenix (Fabelwesen)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Phoenix-Fabelwesen.jpg",
+    "licence": "Wikimedia Commons public domain (1790-1830 prints). The full volumes are also on BHL (https://www.biodiversitylibrary.org/bibliography/95815) and the Internet Archive (https://archive.org/details/BilderbuchfuYrK89Bert), both public domain. The Royal Collection Trust copies are restricted, so do not use them. Added pictures: PD (1790-1830). Commons has few single plates. Full volumes exist at BHL (biodiversitylibrary.org/bibliography/95815), Internet Archive and Heidelberg digi (digi.ub.uni-heidelberg.de/diglit/bertuch1790ga). Plates can be picked from those volumes, but no page URLs came up in search.",
+    "note": "Phoenix rising from flames, cropped from the fable plate",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Phoenix-Fabelwesen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S015-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.03646,
+        "y": 0.0,
+        "w": 0.875,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.03646,
+          "y": 0.0,
+          "w": 0.875,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.6676,
+        "confidence": 0.828
+      },
+      "candidates": [
+        {
+          "x": 0.13542,
+          "y": 0.05357,
+          "w": 0.82812,
+          "h": 0.94643
+        },
+        {
+          "x": 0.0,
+          "y": 0.21726,
+          "w": 0.6849,
+          "h": 0.78274
+        },
+        {
+          "x": 0.22917,
+          "y": 0.38095,
+          "w": 0.54167,
+          "h": 0.61905
+        },
+        {
+          "x": 0.07812,
+          "y": 0.02976,
+          "w": 0.63542,
+          "h": 0.72619
+        },
+        {
+          "x": 0.36458,
+          "y": 0.0,
+          "w": 0.63542,
+          "h": 0.72619
+        }
+      ]
+    }
+  ]
+}

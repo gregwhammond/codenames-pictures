@@ -1,0 +1,76 @@
+{
+  "id": "S036-00",
+  "source": "originals/S036-00.jpg",
+  "source_sha256": "3f02c2242fd3b85362d8ed34c41fb2b83a2cc1f1b1df3f9a57a2b74c73fc3363",
+  "source_size": [
+    3298,
+    2551
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S036",
+    "index": 0,
+    "title": "Frontispiece, from Balli di Sfessania",
+    "source_url": "https://www.metmuseum.org/art/collection/search/681449",
+    "licence": "Met Open Access (CC0) for public-domain works. Callot died 1635. Check the OA badge on each record. Item 418173 is a later copy after Callot, also old and public domain.",
+    "note": "Title plate of the series with masked commedia comedians",
+    "obtained": "full-size download",
+    "image_url": "https://images.metmuseum.org/CRDImages/dp/original/DP846869.jpg"
+  },
+  "crops": [
+    {
+      "tile": "S036-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.01,
+        "w": 0.52587,
+        "h": 0.68
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.22396,
+          "y": 0.0,
+          "w": 0.76302,
+          "h": 0.98666
+        },
+        "engine": "autocrop v1",
+        "score": 0.3721,
+        "confidence": 0.194
+      },
+      "candidates": [
+        {
+          "x": 0.29167,
+          "y": 0.0,
+          "w": 0.67969,
+          "h": 0.87891
+        },
+        {
+          "x": 0.03646,
+          "y": 0.0,
+          "w": 0.76302,
+          "h": 0.98666
+        },
+        {
+          "x": 0.00521,
+          "y": 0.02694,
+          "w": 0.55469,
+          "h": 0.71727
+        },
+        {
+          "x": 0.51562,
+          "y": 0.04714,
+          "w": 0.47135,
+          "h": 0.60951
+        },
+        {
+          "x": 0.23438,
+          "y": 0.05388,
+          "w": 0.51302,
+          "h": 0.66339
+        }
+      ]
+    }
+  ]
+}

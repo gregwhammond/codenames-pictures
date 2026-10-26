@@ -1,0 +1,87 @@
+{
+  "id": "S010-06",
+  "source": "originals/S010-06.jpg",
+  "source_sha256": "a33a7f35ae1ed979a8fe98a953b708c70096131d7830da47499942b88d1bb436",
+  "source_size": [
+    800,
+    583
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S010",
+    "index": 6,
+    "title": "Images of bed bugs or fleas and delousing, 1536 (Wellcome M0011710)",
+    "source_url": "https://wellcomecollection.org/works/f7r4b4sa",
+    "licence": "Public domain (1491/1497); Commons PD-old. Wellcome L-number files are CC BY 4.0 (credit Wellcome Collection). Wider category: https://commons.wikimedia.org/wiki/Category:Hortus_Sanitatis Added pictures: Wellcome images CC-BY/PD; LoC Rare Book and Prints items generally 'no known restrictions'. The 1514 and unicorn/apes items are related Hortus editions; check the attribution before using. The Twin-tailed Siren/mermaid woodcut exists but was found only on stock sites (Alamy, Bridgeman), so it is not included.",
+    "note": "Related Wellcome image, bed-bug woodcut from 1536 edition",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S010-06",
+      "mode": "crop",
+      "box": {
+        "x": 0.00552,
+        "y": 0.13,
+        "w": 0.37895,
+        "h": 0.52
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.08576,
+          "w": 0.39323,
+          "h": 0.53959
+        },
+        "engine": "autocrop v1",
+        "score": 0.4839,
+        "confidence": 0.904
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.07504,
+          "w": 0.47917,
+          "h": 0.65752
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.71354,
+          "h": 0.97913
+        },
+        {
+          "x": 0.0,
+          "y": 0.08934,
+          "w": 0.32552,
+          "h": 0.44668
+        },
+        {
+          "x": 0.44271,
+          "y": 0.05718,
+          "w": 0.55729,
+          "h": 0.76472
+        },
+        {
+          "x": 0.49479,
+          "y": 0.16081,
+          "w": 0.36198,
+          "h": 0.49671
+        }
+      ]
+    },
+    {
+      "tile": "S010-06-b",
+      "mode": "crop",
+      "box": {
+        "x": 0.50352,
+        "y": 0.23,
+        "w": 0.37895,
+        "h": 0.52
+      },
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

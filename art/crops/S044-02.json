@@ -1,0 +1,76 @@
+{
+  "id": "S044-02",
+  "source": "originals/S044-02.jpg",
+  "source_sha256": "cc5077e846f14653d8e473857b8676188f04c9b14eedc08a0ac11eaa3209994a",
+  "source_size": [
+    1925,
+    2960
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S044",
+    "index": 2,
+    "title": "January: Aquarius",
+    "source_url": "https://commons.wikimedia.org/wiki/File:January_-_Aquarius_-_Book_of_hours_Simon_de_Varie_-_KB_74_G37a_-_088r_det_randv_2.jpg",
+    "licence": "Public domain on Commons (PD-old)",
+    "note": "Water-bearer zodiac sign",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/January_-_Aquarius_-_Book_of_hours_Simon_de_Varie_-_KB_74_G37a_-_088r_det_randv_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S044-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.1561,
+        "w": 1.0,
+        "h": 0.65041
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.1561,
+          "w": 1.0,
+          "h": 0.65041
+        },
+        "engine": "autocrop v1",
+        "score": 0.4143,
+        "confidence": 0.819
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.65041
+        },
+        {
+          "x": 0.0,
+          "y": 0.23415,
+          "w": 1.0,
+          "h": 0.65041
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.672,
+          "h": 0.43707
+        },
+        {
+          "x": 0.328,
+          "y": 0.0,
+          "w": 0.672,
+          "h": 0.43707
+        },
+        {
+          "x": 0.544,
+          "y": 0.0,
+          "w": 0.456,
+          "h": 0.29659
+        }
+      ]
+    }
+  ]
+}

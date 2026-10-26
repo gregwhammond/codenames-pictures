@@ -1,0 +1,76 @@
+{
+  "id": "S035-04",
+  "source": "originals/S035-04.jpg",
+  "source_sha256": "21a4ce31cf63942070e16a258a73965461cf7482e9fdedb9f50a6118ad90cabf",
+  "source_size": [
+    2899,
+    2944
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S035",
+    "index": 4,
+    "title": "Scenes de la vie privee et publique des animaux, tome 1, page 0188",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sc%C3%A8nes_de_la_vie_priv%C3%A9e_et_publique_des_animaux,_tome_1_0188.jpg",
+    "licence": "Public domain (Grandville died 1847; published 1840-42 and 1877). PD Image Archive and PDR mark the images public domain. The Commons page scan has a PD-old tag. Added pictures: Grandville d.1847, so PD. Met Open Access CC0 applies where the page shows the OA badge (typical for these prints). PD Image Archive and Commons are PD. Titles are from the Met; content notes are inferred from titles.",
+    "note": "Page scan from volume 1; subject not seen in search results",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Sc%C3%A8nes_de_la_vie_priv%C3%A9e_et_publique_des_animaux%2C_tome_1_0188.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S035-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.02116,
+        "y": 0.02605,
+        "w": 0.94974,
+        "h": 0.93512
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.02116,
+          "y": 0.02605,
+          "w": 0.94974,
+          "h": 0.93512
+        },
+        "engine": "autocrop v1",
+        "score": 0.7,
+        "confidence": 0.778
+      },
+      "candidates": [
+        {
+          "x": 0.06878,
+          "y": 0.05991,
+          "w": 0.84656,
+          "h": 0.83354
+        },
+        {
+          "x": 0.33069,
+          "y": 0.15629,
+          "w": 0.64021,
+          "h": 0.63036
+        },
+        {
+          "x": 0.0,
+          "y": 0.28132,
+          "w": 0.69048,
+          "h": 0.67985
+        },
+        {
+          "x": 0.16667,
+          "y": 0.02605,
+          "w": 0.5873,
+          "h": 0.57827
+        },
+        {
+          "x": 0.3836,
+          "y": 0.3777,
+          "w": 0.5873,
+          "h": 0.57827
+        }
+      ]
+    }
+  ]
+}

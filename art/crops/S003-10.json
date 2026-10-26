@@ -1,0 +1,75 @@
+{
+  "id": "S003-10",
+  "source": "originals/S003-10.jpg",
+  "source_sha256": "c7746c5c947bb03d3681434835309cb10654d04e0122c24e8104cdc761412c90",
+  "source_size": [
+    800,
+    755
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S003",
+    "index": 10,
+    "title": "Dispute with a rabbit",
+    "source_url": "https://discardingimages.tumblr.com/post/105536041958/dispute-with-a-rabbit-gorleston-psalter-england",
+    "licence": "Original c. 1320, public domain; BL digitised manuscript images generally marked public domain; Commons files PD-Art (verify tag). The two tumblr pages are reposts of BL images, not the host; prefer a BL/Commons copy. Note: some Gorleston margins are bawdy (see BL blog https://britishlibrary.typepad.co.uk/digitisedmanuscripts/2012/10/more-gorleston-psalter-virility-profane-images-in-a-sacred-space.html). Added pictures: Manuscript is PD (c.1310-24); these are discardingimages Tumblr reposts of BL images, not a primary host. BL digitised manuscripts viewer images are generally PD/CC0 for pre-1900 items; Commons copies preferred where they exist.",
+    "note": "Man arguing with a rabbit",
+    "obtained": "full-size download"
+  },
+  "crops": [
+    {
+      "tile": "S003-10",
+      "mode": "crop",
+      "box": {
+        "x": 0.28848,
+        "y": 0.25,
+        "w": 0.62304,
+        "h": 0.66
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.03385,
+          "y": 0.10759,
+          "w": 0.84115,
+          "h": 0.89104
+        },
+        "engine": "autocrop v1",
+        "score": 0.5311,
+        "confidence": 0.714
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.94271,
+          "h": 0.99863
+        },
+        {
+          "x": 0.28646,
+          "y": 0.27311,
+          "w": 0.6849,
+          "h": 0.72553
+        },
+        {
+          "x": 0.02604,
+          "y": 0.27587,
+          "w": 0.63542,
+          "h": 0.67311
+        },
+        {
+          "x": 0.40104,
+          "y": 0.49104,
+          "w": 0.47917,
+          "h": 0.50759
+        },
+        {
+          "x": 0.40104,
+          "y": 0.28966,
+          "w": 0.47917,
+          "h": 0.50759
+        }
+      ]
+    }
+  ]
+}

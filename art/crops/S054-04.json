@@ -1,0 +1,77 @@
+{
+  "id": "S054-04",
+  "source": "originals/S054-04.jpg",
+  "source_sha256": "50767a76ec33d7547412f9ba6bb89a041eafd03f41b916431d0bd108680972d6",
+  "source_size": [
+    800,
+    1112
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S054",
+    "index": 4,
+    "title": "bavarikon, page 8",
+    "source_url": "https://www.bavarikon.de/object/bav:BSB-HSS-00000BSB00013084?p=8&lang=de",
+    "licence": "Public domain (BSB digitisations free reuse; Commons PD). Archive.org page is a user upload, image PD.",
+    "note": "Single page in bavarikon viewer",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S054-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.025,
+        "y": 0.13827,
+        "w": 0.95,
+        "h": 0.68345
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.1744,
+        "confidence": 1.0,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.71942
+        },
+        {
+          "x": 0.0,
+          "y": 0.28058,
+          "w": 1.0,
+          "h": 0.71942
+        },
+        {
+          "x": 0.1087,
+          "y": 0.0,
+          "w": 0.8913,
+          "h": 0.64123
+        },
+        {
+          "x": 0.38043,
+          "y": 0.0,
+          "w": 0.61957,
+          "h": 0.44573
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.56522,
+          "h": 0.40663
+        },
+        {
+          "x": 0.60145,
+          "y": 0.0,
+          "w": 0.39855,
+          "h": 0.28673
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "S040-01",
+  "source": "originals/S040-01.jpg",
+  "source_sha256": "8e0d53337a725be9a075dbfeebf5cc9a5a02029e26df31bc2de4b9c6d6399dec",
+  "source_size": [
+    750,
+    380
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S040",
+    "index": 1,
+    "title": "Pannage",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pannage.jpg",
+    "licence": "Public domain on Commons (PD-old) Added pictures: BL manuscript images released as PD on Commons; PICRYL marks these public domain.",
+    "note": "Swineherd knocking acorns down for pigs; likely QMP, verify",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S040-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.24667,
+        "y": 0.0,
+        "w": 0.50667,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.2983,
+        "confidence": 0.063,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.00057,
+          "y": 0.0,
+          "w": 0.50667,
+          "h": 1.0
+        },
+        {
+          "x": 0.49276,
+          "y": 0.0,
+          "w": 0.50667,
+          "h": 1.0
+        },
+        {
+          "x": 0.06307,
+          "y": 0.0,
+          "w": 0.50667,
+          "h": 1.0
+        },
+        {
+          "x": 0.29224,
+          "y": 0.0,
+          "w": 0.50667,
+          "h": 1.0
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.39583,
+          "h": 0.78125
+        },
+        {
+          "x": 0.65885,
+          "y": 0.0,
+          "w": 0.34115,
+          "h": 0.67331
+        }
+      ]
+    }
+  ]
+}

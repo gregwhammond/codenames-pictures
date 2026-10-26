@@ -1,0 +1,75 @@
+{
+  "id": "S026-01",
+  "source": "originals/S026-01.jpg",
+  "source_sha256": "04d15ce9f4601e48561c9e9d9b27d8eb70bd57aa463fb11d747a3ae39b43d53b",
+  "source_size": [
+    450,
+    602
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S026",
+    "index": 1,
+    "title": "Geisterbelustigung (Ghost Amusement)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Luo,_Pin_%E2%80%94_Geisterbelustigung_%E2%80%94_18._Jhd.jpg",
+    "licence": "Paintings are public domain (artist d. 1799). The Honolulu file is a visitor's gallery photo: check its Commons licence (may be CC-BY-SA). Only 4 images found. Added pictures: Cleveland Museum of Art open access (CC0) where marked. The Ghost Amusement scroll is in a private collection (the Hong Kong loan). Commons images of it are photos of a PD work, but check their source. No further single-leaf images were found on open hosts.",
+    "note": "Ghost Amusement scene, ghosts in grey wash",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S026-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.22625,
+        "w": 1.0,
+        "h": 0.74751
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.74751
+        },
+        "engine": "autocrop v1",
+        "score": 0.329,
+        "confidence": 0.72
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.25249,
+          "w": 1.0,
+          "h": 0.74751
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.89199,
+          "h": 0.66677
+        },
+        {
+          "x": 0.32753,
+          "y": 0.0,
+          "w": 0.67247,
+          "h": 0.50268
+        },
+        {
+          "x": 0.41812,
+          "y": 0.0,
+          "w": 0.45296,
+          "h": 0.33859
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.4007,
+          "h": 0.29952
+        }
+      ]
+    }
+  ]
+}

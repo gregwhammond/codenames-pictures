@@ -1,0 +1,76 @@
+{
+  "id": "S036-02",
+  "source": "originals/S036-02.jpg",
+  "source_sha256": "c44b9f0c31fc0a248877fd627c2c481d4647317ff725be35a4142c5e53164f56",
+  "source_size": [
+    3171,
+    2516
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S036",
+    "index": 2,
+    "title": "Franca Trippa - Fritellino, from Balli di Sfessania",
+    "source_url": "https://www.metmuseum.org/art/collection/search/681443",
+    "licence": "Met Open Access (CC0) for public-domain works. Callot died 1635. Check the OA badge on each record. Item 418173 is a later copy after Callot, also old and public domain.",
+    "note": "Franca Trippa and Fritellino, a masked pair caught mid-dance",
+    "obtained": "full-size download",
+    "image_url": "https://images.metmuseum.org/CRDImages/dp/original/DP846867.jpg"
+  },
+  "crops": [
+    {
+      "tile": "S036-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.12093,
+        "y": 0.0,
+        "w": 0.69813,
+        "h": 0.88
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.125,
+          "y": 0.0,
+          "w": 0.78646,
+          "h": 0.99133
+        },
+        "engine": "autocrop v1",
+        "score": 0.5502,
+        "confidence": 0.57
+      },
+      "candidates": [
+        {
+          "x": 0.03125,
+          "y": 0.0,
+          "w": 0.78646,
+          "h": 0.99133
+        },
+        {
+          "x": 0.0,
+          "y": 0.14772,
+          "w": 0.57292,
+          "h": 0.72216
+        },
+        {
+          "x": 0.3125,
+          "y": 0.03283,
+          "w": 0.65885,
+          "h": 0.83049
+        },
+        {
+          "x": 0.51302,
+          "y": 0.22978,
+          "w": 0.48698,
+          "h": 0.61384
+        },
+        {
+          "x": 0.01823,
+          "y": 0.0,
+          "w": 0.48698,
+          "h": 0.61384
+        }
+      ]
+    }
+  ]
+}

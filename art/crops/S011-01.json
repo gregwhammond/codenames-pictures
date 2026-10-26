@@ -1,0 +1,76 @@
+{
+  "id": "S011-01",
+  "source": "originals/S011-01.jpg",
+  "source_sha256": "75a4f82274ddb7667efe73e1bfd0bb49057c4a9a2851951057f1085ea2af8c25",
+  "source_size": [
+    2336,
+    2163
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S011",
+    "index": 1,
+    "title": "Emblem 2: Mother Earth is his nurse",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Michael_Maier_-_Atalanta_Fugiens_-_Mother_Earth.jpg",
+    "licence": "Public domain (1618; PD-old on Commons). Science History Institute digital collections are also openly reusable.",
+    "note": "Woman whose body is the globe breastfeeding a child",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Michael_Maier_-_Atalanta_Fugiens_-_Mother_Earth.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S011-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.12958,
+        "y": 0.07,
+        "w": 0.74083,
+        "h": 0.8
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00052,
+          "y": 0.0,
+          "w": 0.92604,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.5716,
+        "confidence": 0.758
+      },
+      "candidates": [
+        {
+          "x": 0.1224,
+          "y": 0.05231,
+          "w": 0.8776,
+          "h": 0.94769
+        },
+        {
+          "x": 0.0,
+          "y": 0.27165,
+          "w": 0.67448,
+          "h": 0.72835
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.72396,
+          "h": 0.78178
+        },
+        {
+          "x": 0.42708,
+          "y": 0.38133,
+          "w": 0.57292,
+          "h": 0.61867
+        },
+        {
+          "x": 0.3776,
+          "y": 0.0,
+          "w": 0.6224,
+          "h": 0.6721
+        }
+      ]
+    }
+  ]
+}

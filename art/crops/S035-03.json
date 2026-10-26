@@ -1,0 +1,77 @@
+{
+  "id": "S035-03",
+  "source": "originals/S035-03.webp",
+  "source_sha256": "9f64135af6e470b5dea0b5d7d3c285b93f870191f3d0a919375e7c6c52d6786e",
+  "source_size": [
+    577,
+    303
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S035",
+    "index": 3,
+    "title": "Untitled image",
+    "source_url": "https://pdimagearchive.org/images/af276699-3525-41e1-a19a-1575ea86c924/",
+    "licence": "Public domain (Grandville died 1847; published 1840-42 and 1877). PD Image Archive and PDR mark the images public domain. The Commons page scan has a PD-old tag. Added pictures: Grandville d.1847, so PD. Met Open Access CC0 applies where the page shows the OA badge (typical for these prints). PD Image Archive and Commons are PD. Titles are from the Met; content notes are inferred from titles.",
+    "note": "Untitled engraving from the book; subject not seen in search results",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S035-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.23744,
+        "y": 0.0,
+        "w": 0.52513,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.3244,
+        "confidence": 0.1,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.02129,
+          "y": 0.0,
+          "w": 0.52513,
+          "h": 1.0
+        },
+        {
+          "x": 0.43796,
+          "y": 0.0,
+          "w": 0.52513,
+          "h": 1.0
+        },
+        {
+          "x": 0.08379,
+          "y": 0.0,
+          "w": 0.52513,
+          "h": 1.0
+        },
+        {
+          "x": 0.03125,
+          "y": 0.0,
+          "w": 0.41146,
+          "h": 0.78354
+        },
+        {
+          "x": 0.3099,
+          "y": 0.0,
+          "w": 0.46875,
+          "h": 0.89264
+        },
+        {
+          "x": 0.60938,
+          "y": 0.0,
+          "w": 0.38281,
+          "h": 0.72899
+        }
+      ]
+    }
+  ]
+}

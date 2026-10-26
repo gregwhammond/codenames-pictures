@@ -1,0 +1,78 @@
+{
+  "id": "S087-04",
+  "source": "originals/S087-04.jpg",
+  "source_sha256": "1ec6ffee2cc48542c40219bd3546d3d15be9b213ddc7da59b3b335030a9fca47",
+  "source_size": [
+    1500,
+    854
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S087",
+    "index": 4,
+    "title": "Battle with one-eyed giants (Royal 20 B XX f.79v)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Battle_Roy_Alixandre_with_one-eyed_giants_(cyclops)_-_British_Library_Royal_MS_20_B_xx_f79v_(detail).jpg",
+    "licence": "Public domain (Commons PD-Art tags; BL images released to public domain). Digital Bodleian images of Bodley 264 are CC-BY-NC; use the Commons copies.",
+    "note": "Knights fight cyclopes",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Battle_Roy_Alixandre_with_one-eyed_giants_%28cyclops%29_-_British_Library_Royal_MS_20_B_xx_f79v_%28detail%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S087-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.27935,
+        "y": 0.005,
+        "w": 0.5413,
+        "h": 0.95
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.2955,
+        "confidence": 0.058,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.00026,
+          "y": 0.0,
+          "w": 0.56979,
+          "h": 1.0
+        },
+        {
+          "x": 0.35182,
+          "y": 0.0,
+          "w": 0.56979,
+          "h": 1.0
+        },
+        {
+          "x": 0.14089,
+          "y": 0.0,
+          "w": 0.56979,
+          "h": 1.0
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.50781,
+          "h": 0.89122
+        },
+        {
+          "x": 0.53125,
+          "y": 0.0,
+          "w": 0.41406,
+          "h": 0.72669
+        },
+        {
+          "x": 0.3125,
+          "y": 0.0,
+          "w": 0.41406,
+          "h": 0.72669
+        }
+      ]
+    }
+  ]
+}

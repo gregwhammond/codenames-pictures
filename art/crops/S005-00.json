@@ -1,0 +1,88 @@
+{
+  "id": "S005-00",
+  "source": "originals/S005-00.jpg",
+  "source_sha256": "6c66f6560dbb1c841179d5a5d9737382f46e74a6a88ffc8aff7d8e6e1632cf22",
+  "source_size": [
+    1260,
+    1808
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S005",
+    "index": 0,
+    "title": "Facundus Beatus, fol. 135",
+    "source_url": "https://commons.wikimedia.org/wiki/File:B_Facundus_135.jpg",
+    "licence": "Wikimedia Commons PD-Art (manuscript of 1047); the two Met leaves are Met Open Access CC0. Some Beatus episodes feature the seven-headed dragon, so pick folios by eye.",
+    "note": "Full-page Apocalypse miniature, fol. 135; exact subject not checked",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/B_Facundus_135.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S005-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.05,
+        "y": 0.00347,
+        "w": 0.88,
+        "h": 0.61306
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.69666
+        },
+        "engine": "autocrop v1",
+        "score": 0.4553,
+        "confidence": 0.87
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.08578,
+          "w": 1.0,
+          "h": 0.69666
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.78358,
+          "h": 0.54589
+        },
+        {
+          "x": 0.27239,
+          "y": 0.0,
+          "w": 0.72761,
+          "h": 0.5069
+        },
+        {
+          "x": 0.49254,
+          "y": 0.0,
+          "w": 0.50746,
+          "h": 0.35353
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.50746,
+          "h": 0.35353
+        }
+      ]
+    },
+    {
+      "tile": "S005-00-b",
+      "mode": "crop",
+      "box": {
+        "x": 0.09,
+        "y": 0.38347,
+        "w": 0.88,
+        "h": 0.61306
+      },
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

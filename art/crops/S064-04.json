@@ -1,0 +1,75 @@
+{
+  "id": "S064-04",
+  "source": "originals/S064-04.jpg",
+  "source_sha256": "be07c9fb56bafb20406ef9769946fd6c118a5e08bc3c508f770ae7bc0f398bf0",
+  "source_size": [
+    740,
+    616
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S064",
+    "index": 4,
+    "title": "Namija",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bakemono-tsukushi-emaki_Namija.jpg",
+    "licence": "Public domain (Edo-period works), Commons PD tags; check each file's page for the owning collection",
+    "note": "Namija yokai figure",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S064-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.10201,
+        "y": 0.0,
+        "w": 0.83243,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.10201,
+          "y": 0.0,
+          "w": 0.83243,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.6412,
+        "confidence": 0.699
+      },
+      "candidates": [
+        {
+          "x": 0.11458,
+          "y": 0.10841,
+          "w": 0.74219,
+          "h": 0.89159
+        },
+        {
+          "x": 0.30208,
+          "y": 0.0,
+          "w": 0.69792,
+          "h": 0.83841
+        },
+        {
+          "x": 0.0,
+          "y": 0.03128,
+          "w": 0.65104,
+          "h": 0.7821
+        },
+        {
+          "x": 0.22917,
+          "y": 0.20022,
+          "w": 0.51562,
+          "h": 0.61942
+        },
+        {
+          "x": 0.48438,
+          "y": 0.38058,
+          "w": 0.51562,
+          "h": 0.61942
+        }
+      ]
+    }
+  ]
+}

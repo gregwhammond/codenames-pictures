@@ -1,0 +1,75 @@
+{
+  "id": "S011-08",
+  "source": "originals/S011-08.jpg",
+  "source_sha256": "7879e8462314fb6cb17288e7b3d85182c594d83b4aceaef9702bfbeb24d560ce",
+  "source_size": [
+    590,
+    558
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S011",
+    "index": 8,
+    "title": "Emblem 33: The hermaphrodite lies in darkness",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Michael_Maier_Atalanta_Fugiens_Emblem_33.jpeg",
+    "licence": "Public domain (1618; PD-old on Commons). Science History Institute digital collections are also openly reusable.",
+    "note": "Two-headed hermaphrodite lying as if dead, needing fire",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S011-08",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.94531,
+        "h": 0.99952
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.94531,
+          "h": 0.99952
+        },
+        "engine": "autocrop v1",
+        "score": 0.5841,
+        "confidence": 0.78
+      },
+      "candidates": [
+        {
+          "x": 0.10677,
+          "y": 0.05507,
+          "w": 0.89323,
+          "h": 0.94445
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.73958,
+          "h": 0.782
+        },
+        {
+          "x": 0.0,
+          "y": 0.2726,
+          "w": 0.6875,
+          "h": 0.72693
+        },
+        {
+          "x": 0.36458,
+          "y": 0.0,
+          "w": 0.63542,
+          "h": 0.67186
+        },
+        {
+          "x": 0.41667,
+          "y": 0.38274,
+          "w": 0.58333,
+          "h": 0.61679
+        }
+      ]
+    }
+  ]
+}

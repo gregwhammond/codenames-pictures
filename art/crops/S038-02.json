@@ -1,0 +1,75 @@
+{
+  "id": "S038-02",
+  "source": "originals/S038-02.jpg",
+  "source_sha256": "2f19925857b07bf4f0cdb8f8bc68af465e2108db58ffc95dd358c3c11597dffd",
+  "source_size": [
+    826,
+    833
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S038",
+    "index": 2,
+    "title": "Citole player",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ormesby_Psalter_Citole.jpg",
+    "licence": "Public domain on Commons (PD-old); Bodleian own images CC BY-NC Added pictures: Manuscript c.1300 is PD; these are Bodleian (MS Douce 366) images reposted on Tumblr/bestiary.ca, Bodleian images are generally CC-BY-NC. Treat as secondary hosts; prefer Digital Bodleian page if a commercial-safe copy is needed.",
+    "note": "Marginal figure playing a citole",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S038-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.00781,
+        "w": 1.0,
+        "h": 0.9916
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.00781,
+          "w": 1.0,
+          "h": 0.9916
+        },
+        "engine": "autocrop v1",
+        "score": 0.6264,
+        "confidence": 0.787
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.11712,
+          "w": 0.88976,
+          "h": 0.88229
+        },
+        {
+          "x": 0.21785,
+          "y": 0.0,
+          "w": 0.78215,
+          "h": 0.77558
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.67192,
+          "h": 0.66627
+        },
+        {
+          "x": 0.32808,
+          "y": 0.33313,
+          "w": 0.67192,
+          "h": 0.66627
+        },
+        {
+          "x": 0.0,
+          "y": 0.38519,
+          "w": 0.61942,
+          "h": 0.61422
+        }
+      ]
+    }
+  ]
+}

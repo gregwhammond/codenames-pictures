@@ -1,0 +1,78 @@
+{
+  "id": "S001-00",
+  "source": "originals/S001-00.jpg",
+  "source_sha256": "1fbcb94bc2f2b37d673d30435d0de674f5fd1047d930fe78970265fd28ce3934",
+  "source_size": [
+    1605,
+    937
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S001",
+    "index": 0,
+    "title": "Tiger (f. 8r detail)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:AberdeenBestiaryFolio008rTigerDetail.jpg",
+    "licence": "Original c. 1200, public domain. abdn.ac.uk page images are University of Aberdeen photography (reuse terms not confirmed, possibly non-commercial); Commons copies are PD-Art (verify tag per file). Commons category: https://commons.wikimedia.org/wiki/Category:Aberdeen_Bestiary",
+    "note": "Hunter steals a tiger cub, distracting the tigress with a mirror.",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/AberdeenBestiaryFolio008rTigerDetail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S001-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.04167,
+        "y": 0.06,
+        "w": 0.53667,
+        "h": 0.92
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.3427,
+        "confidence": 0.076,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.58333,
+          "h": 1.0
+        },
+        {
+          "x": 0.41667,
+          "y": 0.0,
+          "w": 0.58333,
+          "h": 1.0
+        },
+        {
+          "x": 0.07031,
+          "y": 0.0,
+          "w": 0.58333,
+          "h": 1.0
+        },
+        {
+          "x": 0.27083,
+          "y": 0.10714,
+          "w": 0.52083,
+          "h": 0.89286
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.45573,
+          "h": 0.78125
+        },
+        {
+          "x": 0.0,
+          "y": 0.27232,
+          "w": 0.42448,
+          "h": 0.72768
+        }
+      ]
+    }
+  ]
+}

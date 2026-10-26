@@ -1,0 +1,75 @@
+{
+  "id": "S011-00",
+  "source": "originals/S011-00.jpg",
+  "source_sha256": "1d145665c56da7fec852400806a9e45e3622f14524772294f6edf0ea373a3b55",
+  "source_size": [
+    600,
+    573
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S011",
+    "index": 0,
+    "title": "Emblem 1: The wind carried him in its belly",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Michael_Maier_Atalanta_Fugiens_Embleme_1.jpeg",
+    "licence": "Public domain (1618; PD-old on Commons). Science History Institute digital collections are also openly reusable.",
+    "note": "Puffing wind god Boreas with a baby inside his belly",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S011-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.00036,
+        "y": 0.0,
+        "w": 0.955,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00036,
+          "y": 0.0,
+          "w": 0.955,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.5903,
+        "confidence": 0.801
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.85156,
+          "h": 0.89169
+        },
+        {
+          "x": 0.20052,
+          "y": 0.16285,
+          "w": 0.79948,
+          "h": 0.83715
+        },
+        {
+          "x": 0.0,
+          "y": 0.32646,
+          "w": 0.64323,
+          "h": 0.67354
+        },
+        {
+          "x": 0.35677,
+          "y": 0.0,
+          "w": 0.64323,
+          "h": 0.67354
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.59115,
+          "h": 0.619
+        }
+      ]
+    }
+  ]
+}

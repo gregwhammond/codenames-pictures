@@ -1,0 +1,75 @@
+{
+  "id": "S021-01",
+  "source": "originals/S021-01.jpg",
+  "source_sha256": "92dd4b05da8d808ebdecbf8b87083bcbc5afa06cc3000fc7e9b19168d0b014e2",
+  "source_size": [
+    619,
+    392
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S021",
+    "index": 1,
+    "title": "Nukekubi",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Suushi_Nukekubi.jpg",
+    "licence": "Commons public-domain tags (1737 work, PD-Art). Overlaps in subject with the yokai scrolls already in the deck, but it is a different scroll.",
+    "note": "Woman whose head floats away from her body",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S021-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.13336,
+        "y": 0.0,
+        "w": 0.63328,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.36719,
+          "y": 0.0,
+          "w": 0.63281,
+          "h": 0.99926
+        },
+        "engine": "autocrop v1",
+        "score": 0.4815,
+        "confidence": 0.418
+      },
+      "candidates": [
+        {
+          "x": 0.4375,
+          "y": 0.0,
+          "w": 0.5625,
+          "h": 0.88823
+        },
+        {
+          "x": 0.23438,
+          "y": 0.0,
+          "w": 0.5625,
+          "h": 0.88823
+        },
+        {
+          "x": 0.14583,
+          "y": 0.0,
+          "w": 0.46094,
+          "h": 0.72786
+        },
+        {
+          "x": 0.57552,
+          "y": 0.29608,
+          "w": 0.42448,
+          "h": 0.67029
+        },
+        {
+          "x": 0.29688,
+          "y": 0.0,
+          "w": 0.39062,
+          "h": 0.61683
+        }
+      ]
+    }
+  ]
+}

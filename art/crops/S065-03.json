@@ -1,0 +1,75 @@
+{
+  "id": "S065-03",
+  "source": "originals/S065-03.jpg",
+  "source_sha256": "241919340fe12ae45134f85ee6e3bea12f1c3668ca4050a87f6ba9e5f3db4d6a",
+  "source_size": [
+    420,
+    376
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S065",
+    "index": 3,
+    "title": "Noppera-bo",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Masasumi_Noppera-bo.jpg",
+    "licence": "Public domain (1853); Met copy is Open Access CC0",
+    "note": "Faceless ghost",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S065-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.10446,
+        "y": 0.0,
+        "w": 0.89524,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.10446,
+          "y": 0.0,
+          "w": 0.89524,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.6295,
+        "confidence": 0.703
+      },
+      "candidates": [
+        {
+          "x": 0.0003,
+          "y": 0.0,
+          "w": 0.89524,
+          "h": 1.0
+        },
+        {
+          "x": 0.1875,
+          "y": 0.2618,
+          "w": 0.60156,
+          "h": 0.67196
+        },
+        {
+          "x": 0.02344,
+          "y": 0.32804,
+          "w": 0.60156,
+          "h": 0.67196
+        },
+        {
+          "x": 0.28646,
+          "y": 0.09599,
+          "w": 0.70052,
+          "h": 0.7825
+        },
+        {
+          "x": 0.39583,
+          "y": 0.3804,
+          "w": 0.55469,
+          "h": 0.6196
+        }
+      ]
+    }
+  ]
+}

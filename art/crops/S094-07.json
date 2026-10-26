@@ -1,0 +1,75 @@
+{
+  "id": "S094-07",
+  "source": "originals/S094-07.jpg",
+  "source_sha256": "bc4ac66d454a95eaa4a6ba2a0599c7c88d9015cb7b0ca2766e7f367d85050804",
+  "source_size": [
+    566,
+    800
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S094",
+    "index": 7,
+    "title": "Plate 15 [Handcart]",
+    "source_url": "https://library.si.edu/es/image-gallery/107410",
+    "licence": "Smithsonian Libraries: PD book, Smithsonian Open Access / no known restrictions; Cooper Hewitt image CC0 via Commons.",
+    "note": "Hand-pushed cart",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S094-07",
+      "mode": "crop",
+      "box": {
+        "x": 0.025,
+        "y": 0.47544,
+        "w": 0.55,
+        "h": 0.38912
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0026,
+          "w": 1.0,
+          "h": 0.7075
+        },
+        "engine": "autocrop v1",
+        "score": 0.3769,
+        "confidence": 0.943
+      },
+      "candidates": [
+        {
+          "x": 0.11029,
+          "y": 0.0026,
+          "w": 0.88971,
+          "h": 0.62947
+        },
+        {
+          "x": 0.0,
+          "y": 0.17427,
+          "w": 1.0,
+          "h": 0.7075
+        },
+        {
+          "x": 0.38235,
+          "y": 0.0026,
+          "w": 0.61765,
+          "h": 0.43699
+        },
+        {
+          "x": 0.0,
+          "y": 0.0026,
+          "w": 0.67279,
+          "h": 0.476
+        },
+        {
+          "x": 0.59926,
+          "y": 0.0026,
+          "w": 0.40074,
+          "h": 0.28352
+        }
+      ]
+    }
+  ]
+}

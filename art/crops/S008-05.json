@@ -1,0 +1,77 @@
+{
+  "id": "S008-05",
+  "source": "originals/S008-05.jpg",
+  "source_sha256": "da84b090b3229d161aa30390e22a5d666e287ba7494dec4b442d57b923dca0aa",
+  "source_size": [
+    300,
+    450
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S008",
+    "index": 5,
+    "title": "Sea monk",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sea-monk.jpg",
+    "licence": "Public domain (16th century). Commons PD-old; PD Image Archive items are public domain; BHL scan on Commons is PD. PDIA artist gallery: https://pdimagearchive.org/galleries/artists/conrad-gessner/random/desc",
+    "note": "Fish-bodied 'monk' with tonsured head; probably from Gessner, check the source",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S008-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.02667,
+        "w": 1.0,
+        "h": 0.66667
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.3715,
+        "confidence": 0.744,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.02604,
+          "w": 1.0,
+          "h": 0.66667
+        },
+        {
+          "x": 0.07031,
+          "y": 0.07031,
+          "w": 0.89062,
+          "h": 0.59375
+        },
+        {
+          "x": 0.0,
+          "y": 0.33073,
+          "w": 1.0,
+          "h": 0.66667
+        },
+        {
+          "x": 0.27344,
+          "y": 0.0,
+          "w": 0.72656,
+          "h": 0.48438
+        },
+        {
+          "x": 0.02734,
+          "y": 0.0,
+          "w": 0.72656,
+          "h": 0.48438
+        },
+        {
+          "x": 0.25391,
+          "y": 0.01302,
+          "w": 0.50781,
+          "h": 0.33854
+        }
+      ]
+    }
+  ]
+}

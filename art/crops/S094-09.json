@@ -1,0 +1,77 @@
+{
+  "id": "S094-09",
+  "source": "originals/S094-09.jpg",
+  "source_sha256": "39bd516c87ad323e1731298b07a72cdedc14636fdd489d5047e55a285e0dc386",
+  "source_size": [
+    566,
+    800
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S094",
+    "index": 9,
+    "title": "Plate 26 [Hand-cranked grist mill]",
+    "source_url": "https://library.si.edu/es/image-gallery/108459",
+    "licence": "Smithsonian Libraries: PD book, Smithsonian Open Access / no known restrictions; Cooper Hewitt image CC0 via Commons.",
+    "note": "Men cranking a grain mill",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S094-09",
+      "mode": "crop",
+      "box": {
+        "x": 0.025,
+        "y": 0.16394,
+        "w": 0.95,
+        "h": 0.67212
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.1496,
+        "confidence": 1.0,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0026,
+          "w": 1.0,
+          "h": 0.7075
+        },
+        {
+          "x": 0.11029,
+          "y": 0.0026,
+          "w": 0.88971,
+          "h": 0.62947
+        },
+        {
+          "x": 0.4375,
+          "y": 0.0026,
+          "w": 0.5625,
+          "h": 0.39797
+        },
+        {
+          "x": 0.0,
+          "y": 0.29132,
+          "w": 1.0,
+          "h": 0.7075
+        },
+        {
+          "x": 0.0,
+          "y": 0.0026,
+          "w": 0.40074,
+          "h": 0.28352
+        },
+        {
+          "x": 0.42647,
+          "y": 0.0026,
+          "w": 0.40074,
+          "h": 0.28352
+        }
+      ]
+    }
+  ]
+}

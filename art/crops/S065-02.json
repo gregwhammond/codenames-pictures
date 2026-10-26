@@ -1,0 +1,75 @@
+{
+  "id": "S065-02",
+  "source": "originals/S065-02.jpg",
+  "source_sha256": "85c5154c88ba5bc87b6b53aaec8830bf05f2346b106d353761a104f81c9d1030",
+  "source_size": [
+    560,
+    464
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S065",
+    "index": 2,
+    "title": "Kappa",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Kyoka_Hyaku-Monogatari_Kappa.jpg",
+    "licence": "Public domain (1853); Met copy is Open Access CC0",
+    "note": "A kappa water imp",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S065-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.03571,
+        "y": 0.0,
+        "w": 0.82857,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.82812,
+          "h": 0.99946
+        },
+        "engine": "autocrop v1",
+        "score": 0.5422,
+        "confidence": 0.711
+      },
+      "candidates": [
+        {
+          "x": 0.17188,
+          "y": 0.0,
+          "w": 0.82812,
+          "h": 0.99946
+        },
+        {
+          "x": 0.0,
+          "y": 0.16343,
+          "w": 0.69271,
+          "h": 0.83603
+        },
+        {
+          "x": 0.22917,
+          "y": 0.27658,
+          "w": 0.55729,
+          "h": 0.67259
+        },
+        {
+          "x": 0.44271,
+          "y": 0.32687,
+          "w": 0.55729,
+          "h": 0.67259
+        },
+        {
+          "x": 0.29167,
+          "y": 0.0,
+          "w": 0.55729,
+          "h": 0.67259
+        }
+      ]
+    }
+  ]
+}

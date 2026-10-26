@@ -1,0 +1,75 @@
+{
+  "id": "S088-11",
+  "source": "originals/S088-11.jpg",
+  "source_sha256": "a1a1521f461939be4715427c0993b9e19633774e2e1040c7d48cdc3e7842d288",
+  "source_size": [
+    610,
+    769
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S088",
+    "index": 11,
+    "title": "NKS 1867 4to, 93v, Thor and Jörmungandr",
+    "source_url": "https://commons.wikimedia.org/wiki/File:NKS_1867_4to,_93v,_Thor_and_J%C3%B6rmungandr.jpg",
+    "licence": "Public domain on Commons (18th-/17th-c. works, PD-Art); host scans on handrit.is are free to view.",
+    "note": "Thor in a boat fishing up the World Serpent",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S088-11",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.20546,
+        "w": 1.0,
+        "h": 0.79324
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.20546,
+          "w": 1.0,
+          "h": 0.79324
+        },
+        "engine": "autocrop v1",
+        "score": 0.3679,
+        "confidence": 1.0
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.79324
+        },
+        {
+          "x": 0.0,
+          "y": 0.29129,
+          "w": 0.8918,
+          "h": 0.70741
+        },
+        {
+          "x": 0.0,
+          "y": 0.18726,
+          "w": 0.67213,
+          "h": 0.53316
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.4,
+          "h": 0.3173
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.67213,
+          "h": 0.53316
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "S011-03",
+  "source": "originals/S011-03.jpg",
+  "source_sha256": "b7d831ec9b0b7446d36bbb90d077b28f6be6ef5e7a6bfc42037486835ed54756",
+  "source_size": [
+    627,
+    534
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S011",
+    "index": 3,
+    "title": "Emblem 8: Take the egg and strike it with a fiery sword",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Michael_Maier_Atalanta_Fugiens_Emblem_08.jpeg",
+    "licence": "Public domain (1618; PD-old on Commons). Science History Institute digital collections are also openly reusable.",
+    "note": "Man raising a flaming sword over a giant egg",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S011-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.14844,
+        "y": 0.0,
+        "w": 0.85156,
+        "h": 0.99987
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.14844,
+          "y": 0.0,
+          "w": 0.85156,
+          "h": 0.99987
+        },
+        "engine": "autocrop v1",
+        "score": 0.571,
+        "confidence": 0.772
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.85156,
+          "h": 0.99987
+        },
+        {
+          "x": 0.28906,
+          "y": 0.16512,
+          "w": 0.71094,
+          "h": 0.83475
+        },
+        {
+          "x": 0.42708,
+          "y": 0.0,
+          "w": 0.57292,
+          "h": 0.67269
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.57292,
+          "h": 0.67269
+        },
+        {
+          "x": 0.52083,
+          "y": 0.43725,
+          "w": 0.47917,
+          "h": 0.56262
+        }
+      ]
+    }
+  ]
+}

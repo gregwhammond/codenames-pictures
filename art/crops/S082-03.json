@@ -1,0 +1,78 @@
+{
+  "id": "S082-03",
+  "source": "originals/S082-03.jpg",
+  "source_sha256": "4abfd56729bea1a4e584dffa39f39a25e1b2d312b5fa4b4bf09ef9919d963176",
+  "source_size": [
+    2499,
+    4000
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S082",
+    "index": 3,
+    "title": "Allegory of Avarice",
+    "source_url": "https://www.metmuseum.org/art/collection/search/436888",
+    "licence": "Public domain (Ligozzi d. 1627); NGA and Met CC0; Commons PD-Art",
+    "note": "Strange allegorical figure of greed",
+    "obtained": "full-size download",
+    "image_url": "https://images.metmuseum.org/CRDImages/ep/original/DP-17371-001.jpg"
+  },
+  "crops": [
+    {
+      "tile": "S082-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.04,
+        "y": 0.0625,
+        "w": 0.92,
+        "h": 0.575
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.372,
+        "confidence": 0.942,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.04583,
+          "y": 0.02344,
+          "w": 0.9125,
+          "h": 0.57031
+        },
+        {
+          "x": 0.04583,
+          "y": 0.09375,
+          "w": 0.9125,
+          "h": 0.57031
+        },
+        {
+          "x": 0.04583,
+          "y": 0.02344,
+          "w": 0.7125,
+          "h": 0.44531
+        },
+        {
+          "x": 0.04583,
+          "y": 0.30469,
+          "w": 0.9125,
+          "h": 0.57031
+        },
+        {
+          "x": 0.29583,
+          "y": 0.02344,
+          "w": 0.6625,
+          "h": 0.41406
+        },
+        {
+          "x": 0.04583,
+          "y": 0.17969,
+          "w": 0.6125,
+          "h": 0.38281
+        }
+      ]
+    }
+  ]
+}

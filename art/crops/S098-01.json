@@ -1,0 +1,76 @@
+{
+  "id": "S098-01",
+  "source": "originals/S098-01.png",
+  "source_sha256": "495e09de78cbd3241b4565992721d78cd0b12408c37da5ce2e0f8ccf4b4173be",
+  "source_size": [
+    4798,
+    2416
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S098",
+    "index": 1,
+    "title": "Shou Pu leaf 1 (Commons)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%E4%BD%99%E7%9C%81%E3%80%81%E5%BC%A0%E4%B8%BA%E9%82%A6%E5%90%88%E7%94%BB%E5%85%BD%E8%B0%B1%E5%86%8C1.png",
+    "licence": "Artwork public domain; Palace Museum Beijing claims copyright on its photos and asks for image licensing, so prefer Commons copies. Google Arts & Culture is view-only. Full scans also at shuge.org/view/shou_pu_ce/ (landing page). Per-volume viewers: minghuaji.dpm.org.cn volumes 1, 2, 3, 5.",
+    "note": "Leaf from the beast album; subject not confirmed",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/%E4%BD%99%E7%9C%81%E3%80%81%E5%BC%A0%E4%B8%BA%E9%82%A6%E5%90%88%E7%94%BB%E5%85%BD%E8%B0%B1%E5%86%8C1.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S098-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.51823,
+        "y": 0.07246,
+        "w": 0.44792,
+        "h": 0.89027
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.51823,
+          "y": 0.07246,
+          "w": 0.44792,
+          "h": 0.89027
+        },
+        "engine": "autocrop v1",
+        "score": 0.8595,
+        "confidence": 0.576
+      },
+      "candidates": [
+        {
+          "x": 0.49479,
+          "y": 0.0,
+          "w": 0.5026,
+          "h": 0.99896
+        },
+        {
+          "x": 0.57292,
+          "y": 0.2588,
+          "w": 0.33854,
+          "h": 0.67288
+        },
+        {
+          "x": 0.76042,
+          "y": 0.18634,
+          "w": 0.20052,
+          "h": 0.39855
+        },
+        {
+          "x": 0.57292,
+          "y": 0.0,
+          "w": 0.33854,
+          "h": 0.67288
+        },
+        {
+          "x": 0.70312,
+          "y": 0.0207,
+          "w": 0.25521,
+          "h": 0.50725
+        }
+      ]
+    }
+  ]
+}

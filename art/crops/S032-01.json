@@ -1,0 +1,75 @@
+{
+  "id": "S032-01",
+  "source": "originals/S032-01.jpg",
+  "source_sha256": "7a011d11ac2a6a81e0e0d35cca842dc03e2177bb52b57d24e3deaa18ec1a3788",
+  "source_size": [
+    812,
+    848
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S032",
+    "index": 1,
+    "title": "The Birds' Head Haggadah (cropped detail)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Blue_Scribe-_Menahem_-_The_Birds'_Head_Haggadah_-_Google_Art_Project_(cropped).jpg",
+    "licence": "Wikimedia Commons; Google Art Project files are normally tagged PD-Art (medieval work). The 'at Israel Museum' file is probably a visitor's gallery photo, which may carry a CC licence from the photographer, so check it. Added pictures: Manuscript PD (c.1300). Israel Museum image terms are restrictive (copyright claimed on photographs, permission needed), so rely on the Commons 'Google Art Project' copy (PD-Art). Only 1-2 distinct pages are online; the collection is likely to stay under 6.",
+    "note": "Close crop of beaked human figures, better at card size",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S032-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.03643,
+        "w": 1.0,
+        "h": 0.95755
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.03643,
+          "w": 1.0,
+          "h": 0.95755
+        },
+        "engine": "autocrop v1",
+        "score": 0.6871,
+        "confidence": 0.815
+      },
+      "candidates": [
+        {
+          "x": 0.07065,
+          "y": 0.14051,
+          "w": 0.8913,
+          "h": 0.85347
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.78261,
+          "h": 0.74938
+        },
+        {
+          "x": 0.26902,
+          "y": 0.02862,
+          "w": 0.72826,
+          "h": 0.69734
+        },
+        {
+          "x": 0.36685,
+          "y": 0.2576,
+          "w": 0.61685,
+          "h": 0.59066
+        },
+        {
+          "x": 0.0,
+          "y": 0.2602,
+          "w": 0.67391,
+          "h": 0.6453
+        }
+      ]
+    }
+  ]
+}

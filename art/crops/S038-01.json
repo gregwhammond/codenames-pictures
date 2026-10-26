@@ -1,0 +1,78 @@
+{
+  "id": "S038-01",
+  "source": "originals/S038-01.jpg",
+  "source_sha256": "7e3bf610429c84fad505d2978ef21db845cc90d810acb14b4beaa4a73dd7c050",
+  "source_size": [
+    3034,
+    1257
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S038",
+    "index": 1,
+    "title": "Wolf, goat and cabbage problem (cropped)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Illuminated_illustration_of_the_wolf,_goat_and_cabbage_problem_in_the_Ormesby_Psalter_(cropped).jpg",
+    "licence": "Public domain on Commons (PD-old); Bodleian own images CC BY-NC Added pictures: Manuscript c.1300 is PD; these are Bodleian (MS Douce 366) images reposted on Tumblr/bestiary.ca, Bodleian images are generally CC-BY-NC. Treat as secondary hosts; prefer Digital Bodleian page if a commercial-safe copy is needed.",
+    "note": "Tighter crop of the river-crossing puzzle scene",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Illuminated_illustration_of_the_wolf%2C_goat_and_cabbage_problem_in_the_Ormesby_Psalter_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S038-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.04271,
+        "y": 0.0,
+        "w": 0.41458,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.1995,
+        "confidence": 0.085,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.41406,
+          "h": 0.99874
+        },
+        {
+          "x": 0.29688,
+          "y": 0.0,
+          "w": 0.41406,
+          "h": 0.99874
+        },
+        {
+          "x": 0.5625,
+          "y": 0.0,
+          "w": 0.41406,
+          "h": 0.99874
+        },
+        {
+          "x": 0.15625,
+          "y": 0.0,
+          "w": 0.41406,
+          "h": 0.99874
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.36979,
+          "h": 0.89196
+        },
+        {
+          "x": 0.4375,
+          "y": 0.0,
+          "w": 0.39062,
+          "h": 0.94221
+        }
+      ]
+    }
+  ]
+}

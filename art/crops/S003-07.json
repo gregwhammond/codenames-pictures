@@ -1,0 +1,77 @@
+{
+  "id": "S003-07",
+  "source": "originals/S003-07.jpg",
+  "source_sha256": "9079bcae90b0b8902fa6f68461a618c773454147a15e1e04aa823b82c5518368",
+  "source_size": [
+    800,
+    392
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S003",
+    "index": 7,
+    "title": "Initial 'O'",
+    "source_url": "https://discardingimages.tumblr.com/post/35338706751/initial-o-gorleston-psalter-england-14th",
+    "licence": "Original c. 1320, public domain; BL digitised manuscript images generally marked public domain; Commons files PD-Art (verify tag). The two tumblr pages are reposts of BL images, not the host; prefer a BL/Commons copy. Note: some Gorleston margins are bawdy (see BL blog https://britishlibrary.typepad.co.uk/digitisedmanuscripts/2012/10/more-gorleston-psalter-virility-profane-images-in-a-sacred-space.html). Added pictures: Manuscript is PD (c.1310-24); these are discardingimages Tumblr reposts of BL images, not a primary host. BL digitised manuscripts viewer images are generally PD/CC0 for pre-1900 items; Commons copies preferred where they exist.",
+    "note": "Decorated initial O with drollery",
+    "obtained": "full-size download"
+  },
+  "crops": [
+    {
+      "tile": "S003-07",
+      "mode": "crop",
+      "box": {
+        "x": 0.235,
+        "y": 0.0,
+        "w": 0.49,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.3177,
+        "confidence": 0.079,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.38281,
+          "y": 0.0,
+          "w": 0.48958,
+          "h": 0.99915
+        },
+        {
+          "x": 0.3099,
+          "y": 0.0,
+          "w": 0.48958,
+          "h": 0.99915
+        },
+        {
+          "x": 0.10937,
+          "y": 0.0,
+          "w": 0.48958,
+          "h": 0.99915
+        },
+        {
+          "x": 0.47396,
+          "y": 0.0,
+          "w": 0.48958,
+          "h": 0.99915
+        },
+        {
+          "x": 0.0,
+          "y": 0.11161,
+          "w": 0.4349,
+          "h": 0.88754
+        },
+        {
+          "x": 0.26042,
+          "y": 0.27105,
+          "w": 0.35677,
+          "h": 0.7281
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "S001-05",
+  "source": "originals/S001-05.jpg",
+  "source_sha256": "2cd7945fe072facf5f085facabaeaf14ed17e61bfff6c0bfed6c99bfb6132975",
+  "source_size": [
+    884,
+    976
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S001",
+    "index": 5,
+    "title": "Phoenix (detail)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Phoenix_detail_from_Aberdeen_Bestiary.jpg",
+    "licence": "Original c. 1200, public domain. abdn.ac.uk page images are University of Aberdeen photography (reuse terms not confirmed, possibly non-commercial); Commons copies are PD-Art (verify tag per file). Commons category: https://commons.wikimedia.org/wiki/Category:Aberdeen_Bestiary",
+    "note": "Phoenix burning itself on its nest of spices.",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S001-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.055,
+        "y": 0.16506,
+        "w": 0.85,
+        "h": 0.76988
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0026,
+          "w": 1.0,
+          "h": 0.90574
+        },
+        "engine": "autocrop v1",
+        "score": 0.5964,
+        "confidence": 0.894
+      },
+      "candidates": [
+        {
+          "x": 0.1092,
+          "y": 0.0026,
+          "w": 0.8908,
+          "h": 0.80684
+        },
+        {
+          "x": 0.0,
+          "y": 0.0026,
+          "w": 0.67241,
+          "h": 0.60903
+        },
+        {
+          "x": 0.0,
+          "y": 0.19,
+          "w": 0.83621,
+          "h": 0.75738
+        },
+        {
+          "x": 0.38218,
+          "y": 0.0026,
+          "w": 0.61782,
+          "h": 0.55958
+        },
+        {
+          "x": 0.22989,
+          "y": 0.0026,
+          "w": 0.56322,
+          "h": 0.51013
+        }
+      ]
+    }
+  ]
+}

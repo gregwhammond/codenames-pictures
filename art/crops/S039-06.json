@@ -1,0 +1,75 @@
+{
+  "id": "S039-06",
+  "source": "originals/S039-06.png",
+  "source_sha256": "b92136008c2eddb00d7d6977797ed07a9ac1e3cf85d10b3a4d1f4121cab37a53",
+  "source_size": [
+    638,
+    467
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S039",
+    "index": 6,
+    "title": "f.236v detail",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Maastricht_Book_of_Hours,_BL_Stowe_MS17_f236v_(detail).png",
+    "licence": "Public domain on Commons (PD-old)",
+    "note": "Marginal drollery detail",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S039-06",
+      "mode": "crop",
+      "box": {
+        "x": 0.22917,
+        "y": 0.27394,
+        "w": 0.53125,
+        "h": 0.72578
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.22917,
+          "y": 0.27394,
+          "w": 0.53125,
+          "h": 0.72578
+        },
+        "engine": "autocrop v1",
+        "score": 0.6374,
+        "confidence": 0.832
+      },
+      "candidates": [
+        {
+          "x": 0.16406,
+          "y": 0.21702,
+          "w": 0.57292,
+          "h": 0.7827
+        },
+        {
+          "x": 0.25781,
+          "y": 0.0,
+          "w": 0.73177,
+          "h": 0.99972
+        },
+        {
+          "x": 0.34635,
+          "y": 0.34866,
+          "w": 0.45312,
+          "h": 0.61904
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.65104,
+          "h": 0.88943
+        },
+        {
+          "x": 0.05469,
+          "y": 0.32731,
+          "w": 0.49219,
+          "h": 0.67241
+        }
+      ]
+    }
+  ]
+}

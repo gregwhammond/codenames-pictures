@@ -1,0 +1,75 @@
+{
+  "id": "S021-05",
+  "source": "originals/S021-05.jpg",
+  "source_sha256": "1672896f50919df88eb4d9b83489883b09b6d5cc0fb60e24d3cbb617ba362cf9",
+  "source_size": [
+    400,
+    416
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S021",
+    "index": 5,
+    "title": "Yako",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Suushi_Yako.jpg",
+    "licence": "Commons public-domain tags (1737 work, PD-Art). Overlaps in subject with the yokai scrolls already in the deck, but it is a different scroll.",
+    "note": "Wild fox spirit",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S021-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.03846,
+        "w": 1.0,
+        "h": 0.96154
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.03846,
+          "w": 1.0,
+          "h": 0.96154
+        },
+        "engine": "autocrop v1",
+        "score": 0.6698,
+        "confidence": 0.669
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.14269,
+          "w": 0.8916,
+          "h": 0.85731
+        },
+        {
+          "x": 0.0,
+          "y": 0.18762,
+          "w": 0.61789,
+          "h": 0.59412
+        },
+        {
+          "x": 0.1626,
+          "y": 0.0,
+          "w": 0.78049,
+          "h": 0.75047
+        },
+        {
+          "x": 0.0,
+          "y": 0.40588,
+          "w": 0.61789,
+          "h": 0.59412
+        },
+        {
+          "x": 0.32791,
+          "y": 0.35376,
+          "w": 0.67209,
+          "h": 0.64624
+        }
+      ]
+    }
+  ]
+}

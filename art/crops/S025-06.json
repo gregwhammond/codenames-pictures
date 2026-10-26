@@ -1,0 +1,75 @@
+{
+  "id": "S025-06",
+  "source": "originals/S025-06.jpg",
+  "source_sha256": "c4007ef37763b2ea29cf0a7c56fe6bc8ef54e7902c0ba9563d5228c8bdccd48d",
+  "source_size": [
+    300,
+    292
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S025",
+    "index": 6,
+    "title": "Yung",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Shan_Hai_Jing_Yung.jpg",
+    "licence": "Public domain (Ming/Qing woodblock prints, PD-old tags on Commons); check each file page for the exact tag.",
+    "note": "creature from the classic (likely the human-faced owl Yong)",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S025-06",
+      "mode": "crop",
+      "box": {
+        "x": 0.01333,
+        "y": 0.0,
+        "w": 0.97333,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.04,
+          "y": 0.0137,
+          "w": 0.95,
+          "h": 0.97603
+        },
+        "engine": "autocrop v1",
+        "score": 0.6582,
+        "confidence": 0.583
+      },
+      "candidates": [
+        {
+          "x": 0.14333,
+          "y": 0.04795,
+          "w": 0.84667,
+          "h": 0.86986
+        },
+        {
+          "x": 0.40333,
+          "y": 0.13356,
+          "w": 0.58667,
+          "h": 0.60274
+        },
+        {
+          "x": 0.35,
+          "y": 0.31507,
+          "w": 0.64,
+          "h": 0.65753
+        },
+        {
+          "x": 0.01333,
+          "y": 0.22603,
+          "w": 0.74333,
+          "h": 0.7637
+        },
+        {
+          "x": 0.25333,
+          "y": 0.23973,
+          "w": 0.53667,
+          "h": 0.55137
+        }
+      ]
+    }
+  ]
+}

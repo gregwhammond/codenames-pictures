@@ -1,0 +1,75 @@
+{
+  "id": "S002-00",
+  "source": "originals/S002-00.jpg",
+  "source_sha256": "5ec2d4d427d49d83955efbbd4ea45a9245e80c9ce8c480c5de3165f8742bfafd",
+  "source_size": [
+    557,
+    534
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S002",
+    "index": 0,
+    "title": "Jesus in a baby walker (Holy Family at work)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Jesus_in_a_baby_walker_from_the_Hours_of_Catherine_of_Cleves.jpg",
+    "licence": "Original c. 1440, public domain. Morgan online images: reuse terms not confirmed (Morgan rights-and-reproductions policy applies); Commons copies PD-Art (verify tag). Commons category: https://commons.wikimedia.org/wiki/Category:Hours_of_Catherine_of_Cleves",
+    "note": "Infant Jesus toddling in a wooden wheeled baby walker.",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S002-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.02693,
+        "y": 0.16,
+        "w": 0.78614,
+        "h": 0.82
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.04167,
+          "y": 0.0,
+          "w": 0.95833,
+          "h": 0.99961
+        },
+        "engine": "autocrop v1",
+        "score": 0.6182,
+        "confidence": 0.777
+      },
+      "candidates": [
+        {
+          "x": 0.14583,
+          "y": 0.10865,
+          "w": 0.85417,
+          "h": 0.89096
+        },
+        {
+          "x": 0.0,
+          "y": 0.27163,
+          "w": 0.69792,
+          "h": 0.72798
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.75,
+          "h": 0.7823
+        },
+        {
+          "x": 0.40885,
+          "y": 0.383,
+          "w": 0.59115,
+          "h": 0.61661
+        },
+        {
+          "x": 0.35417,
+          "y": 0.0,
+          "w": 0.64583,
+          "h": 0.67365
+        }
+      ]
+    }
+  ]
+}

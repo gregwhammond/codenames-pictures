@@ -1,0 +1,76 @@
+{
+  "id": "S002-01",
+  "source": "originals/S002-01.jpg",
+  "source_sha256": "4fc3c35a75e11bec809c4dca629feaed050fc1a018257fd8a3402e9955263253",
+  "source_size": [
+    4420,
+    6119
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S002",
+    "index": 1,
+    "title": "Gathering of the Manna",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Gathering_of_the_Manna_-_Hours_of_Catherine_of_Cleves_-_MS_M._917-945_137v_-_Morgan_Library_New_York,_around_1440.jpg",
+    "licence": "Original c. 1440, public domain. Morgan online images: reuse terms not confirmed (Morgan rights-and-reproductions policy applies); Commons copies PD-Art (verify tag). Commons category: https://commons.wikimedia.org/wiki/Category:Hours_of_Catherine_of_Cleves",
+    "note": "Israelites collecting manna falling from the sky.",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Gathering_of_the_Manna_-_Hours_of_Catherine_of_Cleves_-_MS_M._917-945_137v_-_Morgan_Library_New_York%2C_around_1440.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S002-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.295,
+        "y": 0.20441,
+        "w": 0.5,
+        "h": 0.36117
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.02608,
+          "w": 0.8917,
+          "h": 0.64412
+        },
+        "engine": "autocrop v1",
+        "score": 0.3599,
+        "confidence": 1.0
+      },
+      "candidates": [
+        {
+          "x": 0.05415,
+          "y": 0.0,
+          "w": 0.94585,
+          "h": 0.68323
+        },
+        {
+          "x": 0.05054,
+          "y": 0.09127,
+          "w": 0.67148,
+          "h": 0.48504
+        },
+        {
+          "x": 0.0,
+          "y": 0.27765,
+          "w": 1.0,
+          "h": 0.72235
+        },
+        {
+          "x": 0.27798,
+          "y": 0.10953,
+          "w": 0.61733,
+          "h": 0.44593
+        },
+        {
+          "x": 0.0361,
+          "y": 0.0,
+          "w": 0.50903,
+          "h": 0.36769
+        }
+      ]
+    }
+  ]
+}

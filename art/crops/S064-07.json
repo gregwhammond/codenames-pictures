@@ -1,0 +1,75 @@
+{
+  "id": "S064-07",
+  "source": "originals/S064-07.jpg",
+  "source_sha256": "ea9d0e19fe63a05e4f8194943025d52bc6e94e5055b163bdc5ae154d919e06c6",
+  "source_size": [
+    388,
+    464
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S064",
+    "index": 7,
+    "title": "Kinako moji",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bakemono_tsukushi_emaki_Kinako_moji.jpg",
+    "licence": "Public domain (Edo-period works), Commons PD tags; check each file's page for the owning collection",
+    "note": "Kinako moji, a strange creature",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S064-07",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.83621
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.83621
+        },
+        "engine": "autocrop v1",
+        "score": 0.3727,
+        "confidence": 0.834
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.16379,
+          "w": 1.0,
+          "h": 0.83621
+        },
+        {
+          "x": 0.16511,
+          "y": 0.0,
+          "w": 0.83489,
+          "h": 0.69814
+        },
+        {
+          "x": 0.43614,
+          "y": 0.0,
+          "w": 0.56386,
+          "h": 0.47151
+        },
+        {
+          "x": 0.06231,
+          "y": 0.01303,
+          "w": 0.39875,
+          "h": 0.33344
+        },
+        {
+          "x": 0.26168,
+          "y": 0.01824,
+          "w": 0.56386,
+          "h": 0.47151
+        }
+      ]
+    }
+  ]
+}

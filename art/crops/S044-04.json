@@ -1,0 +1,76 @@
+{
+  "id": "S044-04",
+  "source": "originals/S044-04.jpg",
+  "source_sha256": "d77b5f955e62e37b34684266b770f1d25a9567273fb3501a7a1668f12604784f",
+  "source_size": [
+    1931,
+    2960
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S044",
+    "index": 4,
+    "title": "December: Capricorn",
+    "source_url": "https://commons.wikimedia.org/wiki/File:December_-_Capricorn_-_Book_of_hours_Simon_de_Varie_-_KB_74_G37a_-_099r_det_randv_2.jpg",
+    "licence": "Public domain on Commons (PD-old)",
+    "note": "Goat-fish zodiac sign",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/December_-_Capricorn_-_Book_of_hours_Simon_de_Varie_-_KB_74_G37a_-_099r_det_randv_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S044-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.18261,
+        "w": 1.0,
+        "h": 0.65217
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.18261,
+          "w": 1.0,
+          "h": 0.65217
+        },
+        "engine": "autocrop v1",
+        "score": 0.4888,
+        "confidence": 0.883
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.10435,
+          "w": 1.0,
+          "h": 0.65217
+        },
+        {
+          "x": 0.0,
+          "y": 0.33913,
+          "w": 1.0,
+          "h": 0.65217
+        },
+        {
+          "x": 0.328,
+          "y": 0.16435,
+          "w": 0.672,
+          "h": 0.43826
+        },
+        {
+          "x": 0.272,
+          "y": 0.0,
+          "w": 0.728,
+          "h": 0.47478
+        },
+        {
+          "x": 0.0,
+          "y": 0.04174,
+          "w": 0.78,
+          "h": 0.5087
+        }
+      ]
+    }
+  ]
+}

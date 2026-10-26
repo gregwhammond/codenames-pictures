@@ -1,0 +1,76 @@
+{
+  "id": "S013-05",
+  "source": "originals/S013-05.jpg",
+  "source_sha256": "0bb1dd7dc86c15c309ee5a1f42c08902e91896caeeea3401ffe574200e039acb",
+  "source_size": [
+    4284,
+    5521
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S013",
+    "index": 5,
+    "title": "Rotulum hieroglyphicum G. Riplaei (Wellcome L0068926, cropped)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rotulum_hieroglyphicum_G._Riplaei_Equitis_Aurati_Wellcome_L0068926_(cropped).jpg",
+    "licence": "Public domain (PD-old); Wellcome photographs on Commons carry CC BY 4.0 (credit Wellcome Collection). Scrolls are tall and narrow, so use detail crops for cards. Contains some serpents/dragons.",
+    "note": "Cropped section of an engraved Ripley roll; exact scene not seen",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Rotulum_hieroglyphicum_G._Riplaei_Equitis_Aurati_Wellcome_L0068926_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S013-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.77607
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.77607
+        },
+        "engine": "autocrop v1",
+        "score": 0.4966,
+        "confidence": 0.923
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.09375,
+          "w": 1.0,
+          "h": 0.77607
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.78188,
+          "h": 0.60679
+        },
+        {
+          "x": 0.27181,
+          "y": 0.0,
+          "w": 0.72819,
+          "h": 0.56513
+        },
+        {
+          "x": 0.0,
+          "y": 0.22918,
+          "w": 0.67114,
+          "h": 0.52085
+        },
+        {
+          "x": 0.0,
+          "y": 0.35154,
+          "w": 0.83557,
+          "h": 0.64846
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "S047-04",
+  "source": "originals/S047-04.jpg",
+  "source_sha256": "468145f1ec5d58e826e96a05b1f1a87fef9fc81edc71f254c04b90169fe6a177",
+  "source_size": [
+    800,
+    873
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S047",
+    "index": 4,
+    "title": "The Monster of Cracow",
+    "source_url": "https://wellcomecollection.org/works/x64uptn4",
+    "licence": "Wellcome images CC BY 4.0 (manuscript itself PD); Commons copies",
+    "note": "Famous multi-headed monster born at Cracow (somewhat demonic)",
+    "obtained": "full-size download",
+    "image_url": "https://iiif.wellcomecollection.org/image/L0068411/full/800%2C/0/default.jpg"
+  },
+  "crops": [
+    {
+      "tile": "S047-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.08128,
+        "w": 1.0,
+        "h": 0.91743
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.91743
+        },
+        "engine": "autocrop v1",
+        "score": 0.5604,
+        "confidence": 0.852
+      },
+      "candidates": [
+        {
+          "x": 0.03667,
+          "y": 0.1315,
+          "w": 0.94667,
+          "h": 0.8685
+        },
+        {
+          "x": 0.21,
+          "y": 0.0,
+          "w": 0.78333,
+          "h": 0.71865
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.72667,
+          "h": 0.66667
+        },
+        {
+          "x": 0.46,
+          "y": 0.0,
+          "w": 0.51,
+          "h": 0.46789
+        },
+        {
+          "x": 0.02,
+          "y": 0.0,
+          "w": 0.51,
+          "h": 0.46789
+        }
+      ]
+    }
+  ]
+}

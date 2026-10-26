@@ -1,0 +1,76 @@
+{
+  "id": "S007-07",
+  "source": "originals/S007-07.jpg",
+  "source_sha256": "04e55db025ed4e54053e699a7ed8d6709a0f14b3b7fc212a04fe42f083f64c2a",
+  "source_size": [
+    1872,
+    1164
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S007",
+    "index": 7,
+    "title": "Topsell, Historie of Foure Footed Beasts (Wellcome L0028393)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Edward_Topsell,_The_Historie_of_Foure_Footed_Beasts_Wellcome_L0028393.jpg",
+    "licence": "Public domain (1607/1658); Commons PD-old tags. Files from Wellcome (L-numbers) are CC BY 4.0 on Commons (credit Wellcome Collection). The 1658 edition has its own Commons category: https://commons.wikimedia.org/wiki/Category:The_History_of_Four-footed_Beasts_and_Serpents,_1658",
+    "note": "Wellcome scan of a Topsell page; subject not confirmed, may be text-heavy",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Edward_Topsell%2C_The_Historie_of_Foure_Footed_Beasts_Wellcome_L0028393.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S007-07",
+      "mode": "crop",
+      "box": {
+        "x": 0.38394,
+        "y": 0.08,
+        "w": 0.57212,
+        "h": 0.92
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.25807,
+          "y": 0.0,
+          "w": 0.62187,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.3868,
+        "confidence": 0.294
+      },
+      "candidates": [
+        {
+          "x": 0.32839,
+          "y": 0.0,
+          "w": 0.62187,
+          "h": 1.0
+        },
+        {
+          "x": 0.07057,
+          "y": 0.0,
+          "w": 0.62187,
+          "h": 1.0
+        },
+        {
+          "x": 0.52865,
+          "y": 0.08794,
+          "w": 0.45312,
+          "h": 0.72864
+        },
+        {
+          "x": 0.0,
+          "y": 0.08794,
+          "w": 0.48698,
+          "h": 0.78308
+        },
+        {
+          "x": 0.27344,
+          "y": 0.08794,
+          "w": 0.45312,
+          "h": 0.72864
+        }
+      ]
+    }
+  ]
+}

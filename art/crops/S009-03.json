@@ -1,0 +1,88 @@
+{
+  "id": "S009-03",
+  "source": "originals/S009-03.jpg",
+  "source_sha256": "61ff74bc41548d172d4006a040de5919ddab85d30564e187edf5d869ca267d94",
+  "source_size": [
+    1475,
+    1184
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S009",
+    "index": 3,
+    "title": "Münster Thier 2",
+    "source_url": "https://commons.wikimedia.org/wiki/File:M%C3%BCnster_Thier_2.jpg",
+    "licence": "Public domain (16th-17th century); Commons PD-old tags. Also see https://commons.wikimedia.org/wiki/Category:Animals_in_M%C3%BCnster's_Cosmographia",
+    "note": "Animal ('Thier') woodcut from the Cosmographia; subject not confirmed",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/M%C3%BCnster_Thier_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S009-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.67544,
+        "y": 0.39,
+        "w": 0.28913,
+        "h": 0.36
+      },
+      "status": "rejected",
+      "auto": {
+        "box": {
+          "x": 0.1875,
+          "y": 0.0,
+          "w": 0.80208,
+          "h": 0.9987
+        },
+        "engine": "autocrop v1",
+        "score": 0.4957,
+        "confidence": 0.662
+      },
+      "candidates": [
+        {
+          "x": 0.03125,
+          "y": 0.0,
+          "w": 0.80208,
+          "h": 0.9987
+        },
+        {
+          "x": 0.3125,
+          "y": 0.03243,
+          "w": 0.67188,
+          "h": 0.83658
+        },
+        {
+          "x": 0.0,
+          "y": 0.26265,
+          "w": 0.58333,
+          "h": 0.72633
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.58333,
+          "h": 0.72633
+        },
+        {
+          "x": 0.45833,
+          "y": 0.31128,
+          "w": 0.53906,
+          "h": 0.67121
+        }
+      ]
+    },
+    {
+      "tile": "S009-03-b",
+      "mode": "crop",
+      "box": {
+        "x": 0.05544,
+        "y": 0.29,
+        "w": 0.28913,
+        "h": 0.36
+      },
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

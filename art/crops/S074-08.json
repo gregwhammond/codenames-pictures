@@ -1,0 +1,76 @@
+{
+  "id": "S074-08",
+  "source": "originals/S074-08.jpg",
+  "source_sha256": "246ff60014fffd2dfcaeac9902380cd6232693a45487230d4bc9705ad52aa448",
+  "source_size": [
+    1248,
+    1692
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S074",
+    "index": 8,
+    "title": "La Petite aux grelots 13",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Image-%C3%89pinal_-_La_Petite_aux_grelots_13.jpg",
+    "licence": "Public domain; LoC no known restrictions, Met Open Access CC0, NYPL public domain (check each item), Commons PD tags",
+    "note": "Panel from a children's story sheet",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Image-%C3%89pinal_-_La_Petite_aux_grelots_13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S074-08",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.08134,
+        "w": 1.0,
+        "h": 0.73733
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.9894,
+          "h": 0.72951
+        },
+        "engine": "autocrop v1",
+        "score": 0.4456,
+        "confidence": 0.908
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.87986,
+          "h": 0.64874
+        },
+        {
+          "x": 0.0,
+          "y": 0.17196,
+          "w": 0.9894,
+          "h": 0.72951
+        },
+        {
+          "x": 0.32509,
+          "y": 0.0,
+          "w": 0.66431,
+          "h": 0.48981
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.61131,
+          "h": 0.45073
+        },
+        {
+          "x": 0.54064,
+          "y": 0.0,
+          "w": 0.44876,
+          "h": 0.33089
+        }
+      ]
+    }
+  ]
+}

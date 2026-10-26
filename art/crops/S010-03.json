@@ -1,0 +1,88 @@
+{
+  "id": "S010-03",
+  "source": "originals/S010-03.jpg",
+  "source_sha256": "0eee0d1cddbf560d7990cd9730c1f30610673190b5f1137d88179a45702161ce",
+  "source_size": [
+    1139,
+    1786
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S010",
+    "index": 3,
+    "title": "Hortus Sanitatis, Strasbourg c. 1497 (Wellcome L0031231)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hortus_Sanitatis,_Strasbourg,_c._1497_Wellcome_L0031231.jpg",
+    "licence": "Public domain (1491/1497); Commons PD-old. Wellcome L-number files are CC BY 4.0 (credit Wellcome Collection). Wider category: https://commons.wikimedia.org/wiki/Category:Hortus_Sanitatis Added pictures: Wellcome images CC-BY/PD; LoC Rare Book and Prints items generally 'no known restrictions'. The 1514 and unicorn/apes items are related Hortus editions; check the attribution before using. The Twin-tailed Siren/mermaid woodcut exists but was found only on stock sites (Alamy, Bridgeman), so it is not included.",
+    "note": "Woodcut from the Strasbourg edition; subject not confirmed",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Hortus_Sanitatis%2C_Strasbourg%2C_c._1497_Wellcome_L0031231.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S010-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.115,
+        "y": 0.3338,
+        "w": 0.38,
+        "h": 0.24239
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.63787
+        },
+        "engine": "autocrop v1",
+        "score": 0.5895,
+        "confidence": 0.99
+      },
+      "candidates": [
+        {
+          "x": 0.05306,
+          "y": 0.0703,
+          "w": 0.94694,
+          "h": 0.60403
+        },
+        {
+          "x": 0.27347,
+          "y": 0.01822,
+          "w": 0.72653,
+          "h": 0.46343
+        },
+        {
+          "x": 0.0,
+          "y": 0.26036,
+          "w": 1.0,
+          "h": 0.63787
+        },
+        {
+          "x": 0.4898,
+          "y": 0.01302,
+          "w": 0.5102,
+          "h": 0.32545
+        },
+        {
+          "x": 0.34286,
+          "y": 0.23432,
+          "w": 0.61633,
+          "h": 0.39314
+        }
+      ]
+    },
+    {
+      "tile": "S010-03-b",
+      "mode": "crop",
+      "box": {
+        "x": 0.53,
+        "y": 0.3338,
+        "w": 0.38,
+        "h": 0.24239
+      },
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

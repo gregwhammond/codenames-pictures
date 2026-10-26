@@ -1,0 +1,75 @@
+{
+  "id": "S007-06",
+  "source": "originals/S007-06.jpg",
+  "source_sha256": "f9897a779d5a5c7f070d4b41c1ecfb437441a1670a0f22ee2dbe7932504c0bab",
+  "source_size": [
+    575,
+    500
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S007",
+    "index": 6,
+    "title": "Topsell woodcut 91",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Topsell-91.jpg",
+    "licence": "Public domain (1607/1658); Commons PD-old tags. Files from Wellcome (L-numbers) are CC BY 4.0 on Commons (credit Wellcome Collection). The 1658 edition has its own Commons category: https://commons.wikimedia.org/wiki/Category:The_History_of_Four-footed_Beasts_and_Serpents,_1658",
+    "note": "Beast woodcut from Topsell (subject not confirmed from search snippet)",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S007-06",
+      "mode": "crop",
+      "box": {
+        "x": 0.11565,
+        "y": 0.035,
+        "w": 0.8087,
+        "h": 0.93
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00011,
+          "y": 0.0,
+          "w": 0.86957,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.5949,
+        "confidence": 0.665
+      },
+      "candidates": [
+        {
+          "x": 0.13032,
+          "y": 0.0,
+          "w": 0.86957,
+          "h": 1.0
+        },
+        {
+          "x": 0.0,
+          "y": 0.21836,
+          "w": 0.67969,
+          "h": 0.78164
+        },
+        {
+          "x": 0.41406,
+          "y": 0.0,
+          "w": 0.58594,
+          "h": 0.67383
+        },
+        {
+          "x": 0.32812,
+          "y": 0.16172,
+          "w": 0.58594,
+          "h": 0.67383
+        },
+        {
+          "x": 0.21094,
+          "y": 0.0,
+          "w": 0.58594,
+          "h": 0.67383
+        }
+      ]
+    }
+  ]
+}

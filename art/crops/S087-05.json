@@ -1,0 +1,75 @@
+{
+  "id": "S087-05",
+  "source": "originals/S087-05.jpg",
+  "source_sha256": "788817210163c466bda6cf7d83a12e5504e7c91c465d14f4700988046e50a9e0",
+  "source_size": [
+    800,
+    737
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S087",
+    "index": 5,
+    "title": "Alexander fighting the dog-headed Cynocephali",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alexander_fighting_the_dog-headed_Cynocephali.jpg",
+    "licence": "Public domain (Commons PD-Art tags; BL images released to public domain). Digital Bodleian images of Bodley 264 are CC-BY-NC; use the Commons copies.",
+    "note": "Battle with dog-headed men",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S087-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.10544,
+        "y": 0.05,
+        "w": 0.82913,
+        "h": 0.9
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.07844,
+          "y": 0.0,
+          "w": 0.92125,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.5283,
+        "confidence": 0.815
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.05303,
+          "w": 0.8724,
+          "h": 0.94697
+        },
+        {
+          "x": 0.27865,
+          "y": 0.03109,
+          "w": 0.72135,
+          "h": 0.78302
+        },
+        {
+          "x": 0.38021,
+          "y": 0.32723,
+          "w": 0.61979,
+          "h": 0.67277
+        },
+        {
+          "x": 0.0,
+          "y": 0.02544,
+          "w": 0.61979,
+          "h": 0.67277
+        },
+        {
+          "x": 0.0,
+          "y": 0.38094,
+          "w": 0.57031,
+          "h": 0.61906
+        }
+      ]
+    }
+  ]
+}

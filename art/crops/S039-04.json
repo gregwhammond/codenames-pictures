@@ -1,0 +1,75 @@
+{
+  "id": "S039-04",
+  "source": "originals/S039-04.png",
+  "source_sha256": "55d37cc07c8a3b405388d4410b1e77f737b80752f4320388012c8e31a091e38b",
+  "source_size": [
+    607,
+    478
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S039",
+    "index": 4,
+    "title": "f.154v detail",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Maastricht_Book_of_Hours,_BL_Stowe_MS17_f154v_(detail).png",
+    "licence": "Public domain on Commons (PD-old)",
+    "note": "Marginal drollery detail",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S039-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.03626,
+        "y": 0.0,
+        "w": 0.78748,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.78646,
+          "h": 0.9987
+        },
+        "engine": "autocrop v1",
+        "score": 0.6181,
+        "confidence": 0.613
+      },
+      "candidates": [
+        {
+          "x": 0.09375,
+          "y": 0.0,
+          "w": 0.78646,
+          "h": 0.9987
+        },
+        {
+          "x": 0.29167,
+          "y": 0.2381,
+          "w": 0.52865,
+          "h": 0.67131
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.61458,
+          "h": 0.78044
+        },
+        {
+          "x": 0.38542,
+          "y": 0.08929,
+          "w": 0.61458,
+          "h": 0.78044
+        },
+        {
+          "x": 0.29167,
+          "y": 0.0,
+          "w": 0.52865,
+          "h": 0.67131
+        }
+      ]
+    }
+  ]
+}

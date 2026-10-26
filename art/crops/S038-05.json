@@ -1,0 +1,75 @@
+{
+  "id": "S038-05",
+  "source": "originals/S038-05.jpg",
+  "source_sha256": "26579eae026dabdec7e3cb383706e1211646c060d71e6f85e1fbe4a8b7e752f3",
+  "source_size": [
+    640,
+    636
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S038",
+    "index": 5,
+    "title": "Hare-riding owl (discarding images)",
+    "source_url": "https://www.tumblr.com/discardingimages/171353943218/hareriding-owl-ormesby-psalter-england-ca-1310",
+    "licence": "Public domain on Commons (PD-old); Bodleian own images CC BY-NC Added pictures: Manuscript c.1300 is PD; these are Bodleian (MS Douce 366) images reposted on Tumblr/bestiary.ca, Bodleian images are generally CC-BY-NC. Treat as secondary hosts; prefer Digital Bodleian page if a commercial-safe copy is needed.",
+    "note": "An owl riding a hare like a horse",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S038-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.08575,
+        "y": 0.0,
+        "w": 0.91425,
+        "h": 0.92
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00052,
+          "y": 0.0,
+          "w": 0.99375,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.6246,
+        "confidence": 0.703
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.10901,
+          "w": 0.88542,
+          "h": 0.89099
+        },
+        {
+          "x": 0.0,
+          "y": 0.35377,
+          "w": 0.61458,
+          "h": 0.61845
+        },
+        {
+          "x": 0.33073,
+          "y": 0.28826,
+          "w": 0.66927,
+          "h": 0.67348
+        },
+        {
+          "x": 0.0,
+          "y": 0.05241,
+          "w": 0.66927,
+          "h": 0.67348
+        },
+        {
+          "x": 0.22135,
+          "y": 0.0,
+          "w": 0.77865,
+          "h": 0.78354
+        }
+      ]
+    }
+  ]
+}

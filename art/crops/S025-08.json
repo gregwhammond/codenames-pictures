@@ -1,0 +1,75 @@
+{
+  "id": "S025-08",
+  "source": "originals/S025-08.jpg",
+  "source_sha256": "1fe82d510bd10206188adeb0d797746febf3702b7a590492b1ed67f1e7d28d7e",
+  "source_size": [
+    702,
+    762
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S025",
+    "index": 8,
+    "title": "Nüwa",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Shanhaijing_illustration_of_N%C3%BCwa.jpg",
+    "licence": "Public domain (Ming/Qing woodblock prints, PD-old tags on Commons); check each file page for the exact tag.",
+    "note": "Nüwa, creator goddess with a serpent body",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S025-08",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.07807,
+        "w": 1.0,
+        "h": 0.92126
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.07807,
+          "w": 1.0,
+          "h": 0.92126
+        },
+        "engine": "autocrop v1",
+        "score": 0.6369,
+        "confidence": 0.501
+      },
+      "candidates": [
+        {
+          "x": 0.11017,
+          "y": 0.07287,
+          "w": 0.88983,
+          "h": 0.81977
+        },
+        {
+          "x": 0.49153,
+          "y": 0.07287,
+          "w": 0.50847,
+          "h": 0.46844
+        },
+        {
+          "x": 0.32768,
+          "y": 0.37995,
+          "w": 0.67232,
+          "h": 0.61938
+        },
+        {
+          "x": 0.27966,
+          "y": 0.07287,
+          "w": 0.61864,
+          "h": 0.56993
+        },
+        {
+          "x": 0.5452,
+          "y": 0.58034,
+          "w": 0.4548,
+          "h": 0.41899
+        }
+      ]
+    }
+  ]
+}

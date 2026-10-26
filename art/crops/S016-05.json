@@ -1,0 +1,76 @@
+{
+  "id": "S016-05",
+  "source": "originals/S016-05.jpg",
+  "source_sha256": "93132a62874d68b48ae7082511c072acd6698e2678e924eaa0a73c2b32a78b30",
+  "source_size": [
+    9362,
+    7290
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S016",
+    "index": 5,
+    "title": "Total eclipse of the sun (1878)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Trouvelot_-_Total_eclipse_of_the_sun_-_1878.jpg",
+    "licence": "Public domain (Trouvelot died 1895; published 1881-82); Commons PD tags. NYPL originals are also marked public domain.",
+    "note": "Black disc ringed by pearly streaming corona",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Trouvelot_-_Total_eclipse_of_the_sun_-_1878.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S016-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.18833,
+        "y": 0.08,
+        "w": 0.62333,
+        "h": 0.8
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.1875,
+          "y": 0.0,
+          "w": 0.77865,
+          "h": 0.99933
+        },
+        "engine": "autocrop v1",
+        "score": 0.5213,
+        "confidence": 0.652
+      },
+      "candidates": [
+        {
+          "x": 0.03125,
+          "y": 0.0,
+          "w": 0.77865,
+          "h": 0.99933
+        },
+        {
+          "x": 0.30729,
+          "y": 0.03676,
+          "w": 0.69271,
+          "h": 0.88904
+        },
+        {
+          "x": 0.0,
+          "y": 0.03008,
+          "w": 0.5651,
+          "h": 0.72527
+        },
+        {
+          "x": 0.04167,
+          "y": 0.29412,
+          "w": 0.52344,
+          "h": 0.67179
+        },
+        {
+          "x": 0.49219,
+          "y": 0.0234,
+          "w": 0.48177,
+          "h": 0.61832
+        }
+      ]
+    }
+  ]
+}

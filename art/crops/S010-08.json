@@ -1,0 +1,87 @@
+{
+  "id": "S010-08",
+  "source": "originals/S010-08.jpg",
+  "source_sha256": "7f793982e8eba55d54bcbaaad40a1bb3950078d096d91a6103e1fbb5ac08010a",
+  "source_size": [
+    567,
+    800
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S010",
+    "index": 8,
+    "title": "[Two illustrations showing a unicorn and several apes]",
+    "source_url": "https://www.loc.gov/item/2004667646",
+    "licence": "Public domain (1491/1497); Commons PD-old. Wellcome L-number files are CC BY 4.0 (credit Wellcome Collection). Wider category: https://commons.wikimedia.org/wiki/Category:Hortus_Sanitatis Added pictures: Wellcome images CC-BY/PD; LoC Rare Book and Prints items generally 'no known restrictions'. The 1514 and unicorn/apes items are related Hortus editions; check the attribution before using. The Twin-tailed Siren/mermaid woodcut exists but was found only on stock sites (Alamy, Bridgeman), so it is not included.",
+    "note": "Woodcuts of unicorn and apes; LoC surfaced it for Hortus sanitatis queries",
+    "obtained": "full-size download"
+  },
+  "crops": [
+    {
+      "tile": "S010-08",
+      "mode": "crop",
+      "box": {
+        "x": 0.09,
+        "y": 0.35812,
+        "w": 0.4,
+        "h": 0.28375
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00368,
+          "y": 0.20082,
+          "w": 0.99632,
+          "h": 0.70677
+        },
+        "engine": "autocrop v1",
+        "score": 0.5104,
+        "confidence": 1.0
+      },
+      "candidates": [
+        {
+          "x": 0.00368,
+          "y": 0.08606,
+          "w": 0.99632,
+          "h": 0.70677
+        },
+        {
+          "x": 0.04044,
+          "y": 0.33122,
+          "w": 0.94118,
+          "h": 0.66765
+        },
+        {
+          "x": 0.03309,
+          "y": 0.0,
+          "w": 0.77941,
+          "h": 0.5529
+        },
+        {
+          "x": 0.28676,
+          "y": 0.20082,
+          "w": 0.66912,
+          "h": 0.47466
+        },
+        {
+          "x": 0.05515,
+          "y": 0.20082,
+          "w": 0.66912,
+          "h": 0.47466
+        }
+      ]
+    },
+    {
+      "tile": "S010-08-b",
+      "mode": "crop",
+      "box": {
+        "x": 0.52,
+        "y": 0.20522,
+        "w": 0.38,
+        "h": 0.26956
+      },
+      "status": "rejected",
+      "auto": null
+    }
+  ]
+}

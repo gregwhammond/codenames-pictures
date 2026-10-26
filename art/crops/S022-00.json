@@ -1,0 +1,75 @@
+{
+  "id": "S022-00",
+  "source": "originals/S022-00.jpg",
+  "source_sha256": "b4fe42688ef116d2d695f9048c36d3e0ed46e4df1555a60ab9abe1a78b4fb028",
+  "source_size": [
+    829,
+    1024
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S022",
+    "index": 0,
+    "title": "Oiwa",
+    "source_url": "https://www.loc.gov/pictures/item/2005678554/",
+    "licence": "LoC Japanese fine prints: no known restrictions on publication (confirm on each item page). PD copies are also on Commons, e.g. https://commons.wikimedia.org/wiki/File:Hokusai_The_Ghost_Kohada_Koheiji.jpg and https://commons.wikimedia.org/wiki/File:Katsushika_Hokusai_-_The_Lantern_Ghost,_Iwa_-_Google_Art_Project.jpg; PDR page https://publicdomainreview.org/collection/hokusai-s-ghost-stories-ca-1830/ Added pictures: Only 5 designs of the series are known, so these are alternative (better-quality) copies of the existing 5 designs, not new subjects. AIC images are CC0 and Smithsonian open access is CC0. Dedupe against the existing LoC links.",
+    "note": "Paper lantern splits open into a ghost's face",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S022-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.16,
+        "y": 0.20855,
+        "w": 0.72,
+        "h": 0.58289
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00965,
+          "y": 0.01562,
+          "w": 0.97428,
+          "h": 0.78875
+        },
+        "engine": "autocrop v1",
+        "score": 0.5274,
+        "confidence": 0.889
+      },
+      "candidates": [
+        {
+          "x": 0.00965,
+          "y": 0.14057,
+          "w": 0.97428,
+          "h": 0.78875
+        },
+        {
+          "x": 0.00965,
+          "y": 0.01562,
+          "w": 0.8135,
+          "h": 0.65859
+        },
+        {
+          "x": 0.27653,
+          "y": 0.01562,
+          "w": 0.7074,
+          "h": 0.57269
+        },
+        {
+          "x": 0.00965,
+          "y": 0.01562,
+          "w": 0.54984,
+          "h": 0.44513
+        },
+        {
+          "x": 0.48875,
+          "y": 0.01562,
+          "w": 0.49518,
+          "h": 0.40088
+        }
+      ]
+    }
+  ]
+}

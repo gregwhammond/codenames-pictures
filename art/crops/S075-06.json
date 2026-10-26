@@ -1,0 +1,75 @@
+{
+  "id": "S075-06",
+  "source": "originals/S075-06.webp",
+  "source_sha256": "60438091ba8f80a524d46132453473c4fcaa587ed5dfe7e434fa51e6b056bd6e",
+  "source_size": [
+    1024,
+    538
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S075",
+    "index": 6,
+    "title": "De nieuwe verkeerde wereld",
+    "source_url": "https://www.rijksmuseum.nl/en/collection/object/De-nieuwe-verkeerde-wereld--5d306615c5f1ced44552db14fd90bce3",
+    "licence": "Rijksmuseum CC0/public domain; Met Open Access CC0; LoC no known restrictions; Commons PD tags. Caveat: most sheets are grids of many small vignettes, so crop single panels for cards",
+    "note": "The new upside-down world, catchpenny print",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S075-06",
+      "mode": "crop",
+      "box": {
+        "x": 0.76568,
+        "y": 0.63,
+        "w": 0.17863,
+        "h": 0.34
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.46387,
+          "y": 0.0,
+          "w": 0.52539,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.1082,
+        "confidence": 1.0
+      },
+      "candidates": [
+        {
+          "x": 0.66406,
+          "y": 0.38042,
+          "w": 0.32552,
+          "h": 0.61958
+        },
+        {
+          "x": 0.52083,
+          "y": 0.10781,
+          "w": 0.46875,
+          "h": 0.89219
+        },
+        {
+          "x": 0.66406,
+          "y": 0.0,
+          "w": 0.32552,
+          "h": 0.61958
+        },
+        {
+          "x": 0.77865,
+          "y": 0.0,
+          "w": 0.21094,
+          "h": 0.40149
+        },
+        {
+          "x": 0.00781,
+          "y": 0.0,
+          "w": 0.38281,
+          "h": 0.72862
+        }
+      ]
+    }
+  ]
+}

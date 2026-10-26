@@ -1,0 +1,70 @@
+{
+  "id": "S025-07",
+  "source": "originals/S025-07.jpg",
+  "source_sha256": "bb0d2384d2b978b6032d416e78413c60e9d8e08490780cabbb422fc472661195",
+  "source_size": [
+    300,
+    440
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S025",
+    "index": 7,
+    "title": "Kan",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Shan_Hai_Jing_Kan.jpg",
+    "licence": "Public domain (Ming/Qing woodblock prints, PD-old tags on Commons); check each file page for the exact tag.",
+    "note": "creature from the classic (identify on file page)",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S025-07",
+      "mode": "fit",
+      "box": null,
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.01145,
+          "y": 0.13793,
+          "w": 0.9771,
+          "h": 0.6662
+        },
+        "engine": "autocrop v1",
+        "score": 0.3297,
+        "confidence": 0.597
+      },
+      "candidates": [
+        {
+          "x": 0.01145,
+          "y": 0.05985,
+          "w": 0.9771,
+          "h": 0.6662
+        },
+        {
+          "x": 0.01145,
+          "y": 0.32269,
+          "w": 0.9771,
+          "h": 0.6662
+        },
+        {
+          "x": 0.37786,
+          "y": 0.00781,
+          "w": 0.54962,
+          "h": 0.37474
+        },
+        {
+          "x": 0.17176,
+          "y": 0.02602,
+          "w": 0.70992,
+          "h": 0.48404
+        },
+        {
+          "x": 0.33206,
+          "y": 0.15354,
+          "w": 0.65649,
+          "h": 0.44761
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "S005-02",
+  "source": "originals/S005-02.jpg",
+  "source_sha256": "6b94363decff1c3035d1e2bdd10a63a0d685034a747beb837122d1deb03b7043",
+  "source_size": [
+    1558,
+    1985
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S005",
+    "index": 2,
+    "title": "Facundus Beatus, fol. 186v",
+    "source_url": "https://commons.wikimedia.org/wiki/File:B_Facundus_186v.jpg",
+    "licence": "Wikimedia Commons PD-Art (manuscript of 1047); the two Met leaves are Met Open Access CC0. Some Beatus episodes feature the seven-headed dragon, so pick folios by eye.",
+    "note": "Fol. 186v, probably the Woman Clothed with the Sun; may show the dragon",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/B_Facundus_186v.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S005-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.04,
+        "y": 0.05462,
+        "w": 0.88,
+        "h": 0.69076
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.78496
+        },
+        "engine": "autocrop v1",
+        "score": 0.5005,
+        "confidence": 0.886
+      },
+      "candidates": [
+        {
+          "x": 0.10963,
+          "y": 0.0,
+          "w": 0.89037,
+          "h": 0.6989
+        },
+        {
+          "x": 0.0,
+          "y": 0.21504,
+          "w": 1.0,
+          "h": 0.78496
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.6711,
+          "h": 0.52678
+        },
+        {
+          "x": 0.38206,
+          "y": 0.0,
+          "w": 0.61794,
+          "h": 0.48506
+        },
+        {
+          "x": 0.60133,
+          "y": 0.0,
+          "w": 0.39867,
+          "h": 0.31294
+        }
+      ]
+    }
+  ]
+}

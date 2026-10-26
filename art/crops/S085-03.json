@@ -1,0 +1,76 @@
+{
+  "id": "S085-03",
+  "source": "originals/S085-03.jpg",
+  "source_sha256": "26eeb6b805ae383e89130ecfd7c5b0a775c8c4c6d9bfb9e6be116aead3b07f49",
+  "source_size": [
+    1008,
+    700
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S085",
+    "index": 3,
+    "title": "Codex Duran, page 1",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Codex_Duran,_page_1.jpg",
+    "licence": "Public domain; Commons PD",
+    "note": "Opening painted page",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Codex_Duran%2C_page_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S085-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.30495,
+        "y": 0.0,
+        "w": 0.69479,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.30495,
+          "y": 0.0,
+          "w": 0.69479,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.4746,
+        "confidence": 0.772
+      },
+      "candidates": [
+        {
+          "x": 0.14349,
+          "y": 0.0,
+          "w": 0.69479,
+          "h": 1.0
+        },
+        {
+          "x": 0.38021,
+          "y": 0.0,
+          "w": 0.61979,
+          "h": 0.89205
+        },
+        {
+          "x": 0.53125,
+          "y": 0.32534,
+          "w": 0.46875,
+          "h": 0.67466
+        },
+        {
+          "x": 0.35417,
+          "y": 0.27286,
+          "w": 0.50521,
+          "h": 0.72714
+        },
+        {
+          "x": 0.125,
+          "y": 0.27286,
+          "w": 0.50521,
+          "h": 0.72714
+        }
+      ]
+    }
+  ]
+}

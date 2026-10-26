@@ -1,0 +1,76 @@
+{
+  "id": "S001-11",
+  "source": "originals/S001-11.jpg",
+  "source_sha256": "c298d993a18ac99e7d5defc2d57fae3db8d03530f582a65086717438640f284c",
+  "source_size": [
+    1174,
+    983
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S001",
+    "index": 11,
+    "title": "Basilisk",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Aberdeen_Bestiary_Basilisk.jpg",
+    "licence": "Original c. 1200, public domain. abdn.ac.uk page images are University of Aberdeen photography (reuse terms not confirmed, possibly non-commercial); Commons copies are PD-Art (verify tag per file). Commons category: https://commons.wikimedia.org/wiki/Category:Aberdeen_Bestiary",
+    "note": "Crowned basilisk, king of serpents (serpentine; list last).",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Aberdeen_Bestiary_Basilisk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S001-11",
+      "mode": "crop",
+      "box": {
+        "x": 0.05125,
+        "y": 0.0,
+        "w": 0.8375,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.16198,
+          "y": 0.0,
+          "w": 0.8375,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.5963,
+        "confidence": 0.782
+      },
+      "candidates": [
+        {
+          "x": 0.06823,
+          "y": 0.0,
+          "w": 0.8375,
+          "h": 1.0
+        },
+        {
+          "x": 0.34375,
+          "y": 0.21642,
+          "w": 0.65625,
+          "h": 0.78358
+        },
+        {
+          "x": 0.39062,
+          "y": 0.0,
+          "w": 0.60938,
+          "h": 0.72761
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.60938,
+          "h": 0.72761
+        },
+        {
+          "x": 0.14062,
+          "y": 0.32525,
+          "w": 0.5651,
+          "h": 0.67475
+        }
+      ]
+    }
+  ]
+}

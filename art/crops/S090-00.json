@@ -1,0 +1,99 @@
+{
+  "id": "S090-00",
+  "source": "originals/S090-00.jpg",
+  "source_sha256": "31311aa74eb6b20b70ab6ff1eda58615e20709264c469b7e497b817bdd8fd605",
+  "source_size": [
+    944,
+    672
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S090",
+    "index": 0,
+    "title": "Marvels of the East, fol. 039v-040r (Bodley 614)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Marvels_of_the_East,_fol._039v-040r.jpg",
+    "licence": "Manuscripts are PD. Commons and PD Image Archive copies are PD. Flickr photos (users 28433765@N07 and wy_jackrabbit) have unchecked licences; Bodleian's own images are CC BY-NC. Bodley 614 Flickr folios: which marvel each shows is unknown.",
+    "note": "Opening of two pages of marvels; exact creatures unchecked",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S090-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.52983,
+        "y": 0.225,
+        "w": 0.32034,
+        "h": 0.45
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.71094,
+          "h": 0.9987
+        },
+        "engine": "autocrop v1",
+        "score": 0.3093,
+        "confidence": 0.575
+      },
+      "candidates": [
+        {
+          "x": 0.28906,
+          "y": 0.0,
+          "w": 0.71094,
+          "h": 0.9987
+        },
+        {
+          "x": 0.07812,
+          "y": 0.05487,
+          "w": 0.67188,
+          "h": 0.94382
+        },
+        {
+          "x": 0.10417,
+          "y": 0.0,
+          "w": 0.36198,
+          "h": 0.50849
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.51823,
+          "h": 0.72799
+        },
+        {
+          "x": 0.52083,
+          "y": 0.2012,
+          "w": 0.36198,
+          "h": 0.50849
+        }
+      ]
+    },
+    {
+      "tile": "S090-00-b",
+      "mode": "crop",
+      "box": {
+        "x": 0.15203,
+        "y": 0.46,
+        "w": 0.35593,
+        "h": 0.5
+      },
+      "status": "rejected",
+      "auto": null
+    },
+    {
+      "tile": "S090-00-c",
+      "mode": "crop",
+      "box": {
+        "x": 0.16339,
+        "y": 0.02,
+        "w": 0.31322,
+        "h": 0.44
+      },
+      "status": "rejected",
+      "auto": null
+    }
+  ]
+}

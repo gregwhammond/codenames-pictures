@@ -1,0 +1,76 @@
+{
+  "id": "S041-03",
+  "source": "originals/S041-03.jpg",
+  "source_sha256": "c14ef9bedeaee2b822b05622526c53d256b2c66ed9fd88cfc7c64a87b3100883",
+  "source_size": [
+    1610,
+    2170
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S041",
+    "index": 3,
+    "title": "Folio 46v",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Northumberlandbestiaryf46v.jpg",
+    "licence": "Getty Open Content (free reuse); Commons copies PD-old Added pictures: Getty Open Content: images of PD works free to use (Getty MS 100, English c.1250-60).",
+    "note": "Bestiary animal miniature",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Northumberlandbestiaryf46v.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S041-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.24,
+        "y": 0.27743,
+        "w": 0.6,
+        "h": 0.44513
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.74189
+        },
+        "engine": "autocrop v1",
+        "score": 0.6316,
+        "confidence": 0.875
+      },
+      "candidates": [
+        {
+          "x": 0.10877,
+          "y": 0.10412,
+          "w": 0.89123,
+          "h": 0.66119
+        },
+        {
+          "x": 0.05614,
+          "y": 0.29936,
+          "w": 0.94386,
+          "h": 0.70024
+        },
+        {
+          "x": 0.22105,
+          "y": 0.29155,
+          "w": 0.61754,
+          "h": 0.45815
+        },
+        {
+          "x": 0.25263,
+          "y": 0.0,
+          "w": 0.72632,
+          "h": 0.53884
+        },
+        {
+          "x": 0.19649,
+          "y": 0.14577,
+          "w": 0.61754,
+          "h": 0.45815
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "S087-03",
+  "source": "originals/S087-03.jpg",
+  "source_sha256": "660c177870e0be67c8b282304d3f1dd7e66cbe2718b0d3e6bc163f05e2e0cd25",
+  "source_size": [
+    750,
+    411
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S087",
+    "index": 3,
+    "title": "Alexander encounters the Blemmyae (Royal 20 B XX f.80r)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alexander_encounters_the_Blemmyae_-_British_Library_Royal_MS_20_B_xx_f80r_(detail).jpg",
+    "licence": "Public domain (Commons PD-Art tags; BL images released to public domain). Digital Bodleian images of Bodley 264 are CC-BY-NC; use the Commons copies.",
+    "note": "Men with faces in their chests meet Alexander's army",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S087-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.4134,
+        "y": 0.02,
+        "w": 0.4932,
+        "h": 0.9
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.20833,
+          "y": 0.0,
+          "w": 0.54688,
+          "h": 0.99795
+        },
+        "engine": "autocrop v1",
+        "score": 0.3376,
+        "confidence": 0.906
+      },
+      "candidates": [
+        {
+          "x": 0.27083,
+          "y": 0.0,
+          "w": 0.54688,
+          "h": 0.99795
+        },
+        {
+          "x": 0.08333,
+          "y": 0.0,
+          "w": 0.54688,
+          "h": 0.99795
+        },
+        {
+          "x": 0.45312,
+          "y": 0.0,
+          "w": 0.54688,
+          "h": 0.99795
+        },
+        {
+          "x": 0.25,
+          "y": 0.0,
+          "w": 0.39844,
+          "h": 0.72708
+        },
+        {
+          "x": 0.25,
+          "y": 0.27087,
+          "w": 0.39844,
+          "h": 0.72708
+        }
+      ]
+    }
+  ]
+}

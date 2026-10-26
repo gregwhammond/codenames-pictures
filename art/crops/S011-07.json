@@ -1,0 +1,75 @@
+{
+  "id": "S011-07",
+  "source": "originals/S011-07.jpg",
+  "source_sha256": "838de7c1cde256eefbc8b3ab019ae7c80559df7e849d45251da2fe2a6b4afbde",
+  "source_size": [
+    586,
+    556
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S011",
+    "index": 7,
+    "title": "Emblem 27: The philosophers' rose garden",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Michael_Maier_Atalanta_Fugiens_Emblem_27.jpeg",
+    "licence": "Public domain (1618; PD-old on Commons). Science History Institute digital collections are also openly reusable.",
+    "note": "Man shut out before the locked gate of a walled rose garden",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S011-07",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.94792,
+        "h": 0.99906
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.94792,
+          "h": 0.99906
+        },
+        "engine": "autocrop v1",
+        "score": 0.5858,
+        "confidence": 0.767
+      },
+      "candidates": [
+        {
+          "x": 0.10417,
+          "y": 0.0,
+          "w": 0.89583,
+          "h": 0.94417
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.6901,
+          "h": 0.72734
+        },
+        {
+          "x": 0.0,
+          "y": 0.21683,
+          "w": 0.74219,
+          "h": 0.78223
+        },
+        {
+          "x": 0.36198,
+          "y": 0.32662,
+          "w": 0.63802,
+          "h": 0.67245
+        },
+        {
+          "x": 0.41406,
+          "y": 0.0,
+          "w": 0.58594,
+          "h": 0.61755
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "S090-01",
+  "source": "originals/S090-01.jpg",
+  "source_sha256": "49fcb4563b572ff748fbb7f4cfa3ee7e4ee5fcd8bec49615afaa685f9acc602e",
+  "source_size": [
+    832,
+    1024
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S090",
+    "index": 1,
+    "title": "Panotii (long-eared people), Cotton Tiberius B V fol. 83v",
+    "source_url": "https://www.flickr.com/photos/28433765@N07/3376533927/",
+    "licence": "Manuscripts are PD. Commons and PD Image Archive copies are PD. Flickr photos (users 28433765@N07 and wy_jackrabbit) have unchecked licences; Bodleian's own images are CC BY-NC. Bodley 614 Flickr folios: which marvel each shows is unknown.",
+    "note": "Flickr page for one image: the panotii with huge ears from Tiberius B V.",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S090-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.8125
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.8125
+        },
+        "engine": "autocrop v1",
+        "score": 0.5114,
+        "confidence": 0.899
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.10156,
+          "w": 1.0,
+          "h": 0.8125
+        },
+        {
+          "x": 0.21795,
+          "y": 0.0,
+          "w": 0.78205,
+          "h": 0.63542
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.72756,
+          "h": 0.59115
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.50962,
+          "h": 0.41406
+        },
+        {
+          "x": 0.49038,
+          "y": 0.0,
+          "w": 0.50962,
+          "h": 0.41406
+        }
+      ]
+    }
+  ]
+}

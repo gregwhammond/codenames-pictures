@@ -1,0 +1,77 @@
+{
+  "id": "S035-02",
+  "source": "originals/S035-02.webp",
+  "source_sha256": "f113adeee1ee890f3518aae22371aa00b8c0c98dd735aa3ee2fbd60f6922058e",
+  "source_size": [
+    568,
+    299
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S035",
+    "index": 2,
+    "title": "Bois de Boulogne",
+    "source_url": "https://pdimagearchive.org/images/50a318e1-1bda-4f58-ae8e-dc6e925fd8b5/",
+    "licence": "Public domain (Grandville died 1847; published 1840-42 and 1877). PD Image Archive and PDR mark the images public domain. The Commons page scan has a PD-old tag. Added pictures: Grandville d.1847, so PD. Met Open Access CC0 applies where the page shows the OA badge (typical for these prints). PD Image Archive and Commons are PD. Titles are from the Met; content notes are inferred from titles.",
+    "note": "Animals promenading in the Paris park",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S035-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.4568,
+        "y": 0.0,
+        "w": 0.52641,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.3092,
+        "confidence": 0.042,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.02083,
+          "y": 0.0,
+          "w": 0.52604,
+          "h": 0.9993
+        },
+        {
+          "x": 0.45833,
+          "y": 0.0,
+          "w": 0.52604,
+          "h": 0.9993
+        },
+        {
+          "x": 0.1875,
+          "y": 0.0,
+          "w": 0.52604,
+          "h": 0.9993
+        },
+        {
+          "x": 0.03646,
+          "y": 0.10884,
+          "w": 0.46875,
+          "h": 0.89047
+        },
+        {
+          "x": 0.36458,
+          "y": 0.16325,
+          "w": 0.4401,
+          "h": 0.83605
+        },
+        {
+          "x": 0.61719,
+          "y": 0.0,
+          "w": 0.38281,
+          "h": 0.72722
+        }
+      ]
+    }
+  ]
+}

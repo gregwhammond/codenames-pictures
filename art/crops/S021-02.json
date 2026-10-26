@@ -1,0 +1,75 @@
+{
+  "id": "S021-02",
+  "source": "originals/S021-02.jpg",
+  "source_sha256": "8ce9dc715085997baa2af16481b6f4fa9b1c66fa7167376ecf61950f00cfca44",
+  "source_size": [
+    500,
+    532
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S021",
+    "index": 2,
+    "title": "Yama-warau",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Suuhi_Yama-warau.jpg",
+    "licence": "Commons public-domain tags (1737 work, PD-Art). Overlaps in subject with the yokai scrolls already in the deck, but it is a different scroll.",
+    "note": "Laughing mountain spirit",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S021-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.9446,
+        "h": 0.88778
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.9446,
+          "h": 0.88778
+        },
+        "engine": "autocrop v1",
+        "score": 0.6978,
+        "confidence": 0.691
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.06248,
+          "w": 0.83657,
+          "h": 0.78625
+        },
+        {
+          "x": 0.02216,
+          "y": 0.0,
+          "w": 0.56233,
+          "h": 0.5285
+        },
+        {
+          "x": 0.16343,
+          "y": 0.21348,
+          "w": 0.83657,
+          "h": 0.78625
+        },
+        {
+          "x": 0.17452,
+          "y": 0.0,
+          "w": 0.61773,
+          "h": 0.58057
+        },
+        {
+          "x": 0.02493,
+          "y": 0.30461,
+          "w": 0.61773,
+          "h": 0.58057
+        }
+      ]
+    }
+  ]
+}

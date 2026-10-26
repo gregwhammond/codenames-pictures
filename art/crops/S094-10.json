@@ -1,0 +1,76 @@
+{
+  "id": "S094-10",
+  "source": "originals/S094-10.jpg",
+  "source_sha256": "73acfd4774aa609fe1473fd4104e39d372e9604effc3c331db5c075238513a83",
+  "source_size": [
+    4096,
+    3054
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S094",
+    "index": 10,
+    "title": "Plate 17 (Cooper Hewitt)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Print,_Plate_17_from_Theatrum_instrumentorum_et_machinarum_by_Jacques_Besson,_after_1578_(CH_18449433).jpg",
+    "licence": "Smithsonian Libraries: PD book, Smithsonian Open Access / no known restrictions; Cooper Hewitt image CC0 via Commons.",
+    "note": "Cooper Hewitt impression of plate 17",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Print%2C_Plate_17_from_Theatrum_instrumentorum_et_machinarum_by_Jacques_Besson%2C_after_1578_%28CH_18449433%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S094-10",
+      "mode": "crop",
+      "box": {
+        "x": 0.18556,
+        "y": 0.125,
+        "w": 0.64887,
+        "h": 0.87
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.11458,
+          "y": 0.0,
+          "w": 0.74479,
+          "h": 0.9986
+        },
+        "engine": "autocrop v1",
+        "score": 0.7026,
+        "confidence": 0.573
+      },
+      "candidates": [
+        {
+          "x": 0.20052,
+          "y": 0.05587,
+          "w": 0.70312,
+          "h": 0.94274
+        },
+        {
+          "x": 0.09375,
+          "y": 0.1257,
+          "w": 0.58333,
+          "h": 0.78212
+        },
+        {
+          "x": 0.02083,
+          "y": 0.30726,
+          "w": 0.5,
+          "h": 0.67039
+        },
+        {
+          "x": 0.40104,
+          "y": 0.26885,
+          "w": 0.46094,
+          "h": 0.61802
+        },
+        {
+          "x": 0.02083,
+          "y": 0.0,
+          "w": 0.54167,
+          "h": 0.72626
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "S076-08",
+  "source": "originals/S076-08.jpg",
+  "source_sha256": "ae97f4d6323f7a9b55fd762b6fcf6de0c455fe0f5b90c5afe9291256d8a7b024",
+  "source_size": [
+    2425,
+    3000
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S076",
+    "index": 8,
+    "title": "Gargantua",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Gustave_Dor%C3%A9_-_Gargantua.jpg",
+    "licence": "Public domain (Doré d. 1883); Commons PD tags",
+    "note": "The giant Gargantua",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Gustave_Dor%C3%A9_-_Gargantua.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S076-08",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.00521,
+        "w": 1.0,
+        "h": 0.80808
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.00521,
+          "w": 1.0,
+          "h": 0.80808
+        },
+        "engine": "autocrop v1",
+        "score": 0.4426,
+        "confidence": 0.846
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.19029,
+          "w": 1.0,
+          "h": 0.80808
+        },
+        {
+          "x": 0.10968,
+          "y": 0.00521,
+          "w": 0.89032,
+          "h": 0.71945
+        },
+        {
+          "x": 0.0,
+          "y": 0.00521,
+          "w": 0.67419,
+          "h": 0.5448
+        },
+        {
+          "x": 0.38065,
+          "y": 0.00521,
+          "w": 0.61935,
+          "h": 0.50049
+        },
+        {
+          "x": 0.6,
+          "y": 0.00521,
+          "w": 0.4,
+          "h": 0.32323
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "S004-04",
+  "source": "originals/S004-04.jpg",
+  "source_sha256": "56988d17b9f4a12d51b3b28c9b0a087c170b718bb72cc02a21e2ca49660ffb4d",
+  "source_size": [
+    800,
+    798
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S004",
+    "index": 4,
+    "title": "Crossbower",
+    "source_url": "https://discardingimages.tumblr.com/post/131675551833/crossbower-the-rutland-psalter-england-ca-1260",
+    "licence": "Original c. 1260, public domain; Commons files PD-Art (verify tag). Only 3 distinct pictures found (two URLs are the same folio). Butt-trumpet image is crude. Added pictures: Manuscript PD (c.1260). Tumblr links are reposts of BL images. BL Images Online is a commercial picture library (licensed downloads) - treat as reference only.",
+    "note": "Marginal crossbowman taking aim",
+    "obtained": "full-size download"
+  },
+  "crops": [
+    {
+      "tile": "S004-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.04092,
+        "y": 0.08,
+        "w": 0.91816,
+        "h": 0.92
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.9974,
+          "h": 0.99939
+        },
+        "engine": "autocrop v1",
+        "score": 0.6334,
+        "confidence": 0.729
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.10959,
+          "w": 0.88802,
+          "h": 0.8898
+        },
+        {
+          "x": 0.22135,
+          "y": 0.0,
+          "w": 0.77865,
+          "h": 0.78021
+        },
+        {
+          "x": 0.0,
+          "y": 0.38097,
+          "w": 0.61719,
+          "h": 0.61842
+        },
+        {
+          "x": 0.28646,
+          "y": 0.32617,
+          "w": 0.67188,
+          "h": 0.67322
+        },
+        {
+          "x": 0.11719,
+          "y": 0.14091,
+          "w": 0.61719,
+          "h": 0.61842
+        }
+      ]
+    }
+  ]
+}

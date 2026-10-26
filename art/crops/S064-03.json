@@ -1,0 +1,75 @@
+{
+  "id": "S064-03",
+  "source": "originals/S064-03.jpg",
+  "source_sha256": "99a049699a898c9341a79d00b78be3684e1895870068e07e1e3f4ca5c948e979",
+  "source_size": [
+    524,
+    620
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S064",
+    "index": 3,
+    "title": "Bakkan Nyudo",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bakemono-tsukushi-emaki_Bakkan_Nyudo.jpg",
+    "licence": "Public domain (Edo-period works), Commons PD tags; check each file's page for the owning collection",
+    "note": "Bakkan Nyudo, a bald priest-like monster",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S064-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.02742,
+        "w": 1.0,
+        "h": 0.84516
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.15343,
+          "w": 1.0,
+          "h": 0.84516
+        },
+        "engine": "autocrop v1",
+        "score": 0.6601,
+        "confidence": 0.683
+      },
+      "candidates": [
+        {
+          "x": 0.03692,
+          "y": 0.09362,
+          "w": 0.94462,
+          "h": 0.79835
+        },
+        {
+          "x": 0.13846,
+          "y": 0.35107,
+          "w": 0.72615,
+          "h": 0.61372
+        },
+        {
+          "x": 0.16615,
+          "y": 0.0234,
+          "w": 0.72615,
+          "h": 0.61372
+        },
+        {
+          "x": 0.22154,
+          "y": 0.22884,
+          "w": 0.61846,
+          "h": 0.5227
+        },
+        {
+          "x": 0.02769,
+          "y": 0.14043,
+          "w": 0.67385,
+          "h": 0.56951
+        }
+      ]
+    }
+  ]
+}

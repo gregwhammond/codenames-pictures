@@ -1,0 +1,77 @@
+{
+  "id": "S073-03",
+  "source": "originals/S073-03.jpg",
+  "source_sha256": "ddb015840d57299e1f43d1703fc81889a458b6b2ffe9ec792dc5bb2e23db8541",
+  "source_size": [
+    474,
+    877
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S073",
+    "index": 3,
+    "title": "Card 19",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sola_Busca_tarot_card_19.jpg",
+    "licence": "Public domain (c. 1491 engravings); Commons PD tags. Originals at Pinacoteca di Brera",
+    "note": "Trump card figure",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S073-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.025,
+        "y": 0.06827,
+        "w": 0.95,
+        "h": 0.51345
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.1519,
+        "confidence": 1.0,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.54048
+        },
+        {
+          "x": 0.0,
+          "y": 0.06236,
+          "w": 1.0,
+          "h": 0.54048
+        },
+        {
+          "x": 0.0,
+          "y": 0.27024,
+          "w": 1.0,
+          "h": 0.54048
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.78365,
+          "h": 0.42355
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.50962,
+          "h": 0.27544
+        },
+        {
+          "x": 0.0,
+          "y": 0.45733,
+          "w": 1.0,
+          "h": 0.54048
+        }
+      ]
+    }
+  ]
+}

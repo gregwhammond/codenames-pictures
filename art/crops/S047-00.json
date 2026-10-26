@@ -1,0 +1,76 @@
+{
+  "id": "S047-00",
+  "source": "originals/S047-00.jpg",
+  "source_sha256": "d25a4556915fdd8f6aeaba39f76924a7d8a3b47c0c8c3c7aa23c4a829a465bca",
+  "source_size": [
+    1160,
+    1646
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S047",
+    "index": 0,
+    "title": "Vierge velue (hairy virgin)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Histoires_Prodigieuses;_Vierge_velue..._WMS_136_Wellcome_L0025530.jpg",
+    "licence": "Wellcome images CC BY 4.0 (manuscript itself PD); Commons copies",
+    "note": "Woman covered entirely in hair",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Histoires_Prodigieuses%3B_Vierge_velue..._WMS_136_Wellcome_L0025530.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S047-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.70485
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.70485
+        },
+        "engine": "autocrop v1",
+        "score": 0.6758,
+        "confidence": 0.9
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.08583,
+          "w": 1.0,
+          "h": 0.70485
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.78229,
+          "h": 0.55139
+        },
+        {
+          "x": 0.26568,
+          "y": 0.0,
+          "w": 0.72694,
+          "h": 0.51238
+        },
+        {
+          "x": 0.46125,
+          "y": 0.0,
+          "w": 0.50923,
+          "h": 0.35893
+        },
+        {
+          "x": 0.01845,
+          "y": 0.0,
+          "w": 0.50923,
+          "h": 0.35893
+        }
+      ]
+    }
+  ]
+}

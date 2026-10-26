@@ -1,0 +1,76 @@
+{
+  "id": "S057-00",
+  "source": "originals/S057-00.jpg",
+  "source_sha256": "e4c06a165749e2eb2dee5e946ebfdd541d47f51b1d4bfb39588a96b380fd5bdb",
+  "source_size": [
+    1248,
+    958
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S057",
+    "index": 0,
+    "title": "Épinglier, plate 2 (Defehrt)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Defehrt_epinglier_pl2.jpg",
+    "licence": "Public domain (Commons PD tags; Wellcome copy CC-BY/PD).",
+    "note": "Pin-maker's workshop and tools",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Defehrt_epinglier_pl2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S057-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.22727,
+        "y": 0.0,
+        "w": 0.34547,
+        "h": 0.45
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00026,
+          "y": 0.0,
+          "w": 0.76771,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.4332,
+        "confidence": 0.531
+      },
+      "candidates": [
+        {
+          "x": 0.23203,
+          "y": 0.0,
+          "w": 0.76771,
+          "h": 1.0
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.6849,
+          "h": 0.89213
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.47396,
+          "h": 0.61737
+        },
+        {
+          "x": 0.48438,
+          "y": 0.0,
+          "w": 0.51562,
+          "h": 0.67164
+        },
+        {
+          "x": 0.22917,
+          "y": 0.0,
+          "w": 0.51562,
+          "h": 0.67164
+        }
+      ]
+    }
+  ]
+}

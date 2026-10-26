@@ -1,0 +1,75 @@
+{
+  "id": "S033-06",
+  "source": "originals/S033-06.jpg",
+  "source_sha256": "7b6c5d0b5235a65a4747b47b7f4e0b1b26df281e98356cfbfeb4d36bf05d04a4",
+  "source_size": [
+    889,
+    1600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S033",
+    "index": 6,
+    "title": "Rhetorica, E23",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mantegna_Tarocchi_E23,_Rhetorica.jpg",
+    "licence": "Public domain (15th century). Met Open Access CC0 for public-domain works; NGA Open Access for public-domain images; Commons PD-Art. Open-access status of the recent Met S-series accessions (828xxx) not checked item by item.",
+    "note": "Rhetoric personified with sword, flanked by trumpeting putti",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S033-06",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.55562
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.55562
+        },
+        "engine": "autocrop v1",
+        "score": 0.3619,
+        "confidence": 0.942
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.06261,
+          "w": 1.0,
+          "h": 0.55562
+        },
+        {
+          "x": 0.2723,
+          "y": 0.0,
+          "w": 0.7277,
+          "h": 0.40433
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.78404,
+          "h": 0.43563
+        },
+        {
+          "x": 0.0,
+          "y": 0.25042,
+          "w": 1.0,
+          "h": 0.55562
+        },
+        {
+          "x": 0.49296,
+          "y": 0.0,
+          "w": 0.50704,
+          "h": 0.28173
+        }
+      ]
+    }
+  ]
+}

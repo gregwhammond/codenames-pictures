@@ -1,0 +1,75 @@
+{
+  "id": "S087-02",
+  "source": "originals/S087-02.jpg",
+  "source_sha256": "29271132843a39e60d72372ea5bf8ff667e17bbdde36dc1e1059dc0617d446f6",
+  "source_size": [
+    824,
+    950
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S087",
+    "index": 2,
+    "title": "Trees of the Sun and Moon; headless men (f.84v)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alexander_and_his_companions_consult_the_prophetic_trees_of_the_Sun_and_the_Moon;_Alexander_meeting_a_black-legged_monster_man,_a_horse-lion_and_headless_men_(f._84v.).jpg",
+    "licence": "Public domain (Commons PD-Art tags; BL images released to public domain). Digital Bodleian images of Bodley 264 are CC-BY-NC; use the Commons copies.",
+    "note": "Talking prophetic trees, horse-lion, black-legged man and headless men",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S087-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.13,
+        "y": 0.25305,
+        "w": 0.8,
+        "h": 0.69389
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.02344,
+          "w": 1.0,
+          "h": 0.86737
+        },
+        "engine": "autocrop v1",
+        "score": 0.5823,
+        "confidence": 0.786
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.13263,
+          "w": 1.0,
+          "h": 0.86737
+        },
+        {
+          "x": 0.21922,
+          "y": 0.02344,
+          "w": 0.78078,
+          "h": 0.67722
+        },
+        {
+          "x": 0.0,
+          "y": 0.02344,
+          "w": 0.72673,
+          "h": 0.63034
+        },
+        {
+          "x": 0.48949,
+          "y": 0.02344,
+          "w": 0.51051,
+          "h": 0.4428
+        },
+        {
+          "x": 0.0,
+          "y": 0.23442,
+          "w": 0.67267,
+          "h": 0.58346
+        }
+      ]
+    }
+  ]
+}

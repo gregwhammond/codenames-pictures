@@ -1,0 +1,100 @@
+{
+  "id": "S015-00",
+  "source": "originals/S015-00.jpg",
+  "source_sha256": "6c3e9f6bcbfb3d142bea8efda3f2f36e9b87c62aff1b4afa784d19e01cc24ae0",
+  "source_size": [
+    2691,
+    2040
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S015",
+    "index": 0,
+    "title": "Fabelwesen (fabulous beings) plate",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bertuch-fabelwesen.JPG",
+    "licence": "Wikimedia Commons public domain (1790-1830 prints). The full volumes are also on BHL (https://www.biodiversitylibrary.org/bibliography/95815) and the Internet Archive (https://archive.org/details/BilderbuchfuYrK89Bert), both public domain. The Royal Collection Trust copies are restricted, so do not use them. Added pictures: PD (1790-1830). Commons has few single plates. Full volumes exist at BHL (biodiversitylibrary.org/bibliography/95815), Internet Archive and Heidelberg digi (digi.ub.uni-heidelberg.de/diglit/bertuch1790ga). Plates can be picked from those volumes, but no page URLs came up in search.",
+    "note": "Plate of mythical hybrid beasts, numbered panels",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Bertuch-fabelwesen.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S015-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.57146,
+        "y": 0.445,
+        "w": 0.41708,
+        "h": 0.55
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.24219,
+          "y": 0.0,
+          "w": 0.75781,
+          "h": 0.99931
+        },
+        "engine": "autocrop v1",
+        "score": 0.416,
+        "confidence": 0.393
+      },
+      "candidates": [
+        {
+          "x": 0.32552,
+          "y": 0.10989,
+          "w": 0.67448,
+          "h": 0.88942
+        },
+        {
+          "x": 0.0625,
+          "y": 0.0,
+          "w": 0.75781,
+          "h": 0.99931
+        },
+        {
+          "x": 0.02083,
+          "y": 0.27129,
+          "w": 0.55208,
+          "h": 0.72802
+        },
+        {
+          "x": 0.02083,
+          "y": 0.0,
+          "w": 0.55208,
+          "h": 0.72802
+        },
+        {
+          "x": 0.02083,
+          "y": 0.08242,
+          "w": 0.30208,
+          "h": 0.39835
+        }
+      ]
+    },
+    {
+      "tile": "S015-00-b",
+      "mode": "crop",
+      "box": {
+        "x": 0.00042,
+        "y": 0.49,
+        "w": 0.37917,
+        "h": 0.5
+      },
+      "status": "approved",
+      "auto": null
+    },
+    {
+      "tile": "S015-00-c",
+      "mode": "crop",
+      "box": {
+        "x": 0.00146,
+        "y": 0.005,
+        "w": 0.41708,
+        "h": 0.55
+      },
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "S040-05",
+  "source": "originals/S040-05.jpg",
+  "source_sha256": "832f17e7fc57be6bb56086e365da498556ac09d4eef2742fb3f98e3096de2dfb",
+  "source_size": [
+    620,
+    249
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S040",
+    "index": 5,
+    "title": "Women hunting rabbits with a ferret",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Women_hunting_rabbits_with_a_ferret.jpg",
+    "licence": "Public domain on Commons (PD-old) Added pictures: BL manuscript images released as PD on Commons; PICRYL marks these public domain.",
+    "note": "Women with a ferret and net catching rabbits",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S040-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.01919,
+        "y": 0.0,
+        "w": 0.40161,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.2955,
+        "confidence": 0.177,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.59896,
+          "y": 0.0,
+          "w": 0.40104,
+          "h": 0.99858
+        },
+        {
+          "x": 0.61198,
+          "y": 0.11023,
+          "w": 0.35677,
+          "h": 0.88835
+        },
+        {
+          "x": 0.0,
+          "y": 0.19453,
+          "w": 0.3125,
+          "h": 0.77811
+        },
+        {
+          "x": 0.09375,
+          "y": 0.0,
+          "w": 0.40104,
+          "h": 0.99858
+        },
+        {
+          "x": 0.72917,
+          "y": 0.2075,
+          "w": 0.27083,
+          "h": 0.67436
+        },
+        {
+          "x": 0.60417,
+          "y": 0.0,
+          "w": 0.29167,
+          "h": 0.72624
+        }
+      ]
+    }
+  ]
+}

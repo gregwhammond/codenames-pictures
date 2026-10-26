@@ -1,0 +1,75 @@
+{
+  "id": "S021-04",
+  "source": "originals/S021-04.jpg",
+  "source_sha256": "e645d1773b50feeac49be0eea2f638114682506d212057837a40096784b079d8",
+  "source_size": [
+    640,
+    444
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S021",
+    "index": 4,
+    "title": "Inugami",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Suushi_Inugami.jpg",
+    "licence": "Commons public-domain tags (1737 work, PD-Art). Overlaps in subject with the yokai scrolls already in the deck, but it is a different scroll.",
+    "note": "Dog spirit",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S021-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.69271,
+        "h": 0.9985
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.69271,
+          "h": 0.9985
+        },
+        "engine": "autocrop v1",
+        "score": 0.5046,
+        "confidence": 0.491
+      },
+      "candidates": [
+        {
+          "x": 0.08594,
+          "y": 0.0,
+          "w": 0.69271,
+          "h": 0.9985
+        },
+        {
+          "x": 0.0,
+          "y": 0.21772,
+          "w": 0.54167,
+          "h": 0.78078
+        },
+        {
+          "x": 0.33854,
+          "y": 0.05631,
+          "w": 0.65365,
+          "h": 0.94219
+        },
+        {
+          "x": 0.0625,
+          "y": 0.0,
+          "w": 0.5026,
+          "h": 0.72447
+        },
+        {
+          "x": 0.53385,
+          "y": 0.32658,
+          "w": 0.46615,
+          "h": 0.67192
+        }
+      ]
+    }
+  ]
+}

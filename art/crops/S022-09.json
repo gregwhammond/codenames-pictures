@@ -1,0 +1,75 @@
+{
+  "id": "S022-09",
+  "source": "originals/S022-09.jpg",
+  "source_sha256": "fa8dd3f82536a3c8afcf01649d971d5019c875b0b7056b849e8c825ffb73eebe",
+  "source_size": [
+    843,
+    1116
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S022",
+    "index": 9,
+    "title": "The Laughing Demoness / Warai hannya (AIC 47411)",
+    "source_url": "https://www.artic.edu/artworks/47411/the-laughing-demoness-warai-hannya-from-the-series-one-hundred-ghost-tales-hyaku-monogatari",
+    "licence": "LoC Japanese fine prints: no known restrictions on publication (confirm on each item page). PD copies are also on Commons, e.g. https://commons.wikimedia.org/wiki/File:Hokusai_The_Ghost_Kohada_Koheiji.jpg and https://commons.wikimedia.org/wiki/File:Katsushika_Hokusai_-_The_Lantern_Ghost,_Iwa_-_Google_Art_Project.jpg; PDR page https://publicdomainreview.org/collection/hokusai-s-ghost-stories-ca-1830/ Added pictures: Only 5 designs of the series are known, so these are alternative (better-quality) copies of the existing 5 designs, not new subjects. AIC images are CC0 and Smithsonian open access is CC0. Dedupe against the existing LoC links.",
+    "note": "Grinning hannya holding a child's head",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S022-09",
+      "mode": "crop",
+      "box": {
+        "x": 0.0069,
+        "y": 0.0,
+        "w": 0.9931,
+        "h": 0.75017
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0069,
+          "y": 0.0,
+          "w": 0.9931,
+          "h": 0.75017
+        },
+        "engine": "autocrop v1",
+        "score": 0.4518,
+        "confidence": 0.847
+      },
+      "candidates": [
+        {
+          "x": 0.11379,
+          "y": 0.0,
+          "w": 0.88621,
+          "h": 0.66942
+        },
+        {
+          "x": 0.0069,
+          "y": 0.18754,
+          "w": 0.9931,
+          "h": 0.75017
+        },
+        {
+          "x": 0.0069,
+          "y": 0.0,
+          "w": 0.66897,
+          "h": 0.50532
+        },
+        {
+          "x": 0.38621,
+          "y": 0.0,
+          "w": 0.61379,
+          "h": 0.46364
+        },
+        {
+          "x": 0.23448,
+          "y": 0.0,
+          "w": 0.55862,
+          "h": 0.42197
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "S041-08",
+  "source": "originals/S041-08.jpg",
+  "source_sha256": "85ce326d8253706c1dd061b139b8a113aaf7ed1610e658c1691ca361af0fdf55",
+  "source_size": [
+    223,
+    300
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S041",
+    "index": 8,
+    "title": "A Wild Boar; A Bonnacon",
+    "source_url": "https://www.getty.edu/art/collection/object/109B2M",
+    "licence": "Getty Open Content (free reuse); Commons copies PD-old Added pictures: Getty Open Content: images of PD works free to use (Getty MS 100, English c.1250-60).",
+    "note": "Bonnacon beast spraying burning dung at hunters; wild boar",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S041-08",
+      "mode": "crop",
+      "box": {
+        "x": 0.3,
+        "y": 0.247,
+        "w": 0.6,
+        "h": 0.446
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.09,
+          "w": 1.0,
+          "h": 0.74333
+        },
+        "engine": "autocrop v1",
+        "score": 0.4671,
+        "confidence": 0.731
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.74333
+        },
+        {
+          "x": 0.16143,
+          "y": 0.25667,
+          "w": 0.83857,
+          "h": 0.62333
+        },
+        {
+          "x": 0.21525,
+          "y": 0.0,
+          "w": 0.67265,
+          "h": 0.5
+        },
+        {
+          "x": 0.43498,
+          "y": 0.0,
+          "w": 0.56502,
+          "h": 0.42
+        },
+        {
+          "x": 0.1435,
+          "y": 0.0,
+          "w": 0.51121,
+          "h": 0.38
+        }
+      ]
+    }
+  ]
+}

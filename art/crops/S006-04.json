@@ -1,0 +1,76 @@
+{
+  "id": "S006-04",
+  "source": "originals/S006-04.jpg",
+  "source_sha256": "da86acc066a484a697b9a030bdb59d0a1bfffe8d276f6f1e56d869a5cb495345",
+  "source_size": [
+    1000,
+    1286
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S006",
+    "index": 4,
+    "title": "Meister des Hildegardis-Codex 003",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Meister_des_Hildegardis-Codex_003.jpg",
+    "licence": "Wikimedia Commons PD-Art (12th-13th century originals; the 'Meister des Hildegardis-Codex' files come from The Yorck Project, PD-Art).",
+    "note": "Scivias Rupertsberg codex plate 003; exact subject not checked",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Meister_des_Hildegardis-Codex_003.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S006-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.12,
+        "y": 0.17239,
+        "w": 0.74,
+        "h": 0.57522
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0626,
+          "w": 1.0,
+          "h": 0.77733
+        },
+        "engine": "autocrop v1",
+        "score": 0.689,
+        "confidence": 0.77
+      },
+      "candidates": [
+        {
+          "x": 0.07383,
+          "y": 0.05739,
+          "w": 0.88926,
+          "h": 0.69125
+        },
+        {
+          "x": 0.0,
+          "y": 0.25824,
+          "w": 0.88926,
+          "h": 0.69125
+        },
+        {
+          "x": 0.21477,
+          "y": 0.0,
+          "w": 0.67114,
+          "h": 0.5217
+        },
+        {
+          "x": 0.22148,
+          "y": 0.25041,
+          "w": 0.51007,
+          "h": 0.39649
+        },
+        {
+          "x": 0.02685,
+          "y": 0.04174,
+          "w": 0.67114,
+          "h": 0.5217
+        }
+      ]
+    }
+  ]
+}

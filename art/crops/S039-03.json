@@ -1,0 +1,75 @@
+{
+  "id": "S039-03",
+  "source": "originals/S039-03.png",
+  "source_sha256": "e2226c0447126a450d3543c87401561952797ab3b86957cbe431a74064f460a8",
+  "source_size": [
+    441,
+    468
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S039",
+    "index": 3,
+    "title": "f.097r detail",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Maastricht_Book_of_Hours,_BL_Stowe_MS17_f097r_(detail).png",
+    "licence": "Public domain on Commons (PD-old)",
+    "note": "Marginal drollery detail",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S039-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.26,
+        "y": 0.28077,
+        "w": 0.72,
+        "h": 0.67846
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.94231
+        },
+        "engine": "autocrop v1",
+        "score": 0.2632,
+        "confidence": 0.872
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.21085,
+          "w": 0.83702,
+          "h": 0.78873
+        },
+        {
+          "x": 0.0442,
+          "y": 0.46855,
+          "w": 0.56354,
+          "h": 0.53102
+        },
+        {
+          "x": 0.10773,
+          "y": 0.0,
+          "w": 0.89227,
+          "h": 0.84079
+        },
+        {
+          "x": 0.27348,
+          "y": 0.31497,
+          "w": 0.72652,
+          "h": 0.6846
+        },
+        {
+          "x": 0.23204,
+          "y": 0.52061,
+          "w": 0.50829,
+          "h": 0.47896
+        }
+      ]
+    }
+  ]
+}

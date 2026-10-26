@@ -1,0 +1,75 @@
+{
+  "id": "S042-01",
+  "source": "originals/S042-01.jpg",
+  "source_sha256": "ff6b0953ec4adbecf7156924a11296f63659a782213806d15c369ffb9dbc9168",
+  "source_size": [
+    810,
+    781
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S042",
+    "index": 1,
+    "title": "Irishmen, f.28r",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Irishmen_(Royal_MS_13_B_VIII,_folio_28r).jpg",
+    "licence": "Public domain on Commons (PD-old) Added pictures: BL Royal MS 13 B VIII images, public domain (PICRYL/BL release).",
+    "note": "Marginal figures of Irishmen",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S042-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.03646,
+        "y": 0.0,
+        "w": 0.96354,
+        "h": 0.99932
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.03646,
+          "y": 0.0,
+          "w": 0.96354,
+          "h": 0.99932
+        },
+        "engine": "autocrop v1",
+        "score": 0.6462,
+        "confidence": 0.682
+      },
+      "candidates": [
+        {
+          "x": 0.14062,
+          "y": 0.10803,
+          "w": 0.85938,
+          "h": 0.89129
+        },
+        {
+          "x": 0.35156,
+          "y": 0.0,
+          "w": 0.64844,
+          "h": 0.67252
+        },
+        {
+          "x": 0.0,
+          "y": 0.27279,
+          "w": 0.70052,
+          "h": 0.72653
+        },
+        {
+          "x": 0.40365,
+          "y": 0.24308,
+          "w": 0.59635,
+          "h": 0.6185
+        },
+        {
+          "x": 0.25,
+          "y": 0.43484,
+          "w": 0.54427,
+          "h": 0.56448
+        }
+      ]
+    }
+  ]
+}

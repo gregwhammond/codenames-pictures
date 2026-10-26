@@ -1,0 +1,75 @@
+{
+  "id": "S021-00",
+  "source": "originals/S021-00.jpg",
+  "source_sha256": "709fb59aca6f07778e05160b617437d1eda5dba8cf3a88342dd274264a164719",
+  "source_size": [
+    500,
+    594
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S021",
+    "index": 0,
+    "title": "Nekomata",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Suuhi_Nekomata.jpg",
+    "licence": "Commons public-domain tags (1737 work, PD-Art). Overlaps in subject with the yokai scrolls already in the deck, but it is a different scroll.",
+    "note": "Forked-tailed monster cat",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S021-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.15825,
+        "w": 1.0,
+        "h": 0.84175
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.15825,
+          "w": 1.0,
+          "h": 0.84175
+        },
+        "engine": "autocrop v1",
+        "score": 0.5495,
+        "confidence": 0.847
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.03388,
+          "w": 1.0,
+          "h": 0.84175
+        },
+        {
+          "x": 0.21672,
+          "y": 0.34067,
+          "w": 0.78328,
+          "h": 0.65933
+        },
+        {
+          "x": 0.27245,
+          "y": 0.0,
+          "w": 0.72755,
+          "h": 0.61242
+        },
+        {
+          "x": 0.0,
+          "y": 0.38758,
+          "w": 0.72755,
+          "h": 0.61242
+        },
+        {
+          "x": 0.47988,
+          "y": 0.0,
+          "w": 0.39938,
+          "h": 0.33618
+        }
+      ]
+    }
+  ]
+}

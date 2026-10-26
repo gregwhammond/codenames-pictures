@@ -1,0 +1,76 @@
+{
+  "id": "S023-03",
+  "source": "originals/S023-03.jpg",
+  "source_sha256": "da7d3c8fb3fbe97cd4a47374a0409b1f9978dc63adc7821a15695dbb72522109",
+  "source_size": [
+    2160,
+    3276
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S023",
+    "index": 3,
+    "title": "Hokusai Manga vol. 6",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hokusai_sketches_-_hokusai_manga_vol6.jpg",
+    "licence": "Commons public-domain tags (Hokusai died 1849); Rijksmuseum copy CC0. Whole volumes: Met Open Access https://www.metmuseum.org/art/collection/search/57804 and LoC https://www.loc.gov/item/j67001705/. Several page subjects below were not checked; pick visually.",
+    "note": "Volume 6 page of figure sketches; subject not checked",
+    "obtained": "full-size download",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Hokusai_sketches_-_hokusai_manga_vol6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original"
+  },
+  "crops": [
+    {
+      "tile": "S023-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.075,
+        "y": 0.09978,
+        "w": 0.85,
+        "h": 0.56044
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.65934
+        },
+        "engine": "autocrop v1",
+        "score": 0.3491,
+        "confidence": 0.436
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.88933,
+          "h": 0.58637
+        },
+        {
+          "x": 0.0,
+          "y": 0.06255,
+          "w": 0.6166,
+          "h": 0.40655
+        },
+        {
+          "x": 0.0,
+          "y": 0.18243,
+          "w": 0.67194,
+          "h": 0.44304
+        },
+        {
+          "x": 0.09486,
+          "y": 0.18764,
+          "w": 0.45455,
+          "h": 0.2997
+        },
+        {
+          "x": 0.0,
+          "y": 0.15637,
+          "w": 1.0,
+          "h": 0.65934
+        }
+      ]
+    }
+  ]
+}
