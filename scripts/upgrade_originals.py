@@ -7,7 +7,8 @@ Usage:
 For every crop record art/crops/S*.json, DIR is searched for <id>.<ext> (the
 files import_picks.py --fetch saves). The copy is used only when it is larger
 than the current original and shows the same picture: the same shape (within
-2%) and nearly the same pixels once both are shrunk to 32 x 32. It is then
+2%) and the same picture once both are shrunk to 64 x 64 (their
+brightness patterns correlate above 0.9). It is then
 saved as originals/<id>.<ext> and the record's source, checksum and size are
 updated; crop boxes are fractions of the picture, so they stay as they are.
 --records DIR (records from that fetch) supplies the image_url it came from.
@@ -30,13 +31,13 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import croplib  # noqa: E402
 
 SHAPE_TOLERANCE = 0.02
-MAX_PIXEL_DIFF = 18  # mean absolute difference of 32 x 32 greyscale copies, 0-255
+MIN_CORRELATION = 0.9  # of 64 x 64 greyscale copies; different pictures stay well below
 
 
 def thumb(path):
     with Image.open(path) as im:
         im = ImageOps.exif_transpose(im)
-        return croplib.flatten(im.convert("RGBA")).convert("L").resize((32, 32), Image.BILINEAR)
+        return croplib.flatten(im.convert("RGBA")).convert("L").resize((64, 64), Image.BILINEAR)
 
 
 def same_picture(a, b):
@@ -46,14 +47,22 @@ def same_picture(a, b):
     if abs((wa / ha) / (wb / hb) - 1) > SHAPE_TOLERANCE:
         return False
     ta, tb = thumb(a).tobytes(), thumb(b).tobytes()
-    return sum(abs(x - y) for x, y in zip(ta, tb)) / len(ta) <= MAX_PIXEL_DIFF
+    n = len(ta)
+    ma, mb = sum(ta) / n, sum(tb) / n
+    cov = sum((x - ma) * (y - mb) for x, y in zip(ta, tb))
+    va = sum((x - ma) ** 2 for x in ta)
+    vb = sum((y - mb) ** 2 for y in tb)
+    if va == 0 or vb == 0:
+        return va == vb and ma == mb
+    return cov / (va * vb) ** 0.5 >= MIN_CORRELATION
 
 
 def find(folder, rid):
     if folder is None:
         return None
     hits = [p for p in folder.glob(rid + ".*") if p.suffix.lower() in (".jpg", ".jpeg", ".png", ".gif", ".webp", ".tif", ".tiff")]
-    return hits[0] if hits else None
+    # the biggest file when there are several, so the choice never depends on directory order
+    return max(sorted(hits), key=lambda p: p.stat().st_size) if hits else None
 
 
 def raw_copy(folder, record):
@@ -79,16 +88,16 @@ def main(argv=None):
         record = croplib.load_record(path)
         rid = record["id"]
         current = croplib.source_path(record)
-        have = current.exists() and croplib.sha256_file(current) == record.get("source_sha256")
-        if not have:
+        base = current if current.exists() and croplib.sha256_file(current) == record.get("source_sha256") else None
+        if base is None:
             raw = raw_copy(args.raw, record)
             if raw is not None:
+                base = raw
                 if not args.dry_run:
                     out.mkdir(exist_ok=True)
                     shutil.copyfile(raw, current)
-                have = True
+                    base = current
                 counts["restored"] += 1
-        base = current if have else None
         big = find(args.src, rid)
         if big is None or base is None:
             if base is None:
