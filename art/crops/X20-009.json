@@ -1,0 +1,78 @@
+{
+  "id": "X20-009",
+  "source": "originals/X20-009.jpg",
+  "source_sha256": "d2f7e60aed724b9232dc86c44ed537c2bfbe0ca23c712361117e1a58b1b7feb8",
+  "source_size": [
+    600,
+    424
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Jacopo Bellini drawings",
+    "title": "BELLINI Jacopo - RF 1518, 62",
+    "subject": "knights fighting dragon",
+    "source_url": "https://commons.wikimedia.org/wiki/File:BELLINI_Jacopo_-_RF_1518,_62.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/BELLINI_Jacopo_-_RF_1518%2C_62.jpg",
+    "artist": "Jacopo Bellini",
+    "date": "",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X20-009",
+      "mode": "crop",
+      "box": {
+        "x": 0.17188,
+        "y": 0.0,
+        "w": 0.70573,
+        "h": 0.99867
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.70573,
+          "h": 0.99867
+        },
+        "engine": "autocrop v1",
+        "score": 0.659,
+        "confidence": 0.637
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.6276,
+          "h": 0.88812
+        },
+        {
+          "x": 0.17188,
+          "y": 0.0,
+          "w": 0.70573,
+          "h": 0.99867
+        },
+        {
+          "x": 0.23698,
+          "y": 0.0,
+          "w": 0.47396,
+          "h": 0.6707
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.4375,
+          "h": 0.6191
+        },
+        {
+          "x": 0.1276,
+          "y": 0.10318,
+          "w": 0.4375,
+          "h": 0.6191
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "X16-009",
+  "source": "originals/X16-009.jpg",
+  "source_sha256": "3ed1d2a138e1469e7f116631067a983e5da67d53eb0ca73a123cdf6f782a3ba6",
+  "source_size": [
+    412,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Robert Hooke, Micrographia plates",
+    "title": "Micrographia Scheme 30",
+    "subject": "moth magnified",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Micrographia_Scheme_30.png",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Micrographia_Scheme_30.png",
+    "artist": "Robert Hooke",
+    "date": "1665",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X16-009",
+      "mode": "crop",
+      "box": {
+        "x": 0.00379,
+        "y": 0.07803,
+        "w": 0.99621,
+        "h": 0.68407
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00379,
+          "y": 0.0,
+          "w": 0.99621,
+          "h": 0.68407
+        },
+        "engine": "autocrop v1",
+        "score": 0.424,
+        "confidence": 0.897
+      },
+      "candidates": [
+        {
+          "x": 0.00379,
+          "y": 0.07803,
+          "w": 0.99621,
+          "h": 0.68407
+        },
+        {
+          "x": 0.00379,
+          "y": 0.0,
+          "w": 0.7803,
+          "h": 0.53581
+        },
+        {
+          "x": 0.00379,
+          "y": 0.31212,
+          "w": 0.99621,
+          "h": 0.68407
+        },
+        {
+          "x": 0.00379,
+          "y": 0.0,
+          "w": 0.50758,
+          "h": 0.34854
+        },
+        {
+          "x": 0.19318,
+          "y": 0.0,
+          "w": 0.50758,
+          "h": 0.34854
+        }
+      ]
+    }
+  ]
+}

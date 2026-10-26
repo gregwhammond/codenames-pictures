@@ -1,0 +1,78 @@
+{
+  "id": "X12-011",
+  "source": "originals/X12-011.jpg",
+  "source_sha256": "5846a5afe0de00ee259e679495145dda2e6b39e0a88fa76c274be08baba2338a",
+  "source_size": [
+    600,
+    436
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Luca Cambiaso, cubic figure drawings",
+    "title": "Madonna and Child with the Infant Saint John MET DP808169",
+    "subject": "mother and child resting",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Madonna_and_Child_with_the_Infant_Saint_John_MET_DP808169.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Madonna_and_Child_with_the_Infant_Saint_John_MET_DP808169.jpg",
+    "artist": "Luca Cambiaso",
+    "date": "1527–85",
+    "licence": "CC0",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X12-011",
+      "mode": "crop",
+      "box": {
+        "x": 0.35156,
+        "y": 0.10751,
+        "w": 0.64844,
+        "h": 0.89235
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.27344,
+          "y": 0.0,
+          "w": 0.72656,
+          "h": 0.99986
+        },
+        "engine": "autocrop v1",
+        "score": 0.4139,
+        "confidence": 0.637
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.72656,
+          "h": 0.99986
+        },
+        {
+          "x": 0.35156,
+          "y": 0.10751,
+          "w": 0.64844,
+          "h": 0.89235
+        },
+        {
+          "x": 0.51042,
+          "y": 0.0,
+          "w": 0.48958,
+          "h": 0.67374
+        },
+        {
+          "x": 0.55208,
+          "y": 0.38346,
+          "w": 0.44792,
+          "h": 0.6164
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.48958,
+          "h": 0.67374
+        }
+      ]
+    }
+  ]
+}

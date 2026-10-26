@@ -1,0 +1,80 @@
+{
+  "id": "X10-007",
+  "source": "originals/X10-007.jpg",
+  "source_sha256": "8b27f2e7aeebe3b46861673b2a70fff0efe6ac97bca7667e0de9d54171258514",
+  "source_size": [
+    280,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Albrecht Dürer drawings",
+    "title": "Albrecht Dürer. Illustration für die Hieroglyphica des Horapollo",
+    "subject": "faint dog and figure sketches",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer._Illustration_f%C3%BCr_die_Hieroglyphica_des_Horapollo.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Albrecht_D%C3%BCrer._Illustration_f%C3%BCr_die_Hieroglyphica_des_Horapollo.jpg",
+    "artist": "Albrecht Dürer",
+    "date": "2024-03-20 09:34:30",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X10-007",
+      "mode": "crop",
+      "box": {
+        "x": 0,
+        "y": 0.01667,
+        "w": 1.0,
+        "h": 0.46667
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.1892,
+        "confidence": 0.49,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.16685,
+          "w": 1.0,
+          "h": 0.46667
+        },
+        {
+          "x": 0.0,
+          "y": 0.09385,
+          "w": 1.0,
+          "h": 0.46667
+        },
+        {
+          "x": 0.19553,
+          "y": 0.01564,
+          "w": 0.78212,
+          "h": 0.36499
+        },
+        {
+          "x": 0.31844,
+          "y": 0.12775,
+          "w": 0.50838,
+          "h": 0.23724
+        },
+        {
+          "x": 0.0,
+          "y": 0.27635,
+          "w": 1.0,
+          "h": 0.46667
+        },
+        {
+          "x": 0.02793,
+          "y": 0.06778,
+          "w": 0.72626,
+          "h": 0.33892
+        }
+      ]
+    }
+  ]
+}

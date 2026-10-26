@@ -1,0 +1,78 @@
+{
+  "id": "X06-005",
+  "source": "originals/X06-005.jpg",
+  "source_sha256": "0f068a4f7c8d5c846e0ee81b1e1e30d4bc1411f440782c2ce39bd4cf596b9265",
+  "source_size": [
+    481,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Agostino Ramelli, Le diverse et artificiose machine",
+    "title": "Cut-away view of water-powered mill showing horizontal wheel with paddles, cog and shafts, and housing LCCN2006680147",
+    "subject": "mill machine",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cut-away_view_of_water-powered_mill_showing_horizontal_wheel_with_paddles,_cog_and_shafts,_and_housing_LCCN2006680147.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Cut-away_view_of_water-powered_mill_showing_horizontal_wheel_with_paddles%2C_cog_and_shafts%2C_and_housing_LCCN2006680147.jpg",
+    "artist": "Ramelli, Agostino, 1531-approximately 1600.",
+    "date": "1588",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X06-005",
+      "mode": "crop",
+      "box": {
+        "x": 0.12474,
+        "y": 0.175,
+        "w": 0.87318,
+        "h": 0.7
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.00521,
+          "w": 1.0,
+          "h": 0.80167
+        },
+        "engine": "autocrop v1",
+        "score": 0.5291,
+        "confidence": 0.941
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.09891,
+          "w": 1.0,
+          "h": 0.80167
+        },
+        {
+          "x": 0.0,
+          "y": 0.00521,
+          "w": 0.78247,
+          "h": 0.62728
+        },
+        {
+          "x": 0.27273,
+          "y": 0.00521,
+          "w": 0.72727,
+          "h": 0.58303
+        },
+        {
+          "x": 0.20779,
+          "y": 0.17179,
+          "w": 0.67208,
+          "h": 0.53878
+        },
+        {
+          "x": 0.0,
+          "y": 0.00521,
+          "w": 0.45455,
+          "h": 0.36439
+        }
+      ]
+    }
+  ]
+}

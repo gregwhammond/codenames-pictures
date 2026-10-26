@@ -1,0 +1,80 @@
+{
+  "id": "X12-009",
+  "source": "originals/X12-009.jpg",
+  "source_sha256": "5e09f9df8c5eb791f3d3c294eec9622077f604ff5e7f9038bc96ae2d6a85c425",
+  "source_size": [
+    316,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Luca Cambiaso, cubic figure drawings",
+    "title": "Luca Cambiaso Minerva D1873 Musei di Strada Nuova",
+    "subject": "warrior woman with spear",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Luca_Cambiaso_Minerva_D1873_Musei_di_Strada_Nuova.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Luca_Cambiaso_Minerva_D1873_Musei_di_Strada_Nuova.jpg",
+    "artist": "Luca Cambiaso",
+    "date": "",
+    "licence": "CC BY-SA 4.0",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X12-009",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.10429,
+        "w": 1.0,
+        "h": 0.52667
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.2286,
+        "confidence": 0.658,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.10429,
+          "w": 1.0,
+          "h": 0.52667
+        },
+        {
+          "x": 0.0,
+          "y": 0.04172,
+          "w": 1.0,
+          "h": 0.52667
+        },
+        {
+          "x": 0.20792,
+          "y": 0.01564,
+          "w": 0.72772,
+          "h": 0.38327
+        },
+        {
+          "x": 0.0,
+          "y": 0.33373,
+          "w": 1.0,
+          "h": 0.52667
+        },
+        {
+          "x": 0.16337,
+          "y": 0.21901,
+          "w": 0.83663,
+          "h": 0.44063
+        },
+        {
+          "x": 0.32673,
+          "y": 0.11733,
+          "w": 0.67327,
+          "h": 0.35459
+        }
+      ]
+    }
+  ]
+}

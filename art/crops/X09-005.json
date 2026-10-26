@@ -1,0 +1,73 @@
+{
+  "id": "X09-005",
+  "source": "originals/X09-005.jpg",
+  "source_sha256": "a66fc33d12cc3a4f69a8c0aa0919ca2a943a6b7ab04d10f558f37a423d48a98f",
+  "source_size": [
+    395,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Andreas Vesalius, De humani corporis fabrica",
+    "title": "Andreae Vesalii Bruxellensis Wellcome L0063854",
+    "subject": "nervous system figure",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Andreae_Vesalii_Bruxellensis_Wellcome_L0063854.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Andreae_Vesalii_Bruxellensis_Wellcome_L0063854.jpg",
+    "artist": "",
+    "date": "",
+    "licence": "CC BY 4.0",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X09-005",
+      "mode": "fit",
+      "box": null,
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.65833
+        },
+        "engine": "autocrop v1",
+        "score": 0.5238,
+        "confidence": 0.928
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.07806,
+          "w": 1.0,
+          "h": 0.65833
+        },
+        {
+          "x": 0.21739,
+          "y": 0.0,
+          "w": 0.78261,
+          "h": 0.51522
+        },
+        {
+          "x": 0.27668,
+          "y": 0.18215,
+          "w": 0.67194,
+          "h": 0.44236
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.72727,
+          "h": 0.47879
+        },
+        {
+          "x": 0.0,
+          "y": 0.30445,
+          "w": 0.94466,
+          "h": 0.6219
+        }
+      ]
+    }
+  ]
+}

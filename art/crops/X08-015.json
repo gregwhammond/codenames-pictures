@@ -1,0 +1,78 @@
+{
+  "id": "X08-015",
+  "source": "originals/X08-015.jpg",
+  "source_sha256": "7dc9ef79164832be0aca3b53cd1a04953f54a58398f9784f98207261778da210",
+  "source_size": [
+    600,
+    399
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Fausto Veranzio, Machinae novae",
+    "title": "Molae velis actae par Veranzio, Fausto - Biblioteca Nazionale Marciana - Venezia, Italy - No Copyright - Other Known Legal Restrictions",
+    "subject": "grinding mill mechanism",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Molae_velis_actae_par_Veranzio,_Fausto_-_Biblioteca_Nazionale_Marciana_-_Venezia,_Italy_-_No_Copyright_-_Other_Known_Legal_Restrictions.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Molae_velis_actae_par_Veranzio%2C_Fausto_-_Biblioteca_Nazionale_Marciana_-_Venezia%2C_Italy_-_No_Copyright_-_Other_Known_Legal_Restrictions.jpg",
+    "artist": "Fausto Veranzio",
+    "date": "1615",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X08-015",
+      "mode": "crop",
+      "box": {
+        "x": 0.24479,
+        "y": 0.0,
+        "w": 0.66406,
+        "h": 0.99859
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.11458,
+          "y": 0.0,
+          "w": 0.66406,
+          "h": 0.99859
+        },
+        "engine": "autocrop v1",
+        "score": 0.5714,
+        "confidence": 0.752
+      },
+      "candidates": [
+        {
+          "x": 0.24479,
+          "y": 0.0,
+          "w": 0.66406,
+          "h": 0.99859
+        },
+        {
+          "x": 0.01042,
+          "y": 0.0,
+          "w": 0.66406,
+          "h": 0.99859
+        },
+        {
+          "x": 0.39323,
+          "y": 0.32503,
+          "w": 0.44792,
+          "h": 0.67356
+        },
+        {
+          "x": 0.58333,
+          "y": 0.0,
+          "w": 0.30208,
+          "h": 0.45426
+        },
+        {
+          "x": 0.44792,
+          "y": 0.0,
+          "w": 0.48177,
+          "h": 0.72447
+        }
+      ]
+    }
+  ]
+}

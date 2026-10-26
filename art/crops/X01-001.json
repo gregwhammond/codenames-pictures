@@ -1,0 +1,80 @@
+{
+  "id": "X01-001",
+  "source": "originals/X01-001.jpg",
+  "source_sha256": "3dd5d366e512d0855fec322a557581c11efde0ca2e5f74a3903b56a4a3a95c15",
+  "source_size": [
+    373,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Villard de Honnecourt sketchbook",
+    "title": "Villard De Honnecourt - Machines - WGA25105",
+    "subject": "machines and bird",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Villard_De_Honnecourt_-_Machines_-_WGA25105.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Villard_De_Honnecourt_-_Machines_-_WGA25105.jpg",
+    "artist": "Villard de Honnecourt",
+    "date": "circa 1230",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X01-001",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.62167
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": -0.1453,
+        "confidence": 0.167,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.32636,
+          "y": 0.0,
+          "w": 0.67364,
+          "h": 0.41878
+        },
+        {
+          "x": 0.59833,
+          "y": 0.0,
+          "w": 0.40167,
+          "h": 0.24971
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.62167
+        },
+        {
+          "x": 0.33473,
+          "y": 0.0,
+          "w": 0.40167,
+          "h": 0.24971
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.51046,
+          "h": 0.31734
+        },
+        {
+          "x": 0.20084,
+          "y": 0.0,
+          "w": 0.40167,
+          "h": 0.24971
+        }
+      ]
+    }
+  ]
+}

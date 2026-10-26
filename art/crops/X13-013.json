@@ -1,0 +1,78 @@
+{
+  "id": "X13-013",
+  "source": "originals/X13-013.jpg",
+  "source_sha256": "f2088b8ca9c83b80b321017c1dc3a8ea745f0db19832fd79bcab049bd09f81ab",
+  "source_size": [
+    600,
+    445
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Giovanni Battista Bracelli, Bizzarie di varie figure",
+    "title": "Giovanni Battista Bracelli, From \"Bizzarie di varie Figure\", 1624, NGA 46338",
+    "subject": "basket barrel men",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Bracelli,_From_%22Bizzarie_di_varie_Figure%22,_1624,_NGA_46338.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Giovanni_Battista_Bracelli%2C_From_%22Bizzarie_di_varie_Figure%22%2C_1624%2C_NGA_46338.jpg",
+    "artist": "Giovanni Battista Bracelli",
+    "date": "1624",
+    "licence": "CC0",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X13-013",
+      "mode": "crop",
+      "box": {
+        "x": 0.20052,
+        "y": 0.0,
+        "w": 0.70052,
+        "h": 0.94452
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.11458,
+          "y": 0.03862,
+          "w": 0.70052,
+          "h": 0.94452
+        },
+        "engine": "autocrop v1",
+        "score": 0.6915,
+        "confidence": 0.625
+      },
+      "candidates": [
+        {
+          "x": 0.20052,
+          "y": 0.0,
+          "w": 0.70052,
+          "h": 0.94452
+        },
+        {
+          "x": 0.04688,
+          "y": 0.0632,
+          "w": 0.61979,
+          "h": 0.83567
+        },
+        {
+          "x": 0.41927,
+          "y": 0.27037,
+          "w": 0.45833,
+          "h": 0.61798
+        },
+        {
+          "x": 0.20052,
+          "y": 0.29494,
+          "w": 0.4974,
+          "h": 0.67065
+        },
+        {
+          "x": 0.4375,
+          "y": 0.48455,
+          "w": 0.3776,
+          "h": 0.50913
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "X20-012",
+  "source": "originals/X20-012.jpg",
+  "source_sha256": "bd1b708444472aeb0265dd510103b32b9f317f9b6524afeb1d17b5369e3e74dc",
+  "source_size": [
+    600,
+    427
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Jacopo Bellini drawings",
+    "title": "BELLINI Jacopo - RF 1537, 86",
+    "subject": "city square with tower",
+    "source_url": "https://commons.wikimedia.org/wiki/File:BELLINI_Jacopo_-_RF_1537,_86.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/BELLINI_Jacopo_-_RF_1537%2C_86.jpg",
+    "artist": "Jacopo Bellini",
+    "date": "",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X20-012",
+      "mode": "crop",
+      "box": {
+        "x": 0.36979,
+        "y": 0.0,
+        "w": 0.63021,
+        "h": 0.88554
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.29167,
+          "y": 0.0,
+          "w": 0.70833,
+          "h": 0.99532
+        },
+        "engine": "autocrop v1",
+        "score": 0.4048,
+        "confidence": 0.568
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.70833,
+          "h": 0.99532
+        },
+        {
+          "x": 0.36979,
+          "y": 0.0,
+          "w": 0.63021,
+          "h": 0.88554
+        },
+        {
+          "x": 0.71615,
+          "y": 0.59646,
+          "w": 0.28385,
+          "h": 0.39886
+        },
+        {
+          "x": 0.52344,
+          "y": 0.32567,
+          "w": 0.47656,
+          "h": 0.66964
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.47656,
+          "h": 0.66964
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "X02-002",
+  "source": "originals/X02-002.jpg",
+  "source_sha256": "983ff6e2aab489f55f49afae12398b5281729b36edb446c1a50610c2dcbe8652",
+  "source_size": [
+    442,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Konrad Kyeser, Bellifortis",
+    "title": "Konrad Kyeser, Bellifortis, Clm 30150, Tafel 06, Blatte 27v",
+    "subject": "castle tower on rock",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Konrad_Kyeser,_Bellifortis,_Clm_30150,_Tafel_06,_Blatte_27v.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Konrad_Kyeser%2C_Bellifortis%2C_Clm_30150%2C_Tafel_06%2C_Blatte_27v.jpg",
+    "artist": "Unknown illustrator",
+    "date": "15 th century",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X02-002",
+      "mode": "crop",
+      "box": {
+        "x": 0,
+        "y": 0.25,
+        "w": 1.0,
+        "h": 0.73667
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.26291,
+          "w": 1.0,
+          "h": 0.73667
+        },
+        "engine": "autocrop v1",
+        "score": 0.7373,
+        "confidence": 0.853
+      },
+      "candidates": [
+        {
+          "x": 0.10954,
+          "y": 0.3436,
+          "w": 0.89046,
+          "h": 0.65597
+        },
+        {
+          "x": 0.0,
+          "y": 0.18221,
+          "w": 0.89046,
+          "h": 0.65597
+        },
+        {
+          "x": 0.32862,
+          "y": 0.29154,
+          "w": 0.67138,
+          "h": 0.49458
+        },
+        {
+          "x": 0.17314,
+          "y": 0.27332,
+          "w": 0.61837,
+          "h": 0.45554
+        },
+        {
+          "x": 0.0,
+          "y": 0.50499,
+          "w": 0.67138,
+          "h": 0.49458
+        }
+      ]
+    }
+  ]
+}

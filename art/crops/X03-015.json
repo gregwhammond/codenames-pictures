@@ -1,0 +1,78 @@
+{
+  "id": "X03-015",
+  "source": "originals/X03-015.jpg",
+  "source_sha256": "92f5155a38034d43ee094f16eb4c3b7d74061314823aedfb5532221ddefacdc9",
+  "source_size": [
+    451,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Mariano Taccola, De ingeneis",
+    "title": "Taccola machines",
+    "subject": "boats and siege machines",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Taccola_machines.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Taccola_machines.jpg",
+    "artist": "Taccola",
+    "date": "15 th century",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X03-015",
+      "mode": "crop",
+      "box": {
+        "x": 0.05536,
+        "y": 0.17686,
+        "w": 0.40138,
+        "h": 0.30171
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.03121,
+          "w": 1.0,
+          "h": 0.75167
+        },
+        "engine": "autocrop v1",
+        "score": 0.4298,
+        "confidence": 0.589
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.18727,
+          "w": 1.0,
+          "h": 0.75167
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.83737,
+          "h": 0.62942
+        },
+        {
+          "x": 0.0,
+          "y": 0.04682,
+          "w": 0.56401,
+          "h": 0.42395
+        },
+        {
+          "x": 0.32872,
+          "y": 0.04161,
+          "w": 0.67128,
+          "h": 0.50458
+        },
+        {
+          "x": 0.05536,
+          "y": 0.17686,
+          "w": 0.40138,
+          "h": 0.30171
+        }
+      ]
+    }
+  ]
+}

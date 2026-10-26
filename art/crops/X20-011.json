@@ -1,0 +1,78 @@
+{
+  "id": "X20-011",
+  "source": "originals/X20-011.jpg",
+  "source_sha256": "45318c9229be99084959bee2c1f620006b1c62f6e1d992faf87961e949083278",
+  "source_size": [
+    600,
+    424
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Jacopo Bellini drawings",
+    "title": "BELLINI Jacopo - RF 1531, 78",
+    "subject": "winged knight slaying dragon",
+    "source_url": "https://commons.wikimedia.org/wiki/File:BELLINI_Jacopo_-_RF_1531,_78.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/BELLINI_Jacopo_-_RF_1531%2C_78.jpg",
+    "artist": "Jacopo Bellini",
+    "date": "",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X20-011",
+      "mode": "crop",
+      "box": {
+        "x": 0.29427,
+        "y": 0.0,
+        "w": 0.70573,
+        "h": 0.99867
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.70573,
+          "h": 0.99867
+        },
+        "engine": "autocrop v1",
+        "score": 0.4864,
+        "confidence": 0.511
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.11055,
+          "w": 0.6276,
+          "h": 0.88812
+        },
+        {
+          "x": 0.29427,
+          "y": 0.0,
+          "w": 0.70573,
+          "h": 0.99867
+        },
+        {
+          "x": 0.20833,
+          "y": 0.21742,
+          "w": 0.55208,
+          "h": 0.78125
+        },
+        {
+          "x": 0.0,
+          "y": 0.37957,
+          "w": 0.4375,
+          "h": 0.6191
+        },
+        {
+          "x": 0.40104,
+          "y": 0.32798,
+          "w": 0.47396,
+          "h": 0.6707
+        }
+      ]
+    }
+  ]
+}

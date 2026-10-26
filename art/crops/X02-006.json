@@ -1,0 +1,78 @@
+{
+  "id": "X02-006",
+  "source": "originals/X02-006.jpg",
+  "source_sha256": "4d55c3f3811b3267900fca00cff51f915b51b144b11d18c090b37318ee490fb5",
+  "source_size": [
+    410,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Konrad Kyeser, Bellifortis",
+    "title": "Ms.Thott.290.2º 034v",
+    "subject": "wooden siege cart",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ms.Thott.290.2%C2%BA_034v.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Ms.Thott.290.2%C2%BA_034v.jpg",
+    "artist": "Hans Talhoffer",
+    "date": "2013-03-05 21:05:04",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X02-006",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.31667,
+        "w": 1.0,
+        "h": 0.68333
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.20865,
+          "w": 1.0,
+          "h": 0.68333
+        },
+        "engine": "autocrop v1",
+        "score": 0.3042,
+        "confidence": 0.907
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.31667,
+          "w": 1.0,
+          "h": 0.68333
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.68333
+        },
+        {
+          "x": 0.5458,
+          "y": 0.0,
+          "w": 0.4542,
+          "h": 0.31037
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.40076,
+          "h": 0.27385
+        },
+        {
+          "x": 0.1374,
+          "y": 0.0,
+          "w": 0.40076,
+          "h": 0.27385
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "X03-011",
+  "source": "originals/X03-011.jpg",
+  "source_sha256": "95e59d9a0347829ddc6ce1ddf90eab89193bdb0817c36487e4b02795b9fd6486",
+  "source_size": [
+    448,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Mariano Taccola, De ingeneis",
+    "title": "Mariano di jacopo detto il taccola, veduta generale della gru di Brunelleschi, prima metà xv sec, BNCF Ms. Palatino 776, c. 10r",
+    "subject": "gear machine with horse",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mariano_di_jacopo_detto_il_taccola,_veduta_generale_della_gru_di_Brunelleschi,_prima_met%C3%A0_xv_sec,_BNCF_Ms._Palatino_776,_c._10r.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Mariano_di_jacopo_detto_il_taccola%2C_veduta_generale_della_gru_di_Brunelleschi%2C_prima_met%C3%A0_xv_sec%2C_BNCF_Ms._Palatino_776%2C_c._10r.jpg",
+    "artist": "Taccola",
+    "date": "between 1382 and 1453",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X03-011",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.14309,
+        "w": 1.0,
+        "h": 0.74667
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.25236,
+          "w": 1.0,
+          "h": 0.74667
+        },
+        "engine": "autocrop v1",
+        "score": 0.5189,
+        "confidence": 0.708
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.14309,
+          "w": 1.0,
+          "h": 0.74667
+        },
+        {
+          "x": 0.09408,
+          "y": 0.07024,
+          "w": 0.78049,
+          "h": 0.58276
+        },
+        {
+          "x": 0.36585,
+          "y": 0.18211,
+          "w": 0.61672,
+          "h": 0.46049
+        },
+        {
+          "x": 0.21951,
+          "y": 0.41626,
+          "w": 0.78049,
+          "h": 0.58276
+        },
+        {
+          "x": 0.38328,
+          "y": 0.03642,
+          "w": 0.61672,
+          "h": 0.46049
+        }
+      ]
+    }
+  ]
+}

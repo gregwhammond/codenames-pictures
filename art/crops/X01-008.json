@@ -1,0 +1,73 @@
+{
+  "id": "X01-008",
+  "source": "originals/X01-008.jpg",
+  "source_sha256": "5b71abaf7299a06b6728d7cb8b3dd2fa3adc7161bf1e4e07ee752fe5904590a2",
+  "source_size": [
+    600,
+    379
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Villard de Honnecourt sketchbook",
+    "title": "Villard de Honnecourt - Sketchbook - 27",
+    "subject": "two seated women talking",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Villard_de_Honnecourt_-_Sketchbook_-_27.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Villard_de_Honnecourt_-_Sketchbook_-_27.jpg",
+    "artist": "",
+    "date": "",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X01-008",
+      "mode": "fit",
+      "box": null,
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.18286,
+          "y": 0.0,
+          "w": 0.63167,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.4146,
+        "confidence": 0.632
+      },
+      "candidates": [
+        {
+          "x": 0.10474,
+          "y": 0.0,
+          "w": 0.63167,
+          "h": 1.0
+        },
+        {
+          "x": 0.36776,
+          "y": 0.0,
+          "w": 0.63167,
+          "h": 1.0
+        },
+        {
+          "x": 0.0,
+          "y": 0.16309,
+          "w": 0.52865,
+          "h": 0.83691
+        },
+        {
+          "x": 0.48438,
+          "y": 0.328,
+          "w": 0.42448,
+          "h": 0.672
+        },
+        {
+          "x": 0.48438,
+          "y": 0.0,
+          "w": 0.39062,
+          "h": 0.6184
+        }
+      ]
+    }
+  ]
+}

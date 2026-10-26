@@ -1,0 +1,80 @@
+{
+  "id": "X01-011",
+  "source": "originals/X01-011.jpg",
+  "source_sha256": "cb9a8b1bb8c94ce6d2d20d7567de226368c51350650706507c57dc026cf7e124",
+  "source_size": [
+    346,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Villard de Honnecourt sketchbook",
+    "title": "Villard de Honnecourt - Sketchbook - 42",
+    "subject": "wheel of figures",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Villard_de_Honnecourt_-_Sketchbook_-_42.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Villard_de_Honnecourt_-_Sketchbook_-_42.jpg",
+    "artist": "",
+    "date": "",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X01-011",
+      "mode": "crop",
+      "box": {
+        "x": 0,
+        "y": 0.125,
+        "w": 1.0,
+        "h": 0.57667
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.1594,
+        "confidence": 1.0,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.57667
+        },
+        {
+          "x": 0.1086,
+          "y": 0.0835,
+          "w": 0.8914,
+          "h": 0.51404
+        },
+        {
+          "x": 0.27149,
+          "y": 0.2505,
+          "w": 0.67421,
+          "h": 0.38879
+        },
+        {
+          "x": 0.60181,
+          "y": 0.0,
+          "w": 0.39819,
+          "h": 0.22962
+        },
+        {
+          "x": 0.27149,
+          "y": 0.0,
+          "w": 0.72851,
+          "h": 0.42011
+        },
+        {
+          "x": 0.0,
+          "y": 0.21136,
+          "w": 1.0,
+          "h": 0.57667
+        }
+      ]
+    }
+  ]
+}

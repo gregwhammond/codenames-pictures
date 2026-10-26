@@ -1,0 +1,73 @@
+{
+  "id": "X04-006",
+  "source": "originals/X04-006.jpg",
+  "source_sha256": "df1726dab1fcf178e48081f3638742e14cc6d0da789ac403a403350c0cc16722",
+  "source_size": [
+    437,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Francesco di Giorgio Martini, machine/architecture drawings",
+    "title": "Martini - Trattato di architettura civile e militare, 1841, III-0053",
+    "subject": "castle fortress engraving",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Martini_-_Trattato_di_architettura_civile_e_militare,_1841,_III-0053.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Martini_-_Trattato_di_architettura_civile_e_militare%2C_1841%2C_III-0053.jpg",
+    "artist": "Francesco di Giorgio",
+    "date": "1841",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X04-006",
+      "mode": "fit",
+      "box": null,
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.11445,
+          "w": 1.0,
+          "h": 0.72833
+        },
+        "engine": "autocrop v1",
+        "score": 0.6017,
+        "confidence": 0.563
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.20029,
+          "w": 1.0,
+          "h": 0.72833
+        },
+        {
+          "x": 0.06429,
+          "y": 0.0,
+          "w": 0.83571,
+          "h": 0.60868
+        },
+        {
+          "x": 0.325,
+          "y": 0.0,
+          "w": 0.61786,
+          "h": 0.45001
+        },
+        {
+          "x": 0.02143,
+          "y": 0.04682,
+          "w": 0.56429,
+          "h": 0.41099
+        },
+        {
+          "x": 0.325,
+          "y": 0.12746,
+          "w": 0.67143,
+          "h": 0.48902
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "X23-007",
+  "source": "originals/X23-007.jpg",
+  "source_sha256": "fbff73b0aceb112a78ad90cb9b6d973adedc8e6122972c3fc685ae1be17e01ff",
+  "source_size": [
+    422,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Francesco Melzi / Leonardo school drawings",
+    "title": "Attributed to Francesco Melzi - RCIN 912371, The head of a devil c.1510-20",
+    "subject": "grotesque monster head red",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Attributed_to_Francesco_Melzi_-_RCIN_912371,_The_head_of_a_devil_c.1510-20.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Attributed_to_Francesco_Melzi_-_RCIN_912371%2C_The_head_of_a_devil_c.1510-20.jpg",
+    "artist": "Francesco Melzi",
+    "date": "1970-01-01c.1510-20",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X23-007",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.89259,
+        "h": 0.62779
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.70333
+        },
+        "engine": "autocrop v1",
+        "score": 0.4429,
+        "confidence": 0.724
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.89259,
+          "h": 0.62779
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.61852,
+          "h": 0.43502
+        },
+        {
+          "x": 0.0,
+          "y": 0.17193,
+          "w": 1.0,
+          "h": 0.70333
+        },
+        {
+          "x": 0.32593,
+          "y": 0.0,
+          "w": 0.67407,
+          "h": 0.4741
+        },
+        {
+          "x": 0.54444,
+          "y": 0.0,
+          "w": 0.45556,
+          "h": 0.32041
+        }
+      ]
+    }
+  ]
+}

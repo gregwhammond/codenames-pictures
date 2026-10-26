@@ -1,0 +1,101 @@
+{
+  "id": "X13-010",
+  "source": "originals/X13-010.jpg",
+  "source_sha256": "4532c2b5a7d6b7c715fef6d6c5efcb06d77fe1e0ece08ef3cd7811b15b264417",
+  "source_size": [
+    600,
+    458
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Giovanni Battista Bracelli, Bizzarie di varie figure",
+    "title": "Giovanni Battista Bracelli, From \"Bizzarie di varie Figure\", 1624, NGA 46318",
+    "subject": "robot block men",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Bracelli,_From_%22Bizzarie_di_varie_Figure%22,_1624,_NGA_46318.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Giovanni_Battista_Bracelli%2C_From_%22Bizzarie_di_varie_Figure%22%2C_1624%2C_NGA_46318.jpg",
+    "artist": "Giovanni Battista Bracelli",
+    "date": "1624",
+    "licence": "CC0",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X13-010",
+      "mode": "crop",
+      "box": {
+        "x": 0.125,
+        "y": 0.0,
+        "w": 0.76302,
+        "h": 0.99959
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.47917,
+          "y": 0.05459,
+          "w": 0.52083,
+          "h": 0.68231
+        },
+        "engine": "autocrop v1",
+        "score": 0.4751,
+        "confidence": 0.557
+      },
+      "candidates": [
+        {
+          "x": 0.125,
+          "y": 0.0,
+          "w": 0.76302,
+          "h": 0.99959
+        },
+        {
+          "x": 0.35417,
+          "y": 0.13646,
+          "w": 0.55469,
+          "h": 0.72666
+        },
+        {
+          "x": 0.47396,
+          "y": 0.02388,
+          "w": 0.47135,
+          "h": 0.61749
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.47135,
+          "h": 0.61749
+        },
+        {
+          "x": 0.0,
+          "y": 0.13646,
+          "w": 0.55469,
+          "h": 0.72666
+        }
+      ]
+    },
+    {
+      "tile": "X13-010-b",
+      "status": "auto",
+      "mode": "crop",
+      "box": {
+        "x": 0.05729,
+        "y": 0.04094,
+        "w": 0.42188,
+        "h": 0.55267
+      },
+      "auto": {
+        "box": {
+          "x": 0.05729,
+          "y": 0.04094,
+          "w": 0.42188,
+          "h": 0.55267
+        },
+        "engine": "autocrop v1",
+        "score": 0.5911,
+        "confidence": 0.557
+      },
+      "candidates": []
+    }
+  ]
+}
