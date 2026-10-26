@@ -1,0 +1,73 @@
+{
+  "id": "X02-014",
+  "source": "originals/X02-014.jpg",
+  "source_sha256": "ce2750d4331cb7b4c3e514f26b1c5a4feb0ac87ac0b341324c55d656c5226950",
+  "source_size": [
+    600,
+    405
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Konrad Kyeser, Bellifortis",
+    "title": "Ms.Thott.290.2º 130r",
+    "subject": "jousting knights",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ms.Thott.290.2%C2%BA_130r.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Ms.Thott.290.2%C2%BA_130r.jpg",
+    "artist": "Hans Talhoffer",
+    "date": "2011-12-15 19:44:49",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X02-014",
+      "mode": "fit",
+      "box": null,
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.15625,
+          "y": 0.0,
+          "w": 0.67448,
+          "h": 0.99923
+        },
+        "engine": "autocrop v1",
+        "score": 0.3646,
+        "confidence": 0.326
+      },
+      "candidates": [
+        {
+          "x": 0.32552,
+          "y": 0.0,
+          "w": 0.67448,
+          "h": 0.99923
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.67448,
+          "h": 0.99923
+        },
+        {
+          "x": 0.54688,
+          "y": 0.13503,
+          "w": 0.45312,
+          "h": 0.6713
+        },
+        {
+          "x": 0.25,
+          "y": 0.09259,
+          "w": 0.52604,
+          "h": 0.77932
+        },
+        {
+          "x": 0.0,
+          "y": 0.08102,
+          "w": 0.45312,
+          "h": 0.6713
+        }
+      ]
+    }
+  ]
+}

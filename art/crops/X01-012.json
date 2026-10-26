@@ -1,0 +1,73 @@
+{
+  "id": "X01-012",
+  "source": "originals/X01-012.jpg",
+  "source_sha256": "814e6347b06aea41081918c2268b1f7de6d83dbec16153b968b3d675373ee3ba",
+  "source_size": [
+    600,
+    394
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Villard de Honnecourt sketchbook",
+    "title": "Villard de Honnecourt - Sketchbook - 47",
+    "subject": "lion and tamer",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Villard_de_Honnecourt_-_Sketchbook_-_47.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Villard_de_Honnecourt_-_Sketchbook_-_47.jpg",
+    "artist": "",
+    "date": "",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X01-012",
+      "mode": "fit",
+      "box": null,
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0026,
+          "y": 0.0,
+          "w": 0.65365,
+          "h": 0.9954
+        },
+        "engine": "autocrop v1",
+        "score": 0.3605,
+        "confidence": 0.86
+      },
+      "candidates": [
+        {
+          "x": 0.0026,
+          "y": 0.10707,
+          "w": 0.58333,
+          "h": 0.88832
+        },
+        {
+          "x": 0.39844,
+          "y": 0.31726,
+          "w": 0.29688,
+          "h": 0.45209
+        },
+        {
+          "x": 0.33073,
+          "y": 0.38071,
+          "w": 0.40365,
+          "h": 0.61469
+        },
+        {
+          "x": 0.0026,
+          "y": 0.54331,
+          "w": 0.29688,
+          "h": 0.45209
+        },
+        {
+          "x": 0.34635,
+          "y": 0.0,
+          "w": 0.65365,
+          "h": 0.9954
+        }
+      ]
+    }
+  ]
+}

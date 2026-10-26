@@ -1,0 +1,73 @@
+{
+  "id": "X09-001",
+  "source": "originals/X09-001.jpg",
+  "source_sha256": "f451bbacabe17a33b6470f97b6ef0a825dc8ecdb0138f7bf1dae08b83c71967a",
+  "source_size": [
+    536,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Andreas Vesalius, De humani corporis fabrica",
+    "title": "1543, Andreas Vesalius' Fabrica, Base Of The Brain",
+    "subject": "brain underside anatomy",
+    "source_url": "https://commons.wikimedia.org/wiki/File:1543,_Andreas_Vesalius%27_Fabrica,_Base_Of_The_Brain.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/1543%2C_Andreas_Vesalius%27_Fabrica%2C_Base_Of_The_Brain.jpg",
+    "artist": "User Ancheta Wis on en.wikipedia",
+    "date": "Commons upload by cohesion 23:45, 1 May 2006 (UTC)",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X09-001",
+      "mode": "fit",
+      "box": null,
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.03646,
+          "w": 1.0,
+          "h": 0.89333
+        },
+        "engine": "autocrop v1",
+        "score": 0.5885,
+        "confidence": 0.793
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.89213,
+          "h": 0.79697
+        },
+        {
+          "x": 0.10496,
+          "y": 0.20303,
+          "w": 0.89213,
+          "h": 0.79697
+        },
+        {
+          "x": 0.28863,
+          "y": 0.0,
+          "w": 0.67347,
+          "h": 0.60163
+        },
+        {
+          "x": 0.11662,
+          "y": 0.0,
+          "w": 0.61808,
+          "h": 0.55215
+        },
+        {
+          "x": 0.0,
+          "y": 0.01823,
+          "w": 0.5102,
+          "h": 0.45578
+        }
+      ]
+    }
+  ]
+}

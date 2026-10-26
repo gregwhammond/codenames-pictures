@@ -1,0 +1,78 @@
+{
+  "id": "X02-011",
+  "source": "originals/X02-011.jpg",
+  "source_sha256": "7b619adb730261d53c9ad831b02195d14d94dd2135839d81fdc70900b591f085",
+  "source_size": [
+    600,
+    393
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Konrad Kyeser, Bellifortis",
+    "title": "Ms.Thott.290.2º 094v",
+    "subject": "knight on horse",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ms.Thott.290.2%C2%BA_094v.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Ms.Thott.290.2%C2%BA_094v.jpg",
+    "artist": "Hans Talhoffer",
+    "date": "2011-12-15 19:39:46",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X02-011",
+      "mode": "crop",
+      "box": {
+        "x": 0.23438,
+        "y": 0.07156,
+        "w": 0.58594,
+        "h": 0.89456
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.22917,
+          "y": 0.03181,
+          "w": 0.51302,
+          "h": 0.78324
+        },
+        "engine": "autocrop v1",
+        "score": 0.6562,
+        "confidence": 0.666
+      },
+      "candidates": [
+        {
+          "x": 0.00063,
+          "y": 0.0,
+          "w": 0.655,
+          "h": 1.0
+        },
+        {
+          "x": 0.23438,
+          "y": 0.07156,
+          "w": 0.58594,
+          "h": 0.89456
+        },
+        {
+          "x": 0.18229,
+          "y": 0.08349,
+          "w": 0.44271,
+          "h": 0.67589
+        },
+        {
+          "x": 0.32812,
+          "y": 0.14313,
+          "w": 0.40625,
+          "h": 0.62023
+        },
+        {
+          "x": 0.39583,
+          "y": 0.0,
+          "w": 0.51302,
+          "h": 0.78324
+        }
+      ]
+    }
+  ]
+}

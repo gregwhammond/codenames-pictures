@@ -1,0 +1,78 @@
+{
+  "id": "X05-010",
+  "source": "originals/X05-010.jpg",
+  "source_sha256": "0269013d59df87f435ada3a9290a406475927159ebf87ecc3df6cea90d3e9769",
+  "source_size": [
+    437,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Giovanni Fontana, Bellicorum instrumentorum liber",
+    "title": "Fontana - Bellicorum instrumentorum fol. 50r",
+    "subject": "swords and weapons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fontana_-_Bellicorum_instrumentorum_fol._50r.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Fontana_-_Bellicorum_instrumentorum_fol._50r.jpg",
+    "artist": "Johannes Fontana (1395?-1455?)",
+    "date": "1420-01-01",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X05-010",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.27052,
+        "w": 1.0,
+        "h": 0.72833
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.72833
+        },
+        "engine": "autocrop v1",
+        "score": 0.3471,
+        "confidence": 0.794
+      },
+      "candidates": [
+        {
+          "x": 0.11071,
+          "y": 0.0,
+          "w": 0.88929,
+          "h": 0.6477
+        },
+        {
+          "x": 0.38214,
+          "y": 0.0,
+          "w": 0.61786,
+          "h": 0.45001
+        },
+        {
+          "x": 0.0,
+          "y": 0.27052,
+          "w": 1.0,
+          "h": 0.72833
+        },
+        {
+          "x": 0.6,
+          "y": 0.0,
+          "w": 0.4,
+          "h": 0.29133
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.56429,
+          "h": 0.41099
+        }
+      ]
+    }
+  ]
+}

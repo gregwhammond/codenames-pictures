@@ -1,0 +1,96 @@
+{
+  "id": "X03-010",
+  "source": "originals/X03-010.jpg",
+  "source_sha256": "2106f2f373e980b0b3f0aa38f24f47f746609581474d20b2b6853184c4434df3",
+  "source_size": [
+    432,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Mariano Taccola, De ingeneis",
+    "title": "Mariano di jacopo detto il taccola, de ingegnis ac edificiis, 1432, 02",
+    "subject": "armoured man and lion",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mariano_di_jacopo_detto_il_taccola,_de_ingegnis_ac_edificiis,_1432,_02.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Mariano_di_jacopo_detto_il_taccola%2C_de_ingegnis_ac_edificiis%2C_1432%2C_02.jpg",
+    "artist": "Francesco Bini",
+    "date": "2013-12-28 11:19:14",
+    "licence": "CC BY-SA 4.0",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X03-010",
+      "mode": "fit",
+      "box": null,
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.27899,
+          "y": 0.0,
+          "w": 0.72101,
+          "h": 0.51913
+        },
+        "engine": "autocrop v1",
+        "score": 0.4558,
+        "confidence": 0.391
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.72
+        },
+        {
+          "x": 0.38043,
+          "y": 0.0,
+          "w": 0.61957,
+          "h": 0.44609
+        },
+        {
+          "x": 0.60145,
+          "y": 0.0,
+          "w": 0.39855,
+          "h": 0.28696
+        },
+        {
+          "x": 0.15217,
+          "y": 0.0,
+          "w": 0.67391,
+          "h": 0.48522
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.51087,
+          "h": 0.36783
+        }
+      ]
+    },
+    {
+      "tile": "X03-010-b",
+      "status": "auto",
+      "mode": "crop",
+      "box": {
+        "x": 0.32971,
+        "y": 0.51739,
+        "w": 0.67029,
+        "h": 0.48261
+      },
+      "auto": {
+        "box": {
+          "x": 0.32971,
+          "y": 0.51739,
+          "w": 0.67029,
+          "h": 0.48261
+        },
+        "engine": "autocrop v1",
+        "score": 0.6326,
+        "confidence": 0.391
+      },
+      "candidates": []
+    }
+  ]
+}

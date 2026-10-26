@@ -1,0 +1,75 @@
+{
+  "id": "X16-002",
+  "source": "originals/X16-002.jpg",
+  "source_sha256": "acf8793158c346625da698c71aa9419930f9c3bb3c85a828e013997409fde8e6",
+  "source_size": [
+    360,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Robert Hooke, Micrographia plates",
+    "title": "Hooke-gnat",
+    "subject": "gnat insect magnified",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hooke-gnat.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Hooke-gnat.jpg",
+    "artist": "Robert Hooke (1635-1703)",
+    "date": "1665",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X16-002",
+      "mode": "fit",
+      "box": null,
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.3213,
+        "confidence": 0.779,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.02174,
+          "y": 0.00783,
+          "w": 0.97826,
+          "h": 0.58696
+        },
+        {
+          "x": 0.02174,
+          "y": 0.07826,
+          "w": 0.97826,
+          "h": 0.58696
+        },
+        {
+          "x": 0.23478,
+          "y": 0.00783,
+          "w": 0.76522,
+          "h": 0.45913
+        },
+        {
+          "x": 0.02174,
+          "y": 0.00783,
+          "w": 0.71304,
+          "h": 0.42783
+        },
+        {
+          "x": 0.02174,
+          "y": 0.28957,
+          "w": 0.97826,
+          "h": 0.58696
+        },
+        {
+          "x": 0.28261,
+          "y": 0.00783,
+          "w": 0.5,
+          "h": 0.3
+        }
+      ]
+    }
+  ]
+}

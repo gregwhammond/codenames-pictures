@@ -1,0 +1,80 @@
+{
+  "id": "X07-008",
+  "source": "originals/X07-008.jpg",
+  "source_sha256": "22ece05e0dd89b6ec5d99b07ab283b27bce4fe3098240384b8d894365c6039d6",
+  "source_size": [
+    348,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Georgius Agricola, De re metallica",
+    "title": "Georgii Agricolae De re metallica libri XII. qvibus officia, instrumenta, machinae, ac omnia deni ad metallicam spectantia, non modo luculentissimè describuntur, sed and per effigies, suis locis (14757261986)",
+    "subject": "smelting works",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Georgii_Agricolae_De_re_metallica_libri_XII._qvibus_officia,_instrumenta,_machinae,_ac_omnia_deni_ad_metallicam_spectantia,_non_modo_luculentissim%C3%A8_describuntur,_sed_and_per_effigies,_suis_locis_(14757261986).jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Georgii_Agricolae_De_re_metallica_libri_XII._qvibus_officia%2C_instrumenta%2C_machinae%2C_ac_omnia_deni_ad_metallicam_spectantia%2C_non_modo_luculentissim%C3%A8_describuntur%2C_sed_and_per_effigies%2C_suis_locis_%2814757261986%29.jpg",
+    "artist": "Internet Archive Book Images",
+    "date": "1556",
+    "licence": "No restrictions",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X07-008",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.41874,
+        "w": 1.0,
+        "h": 0.58
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.1283,
+        "confidence": 1.0,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.58
+        },
+        {
+          "x": 0.10762,
+          "y": 0.0,
+          "w": 0.89238,
+          "h": 0.51758
+        },
+        {
+          "x": 0.38117,
+          "y": 0.0,
+          "w": 0.61883,
+          "h": 0.35892
+        },
+        {
+          "x": 0.0,
+          "y": 0.14045,
+          "w": 1.0,
+          "h": 0.58
+        },
+        {
+          "x": 0.0,
+          "y": 0.41874,
+          "w": 1.0,
+          "h": 0.58
+        },
+        {
+          "x": 0.6009,
+          "y": 0.0,
+          "w": 0.3991,
+          "h": 0.23148
+        }
+      ]
+    }
+  ]
+}

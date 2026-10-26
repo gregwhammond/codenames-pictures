@@ -1,0 +1,80 @@
+{
+  "id": "X06-014",
+  "source": "originals/X06-014.jpg",
+  "source_sha256": "ca93da8441e5fa3cd4f83cd718a1c5fd06c16cbce02d8b4105fd87facecf3d56",
+  "source_size": [
+    417,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Agostino Ramelli, Le diverse et artificiose machine",
+    "title": "Sixteenth Century Cannon (cropped)",
+    "subject": "siege machine castle wall",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sixteenth_Century_Cannon_(cropped).jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Sixteenth_Century_Cannon_%28cropped%29.jpg",
+    "artist": "Ramelli, Agostino, 1531-ca. 1600",
+    "date": "1588",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X06-014",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.695
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.3102,
+        "confidence": 0.976,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.695
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.89139,
+          "h": 0.61951
+        },
+        {
+          "x": 0.0,
+          "y": 0.30455,
+          "w": 1.0,
+          "h": 0.695
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.61798,
+          "h": 0.42949
+        },
+        {
+          "x": 0.32584,
+          "y": 0.0,
+          "w": 0.67416,
+          "h": 0.46854
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.40075,
+          "h": 0.27852
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "X14-011",
+  "source": "originals/X14-011.jpg",
+  "source_sha256": "084ff4a6b40139d7ccb40d47427c272cd42dccc267c3481532bcc13daf39d0e7",
+  "source_size": [
+    600,
+    418
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Wenzel Jamnitzer, Perspectiva corporum regularium",
+    "title": "Twee veelvlakken met een kegel als uitgangspunt, BI-1969-205-41",
+    "subject": "spiral cones",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Twee_veelvlakken_met_een_kegel_als_uitgangspunt,_BI-1969-205-41.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Twee_veelvlakken_met_een_kegel_als_uitgangspunt%2C_BI-1969-205-41.jpg",
+    "artist": "Rijksmuseum",
+    "date": "1568",
+    "licence": "CC0",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X14-011",
+      "mode": "crop",
+      "box": {
+        "x": 0.20833,
+        "y": 0.11962,
+        "w": 0.6,
+        "h": 0.86124
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.1725,
+          "y": 0.0,
+          "w": 0.69667,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.6164,
+        "confidence": 0.524
+      },
+      "candidates": [
+        {
+          "x": 0.1875,
+          "y": 0.0,
+          "w": 0.6224,
+          "h": 0.89339
+        },
+        {
+          "x": 0.3125,
+          "y": 0.27108,
+          "w": 0.50781,
+          "h": 0.72892
+        },
+        {
+          "x": 0.125,
+          "y": 0.21501,
+          "w": 0.54688,
+          "h": 0.78499
+        },
+        {
+          "x": 0.5,
+          "y": 0.26914,
+          "w": 0.43229,
+          "h": 0.62051
+        },
+        {
+          "x": 0.0,
+          "y": 0.17943,
+          "w": 0.50781,
+          "h": 0.72892
+        }
+      ]
+    }
+  ]
+}

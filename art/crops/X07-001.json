@@ -1,0 +1,80 @@
+{
+  "id": "X07-001",
+  "source": "originals/X07-001.jpg",
+  "source_sha256": "2559755a013d15a7ec4cd2f244b600c7000404402e342d4408dbffdf39aec193",
+  "source_size": [
+    363,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Georgius Agricola, De re metallica",
+    "title": "Agricola 1556 De re metallica libri XII — von einer Luppe werden Schlackereste entfernt",
+    "subject": "furnace workers",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Agricola_1556_De_re_metallica_libri_XII_%E2%80%94_von_einer_Luppe_werden_Schlackereste_entfernt.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Agricola_1556_De_re_metallica_libri_XII_%E2%80%94_von_einer_Luppe_werden_Schlackereste_entfernt.jpg",
+    "artist": "Unknown author Unknown author",
+    "date": "1556",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X07-001",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.99569,
+        "h": 0.60239
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.2455,
+        "confidence": 0.943,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.99569,
+          "h": 0.60239
+        },
+        {
+          "x": 0.10776,
+          "y": 0.0,
+          "w": 0.88793,
+          "h": 0.5372
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.6681,
+          "h": 0.4042
+        },
+        {
+          "x": 0.37931,
+          "y": 0.0,
+          "w": 0.61638,
+          "h": 0.37291
+        },
+        {
+          "x": 0.0,
+          "y": 0.14082,
+          "w": 0.99569,
+          "h": 0.60239
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.45259,
+          "h": 0.27381
+        }
+      ]
+    }
+  ]
+}

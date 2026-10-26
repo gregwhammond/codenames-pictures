@@ -1,0 +1,78 @@
+{
+  "id": "X13-007",
+  "source": "originals/X13-007.jpg",
+  "source_sha256": "c301e4f1d4b4de99415f717491968930853730b072e153fad94c80082fa1c69a",
+  "source_size": [
+    600,
+    434
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Giovanni Battista Bracelli, Bizzarie di varie figure",
+    "title": "Composite figures in cubist and surrealistic style composed of materials such as chain links, tubes, sieves and tennis racquets LCCN2005680716",
+    "subject": "two box men small",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Composite_figures_in_cubist_and_surrealistic_style_composed_of_materials_such_as_chain_links,_tubes,_sieves_and_tennis_racquets_LCCN2005680716.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Composite_figures_in_cubist_and_surrealistic_style_composed_of_materials_such_as_chain_links%2C_tubes%2C_sieves_and_tennis_racquets_LCCN2005680716.jpg",
+    "artist": "Miscellaneous Items in High Demand, PPOC, Library of Congress",
+    "date": "1624",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X13-007",
+      "mode": "crop",
+      "box": {
+        "x": 0.27344,
+        "y": 0.15121,
+        "w": 0.44792,
+        "h": 0.61924
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00031,
+          "y": 0.0,
+          "w": 0.72333,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.6243,
+        "confidence": 0.484
+      },
+      "candidates": [
+        {
+          "x": 0.25552,
+          "y": 0.0,
+          "w": 0.72333,
+          "h": 1.0
+        },
+        {
+          "x": 0.27344,
+          "y": 0.15121,
+          "w": 0.44792,
+          "h": 0.61924
+        },
+        {
+          "x": 0.14062,
+          "y": 0.21875,
+          "w": 0.5651,
+          "h": 0.78125
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.60677,
+          "h": 0.83885
+        },
+        {
+          "x": 0.45573,
+          "y": 0.21601,
+          "w": 0.36979,
+          "h": 0.51123
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "X05-015",
+  "source": "originals/X05-015.jpg",
+  "source_sha256": "61c8aa1ab5f828647339eefad764e89d77def118c41ec4886a80194de31653e4",
+  "source_size": [
+    432,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Giovanni Fontana, Bellicorum instrumentorum liber",
+    "title": "Fontana - Bellicorum instrumentorum fol. 9r",
+    "subject": "red figure on beam",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fontana_-_Bellicorum_instrumentorum_fol._9r.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Fontana_-_Bellicorum_instrumentorum_fol._9r.jpg",
+    "artist": "Johannes Fontana (1395?-1455?)",
+    "date": "1420-01-01",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X05-015",
+      "mode": "crop",
+      "box": {
+        "x": 0,
+        "y": 0.28,
+        "w": 1.0,
+        "h": 0.72
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.28,
+          "w": 1.0,
+          "h": 0.72
+        },
+        "engine": "autocrop v1",
+        "score": 0.2057,
+        "confidence": 1.0
+      },
+      "candidates": [
+        {
+          "x": 0.1087,
+          "y": 0.35826,
+          "w": 0.8913,
+          "h": 0.64174
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.72
+        },
+        {
+          "x": 0.27174,
+          "y": 0.2713,
+          "w": 0.72826,
+          "h": 0.52435
+        },
+        {
+          "x": 0.32609,
+          "y": 0.0,
+          "w": 0.67391,
+          "h": 0.48522
+        },
+        {
+          "x": 0.38043,
+          "y": 0.55391,
+          "w": 0.61957,
+          "h": 0.44609
+        }
+      ]
+    }
+  ]
+}

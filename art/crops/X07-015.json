@@ -1,0 +1,101 @@
+{
+  "id": "X07-015",
+  "source": "originals/X07-015.jpg",
+  "source_sha256": "dac50381385eb03e308ac194527320190b22fce1ff0ca74e0510d5ec199b9850",
+  "source_size": [
+    370,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Georgius Agricola, De re metallica",
+    "title": "Georgii Agricolae De re metallica libri XII. qvibus officia, instrumenta, machinae, ac omnia deni ad metallicam spectantia, non modo luculentissimè describuntur, sed and per effigies, suis locis (14799882133)",
+    "subject": "pumps in shaft",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Georgii_Agricolae_De_re_metallica_libri_XII._qvibus_officia,_instrumenta,_machinae,_ac_omnia_deni_ad_metallicam_spectantia,_non_modo_luculentissim%C3%A8_describuntur,_sed_and_per_effigies,_suis_locis_(14799882133).jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Georgii_Agricolae_De_re_metallica_libri_XII._qvibus_officia%2C_instrumenta%2C_machinae%2C_ac_omnia_deni_ad_metallicam_spectantia%2C_non_modo_luculentissim%C3%A8_describuntur%2C_sed_and_per_effigies%2C_suis_locis_%2814799882133%29.jpg",
+    "artist": "Internet Archive Book Images",
+    "date": "1556",
+    "licence": "No restrictions",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X07-015",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.61667
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.59494,
+          "y": 0.0,
+          "w": 0.40506,
+          "h": 0.24979
+        },
+        "engine": "autocrop v1",
+        "score": 0.5878,
+        "confidence": 0.277
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.61667
+        },
+        {
+          "x": 0.5443,
+          "y": 0.0,
+          "w": 0.4557,
+          "h": 0.28101
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.51055,
+          "h": 0.31484
+        },
+        {
+          "x": 0.32911,
+          "y": 0.0,
+          "w": 0.67089,
+          "h": 0.41371
+        },
+        {
+          "x": 0.44304,
+          "y": 0.0,
+          "w": 0.40084,
+          "h": 0.24719
+        }
+      ]
+    },
+    {
+      "tile": "X07-015-b",
+      "status": "auto",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.41772,
+        "h": 0.25759
+      },
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.41772,
+          "h": 0.25759
+        },
+        "engine": "autocrop v1",
+        "score": 0.5801,
+        "confidence": 0.277
+      },
+      "candidates": []
+    }
+  ]
+}

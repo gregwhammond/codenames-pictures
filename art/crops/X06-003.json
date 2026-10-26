@@ -1,0 +1,78 @@
+{
+  "id": "X06-003",
+  "source": "originals/X06-003.jpg",
+  "source_sha256": "31f9e6662dbea71d5bea5243867c0a8ddda8782ba9ebf1b8444b4ecd011ed1f5",
+  "source_size": [
+    436,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Agostino Ramelli, Le diverse et artificiose machine",
+    "title": "Complex machine using water-wheel, bellows, and turbine action LCCN2007681122",
+    "subject": "water wheel machine",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Complex_machine_using_water-wheel,_bellows,_and_turbine_action_LCCN2007681122.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Complex_machine_using_water-wheel%2C_bellows%2C_and_turbine_action_LCCN2007681122.jpg",
+    "artist": "Miscellaneous Items in High Demand, PPOC, Library of Congress",
+    "date": "1588",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X06-003",
+      "mode": "crop",
+      "box": {
+        "x": 0.05376,
+        "y": 0.3124,
+        "w": 0.94624,
+        "h": 0.6876
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.20055,
+          "w": 1.0,
+          "h": 0.72667
+        },
+        "engine": "autocrop v1",
+        "score": 0.3852,
+        "confidence": 0.831
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.72667
+        },
+        {
+          "x": 0.05376,
+          "y": 0.3124,
+          "w": 0.94624,
+          "h": 0.6876
+        },
+        {
+          "x": 0.32616,
+          "y": 0.07293,
+          "w": 0.67384,
+          "h": 0.48965
+        },
+        {
+          "x": 0.02509,
+          "y": 0.0,
+          "w": 0.67384,
+          "h": 0.48965
+        },
+        {
+          "x": 0.2509,
+          "y": 0.20055,
+          "w": 0.67384,
+          "h": 0.48965
+        }
+      ]
+    }
+  ]
+}

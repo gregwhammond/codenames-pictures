@@ -1,0 +1,78 @@
+{
+  "id": "X18-007",
+  "source": "originals/X18-007.jpg",
+  "source_sha256": "cc7c41a5a19ada555a8b50f9c1c29594353cacfb1eb00a963b5bfdc77e70a437",
+  "source_size": [
+    498,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Robert Fludd diagrams",
+    "title": "Fotothek df tg 0006413 Mechanik ^ Seilzug",
+    "subject": "water clock machine",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fotothek_df_tg_0006413_Mechanik_%5E_Seilzug.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Fotothek_df_tg_0006413_Mechanik_%5E_Seilzug.jpg",
+    "artist": "",
+    "date": "1624",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X18-007",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.06765,
+        "w": 1.0,
+        "h": 0.83
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.16652,
+          "w": 1.0,
+          "h": 0.83
+        },
+        "engine": "autocrop v1",
+        "score": 0.4765,
+        "confidence": 0.976
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.06765,
+          "w": 1.0,
+          "h": 0.83
+        },
+        {
+          "x": 0.0,
+          "y": 0.34865,
+          "w": 0.78056,
+          "h": 0.64787
+        },
+        {
+          "x": 0.27273,
+          "y": 0.39288,
+          "w": 0.72727,
+          "h": 0.60364
+        },
+        {
+          "x": 0.0627,
+          "y": 0.0,
+          "w": 0.40125,
+          "h": 0.33304
+        },
+        {
+          "x": 0.25078,
+          "y": 0.0,
+          "w": 0.40125,
+          "h": 0.33304
+        }
+      ]
+    }
+  ]
+}

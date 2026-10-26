@@ -1,0 +1,80 @@
+{
+  "id": "X02-005",
+  "source": "originals/X02-005.jpg",
+  "source_sha256": "69676d9732e12f0a602ee17bc451a986b67ae7e6d961b97894b2d295a204285e",
+  "source_size": [
+    410,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Konrad Kyeser, Bellifortis",
+    "title": "Ms.Thott.290.2º 022v",
+    "subject": "castle siege shields",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ms.Thott.290.2%C2%BA_022v.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Ms.Thott.290.2%C2%BA_022v.jpg",
+    "artist": "Hans Talhoffer",
+    "date": "2013-03-05 21:05:04",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X02-005",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.07824,
+        "w": 1.0,
+        "h": 0.68333
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.1917,
+        "confidence": 1.0,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.68333
+        },
+        {
+          "x": 0.0,
+          "y": 0.31667,
+          "w": 1.0,
+          "h": 0.68333
+        },
+        {
+          "x": 0.0,
+          "y": 0.07824,
+          "w": 1.0,
+          "h": 0.68333
+        },
+        {
+          "x": 0.43511,
+          "y": 0.0,
+          "w": 0.56489,
+          "h": 0.38601
+        },
+        {
+          "x": 0.18321,
+          "y": 0.0,
+          "w": 0.78244,
+          "h": 0.53467
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.61832,
+          "h": 0.42252
+        }
+      ]
+    }
+  ]
+}

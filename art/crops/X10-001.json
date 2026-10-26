@@ -1,0 +1,73 @@
+{
+  "id": "X10-001",
+  "source": "originals/X10-001.jpg",
+  "source_sha256": "7c417dd18f74e70924ff5a6840d200ba8c4bddb1295cfc47bd4e61c8754fa16b",
+  "source_size": [
+    363,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Albrecht Dürer drawings",
+    "title": "ADurerAugerBayonne",
+    "subject": "bent old man leaning",
+    "source_url": "https://commons.wikimedia.org/wiki/File:ADurerAugerBayonne.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/ADurerAugerBayonne.jpg",
+    "artist": "Albrecht Dürer",
+    "date": "circa 1496",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X10-001",
+      "mode": "fit",
+      "box": null,
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.395,
+          "w": 1.0,
+          "h": 0.605
+        },
+        "engine": "autocrop v1",
+        "score": 0.3131,
+        "confidence": 0.72
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.29207,
+          "w": 0.78017,
+          "h": 0.472
+        },
+        {
+          "x": 0.0,
+          "y": 0.46019,
+          "w": 0.89224,
+          "h": 0.53981
+        },
+        {
+          "x": 0.01724,
+          "y": 0.28164,
+          "w": 0.50862,
+          "h": 0.30772
+        },
+        {
+          "x": 0.0,
+          "y": 0.16429,
+          "w": 0.72845,
+          "h": 0.44071
+        },
+        {
+          "x": 0.03879,
+          "y": 0.01565,
+          "w": 0.40086,
+          "h": 0.24252
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "X06-008",
+  "source": "originals/X06-008.jpg",
+  "source_sha256": "354759cf4b600347295615c54a578afd0e6b77f0207a3461bcad4eea3bf4a0d3",
+  "source_size": [
+    600,
+    480
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Agostino Ramelli, Le diverse et artificiose machine",
+    "title": "Folding bridge - two views, top extended across moat, bottom folded prior to release; used by infantry during assault on fortress LCCN2006690456",
+    "subject": "portable bridge soldiers",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Folding_bridge_-_two_views,_top_extended_across_moat,_bottom_folded_prior_to_release;_used_by_infantry_during_assault_on_fortress_LCCN2006690456.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Folding_bridge_-_two_views%2C_top_extended_across_moat%2C_bottom_folded_prior_to_release%3B_used_by_infantry_during_assault_on_fortress_LCCN2006690456.jpg",
+    "artist": "Ramelli, Agostino, 1531-approximately 1600.",
+    "date": "1588",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X06-008",
+      "mode": "crop",
+      "box": {
+        "x": 0.09375,
+        "y": 0.00651,
+        "w": 0.79427,
+        "h": 0.99284
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.00651,
+          "w": 0.79427,
+          "h": 0.99284
+        },
+        "engine": "autocrop v1",
+        "score": 0.5563,
+        "confidence": 0.501
+      },
+      "candidates": [
+        {
+          "x": 0.09375,
+          "y": 0.00651,
+          "w": 0.79427,
+          "h": 0.99284
+        },
+        {
+          "x": 0.38021,
+          "y": 0.22461,
+          "w": 0.61979,
+          "h": 0.77474
+        },
+        {
+          "x": 0.0,
+          "y": 0.1237,
+          "w": 0.61979,
+          "h": 0.77474
+        },
+        {
+          "x": 0.35156,
+          "y": 0.00651,
+          "w": 0.57812,
+          "h": 0.72266
+        },
+        {
+          "x": 0.27083,
+          "y": 0.1888,
+          "w": 0.53385,
+          "h": 0.66732
+        }
+      ]
+    }
+  ]
+}

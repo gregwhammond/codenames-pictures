@@ -1,0 +1,78 @@
+{
+  "id": "X13-015",
+  "source": "originals/X13-015.jpg",
+  "source_sha256": "3ac7360f640ca50894d2e7d07ba31cf8ff444eb560dd3b14768647331786acf0",
+  "source_size": [
+    600,
+    449
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Giovanni Battista Bracelli, Bizzarie di varie figure",
+    "title": "Giovanni Battista Bracelli, From \"Bizzarie di varie Figure\", 1624, NGA 46350",
+    "subject": "grotesque figures with plumes",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Bracelli,_From_%22Bizzarie_di_varie_Figure%22,_1624,_NGA_46350.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Giovanni_Battista_Bracelli%2C_From_%22Bizzarie_di_varie_Figure%22%2C_1624%2C_NGA_46350.jpg",
+    "artist": "Giovanni Battista Bracelli",
+    "date": "1624",
+    "licence": "CC0",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X13-015",
+      "mode": "crop",
+      "box": {
+        "x": 0.14667,
+        "y": 0.06682,
+        "w": 0.63333,
+        "h": 0.84633
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.12528,
+          "w": 0.58333,
+          "h": 0.77951
+        },
+        "engine": "autocrop v1",
+        "score": 0.6605,
+        "confidence": 0.628
+      },
+      "candidates": [
+        {
+          "x": 0.04688,
+          "y": 0.09396,
+          "w": 0.58333,
+          "h": 0.77951
+        },
+        {
+          "x": 0.0,
+          "y": 0.29232,
+          "w": 0.46094,
+          "h": 0.61595
+        },
+        {
+          "x": 0.03125,
+          "y": 0.12528,
+          "w": 0.42188,
+          "h": 0.56375
+        },
+        {
+          "x": 0.14323,
+          "y": 0.0,
+          "w": 0.7474,
+          "h": 0.99875
+        },
+        {
+          "x": 0.10417,
+          "y": 0.48719,
+          "w": 0.33854,
+          "h": 0.45239
+        }
+      ]
+    }
+  ]
+}

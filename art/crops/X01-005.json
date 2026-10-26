@@ -1,0 +1,78 @@
+{
+  "id": "X01-005",
+  "source": "originals/X01-005.jpg",
+  "source_sha256": "d9d96f93ad6f2a4dbc4cfedd02ed44c566e352fdc43378584355a0ebedbfbd93",
+  "source_size": [
+    402,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Villard de Honnecourt sketchbook",
+    "title": "Villard de Honnecourt - Sketchbook - 12",
+    "subject": "tower and dragon letter",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Villard_de_Honnecourt_-_Sketchbook_-_12.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Villard_de_Honnecourt_-_Sketchbook_-_12.jpg",
+    "artist": "",
+    "date": "",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X01-005",
+      "mode": "crop",
+      "box": {
+        "x": 0.10895,
+        "y": 0.00261,
+        "w": 0.89105,
+        "h": 0.597
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.00261,
+          "w": 1.0,
+          "h": 0.67
+        },
+        "engine": "autocrop v1",
+        "score": 0.2743,
+        "confidence": 0.814
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.00261,
+          "w": 0.61868,
+          "h": 0.41451
+        },
+        {
+          "x": 0.10895,
+          "y": 0.00261,
+          "w": 0.89105,
+          "h": 0.597
+        },
+        {
+          "x": 0.0,
+          "y": 0.00261,
+          "w": 0.40078,
+          "h": 0.26852
+        },
+        {
+          "x": 0.54475,
+          "y": 0.00261,
+          "w": 0.45525,
+          "h": 0.30502
+        },
+        {
+          "x": 0.0,
+          "y": 0.15903,
+          "w": 1.0,
+          "h": 0.67
+        }
+      ]
+    }
+  ]
+}

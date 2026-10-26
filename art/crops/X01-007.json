@@ -1,0 +1,80 @@
+{
+  "id": "X01-007",
+  "source": "originals/X01-007.jpg",
+  "source_sha256": "a0c6398665220b69ec1b77619cfa5e3824d0b33114086ac13284279e040eb537",
+  "source_size": [
+    392,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Villard de Honnecourt sketchbook",
+    "title": "Villard de Honnecourt - Sketchbook - 21",
+    "subject": "seated figures and dragon",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Villard_de_Honnecourt_-_Sketchbook_-_21.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Villard_de_Honnecourt_-_Sketchbook_-_21.jpg",
+    "artist": "",
+    "date": "",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X01-007",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.05466,
+        "w": 1.0,
+        "h": 0.65333
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.3116,
+        "confidence": 0.885,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.05466,
+          "w": 1.0,
+          "h": 0.65333
+        },
+        {
+          "x": 0.05578,
+          "y": 0.0026,
+          "w": 0.94422,
+          "h": 0.61689
+        },
+        {
+          "x": 0.0,
+          "y": 0.18481,
+          "w": 1.0,
+          "h": 0.65333
+        },
+        {
+          "x": 0.26295,
+          "y": 0.08069,
+          "w": 0.61753,
+          "h": 0.40345
+        },
+        {
+          "x": 0.02789,
+          "y": 0.0026,
+          "w": 0.67331,
+          "h": 0.43989
+        },
+        {
+          "x": 0.19522,
+          "y": 0.18481,
+          "w": 0.67331,
+          "h": 0.43989
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "X09-014",
+  "source": "originals/X09-014.jpg",
+  "source_sha256": "331cec03990f0e86ca2f983b916f55fdcc0acc9c7d7c0cb94b662814e7eb4326",
+  "source_size": [
+    352,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Andreas Vesalius, De humani corporis fabrica",
+    "title": "Vesalius Fabrica p187",
+    "subject": "flayed muscle man anatomy",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Vesalius_Fabrica_p187.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Vesalius_Fabrica_p187.jpg",
+    "artist": "",
+    "date": "",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X09-014",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.02347,
+        "w": 1.0,
+        "h": 0.58667
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.3084,
+        "confidence": 0.858,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.02347,
+          "w": 1.0,
+          "h": 0.58667
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.88889,
+          "h": 0.52148
+        },
+        {
+          "x": 0.0,
+          "y": 0.1408,
+          "w": 1.0,
+          "h": 0.58667
+        },
+        {
+          "x": 0.29333,
+          "y": 0.0,
+          "w": 0.67111,
+          "h": 0.39372
+        },
+        {
+          "x": 0.26667,
+          "y": 0.10951,
+          "w": 0.72889,
+          "h": 0.42761
+        },
+        {
+          "x": 0.11111,
+          "y": 0.0,
+          "w": 0.61778,
+          "h": 0.36243
+        }
+      ]
+    }
+  ]
+}

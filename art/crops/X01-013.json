@@ -1,0 +1,78 @@
+{
+  "id": "X01-013",
+  "source": "originals/X01-013.jpg",
+  "source_sha256": "fcd916456f91c655e2c96249f6e7ebc94477ef5db851523432f1180d94c3f74b",
+  "source_size": [
+    600,
+    426
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Villard de Honnecourt sketchbook",
+    "title": "Villard de Honnecourt - Sketchbook - 53",
+    "subject": "lion trainer and figures",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Villard_de_Honnecourt_-_Sketchbook_-_53.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Villard_de_Honnecourt_-_Sketchbook_-_53.jpg",
+    "artist": "",
+    "date": "",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X01-013",
+      "mode": "crop",
+      "box": {
+        "x": 0.00047,
+        "y": 0.0,
+        "w": 0.71,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.28953,
+          "y": 0.0,
+          "w": 0.71,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.3455,
+        "confidence": 0.761
+      },
+      "candidates": [
+        {
+          "x": 0.36719,
+          "y": 0.0,
+          "w": 0.63281,
+          "h": 0.89129
+        },
+        {
+          "x": 0.52083,
+          "y": 0.3081,
+          "w": 0.47917,
+          "h": 0.67488
+        },
+        {
+          "x": 0.5599,
+          "y": 0.0,
+          "w": 0.4401,
+          "h": 0.61987
+        },
+        {
+          "x": 0.67708,
+          "y": 0.4218,
+          "w": 0.32292,
+          "h": 0.45481
+        },
+        {
+          "x": 0.00047,
+          "y": 0.0,
+          "w": 0.71,
+          "h": 1.0
+        }
+      ]
+    }
+  ]
+}

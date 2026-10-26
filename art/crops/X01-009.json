@@ -1,0 +1,80 @@
+{
+  "id": "X01-009",
+  "source": "originals/X01-009.jpg",
+  "source_sha256": "b31918f80020d70cd72a374c85b6281f06ea1dac93e97e2bc3ba1d4feddd5da2",
+  "source_size": [
+    398,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Villard de Honnecourt sketchbook",
+    "title": "Villard de Honnecourt - Sketchbook - 31",
+    "subject": "rose window",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Villard_de_Honnecourt_-_Sketchbook_-_31.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Villard_de_Honnecourt_-_Sketchbook_-_31.jpg",
+    "artist": "",
+    "date": "",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X01-009",
+      "mode": "crop",
+      "box": {
+        "x": 0,
+        "y": 0.0667,
+        "w": 1.0,
+        "h": 0.66333
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.0851,
+        "confidence": 0.764,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.38039,
+          "y": 0.0,
+          "w": 0.61961,
+          "h": 0.41101
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.66333
+        },
+        {
+          "x": 0.0,
+          "y": 0.33557,
+          "w": 1.0,
+          "h": 0.66333
+        },
+        {
+          "x": 0.32549,
+          "y": 0.03642,
+          "w": 0.67451,
+          "h": 0.44742
+        },
+        {
+          "x": 0.39216,
+          "y": 0.0,
+          "w": 0.5098,
+          "h": 0.33817
+        },
+        {
+          "x": 0.16471,
+          "y": 0.22892,
+          "w": 0.83529,
+          "h": 0.55408
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "X05-011",
+  "source": "originals/X05-011.jpg",
+  "source_sha256": "1103765fa9d874997c68133b0d6e9e388b062264e617543da85829371f4dbefc",
+  "source_size": [
+    437,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Giovanni Fontana, Bellicorum instrumentorum liber",
+    "title": "Fontana - Bellicorum instrumentorum fol. 59v",
+    "subject": "horned devil red",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fontana_-_Bellicorum_instrumentorum_fol._59v.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Fontana_-_Bellicorum_instrumentorum_fol._59v.jpg",
+    "artist": "Johannes Fontana (1395?-1455?)",
+    "date": "1420-01-01",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X05-011",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.72833
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.3786,
+        "confidence": 0.738,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.72833
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.83571,
+          "h": 0.60868
+        },
+        {
+          "x": 0.32857,
+          "y": 0.0,
+          "w": 0.67143,
+          "h": 0.48902
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.56429,
+          "h": 0.41099
+        },
+        {
+          "x": 0.19286,
+          "y": 0.0,
+          "w": 0.56429,
+          "h": 0.41099
+        },
+        {
+          "x": 0.0,
+          "y": 0.27052,
+          "w": 1.0,
+          "h": 0.72833
+        }
+      ]
+    }
+  ]
+}

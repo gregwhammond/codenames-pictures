@@ -1,0 +1,80 @@
+{
+  "id": "X05-008",
+  "source": "originals/X05-008.jpg",
+  "source_sha256": "d45751c73874bf479134d5d31aec91bf5956b2462a3be63989acc0c5e9d11ea2",
+  "source_size": [
+    430,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Giovanni Fontana, Bellicorum instrumentorum liber",
+    "title": "Fontana - Bellicorum instrumentorum fol. 34r",
+    "subject": "man with balance pole",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fontana_-_Bellicorum_instrumentorum_fol._34r.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Fontana_-_Bellicorum_instrumentorum_fol._34r.jpg",
+    "artist": "Johannes Fontana (1395?-1455?)",
+    "date": "1420-01-01",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X05-008",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.71667
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.2645,
+        "confidence": 0.807,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.71667
+        },
+        {
+          "x": 0.10909,
+          "y": 0.0,
+          "w": 0.89091,
+          "h": 0.63848
+        },
+        {
+          "x": 0.0,
+          "y": 0.28333,
+          "w": 1.0,
+          "h": 0.71667
+        },
+        {
+          "x": 0.38182,
+          "y": 0.0,
+          "w": 0.61818,
+          "h": 0.44303
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.61818,
+          "h": 0.44303
+        },
+        {
+          "x": 0.6,
+          "y": 0.0,
+          "w": 0.4,
+          "h": 0.28667
+        }
+      ]
+    }
+  ]
+}
