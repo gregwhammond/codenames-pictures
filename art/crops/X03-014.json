@@ -1,0 +1,73 @@
+{
+  "id": "X03-014",
+  "source": "originals/X03-014.jpg",
+  "source_sha256": "555a55bb950459c971105ca97810e51b1ef334573598a0a67dc1f98a91bb47e9",
+  "source_size": [
+    600,
+    584
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Mariano Taccola, De ingeneis",
+    "title": "Taccola levelling 3",
+    "subject": "mound with tower",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Taccola_levelling_3.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Taccola_levelling_3.jpg",
+    "artist": "Mariano di Jacopo detto il Taccola (1382 – c. 1453)",
+    "date": "circa 1430",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X03-014",
+      "mode": "fit",
+      "box": null,
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.02635,
+          "y": 0.0,
+          "w": 0.97333,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.656,
+        "confidence": 0.375
+      },
+      "candidates": [
+        {
+          "x": 0.13281,
+          "y": 0.0,
+          "w": 0.86719,
+          "h": 0.89095
+        },
+        {
+          "x": 0.60938,
+          "y": 0.43343,
+          "w": 0.39062,
+          "h": 0.40133
+        },
+        {
+          "x": 0.39844,
+          "y": 0.38196,
+          "w": 0.60156,
+          "h": 0.61804
+        },
+        {
+          "x": 0.50521,
+          "y": 0.2622,
+          "w": 0.49479,
+          "h": 0.50835
+        },
+        {
+          "x": 0.0,
+          "y": 0.5458,
+          "w": 0.39062,
+          "h": 0.40133
+        }
+      ]
+    }
+  ]
+}

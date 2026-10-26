@@ -1,0 +1,80 @@
+{
+  "id": "X12-012",
+  "source": "originals/X12-012.jpg",
+  "source_sha256": "cadfbd6161d167920735b8ef6ef54d7c2c793a0e747252f310287742890b1dd4",
+  "source_size": [
+    385,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Luca Cambiaso, cubic figure drawings",
+    "title": "Pelgrim, RP-T-1948-132",
+    "subject": "cloaked man with hat staff",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pelgrim,_RP-T-1948-132.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Pelgrim%2C_RP-T-1948-132.jpg",
+    "artist": "Rijksmuseum",
+    "date": "between 1560 and 1585",
+    "licence": "CC0",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X12-012",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.64167
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.3261,
+        "confidence": 0.708,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.64167
+        },
+        {
+          "x": 0.0,
+          "y": 0.07825,
+          "w": 1.0,
+          "h": 0.64167
+        },
+        {
+          "x": 0.1626,
+          "y": 0.0,
+          "w": 0.78049,
+          "h": 0.50081
+        },
+        {
+          "x": 0.0,
+          "y": 0.35833,
+          "w": 1.0,
+          "h": 0.64167
+        },
+        {
+          "x": 0.2439,
+          "y": 0.0,
+          "w": 0.50813,
+          "h": 0.32605
+        },
+        {
+          "x": 0.4065,
+          "y": 0.03913,
+          "w": 0.56504,
+          "h": 0.36257
+        }
+      ]
+    }
+  ]
+}

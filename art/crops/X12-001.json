@@ -1,0 +1,78 @@
+{
+  "id": "X12-001",
+  "source": "originals/X12-001.jpg",
+  "source_sha256": "5901b5d3ffb8cb2526885c64d26a70fa996be6288b6d2bfb75cdea4690bec4db",
+  "source_size": [
+    407,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Luca Cambiaso, cubic figure drawings",
+    "title": "A group of angels embracing in flight, framed by clouds MET DP838026",
+    "subject": "cherubs flying in clouds",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_group_of_angels_embracing_in_flight,_framed_by_clouds_MET_DP838026.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/75/A_group_of_angels_embracing_in_flight%2C_framed_by_clouds_MET_DP838026.jpg",
+    "artist": "Guido Reni / After Luca Cambiaso",
+    "date": "circa 1607",
+    "licence": "CC0",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X12-001",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.13045,
+        "w": 1.0,
+        "h": 0.67833
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.05218,
+          "w": 1.0,
+          "h": 0.67833
+        },
+        "engine": "autocrop v1",
+        "score": 0.4998,
+        "confidence": 0.941
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.13045,
+          "w": 1.0,
+          "h": 0.67833
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.83462,
+          "h": 0.56615
+        },
+        {
+          "x": 0.27308,
+          "y": 0.05479,
+          "w": 0.72692,
+          "h": 0.4931
+        },
+        {
+          "x": 0.0,
+          "y": 0.35819,
+          "w": 0.94615,
+          "h": 0.64181
+        },
+        {
+          "x": 0.13462,
+          "y": 0.18263,
+          "w": 0.67308,
+          "h": 0.45657
+        }
+      ]
+    }
+  ]
+}

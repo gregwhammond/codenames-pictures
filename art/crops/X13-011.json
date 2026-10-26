@@ -1,0 +1,78 @@
+{
+  "id": "X13-011",
+  "source": "originals/X13-011.jpg",
+  "source_sha256": "27d142c0f1341194880d7b1150e181e07a1ef2f7c52668522bd5f5cfcec1d281",
+  "source_size": [
+    600,
+    451
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Giovanni Battista Bracelli, Bizzarie di varie figure",
+    "title": "Giovanni Battista Bracelli, From \"Bizzarie di varie Figure\", 1624, NGA 46325",
+    "subject": "grotesque dancing figures",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Bracelli,_From_%22Bizzarie_di_varie_Figure%22,_1624,_NGA_46325.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Giovanni_Battista_Bracelli%2C_From_%22Bizzarie_di_varie_Figure%22%2C_1624%2C_NGA_46325.jpg",
+    "artist": "Giovanni Battista Bracelli",
+    "date": "1624",
+    "licence": "CC0",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X13-011",
+      "mode": "crop",
+      "box": {
+        "x": 0.155,
+        "y": 0.03326,
+        "w": 0.71667,
+        "h": 0.95344
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.12547,
+          "y": 0.0,
+          "w": 0.75167,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.7353,
+        "confidence": 0.548
+      },
+      "candidates": [
+        {
+          "x": 0.13021,
+          "y": 0.03465,
+          "w": 0.66927,
+          "h": 0.89038
+        },
+        {
+          "x": 0.0,
+          "y": 0.13858,
+          "w": 0.54688,
+          "h": 0.72755
+        },
+        {
+          "x": 0.35156,
+          "y": 0.09354,
+          "w": 0.58854,
+          "h": 0.78298
+        },
+        {
+          "x": 0.45312,
+          "y": 0.35338,
+          "w": 0.42448,
+          "h": 0.56472
+        },
+        {
+          "x": 0.16406,
+          "y": 0.09701,
+          "w": 0.46615,
+          "h": 0.62015
+        }
+      ]
+    }
+  ]
+}

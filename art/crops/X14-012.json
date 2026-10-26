@@ -1,0 +1,78 @@
+{
+  "id": "X14-012",
+  "source": "originals/X14-012.jpg",
+  "source_sha256": "c8db10ee8126e027fe3e9a9f0979455155f2f72e0ecce8ef4b56d92bfb87805c",
+  "source_size": [
+    600,
+    409
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Wenzel Jamnitzer, Perspectiva corporum regularium",
+    "title": "Twee veelvlakken met een tetraëder als uitgangspunt, BI-1969-205-23",
+    "subject": "star polyhedra on goblets",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Twee_veelvlakken_met_een_tetra%C3%ABder_als_uitgangspunt,_BI-1969-205-23.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Twee_veelvlakken_met_een_tetra%C3%ABder_als_uitgangspunt%2C_BI-1969-205-23.jpg",
+    "artist": "Rijksmuseum",
+    "date": "1568",
+    "licence": "CC0",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X14-012",
+      "mode": "crop",
+      "box": {
+        "x": 0.21094,
+        "y": 0.0,
+        "w": 0.60677,
+        "h": 0.89013
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.20865,
+          "y": 0.0,
+          "w": 0.68167,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.5018,
+        "confidence": 0.433
+      },
+      "candidates": [
+        {
+          "x": 0.21094,
+          "y": 0.0,
+          "w": 0.60677,
+          "h": 0.89013
+        },
+        {
+          "x": 0.42188,
+          "y": 0.16336,
+          "w": 0.57031,
+          "h": 0.83664
+        },
+        {
+          "x": 0.45312,
+          "y": 0.3209,
+          "w": 0.38542,
+          "h": 0.5654
+        },
+        {
+          "x": 0.29167,
+          "y": 0.29416,
+          "w": 0.45833,
+          "h": 0.67237
+        },
+        {
+          "x": 0.53385,
+          "y": 0.0,
+          "w": 0.45833,
+          "h": 0.67237
+        }
+      ]
+    }
+  ]
+}

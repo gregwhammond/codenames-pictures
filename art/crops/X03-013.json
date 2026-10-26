@@ -1,0 +1,73 @@
+{
+  "id": "X03-013",
+  "source": "originals/X03-013.jpg",
+  "source_sha256": "e82be5bf7245274c5d8821b8095b5f6aa14a75aa3e6b5edd6afecc3741ef1a5b",
+  "source_size": [
+    596,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Mariano Taccola, De ingeneis",
+    "title": "Taccola levelling 2",
+    "subject": "cranes over hill",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Taccola_levelling_2.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Taccola_levelling_2.jpg",
+    "artist": "Mariano di Jacopo detto il Taccola (1382 – c. 1453)",
+    "date": "circa 1430",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X03-013",
+      "mode": "fit",
+      "box": null,
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.99333
+        },
+        "engine": "autocrop v1",
+        "score": 0.5483,
+        "confidence": 0.563
+      },
+      "candidates": [
+        {
+          "x": 0.11024,
+          "y": 0.11617,
+          "w": 0.88976,
+          "h": 0.88383
+        },
+        {
+          "x": 0.08661,
+          "y": 0.0,
+          "w": 0.72703,
+          "h": 0.72219
+        },
+        {
+          "x": 0.38058,
+          "y": 0.38471,
+          "w": 0.61942,
+          "h": 0.61529
+        },
+        {
+          "x": 0.60105,
+          "y": 0.60371,
+          "w": 0.39895,
+          "h": 0.39629
+        },
+        {
+          "x": 0.021,
+          "y": 0.146,
+          "w": 0.5643,
+          "h": 0.56054
+        }
+      ]
+    }
+  ]
+}

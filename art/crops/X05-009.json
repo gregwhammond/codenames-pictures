@@ -1,0 +1,101 @@
+{
+  "id": "X05-009",
+  "source": "originals/X05-009.jpg",
+  "source_sha256": "01929276ffb1d0d33dadbe01e7f62f5eb9b463a6d0ee23727b607b9d380dd123",
+  "source_size": [
+    434,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Giovanni Fontana, Bellicorum instrumentorum liber",
+    "title": "Fontana - Bellicorum instrumentorum fol. 34v",
+    "subject": "masks and shield",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fontana_-_Bellicorum_instrumentorum_fol._34v.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Fontana_-_Bellicorum_instrumentorum_fol._34v.jpg",
+    "artist": "Johannes Fontana (1395?-1455?)",
+    "date": "1420-01-01",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X05-009",
+      "mode": "crop",
+      "box": {
+        "x": 0,
+        "y": 0.27667,
+        "w": 1.0,
+        "h": 0.72333
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.57242,
+          "w": 0.58993,
+          "h": 0.42671
+        },
+        "engine": "autocrop v1",
+        "score": 0.6024,
+        "confidence": 0.842
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.2758,
+          "w": 1.0,
+          "h": 0.72333
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.72333
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.67266,
+          "h": 0.48656
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.45324,
+          "h": 0.32784
+        },
+        {
+          "x": 0.0,
+          "y": 0.51258,
+          "w": 0.67266,
+          "h": 0.48656
+        }
+      ]
+    },
+    {
+      "tile": "X05-009-b",
+      "status": "auto",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.79137,
+        "h": 0.57242
+      },
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.79137,
+          "h": 0.57242
+        },
+        "engine": "autocrop v1",
+        "score": 0.5146,
+        "confidence": 0.842
+      },
+      "candidates": []
+    }
+  ]
+}

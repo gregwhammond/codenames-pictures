@@ -1,0 +1,78 @@
+{
+  "id": "X01-004",
+  "source": "originals/X01-004.jpg",
+  "source_sha256": "56e1483917548429fe89610c4e63b57db6c1ede9fe807dfbdc748959b77763fb",
+  "source_size": [
+    399,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Villard de Honnecourt sketchbook",
+    "title": "Villard de Honnecourt - Sketchbook - 07",
+    "subject": "bear and swan",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Villard_de_Honnecourt_-_Sketchbook_-_07.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Villard_de_Honnecourt_-_Sketchbook_-_07.jpg",
+    "artist": "",
+    "date": "",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X01-004",
+      "mode": "crop",
+      "box": {
+        "x": 0.11765,
+        "y": 0.0,
+        "w": 0.88235,
+        "h": 0.58676
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.01176,
+          "y": 0.0,
+          "w": 0.98824,
+          "h": 0.65718
+        },
+        "engine": "autocrop v1",
+        "score": 0.3548,
+        "confidence": 0.834
+      },
+      "candidates": [
+        {
+          "x": 0.11765,
+          "y": 0.0,
+          "w": 0.88235,
+          "h": 0.58676
+        },
+        {
+          "x": 0.01176,
+          "y": 0.15647,
+          "w": 0.98824,
+          "h": 0.65718
+        },
+        {
+          "x": 0.01176,
+          "y": 0.0,
+          "w": 0.66667,
+          "h": 0.44333
+        },
+        {
+          "x": 0.01176,
+          "y": 0.0,
+          "w": 0.45098,
+          "h": 0.2999
+        },
+        {
+          "x": 0.24706,
+          "y": 0.04694,
+          "w": 0.61176,
+          "h": 0.40682
+        }
+      ]
+    }
+  ]
+}

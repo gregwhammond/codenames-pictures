@@ -1,0 +1,78 @@
+{
+  "id": "X04-008",
+  "source": "originals/X04-008.jpg",
+  "source_sha256": "1f48bee9f8605ae0897667f2ef95622a50df0a77ae29c18a175b94fa7c6047f8",
+  "source_size": [
+    452,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Francesco di Giorgio Martini, machine/architecture drawings",
+    "title": "Opusculum de architectura (BM 1947,0117.2.22.v)",
+    "subject": "circular fortress plan",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Opusculum_de_architectura_(BM_1947,0117.2.22.v).jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Opusculum_de_architectura_%28BM_1947%2C0117.2.22.v%29.jpg",
+    "artist": "",
+    "date": "between 1474 and 1482",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X04-008",
+      "mode": "crop",
+      "box": {
+        "x": 0,
+        "y": 0.155,
+        "w": 1.0,
+        "h": 0.75333
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.24667,
+          "w": 1.0,
+          "h": 0.75333
+        },
+        "engine": "autocrop v1",
+        "score": 0.4966,
+        "confidence": 0.938
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.33008,
+          "w": 0.88927,
+          "h": 0.66992
+        },
+        {
+          "x": 0.0,
+          "y": 0.5334,
+          "w": 0.61938,
+          "h": 0.4666
+        },
+        {
+          "x": 0.59862,
+          "y": 0.02607,
+          "w": 0.40138,
+          "h": 0.30238
+        },
+        {
+          "x": 0.10381,
+          "y": 0.02607,
+          "w": 0.50865,
+          "h": 0.38318
+        },
+        {
+          "x": 0.45675,
+          "y": 0.02607,
+          "w": 0.40138,
+          "h": 0.30238
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "id": "X14-006",
+  "source": "originals/X14-006.jpg",
+  "source_sha256": "dcc783807637058201674e9bd2203786b87d921ab6dc9464ad4d7d8132dab98b",
+  "source_size": [
+    600,
+    419
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Wenzel Jamnitzer, Perspectiva corporum regularium",
+    "title": "Perspectiva Corporum Regularium MET MM22928",
+    "subject": "two wireframe spheres on stands",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Perspectiva_Corporum_Regularium_MET_MM22928.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Perspectiva_Corporum_Regularium_MET_MM22928.jpg",
+    "artist": "Jost Amman / Wenzel Jamnitzer",
+    "date": "1568",
+    "licence": "CC0",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X14-006",
+      "mode": "fit",
+      "box": null,
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.04688,
+          "y": 0.0,
+          "w": 0.43229,
+          "h": 0.61903
+        },
+        "engine": "autocrop v1",
+        "score": 0.5141,
+        "confidence": 0.412
+      },
+      "candidates": [
+        {
+          "x": 0.17188,
+          "y": 0.0,
+          "w": 0.69531,
+          "h": 0.99567
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.50521,
+          "h": 0.72345
+        },
+        {
+          "x": 0.45573,
+          "y": 0.21629,
+          "w": 0.54427,
+          "h": 0.77939
+        },
+        {
+          "x": 0.47396,
+          "y": 0.0,
+          "w": 0.46875,
+          "h": 0.67124
+        },
+        {
+          "x": 0.02083,
+          "y": 0.27223,
+          "w": 0.50521,
+          "h": 0.72345
+        }
+      ]
+    },
+    {
+      "tile": "X14-006-b",
+      "status": "auto",
+      "mode": "crop",
+      "box": {
+        "x": 0.53385,
+        "y": 0.02237,
+        "w": 0.42708,
+        "h": 0.61158
+      },
+      "auto": {
+        "box": {
+          "x": 0.53385,
+          "y": 0.02237,
+          "w": 0.42708,
+          "h": 0.61158
+        },
+        "engine": "autocrop v1",
+        "score": 0.4976,
+        "confidence": 0.412
+      },
+      "candidates": []
+    }
+  ]
+}

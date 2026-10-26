@@ -1,0 +1,73 @@
+{
+  "id": "X02-008",
+  "source": "originals/X02-008.jpg",
+  "source_sha256": "5e69b458f950509cceeacea26f4fabb3e56caa23b9f7d8cd6c749b178abd41a1",
+  "source_size": [
+    600,
+    401
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Konrad Kyeser, Bellifortis",
+    "title": "Ms.Thott.290.2º 058v",
+    "subject": "wrestlers grappling",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ms.Thott.290.2%C2%BA_058v.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Ms.Thott.290.2%C2%BA_058v.jpg",
+    "artist": "Hans Talhoffer",
+    "date": "2011-12-15 19:39:46",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X02-008",
+      "mode": "fit",
+      "box": null,
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.13068,
+          "y": 0.0,
+          "w": 0.66833,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.5182,
+        "confidence": 0.613
+      },
+      "candidates": [
+        {
+          "x": 0.3312,
+          "y": 0.0,
+          "w": 0.66833,
+          "h": 1.0
+        },
+        {
+          "x": 0.14062,
+          "y": 0.1077,
+          "w": 0.59635,
+          "h": 0.8923
+        },
+        {
+          "x": 0.3099,
+          "y": 0.05455,
+          "w": 0.48698,
+          "h": 0.72865
+        },
+        {
+          "x": 0.0,
+          "y": 0.06234,
+          "w": 0.5599,
+          "h": 0.83775
+        },
+        {
+          "x": 0.21875,
+          "y": 0.14027,
+          "w": 0.41406,
+          "h": 0.61954
+        }
+      ]
+    }
+  ]
+}

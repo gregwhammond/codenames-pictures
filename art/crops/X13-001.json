@@ -1,0 +1,78 @@
+{
+  "id": "X13-001",
+  "source": "originals/X13-001.jpg",
+  "source_sha256": "a3531d7feb0b76825ce1c805e2345e52c437205da79e1ea2f1b0cf793b5b9633",
+  "source_size": [
+    600,
+    440
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Giovanni Battista Bracelli, Bizzarie di varie figure",
+    "title": "Bizzarie di Varie Figure 42",
+    "subject": "two geometric figures small",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bizzarie_di_Varie_Figure_42.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Bizzarie_di_Varie_Figure_42.jpg",
+    "artist": "Giovanni Battista Bracelli",
+    "date": "1624-01-01",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X13-001",
+      "mode": "crop",
+      "box": {
+        "x": 0.26333,
+        "y": 0.125,
+        "w": 0.41667,
+        "h": 0.56818
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.26615,
+          "y": 0.0,
+          "w": 0.73333,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.6029,
+        "confidence": 0.489
+      },
+      "candidates": [
+        {
+          "x": 0.00052,
+          "y": 0.0,
+          "w": 0.73333,
+          "h": 1.0
+        },
+        {
+          "x": 0.34635,
+          "y": 0.10866,
+          "w": 0.65365,
+          "h": 0.89134
+        },
+        {
+          "x": 0.25521,
+          "y": 0.0,
+          "w": 0.49479,
+          "h": 0.67472
+        },
+        {
+          "x": 0.18229,
+          "y": 0.14915,
+          "w": 0.49479,
+          "h": 0.67472
+        },
+        {
+          "x": 0.32552,
+          "y": 0.1598,
+          "w": 0.33333,
+          "h": 0.45455
+        }
+      ]
+    }
+  ]
+}

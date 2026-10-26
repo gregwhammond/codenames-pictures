@@ -1,0 +1,78 @@
+{
+  "id": "X13-014",
+  "source": "originals/X13-014.jpg",
+  "source_sha256": "2316ef4f42bb6b1c0848d864f87a439e1a6ced3b49246bfe9b6224a2a040cf75",
+  "source_size": [
+    600,
+    449
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Giovanni Battista Bracelli, Bizzarie di varie figure",
+    "title": "Giovanni Battista Bracelli, From \"Bizzarie di varie Figure\", 1624, NGA 46344",
+    "subject": "table-shaped men",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Battista_Bracelli,_From_%22Bizzarie_di_varie_Figure%22,_1624,_NGA_46344.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Giovanni_Battista_Bracelli%2C_From_%22Bizzarie_di_varie_Figure%22%2C_1624%2C_NGA_46344.jpg",
+    "artist": "Giovanni Battista Bracelli",
+    "date": "1624",
+    "licence": "CC0",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X13-014",
+      "mode": "crop",
+      "box": {
+        "x": 0.15833,
+        "y": 0.06682,
+        "w": 0.69167,
+        "h": 0.92428
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.15885,
+          "y": 0.0696,
+          "w": 0.66406,
+          "h": 0.88739
+        },
+        "engine": "autocrop v1",
+        "score": 0.8038,
+        "confidence": 0.58
+      },
+      "candidates": [
+        {
+          "x": 0.13281,
+          "y": 0.0,
+          "w": 0.66406,
+          "h": 0.88739
+        },
+        {
+          "x": 0.2526,
+          "y": 0.2784,
+          "w": 0.5,
+          "h": 0.66815
+        },
+        {
+          "x": 0.33073,
+          "y": 0.12528,
+          "w": 0.6224,
+          "h": 0.83171
+        },
+        {
+          "x": 0.04948,
+          "y": 0.21576,
+          "w": 0.58333,
+          "h": 0.77951
+        },
+        {
+          "x": 0.39323,
+          "y": 0.22968,
+          "w": 0.41927,
+          "h": 0.56027
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "X06-010",
+  "source": "originals/X06-010.jpg",
+  "source_sha256": "db69696ec4d143f8ba0991e29a221e65e124228b81045bd20315a62a7b976203",
+  "source_size": [
+    417,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Agostino Ramelli, Le diverse et artificiose machine",
+    "title": "Le diverse et artificiose machine del Capitano Agostino Ramelli Figure CLXXXVIII",
+    "subject": "book wheel reader",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Le_diverse_et_artificiose_machine_del_Capitano_Agostino_Ramelli_Figure_CLXXXVIII.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Le_diverse_et_artificiose_machine_del_Capitano_Agostino_Ramelli_Figure_CLXXXVIII.jpg",
+    "artist": "Agostino Ramelli",
+    "date": "1588",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X06-010",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0859,
+        "w": 1.0,
+        "h": 0.695
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.695
+        },
+        "engine": "autocrop v1",
+        "score": 0.3674,
+        "confidence": 0.952
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0859,
+          "w": 1.0,
+          "h": 0.695
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.78277,
+          "h": 0.54403
+        },
+        {
+          "x": 0.27341,
+          "y": 0.0,
+          "w": 0.72659,
+          "h": 0.50498
+        },
+        {
+          "x": 0.0,
+          "y": 0.3436,
+          "w": 0.94382,
+          "h": 0.65596
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.50936,
+          "h": 0.35401
+        }
+      ]
+    }
+  ]
+}

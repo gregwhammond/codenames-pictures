@@ -1,0 +1,78 @@
+{
+  "id": "X22-001",
+  "source": "originals/X22-001.jpg",
+  "source_sha256": "82e8e45c53878405866161db8cf09c434bad38be8418015b849812cec2081f85",
+  "source_size": [
+    600,
+    430
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Wenceslaus Hollar, etchings after Leonardo's grotesque heads",
+    "title": "A large man with a bald head facing a grotesque female MET DP823734",
+    "subject": "grotesque bald man faces",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_large_man_with_a_bald_head_facing_a_grotesque_female_MET_DP823734.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/92/A_large_man_with_a_bald_head_facing_a_grotesque_female_MET_DP823734.jpg",
+    "artist": "Leonardo da Vinci / Wenceslaus Hollar",
+    "date": "1625–77",
+    "licence": "CC0",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X22-001",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.71615,
+        "h": 0.99927
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.10901,
+          "w": 0.63802,
+          "h": 0.89026
+        },
+        "engine": "autocrop v1",
+        "score": 0.5393,
+        "confidence": 0.608
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.71615,
+          "h": 0.99927
+        },
+        {
+          "x": 0.01823,
+          "y": 0.15262,
+          "w": 0.48177,
+          "h": 0.67224
+        },
+        {
+          "x": 0.10938,
+          "y": 0.02544,
+          "w": 0.48177,
+          "h": 0.67224
+        },
+        {
+          "x": 0.25781,
+          "y": 0.0,
+          "w": 0.71615,
+          "h": 0.99927
+        },
+        {
+          "x": 0.22917,
+          "y": 0.05814,
+          "w": 0.52083,
+          "h": 0.72674
+        }
+      ]
+    }
+  ]
+}

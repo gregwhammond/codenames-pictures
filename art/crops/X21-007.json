@@ -1,0 +1,73 @@
+{
+  "id": "X21-007",
+  "source": "originals/X21-007.jpg",
+  "source_sha256": "4a8d942ac766522f36f55662cfae7137a3aa952b3edaa6d9fd09dd748e84dc8d",
+  "source_size": [
+    371,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Pisanello drawings",
+    "title": "Pisanello - Codex Vallardi 2444",
+    "subject": "horse from behind",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pisanello_-_Codex_Vallardi_2444.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Pisanello_-_Codex_Vallardi_2444.jpg",
+    "artist": "Pisanello",
+    "date": "15 th century",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X21-007",
+      "mode": "fit",
+      "box": null,
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.06751,
+          "y": 0.10436,
+          "w": 0.8903,
+          "h": 0.5505
+        },
+        "engine": "autocrop v1",
+        "score": 0.546,
+        "confidence": 0.644
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.11741,
+          "w": 1.0,
+          "h": 0.61833
+        },
+        {
+          "x": 0.02954,
+          "y": 0.09132,
+          "w": 0.72574,
+          "h": 0.44875
+        },
+        {
+          "x": 0.0,
+          "y": 0.32873,
+          "w": 1.0,
+          "h": 0.61833
+        },
+        {
+          "x": 0.0,
+          "y": 0.09132,
+          "w": 0.51055,
+          "h": 0.31569
+        },
+        {
+          "x": 0.10127,
+          "y": 0.23481,
+          "w": 0.67089,
+          "h": 0.41483
+        }
+      ]
+    }
+  ]
+}

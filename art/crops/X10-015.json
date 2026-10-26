@@ -1,0 +1,73 @@
+{
+  "id": "X10-015",
+  "source": "originals/X10-015.jpg",
+  "source_sha256": "9116b8d5c5cf8e406752086cab544d1b74793fb0cb9a4177c88961d58a6e0491",
+  "source_size": [
+    600,
+    593
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Albrecht Dürer drawings",
+    "title": "Sammlung Ludwig - Artefakt und Naturwunder-Veit Stoß-Drachenleuchter- Entwurf Dürer80327",
+    "subject": "antler dragon chandelier",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sammlung_Ludwig_-_Artefakt_und_Naturwunder-Veit_Sto%C3%9F-Drachenleuchter-_Entwurf_D%C3%BCrer80327.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Sammlung_Ludwig_-_Artefakt_und_Naturwunder-Veit_Sto%C3%9F-Drachenleuchter-_Entwurf_D%C3%BCrer80327.jpg",
+    "artist": "Albrecht Dürer",
+    "date": "from 1520 until 1522",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X10-015",
+      "mode": "fit",
+      "box": null,
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.01104,
+          "y": 0.0,
+          "w": 0.98833,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.6627,
+        "confidence": 0.633
+      },
+      "candidates": [
+        {
+          "x": 0.11719,
+          "y": 0.10677,
+          "w": 0.88281,
+          "h": 0.89323
+        },
+        {
+          "x": 0.02604,
+          "y": 0.32546,
+          "w": 0.66667,
+          "h": 0.67454
+        },
+        {
+          "x": 0.0,
+          "y": 0.03162,
+          "w": 0.77344,
+          "h": 0.78257
+        },
+        {
+          "x": 0.21094,
+          "y": 0.23714,
+          "w": 0.61198,
+          "h": 0.6192
+        },
+        {
+          "x": 0.1276,
+          "y": 0.54416,
+          "w": 0.45052,
+          "h": 0.45584
+        }
+      ]
+    }
+  ]
+}

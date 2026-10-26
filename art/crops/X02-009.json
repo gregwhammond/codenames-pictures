@@ -1,0 +1,78 @@
+{
+  "id": "X02-009",
+  "source": "originals/X02-009.jpg",
+  "source_sha256": "220c1d268ddbdcd62fa84fd4d47eed5199c0d8a59e1e2f2146186d4b6771084f",
+  "source_size": [
+    600,
+    396
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Konrad Kyeser, Bellifortis",
+    "title": "Ms.Thott.290.2º 070v",
+    "subject": "dagger fight",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ms.Thott.290.2%C2%BA_070v.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Ms.Thott.290.2%C2%BA_070v.jpg",
+    "artist": "Hans Talhoffer",
+    "date": "2011-12-15 19:39:46",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X02-009",
+      "mode": "crop",
+      "box": {
+        "x": 0.16,
+        "y": 0,
+        "w": 0.66,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.15625,
+          "y": 0.0,
+          "w": 0.65885,
+          "h": 0.99826
+        },
+        "engine": "autocrop v1",
+        "score": 0.4935,
+        "confidence": 0.692
+      },
+      "candidates": [
+        {
+          "x": 0.23438,
+          "y": 0.0,
+          "w": 0.65885,
+          "h": 0.99826
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.65885,
+          "h": 0.99826
+        },
+        {
+          "x": 0.20052,
+          "y": 0.05524,
+          "w": 0.47917,
+          "h": 0.72601
+        },
+        {
+          "x": 0.44792,
+          "y": 0.0947,
+          "w": 0.55208,
+          "h": 0.83649
+        },
+        {
+          "x": 0.09115,
+          "y": 0.02762,
+          "w": 0.44271,
+          "h": 0.67077
+        }
+      ]
+    }
+  ]
+}

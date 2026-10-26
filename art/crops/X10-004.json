@@ -1,0 +1,73 @@
+{
+  "id": "X10-004",
+  "source": "originals/X10-004.jpg",
+  "source_sha256": "5cbc2b1596f72658be2acae0f8c53683fee5f485dcf1a5ef57286392ed36efd4",
+  "source_size": [
+    600,
+    589
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Albrecht Dürer drawings",
+    "title": "Albrecht Dürer, Die Salbung Christi (Lubomirski 8320)",
+    "subject": "lamentation over dead christ",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer,_Die_Salbung_Christi_(Lubomirski_8320).jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Albrecht_D%C3%BCrer%2C_Die_Salbung_Christi_%28Lubomirski_8320%29.jpg",
+    "artist": "Albrecht Dürer",
+    "date": "",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X10-004",
+      "mode": "fit",
+      "box": null,
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.07292,
+          "y": 0.0,
+          "w": 0.92708,
+          "h": 0.9444
+        },
+        "engine": "autocrop v1",
+        "score": 0.7064,
+        "confidence": 0.612
+      },
+      "candidates": [
+        {
+          "x": 0.13542,
+          "y": 0.03449,
+          "w": 0.82031,
+          "h": 0.83563
+        },
+        {
+          "x": 0.02604,
+          "y": 0.10611,
+          "w": 0.66146,
+          "h": 0.67381
+        },
+        {
+          "x": 0.39323,
+          "y": 0.11938,
+          "w": 0.60677,
+          "h": 0.6181
+        },
+        {
+          "x": 0.28646,
+          "y": 0.27313,
+          "w": 0.71354,
+          "h": 0.72687
+        },
+        {
+          "x": 0.10417,
+          "y": 0.0,
+          "w": 0.55208,
+          "h": 0.56239
+        }
+      ]
+    }
+  ]
+}

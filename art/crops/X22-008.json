@@ -1,0 +1,78 @@
+{
+  "id": "X22-008",
+  "source": "originals/X22-008.jpg",
+  "source_sha256": "24c6300fe9bd5a3f1a2381ccc918ed36a78cef93db4e4c3da2d271ef7a6768fe",
+  "source_size": [
+    600,
+    388
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Wenceslaus Hollar, etchings after Leonardo's grotesque heads",
+    "title": "Two deformed heads facing each other MET DP823744",
+    "subject": "two grotesque profiles tall hat",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Two_deformed_heads_facing_each_other_MET_DP823744.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Two_deformed_heads_facing_each_other_MET_DP823744.jpg",
+    "artist": "Leonardo da Vinci / Wenceslaus Hollar",
+    "date": "1645",
+    "licence": "CC0",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X22-008",
+      "mode": "crop",
+      "box": {
+        "x": 0.19531,
+        "y": 0.0,
+        "w": 0.64583,
+        "h": 0.99871
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.47135,
+          "y": 0.12887,
+          "w": 0.50521,
+          "h": 0.78125
+        },
+        "engine": "autocrop v1",
+        "score": 0.609,
+        "confidence": 0.6
+      },
+      "candidates": [
+        {
+          "x": 0.41146,
+          "y": 0.07249,
+          "w": 0.57552,
+          "h": 0.88998
+        },
+        {
+          "x": 0.51302,
+          "y": 0.16914,
+          "w": 0.39844,
+          "h": 0.61614
+        },
+        {
+          "x": 0.19531,
+          "y": 0.0,
+          "w": 0.64583,
+          "h": 0.99871
+        },
+        {
+          "x": 0.45052,
+          "y": 0.31411,
+          "w": 0.39844,
+          "h": 0.61614
+        },
+        {
+          "x": 0.3724,
+          "y": 0.09665,
+          "w": 0.4349,
+          "h": 0.67252
+        }
+      ]
+    }
+  ]
+}

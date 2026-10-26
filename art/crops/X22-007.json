@@ -1,0 +1,101 @@
+{
+  "id": "X22-007",
+  "source": "originals/X22-007.jpg",
+  "source_sha256": "aa87323051bdbd757bd32aeab6d577755c7c669144b9b865ece12c2935aafc41",
+  "source_size": [
+    600,
+    378
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Wenceslaus Hollar, etchings after Leonardo's grotesque heads",
+    "title": "Two Grotesque Heads MET DP808133",
+    "subject": "two grotesque old heads",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Two_Grotesque_Heads_MET_DP808133.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Two_Grotesque_Heads_MET_DP808133.jpg",
+    "artist": "Leonardo da Vinci / Wenceslaus Hollar",
+    "date": "1640s",
+    "licence": "CC0",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X22-007",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.12401,
+        "w": 0.45573,
+        "h": 0.72338
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.13228,
+          "w": 0.50781,
+          "h": 0.80605
+        },
+        "engine": "autocrop v1",
+        "score": 0.738,
+        "confidence": 0.028
+      },
+      "candidates": [
+        {
+          "x": 0.44271,
+          "y": 0.0744,
+          "w": 0.55729,
+          "h": 0.88459
+        },
+        {
+          "x": 0.0,
+          "y": 0.12401,
+          "w": 0.45573,
+          "h": 0.72338
+        },
+        {
+          "x": 0.61458,
+          "y": 0.00827,
+          "w": 0.38542,
+          "h": 0.61177
+        },
+        {
+          "x": 0.10938,
+          "y": 0.03307,
+          "w": 0.38542,
+          "h": 0.61177
+        },
+        {
+          "x": 0.10417,
+          "y": 0.10747,
+          "w": 0.52344,
+          "h": 0.83085
+        }
+      ]
+    },
+    {
+      "tile": "X22-007-b",
+      "status": "auto",
+      "mode": "crop",
+      "box": {
+        "x": 0.58073,
+        "y": 0.0496,
+        "w": 0.41927,
+        "h": 0.66551
+      },
+      "auto": {
+        "box": {
+          "x": 0.58073,
+          "y": 0.0496,
+          "w": 0.41927,
+          "h": 0.66551
+        },
+        "engine": "autocrop v1",
+        "score": 0.5542,
+        "confidence": 0.028
+      },
+      "candidates": []
+    }
+  ]
+}

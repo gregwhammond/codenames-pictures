@@ -1,0 +1,78 @@
+{
+  "id": "X15-004",
+  "source": "originals/X15-004.jpg",
+  "source_sha256": "27c069369b13d82c824a8214dee6a7d3a21494626f550e32349c0930c0c9e59a",
+  "source_size": [
+    470,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Lorenz Stöer, Geometria et perspectiva",
+    "title": "Lorenz Stöer Zerbrochne Gebew G 0363 II 004",
+    "subject": "octahedron in ruined city",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lorenz_St%C3%B6er_Zerbrochne_Gebew_G_0363_II_004.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Lorenz_St%C3%B6er_Zerbrochne_Gebew_G_0363_II_004.jpg",
+    "artist": "Lorenz Stöer († c. 1620)",
+    "date": "1567",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X15-004",
+      "mode": "crop",
+      "box": {
+        "x": 0.06383,
+        "y": 0.23333,
+        "w": 0.87234,
+        "h": 0.68333
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.01301,
+          "w": 0.98339,
+          "h": 0.77032
+        },
+        "engine": "autocrop v1",
+        "score": 0.4839,
+        "confidence": 0.867
+      },
+      "candidates": [
+        {
+          "x": 0.07309,
+          "y": 0.04164,
+          "w": 0.87708,
+          "h": 0.68704
+        },
+        {
+          "x": 0.0,
+          "y": 0.22901,
+          "w": 0.98339,
+          "h": 0.77032
+        },
+        {
+          "x": 0.05316,
+          "y": 0.01301,
+          "w": 0.66113,
+          "h": 0.51788
+        },
+        {
+          "x": 0.31894,
+          "y": 0.01301,
+          "w": 0.66113,
+          "h": 0.51788
+        },
+        {
+          "x": 0.0,
+          "y": 0.02863,
+          "w": 0.50166,
+          "h": 0.39297
+        }
+      ]
+    }
+  ]
+}

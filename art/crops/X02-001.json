@@ -1,0 +1,78 @@
+{
+  "id": "X02-001",
+  "source": "originals/X02-001.jpg",
+  "source_sha256": "88392ee6b5e4987f30933efa304eb23bdca97bf0b2229525d4709714533600cf",
+  "source_size": [
+    600,
+    503
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Konrad Kyeser, Bellifortis",
+    "title": "04-atl2021 arma-fogo-portatil-6 - Image 207966",
+    "subject": "man firing cannon",
+    "source_url": "https://commons.wikimedia.org/wiki/File:04-atl2021_arma-fogo-portatil-6_-_Image_207966.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/04-atl2021_arma-fogo-portatil-6_-_Image_207966.jpg",
+    "artist": "Konrad Kyeser",
+    "date": "circa 1405",
+    "licence": "Public domain",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X02-001",
+      "mode": "crop",
+      "box": {
+        "x": 0.075,
+        "y": 0,
+        "w": 0.83833,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.21094,
+          "y": 0.30753,
+          "w": 0.5651,
+          "h": 0.67408
+        },
+        "engine": "autocrop v1",
+        "score": 0.5809,
+        "confidence": 0.658
+      },
+      "candidates": [
+        {
+          "x": 0.0001,
+          "y": 0.0,
+          "w": 0.83833,
+          "h": 1.0
+        },
+        {
+          "x": 0.23438,
+          "y": 0.25162,
+          "w": 0.5651,
+          "h": 0.67408
+        },
+        {
+          "x": 0.41667,
+          "y": 0.32306,
+          "w": 0.51823,
+          "h": 0.61817
+        },
+        {
+          "x": 0.07031,
+          "y": 0.30753,
+          "w": 0.5651,
+          "h": 0.67408
+        },
+        {
+          "x": 0.32812,
+          "y": 0.46595,
+          "w": 0.42708,
+          "h": 0.50944
+        }
+      ]
+    }
+  ]
+}

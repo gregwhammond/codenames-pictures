@@ -1,0 +1,78 @@
+{
+  "id": "X12-010",
+  "source": "originals/X12-010.jpg",
+  "source_sha256": "9a8a7583498eb6db337d9de4eb72661adca3274504e61886c82f21c6f5865b36",
+  "source_size": [
+    387,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "leonardo-review",
+    "source": "Luca Cambiaso, cubic figure drawings",
+    "title": "Luca Cambiaso, The Martyrdom of Saint Lawrence, 1581, NGA 52918",
+    "subject": "crowded martyrdom scene",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Luca_Cambiaso,_The_Martyrdom_of_Saint_Lawrence,_1581,_NGA_52918.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Luca_Cambiaso%2C_The_Martyrdom_of_Saint_Lawrence%2C_1581%2C_NGA_52918.jpg",
+    "artist": "Luca Cambiaso",
+    "date": "1581",
+    "licence": "CC0",
+    "obtained": "review-page download (600 px)"
+  },
+  "crops": [
+    {
+      "tile": "X12-010",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.15605,
+        "w": 1.0,
+        "h": 0.645
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.645
+        },
+        "engine": "autocrop v1",
+        "score": 0.3564,
+        "confidence": 0.721
+      },
+      "candidates": [
+        {
+          "x": 0.10887,
+          "y": 0.0,
+          "w": 0.89113,
+          "h": 0.57478
+        },
+        {
+          "x": 0.0,
+          "y": 0.15605,
+          "w": 1.0,
+          "h": 0.645
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.67339,
+          "h": 0.43433
+        },
+        {
+          "x": 0.43548,
+          "y": 0.0,
+          "w": 0.56452,
+          "h": 0.36411
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.45565,
+          "h": 0.29389
+        }
+      ]
+    }
+  ]
+}
