@@ -1,0 +1,77 @@
+{
+  "id": "S094-05",
+  "source": "originals/S094-05.jpg",
+  "source_sha256": "2f5a3144c733821688918843e4eaef9297030ff0b6124ed9d8015b8dc1c84c29",
+  "source_size": [
+    558,
+    800
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S094",
+    "index": 5,
+    "title": "Plate 50 [Windmill pump]",
+    "source_url": "https://library.si.edu/es/image-gallery/105472",
+    "licence": "Smithsonian Libraries: PD book, Smithsonian Open Access / no known restrictions; Cooper Hewitt image CC0 via Commons.",
+    "note": "Windmill driving a water pump",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S094-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.005,
+        "y": 0.21869,
+        "w": 0.95,
+        "h": 0.66263
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.0588,
+        "confidence": 1.0,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.00781,
+          "w": 1.0,
+          "h": 0.6975
+        },
+        {
+          "x": 0.0,
+          "y": 0.00781,
+          "w": 0.45522,
+          "h": 0.31752
+        },
+        {
+          "x": 0.10821,
+          "y": 0.00781,
+          "w": 0.89179,
+          "h": 0.62202
+        },
+        {
+          "x": 0.0,
+          "y": 0.3019,
+          "w": 1.0,
+          "h": 0.6975
+        },
+        {
+          "x": 0.0,
+          "y": 0.00781,
+          "w": 0.67164,
+          "h": 0.46847
+        },
+        {
+          "x": 0.0,
+          "y": 0.15095,
+          "w": 0.45522,
+          "h": 0.31752
+        }
+      ]
+    }
+  ]
+}

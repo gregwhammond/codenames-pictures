@@ -1,0 +1,75 @@
+{
+  "id": "S034-07",
+  "source": "originals/S034-07.webp",
+  "source_sha256": "aa1cfc9136010a1cd67e50e03d1d6c008d9b5474932dee2824f96f38d9f63f6d",
+  "source_size": [
+    1086,
+    571
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S034",
+    "index": 7,
+    "title": "Tuberose and daffodil",
+    "source_url": "https://pdimagearchive.org/images/c809c23f-27e8-45c0-b7f0-5e1c9e002691/",
+    "licence": "Public domain (Grandville died 1847; published 1847/1849). PD Image Archive and PDR mark the images public domain. Commons copies are in Category:Les Fleurs animées with PD-old tags.",
+    "note": "Two flowers as a pair of women",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S034-07",
+      "mode": "crop",
+      "box": {
+        "x": 0.19023,
+        "y": 0.0,
+        "w": 0.52578,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.19023,
+          "y": 0.0,
+          "w": 0.52578,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.6258,
+        "confidence": 0.784
+      },
+      "candidates": [
+        {
+          "x": 0.12773,
+          "y": 0.0,
+          "w": 0.52578,
+          "h": 1.0
+        },
+        {
+          "x": 0.31523,
+          "y": 0.0,
+          "w": 0.52578,
+          "h": 1.0
+        },
+        {
+          "x": 0.23958,
+          "y": 0.3264,
+          "w": 0.35417,
+          "h": 0.6736
+        },
+        {
+          "x": 0.07552,
+          "y": 0.21744,
+          "w": 0.41146,
+          "h": 0.78256
+        },
+        {
+          "x": 0.23958,
+          "y": 0.09906,
+          "w": 0.35417,
+          "h": 0.6736
+        }
+      ]
+    }
+  ]
+}

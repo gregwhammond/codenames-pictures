@@ -1,0 +1,75 @@
+{
+  "id": "S031-07",
+  "source": "originals/S031-07.jpg",
+  "source_sha256": "dcf5e807335aa29e2aba452b35af7dba103c444eb35db67dd991b61c16065524",
+  "source_size": [
+    700,
+    896
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S031",
+    "index": 7,
+    "title": "Yeruslan Lazarevich",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Yeruslan_Lazarevich.jpg",
+    "licence": "Wikimedia Commons; anonymous 17th-19th century prints, expected to carry PD-old tags but tags not seen per file in search results, so check each file page. LoC lubok set (https://www.loc.gov/pictures/item/2022643548/) is an alternative host.",
+    "note": "Knight Yeruslan lubok; may include a monster, check",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S031-07",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.78125
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.78125
+        },
+        "engine": "autocrop v1",
+        "score": 0.4437,
+        "confidence": 0.913
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.21875,
+          "w": 1.0,
+          "h": 0.78125
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.89,
+          "h": 0.69531
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.61667,
+          "h": 0.48177
+        },
+        {
+          "x": 0.32667,
+          "y": 0.0,
+          "w": 0.67333,
+          "h": 0.52604
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.4,
+          "h": 0.3125
+        }
+      ]
+    }
+  ]
+}

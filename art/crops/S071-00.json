@@ -1,0 +1,75 @@
+{
+  "id": "S071-00",
+  "source": "originals/S071-00.jpg",
+  "source_sha256": "8d37ba21cb40ac9aa6265bafa3cd809b5419b4e9929c530ba3de1abb13d05137",
+  "source_size": [
+    838,
+    1009
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S071",
+    "index": 0,
+    "title": "Minhwa tiger and magpie 02",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Minhwa-Tiger_and_magpie-02.jpg",
+    "licence": "Public domain (anonymous pre-1900 paintings); Commons PD tags, check each file page",
+    "note": "Comic tiger with magpie in pine tree",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S071-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.16474,
+        "w": 1.0,
+        "h": 0.83053
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.83053
+        },
+        "engine": "autocrop v1",
+        "score": 0.5155,
+        "confidence": 0.787
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.10154,
+          "w": 1.0,
+          "h": 0.83053
+        },
+        {
+          "x": 0.21944,
+          "y": 0.0,
+          "w": 0.78056,
+          "h": 0.64828
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.72727,
+          "h": 0.60402
+        },
+        {
+          "x": 0.49216,
+          "y": 0.0,
+          "w": 0.50784,
+          "h": 0.42177
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.45455,
+          "h": 0.37751
+        }
+      ]
+    }
+  ]
+}

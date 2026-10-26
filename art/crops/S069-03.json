@@ -1,0 +1,75 @@
+{
+  "id": "S069-03",
+  "source": "originals/S069-03.jpg",
+  "source_sha256": "a00eeb90562056482fb6993ec887a63c7e0e63cd61134f730815239d9ca1d0bd",
+  "source_size": [
+    960,
+    552
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S069",
+    "index": 3,
+    "title": "Huang Qing Zhigong Tu - 014",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Huang_Qing_Zhigong_Tu_-_014.jpg",
+    "licence": "Public domain (18th c.), Commons PD tags",
+    "note": "Costumed figure plate",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S069-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.1175,
+        "y": 0.3,
+        "w": 0.345,
+        "h": 0.6
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00026,
+          "y": 0.0,
+          "w": 0.575,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.525,
+        "confidence": 0.332
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.21649,
+          "w": 0.45052,
+          "h": 0.78351
+        },
+        {
+          "x": 0.07057,
+          "y": 0.0,
+          "w": 0.575,
+          "h": 1.0
+        },
+        {
+          "x": 0.14323,
+          "y": 0.29438,
+          "w": 0.35677,
+          "h": 0.62047
+        },
+        {
+          "x": 0.08333,
+          "y": 0.39855,
+          "w": 0.29427,
+          "h": 0.51178
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.41927,
+          "h": 0.72917
+        }
+      ]
+    }
+  ]
+}

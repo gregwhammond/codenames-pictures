@@ -1,0 +1,75 @@
+{
+  "id": "S087-09",
+  "source": "originals/S087-09.jpg",
+  "source_sha256": "76622db0895cefe0df04659b0ced98227b02a8183ebdf5dd7b3aadc0c951ba17",
+  "source_size": [
+    736,
+    571
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S087",
+    "index": 9,
+    "title": "Chess players and tambourine musician (Bodley 264 f.127v)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Musician_with_tambourine,_man_and_maiden_playing_chess,_MS_Bodley_264,_folio_127v.jpg",
+    "licence": "Public domain (Commons PD-Art tags; BL images released to public domain). Digital Bodleian images of Bodley 264 are CC-BY-NC; use the Commons copies.",
+    "note": "Man and maiden playing chess beside a musician",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S087-09",
+      "mode": "crop",
+      "box": {
+        "x": 0.05209,
+        "y": 0.0,
+        "w": 0.77582,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.22407,
+          "y": 0.0,
+          "w": 0.77582,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.432,
+        "confidence": 0.791
+      },
+      "candidates": [
+        {
+          "x": 0.00011,
+          "y": 0.0,
+          "w": 0.77582,
+          "h": 1.0
+        },
+        {
+          "x": 0.3099,
+          "y": 0.11048,
+          "w": 0.6901,
+          "h": 0.88952
+        },
+        {
+          "x": 0.25,
+          "y": 0.0,
+          "w": 0.39583,
+          "h": 0.51022
+        },
+        {
+          "x": 0.20833,
+          "y": 0.32866,
+          "w": 0.52083,
+          "h": 0.67134
+        },
+        {
+          "x": 0.23438,
+          "y": 0.0,
+          "w": 0.5651,
+          "h": 0.7284
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "S090-06",
+  "source": "originals/S090-06.jpg",
+  "source_sha256": "61f5819cf66b9328f2dca08f31d7332167b25834e15f52a68b1ed8f499ddf96b",
+  "source_size": [
+    683,
+    1024
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S090",
+    "index": 6,
+    "title": "Bodley 614 fol. 38v",
+    "source_url": "https://www.flickr.com/photos/wy_jackrabbit/19502905111",
+    "licence": "Manuscripts are PD. Commons and PD Image Archive copies are PD. Flickr photos (users 28433765@N07 and wy_jackrabbit) have unchecked licences; Bodleian's own images are CC BY-NC. Bodley 614 Flickr folios: which marvel each shows is unknown.",
+    "note": "Flickr, one page of Bodley 614. Which marvel it shows is unknown.",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S090-06",
+      "mode": "crop",
+      "box": {
+        "x": 0.275,
+        "y": 0.11658,
+        "w": 0.55,
+        "h": 0.36685
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.05211,
+          "w": 1.0,
+          "h": 0.66699
+        },
+        "engine": "autocrop v1",
+        "score": 0.4407,
+        "confidence": 0.87
+      },
+      "candidates": [
+        {
+          "x": 0.05469,
+          "y": 0.0,
+          "w": 0.94531,
+          "h": 0.63052
+        },
+        {
+          "x": 0.0,
+          "y": 0.20844,
+          "w": 1.0,
+          "h": 0.66699
+        },
+        {
+          "x": 0.02734,
+          "y": 0.05471,
+          "w": 0.67188,
+          "h": 0.44814
+        },
+        {
+          "x": 0.38281,
+          "y": 0.0,
+          "w": 0.61719,
+          "h": 0.41166
+        },
+        {
+          "x": 0.05859,
+          "y": 0.02605,
+          "w": 0.50781,
+          "h": 0.33871
+        }
+      ]
+    },
+    {
+      "tile": "S090-06-b",
+      "mode": "crop",
+      "box": {
+        "x": 0.275,
+        "y": 0.51658,
+        "w": 0.55,
+        "h": 0.36685
+      },
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

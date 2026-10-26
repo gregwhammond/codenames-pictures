@@ -1,0 +1,75 @@
+{
+  "id": "S066-01",
+  "source": "originals/S066-01.jpg",
+  "source_sha256": "59ca27102914e9b5236b5f8cd885a829f66e54972bdac7635a5f1359a6a01927",
+  "source_size": [
+    360,
+    526
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S066",
+    "index": 1,
+    "title": "Kuniyoshi, Ashinaga Tenaga",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Kuniyoshi_Ashinagatenaga.jpg",
+    "licence": "Walters CC0; Met Open Access CC0 (check each object is flagged OA); Commons PD",
+    "note": "Kuniyoshi print of the long-limbed pair",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S066-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.68441
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.68441
+        },
+        "engine": "autocrop v1",
+        "score": 0.3754,
+        "confidence": 0.864
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.07807,
+          "w": 1.0,
+          "h": 0.68441
+        },
+        {
+          "x": 0.21673,
+          "y": 0.0,
+          "w": 0.78327,
+          "h": 0.53608
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.72624,
+          "h": 0.49704
+        },
+        {
+          "x": 0.0,
+          "y": 0.31488,
+          "w": 1.0,
+          "h": 0.68441
+        },
+        {
+          "x": 0.49049,
+          "y": 0.0,
+          "w": 0.50951,
+          "h": 0.34871
+        }
+      ]
+    }
+  ]
+}

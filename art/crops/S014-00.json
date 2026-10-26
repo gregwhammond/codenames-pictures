@@ -1,0 +1,75 @@
+{
+  "id": "S014-00",
+  "source": "originals/S014-00.jpg",
+  "source_sha256": "9dc202c8e1df63c02957da7b02e85ae211ce6d915cb60508980cb9e98553c3eb",
+  "source_size": [
+    960,
+    717
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S014",
+    "index": 0,
+    "title": "Molucca Opossum and Armadillo",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Albertus_Seba_-_Molucca_Opossum,_Didelphis_molucca_and_Armadillo,_Tolypeutes_matacus_-_Google_Art_Project.jpg",
+    "licence": "Wikimedia Commons public domain (PD-old / PD-Art; engravings 1734-1765). The Google Art Project scans come from Museum Victoria.",
+    "note": "Opossum with babies beside a rolled armadillo, hand-coloured",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S014-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.18391,
+        "y": 0.09,
+        "w": 0.67219,
+        "h": 0.9
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.14844,
+          "y": 0.0,
+          "w": 0.74219,
+          "h": 0.99372
+        },
+        "engine": "autocrop v1",
+        "score": 0.5662,
+        "confidence": 0.724
+      },
+      "candidates": [
+        {
+          "x": 0.00521,
+          "y": 0.0,
+          "w": 0.74219,
+          "h": 0.99372
+        },
+        {
+          "x": 0.29167,
+          "y": 0.0,
+          "w": 0.70052,
+          "h": 0.93794
+        },
+        {
+          "x": 0.13021,
+          "y": 0.32427,
+          "w": 0.5,
+          "h": 0.66946
+        },
+        {
+          "x": 0.23438,
+          "y": 0.16736,
+          "w": 0.53906,
+          "h": 0.72176
+        },
+        {
+          "x": 0.13021,
+          "y": 0.08368,
+          "w": 0.5,
+          "h": 0.66946
+        }
+      ]
+    }
+  ]
+}

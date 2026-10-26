@@ -1,0 +1,75 @@
+{
+  "id": "S022-01",
+  "source": "originals/S022-01.jpg",
+  "source_sha256": "98307e5f4de5bec8b4e158bad3d2a72acfe915e3ecef140228f38bcafb800e4b",
+  "source_size": [
+    824,
+    1024
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S022",
+    "index": 1,
+    "title": "Sarayashiki (Okiku)",
+    "source_url": "https://www.loc.gov/pictures/item/2005678551/",
+    "licence": "LoC Japanese fine prints: no known restrictions on publication (confirm on each item page). PD copies are also on Commons, e.g. https://commons.wikimedia.org/wiki/File:Hokusai_The_Ghost_Kohada_Koheiji.jpg and https://commons.wikimedia.org/wiki/File:Katsushika_Hokusai_-_The_Lantern_Ghost,_Iwa_-_Google_Art_Project.jpg; PDR page https://publicdomainreview.org/collection/hokusai-s-ghost-stories-ca-1830/ Added pictures: Only 5 designs of the series are known, so these are alternative (better-quality) copies of the existing 5 designs, not new subjects. AIC images are CC0 and Smithsonian open access is CC0. Dedupe against the existing LoC links.",
+    "note": "Ghost with a neck of stacked plates rising from a well",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S022-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.14,
+        "y": 0.18031,
+        "w": 0.72,
+        "h": 0.57937
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.01618,
+          "y": 0.01562,
+          "w": 0.96764,
+          "h": 0.77865
+        },
+        "engine": "autocrop v1",
+        "score": 0.5159,
+        "confidence": 0.842
+      },
+      "candidates": [
+        {
+          "x": 0.01618,
+          "y": 0.14062,
+          "w": 0.96764,
+          "h": 0.77865
+        },
+        {
+          "x": 0.01618,
+          "y": 0.01562,
+          "w": 0.80906,
+          "h": 0.65104
+        },
+        {
+          "x": 0.38511,
+          "y": 0.01562,
+          "w": 0.59871,
+          "h": 0.48177
+        },
+        {
+          "x": 0.01618,
+          "y": 0.01562,
+          "w": 0.54693,
+          "h": 0.4401
+        },
+        {
+          "x": 0.22006,
+          "y": 0.01562,
+          "w": 0.54693,
+          "h": 0.4401
+        }
+      ]
+    }
+  ]
+}

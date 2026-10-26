@@ -1,0 +1,75 @@
+{
+  "id": "S064-05",
+  "source": "originals/S064-05.jpg",
+  "source_sha256": "49410846b5f26d98ac960688de6c8e1e2ed99d940ce9669d20dfd5d45a0c6f9c",
+  "source_size": [
+    640,
+    628
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S064",
+    "index": 5,
+    "title": "Jiumen",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bakemono-tsukushi-emaki_Jiumen.jpg",
+    "licence": "Public domain (Edo-period works), Commons PD tags; check each file's page for the owning collection",
+    "note": "Jiumen yokai figure",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S064-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.00937,
+        "y": 0.0,
+        "w": 0.98125,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0552,
+          "w": 0.92708,
+          "h": 0.9448
+        },
+        "engine": "autocrop v1",
+        "score": 0.7082,
+        "confidence": 0.58
+      },
+      "candidates": [
+        {
+          "x": 0.10938,
+          "y": 0.07431,
+          "w": 0.875,
+          "h": 0.89172
+        },
+        {
+          "x": 0.0,
+          "y": 0.05839,
+          "w": 0.71354,
+          "h": 0.72718
+        },
+        {
+          "x": 0.16667,
+          "y": 0.43737,
+          "w": 0.55208,
+          "h": 0.56263
+        },
+        {
+          "x": 0.20833,
+          "y": 0.0,
+          "w": 0.66146,
+          "h": 0.6741
+        },
+        {
+          "x": 0.1875,
+          "y": 0.23885,
+          "w": 0.60677,
+          "h": 0.61837
+        }
+      ]
+    }
+  ]
+}

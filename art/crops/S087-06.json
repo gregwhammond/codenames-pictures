@@ -1,0 +1,75 @@
+{
+  "id": "S087-06",
+  "source": "originals/S087-06.jpg",
+  "source_sha256": "c3eb1c87d6bd1dcc754ffb46c45e7e9d3b04ecd7b4b4da5f47c24a2ed72c4c89",
+  "source_size": [
+    960,
+    593
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S087",
+    "index": 6,
+    "title": "Alexander burns a wild man (Royal 20 B XX f.64)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alexander_burns_a_wild_man_-_La_Vraye_Histoire_du_Bon_Roy_Alixandre_(early_15th_C),_f.64_-_BL_Royal_MS_20_B_XX.jpg",
+    "licence": "Public domain (Commons PD-Art tags; BL images released to public domain). Digital Bodleian images of Bodley 264 are CC-BY-NC; use the Commons copies.",
+    "note": "Hairy wild man burned on a pyre",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S087-06",
+      "mode": "crop",
+      "box": {
+        "x": 0.30659,
+        "y": 0.0,
+        "w": 0.58682,
+        "h": 0.95
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.61719,
+          "h": 0.99916
+        },
+        "engine": "autocrop v1",
+        "score": 0.4541,
+        "confidence": 0.683
+      },
+      "candidates": [
+        {
+          "x": 0.07031,
+          "y": 0.0,
+          "w": 0.61719,
+          "h": 0.99916
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.48177,
+          "h": 0.77993
+        },
+        {
+          "x": 0.28125,
+          "y": 0.0,
+          "w": 0.61719,
+          "h": 0.99916
+        },
+        {
+          "x": 0.0,
+          "y": 0.27403,
+          "w": 0.44792,
+          "h": 0.72513
+        },
+        {
+          "x": 0.25521,
+          "y": 0.0,
+          "w": 0.44792,
+          "h": 0.72513
+        }
+      ]
+    }
+  ]
+}

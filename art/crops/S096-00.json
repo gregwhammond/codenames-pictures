@@ -1,0 +1,75 @@
+{
+  "id": "S096-00",
+  "source": "originals/S096-00.jpg",
+  "source_sha256": "18fc9d31653759a4c6b65468c5af5021a52f06fa63de7ae70a3ea523ca551ad9",
+  "source_size": [
+    960,
+    1243
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S096",
+    "index": 0,
+    "title": "Mermaid (album 1)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%E6%B5%B7%E9%8C%AF%E5%9C%96_%E7%AC%AC%E4%B8%80%E5%86%8A_%E4%BA%BA%E9%AD%9A.jpg",
+    "licence": "NPM Taipei open data: CC BY 4.0 for medium-resolution images (free for any use, credit NPM). Mermaid leaf is from a Beijing album via Commons (PD-old). Full scans of all albums also at shuge.org/view/hai_cuo_tu/ (landing page).",
+    "note": "Chinese merman/mermaid; from earlier lead, Commons",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S096-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.02,
+        "y": 0.24156,
+        "w": 0.98,
+        "h": 0.75688
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.21886,
+          "y": 0.39526,
+          "w": 0.78114,
+          "h": 0.6033
+        },
+        "engine": "autocrop v1",
+        "score": 0.6615,
+        "confidence": 0.623
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.22624,
+          "w": 1.0,
+          "h": 0.77233
+        },
+        {
+          "x": 0.26936,
+          "y": 0.41607,
+          "w": 0.6734,
+          "h": 0.52008
+        },
+        {
+          "x": 0.3266,
+          "y": 0.27044,
+          "w": 0.6734,
+          "h": 0.52008
+        },
+        {
+          "x": 0.02694,
+          "y": 0.43687,
+          "w": 0.6734,
+          "h": 0.52008
+        },
+        {
+          "x": 0.49158,
+          "y": 0.43687,
+          "w": 0.50842,
+          "h": 0.39266
+        }
+      ]
+    }
+  ]
+}

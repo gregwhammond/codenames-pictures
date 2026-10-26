@@ -1,0 +1,75 @@
+{
+  "id": "S090-04",
+  "source": "originals/S090-04.jpg",
+  "source_sha256": "87953f2a7482f4f6ae943b5d9112741702ea0d450f3bb56c57a2e4bc499c2bda",
+  "source_size": [
+    683,
+    1024
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S090",
+    "index": 4,
+    "title": "Bodley 614 fol. 43r",
+    "source_url": "https://www.flickr.com/photos/wy_jackrabbit/19471720546/",
+    "licence": "Manuscripts are PD. Commons and PD Image Archive copies are PD. Flickr photos (users 28433765@N07 and wy_jackrabbit) have unchecked licences; Bodleian's own images are CC BY-NC. Bodley 614 Flickr folios: which marvel each shows is unknown.",
+    "note": "Flickr, one page of Bodley 614's Wonders of the East. Which marvel it shows is unknown. The result title only says the m",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S090-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.145,
+        "y": 0.34658,
+        "w": 0.55,
+        "h": 0.36685
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.66699
+        },
+        "engine": "autocrop v1",
+        "score": 0.3604,
+        "confidence": 1.0
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.07816,
+          "w": 1.0,
+          "h": 0.66699
+        },
+        {
+          "x": 0.0,
+          "y": 0.31265,
+          "w": 1.0,
+          "h": 0.66699
+        },
+        {
+          "x": 0.21875,
+          "y": 0.0,
+          "w": 0.78125,
+          "h": 0.52109
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.72656,
+          "h": 0.48461
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.39844,
+          "h": 0.26575
+        }
+      ]
+    }
+  ]
+}

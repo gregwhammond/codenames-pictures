@@ -1,0 +1,75 @@
+{
+  "id": "S090-07",
+  "source": "originals/S090-07.jpg",
+  "source_sha256": "a584e0ad466c33d38883b2651c6a40f8be55266df3992ac7510c80eab8b6b9fe",
+  "source_size": [
+    683,
+    1024
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S090",
+    "index": 7,
+    "title": "Bodley 614 fol. 41v",
+    "source_url": "https://www.flickr.com/photos/wy_jackrabbit/19310307068",
+    "licence": "Manuscripts are PD. Commons and PD Image Archive copies are PD. Flickr photos (users 28433765@N07 and wy_jackrabbit) have unchecked licences; Bodleian's own images are CC BY-NC. Bodley 614 Flickr folios: which marvel each shows is unknown.",
+    "note": "Flickr, one page of Bodley 614. Which marvel it shows is unknown.",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S090-07",
+      "mode": "crop",
+      "box": {
+        "x": 0.23,
+        "y": 0.25324,
+        "w": 0.56,
+        "h": 0.37352
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.66699
+        },
+        "engine": "autocrop v1",
+        "score": 0.4373,
+        "confidence": 1.0
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.07816,
+          "w": 1.0,
+          "h": 0.66699
+        },
+        {
+          "x": 0.21875,
+          "y": 0.0,
+          "w": 0.78125,
+          "h": 0.52109
+        },
+        {
+          "x": 0.0,
+          "y": 0.31265,
+          "w": 1.0,
+          "h": 0.66699
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.72656,
+          "h": 0.48461
+        },
+        {
+          "x": 0.49219,
+          "y": 0.0,
+          "w": 0.50781,
+          "h": 0.33871
+        }
+      ]
+    }
+  ]
+}

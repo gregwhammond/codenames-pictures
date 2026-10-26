@@ -1,0 +1,75 @@
+{
+  "id": "S022-02",
+  "source": "originals/S022-02.jpg",
+  "source_sha256": "6dcdd740db3425fd0a5f4eb301d3ffd52f5c6c7594cc1c1931e0cee812d0d9a9",
+  "source_size": [
+    807,
+    1024
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S022",
+    "index": 2,
+    "title": "Kohada Koheiji",
+    "source_url": "https://www.loc.gov/item/2005678552/",
+    "licence": "LoC Japanese fine prints: no known restrictions on publication (confirm on each item page). PD copies are also on Commons, e.g. https://commons.wikimedia.org/wiki/File:Hokusai_The_Ghost_Kohada_Koheiji.jpg and https://commons.wikimedia.org/wiki/File:Katsushika_Hokusai_-_The_Lantern_Ghost,_Iwa_-_Google_Art_Project.jpg; PDR page https://publicdomainreview.org/collection/hokusai-s-ghost-stories-ca-1830/ Added pictures: Only 5 designs of the series are known, so these are alternative (better-quality) copies of the existing 5 designs, not new subjects. AIC images are CC0 and Smithsonian open access is CC0. Dedupe against the existing LoC links.",
+    "note": "Skeleton ghost peering over a mosquito net",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S022-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.14,
+        "y": 0.15629,
+        "w": 0.72,
+        "h": 0.56742
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0066,
+          "y": 0.01821,
+          "w": 0.9835,
+          "h": 0.77508
+        },
+        "engine": "autocrop v1",
+        "score": 0.4632,
+        "confidence": 0.897
+      },
+      "candidates": [
+        {
+          "x": 0.0066,
+          "y": 0.20547,
+          "w": 0.9835,
+          "h": 0.77508
+        },
+        {
+          "x": 0.11551,
+          "y": 0.01821,
+          "w": 0.87459,
+          "h": 0.68925
+        },
+        {
+          "x": 0.05941,
+          "y": 0.01821,
+          "w": 0.66007,
+          "h": 0.52019
+        },
+        {
+          "x": 0.38284,
+          "y": 0.01821,
+          "w": 0.60726,
+          "h": 0.47857
+        },
+        {
+          "x": 0.0363,
+          "y": 0.18207,
+          "w": 0.71617,
+          "h": 0.5644
+        }
+      ]
+    }
+  ]
+}

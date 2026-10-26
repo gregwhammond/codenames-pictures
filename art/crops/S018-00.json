@@ -1,0 +1,75 @@
+{
+  "id": "S018-00",
+  "source": "originals/S018-00.jpg",
+  "source_sha256": "cca3f5a90c3b1441fed2618da895e7877e36ed3b4810eab0f46c92c90fc38de7",
+  "source_size": [
+    438,
+    625
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S018",
+    "index": 0,
+    "title": "The Elephant Clock (1315)",
+    "source_url": "https://www.metmuseum.org/art/collection/search/451402",
+    "licence": "Met folios: Open Access (CC0). Freer/NMAA folios: Smithsonian Open Access (CC0) for images marked as such; check each object page. Commons copies: PD-Art (13th/14th-century works).",
+    "note": "Elephant carrying a tower clock, with mahout, birds and turbaned figures",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S018-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.29699,
+        "w": 1.0,
+        "h": 0.7008
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.29699,
+          "w": 1.0,
+          "h": 0.7008
+        },
+        "engine": "autocrop v1",
+        "score": 0.2821,
+        "confidence": 0.908
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.37254,
+          "w": 0.89219,
+          "h": 0.62525
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.7008
+        },
+        {
+          "x": 0.3829,
+          "y": 0.0,
+          "w": 0.6171,
+          "h": 0.43246
+        },
+        {
+          "x": 0.15613,
+          "y": 0.0,
+          "w": 0.6171,
+          "h": 0.43246
+        },
+        {
+          "x": 0.08922,
+          "y": 0.22926,
+          "w": 0.78067,
+          "h": 0.54709
+        }
+      ]
+    }
+  ]
+}

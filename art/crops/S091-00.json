@@ -1,0 +1,98 @@
+{
+  "id": "S091-00",
+  "source": "originals/S091-00.png",
+  "source_sha256": "ae0dfa3b6df1c1156b132a7da83b5a6baf45cd0966da72cafc42096262ebeccc",
+  "source_size": [
+    582,
+    700
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S091",
+    "index": 0,
+    "title": "Twin types (conjoined twins)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:AmbrosePar%C3%A9-TwinTypes.png",
+    "licence": "Commons PD tags; Wellcome images PD mark / CC-BY for photos of PD works; NLM exhibition images are PD US-government-held scans (check per image). Few single monster woodcuts were findable; most hits were stock-photo sites (Alamy, Bridgeman) which were excluded.",
+    "note": "Conjoined twin woodcuts from Paré's monsters book",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S091-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.06583,
+        "y": 0.0,
+        "w": 0.58621,
+        "h": 0.48739
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.06583,
+          "y": 0.0,
+          "w": 0.58621,
+          "h": 0.48739
+        },
+        "engine": "autocrop v1",
+        "score": 0.5136,
+        "confidence": 0.809
+      },
+      "candidates": [
+        {
+          "x": 0.02821,
+          "y": 0.00782,
+          "w": 0.97179,
+          "h": 0.80797
+        },
+        {
+          "x": 0.05329,
+          "y": 0.00782,
+          "w": 0.65517,
+          "h": 0.54473
+        },
+        {
+          "x": 0.34483,
+          "y": 0.00782,
+          "w": 0.65517,
+          "h": 0.54473
+        },
+        {
+          "x": 0.32602,
+          "y": 0.00782,
+          "w": 0.38871,
+          "h": 0.32319
+        },
+        {
+          "x": 0.02821,
+          "y": 0.28064,
+          "w": 0.8652,
+          "h": 0.71936
+        }
+      ]
+    },
+    {
+      "tile": "S091-00-b",
+      "status": "approved",
+      "mode": "crop",
+      "box": {
+        "x": 0.03762,
+        "y": 0.5074,
+        "w": 0.59248,
+        "h": 0.4926
+      },
+      "auto": {
+        "box": {
+          "x": 0.03762,
+          "y": 0.5074,
+          "w": 0.59248,
+          "h": 0.4926
+        },
+        "engine": "autocrop v1",
+        "score": 0.7014,
+        "confidence": 0.809
+      },
+      "candidates": []
+    }
+  ]
+}

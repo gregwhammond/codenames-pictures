@@ -1,0 +1,75 @@
+{
+  "id": "S034-05",
+  "source": "originals/S034-05.webp",
+  "source_sha256": "01d73075207bc8b18bac8d3c699f0b1d9b901c3fbf298a061837acaeb7adc8ec",
+  "source_size": [
+    1035,
+    544
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S034",
+    "index": 5,
+    "title": "Narcissus",
+    "source_url": "https://pdimagearchive.org/images/56a1e9f3-9ae7-4dd3-a12f-bdcea74a865c/",
+    "licence": "Public domain (Grandville died 1847; published 1847/1849). PD Image Archive and PDR mark the images public domain. Commons copies are in Category:Les Fleurs animées with PD-old tags.",
+    "note": "Narcissus flower-figure, the self-admiring flower",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S034-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.41949,
+        "y": 0.0,
+        "w": 0.5256,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.41949,
+          "y": 0.0,
+          "w": 0.5256,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.6129,
+        "confidence": 0.699
+      },
+      "candidates": [
+        {
+          "x": 0.35699,
+          "y": 0.0,
+          "w": 0.5256,
+          "h": 1.0
+        },
+        {
+          "x": 0.53125,
+          "y": 0.16267,
+          "w": 0.4401,
+          "h": 0.83733
+        },
+        {
+          "x": 0.16949,
+          "y": 0.0,
+          "w": 0.5256,
+          "h": 1.0
+        },
+        {
+          "x": 0.47135,
+          "y": 0.32617,
+          "w": 0.35417,
+          "h": 0.67383
+        },
+        {
+          "x": 0.38021,
+          "y": 0.38067,
+          "w": 0.32552,
+          "h": 0.61933
+        }
+      ]
+    }
+  ]
+}

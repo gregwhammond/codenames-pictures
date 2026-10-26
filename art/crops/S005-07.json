@@ -1,0 +1,75 @@
+{
+  "id": "S005-07",
+  "source": "originals/S005-07.jpg",
+  "source_sha256": "524a6296f70a724ef6f87ecb93252c82048796792b89fdd793b360f966869517",
+  "source_size": [
+    440,
+    624
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S005",
+    "index": 7,
+    "title": "Leaf from a Beatus manuscript: the Fourth Angel sounds the trumpet and an eagle cries Woe (Met)",
+    "source_url": "https://www.metmuseum.org/art/collection/search/466204",
+    "licence": "Wikimedia Commons PD-Art (manuscript of 1047); the two Met leaves are Met Open Access CC0. Some Beatus episodes feature the seven-headed dragon, so pick folios by eye.",
+    "note": "Different Spanish Beatus copy (Met leaf): trumpeting angel, eagle crying woe",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S005-07",
+      "mode": "crop",
+      "box": {
+        "x": 0.275,
+        "y": 0.07609,
+        "w": 0.55,
+        "h": 0.38782
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.05535,
+          "y": 0.06505,
+          "w": 0.94465,
+          "h": 0.6661
+        },
+        "engine": "autocrop v1",
+        "score": 0.6862,
+        "confidence": 0.773
+      },
+      "candidates": [
+        {
+          "x": 0.15498,
+          "y": 0.06245,
+          "w": 0.84133,
+          "h": 0.59324
+        },
+        {
+          "x": 0.05535,
+          "y": 0.22117,
+          "w": 0.89299,
+          "h": 0.62967
+        },
+        {
+          "x": 0.23247,
+          "y": 0.07025,
+          "w": 0.58303,
+          "h": 0.41111
+        },
+        {
+          "x": 0.41697,
+          "y": 0.05464,
+          "w": 0.58303,
+          "h": 0.41111
+        },
+        {
+          "x": 0.05535,
+          "y": 0.03903,
+          "w": 0.58303,
+          "h": 0.41111
+        }
+      ]
+    }
+  ]
+}

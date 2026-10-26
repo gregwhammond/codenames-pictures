@@ -1,0 +1,75 @@
+{
+  "id": "S019-05",
+  "source": "originals/S019-05.jpg",
+  "source_sha256": "a3f22eb613bc44880ce5d5db70b7865b181552d8d9ea384065853dfff4b02d8a",
+  "source_size": [
+    960,
+    1409
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S019",
+    "index": 5,
+    "title": "Ibn Bakhtishu' and a Pupil (BL Or. 2784)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ibn_Bakht%C4%ABsh%C5%AB%CA%BF,_Kit%C4%81b_na%CA%BFt_al-%E1%B8%A5ayaw%C4%81n_probably_Baghdad,_c._1225._London,_British_Library,_Or._2784,_Ibn_Bakht%C4%ABsh%C5%AB%CA%BF_and_a_Pupil.jpg",
+    "licence": "Met folios: Open Access (CC0). BL Or. 2784 images: released by British Library to Wikimedia Commons as public domain. Morgan M.500: Morgan's own site restricts reuse, but the Commons copy (Yorck Project) is PD-Art. Only 7 images confirmed; search budget ran out before more Morgan M.500 file pages could be found (see the Commons category for M.500).",
+    "note": "The physician-author teaching a student",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S019-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.20804,
+        "w": 1.0,
+        "h": 0.68133
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.20804,
+          "w": 1.0,
+          "h": 0.68133
+        },
+        "engine": "autocrop v1",
+        "score": 0.6555,
+        "confidence": 0.837
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.13003,
+          "w": 1.0,
+          "h": 0.68133
+        },
+        {
+          "x": 0.03435,
+          "y": 0.37447,
+          "w": 0.88931,
+          "h": 0.60592
+        },
+        {
+          "x": 0.49237,
+          "y": 0.22104,
+          "w": 0.50763,
+          "h": 0.34587
+        },
+        {
+          "x": 0.26718,
+          "y": 0.10922,
+          "w": 0.72901,
+          "h": 0.4967
+        },
+        {
+          "x": 0.32824,
+          "y": 0.27305,
+          "w": 0.67176,
+          "h": 0.45769
+        }
+      ]
+    }
+  ]
+}

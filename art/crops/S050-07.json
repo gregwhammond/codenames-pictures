@@ -1,0 +1,75 @@
+{
+  "id": "S050-07",
+  "source": "originals/S050-07.jpg",
+  "source_sha256": "b3ae256234176aa5c59706b9807349e97b5a5bd1975393a7efb856bd7166676c",
+  "source_size": [
+    960,
+    1056
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S050",
+    "index": 7,
+    "title": "De macrocosmi principiis, by Robert Fludd, 1617",
+    "source_url": "https://commons.wikimedia.org/wiki/File:De_macrocosmi_principiis,_by_Robert_Fludd,_1617.jpg",
+    "licence": "Public domain (Commons; Wellcome CC BY 4.0) Added pictures: Wellcome images CC-BY/PD on Commons; 1617 engraving PD.",
+    "note": "Cosmic creation plate from Fludd's macrocosm volume",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S050-07",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.07294,
+        "w": 1.0,
+        "h": 0.90909
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.07294,
+          "w": 1.0,
+          "h": 0.90909
+        },
+        "engine": "autocrop v1",
+        "score": 0.6305,
+        "confidence": 0.813
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.94556,
+          "h": 0.8596
+        },
+        {
+          "x": 0.32665,
+          "y": 0.04689,
+          "w": 0.67335,
+          "h": 0.61214
+        },
+        {
+          "x": 0.0,
+          "y": 0.04689,
+          "w": 0.61891,
+          "h": 0.56265
+        },
+        {
+          "x": 0.0,
+          "y": 0.28888,
+          "w": 0.78223,
+          "h": 0.71112
+        },
+        {
+          "x": 0.18052,
+          "y": 0.0,
+          "w": 0.61891,
+          "h": 0.56265
+        }
+      ]
+    }
+  ]
+}

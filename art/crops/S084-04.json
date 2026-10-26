@@ -1,0 +1,75 @@
+{
+  "id": "S084-04",
+  "source": "originals/S084-04.jpg",
+  "source_sha256": "79e00c7a4c9ca98f7bc928b9d2866688f4b91d242c10dad31e6188de25c266e6",
+  "source_size": [
+    960,
+    655
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S084",
+    "index": 4,
+    "title": "Florida Indians planting seeds of beans or maize (LoC)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Florida_Indians_planting_seeds_of_beans_or_maize_LCCN2001695741.jpg",
+    "licence": "Public domain; Commons PD. Caveat: many plates (esp. Tertia pars) show violence/cannibalism; pick carefully.",
+    "note": "Le Moyne/de Bry farming scene, Library of Congress copy",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S084-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.31771,
+        "y": 0.0,
+        "w": 0.68229,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.31771,
+          "y": 0.0,
+          "w": 0.68229,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.4042,
+        "confidence": 0.36
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.68229,
+          "h": 1.0
+        },
+        {
+          "x": 0.39323,
+          "y": 0.11069,
+          "w": 0.60677,
+          "h": 0.88931
+        },
+        {
+          "x": 0.23438,
+          "y": 0.0,
+          "w": 0.60677,
+          "h": 0.88931
+        },
+        {
+          "x": 0.57812,
+          "y": 0.38168,
+          "w": 0.42188,
+          "h": 0.61832
+        },
+        {
+          "x": 0.34635,
+          "y": 0.32824,
+          "w": 0.45833,
+          "h": 0.67176
+        }
+      ]
+    }
+  ]
+}

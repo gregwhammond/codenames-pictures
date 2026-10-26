@@ -1,0 +1,77 @@
+{
+  "id": "S061-02",
+  "source": "originals/S061-02.jpg",
+  "source_sha256": "c47efb3929114a0edf09d6b5bf430366f8177e54e23dbc01a203cc77e7e8eda0",
+  "source_size": [
+    960,
+    1617
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S061",
+    "index": 2,
+    "title": "The monkeys outwitting the bears",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_monkeys_outwitting_the_bears_-_Anvar-i_Suhayli_(1600-1601),_f.124v_-_BL_Or._6317.jpg",
+    "licence": "Met Open Access CC0; Smithsonian CC0; BL images on Commons are PD.",
+    "note": "Monkeys tricking bears",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S061-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.025,
+        "y": 0.068,
+        "w": 0.95,
+        "h": 0.56401
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.2213,
+        "confidence": 0.784,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.14061,
+          "w": 1.0,
+          "h": 0.59369
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.59369
+        },
+        {
+          "x": 0.0,
+          "y": 0.21092,
+          "w": 1.0,
+          "h": 0.59369
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.56579,
+          "h": 0.3359
+        },
+        {
+          "x": 0.05263,
+          "y": 0.42183,
+          "w": 0.94737,
+          "h": 0.56245
+        },
+        {
+          "x": 0.60088,
+          "y": 0.0,
+          "w": 0.39912,
+          "h": 0.23696
+        }
+      ]
+    }
+  ]
+}

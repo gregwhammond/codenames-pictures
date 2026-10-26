@@ -1,0 +1,75 @@
+{
+  "id": "S092-03",
+  "source": "originals/S092-03.jpg",
+  "source_sha256": "3b42dca42608af6796f3f454c99ba213295a34e5b9c28ee16ce7a3fee9387df8",
+  "source_size": [
+    442,
+    630
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S092",
+    "index": 3,
+    "title": "Planche 4 (1677)",
+    "source_url": "http://jjdejeunes.com/alchimie/mutus-liber/-mutus-liber-1677/04_img221_planche04.jpg.html",
+    "licence": "1677 plates are PD; Commons PD tags; LoC Prints & Photographs item (check rights statement); jjdejeunes.com is a private site of scans, no stated licence - treat as reference only and seek a PD copy (e.g. Gallica bpt6k15122214) for reuse.",
+    "note": "Couple wringing dew from sheets in a field; host licence unclear",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S092-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.28921,
+        "w": 1.0,
+        "h": 0.70159
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.01043,
+          "w": 0.99628,
+          "h": 0.69898
+        },
+        "engine": "autocrop v1",
+        "score": 0.3597,
+        "confidence": 0.778
+      },
+      "candidates": [
+        {
+          "x": 0.10781,
+          "y": 0.01043,
+          "w": 0.88848,
+          "h": 0.62334
+        },
+        {
+          "x": 0.0,
+          "y": 0.29211,
+          "w": 0.99628,
+          "h": 0.69898
+        },
+        {
+          "x": 0.49071,
+          "y": 0.01043,
+          "w": 0.50558,
+          "h": 0.35471
+        },
+        {
+          "x": 0.0,
+          "y": 0.01043,
+          "w": 0.56134,
+          "h": 0.39383
+        },
+        {
+          "x": 0.22305,
+          "y": 0.01043,
+          "w": 0.56134,
+          "h": 0.39383
+        }
+      ]
+    }
+  ]
+}

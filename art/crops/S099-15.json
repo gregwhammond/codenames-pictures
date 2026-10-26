@@ -1,0 +1,87 @@
+{
+  "id": "S099-15",
+  "source": "originals/S099-15.jpg",
+  "source_sha256": "a1815ee55536d9de852c6a8b59925b3e12006b4d17d87a9580626c085326eed6",
+  "source_size": [
+    1000,
+    1483
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S099",
+    "index": 15,
+    "title": "Cats Frightened by Toy Dog (above); Cat Using Mousetrap (below)",
+    "source_url": "https://collections.mfa.org/objects/462453",
+    "licence": "Prints public domain. MFA Boston images: non-commercial terms, so look for Commons copies before use. Google Arts & Culture view-only. Many sheets hold several small pictures, so crop or pick carefully.",
+    "note": "Comic cat scenes. It was found by a search for omocha-e cats at the MFA. [check: MFA Boston print of comic cat scenes. The full title is truncated in search, and the artist and date are unverified because the page renders by script. MFA terms allow non-commercial use only.]",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S099-15",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0026,
+        "w": 1.0,
+        "h": 0.67431
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0026,
+          "w": 1.0,
+          "h": 0.67431
+        },
+        "engine": "autocrop v1",
+        "score": 0.5979,
+        "confidence": 0.607
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0026,
+          "w": 0.89189,
+          "h": 0.60141
+        },
+        {
+          "x": 0.0,
+          "y": 0.0026,
+          "w": 0.61776,
+          "h": 0.41656
+        },
+        {
+          "x": 0.32819,
+          "y": 0.0026,
+          "w": 0.67181,
+          "h": 0.45301
+        },
+        {
+          "x": 0.0,
+          "y": 0.15881,
+          "w": 1.0,
+          "h": 0.67431
+        },
+        {
+          "x": 0.27413,
+          "y": 0.13018,
+          "w": 0.72587,
+          "h": 0.48946
+        }
+      ]
+    },
+    {
+      "tile": "S099-15-b",
+      "mode": "crop",
+      "box": {
+        "x": 0.155,
+        "y": 0.64828,
+        "w": 0.45,
+        "h": 0.30344
+      },
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

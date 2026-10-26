@@ -1,0 +1,75 @@
+{
+  "id": "S048-06",
+  "source": "originals/S048-06.jpg",
+  "source_sha256": "c70320fc36e79f411a485fc57a324ac408e7f27955a99204d58aa00423477a8d",
+  "source_size": [
+    960,
+    671
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S048",
+    "index": 6,
+    "title": "Arca Noe, building the ark",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Arca_Noe,_building_the_ark,_by_A._Kircher._Wellcome_L0013357.jpg",
+    "licence": "Public domain (Commons; Wellcome scans CC BY 4.0)",
+    "note": "Shipwrights constructing the giant ark",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S048-06",
+      "mode": "crop",
+      "box": {
+        "x": 0.18547,
+        "y": 0.1,
+        "w": 0.62906,
+        "h": 0.9
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.30208,
+          "y": 0.0,
+          "w": 0.69792,
+          "h": 0.99851
+        },
+        "engine": "autocrop v1",
+        "score": 0.3933,
+        "confidence": 0.327
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.69792,
+          "h": 0.99851
+        },
+        {
+          "x": 0.3776,
+          "y": 0.10805,
+          "w": 0.6224,
+          "h": 0.89046
+        },
+        {
+          "x": 0.0,
+          "y": 0.32787,
+          "w": 0.46875,
+          "h": 0.67064
+        },
+        {
+          "x": 0.56771,
+          "y": 0.38003,
+          "w": 0.43229,
+          "h": 0.61848
+        },
+        {
+          "x": 0.22917,
+          "y": 0.2161,
+          "w": 0.54688,
+          "h": 0.78241
+        }
+      ]
+    }
+  ]
+}

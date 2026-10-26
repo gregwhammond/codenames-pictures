@@ -1,0 +1,75 @@
+{
+  "id": "S086-00",
+  "source": "originals/S086-00.png",
+  "source_sha256": "dabd4bbea18b7baef30173a4d0819a8c4c36716e7ba20927dbdf6dfb134fc759",
+  "source_size": [
+    738,
+    804
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S086",
+    "index": 0,
+    "title": "Lady 3 Flint the Elder gives birth to Lady 3 Flint the Younger",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Codex_Zouche-Nuttall_-_Lady_3_Flint_the_Elder_gives_birth_to_Lady_3_Flint_the_Younger.png",
+    "licence": "Public domain object; Commons PD copies (BM own images are CC BY-NC-SA)",
+    "note": "Painted birth scene with umbilical cord",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S086-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.91791
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.91791
+        },
+        "engine": "autocrop v1",
+        "score": 0.6194,
+        "confidence": 0.829
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.89205,
+          "h": 0.81882
+        },
+        {
+          "x": 0.16477,
+          "y": 0.23334,
+          "w": 0.83523,
+          "h": 0.76666
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.61932,
+          "h": 0.56848
+        },
+        {
+          "x": 0.28125,
+          "y": 0.0,
+          "w": 0.6733,
+          "h": 0.61802
+        },
+        {
+          "x": 0.19886,
+          "y": 0.0,
+          "w": 0.50852,
+          "h": 0.46678
+        }
+      ]
+    }
+  ]
+}

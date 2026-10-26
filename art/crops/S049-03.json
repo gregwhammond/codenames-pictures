@@ -1,0 +1,75 @@
+{
+  "id": "S049-03",
+  "source": "originals/S049-03.jpg",
+  "source_sha256": "fe05e4a1611029010b9409a84324b4f697d6921024424e6743b3a8d693521329",
+  "source_size": [
+    960,
+    765
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S049",
+    "index": 3,
+    "title": "The Sixth Key",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_Sixth_Key_of_Basil_Valentine._Wellcome_M0012399.jpg",
+    "licence": "Public domain (Wellcome images CC BY 4.0 on Commons)",
+    "note": "Wedding of king and queen",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S049-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.19344,
+        "y": 0.08,
+        "w": 0.73313,
+        "h": 0.92
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.20312,
+          "y": 0.0,
+          "w": 0.79688,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.4941,
+        "confidence": 0.532
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.79688,
+          "h": 1.0
+        },
+        {
+          "x": 0.28906,
+          "y": 0.10784,
+          "w": 0.71094,
+          "h": 0.89216
+        },
+        {
+          "x": 0.50781,
+          "y": 0.38235,
+          "w": 0.49219,
+          "h": 0.61765
+        },
+        {
+          "x": 0.0,
+          "y": 0.3268,
+          "w": 0.53646,
+          "h": 0.6732
+        },
+        {
+          "x": 0.125,
+          "y": 0.23529,
+          "w": 0.53646,
+          "h": 0.6732
+        }
+      ]
+    }
+  ]
+}

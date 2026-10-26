@@ -1,0 +1,75 @@
+{
+  "id": "S016-01",
+  "source": "originals/S016-01.jpg",
+  "source_sha256": "8fc8fb6f63e0d57ee6cc086160e6a4eb73abf73a05181252cd35342b6185d8d7",
+  "source_size": [
+    960,
+    1254
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S016",
+    "index": 1,
+    "title": "The great comet of 1881",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Trouvelot_-_The_great_comet_of_1881_-_1881.jpg",
+    "licence": "Public domain (Trouvelot died 1895; published 1881-82); Commons PD tags. NYPL originals are also marked public domain.",
+    "note": "Bright comet with long sweeping tail across a star field",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S016-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.075,
+        "y": 0.09464,
+        "w": 0.85,
+        "h": 0.65072
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.03125,
+          "w": 1.0,
+          "h": 0.76555
+        },
+        "engine": "autocrop v1",
+        "score": 0.5247,
+        "confidence": 0.844
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.12499,
+          "w": 1.0,
+          "h": 0.76555
+        },
+        {
+          "x": 0.03401,
+          "y": 0.0,
+          "w": 0.83673,
+          "h": 0.64056
+        },
+        {
+          "x": 0.32653,
+          "y": 0.02083,
+          "w": 0.67347,
+          "h": 0.51557
+        },
+        {
+          "x": 0.04082,
+          "y": 0.03125,
+          "w": 0.56463,
+          "h": 0.43225
+        },
+        {
+          "x": 0.5102,
+          "y": 0.03906,
+          "w": 0.45578,
+          "h": 0.34892
+        }
+      ]
+    }
+  ]
+}

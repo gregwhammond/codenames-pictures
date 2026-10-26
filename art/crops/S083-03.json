@@ -1,0 +1,75 @@
+{
+  "id": "S083-03",
+  "source": "originals/S083-03.jpg",
+  "source_sha256": "ae7983d88348740c6adbdbf33c7f231c6e96ea1a3d68e52ecc4a27d080149015",
+  "source_size": [
+    960,
+    1349
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S083",
+    "index": 3,
+    "title": "Chasqui",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Guam%C3%A1n_Poma_de_Ayala,_Felipe_(1616)._Chasqui.jpg",
+    "licence": "Public domain; Commons PD",
+    "note": "Running relay messenger with conch",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S083-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.025,
+        "y": 0.24197,
+        "w": 0.95,
+        "h": 0.67606
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.21375,
+          "w": 0.95971,
+          "h": 0.68296
+        },
+        "engine": "autocrop v1",
+        "score": 0.5,
+        "confidence": 0.93
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.13555,
+          "w": 0.95971,
+          "h": 0.68296
+        },
+        {
+          "x": 0.20513,
+          "y": 0.20593,
+          "w": 0.64469,
+          "h": 0.45879
+        },
+        {
+          "x": 0.10623,
+          "y": 0.37016,
+          "w": 0.85348,
+          "h": 0.60737
+        },
+        {
+          "x": 0.0,
+          "y": 0.18768,
+          "w": 0.64469,
+          "h": 0.45879
+        },
+        {
+          "x": 0.03297,
+          "y": 0.00521,
+          "w": 0.8022,
+          "h": 0.57087
+        }
+      ]
+    }
+  ]
+}

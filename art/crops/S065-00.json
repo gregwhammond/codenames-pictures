@@ -1,0 +1,87 @@
+{
+  "id": "S065-00",
+  "source": "originals/S065-00.jpg",
+  "source_sha256": "27f4d28f71ed4dec7c5bf874e6b985ef8d5aa9031d84059ddf425fc5681bf00b",
+  "source_size": [
+    960,
+    765
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S065",
+    "index": 0,
+    "title": "MET JIB27 005",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Kyoka_Hyaku_Monogatari-Poems_on_One_Hundred_Ghost_Stories_MET_JIB27_005_crd.jpg",
+    "licence": "Public domain (1853); Met copy is Open Access CC0",
+    "note": "Page from the Met copy with a yokai and poem",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S065-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.51083,
+        "y": 0.325,
+        "w": 0.42234,
+        "h": 0.53
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.79688,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.4818,
+        "confidence": 0.692
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.10784,
+          "w": 0.71094,
+          "h": 0.89216
+        },
+        {
+          "x": 0.20312,
+          "y": 0.0,
+          "w": 0.79688,
+          "h": 1.0
+        },
+        {
+          "x": 0.0,
+          "y": 0.38235,
+          "w": 0.49219,
+          "h": 0.61765
+        },
+        {
+          "x": 0.16406,
+          "y": 0.43791,
+          "w": 0.44792,
+          "h": 0.56209
+        },
+        {
+          "x": 0.25,
+          "y": 0.3268,
+          "w": 0.53646,
+          "h": 0.6732
+        }
+      ]
+    },
+    {
+      "tile": "S065-00-b",
+      "mode": "crop",
+      "box": {
+        "x": 0.03684,
+        "y": 0.367,
+        "w": 0.43031,
+        "h": 0.54
+      },
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

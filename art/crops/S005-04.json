@@ -1,0 +1,75 @@
+{
+  "id": "S005-04",
+  "source": "originals/S005-04.jpg",
+  "source_sha256": "0b17ff808c4f231b37697fa016a882a5d7eb857e0ed410e1083621f086dcb4d1",
+  "source_size": [
+    960,
+    1318
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S005",
+    "index": 4,
+    "title": "Facundus Beatus, fol. 224v (detail)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:B_Facundus_224vd%C3%A9t.jpg",
+    "licence": "Wikimedia Commons PD-Art (manuscript of 1047); the two Met leaves are Met Open Access CC0. Some Beatus episodes feature the seven-headed dragon, so pick folios by eye.",
+    "note": "Detail crop of fol. 224v; exact subject not checked",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S005-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.05723,
+        "w": 1.0,
+        "h": 0.72838
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.05723,
+          "w": 1.0,
+          "h": 0.72838
+        },
+        "engine": "autocrop v1",
+        "score": 0.3954,
+        "confidence": 0.926
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.14307,
+          "w": 1.0,
+          "h": 0.72838
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.83571,
+          "h": 0.60871
+        },
+        {
+          "x": 0.32857,
+          "y": 0.0,
+          "w": 0.67143,
+          "h": 0.48905
+        },
+        {
+          "x": 0.32857,
+          "y": 0.18209,
+          "w": 0.67143,
+          "h": 0.48905
+        },
+        {
+          "x": 0.37143,
+          "y": 0.0,
+          "w": 0.4,
+          "h": 0.29135
+        }
+      ]
+    }
+  ]
+}

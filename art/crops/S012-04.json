@@ -1,0 +1,75 @@
+{
+  "id": "S012-04",
+  "source": "originals/S012-04.jpg",
+  "source_sha256": "514333eac61bb217b436b52cb22d3344877c16ccf2412b26329e450e2fed5bfd",
+  "source_size": [
+    888,
+    1212
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S012",
+    "index": 4,
+    "title": "Marriage of Sun and Moon (Griemiller copy)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Marriage_Sun_Moon_-_Rosarium_Philosophorum_Griemiller.jpg",
+    "licence": "Underlying 1550 woodcuts public domain; Wellcome photographs on Commons carry CC BY 4.0 (credit Wellcome Collection); other files PD-old. Caveat: several plates show the naked king and queen.",
+    "note": "Painted manuscript version: sun king and moon queen joined",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S012-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.18366,
+        "w": 1.0,
+        "h": 0.73267
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.73267
+        },
+        "engine": "autocrop v1",
+        "score": 0.5339,
+        "confidence": 0.781
+      },
+      "candidates": [
+        {
+          "x": 0.11032,
+          "y": 0.0,
+          "w": 0.88968,
+          "h": 0.65184
+        },
+        {
+          "x": 0.0,
+          "y": 0.17209,
+          "w": 1.0,
+          "h": 0.73267
+        },
+        {
+          "x": 0.12456,
+          "y": 0.20077,
+          "w": 0.6726,
+          "h": 0.49279
+        },
+        {
+          "x": 0.04982,
+          "y": 0.0,
+          "w": 0.6726,
+          "h": 0.49279
+        },
+        {
+          "x": 0.60142,
+          "y": 0.0,
+          "w": 0.39858,
+          "h": 0.29203
+        }
+      ]
+    }
+  ]
+}

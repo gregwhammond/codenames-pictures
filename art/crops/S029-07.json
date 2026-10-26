@@ -1,0 +1,75 @@
+{
+  "id": "S029-07",
+  "source": "originals/S029-07.jpg",
+  "source_sha256": "a197c799cc9946d6dee89f2ce23be8996501884a96c082d1ab4e5fc6059f70e3",
+  "source_size": [
+    960,
+    692
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S029",
+    "index": 7,
+    "title": "Codex Magliabechiano (folio 77r)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Codex_Magliabechiano_(folio_77r).jpg",
+    "licence": "The work is public domain and the Commons files are tagged PD-Art. Some pages show sacrifice or cannibalism, so check pages for gore before using them.",
+    "note": "Ritual-practices section page; subject not verified",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S029-07",
+      "mode": "crop",
+      "box": {
+        "x": 0.02891,
+        "y": 0.0,
+        "w": 0.72083,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.02891,
+          "y": 0.0,
+          "w": 0.72083,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.5877,
+        "confidence": 0.63
+      },
+      "candidates": [
+        {
+          "x": 0.11484,
+          "y": 0.0,
+          "w": 0.72083,
+          "h": 1.0
+        },
+        {
+          "x": 0.02344,
+          "y": 0.06503,
+          "w": 0.5651,
+          "h": 0.78396
+        },
+        {
+          "x": 0.35677,
+          "y": 0.10766,
+          "w": 0.64323,
+          "h": 0.89234
+        },
+        {
+          "x": 0.09115,
+          "y": 0.32803,
+          "w": 0.48438,
+          "h": 0.67197
+        },
+        {
+          "x": 0.27344,
+          "y": 0.17702,
+          "w": 0.48438,
+          "h": 0.67197
+        }
+      ]
+    }
+  ]
+}

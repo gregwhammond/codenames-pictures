@@ -1,0 +1,75 @@
+{
+  "id": "S008-02",
+  "source": "originals/S008-02.jpg",
+  "source_sha256": "545a65a65f9bdada87fb580db7b691df19fe30c084d5e929e929820fe410ebe5",
+  "source_size": [
+    523,
+    501
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S008",
+    "index": 2,
+    "title": "Guinea pig (1551)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Guinea_pig,_from_Conrad_Gesner_Historia_animalium_(1551).jpg",
+    "licence": "Public domain (16th century). Commons PD-old; PD Image Archive items are public domain; BHL scan on Commons is PD. PDIA artist gallery: https://pdimagearchive.org/galleries/artists/conrad-gessner/random/desc",
+    "note": "One of the first European pictures of a guinea pig",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S008-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.05469,
+        "y": 0.01318,
+        "w": 0.94531,
+        "h": 0.98682
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.05469,
+          "y": 0.01318,
+          "w": 0.94531,
+          "h": 0.98682
+        },
+        "engine": "autocrop v1",
+        "score": 0.5701,
+        "confidence": 0.512
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.01359,
+          "w": 0.89323,
+          "h": 0.93245
+        },
+        {
+          "x": 0.0,
+          "y": 0.33166,
+          "w": 0.58333,
+          "h": 0.60895
+        },
+        {
+          "x": 0.3125,
+          "y": 0.28231,
+          "w": 0.6875,
+          "h": 0.71769
+        },
+        {
+          "x": 0.51823,
+          "y": 0.39419,
+          "w": 0.48177,
+          "h": 0.50293
+        },
+        {
+          "x": 0.16406,
+          "y": 0.38059,
+          "w": 0.58333,
+          "h": 0.60895
+        }
+      ]
+    }
+  ]
+}

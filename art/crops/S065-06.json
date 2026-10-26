@@ -1,0 +1,75 @@
+{
+  "id": "S065-06",
+  "source": "originals/S065-06.jpg",
+  "source_sha256": "7632ba2c5b41e158bfeda4b8c1e50181a5f1fb2feaed416dbc7b53222d492771",
+  "source_size": [
+    400,
+    406
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S065",
+    "index": 6,
+    "title": "Makura-gaeshi",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Masasumi_Makura-gaeshi.jpg",
+    "licence": "Public domain (1853); Met copy is Open Access CC0",
+    "note": "Pillow-flipping sprite",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S065-06",
+      "mode": "crop",
+      "box": {
+        "x": 0.175,
+        "y": 0.3298,
+        "w": 0.65,
+        "h": 0.64039
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.98522
+        },
+        "engine": "autocrop v1",
+        "score": 0.6335,
+        "confidence": 0.372
+      },
+      "candidates": [
+        {
+          "x": 0.10847,
+          "y": 0.12164,
+          "w": 0.89153,
+          "h": 0.87836
+        },
+        {
+          "x": 0.0,
+          "y": 0.33797,
+          "w": 0.67196,
+          "h": 0.66203
+        },
+        {
+          "x": 0.0,
+          "y": 0.08601,
+          "w": 0.72751,
+          "h": 0.71676
+        },
+        {
+          "x": 0.2381,
+          "y": 0.3901,
+          "w": 0.61905,
+          "h": 0.6099
+        },
+        {
+          "x": 0.12698,
+          "y": 0.29192,
+          "w": 0.50794,
+          "h": 0.50043
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "S064-10",
+  "source": "originals/S064-10.jpg",
+  "source_sha256": "1fdc8de55f9349ed13e49ea597e7e3af6048cb03973f3d492deb15f13f20d8fc",
+  "source_size": [
+    560,
+    290
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S064",
+    "index": 10,
+    "title": "Obozu and Shirachigo (Yumoto C scroll)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Yumoto_C_Obozu-and-Shirachigo.jpg",
+    "licence": "Public domain (Edo-period works), Commons PD tags; check each file's page for the owning collection",
+    "note": "Big monk and pale child yokai pair",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S064-10",
+      "mode": "crop",
+      "box": {
+        "x": 0.00019,
+        "y": 0.0,
+        "w": 0.51786,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00019,
+          "y": 0.0,
+          "w": 0.51786,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.6486,
+        "confidence": 0.645
+      },
+      "candidates": [
+        {
+          "x": 0.06269,
+          "y": 0.0,
+          "w": 0.51786,
+          "h": 1.0
+        },
+        {
+          "x": 0.21875,
+          "y": 0.27083,
+          "w": 0.3776,
+          "h": 0.72917
+        },
+        {
+          "x": 0.0,
+          "y": 0.21552,
+          "w": 0.40625,
+          "h": 0.78448
+        },
+        {
+          "x": 0.25019,
+          "y": 0.0,
+          "w": 0.51786,
+          "h": 1.0
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.3776,
+          "h": 0.72917
+        }
+      ]
+    }
+  ]
+}

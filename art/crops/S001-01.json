@@ -1,0 +1,75 @@
+{
+  "id": "S001-01",
+  "source": "originals/S001-01.jpg",
+  "source_sha256": "e26e342ccee92cef7a8f0630ab93bf2ce93c059fe6e694b550538e52afbb8932",
+  "source_size": [
+    400,
+    411
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S001",
+    "index": 1,
+    "title": "Beaver",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Beaver_(Aberdeen_Bestiary).jpg",
+    "licence": "Original c. 1200, public domain. abdn.ac.uk page images are University of Aberdeen photography (reuse terms not confirmed, possibly non-commercial); Commons copies are PD-Art (verify tag per file). Commons category: https://commons.wikimedia.org/wiki/Category:Aberdeen_Bestiary",
+    "note": "Beaver bites off its own testicles to escape a hunter.",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S001-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.09,
+        "y": 0.12097,
+        "w": 0.82,
+        "h": 0.79805
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.97324
+        },
+        "engine": "autocrop v1",
+        "score": 0.6318,
+        "confidence": 0.781
+      },
+      "candidates": [
+        {
+          "x": 0.10963,
+          "y": 0.0,
+          "w": 0.89037,
+          "h": 0.86654
+        },
+        {
+          "x": 0.0,
+          "y": 0.23941,
+          "w": 0.78075,
+          "h": 0.75985
+        },
+        {
+          "x": 0.27273,
+          "y": 0.29145,
+          "w": 0.72727,
+          "h": 0.70781
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.6738,
+          "h": 0.65576
+        },
+        {
+          "x": 0.38235,
+          "y": 0.0,
+          "w": 0.61765,
+          "h": 0.60112
+        }
+      ]
+    }
+  ]
+}

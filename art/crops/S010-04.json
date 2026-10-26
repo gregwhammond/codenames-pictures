@@ -1,0 +1,75 @@
+{
+  "id": "S010-04",
+  "source": "originals/S010-04.jpg",
+  "source_sha256": "04d180d97235fd5df0d07cc9bc166c51df98b06accdea28954d1ffeb5215339a",
+  "source_size": [
+    960,
+    1281
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S010",
+    "index": 4,
+    "title": "Hortus Sanitatis; mandrake (Wellcome L0008134)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hortus_Sanitatis;_mandrake_Wellcome_L0008134.jpg",
+    "licence": "Public domain (1491/1497); Commons PD-old. Wellcome L-number files are CC BY 4.0 (credit Wellcome Collection). Wider category: https://commons.wikimedia.org/wiki/Category:Hortus_Sanitatis Added pictures: Wellcome images CC-BY/PD; LoC Rare Book and Prints items generally 'no known restrictions'. The 1514 and unicorn/apes items are related Hortus editions; check the attribution before using. The Twin-tailed Siren/mermaid woodcut exists but was found only on stock sites (Alamy, Bridgeman), so it is not included.",
+    "note": "Another mandrake woodcut (male/female root figures), Wellcome copy",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S010-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.10529,
+        "w": 1.0,
+        "h": 0.74941
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.05556,
+          "y": 0.0,
+          "w": 0.94444,
+          "h": 0.70778
+        },
+        "engine": "autocrop v1",
+        "score": 0.4725,
+        "confidence": 0.9
+      },
+      "candidates": [
+        {
+          "x": 0.16319,
+          "y": 0.0,
+          "w": 0.83681,
+          "h": 0.62711
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.72569,
+          "h": 0.54385
+        },
+        {
+          "x": 0.0,
+          "y": 0.1249,
+          "w": 1.0,
+          "h": 0.74941
+        },
+        {
+          "x": 0.22917,
+          "y": 0.0,
+          "w": 0.5625,
+          "h": 0.42155
+        },
+        {
+          "x": 0.41667,
+          "y": 0.0,
+          "w": 0.5625,
+          "h": 0.42155
+        }
+      ]
+    }
+  ]
+}

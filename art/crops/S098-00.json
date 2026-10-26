@@ -1,0 +1,75 @@
+{
+  "id": "S098-00",
+  "source": "originals/S098-00.png",
+  "source_sha256": "4c778532a77e9d773961653c3d059cb2fff3534180fb6da53d3e9db77e1d23e7",
+  "source_size": [
+    960,
+    442
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S098",
+    "index": 0,
+    "title": "Shou Pu leaf (Commons)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:%E4%BD%99%E7%9C%81%E3%80%81%E5%BC%A0%E4%B8%BA%E9%82%A6%E5%90%88%E7%94%BB%E5%85%BD%E8%B0%B1%E5%86%8C.png",
+    "licence": "Artwork public domain; Palace Museum Beijing claims copyright on its photos and asks for image licensing, so prefer Commons copies. Google Arts & Culture is view-only. Full scans also at shuge.org/view/shou_pu_ce/ (landing page). Per-volume viewers: minghuaji.dpm.org.cn volumes 1, 2, 3, 5.",
+    "note": "Leaf from the beast album; subject not confirmed",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S098-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.58333,
+        "y": 0.10633,
+        "w": 0.41146,
+        "h": 0.89367
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.58333,
+          "y": 0.10633,
+          "w": 0.41146,
+          "h": 0.89367
+        },
+        "engine": "autocrop v1",
+        "score": 0.7576,
+        "confidence": 0.751
+      },
+      "candidates": [
+        {
+          "x": 0.53411,
+          "y": 0.0,
+          "w": 0.46042,
+          "h": 1.0
+        },
+        {
+          "x": 0.6849,
+          "y": 0.15837,
+          "w": 0.3099,
+          "h": 0.67308
+        },
+        {
+          "x": 0.61458,
+          "y": 0.24887,
+          "w": 0.28385,
+          "h": 0.61652
+        },
+        {
+          "x": 0.63542,
+          "y": 0.0,
+          "w": 0.3099,
+          "h": 0.67308
+        },
+        {
+          "x": 0.70833,
+          "y": 0.38348,
+          "w": 0.28385,
+          "h": 0.61652
+        }
+      ]
+    }
+  ]
+}

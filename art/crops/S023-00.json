@@ -1,0 +1,75 @@
+{
+  "id": "S023-00",
+  "source": "originals/S023-00.jpg",
+  "source_sha256": "7d6fe5d6df155ca11a93d2c9472ff1583f5f70629fa2ccb2b626a6df7939566e",
+  "source_size": [
+    960,
+    1440
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S023",
+    "index": 0,
+    "title": "Abe no Seimei and Ashiya Doman",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Abe_Seimei_and_Ashiya_Doman_Hokusaimanga.jpg",
+    "licence": "Commons public-domain tags (Hokusai died 1849); Rijksmuseum copy CC0. Whole volumes: Met Open Access https://www.metmuseum.org/art/collection/search/57804 and LoC https://www.loc.gov/item/j67001705/. Several page subjects below were not checked; pick visually.",
+    "note": "Two rival sorcerers in a magic duel",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S023-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.05667,
+        "w": 1.0,
+        "h": 0.66667
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.66667
+        },
+        "engine": "autocrop v1",
+        "score": 0.2893,
+        "confidence": 0.919
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.07812,
+          "w": 1.0,
+          "h": 0.66667
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.78125,
+          "h": 0.52083
+        },
+        {
+          "x": 0.0,
+          "y": 0.33333,
+          "w": 1.0,
+          "h": 0.66667
+        },
+        {
+          "x": 0.27344,
+          "y": 0.0,
+          "w": 0.72656,
+          "h": 0.48438
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.45312,
+          "h": 0.30208
+        }
+      ]
+    }
+  ]
+}

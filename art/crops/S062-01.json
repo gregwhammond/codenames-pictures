@@ -1,0 +1,77 @@
+{
+  "id": "S062-01",
+  "source": "originals/S062-01.jpg",
+  "source_sha256": "39d31fa0bd06df3b197d7d6af0e94283288cb1bc7291fb20698b0e62653a4fd6",
+  "source_size": [
+    414,
+    624
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S062",
+    "index": 1,
+    "title": "Akbar Hunting",
+    "source_url": "https://www.metmuseum.org/art/collection/search/446161",
+    "licence": "Met Open Access CC0; Commons PD; V&A originals on Commons PD (V&A site has own terms).",
+    "note": "Imperial hunt scene",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S062-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.16827,
+        "w": 1.0,
+        "h": 0.66346
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.3756,
+        "confidence": 0.919,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.02353,
+          "y": 0.01301,
+          "w": 0.95686,
+          "h": 0.63484
+        },
+        {
+          "x": 0.02353,
+          "y": 0.09106,
+          "w": 0.95686,
+          "h": 0.63484
+        },
+        {
+          "x": 0.23137,
+          "y": 0.01301,
+          "w": 0.74902,
+          "h": 0.49695
+        },
+        {
+          "x": 0.02353,
+          "y": 0.01301,
+          "w": 0.69412,
+          "h": 0.46052
+        },
+        {
+          "x": 0.02353,
+          "y": 0.35124,
+          "w": 0.95686,
+          "h": 0.63484
+        },
+        {
+          "x": 0.49412,
+          "y": 0.01301,
+          "w": 0.48627,
+          "h": 0.32262
+        }
+      ]
+    }
+  ]
+}

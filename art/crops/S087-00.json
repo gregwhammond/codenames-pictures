@@ -1,0 +1,75 @@
+{
+  "id": "S087-00",
+  "source": "originals/S087-00.jpg",
+  "source_sha256": "e41d5063098beb7186704881a9cd10ef6df4463e2530277e6885ed68aa3636f6",
+  "source_size": [
+    960,
+    881
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S087",
+    "index": 0,
+    "title": "Alexander in a submarine (Royal 15 E VI f.20v)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alexander_in_a_submarine_-_British_Library_Royal_MS_15_E_vi_f20v_(detail).jpg",
+    "licence": "Public domain (Commons PD-Art tags; BL images released to public domain). Digital Bodleian images of Bodley 264 are CC-BY-NC; use the Commons copies.",
+    "note": "Alexander lowered into the sea in a glass diving barrel among fish",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S087-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.16209,
+        "y": 0.13,
+        "w": 0.71581,
+        "h": 0.78
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.03646,
+          "y": 0.0,
+          "w": 0.91667,
+          "h": 0.99886
+        },
+        "engine": "autocrop v1",
+        "score": 0.3509,
+        "confidence": 1.0
+      },
+      "candidates": [
+        {
+          "x": 0.03385,
+          "y": 0.10783,
+          "w": 0.81771,
+          "h": 0.89103
+        },
+        {
+          "x": 0.23438,
+          "y": 0.0,
+          "w": 0.76562,
+          "h": 0.83428
+        },
+        {
+          "x": 0.11719,
+          "y": 0.05108,
+          "w": 0.61719,
+          "h": 0.67253
+        },
+        {
+          "x": 0.23438,
+          "y": 0.25539,
+          "w": 0.56771,
+          "h": 0.61862
+        },
+        {
+          "x": 0.33333,
+          "y": 0.13621,
+          "w": 0.51562,
+          "h": 0.56186
+        }
+      ]
+    }
+  ]
+}

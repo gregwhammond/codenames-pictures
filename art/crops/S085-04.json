@@ -1,0 +1,75 @@
+{
+  "id": "S085-04",
+  "source": "originals/S085-04.png",
+  "source_sha256": "b8b45acb91f3bca1aa2a1f4868dc61fab544873947fe915341550884f0584d20",
+  "source_size": [
+    960,
+    1223
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S085",
+    "index": 4,
+    "title": "The Eagle, the Snake and the Cactus (Codex Ramirez, related)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_Eagle,_the_Snake,_and_the_Cactus_in_the_Founding_of_Tenochtitlan_WDL6749.png",
+    "licence": "Public domain; Commons PD",
+    "note": "Eagle on cactus founding Tenochtitlan; Tovar/Ramirez codex, not Duran",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S085-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.075,
+        "y": 0.12639,
+        "w": 0.85,
+        "h": 0.66721
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00332,
+          "y": 0.06259,
+          "w": 0.99668,
+          "h": 0.78235
+        },
+        "engine": "autocrop v1",
+        "score": 0.4582,
+        "confidence": 0.758
+      },
+      "candidates": [
+        {
+          "x": 0.00332,
+          "y": 0.15647,
+          "w": 0.99668,
+          "h": 0.78235
+        },
+        {
+          "x": 0.16611,
+          "y": 0.02608,
+          "w": 0.83389,
+          "h": 0.65456
+        },
+        {
+          "x": 0.38538,
+          "y": 0.0,
+          "w": 0.61462,
+          "h": 0.48245
+        },
+        {
+          "x": 0.00332,
+          "y": 0.0,
+          "w": 0.72425,
+          "h": 0.56851
+        },
+        {
+          "x": 0.25914,
+          "y": 0.07302,
+          "w": 0.56146,
+          "h": 0.44072
+        }
+      ]
+    }
+  ]
+}

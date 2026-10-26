@@ -1,0 +1,75 @@
+{
+  "id": "S076-02",
+  "source": "originals/S076-02.jpg",
+  "source_sha256": "05b25f59bd875e78a330b0c96a91ebf85af9c6363081fed1cc9ad3adaa719aab",
+  "source_size": [
+    936,
+    1238
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S076",
+    "index": 2,
+    "title": "Baron von Münchhausen 009",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Paul_Gustave_Dor%C3%A9_(1832-1883)_-_Baron_von_M%C3%BCnchhausen_(1862)_-_009.jpg",
+    "licence": "Public domain (Doré d. 1883); Commons PD tags",
+    "note": "Munchausen plate",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S076-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.25437,
+        "w": 0.98621,
+        "h": 0.74563
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.25437,
+          "w": 0.98621,
+          "h": 0.74563
+        },
+        "engine": "autocrop v1",
+        "score": 0.7079,
+        "confidence": 0.764
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.17207,
+          "w": 0.98621,
+          "h": 0.74563
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.87931,
+          "h": 0.66481
+        },
+        {
+          "x": 0.0,
+          "y": 0.41601,
+          "w": 0.77241,
+          "h": 0.58399
+        },
+        {
+          "x": 0.0,
+          "y": 0.25028,
+          "w": 0.66207,
+          "h": 0.50056
+        },
+        {
+          "x": 0.22069,
+          "y": 0.25028,
+          "w": 0.66207,
+          "h": 0.50056
+        }
+      ]
+    }
+  ]
+}

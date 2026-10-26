@@ -1,0 +1,75 @@
+{
+  "id": "S046-03",
+  "source": "originals/S046-03.jpg",
+  "source_sha256": "ab8704bb11decccf2cb92abc428738302e7d1e73c9bdab62b2f1334895b877ad",
+  "source_size": [
+    960,
+    900
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S046",
+    "index": 3,
+    "title": "Thesaurus anatomicus, foetal skeletons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ruysch_%22Thesaurus_anatomicus%22,_1701-16;_foetal_skeletons_Wellcome_L0019778.jpg",
+    "licence": "Public domain (PDIA PD; Commons Wellcome images CC BY 4.0/PD scans of 1700s plates) Added pictures: Wellcome images CC-BY/PD on Commons; PD Image Archive public domain.",
+    "note": "Tiny skeletons posed on a rocky tableau",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S046-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.01562,
+        "y": 0.00556,
+        "w": 0.93229,
+        "h": 0.99444
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.01562,
+          "y": 0.00556,
+          "w": 0.93229,
+          "h": 0.99444
+        },
+        "engine": "autocrop v1",
+        "score": 0.6622,
+        "confidence": 0.733
+      },
+      "candidates": [
+        {
+          "x": 0.01562,
+          "y": 0.11389,
+          "w": 0.83073,
+          "h": 0.88611
+        },
+        {
+          "x": 0.30208,
+          "y": 0.17222,
+          "w": 0.67708,
+          "h": 0.72222
+        },
+        {
+          "x": 0.01562,
+          "y": 0.30556,
+          "w": 0.57552,
+          "h": 0.61389
+        },
+        {
+          "x": 0.01562,
+          "y": 0.03333,
+          "w": 0.6276,
+          "h": 0.66944
+        },
+        {
+          "x": 0.19792,
+          "y": 0.00556,
+          "w": 0.67708,
+          "h": 0.72222
+        }
+      ]
+    }
+  ]
+}

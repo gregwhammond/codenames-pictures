@@ -1,0 +1,75 @@
+{
+  "id": "S090-13",
+  "source": "originals/S090-13.png",
+  "source_sha256": "cdaed3961f3d94b5e468db4bab36026851c9110b2e5d5df52e7036bca2f8c811",
+  "source_size": [
+    810,
+    905
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S090",
+    "index": 13,
+    "title": "Cotton Tiberius B V-1, folio 87v",
+    "source_url": "https://commons.wikimedia.org/wiki/File:London,_British_Library,_Cotton_Tiberius_B_V-1,_folio_87v.png",
+    "licence": "Manuscripts are PD. Commons and PD Image Archive copies are PD. Flickr photos (users 28433765@N07 and wy_jackrabbit) have unchecked licences; Bodleian's own images are CC BY-NC. Bodley 614 Flickr folios: which marvel each shows is unknown.",
+    "note": "Last Wonders page; likely the magician Mambres at hell's mouth (unverified)",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S090-13",
+      "mode": "crop",
+      "box": {
+        "x": 0.05,
+        "y": 0.06724,
+        "w": 0.9,
+        "h": 0.80552
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.89503
+        },
+        "engine": "autocrop v1",
+        "score": 0.5919,
+        "confidence": 0.834
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.10407,
+          "w": 1.0,
+          "h": 0.89503
+        },
+        {
+          "x": 0.21802,
+          "y": 0.0,
+          "w": 0.78198,
+          "h": 0.69989
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.72674,
+          "h": 0.65046
+        },
+        {
+          "x": 0.49128,
+          "y": 0.0,
+          "w": 0.50872,
+          "h": 0.45532
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.50872,
+          "h": 0.45532
+        }
+      ]
+    }
+  ]
+}

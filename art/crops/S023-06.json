@@ -1,0 +1,77 @@
+{
+  "id": "S023-06",
+  "source": "originals/S023-06.jpg",
+  "source_sha256": "4d96f6c25487086142c830b2437ff7a4a38af60e66992d574173b18f9a83427a",
+  "source_size": [
+    927,
+    1309
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S023",
+    "index": 6,
+    "title": "Hokusai Manga 04",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hokusai_Manga_04.jpg",
+    "licence": "Commons public-domain tags (Hokusai died 1849); Rijksmuseum copy CC0. Whole volumes: Met Open Access https://www.metmuseum.org/art/collection/search/57804 and LoC https://www.loc.gov/item/j67001705/. Several page subjects below were not checked; pick visually.",
+    "note": "Page of assorted sketches; subject not checked",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S023-06",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.09591,
+        "w": 1.0,
+        "h": 0.70817
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.2676,
+        "confidence": 1.0,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.70817
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.72794,
+          "h": 0.51551
+        },
+        {
+          "x": 0.0,
+          "y": 0.08592,
+          "w": 1.0,
+          "h": 0.70817
+        },
+        {
+          "x": 0.05515,
+          "y": 0.33065,
+          "w": 0.94485,
+          "h": 0.66912
+        },
+        {
+          "x": 0.20588,
+          "y": 0.0,
+          "w": 0.78309,
+          "h": 0.55456
+        },
+        {
+          "x": 0.22059,
+          "y": 0.0,
+          "w": 0.50735,
+          "h": 0.35929
+        }
+      ]
+    }
+  ]
+}

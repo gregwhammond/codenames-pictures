@@ -1,0 +1,75 @@
+{
+  "id": "S046-05",
+  "source": "originals/S046-05.jpg",
+  "source_sha256": "797f5abb47e16280232645087a33e5d04414491ff29ac9225dd257a62a7d0431",
+  "source_size": [
+    960,
+    1101
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S046",
+    "index": 5,
+    "title": "Thesaurus anatomicus; skeleton monument. Wellcome L0007581",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Thesaurus_anatomicus;_skeleton_monument._Wellcome_L0007581.jpg",
+    "licence": "Public domain (PDIA PD; Commons Wellcome images CC BY 4.0/PD scans of 1700s plates) Added pictures: Wellcome images CC-BY/PD on Commons; PD Image Archive public domain.",
+    "note": "Foetal skeletons posed on a landscape of gallstones",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S046-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.04403,
+        "w": 1.0,
+        "h": 0.87193
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.12754,
+          "w": 1.0,
+          "h": 0.87193
+        },
+        "engine": "autocrop v1",
+        "score": 0.5872,
+        "confidence": 0.76
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.87193
+        },
+        {
+          "x": 0.21791,
+          "y": 0.31754,
+          "w": 0.78209,
+          "h": 0.68193
+        },
+        {
+          "x": 0.16119,
+          "y": 0.0,
+          "w": 0.67164,
+          "h": 0.58563
+        },
+        {
+          "x": 0.32836,
+          "y": 0.07028,
+          "w": 0.67164,
+          "h": 0.58563
+        },
+        {
+          "x": 0.0,
+          "y": 0.0937,
+          "w": 0.67164,
+          "h": 0.58563
+        }
+      ]
+    }
+  ]
+}

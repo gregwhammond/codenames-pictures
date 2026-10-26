@@ -1,0 +1,75 @@
+{
+  "id": "S027-03",
+  "source": "originals/S027-03.jpg",
+  "source_sha256": "459eb4be3054d08808555b2f2660d6ea9a7f383ff37a1c735e60a065a19b332e",
+  "source_size": [
+    640,
+    494
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S027",
+    "index": 3,
+    "title": "Smallpox victims (Book 12, folio 54)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:FlorentineCodex_BK12_F54_smallpox.jpg",
+    "licence": "The work is public domain (16th century). Commons files are tagged PD-Art. The Library of Congress hosts the full codex at https://www.loc.gov/item/2021667837/ for education and research. The Getty viewer images come from the Laurenziana, and Italian heritage rules can limit commercial reuse, so prefer the Commons or LoC copies.",
+    "note": "Nahua people lying sick with smallpox, 1520 epidemic",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S027-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.22917,
+        "y": 0.0,
+        "w": 0.77083,
+        "h": 0.99865
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.22917,
+          "y": 0.0,
+          "w": 0.77083,
+          "h": 0.99865
+        },
+        "engine": "autocrop v1",
+        "score": 0.508,
+        "confidence": 0.628
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.77083,
+          "h": 0.99865
+        },
+        {
+          "x": 0.3125,
+          "y": 0.10796,
+          "w": 0.6875,
+          "h": 0.89069
+        },
+        {
+          "x": 0.48177,
+          "y": 0.0,
+          "w": 0.51823,
+          "h": 0.67139
+        },
+        {
+          "x": 0.0,
+          "y": 0.2969,
+          "w": 0.51823,
+          "h": 0.67139
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.51823,
+          "h": 0.67139
+        }
+      ]
+    }
+  ]
+}

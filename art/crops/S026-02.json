@@ -1,0 +1,75 @@
+{
+  "id": "S026-02",
+  "source": "originals/S026-02.jpg",
+  "source_sha256": "acdf980e92dcd2b1a02b9fac097b5b44832d6c8d927dab2bc6c2fe069853f274",
+  "source_size": [
+    960,
+    764
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S026",
+    "index": 2,
+    "title": "Album of Ghost Paintings (Honolulu loan)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Album_of_Ghost_Paintings_by_Luo_Ping,_18th_century,_long-term_loan_to_the_Honolulu_Museum_of_Art.JPG",
+    "licence": "Paintings are public domain (artist d. 1799). The Honolulu file is a visitor's gallery photo: check its Commons licence (may be CC-BY-SA). Only 4 images found. Added pictures: Cleveland Museum of Art open access (CC0) where marked. The Ghost Amusement scroll is in a private collection (the Hong Kong loan). Commons images of it are photos of a PD work, but check their source. No further single-leaf images were found on open hosts.",
+    "note": "gallery photo of a Luo Ping ghost album leaf",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S026-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.19187,
+        "y": 0.0,
+        "w": 0.71625,
+        "h": 0.9
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00052,
+          "y": 0.0,
+          "w": 0.79583,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.6222,
+        "confidence": 0.466
+      },
+      "candidates": [
+        {
+          "x": 0.02865,
+          "y": 0.10668,
+          "w": 0.71094,
+          "h": 0.89332
+        },
+        {
+          "x": 0.33333,
+          "y": 0.0,
+          "w": 0.66667,
+          "h": 0.8377
+        },
+        {
+          "x": 0.1875,
+          "y": 0.0,
+          "w": 0.58073,
+          "h": 0.72971
+        },
+        {
+          "x": 0.32812,
+          "y": 0.21597,
+          "w": 0.40625,
+          "h": 0.51047
+        },
+        {
+          "x": 0.32812,
+          "y": 0.27029,
+          "w": 0.58073,
+          "h": 0.72971
+        }
+      ]
+    }
+  ]
+}

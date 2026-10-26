@@ -1,0 +1,87 @@
+{
+  "id": "S044-05",
+  "source": "originals/S044-05.jpg",
+  "source_sha256": "685229ba589a7d1cb8ebbcc73067ea8d43df60441c882fd7febb3812eaceaeb2",
+  "source_size": [
+    833,
+    720
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S044",
+    "index": 5,
+    "title": "Crescenzi calendar",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Crescenzi_calendar.jpg",
+    "licence": "Public domain on Commons (PD-old)",
+    "note": "Month-by-month farming calendar from a Crescenzi manuscript",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S044-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.355,
+        "w": 0.28523,
+        "h": 0.33
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00012,
+          "y": 0.0,
+          "w": 0.86435,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.5009,
+        "confidence": 0.717
+      },
+      "candidates": [
+        {
+          "x": 0.13554,
+          "y": 0.0,
+          "w": 0.86435,
+          "h": 1.0
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.67708,
+          "h": 0.78335
+        },
+        {
+          "x": 0.41927,
+          "y": 0.0,
+          "w": 0.58073,
+          "h": 0.67187
+        },
+        {
+          "x": 0.41927,
+          "y": 0.32813,
+          "w": 0.58073,
+          "h": 0.67187
+        },
+        {
+          "x": 0.0,
+          "y": 0.2739,
+          "w": 0.6276,
+          "h": 0.7261
+        }
+      ]
+    },
+    {
+      "tile": "S044-05-b",
+      "mode": "crop",
+      "box": {
+        "x": 0.23738,
+        "y": 0.67,
+        "w": 0.28523,
+        "h": 0.33
+      },
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

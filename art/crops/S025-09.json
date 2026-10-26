@@ -1,0 +1,75 @@
+{
+  "id": "S025-09",
+  "source": "originals/S025-09.jpg",
+  "source_sha256": "26966ada5dcfc1a34c59a18bad2f51687719b35741cea877a65ce63916b8ad3a",
+  "source_size": [
+    300,
+    362
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S025",
+    "index": 9,
+    "title": "Hua-She",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Shan_Hai_Jing_Hua-She.jpg",
+    "licence": "Public domain (Ming/Qing woodblock prints, PD-old tags on Commons); check each file page for the exact tag.",
+    "note": "Huashe, human-faced winged snake",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S025-09",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.15193,
+        "w": 1.0,
+        "h": 0.82873
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.15193,
+          "w": 1.0,
+          "h": 0.82873
+        },
+        "engine": "autocrop v1",
+        "score": 0.5743,
+        "confidence": 0.864
+      },
+      "candidates": [
+        {
+          "x": 0.11,
+          "y": 0.24309,
+          "w": 0.89,
+          "h": 0.73757
+        },
+        {
+          "x": 0.16333,
+          "y": 0.02762,
+          "w": 0.83667,
+          "h": 0.69337
+        },
+        {
+          "x": 0.02667,
+          "y": 0.0,
+          "w": 0.67333,
+          "h": 0.55801
+        },
+        {
+          "x": 0.11667,
+          "y": 0.0,
+          "w": 0.45333,
+          "h": 0.37569
+        },
+        {
+          "x": 0.24,
+          "y": 0.0,
+          "w": 0.51,
+          "h": 0.42265
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "S058-06",
+  "source": "originals/S058-06.jpg",
+  "source_sha256": "ac75ed6e07dbc1fb39ee597c0578c1d38b7bfb2b04c489fe0522bb01f9a9ccaf",
+  "source_size": [
+    606,
+    800
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S058",
+    "index": 6,
+    "title": "Joseph enthroned",
+    "source_url": "https://asia.si.edu/object/S1986.255",
+    "licence": "Met Open Access CC0; Smithsonian Open Access CC0 for most images.",
+    "note": "Joseph on throne at court",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S058-06",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.7575
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.7575
+        },
+        "engine": "autocrop v1",
+        "score": 0.4544,
+        "confidence": 0.857
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.89003,
+          "h": 0.6742
+        },
+        {
+          "x": 0.0,
+          "y": 0.23688,
+          "w": 1.0,
+          "h": 0.7575
+        },
+        {
+          "x": 0.32646,
+          "y": 0.0,
+          "w": 0.67354,
+          "h": 0.51021
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.61856,
+          "h": 0.46856
+        },
+        {
+          "x": 0.54639,
+          "y": 0.0,
+          "w": 0.45361,
+          "h": 0.34361
+        }
+      ]
+    }
+  ]
+}

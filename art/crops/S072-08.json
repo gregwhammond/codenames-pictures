@@ -1,0 +1,75 @@
+{
+  "id": "S072-08",
+  "source": "originals/S072-08.jpg",
+  "source_sha256": "3ea4ab7456d8e9ced1f498ef9fb17b7a9673931cec2a3cfac4232a86f45548a7",
+  "source_size": [
+    697,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S072",
+    "index": 8,
+    "title": "Tale of Tsar Saltan",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ivan_Bilibin_-_illustration-for-alexander-pushkin-s-fairytale-of-the-tsar-saltan-1905-21.jpg",
+    "licence": "Public domain: published before 1929 and Bilibin died 1942 (70+ years); Commons PD tags",
+    "note": "Plate from Pushkin's Tsar Saltan (barrel at sea)",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S072-08",
+      "mode": "crop",
+      "box": {
+        "x": 0.09871,
+        "y": 0.01,
+        "w": 0.60258,
+        "h": 0.7
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.01302,
+          "y": 0.0,
+          "w": 0.84375,
+          "h": 0.98016
+        },
+        "engine": "autocrop v1",
+        "score": 0.5133,
+        "confidence": 0.706
+      },
+      "candidates": [
+        {
+          "x": 0.15625,
+          "y": 0.0,
+          "w": 0.84375,
+          "h": 0.98016
+        },
+        {
+          "x": 0.01302,
+          "y": 0.0,
+          "w": 0.70573,
+          "h": 0.81982
+        },
+        {
+          "x": 0.43229,
+          "y": 0.0,
+          "w": 0.56771,
+          "h": 0.65949
+        },
+        {
+          "x": 0.01302,
+          "y": 0.27227,
+          "w": 0.56771,
+          "h": 0.65949
+        },
+        {
+          "x": 0.43229,
+          "y": 0.27227,
+          "w": 0.56771,
+          "h": 0.65949
+        }
+      ]
+    }
+  ]
+}

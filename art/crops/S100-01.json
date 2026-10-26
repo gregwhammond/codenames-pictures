@@ -1,0 +1,75 @@
+{
+  "id": "S100-01",
+  "source": "originals/S100-01.jpg",
+  "source_sha256": "be4c41e3cc834d15895ceb208ff5aa65109130326002dd49c37a72ab015ddada",
+  "source_size": [
+    960,
+    1300
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S100",
+    "index": 1,
+    "title": "Vessantara Jataka, Chapter 2 (Himavanta Forest), Walters 35265",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Thai_-_Vessantara_Jataka,_Chapter_2_(Himavanta_Forest)_-_Walters_35265_-_A_T_Front.jpg",
+    "licence": "Manuscripts public domain. Harvard images personal/non-commercial only. Walters CC0. The Berlin Thonburi Traiphum (1776) is due to be digitised by end of 2026; not online yet.",
+    "note": "Related Thai painting of the Himavanta forest (Jataka, not Traiphum)",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S100-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.73846
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.73846
+        },
+        "engine": "autocrop v1",
+        "score": 0.2487,
+        "confidence": 1.0
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.08581,
+          "w": 1.0,
+          "h": 0.73846
+        },
+        {
+          "x": 0.10915,
+          "y": 0.34063,
+          "w": 0.89085,
+          "h": 0.65785
+        },
+        {
+          "x": 0.09507,
+          "y": 0.0,
+          "w": 0.78169,
+          "h": 0.57725
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.51056,
+          "h": 0.37703
+        },
+        {
+          "x": 0.59859,
+          "y": 0.0,
+          "w": 0.40141,
+          "h": 0.29642
+        }
+      ]
+    }
+  ]
+}

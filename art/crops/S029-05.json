@@ -1,0 +1,75 @@
+{
+  "id": "S029-05",
+  "source": "originals/S029-05.jpg",
+  "source_sha256": "749f9a7a6a3e34d978d4272c807e7d81340d160da3b69a64237caa95ad38ceb2",
+  "source_size": [
+    960,
+    692
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S029",
+    "index": 5,
+    "title": "Codex Magliabechiano (folio 33r)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Codex_Magliabechiano_(folio_33r).jpg",
+    "licence": "The work is public domain and the Commons files are tagged PD-Art. Some pages show sacrifice or cannibalism, so check pages for gore before using them.",
+    "note": "Monthly festival page: costumed ritual figure; not verified",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S029-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.1875,
+        "y": 0.06503,
+        "w": 0.60417,
+        "h": 0.83815
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.1875,
+          "y": 0.06503,
+          "w": 0.60417,
+          "h": 0.83815
+        },
+        "engine": "autocrop v1",
+        "score": 0.8359,
+        "confidence": 0.766
+      },
+      "candidates": [
+        {
+          "x": 0.25781,
+          "y": 0.06503,
+          "w": 0.60417,
+          "h": 0.83815
+        },
+        {
+          "x": 0.00026,
+          "y": 0.0,
+          "w": 0.72083,
+          "h": 1.0
+        },
+        {
+          "x": 0.25521,
+          "y": 0.32803,
+          "w": 0.48438,
+          "h": 0.67197
+        },
+        {
+          "x": 0.29167,
+          "y": 0.02529,
+          "w": 0.44531,
+          "h": 0.61777
+        },
+        {
+          "x": 0.1276,
+          "y": 0.10116,
+          "w": 0.48438,
+          "h": 0.67197
+        }
+      ]
+    }
+  ]
+}

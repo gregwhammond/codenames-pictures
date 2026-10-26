@@ -1,0 +1,77 @@
+{
+  "id": "S056-01",
+  "source": "originals/S056-01.jpg",
+  "source_sha256": "b11e2962afeb27bfb03e99c6df0d852afaea82927597ec7e965ad88d0e0b1c85",
+  "source_size": [
+    960,
+    1459
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S056",
+    "index": 1,
+    "title": "Salomon de Caus 04",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Salomon-de-Caus04.jpg",
+    "licence": "Public domain (Commons PD tags). Two images are from de Caus's Hortus Palatinus, a related book.",
+    "note": "De Caus machine engraving",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S056-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.14101,
+        "w": 1.0,
+        "h": 0.65798
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.3464,
+        "confidence": 0.982,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.65798
+        },
+        {
+          "x": 0.11067,
+          "y": 0.0,
+          "w": 0.88933,
+          "h": 0.58516
+        },
+        {
+          "x": 0.0,
+          "y": 0.15604,
+          "w": 1.0,
+          "h": 0.65798
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.67194,
+          "h": 0.44212
+        },
+        {
+          "x": 0.3834,
+          "y": 0.0,
+          "w": 0.6166,
+          "h": 0.40571
+        },
+        {
+          "x": 0.60079,
+          "y": 0.0,
+          "w": 0.39921,
+          "h": 0.26267
+        }
+      ]
+    }
+  ]
+}

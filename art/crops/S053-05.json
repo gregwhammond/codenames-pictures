@@ -1,0 +1,75 @@
+{
+  "id": "S053-05",
+  "source": "originals/S053-05.jpg",
+  "source_sha256": "2036f32a2653021747e89ff2b5adf23d3dffb67dd39c413640cbd1d3a91da83c",
+  "source_size": [
+    450,
+    563
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S053",
+    "index": 5,
+    "title": "Anatomical plate",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Jacques_Gautier_d'Agoty_-_Anatomical_plate.jpg",
+    "licence": "Public domain (NGA open access; Wellcome CC BY 4.0)",
+    "note": "Colour mezzotint anatomical figure",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S053-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.01,
+        "y": 0.04226,
+        "w": 0.72,
+        "h": 0.57549
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00977,
+          "y": 0.01041,
+          "w": 0.9772,
+          "h": 0.78106
+        },
+        "engine": "autocrop v1",
+        "score": 0.5417,
+        "confidence": 0.746
+      },
+      "candidates": [
+        {
+          "x": 0.00977,
+          "y": 0.10414,
+          "w": 0.9772,
+          "h": 0.78106
+        },
+        {
+          "x": 0.00977,
+          "y": 0.01041,
+          "w": 0.7101,
+          "h": 0.56757
+        },
+        {
+          "x": 0.2215,
+          "y": 0.01041,
+          "w": 0.76547,
+          "h": 0.61183
+        },
+        {
+          "x": 0.16612,
+          "y": 0.01041,
+          "w": 0.49837,
+          "h": 0.39834
+        },
+        {
+          "x": 0.00977,
+          "y": 0.04166,
+          "w": 0.49837,
+          "h": 0.39834
+        }
+      ]
+    }
+  ]
+}

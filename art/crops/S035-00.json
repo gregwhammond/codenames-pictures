@@ -1,0 +1,75 @@
+{
+  "id": "S035-00",
+  "source": "originals/S035-00.webp",
+  "source_sha256": "1e3ffd3529d9c99b471aaed60dc22e1d2796fba463729bd242ccca53d702db78",
+  "source_size": [
+    596,
+    313
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S035",
+    "index": 0,
+    "title": "Iron and Son, Shoes for Men and Beasts",
+    "source_url": "https://pdimagearchive.org/images/e05c462f-b2c7-4d3f-8e3b-99abc13579a0/",
+    "licence": "Public domain (Grandville died 1847; published 1840-42 and 1877). PD Image Archive and PDR mark the images public domain. The Commons page scan has a PD-old tag. Added pictures: Grandville d.1847, so PD. Met Open Access CC0 applies where the page shows the OA badge (typical for these prints). PD Image Archive and Commons are PD. Titles are from the Met; content notes are inferred from titles.",
+    "note": "Animal shoemaker or farrier shop scene",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S035-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.35742,
+        "y": 0.0,
+        "w": 0.52517,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.20877,
+          "y": 0.0,
+          "w": 0.52517,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.3572,
+        "confidence": 0.529
+      },
+      "candidates": [
+        {
+          "x": 0.27127,
+          "y": 0.0,
+          "w": 0.52517,
+          "h": 1.0
+        },
+        {
+          "x": 0.00044,
+          "y": 0.0,
+          "w": 0.52517,
+          "h": 1.0
+        },
+        {
+          "x": 0.45877,
+          "y": 0.0,
+          "w": 0.52517,
+          "h": 1.0
+        },
+        {
+          "x": 0.18229,
+          "y": 0.16197,
+          "w": 0.4401,
+          "h": 0.83803
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.35417,
+          "h": 0.67439
+        }
+      ]
+    }
+  ]
+}

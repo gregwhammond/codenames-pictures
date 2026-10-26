@@ -1,0 +1,75 @@
+{
+  "id": "S064-06",
+  "source": "originals/S064-06.jpg",
+  "source_sha256": "47b8be15f0f07c7ae2a390ec5903344145b2107ee3f81c98784bd58b5387062b",
+  "source_size": [
+    640,
+    590
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S064",
+    "index": 6,
+    "title": "Nikurashi",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bakemono-tsukushi-emaki_Nikurashi.jpg",
+    "licence": "Public domain (Edo-period works), Commons PD tags; check each file's page for the owning collection",
+    "note": "Nikurashi yokai figure",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S064-06",
+      "mode": "crop",
+      "box": {
+        "x": 0.03906,
+        "y": 0.0,
+        "w": 0.92188,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.06771,
+          "y": 0.11017,
+          "w": 0.82031,
+          "h": 0.88983
+        },
+        "engine": "autocrop v1",
+        "score": 0.7311,
+        "confidence": 0.736
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.07345,
+          "w": 0.82031,
+          "h": 0.88983
+        },
+        {
+          "x": 0.09375,
+          "y": 0.33051,
+          "w": 0.57031,
+          "h": 0.61864
+        },
+        {
+          "x": 0.23438,
+          "y": 0.27401,
+          "w": 0.66927,
+          "h": 0.72599
+        },
+        {
+          "x": 0.11719,
+          "y": 0.12712,
+          "w": 0.57031,
+          "h": 0.61864
+        },
+        {
+          "x": 0.22917,
+          "y": 0.0,
+          "w": 0.77083,
+          "h": 0.83616
+        }
+      ]
+    }
+  ]
+}

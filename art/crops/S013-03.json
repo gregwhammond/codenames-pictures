@@ -1,0 +1,75 @@
+{
+  "id": "S013-03",
+  "source": "originals/S013-03.jpg",
+  "source_sha256": "7b16a71f89a174dffc665e8d0e44008f48ad5c39d6aeb23bc2f67679c09a2e8c",
+  "source_size": [
+    914,
+    645
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S013",
+    "index": 3,
+    "title": "Alchemists revealing secrets from the Book of Seven Seals (detail, c.1700)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alchemists_Revealing_Secrets_from_the_Book_of_Seven_Seals,_The_Ripley_Scroll_(detail),_ca._1700.jpg",
+    "licence": "Public domain (PD-old); Wellcome photographs on Commons carry CC BY 4.0 (credit Wellcome Collection). Scrolls are tall and narrow, so use detail crops for cards. Contains some serpents/dragons.",
+    "note": "Alchemists unveiling a book with seven seals",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S013-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.02867,
+        "y": 0.0,
+        "w": 0.70569,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.02867,
+          "y": 0.0,
+          "w": 0.70569,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.506,
+        "confidence": 0.435
+      },
+      "candidates": [
+        {
+          "x": 0.14325,
+          "y": 0.0,
+          "w": 0.70569,
+          "h": 1.0
+        },
+        {
+          "x": 0.02344,
+          "y": 0.16231,
+          "w": 0.59115,
+          "h": 0.83769
+        },
+        {
+          "x": 0.40885,
+          "y": 0.16231,
+          "w": 0.59115,
+          "h": 0.83769
+        },
+        {
+          "x": 0.375,
+          "y": 0.0,
+          "w": 0.51302,
+          "h": 0.72698
+        },
+        {
+          "x": 0.25521,
+          "y": 0.28415,
+          "w": 0.47396,
+          "h": 0.67162
+        }
+      ]
+    }
+  ]
+}

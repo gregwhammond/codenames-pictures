@@ -1,0 +1,77 @@
+{
+  "id": "S073-00",
+  "source": "originals/S073-00.jpg",
+  "source_sha256": "ddc4aa6be4c4f20fb44b9278e01e41a054b7fb41b3f3c6ceb48b1aad15acfc1a",
+  "source_size": [
+    474,
+    877
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S073",
+    "index": 0,
+    "title": "Card 00 (Il Matto, the Fool)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sola_Busca_tarot_card_00.jpg",
+    "licence": "Public domain (c. 1491 engravings); Commons PD tags. Originals at Pinacoteca di Brera",
+    "note": "The Fool trump card",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S073-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.04,
+        "y": 0.05138,
+        "w": 0.92,
+        "h": 0.49724
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.2612,
+        "confidence": 1.0,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.54048
+        },
+        {
+          "x": 0.0,
+          "y": 0.06236,
+          "w": 1.0,
+          "h": 0.54048
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.78365,
+          "h": 0.42355
+        },
+        {
+          "x": 0.27404,
+          "y": 0.0,
+          "w": 0.72596,
+          "h": 0.39237
+        },
+        {
+          "x": 0.0,
+          "y": 0.24945,
+          "w": 1.0,
+          "h": 0.54048
+        },
+        {
+          "x": 0.0,
+          "y": 0.01039,
+          "w": 0.50962,
+          "h": 0.27544
+        }
+      ]
+    }
+  ]
+}

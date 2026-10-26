@@ -1,0 +1,75 @@
+{
+  "id": "S004-03",
+  "source": "originals/S004-03.jpg",
+  "source_sha256": "dfb047a8a79a5d0f49f8908f5d19006ae568e398df51932f4e36199e32c14f83",
+  "source_size": [
+    660,
+    677
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S004",
+    "index": 3,
+    "title": "Butt-trumpets, f. 87v",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Butt-trumpets,_The_Rutland_Psalter,_folio_87v.jpg",
+    "licence": "Original c. 1260, public domain; Commons files PD-Art (verify tag). Only 3 distinct pictures found (two URLs are the same folio). Butt-trumpet image is crude. Added pictures: Manuscript PD (c.1260). Tumblr links are reposts of BL images. BL Images Online is a commercial picture library (licensed downloads) - treat as reference only.",
+    "note": "Hybrid blows a trumpet into another's backside (crude).",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S004-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.03,
+        "y": 0.1213,
+        "w": 0.9,
+        "h": 0.8774
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.43583,
+          "y": 0.39621,
+          "w": 0.56417,
+          "h": 0.55
+        },
+        "engine": "autocrop v1",
+        "score": 0.4212,
+        "confidence": 0.153
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.02511,
+          "w": 1.0,
+          "h": 0.97489
+        },
+        {
+          "x": 0.49198,
+          "y": 0.38318,
+          "w": 0.50802,
+          "h": 0.49526
+        },
+        {
+          "x": 0.26738,
+          "y": 0.34312,
+          "w": 0.6738,
+          "h": 0.65688
+        },
+        {
+          "x": 0.0,
+          "y": 0.42228,
+          "w": 0.40107,
+          "h": 0.391
+        },
+        {
+          "x": 0.0,
+          "y": 0.39786,
+          "w": 0.61765,
+          "h": 0.60214
+        }
+      ]
+    }
+  ]
+}

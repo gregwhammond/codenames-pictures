@@ -1,0 +1,75 @@
+{
+  "id": "S041-09",
+  "source": "originals/S041-09.jpg",
+  "source_sha256": "019cf266d9130c857eaa87e1cb1ec595941ed0b36ced6403a862c76de93aba75",
+  "source_size": [
+    223,
+    300
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S041",
+    "index": 9,
+    "title": "Sirens",
+    "source_url": "http://www.getty.edu/art/collection/objects/240673/unknown-maker-sirens-english-about-1250-1260/",
+    "licence": "Getty Open Content (free reuse); Commons copies PD-old Added pictures: Getty Open Content: images of PD works free to use (Getty MS 100, English c.1250-60).",
+    "note": "Sirens luring sailors in a boat",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S041-09",
+      "mode": "crop",
+      "box": {
+        "x": 0.06,
+        "y": 0.01753,
+        "w": 0.76,
+        "h": 0.56493
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.12,
+          "w": 1.0,
+          "h": 0.74333
+        },
+        "engine": "autocrop v1",
+        "score": 0.3932,
+        "confidence": 1.0
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.03,
+          "w": 1.0,
+          "h": 0.74333
+        },
+        {
+          "x": 0.0,
+          "y": 0.28,
+          "w": 0.78027,
+          "h": 0.58
+        },
+        {
+          "x": 0.12556,
+          "y": 0.37333,
+          "w": 0.83857,
+          "h": 0.62333
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.72646,
+          "h": 0.54
+        },
+        {
+          "x": 0.53812,
+          "y": 0.0,
+          "w": 0.3991,
+          "h": 0.29667
+        }
+      ]
+    }
+  ]
+}

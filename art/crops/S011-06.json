@@ -1,0 +1,75 @@
+{
+  "id": "S011-06",
+  "source": "originals/S011-06.jpg",
+  "source_sha256": "9e6f206743a8ed2f530c976d48d08f8cd4ae480d96e194e0f55669d86b673e3b",
+  "source_size": [
+    594,
+    568
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S011",
+    "index": 6,
+    "title": "Emblem 21: Make a circle, a square, a triangle",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Michael_Maier_Atalanta_Fugiens_Emblem_21.jpeg",
+    "licence": "Public domain (1618; PD-old on Commons). Science History Institute digital collections are also openly reusable.",
+    "note": "Geometer with compasses drawing nested circle, square and triangle on a wall",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S011-06",
+      "mode": "crop",
+      "box": {
+        "x": 0.04427,
+        "y": 0.0,
+        "w": 0.95573,
+        "h": 0.99948
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.04427,
+          "y": 0.0,
+          "w": 0.95573,
+          "h": 0.99948
+        },
+        "engine": "autocrop v1",
+        "score": 0.5579,
+        "confidence": 0.753
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.10893,
+          "w": 0.85156,
+          "h": 0.89054
+        },
+        {
+          "x": 0.20052,
+          "y": 0.0,
+          "w": 0.79948,
+          "h": 0.83608
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.64323,
+          "h": 0.67267
+        },
+        {
+          "x": 0.35677,
+          "y": 0.3268,
+          "w": 0.64323,
+          "h": 0.67267
+        },
+        {
+          "x": 0.46094,
+          "y": 0.0,
+          "w": 0.53906,
+          "h": 0.56374
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "S095-00",
+  "source": "originals/S095-00.jpg",
+  "source_sha256": "65c061035b6bd438e6ddb96a6438193b4b5710da3564624300cdc8de4a40c1b1",
+  "source_size": [
+    960,
+    1356
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S095",
+    "index": 0,
+    "title": "Wormius' Great Auk",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Wormius%27_Great_Auk.jpg",
+    "licence": "Commons PD tags; Wellcome PD / CC-BY; Linda Hall digital collections images (check terms). Only 3 distinct subjects found as single images; interior-view entries are near-duplicates of the frontispiece.",
+    "note": "Worm's pet great auk with neck ring",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S095-00",
+      "mode": "fit",
+      "box": null,
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00735,
+          "y": 0.05206,
+          "w": 0.96324,
+          "h": 0.68194
+        },
+        "engine": "autocrop v1",
+        "score": 0.3497,
+        "confidence": 0.566
+      },
+      "candidates": [
+        {
+          "x": 0.11397,
+          "y": 0.05206,
+          "w": 0.85662,
+          "h": 0.60645
+        },
+        {
+          "x": 0.22794,
+          "y": 0.05206,
+          "w": 0.59559,
+          "h": 0.42166
+        },
+        {
+          "x": 0.00735,
+          "y": 0.29932,
+          "w": 0.96324,
+          "h": 0.68194
+        },
+        {
+          "x": 0.42647,
+          "y": 0.05206,
+          "w": 0.54412,
+          "h": 0.38522
+        },
+        {
+          "x": 0.34559,
+          "y": 0.05206,
+          "w": 0.38603,
+          "h": 0.2733
+        }
+      ]
+    }
+  ]
+}

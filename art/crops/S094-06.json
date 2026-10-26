@@ -1,0 +1,75 @@
+{
+  "id": "S094-06",
+  "source": "originals/S094-06.jpg",
+  "source_sha256": "42d505daaca48f5ee2c17be2c640d2c91d53de304a151d9b1ca2b4511f6daad2",
+  "source_size": [
+    800,
+    566
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S094",
+    "index": 6,
+    "title": "Plate 30 [Hauling heavy objects]",
+    "source_url": "https://library.si.edu/es/image-gallery/108463",
+    "licence": "Smithsonian Libraries: PD book, Smithsonian Open Access / no known restrictions; Cooper Hewitt image CC0 via Commons.",
+    "note": "Machine dragging a heavy load",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S094-06",
+      "mode": "crop",
+      "box": {
+        "x": 0.23163,
+        "y": 0.1,
+        "w": 0.63675,
+        "h": 0.9
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.29208,
+          "y": 0.0,
+          "w": 0.7075,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.3924,
+        "confidence": 0.352
+      },
+      "candidates": [
+        {
+          "x": 0.14365,
+          "y": 0.0,
+          "w": 0.7075,
+          "h": 1.0
+        },
+        {
+          "x": 0.40885,
+          "y": 0.16446,
+          "w": 0.59115,
+          "h": 0.83554
+        },
+        {
+          "x": 0.0,
+          "y": 0.21599,
+          "w": 0.55469,
+          "h": 0.78401
+        },
+        {
+          "x": 0.14583,
+          "y": 0.15459,
+          "w": 0.47656,
+          "h": 0.67359
+        },
+        {
+          "x": 0.20052,
+          "y": 0.32641,
+          "w": 0.47656,
+          "h": 0.67359
+        }
+      ]
+    }
+  ]
+}

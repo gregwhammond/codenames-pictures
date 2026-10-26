@@ -1,0 +1,75 @@
+{
+  "id": "S083-02",
+  "source": "originals/S083-02.jpg",
+  "source_sha256": "a951d5673ae49902832d903fc29409d0a805ec76145c43132b080accdf37acaa",
+  "source_size": [
+    960,
+    1249
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S083",
+    "index": 2,
+    "title": "Momia Inca",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Momia_Inca_-_Guaman_Poma_de_Ayala.jpg",
+    "licence": "Public domain; Commons PD",
+    "note": "Inca mummy carried in procession",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S083-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.00339,
+        "y": 0.0,
+        "w": 0.98983,
+        "h": 0.7608
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00339,
+          "y": 0.0,
+          "w": 0.98983,
+          "h": 0.7608
+        },
+        "engine": "autocrop v1",
+        "score": 0.4545,
+        "confidence": 0.767
+      },
+      "candidates": [
+        {
+          "x": 0.00339,
+          "y": 0.0,
+          "w": 0.88136,
+          "h": 0.67742
+        },
+        {
+          "x": 0.00339,
+          "y": 0.23449,
+          "w": 0.98983,
+          "h": 0.7608
+        },
+        {
+          "x": 0.19322,
+          "y": 0.0,
+          "w": 0.61356,
+          "h": 0.47159
+        },
+        {
+          "x": 0.05763,
+          "y": 0.20844,
+          "w": 0.66441,
+          "h": 0.51067
+        },
+        {
+          "x": 0.00339,
+          "y": 0.05471,
+          "w": 0.61356,
+          "h": 0.47159
+        }
+      ]
+    }
+  ]
+}

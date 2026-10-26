@@ -1,0 +1,75 @@
+{
+  "id": "S099-10",
+  "source": "originals/S099-10.jpg",
+  "source_sha256": "3f7054f41b98d205afa0e9e9935d712f4becf3ce0f22289b42aa8d7df577ac08",
+  "source_size": [
+    960,
+    1410
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S099",
+    "index": 10,
+    "title": "Utagawa Yoshifuji - Rabbits as Okaru and Kanpei in a Kiyomoto Dance Play of the Journey Scene",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Utagawa_Yoshifuji_-_Rabbits_as_Okaru_and_Kanpei_in_a_Kiyomoto_Dance_Play_of_the_Journey_Scene.jpg",
+    "licence": "Prints public domain. MFA Boston images: non-commercial terms, so look for Commons copies before use. Google Arts & Culture view-only. Many sheets hold several small pictures, so crop or pick carefully.",
+    "note": "Rabbits acting as kabuki lovers, by the leading omocha-e artist Yoshifuji. This is animals behaving like people.",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S099-10",
+      "mode": "crop",
+      "box": {
+        "x": 0.00766,
+        "y": 0.32086,
+        "w": 0.99234,
+        "h": 0.67563
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00766,
+          "y": 0.32086,
+          "w": 0.99234,
+          "h": 0.67563
+        },
+        "engine": "autocrop v1",
+        "score": 0.1471,
+        "confidence": 1.0
+      },
+      "candidates": [
+        {
+          "x": 0.11494,
+          "y": 0.3939,
+          "w": 0.88506,
+          "h": 0.60259
+        },
+        {
+          "x": 0.00766,
+          "y": 0.16173,
+          "w": 0.99234,
+          "h": 0.67563
+        },
+        {
+          "x": 0.38697,
+          "y": 0.42781,
+          "w": 0.61303,
+          "h": 0.41738
+        },
+        {
+          "x": 0.33333,
+          "y": 0.26086,
+          "w": 0.66667,
+          "h": 0.4539
+        },
+        {
+          "x": 0.38697,
+          "y": 0.57911,
+          "w": 0.61303,
+          "h": 0.41738
+        }
+      ]
+    }
+  ]
+}

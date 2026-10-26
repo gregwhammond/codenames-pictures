@@ -1,0 +1,75 @@
+{
+  "id": "S067-01",
+  "source": "originals/S067-01.jpg",
+  "source_sha256": "c31a61a3d8855eae81d6f13b9852bfc7347d05611123304dc537b59956d86fc7",
+  "source_size": [
+    960,
+    1431
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S067",
+    "index": 1,
+    "title": "Takiyasha the Witch and the Skeleton Spectre 1",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Takiyasha_the_Witch_and_the_Skeleton_Spectre_1.jpg",
+    "licence": "Public domain (Kuniyoshi d. 1861), Commons PD tags; British Museum images CC BY-NC-SA on its own site (use the Commons copies)",
+    "note": "Another copy of the skeleton triptych",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S067-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0026,
+        "w": 1.0,
+        "h": 0.67086
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0026,
+          "w": 1.0,
+          "h": 0.67086
+        },
+        "engine": "autocrop v1",
+        "score": 0.3871,
+        "confidence": 0.911
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.08061,
+          "w": 1.0,
+          "h": 0.67086
+        },
+        {
+          "x": 0.0,
+          "y": 0.0026,
+          "w": 0.78295,
+          "h": 0.52525
+        },
+        {
+          "x": 0.27132,
+          "y": 0.0026,
+          "w": 0.72868,
+          "h": 0.48884
+        },
+        {
+          "x": 0.0,
+          "y": 0.32763,
+          "w": 1.0,
+          "h": 0.67086
+        },
+        {
+          "x": 0.0,
+          "y": 0.0026,
+          "w": 0.50775,
+          "h": 0.34063
+        }
+      ]
+    }
+  ]
+}

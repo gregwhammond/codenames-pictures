@@ -1,0 +1,75 @@
+{
+  "id": "S055-02",
+  "source": "originals/S055-02.jpg",
+  "source_sha256": "a1f4d5bfaeecdf6431c0733b9fd6ba7287cd025008b97599a6e50a051ab13453",
+  "source_size": [
+    960,
+    1622
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S055",
+    "index": 2,
+    "title": "Oculus artificialis plate (14595536319)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Oculus_artificialis_teledioptricus,_sive,_Telescopium_-_ex_abditis_rerum_naturalium_and_artificialium_principiis_protractum_nov%C3%A2_methodo,_e%C3%A2que_solid%C3%A2_explicatum_ac_comprimis_%C3%A8_triplici_fundamento_(14595536319).jpg",
+    "licence": "Public domain (Commons PD; PDIA public domain). Also at PDR collection page https://publicdomainreview.org/collection/images-from-johann-zahn-s-oculus-artificialis-1685",
+    "note": "Further plate of lenses and devices",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S055-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.11013,
+        "y": 0.06258,
+        "w": 0.88987,
+        "h": 0.52668
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.11013,
+          "y": 0.06258,
+          "w": 0.88987,
+          "h": 0.52668
+        },
+        "engine": "autocrop v1",
+        "score": 0.2343,
+        "confidence": 0.787
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.59186
+        },
+        {
+          "x": 0.32599,
+          "y": 0.07822,
+          "w": 0.67401,
+          "h": 0.39892
+        },
+        {
+          "x": 0.38326,
+          "y": 0.22162,
+          "w": 0.61674,
+          "h": 0.36502
+        },
+        {
+          "x": 0.45815,
+          "y": 0.0,
+          "w": 0.51101,
+          "h": 0.30245
+        },
+        {
+          "x": 0.05286,
+          "y": 0.20859,
+          "w": 0.94714,
+          "h": 0.56057
+        }
+      ]
+    }
+  ]
+}

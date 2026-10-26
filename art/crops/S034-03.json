@@ -1,0 +1,75 @@
+{
+  "id": "S034-03",
+  "source": "originals/S034-03.webp",
+  "source_sha256": "49c08810900d8bc631f375a1798e5a344d52137dae607215c7293f5d86401c0b",
+  "source_size": [
+    1078,
+    566
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S034",
+    "index": 3,
+    "title": "Sunflower",
+    "source_url": "https://pdimagearchive.org/images/c4e34079-77b9-42cd-bde7-8791275fd349/",
+    "licence": "Public domain (Grandville died 1847; published 1847/1849). PD Image Archive and PDR mark the images public domain. Commons copies are in Category:Les Fleurs animées with PD-old tags.",
+    "note": "Sunflower as a woman turning toward the sun",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S034-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.28175,
+        "y": 0.0,
+        "w": 0.52505,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.28175,
+          "y": 0.0,
+          "w": 0.52505,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.7001,
+        "confidence": 0.816
+      },
+      "candidates": [
+        {
+          "x": 0.21925,
+          "y": 0.0,
+          "w": 0.52505,
+          "h": 1.0
+        },
+        {
+          "x": 0.40675,
+          "y": 0.0,
+          "w": 0.52505,
+          "h": 1.0
+        },
+        {
+          "x": 0.38542,
+          "y": 0.0,
+          "w": 0.38281,
+          "h": 0.7291
+        },
+        {
+          "x": 0.03175,
+          "y": 0.0,
+          "w": 0.52505,
+          "h": 1.0
+        },
+        {
+          "x": 0.28385,
+          "y": 0.0,
+          "w": 0.35417,
+          "h": 0.67454
+        }
+      ]
+    }
+  ]
+}

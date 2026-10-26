@@ -1,0 +1,77 @@
+{
+  "id": "S054-00",
+  "source": "originals/S054-00.jpg",
+  "source_sha256": "1bb80b947aa53061631bf85a231d4e0be8b46b2e36be5575ba23c2f03c86a626",
+  "source_size": [
+    894,
+    1253
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S054",
+    "index": 0,
+    "title": "Bellicorum instrumentorum liber (Commons file)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Fontana_(engineer)_Johannes_de_Fontana_Bellicorum_instrumentorum_liber_cum_figuris.jpg",
+    "licence": "Public domain (BSB digitisations free reuse; Commons PD). Archive.org page is a user upload, image PD.",
+    "note": "Page from Fontana's sketchbook of machines",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S054-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.14326,
+        "w": 1.0,
+        "h": 0.71349
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.2473,
+        "confidence": 0.776,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.71349
+        },
+        {
+          "x": 0.0,
+          "y": 0.28644,
+          "w": 1.0,
+          "h": 0.71349
+        },
+        {
+          "x": 0.16423,
+          "y": 0.0,
+          "w": 0.83577,
+          "h": 0.59631
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.72628,
+          "h": 0.51819
+        },
+        {
+          "x": 0.43796,
+          "y": 0.0,
+          "w": 0.56204,
+          "h": 0.40101
+        },
+        {
+          "x": 0.34672,
+          "y": 0.0,
+          "w": 0.4562,
+          "h": 0.3255
+        }
+      ]
+    }
+  ]
+}

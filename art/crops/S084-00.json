@@ -1,0 +1,75 @@
+{
+  "id": "S084-00",
+  "source": "originals/S084-00.png",
+  "source_sha256": "c51409d04a0121a6cc8d2feada1f0cbddddc84818af85c18d39ba165d574a41f",
+  "source_size": [
+    960,
+    743
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S084",
+    "index": 0,
+    "title": "Theodor de Bry's Golden Man",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Theodor_de_Bry's_Golden_Man.png",
+    "licence": "Public domain; Commons PD. Caveat: many plates (esp. Tertia pars) show violence/cannibalism; pick carefully.",
+    "note": "El Dorado chief being blown with gold dust",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S084-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.22656,
+        "y": 0.0,
+        "w": 0.77344,
+        "h": 0.99933
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.22656,
+          "y": 0.0,
+          "w": 0.77344,
+          "h": 0.99933
+        },
+        "engine": "autocrop v1",
+        "score": 0.4642,
+        "confidence": 0.585
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.77344,
+          "h": 0.99933
+        },
+        {
+          "x": 0.3099,
+          "y": 0.10767,
+          "w": 0.6901,
+          "h": 0.89166
+        },
+        {
+          "x": 0.52083,
+          "y": 0.38022,
+          "w": 0.47917,
+          "h": 0.61911
+        },
+        {
+          "x": 0.0,
+          "y": 0.32638,
+          "w": 0.52083,
+          "h": 0.67295
+        },
+        {
+          "x": 0.47917,
+          "y": 0.0,
+          "w": 0.52083,
+          "h": 0.67295
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "S087-07",
+  "source": "originals/S087-07.jpg",
+  "source_sha256": "b5f83728906035ac46878696a5211e0dc1049ee9be2c691fe14d4123fe08fb2d",
+  "source_size": [
+    960,
+    660
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S087",
+    "index": 7,
+    "title": "Meeting of Alexander and the Amazons (Royal 20 B XX f.47v)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_meeting_of_Alexander_the_Great_and_the_Amazons_-_La_Vraye_Histoire_du_Bon_Roy_Alixandre_(early_15th_C),_f.47v_-_BL_Royal_MS_20_B_XX.jpg",
+    "licence": "Public domain (Commons PD-Art tags; BL images released to public domain). Digital Bodleian images of Bodley 264 are CC-BY-NC; use the Commons copies.",
+    "note": "Amazon queen and warrior women meet Alexander",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S087-07",
+      "mode": "crop",
+      "box": {
+        "x": 0.23187,
+        "y": 0.03,
+        "w": 0.53625,
+        "h": 0.78
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.2113,
+        "confidence": 0.212,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.42448,
+          "y": 0.0,
+          "w": 0.57552,
+          "h": 0.83712
+        },
+        {
+          "x": 0.34896,
+          "y": 0.0,
+          "w": 0.65104,
+          "h": 0.94697
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.53646,
+          "h": 0.7803
+        },
+        {
+          "x": 0.57552,
+          "y": 0.0,
+          "w": 0.42448,
+          "h": 0.61742
+        },
+        {
+          "x": 0.16406,
+          "y": 0.0,
+          "w": 0.57552,
+          "h": 0.83712
+        },
+        {
+          "x": 0.35938,
+          "y": 0.0,
+          "w": 0.42448,
+          "h": 0.61742
+        }
+      ]
+    }
+  ]
+}

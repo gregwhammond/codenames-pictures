@@ -1,0 +1,75 @@
+{
+  "id": "S072-06",
+  "source": "originals/S072-06.jpg",
+  "source_sha256": "92b5ba4dd742d8a01231deea96849c2c2bb157e4bb6b1108e6c6d9b41c4cbf47",
+  "source_size": [
+    436,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S072",
+    "index": 6,
+    "title": "The White Duck",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ivan_Bilibin_-_illustration-for-the-russian-fairy-story-white-duck-19021.jpg",
+    "licence": "Public domain: published before 1929 and Bilibin died 1942 (70+ years); Commons PD tags",
+    "note": "Plate from The White Duck",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S072-06",
+      "mode": "crop",
+      "box": {
+        "x": 0.11,
+        "y": 0.0466,
+        "w": 0.78,
+        "h": 0.5668
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.72667
+        },
+        "engine": "autocrop v1",
+        "score": 0.5187,
+        "confidence": 0.887
+      },
+      "candidates": [
+        {
+          "x": 0.10753,
+          "y": 0.0,
+          "w": 0.89247,
+          "h": 0.64853
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.67384,
+          "h": 0.48965
+        },
+        {
+          "x": 0.37634,
+          "y": 0.0,
+          "w": 0.61649,
+          "h": 0.44798
+        },
+        {
+          "x": 0.0,
+          "y": 0.01302,
+          "w": 0.4552,
+          "h": 0.33078
+        },
+        {
+          "x": 0.58781,
+          "y": 0.01042,
+          "w": 0.40143,
+          "h": 0.29171
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "S072-01",
+  "source": "originals/S072-01.jpg",
+  "source_sha256": "a7d698531f5933bdcfa1c6a59a721dc6c25956af2d30638daf30c4c2ae907eac",
+  "source_size": [
+    395,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S072",
+    "index": 1,
+    "title": "Red rider (Vasilisa the Beautiful)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ivan_Bilibin_-_red-rider-illustration-for-the-fairy-tale-vasilisa-the-beautiful-1899.jpg",
+    "licence": "Public domain: published before 1929 and Bilibin died 1942 (70+ years); Commons PD tags",
+    "note": "Red horseman representing the sun",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S072-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.1,
+        "y": 0.09667,
+        "w": 0.8,
+        "h": 0.52667
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.65833
+        },
+        "engine": "autocrop v1",
+        "score": 0.3177,
+        "confidence": 0.922
+      },
+      "candidates": [
+        {
+          "x": 0.11067,
+          "y": 0.0,
+          "w": 0.88933,
+          "h": 0.58547
+        },
+        {
+          "x": 0.0,
+          "y": 0.15613,
+          "w": 1.0,
+          "h": 0.65833
+        },
+        {
+          "x": 0.3834,
+          "y": 0.0,
+          "w": 0.6166,
+          "h": 0.40593
+        },
+        {
+          "x": 0.16601,
+          "y": 0.0,
+          "w": 0.6166,
+          "h": 0.40593
+        },
+        {
+          "x": 0.05534,
+          "y": 0.37731,
+          "w": 0.94466,
+          "h": 0.6219
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "S093-04",
+  "source": "originals/S093-04.jpg",
+  "source_sha256": "c2fb5f77d0073588bce6b1b59969318f7a645dd16f9220e6d9b7066d047834fc",
+  "source_size": [
+    1200,
+    1129
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S093",
+    "index": 4,
+    "title": "Basil Valentine, Twelfth Key",
+    "source_url": "https://digital.sciencehistory.org/works/6108vc37m",
+    "licence": "Commons PD tags; Science History Institute images are public domain/free to use. Only 3 Lambspring plates found as single files; others filled from the same volume.",
+    "note": "Lion devouring snake beside furnace; not Lambspring",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S093-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.4689,
+        "y": 0.37,
+        "w": 0.44219,
+        "h": 0.47
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.9401,
+          "h": 0.99922
+        },
+        "engine": "autocrop v1",
+        "score": 0.4857,
+        "confidence": 0.741
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.83854,
+          "h": 0.89128
+        },
+        {
+          "x": 0.0,
+          "y": 0.32662,
+          "w": 0.63281,
+          "h": 0.67261
+        },
+        {
+          "x": 0.0,
+          "y": 0.54528,
+          "w": 0.42708,
+          "h": 0.45394
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.375,
+          "h": 0.39858
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.58073,
+          "h": 0.61725
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "id": "S015-01",
+  "source": "originals/S015-01.jpg",
+  "source_sha256": "8c8fd1ea0f246ab2adde5751dbfa2e485608db79f1a99a0e05689bf0c98586e4",
+  "source_size": [
+    960,
+    1309
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S015",
+    "index": 1,
+    "title": "Fabelwesen plate 2",
+    "source_url": "https://commons.wikimedia.org/wiki/File:J.F.Bertuch-Fabelwesen2.JPG",
+    "licence": "Wikimedia Commons public domain (1790-1830 prints). The full volumes are also on BHL (https://www.biodiversitylibrary.org/bibliography/95815) and the Internet Archive (https://archive.org/details/BilderbuchfuYrK89Bert), both public domain. The Royal Collection Trust copies are restricted, so do not use them. Added pictures: PD (1790-1830). Commons has few single plates. Full volumes exist at BHL (biodiversitylibrary.org/bibliography/95815), Internet Archive and Heidelberg digi (digi.ub.uni-heidelberg.de/diglit/bertuch1790ga). Plates can be picked from those volumes, but no page URLs came up in search.",
+    "note": "Second plate of fabulous creatures",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S015-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.035,
+        "y": 0.03499,
+        "w": 0.45,
+        "h": 0.33002
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.73338
+        },
+        "engine": "autocrop v1",
+        "score": 0.546,
+        "confidence": 0.68
+      },
+      "candidates": [
+        {
+          "x": 0.10993,
+          "y": 0.0,
+          "w": 0.89007,
+          "h": 0.65276
+        },
+        {
+          "x": 0.0,
+          "y": 0.17164,
+          "w": 1.0,
+          "h": 0.73338
+        },
+        {
+          "x": 0.02128,
+          "y": 0.0,
+          "w": 0.51064,
+          "h": 0.37449
+        },
+        {
+          "x": 0.48936,
+          "y": 0.0,
+          "w": 0.51064,
+          "h": 0.37449
+        },
+        {
+          "x": 0.17376,
+          "y": 0.0,
+          "w": 0.61702,
+          "h": 0.45251
+        }
+      ]
+    },
+    {
+      "tile": "S015-01-b",
+      "mode": "crop",
+      "box": {
+        "x": 0.495,
+        "y": 0.03499,
+        "w": 0.45,
+        "h": 0.33002
+      },
+      "status": "approved",
+      "auto": null
+    },
+    {
+      "tile": "S015-01-c",
+      "mode": "crop",
+      "box": {
+        "x": 0.53,
+        "y": 0.70332,
+        "w": 0.4,
+        "h": 0.29335
+      },
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

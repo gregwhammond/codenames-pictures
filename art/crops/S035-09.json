@@ -1,0 +1,75 @@
+{
+  "id": "S035-09",
+  "source": "originals/S035-09.jpg",
+  "source_sha256": "7948318b191163b56f5ef028b0dee7bb591d15418ac5403e35464fc2ec42f513",
+  "source_size": [
+    449,
+    624
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S035",
+    "index": 9,
+    "title": "The wonderful activity of these people (Met 812983)",
+    "source_url": "https://www.metmuseum.org/art/collection/search/812983",
+    "licence": "Public domain (Grandville died 1847; published 1840-42 and 1877). PD Image Archive and PDR mark the images public domain. The Commons page scan has a PD-old tag. Added pictures: Grandville d.1847, so PD. Met Open Access CC0 applies where the page shows the OA badge (typical for these prints). PD Image Archive and Commons are PD. Titles are from the Met; content notes are inferred from titles.",
+    "note": "Busy crowd of working insects/animals",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S035-09",
+      "mode": "crop",
+      "box": {
+        "x": 0.18,
+        "y": 0.26133,
+        "w": 0.58,
+        "h": 0.41734
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.19565,
+          "y": 0.29721,
+          "w": 0.60507,
+          "h": 0.43538
+        },
+        "engine": "autocrop v1",
+        "score": 0.8918,
+        "confidence": 0.579
+      },
+      "candidates": [
+        {
+          "x": 0.19565,
+          "y": 0.23464,
+          "w": 0.60507,
+          "h": 0.43538
+        },
+        {
+          "x": 0.13768,
+          "y": 0.3337,
+          "w": 0.71014,
+          "h": 0.51099
+        },
+        {
+          "x": 0.05797,
+          "y": 0.13035,
+          "w": 0.87319,
+          "h": 0.6283
+        },
+        {
+          "x": 0.16667,
+          "y": 0.36499,
+          "w": 0.49638,
+          "h": 0.35717
+        },
+        {
+          "x": 0.34783,
+          "y": 0.35195,
+          "w": 0.49638,
+          "h": 0.35717
+        }
+      ]
+    }
+  ]
+}

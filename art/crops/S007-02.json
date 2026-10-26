@@ -1,0 +1,77 @@
+{
+  "id": "S007-02",
+  "source": "originals/S007-02.jpg",
+  "source_sha256": "a2ae6c5bc6753d5f7b9991f26bb8b609a1a25a1f010d07426c608dbd00b2313f",
+  "source_size": [
+    336,
+    500
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S007",
+    "index": 2,
+    "title": "Baboon / Tartarine",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Baboon-Tartarine.jpg",
+    "licence": "Public domain (1607/1658); Commons PD-old tags. Files from Wellcome (L-numbers) are CC BY 4.0 on Commons (credit Wellcome Collection). The 1658 edition has its own Commons category: https://commons.wikimedia.org/wiki/Category:The_History_of_Four-footed_Beasts_and_Serpents,_1658",
+    "note": "Oddly human-looking baboon woodcut",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S007-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.034,
+        "w": 1.0,
+        "h": 0.672
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.4079,
+        "confidence": 0.552,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.02344,
+          "w": 0.89147,
+          "h": 0.59907
+        },
+        {
+          "x": 0.0,
+          "y": 0.02605,
+          "w": 1.0,
+          "h": 0.672
+        },
+        {
+          "x": 0.05426,
+          "y": 0.0,
+          "w": 0.72868,
+          "h": 0.48967
+        },
+        {
+          "x": 0.0,
+          "y": 0.26047,
+          "w": 1.0,
+          "h": 0.672
+        },
+        {
+          "x": 0.10853,
+          "y": 0.16409,
+          "w": 0.67442,
+          "h": 0.45321
+        },
+        {
+          "x": 0.03876,
+          "y": 0.03907,
+          "w": 0.50775,
+          "h": 0.34121
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "S068-01",
+  "source": "originals/S068-01.jpg",
+  "source_sha256": "ac20a2b5c40815c5edbbb5599c8524675431c2166ea7165e88c60ea9a745a6bb",
+  "source_size": [
+    312,
+    625
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S068",
+    "index": 1,
+    "title": "Otsu-e of Kabuki Actor Playing Hotei Ichiemon",
+    "source_url": "https://www.metmuseum.org/art/collection/search/36115",
+    "licence": "Met Open Access CC0 and Cleveland Open Access CC0 where flagged; Commons PD",
+    "note": "Folk painting of a kabuki actor",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S068-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0804,
+        "w": 1.0,
+        "h": 0.4992
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.4085,
+        "confidence": 0.552,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.03125,
+          "y": 0.0,
+          "w": 0.94271,
+          "h": 0.4706
+        },
+        {
+          "x": 0.03125,
+          "y": 0.0728,
+          "w": 0.94271,
+          "h": 0.4706
+        },
+        {
+          "x": 0.03125,
+          "y": 0.2548,
+          "w": 0.94271,
+          "h": 0.4706
+        },
+        {
+          "x": 0.13542,
+          "y": 0.0,
+          "w": 0.73958,
+          "h": 0.3692
+        },
+        {
+          "x": 0.39062,
+          "y": 0.0,
+          "w": 0.58333,
+          "h": 0.2912
+        },
+        {
+          "x": 0.03125,
+          "y": 0.0,
+          "w": 0.42708,
+          "h": 0.2132
+        }
+      ]
+    }
+  ]
+}

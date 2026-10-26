@@ -1,0 +1,75 @@
+{
+  "id": "S007-04",
+  "source": "originals/S007-04.jpg",
+  "source_sha256": "a844be1bd873a48ebd50988bc0c46df2848ba77aa39100e1f0e16ebab7781953",
+  "source_size": [
+    598,
+    296
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S007",
+    "index": 4,
+    "title": "Stellion",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Stellion.jpg",
+    "licence": "Public domain (1607/1658); Commons PD-old tags. Files from Wellcome (L-numbers) are CC BY 4.0 on Commons (credit Wellcome Collection). The 1658 edition has its own Commons category: https://commons.wikimedia.org/wiki/Category:The_History_of_Four-footed_Beasts_and_Serpents,_1658",
+    "note": "Spotted 'stellion' lizard",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S007-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.09375,
+        "y": 0.0,
+        "w": 0.49479,
+        "h": 0.99961
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.09375,
+          "y": 0.0,
+          "w": 0.49479,
+          "h": 0.99961
+        },
+        "engine": "autocrop v1",
+        "score": 0.4598,
+        "confidence": 0.444
+      },
+      "candidates": [
+        {
+          "x": 0.14844,
+          "y": 0.05261,
+          "w": 0.46875,
+          "h": 0.947
+        },
+        {
+          "x": 0.03385,
+          "y": 0.0947,
+          "w": 0.38802,
+          "h": 0.78391
+        },
+        {
+          "x": 0.3125,
+          "y": 0.0,
+          "w": 0.49479,
+          "h": 0.99961
+        },
+        {
+          "x": 0.3151,
+          "y": 0.18414,
+          "w": 0.33333,
+          "h": 0.67342
+        },
+        {
+          "x": 0.40625,
+          "y": 0.26306,
+          "w": 0.33333,
+          "h": 0.67342
+        }
+      ]
+    }
+  ]
+}

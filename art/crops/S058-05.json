@@ -1,0 +1,75 @@
+{
+  "id": "S058-05",
+  "source": "originals/S058-05.jpg",
+  "source_sha256": "95d32a64b210c6622b093f2ccd3aad41126b0f6977b472d1b637437b6b669a7a",
+  "source_size": [
+    616,
+    800
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S058",
+    "index": 5,
+    "title": "Expulsion of Adam and Eve",
+    "source_url": "https://asia.si.edu/object/S1986.251",
+    "licence": "Met Open Access CC0; Smithsonian Open Access CC0 for most images.",
+    "note": "Adam and Eve cast out, with serpent and peacock",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S058-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.02703,
+        "y": 0.0,
+        "w": 0.94932,
+        "h": 0.73098
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.02703,
+          "y": 0.0,
+          "w": 0.94932,
+          "h": 0.73098
+        },
+        "engine": "autocrop v1",
+        "score": 0.4346,
+        "confidence": 0.854
+      },
+      "candidates": [
+        {
+          "x": 0.02703,
+          "y": 0.08584,
+          "w": 0.94932,
+          "h": 0.73098
+        },
+        {
+          "x": 0.23311,
+          "y": 0.0,
+          "w": 0.74324,
+          "h": 0.5723
+        },
+        {
+          "x": 0.02703,
+          "y": 0.0,
+          "w": 0.68919,
+          "h": 0.53068
+        },
+        {
+          "x": 0.49324,
+          "y": 0.0,
+          "w": 0.48311,
+          "h": 0.37199
+        },
+        {
+          "x": 0.02703,
+          "y": 0.0,
+          "w": 0.48311,
+          "h": 0.37199
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "S039-05",
+  "source": "originals/S039-05.png",
+  "source_sha256": "4b119d6fa4f55c4f096e32079e1c92dc5370a9f476e2f3e7d9d2c8f8ac9d546e",
+  "source_size": [
+    700,
+    765
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S039",
+    "index": 5,
+    "title": "f.234r detail",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Maastricht_Book_of_Hours,_BL_Stowe_MS17_f234r_(detail).png",
+    "licence": "Public domain on Commons (PD-old)",
+    "note": "Marginal drollery detail",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S039-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.21,
+        "y": 0.43464,
+        "w": 0.58,
+        "h": 0.53072
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.91503
+        },
+        "engine": "autocrop v1",
+        "score": 0.2943,
+        "confidence": 1.0
+      },
+      "candidates": [
+        {
+          "x": 0.10826,
+          "y": 0.0,
+          "w": 0.89174,
+          "h": 0.81597
+        },
+        {
+          "x": 0.38177,
+          "y": 0.0,
+          "w": 0.61823,
+          "h": 0.5657
+        },
+        {
+          "x": 0.05128,
+          "y": 0.0,
+          "w": 0.67236,
+          "h": 0.61524
+        },
+        {
+          "x": 0.60114,
+          "y": 0.0,
+          "w": 0.39886,
+          "h": 0.36497
+        },
+        {
+          "x": 0.21937,
+          "y": 0.2857,
+          "w": 0.78063,
+          "h": 0.7143
+        }
+      ]
+    }
+  ]
+}

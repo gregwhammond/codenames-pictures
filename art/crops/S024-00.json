@@ -1,0 +1,75 @@
+{
+  "id": "S024-00",
+  "source": "originals/S024-00.jpg",
+  "source_sha256": "3f0c71f50f04491cfa66649145370d8248659a07907a4cb67f4d9a39d5bf55dc",
+  "source_size": [
+    480,
+    625
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S024",
+    "index": 0,
+    "title": "Cat Catching a Frog",
+    "source_url": "https://www.metmuseum.org/art/collection/search/54626",
+    "licence": "Met Open Access (CC0) for public-domain objects; check the Open Access flag on each page. Kyosai died 1889. A group of separate works at one museum, not a single book.",
+    "note": "Cat pouncing on a frog",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S024-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.176,
+        "w": 1.0,
+        "h": 0.768
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.768
+        },
+        "engine": "autocrop v1",
+        "score": 0.5245,
+        "confidence": 0.772
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.89153,
+          "h": 0.68469
+        },
+        {
+          "x": 0.0,
+          "y": 0.2317,
+          "w": 1.0,
+          "h": 0.768
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.61695,
+          "h": 0.47382
+        },
+        {
+          "x": 0.37288,
+          "y": 0.0,
+          "w": 0.45424,
+          "h": 0.34885
+        },
+        {
+          "x": 0.32881,
+          "y": 0.0,
+          "w": 0.67119,
+          "h": 0.51547
+        }
+      ]
+    }
+  ]
+}

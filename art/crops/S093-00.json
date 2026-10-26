@@ -1,0 +1,75 @@
+{
+  "id": "S093-00",
+  "source": "originals/S093-00.jpg",
+  "source_sha256": "93ba71d4519d1f2235b695719ec45f7934b5c920570d7a2ee3881265d4d85fa7",
+  "source_size": [
+    866,
+    830
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S093",
+    "index": 0,
+    "title": "Deer and unicorn in the forest",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Licorne_et_cerf.JPG",
+    "licence": "Commons PD tags; Science History Institute images are public domain/free to use. Only 3 Lambspring plates found as single files; others filled from the same volume.",
+    "note": "Stag and unicorn in woodland; Lambspring emblem (attribution via category search)",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S093-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.04167,
+        "y": 0.0,
+        "w": 0.95833,
+        "h": 0.9999
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.04167,
+          "y": 0.0,
+          "w": 0.95833,
+          "h": 0.9999
+        },
+        "engine": "autocrop v1",
+        "score": 0.5847,
+        "confidence": 0.774
+      },
+      "candidates": [
+        {
+          "x": 0.14583,
+          "y": 0.0,
+          "w": 0.85417,
+          "h": 0.89121
+        },
+        {
+          "x": 0.0,
+          "y": 0.21737,
+          "w": 0.75,
+          "h": 0.78253
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.69792,
+          "h": 0.72819
+        },
+        {
+          "x": 0.35417,
+          "y": 0.32605,
+          "w": 0.64583,
+          "h": 0.67385
+        },
+        {
+          "x": 0.40885,
+          "y": 0.0,
+          "w": 0.59115,
+          "h": 0.61679
+        }
+      ]
+    }
+  ]
+}

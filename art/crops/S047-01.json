@@ -1,0 +1,75 @@
+{
+  "id": "S047-01",
+  "source": "originals/S047-01.jpg",
+  "source_sha256": "a8c3e416be59ff7cf4797d9c4e8f06a8ee09d053a48e4ef48bfea8e632a1d940",
+  "source_size": [
+    960,
+    1202
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S047",
+    "index": 1,
+    "title": "Jeune pucelle...",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Histoires_Prodigieuses;_Jeune_pucelle..._WMS_136_Wellcome_L0025535.jpg",
+    "licence": "Wellcome images CC BY 4.0 (manuscript itself PD); Commons copies",
+    "note": "Prodigy of a young maiden",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S047-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.79867
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.79867
+        },
+        "engine": "autocrop v1",
+        "score": 0.619,
+        "confidence": 0.879
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.09365,
+          "w": 1.0,
+          "h": 0.79867
+        },
+        {
+          "x": 0.21824,
+          "y": 0.0,
+          "w": 0.78176,
+          "h": 0.62437
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.72638,
+          "h": 0.58014
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.50814,
+          "h": 0.40584
+        },
+        {
+          "x": 0.49186,
+          "y": 0.0,
+          "w": 0.50814,
+          "h": 0.40584
+        }
+      ]
+    }
+  ]
+}

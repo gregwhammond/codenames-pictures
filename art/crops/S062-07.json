@@ -1,0 +1,75 @@
+{
+  "id": "S062-07",
+  "source": "originals/S062-07.jpg",
+  "source_sha256": "df8b1413987740ff91fe3fffd036a08ba3887c46684163120dd51f52abab0780",
+  "source_size": [
+    960,
+    1497
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S062",
+    "index": 7,
+    "title": "Two folios from the Akbarnama (Walters W684)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Jamal_al-Din_Husayn_Inju_Shirazi_-_Two_Folios_from_the_Akbarnama_-_Walters_W684_-_Detail_A.jpg",
+    "licence": "Met Open Access CC0; Commons PD; V&A originals on Commons PD (V&A site has own terms).",
+    "note": "Walters Akbarnama folio detail",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S062-07",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.23462,
+        "w": 1.0,
+        "h": 0.64128
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.23462,
+          "w": 1.0,
+          "h": 0.64128
+        },
+        "engine": "autocrop v1",
+        "score": 0.3021,
+        "confidence": 1.0
+      },
+      "candidates": [
+        {
+          "x": 0.10976,
+          "y": 0.25808,
+          "w": 0.89024,
+          "h": 0.5709
+        },
+        {
+          "x": 0.0,
+          "y": 0.02607,
+          "w": 1.0,
+          "h": 0.64128
+        },
+        {
+          "x": 0.32927,
+          "y": 0.21897,
+          "w": 0.67073,
+          "h": 0.43013
+        },
+        {
+          "x": 0.0,
+          "y": 0.4291,
+          "w": 0.89024,
+          "h": 0.5709
+        },
+        {
+          "x": 0.02846,
+          "y": 0.21897,
+          "w": 0.72764,
+          "h": 0.46662
+        }
+      ]
+    }
+  ]
+}

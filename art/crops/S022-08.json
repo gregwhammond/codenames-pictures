@@ -1,0 +1,75 @@
+{
+  "id": "S022-08",
+  "source": "originals/S022-08.jpg",
+  "source_sha256": "c7e89c36b3459bcb06dc42a7e266d76a43785b70a506315f48400e531dfb2a89",
+  "source_size": [
+    843,
+    1095
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S022",
+    "index": 8,
+    "title": "Memorial Anniversary / Shunen (AIC 47417)",
+    "source_url": "https://www.artic.edu/artworks/47417/memorial-anniversary-shunen-from-the-series-one-hundred-ghost-tales-hyaku-monogatari",
+    "licence": "LoC Japanese fine prints: no known restrictions on publication (confirm on each item page). PD copies are also on Commons, e.g. https://commons.wikimedia.org/wiki/File:Hokusai_The_Ghost_Kohada_Koheiji.jpg and https://commons.wikimedia.org/wiki/File:Katsushika_Hokusai_-_The_Lantern_Ghost,_Iwa_-_Google_Art_Project.jpg; PDR page https://publicdomainreview.org/collection/hokusai-s-ghost-stories-ca-1830/ Added pictures: Only 5 designs of the series are known, so these are alternative (better-quality) copies of the existing 5 designs, not new subjects. AIC images are CC0 and Smithsonian open access is CC0. Dedupe against the existing LoC links.",
+    "note": "Snake coiled on memorial tablet with offerings",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S022-08",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.19507,
+        "w": 1.0,
+        "h": 0.76986
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00676,
+          "y": 0.23928,
+          "w": 0.98649,
+          "h": 0.75946
+        },
+        "engine": "autocrop v1",
+        "score": 0.3911,
+        "confidence": 0.578
+      },
+      "candidates": [
+        {
+          "x": 0.00676,
+          "y": 0.0026,
+          "w": 0.98649,
+          "h": 0.75946
+        },
+        {
+          "x": 0.11486,
+          "y": 0.26269,
+          "w": 0.87838,
+          "h": 0.67623
+        },
+        {
+          "x": 0.25,
+          "y": 0.0026,
+          "w": 0.66216,
+          "h": 0.50977
+        },
+        {
+          "x": 0.00676,
+          "y": 0.0026,
+          "w": 0.66216,
+          "h": 0.50977
+        },
+        {
+          "x": 0.03378,
+          "y": 0.16906,
+          "w": 0.66216,
+          "h": 0.50977
+        }
+      ]
+    }
+  ]
+}

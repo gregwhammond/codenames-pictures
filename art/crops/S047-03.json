@@ -1,0 +1,75 @@
+{
+  "id": "S047-03",
+  "source": "originals/S047-03.jpg",
+  "source_sha256": "722752b63ab85ea1f697f21755b3e5efecf781656c28a16513e5ab273319e405",
+  "source_size": [
+    960,
+    1203
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S047",
+    "index": 3,
+    "title": "Leeches",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Leeches._Histoires_Prodigieuses,_Pierrie_Boaistuau_Wellcome_L0023265.jpg",
+    "licence": "Wellcome images CC BY 4.0 (manuscript itself PD); Commons copies",
+    "note": "Painted leeches",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S047-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.17,
+        "y": 0.2407,
+        "w": 0.7,
+        "h": 0.5586
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.05556,
+          "y": 0.12518,
+          "w": 0.94444,
+          "h": 0.75367
+        },
+        "engine": "autocrop v1",
+        "score": 0.707,
+        "confidence": 0.899
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.03129,
+          "w": 1.0,
+          "h": 0.798
+        },
+        {
+          "x": 0.21895,
+          "y": 0.28165,
+          "w": 0.78105,
+          "h": 0.62328
+        },
+        {
+          "x": 0.3268,
+          "y": 0.14604,
+          "w": 0.6732,
+          "h": 0.53722
+        },
+        {
+          "x": 0.10458,
+          "y": 0.12518,
+          "w": 0.6732,
+          "h": 0.53722
+        },
+        {
+          "x": 0.0,
+          "y": 0.28165,
+          "w": 0.72876,
+          "h": 0.58155
+        }
+      ]
+    }
+  ]
+}

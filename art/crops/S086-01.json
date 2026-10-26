@@ -1,0 +1,75 @@
+{
+  "id": "S086-01",
+  "source": "originals/S086-01.png",
+  "source_sha256": "4b19f0f3a39fd5f9aceec303ff8507a81df9c652dac5b96d09db0f4db69de3dc",
+  "source_size": [
+    831,
+    859
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S086",
+    "index": 1,
+    "title": "Lord 7 Flower 'Cacao Charger' pays homage",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Codex_Zouche-Nuttall_-_Lord_7_Flower_'Cacao_Charger'_(from_Cut_Mountain)_pays_hommage.png",
+    "licence": "Public domain object; Commons PD copies (BM own images are CC BY-NC-SA)",
+    "note": "Lord offering cacao",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S086-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0326,
+        "w": 1.0,
+        "h": 0.9674
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0326,
+          "w": 1.0,
+          "h": 0.9674
+        },
+        "engine": "autocrop v1",
+        "score": 0.6758,
+        "confidence": 0.803
+      },
+      "candidates": [
+        {
+          "x": 0.10782,
+          "y": 0.0339,
+          "w": 0.89218,
+          "h": 0.8631
+        },
+        {
+          "x": 0.0,
+          "y": 0.24381,
+          "w": 0.78167,
+          "h": 0.75619
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.72776,
+          "h": 0.70404
+        },
+        {
+          "x": 0.32615,
+          "y": 0.33898,
+          "w": 0.67385,
+          "h": 0.65189
+        },
+        {
+          "x": 0.29111,
+          "y": 0.02347,
+          "w": 0.61725,
+          "h": 0.59713
+        }
+      ]
+    }
+  ]
+}

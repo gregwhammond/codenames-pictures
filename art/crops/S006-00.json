@@ -1,0 +1,77 @@
+{
+  "id": "S006-00",
+  "source": "originals/S006-00.jpg",
+  "source_sha256": "f520979f3d72fd06daf3beb7f8392667e264c70933ce3cd799ae8308f26fe1cc",
+  "source_size": [
+    768,
+    1133
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S006",
+    "index": 0,
+    "title": "Hildegard von Bingen, Liber Divinorum Operum (cosmic man)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hildegard_von_Bingen_Liber_Divinorum_Operum.jpg",
+    "licence": "Wikimedia Commons PD-Art (12th-13th century originals; the 'Meister des Hildegardis-Codex' files come from The Yorck Project, PD-Art).",
+    "note": "Liber Divinorum Operum vision, probably the cosmic man in the universe wheel",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S006-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.04,
+        "y": 0.20819,
+        "w": 0.92,
+        "h": 0.62362
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.3657,
+        "confidence": 0.976,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.01923,
+          "y": 0.01304,
+          "w": 0.97308,
+          "h": 0.6596
+        },
+        {
+          "x": 0.01923,
+          "y": 0.09125,
+          "w": 0.97308,
+          "h": 0.6596
+        },
+        {
+          "x": 0.23077,
+          "y": 0.01304,
+          "w": 0.76154,
+          "h": 0.51621
+        },
+        {
+          "x": 0.01923,
+          "y": 0.01304,
+          "w": 0.70769,
+          "h": 0.47971
+        },
+        {
+          "x": 0.01923,
+          "y": 0.32589,
+          "w": 0.97308,
+          "h": 0.6596
+        },
+        {
+          "x": 0.49615,
+          "y": 0.01304,
+          "w": 0.49615,
+          "h": 0.33632
+        }
+      ]
+    }
+  ]
+}

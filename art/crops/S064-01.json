@@ -1,0 +1,75 @@
+{
+  "id": "S064-01",
+  "source": "originals/S064-01.jpg",
+  "source_sha256": "36dc9a8912c96e5a68b03919b48259bed3c4a445e9d737bd035cc49b2f5ed7ca",
+  "source_size": [
+    686,
+    800
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S064",
+    "index": 1,
+    "title": "Yamawaro",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bakemono_Emaki_Yamawaro.jpg",
+    "licence": "Public domain (Edo-period works), Commons PD tags; check each file's page for the owning collection",
+    "note": "Hairy mountain child yokai",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S064-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.8575
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.8575
+        },
+        "engine": "autocrop v1",
+        "score": 0.6277,
+        "confidence": 0.793
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.10165,
+          "w": 1.0,
+          "h": 0.8575
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.78116,
+          "h": 0.66984
+        },
+        {
+          "x": 0.0,
+          "y": 0.23457,
+          "w": 0.67173,
+          "h": 0.57601
+        },
+        {
+          "x": 0.0,
+          "y": 0.06255,
+          "w": 0.5076,
+          "h": 0.43527
+        },
+        {
+          "x": 0.16413,
+          "y": 0.30495,
+          "w": 0.67173,
+          "h": 0.57601
+        }
+      ]
+    }
+  ]
+}

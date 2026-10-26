@@ -1,0 +1,89 @@
+{
+  "id": "S013-04",
+  "source": "originals/S013-04.jpg",
+  "source_sha256": "d024e6a15862e1b3b13198a29650fb0bb5f2be55b85ac58f3d7faaac9d33f9c1",
+  "source_size": [
+    960,
+    9336
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S013",
+    "index": 4,
+    "title": "Ripley Scroll",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ripley_Scroll.JPG",
+    "licence": "Public domain (PD-old); Wellcome photographs on Commons carry CC BY 4.0 (credit Wellcome Collection). Scrolls are tall and narrow, so use detail crops for cards. Contains some serpents/dragons.",
+    "note": "Section of a painted Ripley Scroll",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S013-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.01,
+        "y": 0.82076,
+        "w": 0.88,
+        "h": 0.09049
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.0416,
+        "confidence": 1.0,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.00264,
+          "w": 1.0,
+          "h": 0.10283
+        },
+        {
+          "x": 0.0,
+          "y": 0.02373,
+          "w": 1.0,
+          "h": 0.10283
+        },
+        {
+          "x": 0.0,
+          "y": 0.16611,
+          "w": 1.0,
+          "h": 0.10283
+        },
+        {
+          "x": 0.15385,
+          "y": 0.00264,
+          "w": 0.84615,
+          "h": 0.08701
+        },
+        {
+          "x": 0.0,
+          "y": 0.06328,
+          "w": 1.0,
+          "h": 0.10283
+        },
+        {
+          "x": 0.0,
+          "y": 0.00264,
+          "w": 0.71795,
+          "h": 0.07383
+        }
+      ]
+    },
+    {
+      "tile": "S013-04-b",
+      "mode": "crop",
+      "box": {
+        "x": 0.075,
+        "y": 0.0013,
+        "w": 0.85,
+        "h": 0.0874
+      },
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

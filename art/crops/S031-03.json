@@ -1,0 +1,75 @@
+{
+  "id": "S031-03",
+  "source": "originals/S031-03.jpg",
+  "source_sha256": "1038438361e965d57271775eed33cd7f69e293a32d3ccb2d2f7ef7951b5d3091",
+  "source_size": [
+    600,
+    730
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S031",
+    "index": 3,
+    "title": "Alkonost lubok",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lubok_alkonost.JPG",
+    "licence": "Wikimedia Commons; anonymous 17th-19th century prints, expected to carry PD-old tags but tags not seen per file in search results, so check each file page. LoC lubok set (https://www.loc.gov/pictures/item/2022643548/) is an alternative host.",
+    "note": "Paradise bird with a crowned woman's head",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S031-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.82192
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.82192
+        },
+        "engine": "autocrop v1",
+        "score": 0.2078,
+        "confidence": 1.0
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.72785,
+          "h": 0.59823
+        },
+        {
+          "x": 0.0,
+          "y": 0.17427,
+          "w": 1.0,
+          "h": 0.82192
+        },
+        {
+          "x": 0.01899,
+          "y": 0.0,
+          "w": 0.50949,
+          "h": 0.41876
+        },
+        {
+          "x": 0.0,
+          "y": 0.22889,
+          "w": 0.67405,
+          "h": 0.55401
+        },
+        {
+          "x": 0.17089,
+          "y": 0.03121,
+          "w": 0.50949,
+          "h": 0.41876
+        }
+      ]
+    }
+  ]
+}

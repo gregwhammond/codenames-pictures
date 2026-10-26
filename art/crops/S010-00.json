@@ -1,0 +1,75 @@
+{
+  "id": "S010-00",
+  "source": "originals/S010-00.jpg",
+  "source_sha256": "92236b31cc1c1b62d2162c755b2cc3d7d1648a29deb1aa07dfb7cb6a00e3fc7b",
+  "source_size": [
+    750,
+    1186
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S010",
+    "index": 0,
+    "title": "Mandrake (1491)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hortus_sanitatis_1491_Mandrake.jpg",
+    "licence": "Public domain (1491/1497); Commons PD-old. Wellcome L-number files are CC BY 4.0 (credit Wellcome Collection). Wider category: https://commons.wikimedia.org/wiki/Category:Hortus_Sanitatis Added pictures: Wellcome images CC-BY/PD; LoC Rare Book and Prints items generally 'no known restrictions'. The 1514 and unicorn/apes items are related Hortus editions; check the attribution before using. The Twin-tailed Siren/mermaid woodcut exists but was found only on stock sites (Alamy, Bridgeman), so it is not included.",
+    "note": "Mandrake root drawn as a little naked person with leafy head",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S010-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.63238
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.63238
+        },
+        "engine": "autocrop v1",
+        "score": 0.5592,
+        "confidence": 0.996
+      },
+      "candidates": [
+        {
+          "x": 0.11111,
+          "y": 0.0,
+          "w": 0.88889,
+          "h": 0.56211
+        },
+        {
+          "x": 0.0,
+          "y": 0.15614,
+          "w": 1.0,
+          "h": 0.63238
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.67078,
+          "h": 0.42419
+        },
+        {
+          "x": 0.0,
+          "y": 0.12752,
+          "w": 0.7284,
+          "h": 0.46062
+        },
+        {
+          "x": 0.38272,
+          "y": 0.01561,
+          "w": 0.61728,
+          "h": 0.39036
+        }
+      ]
+    }
+  ]
+}

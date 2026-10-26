@@ -1,0 +1,75 @@
+{
+  "id": "S061-03",
+  "source": "originals/S061-03.jpg",
+  "source_sha256": "8738e70db5614f76b279b35c4d0b26f1fe3a0d0d18ba8d859a274201c918c0ad",
+  "source_size": [
+    960,
+    1269
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S061",
+    "index": 3,
+    "title": "The crow addresses the animals",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_crow_addresses_the_animals.jpg",
+    "licence": "Met Open Access CC0; Smithsonian CC0; BL images on Commons are PD.",
+    "note": "Crow speaking to assembled animals",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S061-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.06,
+        "y": 0.0947,
+        "w": 0.86,
+        "h": 0.65059
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.02069,
+          "y": 0.01304,
+          "w": 0.94828,
+          "h": 0.71737
+        },
+        "engine": "autocrop v1",
+        "score": 0.4361,
+        "confidence": 0.911
+      },
+      "candidates": [
+        {
+          "x": 0.02069,
+          "y": 0.09913,
+          "w": 0.94828,
+          "h": 0.71737
+        },
+        {
+          "x": 0.22759,
+          "y": 0.01304,
+          "w": 0.74138,
+          "h": 0.56085
+        },
+        {
+          "x": 0.02069,
+          "y": 0.01304,
+          "w": 0.68966,
+          "h": 0.52172
+        },
+        {
+          "x": 0.48621,
+          "y": 0.01304,
+          "w": 0.48276,
+          "h": 0.36521
+        },
+        {
+          "x": 0.02069,
+          "y": 0.01304,
+          "w": 0.48276,
+          "h": 0.36521
+        }
+      ]
+    }
+  ]
+}

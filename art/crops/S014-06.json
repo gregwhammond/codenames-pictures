@@ -1,0 +1,75 @@
+{
+  "id": "S014-06",
+  "source": "originals/S014-06.jpg",
+  "source_sha256": "525378771a6ee829ef922d9ea2c17b5eda96afa4aa86a0e0cf12abc061454952",
+  "source_size": [
+    960,
+    746
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S014",
+    "index": 6,
+    "title": "Thesaurus Tab. XLVIII",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Albertus_Seba_Thesaurus_Tab._XLVIII.jpg",
+    "licence": "Wikimedia Commons public domain (PD-old / PD-Art; engravings 1734-1765). The Google Art Project scans come from Museum Victoria.",
+    "note": "Numbered specimen plate; the search result did not name its subject",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S014-06",
+      "mode": "crop",
+      "box": {
+        "x": 0.4791,
+        "y": 0.11,
+        "w": 0.48179,
+        "h": 0.62
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.1875,
+          "y": 0.0,
+          "w": 0.77604,
+          "h": 0.99866
+        },
+        "engine": "autocrop v1",
+        "score": 0.5621,
+        "confidence": 0.665
+      },
+      "candidates": [
+        {
+          "x": 0.0625,
+          "y": 0.0,
+          "w": 0.77604,
+          "h": 0.99866
+        },
+        {
+          "x": 0.33854,
+          "y": 0.10054,
+          "w": 0.64844,
+          "h": 0.83445
+        },
+        {
+          "x": 0.02344,
+          "y": 0.18097,
+          "w": 0.5651,
+          "h": 0.72721
+        },
+        {
+          "x": 0.1875,
+          "y": 0.02681,
+          "w": 0.52083,
+          "h": 0.67024
+        },
+        {
+          "x": 0.4375,
+          "y": 0.0,
+          "w": 0.52083,
+          "h": 0.67024
+        }
+      ]
+    }
+  ]
+}

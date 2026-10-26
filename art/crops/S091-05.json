@@ -1,0 +1,87 @@
+{
+  "id": "S091-05",
+  "source": "originals/S091-05.jpg",
+  "source_sha256": "21f859a6c0245172bbdaeff25cd15d534af3d9bf666b380453bf4129d767baac",
+  "source_size": [
+    960,
+    1388
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S091",
+    "index": 5,
+    "title": "Woodcut of marine monsters (attribution unverified)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Woodcut_of_marine_monsters_Wellcome_L0033061.jpg",
+    "licence": "Commons PD tags; Wellcome images PD mark / CC-BY for photos of PD works; NLM exhibition images are PD US-government-held scans (check per image). Few single monster woodcuts were findable; most hits were stock-photo sites (Alamy, Bridgeman) which were excluded.",
+    "note": "Wellcome sea-monster woodcut; source book not confirmed as Paré",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S091-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.235,
+        "y": 0.0,
+        "w": 0.58,
+        "h": 0.40115
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.01504,
+          "y": 0.0,
+          "w": 0.98496,
+          "h": 0.68124
+        },
+        "engine": "autocrop v1",
+        "score": 0.4808,
+        "confidence": 0.788
+      },
+      "candidates": [
+        {
+          "x": 0.01504,
+          "y": 0.078,
+          "w": 0.93233,
+          "h": 0.64484
+        },
+        {
+          "x": 0.19925,
+          "y": 0.0,
+          "w": 0.71805,
+          "h": 0.49663
+        },
+        {
+          "x": 0.01504,
+          "y": 0.31722,
+          "w": 0.98496,
+          "h": 0.68124
+        },
+        {
+          "x": 0.01504,
+          "y": 0.0,
+          "w": 0.66165,
+          "h": 0.45763
+        },
+        {
+          "x": 0.37218,
+          "y": 0.0,
+          "w": 0.5,
+          "h": 0.34582
+        }
+      ]
+    },
+    {
+      "tile": "S091-05-b",
+      "mode": "crop",
+      "box": {
+        "x": 0.31,
+        "y": 0.42017,
+        "w": 0.52,
+        "h": 0.35965
+      },
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

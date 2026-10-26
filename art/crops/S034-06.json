@@ -1,0 +1,75 @@
+{
+  "id": "S034-06",
+  "source": "originals/S034-06.webp",
+  "source_sha256": "5131cb45bf6c4723efb41e665d48009d2db1891d751a301d9ce30ddff8a840da",
+  "source_size": [
+    1112,
+    584
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S034",
+    "index": 6,
+    "title": "Tropaeolum majus (Nasturtium)",
+    "source_url": "https://pdimagearchive.org/images/d7c6eb38-97be-489d-b950-6d77b6957003/",
+    "licence": "Public domain (Grandville died 1847; published 1847/1849). PD Image Archive and PDR mark the images public domain. Commons copies are in Category:Les Fleurs animées with PD-old tags.",
+    "note": "Nasturtium personified as a flower-woman",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S034-06",
+      "mode": "crop",
+      "box": {
+        "x": 0.21397,
+        "y": 0.0,
+        "w": 0.52518,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.21397,
+          "y": 0.0,
+          "w": 0.52518,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.7173,
+        "confidence": 0.704
+      },
+      "candidates": [
+        {
+          "x": 0.27647,
+          "y": 0.0,
+          "w": 0.52518,
+          "h": 1.0
+        },
+        {
+          "x": 0.08897,
+          "y": 0.0,
+          "w": 0.52518,
+          "h": 1.0
+        },
+        {
+          "x": 0.46397,
+          "y": 0.0,
+          "w": 0.52518,
+          "h": 1.0
+        },
+        {
+          "x": 0.3776,
+          "y": 0.32563,
+          "w": 0.35417,
+          "h": 0.67437
+        },
+        {
+          "x": 0.14323,
+          "y": 0.32563,
+          "w": 0.35417,
+          "h": 0.67437
+        }
+      ]
+    }
+  ]
+}

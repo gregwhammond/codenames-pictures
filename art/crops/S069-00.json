@@ -1,0 +1,77 @@
+{
+  "id": "S069-00",
+  "source": "originals/S069-00.jpg",
+  "source_sha256": "4c2c512a3a31bd07f99f4cc0a85d4b2ddec3aade0a4bc86617ec0c3bfd224b1d",
+  "source_size": [
+    960,
+    2203
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S069",
+    "index": 0,
+    "title": "Huang Qing Zhigong Tu - 037 - Barbarian official of Russia",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Huang_Qing_Zhigong_Tu_-_037_-_Barbarian_official_of_Russia_(Eluosi).jpg",
+    "licence": "Public domain (18th c.), Commons PD tags",
+    "note": "Qing view of a Russian official",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S069-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.01212,
+        "w": 1.0,
+        "h": 0.43577
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.1884,
+        "confidence": 0.692,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.03131,
+          "w": 1.0,
+          "h": 0.43577
+        },
+        {
+          "x": 0.0,
+          "y": 0.14091,
+          "w": 1.0,
+          "h": 0.43577
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.94611,
+          "h": 0.41228
+        },
+        {
+          "x": 0.0,
+          "y": 0.29747,
+          "w": 1.0,
+          "h": 0.43577
+        },
+        {
+          "x": 0.21557,
+          "y": 0.0,
+          "w": 0.45509,
+          "h": 0.19831
+        },
+        {
+          "x": 0.1497,
+          "y": 0.13047,
+          "w": 0.72455,
+          "h": 0.31574
+        }
+      ]
+    }
+  ]
+}

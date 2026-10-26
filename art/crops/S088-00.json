@@ -1,0 +1,75 @@
+{
+  "id": "S088-00",
+  "source": "originals/S088-00.jpg",
+  "source_sha256": "b3278917e10d4bab18f522b5031c242b7b5db028a455e1f120d58e7472acc5c6",
+  "source_size": [
+    957,
+    1187
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S088",
+    "index": 0,
+    "title": "SÁM 66, 80v, Odin on Sleipnir",
+    "source_url": "https://commons.wikimedia.org/wiki/File:S%C3%81M_66,_80v,_Odin_on_Sleipnir.jpg",
+    "licence": "Public domain on Commons (18th-/17th-c. works, PD-Art); host scans on handrit.is are free to view.",
+    "note": "Odin riding his eight-legged horse",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S088-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.03688,
+        "w": 1.0,
+        "h": 0.80623
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.80623
+        },
+        "engine": "autocrop v1",
+        "score": 0.5037,
+        "confidence": 0.938
+      },
+      "candidates": [
+        {
+          "x": 0.10968,
+          "y": 0.0,
+          "w": 0.89032,
+          "h": 0.71781
+        },
+        {
+          "x": 0.0,
+          "y": 0.19246,
+          "w": 1.0,
+          "h": 0.80623
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.67419,
+          "h": 0.54356
+        },
+        {
+          "x": 0.38065,
+          "y": 0.0,
+          "w": 0.61935,
+          "h": 0.49935
+        },
+        {
+          "x": 0.22581,
+          "y": 0.0,
+          "w": 0.56452,
+          "h": 0.45513
+        }
+      ]
+    }
+  ]
+}

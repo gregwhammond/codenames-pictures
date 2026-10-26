@@ -1,0 +1,98 @@
+{
+  "id": "S010-07",
+  "source": "originals/S010-07.jpg",
+  "source_sha256": "fbc43993227394fbdc2cfd58b508a93566a62b5380f2a68deb95908ce07d693e",
+  "source_size": [
+    640,
+    394
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S010",
+    "index": 7,
+    "title": "Man slicing bread and a hawk, Hortus sanitatis minor 1514",
+    "source_url": "https://www.loc.gov/item/2005692099",
+    "licence": "Public domain (1491/1497); Commons PD-old. Wellcome L-number files are CC BY 4.0 (credit Wellcome Collection). Wider category: https://commons.wikimedia.org/wiki/Category:Hortus_Sanitatis Added pictures: Wellcome images CC-BY/PD; LoC Rare Book and Prints items generally 'no known restrictions'. The 1514 and unicorn/apes items are related Hortus editions; check the attribution before using. The Twin-tailed Siren/mermaid woodcut exists but was found only on stock sites (Alamy, Bridgeman), so it is not included.",
+    "note": "Two woodcuts: man slicing wafers, a hawk (Antwerp Groot Herbarius)",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S010-07",
+      "mode": "crop",
+      "box": {
+        "x": 0.45052,
+        "y": 0.03384,
+        "w": 0.54948,
+        "h": 0.89255
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.45052,
+          "y": 0.03384,
+          "w": 0.54948,
+          "h": 0.89255
+        },
+        "engine": "autocrop v1",
+        "score": 0.6588,
+        "confidence": 0.018
+      },
+      "candidates": [
+        {
+          "x": 0.48698,
+          "y": 0.16497,
+          "w": 0.51302,
+          "h": 0.83333
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.51302,
+          "h": 0.83333
+        },
+        {
+          "x": 0.16406,
+          "y": 0.0,
+          "w": 0.61458,
+          "h": 0.99831
+        },
+        {
+          "x": 0.42188,
+          "y": 0.27919,
+          "w": 0.41406,
+          "h": 0.67259
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.34635,
+          "h": 0.56261
+        }
+      ]
+    },
+    {
+      "tile": "S010-07-b",
+      "status": "approved",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.45052,
+        "h": 0.73181
+      },
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.45052,
+          "h": 0.73181
+        },
+        "engine": "autocrop v1",
+        "score": 0.7613,
+        "confidence": 0.018
+      },
+      "candidates": []
+    }
+  ]
+}

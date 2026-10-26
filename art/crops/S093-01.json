@@ -1,0 +1,75 @@
+{
+  "id": "S093-01",
+  "source": "originals/S093-01.jpg",
+  "source_sha256": "a43cb0c67bf6dc7e037edba373ecb3181afa5b0858c5877d33bdc9cb4d8663ab",
+  "source_size": [
+    605,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S093",
+    "index": 1,
+    "title": "Salamander in fire (Lambspring emblem, 1902 reproduction)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Salamander_from_The_Story_of_Alchemy_and_the_Beginnings_of_Chemistry.jpg",
+    "licence": "Commons PD tags; Science History Institute images are public domain/free to use. Only 3 Lambspring plates found as single files; others filled from the same volume.",
+    "note": "Salamander amid flames; reproduced in 1902 book, source plate unconfirmed",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S093-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.00804,
+        "y": 0.0,
+        "w": 0.99174,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00804,
+          "y": 0.0,
+          "w": 0.99174,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.5725,
+        "confidence": 0.706
+      },
+      "candidates": [
+        {
+          "x": 0.11719,
+          "y": 0.10983,
+          "w": 0.88281,
+          "h": 0.89017
+        },
+        {
+          "x": 0.38542,
+          "y": 0.3803,
+          "w": 0.61458,
+          "h": 0.6197
+        },
+        {
+          "x": 0.0,
+          "y": 0.32778,
+          "w": 0.66667,
+          "h": 0.67222
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.77604,
+          "h": 0.78251
+        },
+        {
+          "x": 0.22917,
+          "y": 0.43544,
+          "w": 0.5599,
+          "h": 0.56456
+        }
+      ]
+    }
+  ]
+}

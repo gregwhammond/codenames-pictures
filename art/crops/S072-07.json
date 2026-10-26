@@ -1,0 +1,75 @@
+{
+  "id": "S072-07",
+  "source": "originals/S072-07.jpg",
+  "source_sha256": "73ce3760d925dd572734deafd4e9e902a649dd915ce0b2b47490eca967f4b665",
+  "source_size": [
+    439,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S072",
+    "index": 7,
+    "title": "Feather of Finist the Falcon",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ivan_Bilibin_-_illustration-for-the-russian-fairy-story-feather-of-finist-falcon-19001.jpg",
+    "licence": "Public domain: published before 1929 and Bilibin died 1942 (70+ years); Commons PD tags",
+    "note": "Plate from Finist the Bright Falcon",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S072-07",
+      "mode": "crop",
+      "box": {
+        "x": 0.1,
+        "y": 0.18733,
+        "w": 0.8,
+        "h": 0.58533
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.73167
+        },
+        "engine": "autocrop v1",
+        "score": 0.5024,
+        "confidence": 0.893
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.08593,
+          "w": 1.0,
+          "h": 0.73167
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.78292,
+          "h": 0.57284
+        },
+        {
+          "x": 0.27402,
+          "y": 0.0,
+          "w": 0.72598,
+          "h": 0.53117
+        },
+        {
+          "x": 0.4911,
+          "y": 0.0,
+          "w": 0.5089,
+          "h": 0.37234
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.5089,
+          "h": 0.37234
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "S008-08",
+  "source": "originals/S008-08.jpg",
+  "source_sha256": "bcc12e5cd8d8d1945c5d527aa5f6e79a1733d2790fc562e3d929bbe4f3601a11",
+  "source_size": [
+    960,
+    461
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S008",
+    "index": 8,
+    "title": "Historia animalium 1563, Seite 97 recto, 2. Abb.",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Gesner,_Conrad_%E2%80%94_Historia_animalium_1563_%E2%80%94_Seite_97_recto_2._Abb.jpg",
+    "licence": "Public domain (16th century). Commons PD-old; PD Image Archive items are public domain; BHL scan on Commons is PD. PDIA artist gallery: https://pdimagearchive.org/galleries/artists/conrad-gessner/random/desc",
+    "note": "Single woodcut from the 1563 edition; subject not confirmed",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S008-08",
+      "mode": "crop",
+      "box": {
+        "x": 0.3799,
+        "y": 0.0,
+        "w": 0.48021,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.2716,
+        "confidence": 0.193,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.52083,
+          "y": 0.0,
+          "w": 0.47917,
+          "h": 0.99783
+        },
+        {
+          "x": 0.45573,
+          "y": 0.0,
+          "w": 0.47917,
+          "h": 0.99783
+        },
+        {
+          "x": 0.27344,
+          "y": 0.0,
+          "w": 0.47917,
+          "h": 0.99783
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.47917,
+          "h": 0.99783
+        },
+        {
+          "x": 0.625,
+          "y": 0.0,
+          "w": 0.375,
+          "h": 0.78091
+        },
+        {
+          "x": 0.1875,
+          "y": 0.0,
+          "w": 0.40104,
+          "h": 0.83514
+        }
+      ]
+    }
+  ]
+}

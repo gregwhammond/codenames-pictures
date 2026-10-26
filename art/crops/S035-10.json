@@ -1,0 +1,75 @@
+{
+  "id": "S035-10",
+  "source": "originals/S035-10.jpg",
+  "source_sha256": "3eae26065d122bf1f36c938f5aaeedd6101f365019e143a9345b3bc46bc875cc",
+  "source_size": [
+    449,
+    624
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S035",
+    "index": 10,
+    "title": "'Good evening then, my friend Lecteur...' (Met 813061)",
+    "source_url": "https://www.metmuseum.org/art/collection/search/813061",
+    "licence": "Public domain (Grandville died 1847; published 1840-42 and 1877). PD Image Archive and PDR mark the images public domain. The Commons page scan has a PD-old tag. Added pictures: Grandville d.1847, so PD. Met Open Access CC0 applies where the page shows the OA badge (typical for these prints). PD Image Archive and Commons are PD. Titles are from the Met; content notes are inferred from titles.",
+    "note": "Animal narrator bids reader goodnight",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S035-10",
+      "mode": "crop",
+      "box": {
+        "x": 0.03623,
+        "y": 0.18249,
+        "w": 0.92391,
+        "h": 0.6648
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.03623,
+          "y": 0.18249,
+          "w": 0.92391,
+          "h": 0.6648
+        },
+        "engine": "autocrop v1",
+        "score": 0.7298,
+        "confidence": 0.584
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.22942,
+          "w": 0.97826,
+          "h": 0.70391
+        },
+        {
+          "x": 0.02899,
+          "y": 0.146,
+          "w": 0.71014,
+          "h": 0.51099
+        },
+        {
+          "x": 0.21377,
+          "y": 0.08343,
+          "w": 0.76449,
+          "h": 0.55009
+        },
+        {
+          "x": 0.15217,
+          "y": 0.27374,
+          "w": 0.65942,
+          "h": 0.47449
+        },
+        {
+          "x": 0.23551,
+          "y": 0.15642,
+          "w": 0.49638,
+          "h": 0.35717
+        }
+      ]
+    }
+  ]
+}

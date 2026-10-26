@@ -1,0 +1,75 @@
+{
+  "id": "S072-00",
+  "source": "originals/S072-00.jpg",
+  "source_sha256": "d8eed78bef6a85c5709c1c382c272283765446381aedf418fd2f685cb905af7f",
+  "source_size": [
+    461,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S072",
+    "index": 0,
+    "title": "Baba Yaga (Vasilisa the Beautiful)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ivan_Bilibin_-_baba-yaga-illustration-for-the-fairy-tale-vasilisa-the-beautiful-19002.jpg",
+    "licence": "Public domain: published before 1929 and Bilibin died 1942 (70+ years); Commons PD tags",
+    "note": "Baba Yaga flying through the forest in her mortar",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S072-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.06,
+        "y": 0.06193,
+        "w": 0.88,
+        "h": 0.67613
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.76833
+        },
+        "engine": "autocrop v1",
+        "score": 0.4918,
+        "confidence": 0.861
+      },
+      "candidates": [
+        {
+          "x": 0.10847,
+          "y": 0.0,
+          "w": 0.89153,
+          "h": 0.68499
+        },
+        {
+          "x": 0.0,
+          "y": 0.23167,
+          "w": 1.0,
+          "h": 0.76833
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.67119,
+          "h": 0.51569
+        },
+        {
+          "x": 0.38305,
+          "y": 0.0,
+          "w": 0.61695,
+          "h": 0.47402
+        },
+        {
+          "x": 0.22373,
+          "y": 0.0,
+          "w": 0.56271,
+          "h": 0.43235
+        }
+      ]
+    }
+  ]
+}

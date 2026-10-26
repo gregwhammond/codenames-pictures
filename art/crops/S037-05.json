@@ -1,0 +1,75 @@
+{
+  "id": "S037-05",
+  "source": "originals/S037-05.jpg",
+  "source_sha256": "279b18971c407187af77e8ac7a863c9108f0accd816cfcd756e465df56d5803d",
+  "source_size": [
+    960,
+    760
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S037",
+    "index": 5,
+    "title": "An amorous encounter, f.139",
+    "source_url": "https://commons.wikimedia.org/wiki/File:An_amorous_encounter_-_Smithfield_Decretals_(Decretals_of_Gregory_IX)_(c.1340),_f.139_-_BL_Royal_MS_10_E_IV.jpg",
+    "licence": "Public domain (BL Images Online release on Commons, PD-old)",
+    "note": "Courting couple in the bas-de-page",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S037-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.28354,
+        "y": 0.125,
+        "w": 0.67292,
+        "h": 0.85
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.33854,
+          "y": 0.16447,
+          "w": 0.66146,
+          "h": 0.83553
+        },
+        "engine": "autocrop v1",
+        "score": 0.435,
+        "confidence": 0.543
+      },
+      "candidates": [
+        {
+          "x": 0.42448,
+          "y": 0.27303,
+          "w": 0.57552,
+          "h": 0.72697
+        },
+        {
+          "x": 0.1875,
+          "y": 0.0,
+          "w": 0.79167,
+          "h": 1.0
+        },
+        {
+          "x": 0.25,
+          "y": 0.28947,
+          "w": 0.53385,
+          "h": 0.67434
+        },
+        {
+          "x": 0.0,
+          "y": 0.21711,
+          "w": 0.61979,
+          "h": 0.78289
+        },
+        {
+          "x": 0.59635,
+          "y": 0.35526,
+          "w": 0.40365,
+          "h": 0.50987
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "S031-06",
+  "source": "originals/S031-06.jpg",
+  "source_sha256": "8c289a926820c391bfbdff1c59b1bb19372b43e2fa9d6546898bbff84b9516ea",
+  "source_size": [
+    422,
+    351
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S031",
+    "index": 6,
+    "title": "Yeruslan Lazarevich, 1890 lubok",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Eruslan_Lazarevich_1890.jpg",
+    "licence": "Wikimedia Commons; anonymous 17th-19th century prints, expected to carry PD-old tags but tags not seen per file in search results, so check each file page. LoC lubok set (https://www.loc.gov/pictures/item/2022643548/) is an alternative host.",
+    "note": "Folk-tale knight Yeruslan, late popular print",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S031-06",
+      "mode": "crop",
+      "box": {
+        "x": 0.00571,
+        "y": 0.0,
+        "w": 0.74858,
+        "h": 0.9
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.83073,
+          "h": 0.99877
+        },
+        "engine": "autocrop v1",
+        "score": 0.509,
+        "confidence": 0.948
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.73958,
+          "h": 0.88919
+        },
+        {
+          "x": 0.1875,
+          "y": 0.05323,
+          "w": 0.78646,
+          "h": 0.94554
+        },
+        {
+          "x": 0.08333,
+          "y": 0.12524,
+          "w": 0.51302,
+          "h": 0.61679
+        },
+        {
+          "x": 0.0625,
+          "y": 0.30057,
+          "w": 0.5599,
+          "h": 0.67315
+        },
+        {
+          "x": 0.20833,
+          "y": 0.05009,
+          "w": 0.51302,
+          "h": 0.61679
+        }
+      ]
+    }
+  ]
+}

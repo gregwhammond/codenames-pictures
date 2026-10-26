@@ -1,0 +1,75 @@
+{
+  "id": "S072-05",
+  "source": "originals/S072-05.jpg",
+  "source_sha256": "d6f20996f2ab98025b80331aa1a2c0665734cc63281d7eab16db62c3d85ffd59",
+  "source_size": [
+    465,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S072",
+    "index": 5,
+    "title": "Maria Morevna",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ivan_Bilibin_-_illustration-for-the-russian-fairy-story-maria-morevna-1900-21.jpg",
+    "licence": "Public domain: published before 1929 and Bilibin died 1942 (70+ years); Commons PD tags",
+    "note": "Plate from Maria Morevna",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S072-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.09,
+        "y": 0.11225,
+        "w": 0.82,
+        "h": 0.6355
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00336,
+          "y": 0.03641,
+          "w": 0.99329,
+          "h": 0.7698
+        },
+        "engine": "autocrop v1",
+        "score": 0.5101,
+        "confidence": 0.814
+      },
+      "candidates": [
+        {
+          "x": 0.00336,
+          "y": 0.13003,
+          "w": 0.99329,
+          "h": 0.7698
+        },
+        {
+          "x": 0.00336,
+          "y": 0.0052,
+          "w": 0.83221,
+          "h": 0.64497
+        },
+        {
+          "x": 0.27517,
+          "y": 0.02601,
+          "w": 0.72148,
+          "h": 0.55914
+        },
+        {
+          "x": 0.02349,
+          "y": 0.02081,
+          "w": 0.5604,
+          "h": 0.43431
+        },
+        {
+          "x": 0.46644,
+          "y": 0.02081,
+          "w": 0.50671,
+          "h": 0.3927
+        }
+      ]
+    }
+  ]
+}

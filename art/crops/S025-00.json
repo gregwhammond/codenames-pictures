@@ -1,0 +1,75 @@
+{
+  "id": "S025-00",
+  "source": "originals/S025-00.jpg",
+  "source_sha256": "0d0ac40802391d7bdd6161ac27195c8ad597aa81f203dbf961d9dbd336880a4d",
+  "source_size": [
+    400,
+    372
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S025",
+    "index": 0,
+    "title": "Kankyojin (Pierced-Chest People)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Shan_Hai_Jing_Kankyojin.jpg",
+    "licence": "Public domain (Ming/Qing woodblock prints, PD-old tags on Commons); check each file page for the exact tag.",
+    "note": "Guanxiong people with holes through their chests",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S025-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.01823,
+        "y": 0.014,
+        "w": 0.90365,
+        "h": 0.97166
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.01823,
+          "y": 0.014,
+          "w": 0.90365,
+          "h": 0.97166
+        },
+        "engine": "autocrop v1",
+        "score": 0.685,
+        "confidence": 0.733
+      },
+      "candidates": [
+        {
+          "x": 0.11979,
+          "y": 0.0672,
+          "w": 0.85417,
+          "h": 0.91846
+        },
+        {
+          "x": 0.01823,
+          "y": 0.014,
+          "w": 0.70573,
+          "h": 0.75885
+        },
+        {
+          "x": 0.3776,
+          "y": 0.19041,
+          "w": 0.60677,
+          "h": 0.65244
+        },
+        {
+          "x": 0.29948,
+          "y": 0.014,
+          "w": 0.60677,
+          "h": 0.65244
+        },
+        {
+          "x": 0.01823,
+          "y": 0.28002,
+          "w": 0.65625,
+          "h": 0.70565
+        }
+      ]
+    }
+  ]
+}

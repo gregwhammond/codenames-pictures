@@ -1,0 +1,75 @@
+{
+  "id": "S095-01",
+  "source": "originals/S095-01.jpg",
+  "source_sha256": "27d10bf9f87cdf8c5602f3db8edcc13b2b4004fa6db0e7080102ab5be013b9de",
+  "source_size": [
+    960,
+    742
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S095",
+    "index": 1,
+    "title": "Frontispiece: Worm's cabinet",
+    "source_url": "https://commons.wikimedia.org/wiki/File:1655_-_Frontispiece_of_Museum_Wormiani_Historia.jpg",
+    "licence": "Commons PD tags; Wellcome PD / CC-BY; Linda Hall digital collections images (check terms). Only 3 distinct subjects found as single images; interior-view entries are near-duplicates of the frontispiece.",
+    "note": "Room crammed with shells, skulls, crocodile, kayak",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S095-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.11354,
+        "y": 0.0,
+        "w": 0.77292,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00026,
+          "y": 0.0,
+          "w": 0.77292,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.4538,
+        "confidence": 0.609
+      },
+      "candidates": [
+        {
+          "x": 0.22682,
+          "y": 0.0,
+          "w": 0.77292,
+          "h": 1.0
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.6901,
+          "h": 0.89286
+        },
+        {
+          "x": 0.47917,
+          "y": 0.0,
+          "w": 0.52083,
+          "h": 0.67385
+        },
+        {
+          "x": 0.0,
+          "y": 0.32615,
+          "w": 0.52083,
+          "h": 0.67385
+        },
+        {
+          "x": 0.47917,
+          "y": 0.32615,
+          "w": 0.52083,
+          "h": 0.67385
+        }
+      ]
+    }
+  ]
+}

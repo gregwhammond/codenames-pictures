@@ -1,0 +1,75 @@
+{
+  "id": "S045-07",
+  "source": "originals/S045-07.jpg",
+  "source_sha256": "545bc915b39a0972fed792e8ec1ae4cc95e9351b1b865b544455625e02e374ba",
+  "source_size": [
+    960,
+    637
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S045",
+    "index": 7,
+    "title": "Beast, f.157v (crop)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Saint-Sever_Beatus_f._157v_-_Beast_-_crop.jpg",
+    "licence": "Public domain on Commons (PD-old); Gallica images free for non-commercial use",
+    "note": "Many-headed beast (dragon-like, lower priority)",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S045-07",
+      "mode": "crop",
+      "box": {
+        "x": 0.35094,
+        "y": 0.4,
+        "w": 0.39813,
+        "h": 0.6
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.3362,
+          "y": 0.0,
+          "w": 0.66354,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.3727,
+        "confidence": 0.146
+      },
+      "candidates": [
+        {
+          "x": 0.00026,
+          "y": 0.0,
+          "w": 0.66354,
+          "h": 1.0
+        },
+        {
+          "x": 0.26068,
+          "y": 0.0,
+          "w": 0.66354,
+          "h": 1.0
+        },
+        {
+          "x": 0.47917,
+          "y": 0.219,
+          "w": 0.51823,
+          "h": 0.781
+        },
+        {
+          "x": 0.51823,
+          "y": 0.0,
+          "w": 0.48177,
+          "h": 0.72606
+        },
+        {
+          "x": 0.0,
+          "y": 0.32496,
+          "w": 0.44792,
+          "h": 0.67504
+        }
+      ]
+    }
+  ]
+}

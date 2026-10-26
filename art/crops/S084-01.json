@@ -1,0 +1,75 @@
+{
+  "id": "S084-01",
+  "source": "originals/S084-01.jpg",
+  "source_sha256": "a58e5cf57c6018342bedb188072e1a86b5015e23fc6a33e0c6d600d7cddabf3c",
+  "source_size": [
+    527,
+    640
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S084",
+    "index": 1,
+    "title": "Indians fishing",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Indians_fishing_de_bry.jpg",
+    "licence": "Public domain; Commons PD. Caveat: many plates (esp. Tertia pars) show violence/cannibalism; pick carefully.",
+    "note": "Algonquians fishing with weirs, spears and canoe",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S084-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.075,
+        "y": 0.18004,
+        "w": 0.85,
+        "h": 0.69992
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.17656,
+          "w": 1.0,
+          "h": 0.82344
+        },
+        "engine": "autocrop v1",
+        "score": 0.4782,
+        "confidence": 0.805
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.82344
+        },
+        {
+          "x": 0.16456,
+          "y": 0.31206,
+          "w": 0.83544,
+          "h": 0.68794
+        },
+        {
+          "x": 0.32595,
+          "y": 0.0,
+          "w": 0.67405,
+          "h": 0.55504
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.67405,
+          "h": 0.55504
+        },
+        {
+          "x": 0.32595,
+          "y": 0.18762,
+          "w": 0.67405,
+          "h": 0.55504
+        }
+      ]
+    }
+  ]
+}

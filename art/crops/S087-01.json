@@ -1,0 +1,77 @@
+{
+  "id": "S087-01",
+  "source": "originals/S087-01.jpg",
+  "source_sha256": "72d4e91e075918caf86d6b6b63c593a5cd899a9744968b7ad06a396d37aad2da",
+  "source_size": [
+    800,
+    477
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S087",
+    "index": 1,
+    "title": "Alexander the Great diving bell (medieval art)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alexander_the_Great_%E2%80%94_diving_bell_332_BC_(medieval_art).jpg",
+    "licence": "Public domain (Commons PD-Art tags; BL images released to public domain). Digital Bodleian images of Bodley 264 are CC-BY-NC; use the Commons copies.",
+    "note": "Another miniature of Alexander's underwater descent in a glass bell",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S087-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.18188,
+        "y": 0.0,
+        "w": 0.59625,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.3515,
+        "confidence": 0.056,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 5e-05,
+          "y": 0.0,
+          "w": 0.59625,
+          "h": 1.0
+        },
+        {
+          "x": 0.4037,
+          "y": 0.0,
+          "w": 0.59625,
+          "h": 1.0
+        },
+        {
+          "x": 0.07036,
+          "y": 0.0,
+          "w": 0.59625,
+          "h": 1.0
+        },
+        {
+          "x": 0.27083,
+          "y": 0.0,
+          "w": 0.53125,
+          "h": 0.89099
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.46615,
+          "h": 0.7818
+        },
+        {
+          "x": 0.59896,
+          "y": 0.0,
+          "w": 0.40104,
+          "h": 0.67261
+        }
+      ]
+    }
+  ]
+}

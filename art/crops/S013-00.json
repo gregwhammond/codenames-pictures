@@ -1,0 +1,75 @@
+{
+  "id": "S013-00",
+  "source": "originals/S013-00.jpg",
+  "source_sha256": "0e03c39a91bfbe00703026a8668623b6b7702377fb672a0ccc5a0d0756751a57",
+  "source_size": [
+    960,
+    1433
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S013",
+    "index": 0,
+    "title": "WMS 693 Ripley Scroll: golden winged bird",
+    "source_url": "https://commons.wikimedia.org/wiki/File:WMS_693,_Ripley_Scroll,_Golden_winged_bird_Wellcome_L0031854.jpg",
+    "licence": "Public domain (PD-old); Wellcome photographs on Commons carry CC BY 4.0 (credit Wellcome Collection). Scrolls are tall and narrow, so use detail crops for cards. Contains some serpents/dragons.",
+    "note": "Gilded winged bird detail from the Wellcome Ripley Scroll",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S013-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.2346,
+        "w": 1.0,
+        "h": 0.66992
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.2346,
+          "w": 1.0,
+          "h": 0.66992
+        },
+        "engine": "autocrop v1",
+        "score": 0.4287,
+        "confidence": 1.0
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.1564,
+          "w": 1.0,
+          "h": 0.66992
+        },
+        {
+          "x": 0.0,
+          "y": 0.40306,
+          "w": 0.89105,
+          "h": 0.59694
+        },
+        {
+          "x": 0.0,
+          "y": 0.12773,
+          "w": 0.72763,
+          "h": 0.48745
+        },
+        {
+          "x": 0.27237,
+          "y": 0.12773,
+          "w": 0.72763,
+          "h": 0.48745
+        },
+        {
+          "x": 0.0,
+          "y": 0.29195,
+          "w": 0.67315,
+          "h": 0.45096
+        }
+      ]
+    }
+  ]
+}

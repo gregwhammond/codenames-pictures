@@ -1,0 +1,75 @@
+{
+  "id": "S035-12",
+  "source": "originals/S035-12.jpg",
+  "source_sha256": "a2109b9817db49d9e484068d556ea31e602f1d84810e58a535859884bd20b83a",
+  "source_size": [
+    912,
+    1306
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S035",
+    "index": 12,
+    "title": "Scènes vie privée Grandville",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sc%C3%A8nes_vie_priv%C3%A9e_Grandville.JPG",
+    "licence": "Public domain (Grandville died 1847; published 1840-42 and 1877). PD Image Archive and PDR mark the images public domain. The Commons page scan has a PD-old tag. Added pictures: Grandville d.1847, so PD. Met Open Access CC0 applies where the page shows the OA badge (typical for these prints). PD Image Archive and Commons are PD. Titles are from the Met; content notes are inferred from titles.",
+    "note": "Plate from the book",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S035-12",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.69832
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.69832
+        },
+        "engine": "autocrop v1",
+        "score": 0.4715,
+        "confidence": 0.998
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.11465,
+          "w": 1.0,
+          "h": 0.69832
+        },
+        {
+          "x": 0.16418,
+          "y": 0.0,
+          "w": 0.83582,
+          "h": 0.58367
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.67164,
+          "h": 0.46902
+        },
+        {
+          "x": 0.33582,
+          "y": 0.0,
+          "w": 0.56343,
+          "h": 0.39345
+        },
+        {
+          "x": 0.0,
+          "y": 0.35176,
+          "w": 0.89179,
+          "h": 0.62275
+        }
+      ]
+    }
+  ]
+}

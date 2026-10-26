@@ -1,0 +1,75 @@
+{
+  "id": "S040-02",
+  "source": "originals/S040-02.jpg",
+  "source_sha256": "91402dcaaa79c9a0bada22ae08beb120246a4b6d91fffb18736e9edacc11058c",
+  "source_size": [
+    960,
+    630
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S040",
+    "index": 2,
+    "title": "Oswald at Maserfield, f.259 detail",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Queen_Mary_Psalter_-_BL_Royal_2BVII_f259_(detail_-_Oswald_at_Maserfield).jpg",
+    "licence": "Public domain on Commons (PD-old) Added pictures: BL manuscript images released as PD on Commons; PICRYL marks these public domain.",
+    "note": "Battle scene from the legend of St Oswald",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S040-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.37391,
+        "y": 0.125,
+        "w": 0.49219,
+        "h": 0.75
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.26042,
+          "y": 0.0,
+          "w": 0.65625,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.4759,
+        "confidence": 0.573
+      },
+      "candidates": [
+        {
+          "x": 0.39844,
+          "y": 0.0,
+          "w": 0.58594,
+          "h": 0.89286
+        },
+        {
+          "x": 0.13021,
+          "y": 0.0,
+          "w": 0.65625,
+          "h": 1.0
+        },
+        {
+          "x": 0.5625,
+          "y": 0.0,
+          "w": 0.40625,
+          "h": 0.61905
+        },
+        {
+          "x": 0.27344,
+          "y": 0.16667,
+          "w": 0.44271,
+          "h": 0.6746
+        },
+        {
+          "x": 0.48438,
+          "y": 0.19048,
+          "w": 0.40625,
+          "h": 0.61905
+        }
+      ]
+    }
+  ]
+}

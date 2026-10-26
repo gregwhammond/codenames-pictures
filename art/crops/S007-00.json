@@ -1,0 +1,75 @@
+{
+  "id": "S007-00",
+  "source": "originals/S007-00.jpg",
+  "source_sha256": "2f3f95427cdef1e67eb5e1d08bfba75d7f20b046d80197517898e14afc3016bf",
+  "source_size": [
+    252,
+    156
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S007",
+    "index": 0,
+    "title": "Manticore (Mantichora)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mmantich.jpg",
+    "licence": "Public domain (1607/1658); Commons PD-old tags. Files from Wellcome (L-numbers) are CC BY 4.0 on Commons (credit Wellcome Collection). The 1658 edition has its own Commons category: https://commons.wikimedia.org/wiki/Category:The_History_of_Four-footed_Beasts_and_Serpents,_1658",
+    "note": "Man-faced lion with scorpion tail; probably Topsell's mantichora, check the source",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S007-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.03048,
+        "y": 0.0,
+        "w": 0.61905,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.02778,
+          "y": 0.10256,
+          "w": 0.55159,
+          "h": 0.89103
+        },
+        "engine": "autocrop v1",
+        "score": 0.5674,
+        "confidence": 0.712
+      },
+      "candidates": [
+        {
+          "x": 0.0873,
+          "y": 0.20513,
+          "w": 0.4881,
+          "h": 0.78846
+        },
+        {
+          "x": 0.02778,
+          "y": 0.05128,
+          "w": 0.45635,
+          "h": 0.73718
+        },
+        {
+          "x": 0.19444,
+          "y": 0.05128,
+          "w": 0.58333,
+          "h": 0.94231
+        },
+        {
+          "x": 0.23016,
+          "y": 0.1859,
+          "w": 0.36111,
+          "h": 0.58333
+        },
+        {
+          "x": 0.02778,
+          "y": 0.10256,
+          "w": 0.26587,
+          "h": 0.42949
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "S010-01",
+  "source": "originals/S010-01.jpg",
+  "source_sha256": "1816b1ac7b9b938183ad89cb100e066c6f9b3d8521a5f9fe19df4563f0fd6b5c",
+  "source_size": [
+    512,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S010",
+    "index": 1,
+    "title": "Myrmecoleon (1491)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Myrmecoleon_1491.jpg",
+    "licence": "Public domain (1491/1497); Commons PD-old. Wellcome L-number files are CC BY 4.0 (credit Wellcome Collection). Wider category: https://commons.wikimedia.org/wiki/Category:Hortus_Sanitatis Added pictures: Wellcome images CC-BY/PD; LoC Rare Book and Prints items generally 'no known restrictions'. The 1514 and unicorn/apes items are related Hortus editions; check the attribution before using. The Twin-tailed Siren/mermaid woodcut exists but was found only on stock sites (Alamy, Bridgeman), so it is not included.",
+    "note": "The mythical ant-lion, half ant half lion",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S010-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.14569,
+        "w": 1.0,
+        "h": 0.85333
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.14569,
+          "w": 1.0,
+          "h": 0.85333
+        },
+        "engine": "autocrop v1",
+        "score": 0.2486,
+        "confidence": 0.583
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.03382,
+          "w": 1.0,
+          "h": 0.85333
+        },
+        {
+          "x": 0.42073,
+          "y": 0.0,
+          "w": 0.50915,
+          "h": 0.43447
+        },
+        {
+          "x": 0.21341,
+          "y": 0.0,
+          "w": 0.56402,
+          "h": 0.4813
+        },
+        {
+          "x": 0.59451,
+          "y": 0.0,
+          "w": 0.39939,
+          "h": 0.34081
+        },
+        {
+          "x": 0.04573,
+          "y": 0.0,
+          "w": 0.39939,
+          "h": 0.34081
+        }
+      ]
+    }
+  ]
+}

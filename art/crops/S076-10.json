@@ -1,0 +1,75 @@
+{
+  "id": "S076-10",
+  "source": "originals/S076-10.jpg",
+  "source_sha256": "572d180f95f92a05a7e28761e42bfb33791aa1dbc9890a7d4272e43f19ea3701",
+  "source_size": [
+    960,
+    1014
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S076",
+    "index": 10,
+    "title": "Picrochole's counsellors urge him to conquer the world",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Les_conseillers_de_Pichrocole_l%27invitent_%C3%A0_conqu%C3%A9rir_le_monde_-_Gargantua,_Chapitre_33,_illustr%C3%A9_par_Gustave_Dor%C3%A9,_1873.jpg",
+    "licence": "Public domain (Doré d. 1883); Commons PD tags",
+    "note": "Pompous king planning world conquest",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S076-10",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.05202,
+        "w": 1.0,
+        "h": 0.94675
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.05202,
+          "w": 1.0,
+          "h": 0.94675
+        },
+        "engine": "autocrop v1",
+        "score": 0.5699,
+        "confidence": 0.799
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.94505,
+          "h": 0.89473
+        },
+        {
+          "x": 0.32692,
+          "y": 0.0,
+          "w": 0.67308,
+          "h": 0.63723
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.61813,
+          "h": 0.58521
+        },
+        {
+          "x": 0.21703,
+          "y": 0.25749,
+          "w": 0.78297,
+          "h": 0.74127
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.4011,
+          "h": 0.37974
+        }
+      ]
+    }
+  ]
+}

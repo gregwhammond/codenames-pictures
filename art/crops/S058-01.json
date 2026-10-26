@@ -1,0 +1,75 @@
+{
+  "id": "S058-01",
+  "source": "originals/S058-01.jpg",
+  "source_sha256": "0c6adbffe9f26239fe4a51186ec8a4618954299b8d25d16f24ca248894cd21ab",
+  "source_size": [
+    473,
+    625
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S058",
+    "index": 1,
+    "title": "Coffin of Imam 'Ali",
+    "source_url": "https://www.metmuseum.org/art/collection/search/451017",
+    "licence": "Met Open Access CC0; Smithsonian Open Access CC0 for most images.",
+    "note": "Mysterious veiled figure carrying a coffin on camel",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S058-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.025,
+        "y": 0.14052,
+        "w": 0.95,
+        "h": 0.71896
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.7568
+        },
+        "engine": "autocrop v1",
+        "score": 0.2947,
+        "confidence": 1.0
+      },
+      "candidates": [
+        {
+          "x": 0.10997,
+          "y": 0.0,
+          "w": 0.89003,
+          "h": 0.67358
+        },
+        {
+          "x": 0.0,
+          "y": 0.24186,
+          "w": 1.0,
+          "h": 0.7568
+        },
+        {
+          "x": 0.38144,
+          "y": 0.0,
+          "w": 0.61856,
+          "h": 0.46812
+        },
+        {
+          "x": 0.32646,
+          "y": 0.20805,
+          "w": 0.67354,
+          "h": 0.50973
+        },
+        {
+          "x": 0.60137,
+          "y": 0.0,
+          "w": 0.39863,
+          "h": 0.30168
+        }
+      ]
+    }
+  ]
+}

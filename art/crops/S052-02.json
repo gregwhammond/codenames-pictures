@@ -1,0 +1,75 @@
+{
+  "id": "S052-02",
+  "source": "originals/S052-02.jpg",
+  "source_sha256": "114e5027ffd1dea2b419212e9c529910fd23bb83bc24d062abd679ac437b92f7",
+  "source_size": [
+    960,
+    1497
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S052",
+    "index": 2,
+    "title": "Exodus plate",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Scheuchzer_%22Physica_sacra%22,_Exodus_Wellcome_L0015244.jpg",
+    "licence": "Public domain (Wellcome CC BY 4.0 / PD) Added pictures: Wellcome Collection images CC-BY / PD; engravings 1731-35.",
+    "note": "Exodus scene with scientific framing",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S052-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.04,
+        "y": 0.10501,
+        "w": 0.92,
+        "h": 0.58998
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.00521,
+          "w": 0.9878,
+          "h": 0.63346
+        },
+        "engine": "autocrop v1",
+        "score": 0.4426,
+        "confidence": 0.976
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.08342,
+          "w": 0.9878,
+          "h": 0.63346
+        },
+        {
+          "x": 0.21545,
+          "y": 0.00521,
+          "w": 0.77236,
+          "h": 0.4953
+        },
+        {
+          "x": 0.0,
+          "y": 0.00521,
+          "w": 0.71951,
+          "h": 0.46141
+        },
+        {
+          "x": 0.0,
+          "y": 0.31803,
+          "w": 0.9878,
+          "h": 0.63346
+        },
+        {
+          "x": 0.48374,
+          "y": 0.00521,
+          "w": 0.50407,
+          "h": 0.32325
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "S063-00",
+  "source": "originals/S063-00.jpg",
+  "source_sha256": "55447bd2716a12766971f2892a5b1d59c93714052fa22d3a26fa5b30fa7f2945",
+  "source_size": [
+    960,
+    1423
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S063",
+    "index": 0,
+    "title": "Ursa Major, Bodleian Marsh 144",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Al_Sufi_-_Book_of_Fixed_Stars_-_Ursa_Major_(The_Great_Bear)_-_Bodleian_Library_-_Marsh_144.jpg",
+    "licence": "Commons PD-Art (medieval works); Met originals are Open Access CC0; Bodleian images on Commons tagged PD but Bodleian's own site may be non-commercial",
+    "note": "Great Bear constellation as a star-spotted bear",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S063-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.025,
+        "y": 0.19955,
+        "w": 0.95,
+        "h": 0.6409
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.353,
+        "confidence": 0.563,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.05405,
+          "y": 0.0,
+          "w": 0.94595,
+          "h": 0.63816
+        },
+        {
+          "x": 0.16216,
+          "y": 0.0,
+          "w": 0.83784,
+          "h": 0.56523
+        },
+        {
+          "x": 0.43629,
+          "y": 0.0,
+          "w": 0.56371,
+          "h": 0.38029
+        },
+        {
+          "x": 0.28958,
+          "y": 0.0,
+          "w": 0.50965,
+          "h": 0.34383
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.56371,
+          "h": 0.38029
+        },
+        {
+          "x": 0.16988,
+          "y": 0.0,
+          "w": 0.40154,
+          "h": 0.27089
+        }
+      ]
+    }
+  ]
+}

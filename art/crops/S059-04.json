@@ -1,0 +1,75 @@
+{
+  "id": "S059-04",
+  "source": "originals/S059-04.webp",
+  "source_sha256": "0eca5d7835df52e8809fa01fa8ae0039c390ce7e31e05965bc585702c0314ee8",
+  "source_size": [
+    960,
+    983
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S059",
+    "index": 4,
+    "title": "Iblis (BnF copy)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Metali-%C3%BCl_saadet_ve_yenabi-%C3%BCl_siyadet_%C4%B0blis.webp",
+    "licence": "Morgan images: check Morgan terms (generally non-commercial reuse); Commons copy of BnF MS is PD. Commons category: https://commons.wikimedia.org/wiki/Category:Metali%CA%BF%C3%BC'l-saadet_ve_yenabi%CA%BF%C3%BC-l-siyadet_(BnF_Suppl%C3%A9ment_turc_242)",
+    "note": "Iblis refusing to bow; demon, list last",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S059-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0234,
+        "w": 1.0,
+        "h": 0.9766
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0234,
+          "w": 1.0,
+          "h": 0.9766
+        },
+        "engine": "autocrop v1",
+        "score": 0.6331,
+        "confidence": 0.668
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.13017,
+          "w": 0.89067,
+          "h": 0.86983
+        },
+        {
+          "x": 0.0,
+          "y": 0.39581,
+          "w": 0.61867,
+          "h": 0.60419
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.728,
+          "h": 0.71097
+        },
+        {
+          "x": 0.21867,
+          "y": 0.0,
+          "w": 0.78133,
+          "h": 0.76305
+        },
+        {
+          "x": 0.0,
+          "y": 0.25001,
+          "w": 0.56267,
+          "h": 0.5495
+        }
+      ]
+    }
+  ]
+}

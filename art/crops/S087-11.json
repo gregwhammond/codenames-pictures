@@ -1,0 +1,75 @@
+{
+  "id": "S087-11",
+  "source": "originals/S087-11.jpg",
+  "source_sha256": "195c47a33a2b198033683e79993886421e05793f266ba508c4e228723ebae062",
+  "source_size": [
+    729,
+    441
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S087",
+    "index": 11,
+    "title": "Alexander unhorsing Porus (Royal 20 B XX f.53r)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alexander_unhorsing_Porrus_-_British_Library_Royal_MS_20_B_xx_f53r_(detail).jpg",
+    "licence": "Public domain (Commons PD-Art tags; BL images released to public domain). Digital Bodleian images of Bodley 264 are CC-BY-NC; use the Commons copies.",
+    "note": "Jousting kings, one knocked from his horse",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S087-11",
+      "mode": "crop",
+      "box": {
+        "x": 0.21265,
+        "y": 0.025,
+        "w": 0.57469,
+        "h": 0.95
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.60417,
+          "h": 0.99872
+        },
+        "engine": "autocrop v1",
+        "score": 0.3746,
+        "confidence": 0.148
+      },
+      "candidates": [
+        {
+          "x": 0.32812,
+          "y": 0.0,
+          "w": 0.60417,
+          "h": 0.99872
+        },
+        {
+          "x": 0.11719,
+          "y": 0.0,
+          "w": 0.60417,
+          "h": 0.99872
+        },
+        {
+          "x": 0.0,
+          "y": 0.16358,
+          "w": 0.50521,
+          "h": 0.83514
+        },
+        {
+          "x": 0.3099,
+          "y": 0.0,
+          "w": 0.4401,
+          "h": 0.72752
+        },
+        {
+          "x": 0.52865,
+          "y": 0.0,
+          "w": 0.47135,
+          "h": 0.77918
+        }
+      ]
+    }
+  ]
+}

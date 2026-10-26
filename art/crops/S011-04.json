@@ -1,0 +1,75 @@
+{
+  "id": "S011-04",
+  "source": "originals/S011-04.jpg",
+  "source_sha256": "7d7998f03704e317e6069b56ebab3215be3bdab110575232138920d265eef009",
+  "source_size": [
+    591,
+    567
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S011",
+    "index": 4,
+    "title": "Emblem 9: Shut the tree with the old man in a dewy house",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Michael_Maier_Atalanta_Fugiens_Emblem_09.jpeg",
+    "licence": "Public domain (1618; PD-old on Commons). Science History Institute digital collections are also openly reusable.",
+    "note": "Old man and fruit tree sealed inside a glass house",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S011-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.95833,
+        "h": 0.9989
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.95833,
+          "h": 0.9989
+        },
+        "engine": "autocrop v1",
+        "score": 0.5275,
+        "confidence": 0.866
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.85417,
+          "h": 0.89032
+        },
+        {
+          "x": 0.0,
+          "y": 0.32573,
+          "w": 0.64583,
+          "h": 0.67317
+        },
+        {
+          "x": 0.30208,
+          "y": 0.0,
+          "w": 0.69792,
+          "h": 0.72746
+        },
+        {
+          "x": 0.25,
+          "y": 0.21715,
+          "w": 0.75,
+          "h": 0.78175
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.59115,
+          "h": 0.61617
+        }
+      ]
+    }
+  ]
+}

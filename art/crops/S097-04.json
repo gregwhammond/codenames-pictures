@@ -1,0 +1,75 @@
+{
+  "id": "S097-04",
+  "source": "originals/S097-04.jpg",
+  "source_sha256": "0ce82975914adb879380f5fda5451ee540a4c8e8f6e043191c5d05c6403c8f87",
+  "source_size": [
+    1200,
+    630
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S097",
+    "index": 4,
+    "title": "Strange Fish 20 (怪魚二十)",
+    "source_url": "https://digitalarchive.npm.gov.tw/Collection/Detail/19555?dep=P",
+    "licence": "NPM open data CC BY 4.0 (credit NPM). Date uncertain; if 1868 still long public domain.",
+    "note": "Strange fish; subject not described",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S097-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.60313,
+        "y": 0.125,
+        "w": 0.39375,
+        "h": 0.75
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.3125,
+          "y": 0.19841,
+          "w": 0.29688,
+          "h": 0.56548
+        },
+        "engine": "autocrop v1",
+        "score": 0.886,
+        "confidence": 0.092
+      },
+      "candidates": [
+        {
+          "x": 0.30208,
+          "y": 0.25794,
+          "w": 0.29688,
+          "h": 0.56548
+        },
+        {
+          "x": 0.28646,
+          "y": 0.0248,
+          "w": 0.35417,
+          "h": 0.6746
+        },
+        {
+          "x": 0.39062,
+          "y": 0.2381,
+          "w": 0.23958,
+          "h": 0.45635
+        },
+        {
+          "x": 0.3125,
+          "y": 0.17857,
+          "w": 0.41146,
+          "h": 0.78373
+        },
+        {
+          "x": 0.39062,
+          "y": 0.02976,
+          "w": 0.38281,
+          "h": 0.72917
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "S018-04",
+  "source": "originals/S018-04.jpg",
+  "source_sha256": "559fbc08cd8d7a549b7f9e14a73dd672b711b1db5ed7bb3f4666e679ed18015d",
+  "source_size": [
+    457,
+    624
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S018",
+    "index": 4,
+    "title": "Figure for Use at Drinking Parties",
+    "source_url": "https://www.metmuseum.org/art/collection/search/451299",
+    "licence": "Met folios: Open Access (CC0). Freer/NMAA folios: Smithsonian Open Access (CC0) for images marked as such; check each object page. Commons copies: PD-Art (13th/14th-century works).",
+    "note": "Automaton figure that serves drinks to party guests",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S018-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.02,
+        "y": 0.07332,
+        "w": 0.66,
+        "h": 0.48337
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.11468,
+          "w": 1.0,
+          "h": 0.73237
+        },
+        "engine": "autocrop v1",
+        "score": 0.552,
+        "confidence": 0.683
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.02867,
+          "w": 1.0,
+          "h": 0.73237
+        },
+        {
+          "x": 0.2242,
+          "y": 0.07298,
+          "w": 0.6726,
+          "h": 0.49259
+        },
+        {
+          "x": 0.07117,
+          "y": 0.28669,
+          "w": 0.88968,
+          "h": 0.65158
+        },
+        {
+          "x": 0.02491,
+          "y": 0.10946,
+          "w": 0.61922,
+          "h": 0.4535
+        },
+        {
+          "x": 0.08541,
+          "y": 0.0,
+          "w": 0.56228,
+          "h": 0.4118
+        }
+      ]
+    }
+  ]
+}

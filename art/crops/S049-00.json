@@ -1,0 +1,75 @@
+{
+  "id": "S049-00",
+  "source": "originals/S049-00.jpg",
+  "source_sha256": "4de2ed6853dff234deb158cad3ecb8307f68782dea053dc6149b9a6dcdf96e22",
+  "source_size": [
+    960,
+    764
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S049",
+    "index": 0,
+    "title": "The First Key",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_First_Key_of_Basil_Valentine._Wellcome_M0012394.jpg",
+    "licence": "Public domain (Wellcome images CC BY 4.0 on Commons)",
+    "note": "Wolf leaps at a crucible beside king and queen",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S049-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.08392,
+        "y": 0.08,
+        "w": 0.73217,
+        "h": 0.92
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00052,
+          "y": 0.0,
+          "w": 0.79583,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.4437,
+        "confidence": 0.453
+      },
+      "candidates": [
+        {
+          "x": 0.20365,
+          "y": 0.0,
+          "w": 0.79583,
+          "h": 1.0
+        },
+        {
+          "x": 0.0,
+          "y": 0.10668,
+          "w": 0.71094,
+          "h": 0.89332
+        },
+        {
+          "x": 0.46354,
+          "y": 0.32592,
+          "w": 0.53646,
+          "h": 0.67408
+        },
+        {
+          "x": 0.22917,
+          "y": 0.18325,
+          "w": 0.53646,
+          "h": 0.67408
+        },
+        {
+          "x": 0.0,
+          "y": 0.18325,
+          "w": 0.49219,
+          "h": 0.61846
+        }
+      ]
+    }
+  ]
+}

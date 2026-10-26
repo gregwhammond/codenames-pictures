@@ -1,0 +1,75 @@
+{
+  "id": "S021-03",
+  "source": "originals/S021-03.jpg",
+  "source_sha256": "3d2e05e379460ded0868abe8d31b6772e12e9b5763f265895f48cdb91143a017",
+  "source_size": [
+    519,
+    600
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S021",
+    "index": 3,
+    "title": "Nurarihyon",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Suushi_Nurarihyon.jpg",
+    "licence": "Commons public-domain tags (1737 work, PD-Art). Overlaps in subject with the yokai scrolls already in the deck, but it is a different scroll.",
+    "note": "Gourd-headed old man yokai",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S021-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.865
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.865
+        },
+        "engine": "autocrop v1",
+        "score": 0.5781,
+        "confidence": 0.861
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.89157,
+          "h": 0.7712
+        },
+        {
+          "x": 0.07229,
+          "y": 0.2288,
+          "w": 0.89157,
+          "h": 0.7712
+        },
+        {
+          "x": 0.04819,
+          "y": 0.0,
+          "w": 0.61747,
+          "h": 0.53411
+        },
+        {
+          "x": 0.26506,
+          "y": 0.0,
+          "w": 0.61747,
+          "h": 0.53411
+        },
+        {
+          "x": 0.23494,
+          "y": 0.0,
+          "w": 0.45482,
+          "h": 0.39342
+        }
+      ]
+    }
+  ]
+}

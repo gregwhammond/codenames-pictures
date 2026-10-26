@@ -1,0 +1,75 @@
+{
+  "id": "S062-00",
+  "source": "originals/S062-00.jpg",
+  "source_sha256": "24f759641bead5609dff7cab1722afc098d92ab53b5193a5131e4d75beabef45",
+  "source_size": [
+    960,
+    1506
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S062",
+    "index": 0,
+    "title": "Akbar riding Hawa'i across a collapsing bridge of boats",
+    "source_url": "https://commons.wikimedia.org/wiki/File:1561-Akbar_riding_the_elephant_Hawa'I_pursuing_another_elephant_across_a_collapsing_bridge_of_boats_(left).jpg",
+    "licence": "Met Open Access CC0; Commons PD; V&A originals on Commons PD (V&A site has own terms).",
+    "note": "Raging elephant chase over sinking boat bridge",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S062-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.63745
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.63745
+        },
+        "engine": "autocrop v1",
+        "score": 0.2416,
+        "confidence": 1.0
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.8898,
+          "h": 0.5672
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.61633,
+          "h": 0.39288
+        },
+        {
+          "x": 0.0,
+          "y": 0.15611,
+          "w": 1.0,
+          "h": 0.63745
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.4,
+          "h": 0.25498
+        },
+        {
+          "x": 0.20408,
+          "y": 0.0,
+          "w": 0.56327,
+          "h": 0.35905
+        }
+      ]
+    }
+  ]
+}

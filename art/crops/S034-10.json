@@ -1,0 +1,77 @@
+{
+  "id": "S034-10",
+  "source": "originals/S034-10.webp",
+  "source_sha256": "83d678d98e2d780a6bb17cf4180cb8667e27bcd941fe6e0f616804c8bc68549a",
+  "source_size": [
+    1200,
+    631
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S034",
+    "index": 10,
+    "title": "Return of the flowers",
+    "source_url": "https://pdimagearchive.org/images/72ce62b2-0b1f-4303-aa21-d29ad900b784/",
+    "licence": "Public domain (Grandville died 1847; published 1847/1849). PD Image Archive and PDR mark the images public domain. Commons copies are in Category:Les Fleurs animées with PD-old tags.",
+    "note": "Flower-figures going back into plant form",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S034-10",
+      "mode": "crop",
+      "box": {
+        "x": 0.25281,
+        "y": 0.245,
+        "w": 0.39437,
+        "h": 0.75
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.1835,
+        "confidence": 0.783,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.09115,
+          "y": 0.38094,
+          "w": 0.32552,
+          "h": 0.61906
+        },
+        {
+          "x": 0.16667,
+          "y": 0.4899,
+          "w": 0.26823,
+          "h": 0.5101
+        },
+        {
+          "x": 0.07302,
+          "y": 0.0,
+          "w": 0.52583,
+          "h": 1.0
+        },
+        {
+          "x": 0.05208,
+          "y": 0.27199,
+          "w": 0.38281,
+          "h": 0.72801
+        },
+        {
+          "x": 0.07292,
+          "y": 0.4899,
+          "w": 0.26823,
+          "h": 0.5101
+        },
+        {
+          "x": 0.64583,
+          "y": 0.4899,
+          "w": 0.26823,
+          "h": 0.5101
+        }
+      ]
+    }
+  ]
+}

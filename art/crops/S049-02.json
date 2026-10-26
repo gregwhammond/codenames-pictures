@@ -1,0 +1,75 @@
+{
+  "id": "S049-02",
+  "source": "originals/S049-02.jpg",
+  "source_sha256": "e99e5ac9af9eaf276e965c6a15638af1eedf5c8d13d57bb0e36cef22ac40051f",
+  "source_size": [
+    960,
+    798
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S049",
+    "index": 2,
+    "title": "The Fifth Key",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_Fifth_Key_of_Basil_Valentine._Wellcome_M0012398.jpg",
+    "licence": "Public domain (Wellcome images CC BY 4.0 on Commons)",
+    "note": "Alchemical key emblem",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S049-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.06672,
+        "y": 0.125,
+        "w": 0.70656,
+        "h": 0.85
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.83073,
+          "h": 0.99937
+        },
+        "engine": "autocrop v1",
+        "score": 0.5253,
+        "confidence": 0.587
+      },
+      "candidates": [
+        {
+          "x": 0.16927,
+          "y": 0.0,
+          "w": 0.83073,
+          "h": 0.99937
+        },
+        {
+          "x": 0.0,
+          "y": 0.16291,
+          "w": 0.69531,
+          "h": 0.83647
+        },
+        {
+          "x": 0.375,
+          "y": 0.32581,
+          "w": 0.5599,
+          "h": 0.67356
+        },
+        {
+          "x": 0.0,
+          "y": 0.43546,
+          "w": 0.46875,
+          "h": 0.56391
+        },
+        {
+          "x": 0.11719,
+          "y": 0.0,
+          "w": 0.60417,
+          "h": 0.72682
+        }
+      ]
+    }
+  ]
+}

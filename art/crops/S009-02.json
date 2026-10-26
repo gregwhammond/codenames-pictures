@@ -1,0 +1,72 @@
+{
+  "id": "S009-02",
+  "source": "originals/S009-02.jpg",
+  "source_sha256": "6476aa3ef77d3103a62412e5d2c3d3496ed418ca9a621a75e4b784f5e82b1612",
+  "source_size": [
+    280,
+    157
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S009",
+    "index": 2,
+    "title": "Dogs (1544)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dogs_Cosmographia_(1544)_by_Sebastian_M%C3%BCnster.jpg",
+    "licence": "Public domain (16th-17th century); Commons PD-old tags. Also see https://commons.wikimedia.org/wiki/Category:Animals_in_M%C3%BCnster's_Cosmographia",
+    "note": "Woodcut of dogs",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S009-02",
+      "mode": "fit",
+      "box": null,
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.3603,
+        "confidence": 0.253,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.43929,
+          "y": 0.0,
+          "w": 0.56071,
+          "h": 1.0
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.56071,
+          "h": 1.0
+        },
+        {
+          "x": 0.36429,
+          "y": 0.0,
+          "w": 0.56071,
+          "h": 1.0
+        },
+        {
+          "x": 0.56071,
+          "y": 0.21656,
+          "w": 0.43929,
+          "h": 0.78344
+        },
+        {
+          "x": 0.19286,
+          "y": 0.05732,
+          "w": 0.52857,
+          "h": 0.94268
+        },
+        {
+          "x": 0.59286,
+          "y": 0.0,
+          "w": 0.40714,
+          "h": 0.72611
+        }
+      ]
+    }
+  ]
+}

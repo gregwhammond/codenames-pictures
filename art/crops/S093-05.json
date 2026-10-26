@@ -1,0 +1,75 @@
+{
+  "id": "S093-05",
+  "source": "originals/S093-05.jpg",
+  "source_sha256": "c2d3b456944e52bdc5e40aa4182c7fd0657d013f983897d532354ccf60200f40",
+  "source_size": [
+    960,
+    1442
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S093",
+    "index": 5,
+    "title": "Musaeum Hermeticum 1678 p.353 Dragon",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Musaeum_Hermeticum_1678_p_353_Dragon_0049.JPG",
+    "licence": "Commons PD tags; Science History Institute images are public domain/free to use. Only 3 Lambspring plates found as single files; others filled from the same volume.",
+    "note": "Lambspring dragon emblem; deck already has many dragons",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S093-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.02,
+        "y": 0.20376,
+        "w": 0.92,
+        "h": 0.61248
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.20804,
+          "w": 1.0,
+          "h": 0.66574
+        },
+        "engine": "autocrop v1",
+        "score": 0.7309,
+        "confidence": 0.948
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.13003,
+          "w": 1.0,
+          "h": 0.66574
+        },
+        {
+          "x": 0.05469,
+          "y": 0.36408,
+          "w": 0.94531,
+          "h": 0.62933
+        },
+        {
+          "x": 0.0,
+          "y": 0.21845,
+          "w": 0.67188,
+          "h": 0.4473
+        },
+        {
+          "x": 0.0,
+          "y": 0.34587,
+          "w": 0.72656,
+          "h": 0.4837
+        },
+        {
+          "x": 0.32812,
+          "y": 0.21845,
+          "w": 0.67188,
+          "h": 0.4473
+        }
+      ]
+    }
+  ]
+}

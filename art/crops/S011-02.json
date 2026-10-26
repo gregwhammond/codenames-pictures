@@ -1,0 +1,75 @@
+{
+  "id": "S011-02",
+  "source": "originals/S011-02.jpg",
+  "source_sha256": "e6770bb6084dc3b353f06ff42a56342c81bd1f93909bfa5f408748b2836a91d0",
+  "source_size": [
+    603,
+    546
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S011",
+    "index": 2,
+    "title": "Emblem 3: Go to the woman washing clothes",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Michael_Maier_Atalanta_Fugiens_Emblem_03.jpeg",
+    "licence": "Public domain (1618; PD-old on Commons). Science History Institute digital collections are also openly reusable.",
+    "note": "Washerwoman scrubbing laundry in a tub while a man watches",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S011-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.00039,
+        "y": 0.0,
+        "w": 0.90547,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00039,
+          "y": 0.0,
+          "w": 0.90547,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.5578,
+        "confidence": 0.718
+      },
+      "candidates": [
+        {
+          "x": 0.14323,
+          "y": 0.05379,
+          "w": 0.85677,
+          "h": 0.94621
+        },
+        {
+          "x": 0.0,
+          "y": 0.21772,
+          "w": 0.70833,
+          "h": 0.78228
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.65885,
+          "h": 0.72764
+        },
+        {
+          "x": 0.39062,
+          "y": 0.0,
+          "w": 0.60938,
+          "h": 0.67299
+        },
+        {
+          "x": 0.4401,
+          "y": 0.38165,
+          "w": 0.5599,
+          "h": 0.61835
+        }
+      ]
+    }
+  ]
+}

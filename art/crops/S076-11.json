@@ -1,0 +1,75 @@
+{
+  "id": "S076-11",
+  "source": "originals/S076-11.jpg",
+  "source_sha256": "543ba767e67b5b6888569fc570c60bb0579c5c232b406e27f2f9bdf16e6a6690",
+  "source_size": [
+    618,
+    768
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S076",
+    "index": 11,
+    "title": "Pantagruel 02",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pantagruel02.jpg",
+    "licence": "Public domain (Doré d. 1883); Commons PD tags",
+    "note": "Pantagruel plate",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S076-11",
+      "mode": "crop",
+      "box": {
+        "x": 0.2,
+        "y": 0.28859,
+        "w": 0.6,
+        "h": 0.48281
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.80469
+        },
+        "engine": "autocrop v1",
+        "score": 0.5024,
+        "confidence": 0.888
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.09375,
+          "w": 1.0,
+          "h": 0.80469
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.78317,
+          "h": 0.63021
+        },
+        {
+          "x": 0.27184,
+          "y": 0.0,
+          "w": 0.72816,
+          "h": 0.58594
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.50809,
+          "h": 0.40885
+        },
+        {
+          "x": 0.48544,
+          "y": 0.0,
+          "w": 0.50809,
+          "h": 0.40885
+        }
+      ]
+    }
+  ]
+}

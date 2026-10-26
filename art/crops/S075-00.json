@@ -1,0 +1,75 @@
+{
+  "id": "S075-00",
+  "source": "originals/S075-00.jpg",
+  "source_sha256": "14f1cdf504266932907be5fb689207de76dd4591448050e4897dacab3ec4c26c",
+  "source_size": [
+    600,
+    472
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S075",
+    "index": 0,
+    "title": "The World Turned Upside Down (Il Mondo alla Riversa), Nicolò Nelli",
+    "source_url": "https://www.metmuseum.org/art/collection/search/393348",
+    "licence": "Rijksmuseum CC0/public domain; Met Open Access CC0; LoC no known restrictions; Commons PD tags. Caveat: most sheets are grids of many small vignettes, so crop single panels for cards",
+    "note": "Italian engraved sheet of topsy-turvy vignettes",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S075-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.78646,
+        "h": 0.99974
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.78646,
+          "h": 0.99974
+        },
+        "engine": "autocrop v1",
+        "score": 0.3149,
+        "confidence": 0.231
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.65885,
+          "h": 0.83753
+        },
+        {
+          "x": 0.46875,
+          "y": 0.0,
+          "w": 0.52865,
+          "h": 0.67201
+        },
+        {
+          "x": 0.21094,
+          "y": 0.0,
+          "w": 0.78646,
+          "h": 0.99974
+        },
+        {
+          "x": 0.22917,
+          "y": 0.0,
+          "w": 0.52865,
+          "h": 0.67201
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.44271,
+          "h": 0.56276
+        }
+      ]
+    }
+  ]
+}

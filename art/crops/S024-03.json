@@ -1,0 +1,75 @@
+{
+  "id": "S024-03",
+  "source": "originals/S024-03.jpg",
+  "source_sha256": "d10fbfa6915194f869762e27550a26b8e248d0e6a00db33f3f1ca98f99df577b",
+  "source_size": [
+    477,
+    624
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S024",
+    "index": 3,
+    "title": "Fish in a Whirlpool",
+    "source_url": "https://www.metmuseum.org/art/collection/search/54617",
+    "licence": "Met Open Access (CC0) for public-domain objects; check the Open Access flag on each page. Kyosai died 1889. A group of separate works at one museum, not a single book.",
+    "note": "Fish swirling in a whirlpool",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S024-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.76442
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.76442
+        },
+        "engine": "autocrop v1",
+        "score": 0.5668,
+        "confidence": 0.888
+      },
+      "candidates": [
+        {
+          "x": 0.16327,
+          "y": 0.0,
+          "w": 0.83673,
+          "h": 0.63962
+        },
+        {
+          "x": 0.0,
+          "y": 0.1248,
+          "w": 1.0,
+          "h": 0.76442
+        },
+        {
+          "x": 0.21769,
+          "y": 0.27041,
+          "w": 0.67347,
+          "h": 0.51482
+        },
+        {
+          "x": 0.08163,
+          "y": 0.1456,
+          "w": 0.67347,
+          "h": 0.51482
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.67347,
+          "h": 0.51482
+        }
+      ]
+    }
+  ]
+}

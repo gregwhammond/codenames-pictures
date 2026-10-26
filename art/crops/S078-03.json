@@ -1,0 +1,75 @@
+{
+  "id": "S078-03",
+  "source": "originals/S078-03.webp",
+  "source_sha256": "33d6531cb73c7355f7ed789fd04f55f967c0558dddaaa48712b197790b431a27",
+  "source_size": [
+    1026,
+    539
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S078",
+    "index": 3,
+    "title": "Beer",
+    "source_url": "https://pdimagearchive.org/images/dc2df70f-adba-486a-bfcd-299f0e6ae6e9/",
+    "licence": "Public domain (Bennett d. 1867); PDR/PDIA mark as public domain",
+    "note": "Drinker whose shadow becomes a beer barrel/tankard",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S078-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.39618,
+        "y": 0.0,
+        "w": 0.52534,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.39618,
+          "y": 0.0,
+          "w": 0.52534,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.4624,
+        "confidence": 0.375
+      },
+      "candidates": [
+        {
+          "x": 0.33368,
+          "y": 0.0,
+          "w": 0.52534,
+          "h": 1.0
+        },
+        {
+          "x": 0.14618,
+          "y": 0.0,
+          "w": 0.52534,
+          "h": 1.0
+        },
+        {
+          "x": 0.51562,
+          "y": 0.16225,
+          "w": 0.4401,
+          "h": 0.83775
+        },
+        {
+          "x": 0.58333,
+          "y": 0.0,
+          "w": 0.38281,
+          "h": 0.72869
+        },
+        {
+          "x": 0.45833,
+          "y": 0.32583,
+          "w": 0.35417,
+          "h": 0.67417
+        }
+      ]
+    }
+  ]
+}

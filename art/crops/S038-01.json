@@ -1,0 +1,77 @@
+{
+  "id": "S038-01",
+  "source": "originals/S038-01.jpg",
+  "source_sha256": "2326e1215ec44a7b02a5e98d6363489c1f1672771d08663cd9a9ef62c414d74a",
+  "source_size": [
+    960,
+    398
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S038",
+    "index": 1,
+    "title": "Wolf, goat and cabbage problem (cropped)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Illuminated_illustration_of_the_wolf,_goat_and_cabbage_problem_in_the_Ormesby_Psalter_(cropped).jpg",
+    "licence": "Public domain on Commons (PD-old); Bodleian own images CC BY-NC Added pictures: Manuscript c.1300 is PD; these are Bodleian (MS Douce 366) images reposted on Tumblr/bestiary.ca, Bodleian images are generally CC-BY-NC. Treat as secondary hosts; prefer Digital Bodleian page if a commercial-safe copy is needed.",
+    "note": "Tighter crop of the river-crossing puzzle scene",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S038-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.04271,
+        "y": 0.0,
+        "w": 0.41458,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.1995,
+        "confidence": 0.085,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.41406,
+          "h": 0.99874
+        },
+        {
+          "x": 0.29688,
+          "y": 0.0,
+          "w": 0.41406,
+          "h": 0.99874
+        },
+        {
+          "x": 0.5625,
+          "y": 0.0,
+          "w": 0.41406,
+          "h": 0.99874
+        },
+        {
+          "x": 0.15625,
+          "y": 0.0,
+          "w": 0.41406,
+          "h": 0.99874
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.36979,
+          "h": 0.89196
+        },
+        {
+          "x": 0.4375,
+          "y": 0.0,
+          "w": 0.39062,
+          "h": 0.94221
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "S016-08",
+  "source": "originals/S016-08.jpg",
+  "source_sha256": "0f3d038ce296c447e21fa7310a9b186d6898716ba00c3946ecebe0e21e7aca85",
+  "source_size": [
+    960,
+    741
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S016",
+    "index": 8,
+    "title": "Mare Humorum (1875)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Trouvelot_-_Mare_Humorum_-_1875.jpg",
+    "licence": "Public domain (Trouvelot died 1895; published 1881-82); Commons PD tags. NYPL originals are also marked public domain.",
+    "note": "Close-up of a cratered lunar plain",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S016-08",
+      "mode": "crop",
+      "box": {
+        "x": 0.27195,
+        "y": 0.055,
+        "w": 0.65609,
+        "h": 0.85
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.21875,
+          "y": 0.0,
+          "w": 0.77083,
+          "h": 0.99865
+        },
+        "engine": "autocrop v1",
+        "score": 0.5424,
+        "confidence": 0.712
+      },
+      "candidates": [
+        {
+          "x": 0.125,
+          "y": 0.0,
+          "w": 0.77083,
+          "h": 0.99865
+        },
+        {
+          "x": 0.375,
+          "y": 0.18219,
+          "w": 0.60156,
+          "h": 0.77935
+        },
+        {
+          "x": 0.4401,
+          "y": 0.0,
+          "w": 0.5599,
+          "h": 0.72537
+        },
+        {
+          "x": 0.0,
+          "y": 0.03374,
+          "w": 0.64583,
+          "h": 0.83671
+        },
+        {
+          "x": 0.5625,
+          "y": 0.38462,
+          "w": 0.4349,
+          "h": 0.56343
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "S050-00",
+  "source": "originals/S050-00.jpg",
+  "source_sha256": "46a7d9aeddc265d1cb8041ebe65f2aeef03736af507df453a7f4b3a92f464c16",
+  "source_size": [
+    960,
+    1391
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S050",
+    "index": 0,
+    "title": "Ape of nature",
+    "source_url": "https://commons.wikimedia.org/wiki/File:R._Fludd,_%22Utriusque_cosmi_historia...%22,_1624;_ape_of_nature_Wellcome_L0025673.jpg",
+    "licence": "Public domain (Commons; Wellcome CC BY 4.0) Added pictures: Wellcome images CC-BY/PD on Commons; 1617 engraving PD.",
+    "note": "Monkey at the centre of rings of arts and crafts",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S050-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.09,
+        "y": 0.34704,
+        "w": 0.82,
+        "h": 0.56592
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.25783,
+          "w": 1.0,
+          "h": 0.69015
+        },
+        "engine": "autocrop v1",
+        "score": 0.6784,
+        "confidence": 0.849
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.17189,
+          "w": 1.0,
+          "h": 0.69015
+        },
+        {
+          "x": 0.16226,
+          "y": 0.39846,
+          "w": 0.83774,
+          "h": 0.57816
+        },
+        {
+          "x": 0.3283,
+          "y": 0.29169,
+          "w": 0.6717,
+          "h": 0.46357
+        },
+        {
+          "x": 0.21887,
+          "y": 0.10417,
+          "w": 0.78113,
+          "h": 0.5391
+        },
+        {
+          "x": 0.0,
+          "y": 0.29169,
+          "w": 0.6717,
+          "h": 0.46357
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "S065-07",
+  "source": "originals/S065-07.jpg",
+  "source_sha256": "02e4e380c5f5945e044d0bb8c66dfb3879d4e254bb7c5994b54845b1415f2334",
+  "source_size": [
+    500,
+    346
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S065",
+    "index": 7,
+    "title": "Satori",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Masasumi_Satori.jpg",
+    "licence": "Public domain (1853); Met copy is Open Access CC0",
+    "note": "Mind-reading mountain ape",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S065-07",
+      "mode": "crop",
+      "box": {
+        "x": 0.104,
+        "y": 0.0,
+        "w": 0.692,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.30765,
+          "y": 0.0,
+          "w": 0.692,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.5194,
+        "confidence": 0.539
+      },
+      "candidates": [
+        {
+          "x": 0.38281,
+          "y": 0.10811,
+          "w": 0.61719,
+          "h": 0.89189
+        },
+        {
+          "x": 0.14358,
+          "y": 0.0,
+          "w": 0.692,
+          "h": 1.0
+        },
+        {
+          "x": 0.0,
+          "y": 0.16456,
+          "w": 0.57812,
+          "h": 0.83544
+        },
+        {
+          "x": 0.53385,
+          "y": 0.0,
+          "w": 0.46615,
+          "h": 0.67362
+        },
+        {
+          "x": 0.57292,
+          "y": 0.38283,
+          "w": 0.42708,
+          "h": 0.61717
+        }
+      ]
+    }
+  ]
+}

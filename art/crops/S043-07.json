@@ -1,0 +1,75 @@
+{
+  "id": "S043-07",
+  "source": "originals/S043-07.jpg",
+  "source_sha256": "89582868018016038536477f44372e97deba25fcb23ef2af9c095162d8801b83",
+  "source_size": [
+    343,
+    350
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S043",
+    "index": 7,
+    "title": "Antichrist",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hortus_Deliciarum_-_Antichrist.jpg",
+    "licence": "Public domain on Commons (PD-old; 19th-c. facsimile copies)",
+    "note": "Antichrist scene (religious, less preferred)",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S043-07",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.02,
+        "w": 1.0,
+        "h": 0.98
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.02,
+          "w": 1.0,
+          "h": 0.98
+        },
+        "engine": "autocrop v1",
+        "score": 0.6492,
+        "confidence": 0.791
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.12571,
+          "w": 0.89213,
+          "h": 0.87429
+        },
+        {
+          "x": 0.32653,
+          "y": 0.34,
+          "w": 0.67347,
+          "h": 0.66
+        },
+        {
+          "x": 0.31487,
+          "y": 0.10286,
+          "w": 0.67347,
+          "h": 0.66
+        },
+        {
+          "x": 0.0,
+          "y": 0.13714,
+          "w": 0.61808,
+          "h": 0.60571
+        },
+        {
+          "x": 0.0,
+          "y": 0.39429,
+          "w": 0.61808,
+          "h": 0.60571
+        }
+      ]
+    }
+  ]
+}

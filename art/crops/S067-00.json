@@ -1,0 +1,77 @@
+{
+  "id": "S067-00",
+  "source": "originals/S067-00.jpg",
+  "source_sha256": "9e94e91d9de7147047a2c1da9daceac9e066ba4c9496c17e55549d5f126c2f65",
+  "source_size": [
+    960,
+    472
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S067",
+    "index": 0,
+    "title": "Takiyasha the Witch and the Skeleton Spectre",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Takiyasha_the_Witch_and_the_Skeleton_Spectre.jpg",
+    "licence": "Public domain (Kuniyoshi d. 1861), Commons PD tags; British Museum images CC BY-NC-SA on its own site (use the Commons copies)",
+    "note": "Giant skeleton looming over warriors, full triptych",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S067-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.35417,
+        "y": 0.0,
+        "w": 0.49167,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.2671,
+        "confidence": 0.081,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.00026,
+          "y": 0.0,
+          "w": 0.49167,
+          "h": 1.0
+        },
+        {
+          "x": 0.50547,
+          "y": 0.0,
+          "w": 0.49167,
+          "h": 1.0
+        },
+        {
+          "x": 0.05495,
+          "y": 0.0,
+          "w": 0.49167,
+          "h": 1.0
+        },
+        {
+          "x": 0.2737,
+          "y": 0.0,
+          "w": 0.49167,
+          "h": 1.0
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.38542,
+          "h": 0.7839
+        },
+        {
+          "x": 0.0,
+          "y": 0.27436,
+          "w": 0.35677,
+          "h": 0.72564
+        }
+      ]
+    }
+  ]
+}

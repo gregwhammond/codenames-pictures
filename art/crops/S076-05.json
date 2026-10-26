@@ -1,0 +1,75 @@
+{
+  "id": "S076-05",
+  "source": "originals/S076-05.jpg",
+  "source_sha256": "931d5674db54a4f6e1fdf54db53820087cd8cd027f22a1df8d284ce44baf3698",
+  "source_size": [
+    960,
+    1326
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S076",
+    "index": 5,
+    "title": "Baron von Münchhausen 067",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Gustave_Dor%C3%A9_-_Baron_von_M%C3%BCnchhausen_-_067.jpg",
+    "licence": "Public domain (Doré d. 1883); Commons PD tags",
+    "note": "Munchausen plate",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S076-05",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.20053,
+        "w": 1.0,
+        "h": 0.72398
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.20053,
+          "w": 1.0,
+          "h": 0.72398
+        },
+        "engine": "autocrop v1",
+        "score": 0.4022,
+        "confidence": 0.779
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.08594,
+          "w": 1.0,
+          "h": 0.72398
+        },
+        {
+          "x": 0.0,
+          "y": 0.35157,
+          "w": 0.89209,
+          "h": 0.64585
+        },
+        {
+          "x": 0.21942,
+          "y": 0.0,
+          "w": 0.78058,
+          "h": 0.56512
+        },
+        {
+          "x": 0.0,
+          "y": 0.02083,
+          "w": 0.72662,
+          "h": 0.52606
+        },
+        {
+          "x": 0.07194,
+          "y": 0.02083,
+          "w": 0.39928,
+          "h": 0.28907
+        }
+      ]
+    }
+  ]
+}

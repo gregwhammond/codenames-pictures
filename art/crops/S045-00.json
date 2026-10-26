@@ -1,0 +1,75 @@
+{
+  "id": "S045-00",
+  "source": "originals/S045-00.png",
+  "source_sha256": "664caf1f2a04a58d2d154c8966aa8e7fe797ec5207a0f8fb02988aba71324fd0",
+  "source_size": [
+    960,
+    1233
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S045",
+    "index": 0,
+    "title": "Bird illumination",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Enluminure_de_l%27oiseau_du_beatus_de_Saint-Sever.png",
+    "licence": "Public domain on Commons (PD-old); Gallica images free for non-commercial use",
+    "note": "Large decorative bird",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S045-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0625,
+        "w": 1.0,
+        "h": 0.77859
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0625,
+          "w": 1.0,
+          "h": 0.77859
+        },
+        "engine": "autocrop v1",
+        "score": 0.6541,
+        "confidence": 0.869
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.14322,
+          "w": 0.88963,
+          "h": 0.69266
+        },
+        {
+          "x": 0.13378,
+          "y": 0.0,
+          "w": 0.83612,
+          "h": 0.65099
+        },
+        {
+          "x": 0.02676,
+          "y": 0.08333,
+          "w": 0.67224,
+          "h": 0.5234
+        },
+        {
+          "x": 0.10033,
+          "y": 0.34893,
+          "w": 0.83612,
+          "h": 0.65099
+        },
+        {
+          "x": 0.25753,
+          "y": 0.07291,
+          "w": 0.56522,
+          "h": 0.44007
+        }
+      ]
+    }
+  ]
+}

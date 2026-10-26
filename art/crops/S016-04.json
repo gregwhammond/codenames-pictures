@@ -1,0 +1,75 @@
+{
+  "id": "S016-04",
+  "source": "originals/S016-04.jpg",
+  "source_sha256": "81185641d6e61cad125a7136a20d2e96e06b71d11f578add29d5fac6c57d2e06",
+  "source_size": [
+    960,
+    749
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S016",
+    "index": 4,
+    "title": "Group of sun spots (1875)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Trouvelot_-_Group_of_sun_spots_-_1875.jpg",
+    "licence": "Public domain (Trouvelot died 1895; published 1881-82); Commons PD tags. NYPL originals are also marked public domain.",
+    "note": "Dark sunspots amid the grainy, textured solar surface",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S016-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.13544,
+        "y": 0.225,
+        "w": 0.42911,
+        "h": 0.55
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.15365,
+          "y": 0.24032,
+          "w": 0.40104,
+          "h": 0.51402
+        },
+        "engine": "autocrop v1",
+        "score": 0.8356,
+        "confidence": 0.352
+      },
+      "candidates": [
+        {
+          "x": 0.17188,
+          "y": 0.0,
+          "w": 0.73958,
+          "h": 0.94793
+        },
+        {
+          "x": 0.14583,
+          "y": 0.16021,
+          "w": 0.52604,
+          "h": 0.67423
+        },
+        {
+          "x": 0.09375,
+          "y": 0.26035,
+          "w": 0.39844,
+          "h": 0.51068
+        },
+        {
+          "x": 0.54688,
+          "y": 0.25701,
+          "w": 0.4401,
+          "h": 0.56409
+        },
+        {
+          "x": 0.0,
+          "y": 0.03004,
+          "w": 0.56771,
+          "h": 0.72764
+        }
+      ]
+    }
+  ]
+}

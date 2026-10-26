@@ -1,0 +1,75 @@
+{
+  "id": "S007-08",
+  "source": "originals/S007-08.jpg",
+  "source_sha256": "2c3f47197232fe0c4c2ca61727c77ea6c73befdafa95ca8abe7b0746da536e3d",
+  "source_size": [
+    960,
+    1397
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S007",
+    "index": 8,
+    "title": "Topsell, Historie of Foure Footed Beastes (Wellcome L0028392)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Edward_Topsell,_The_Historie_of_Foure_Footed_Beastes._Wellcome_L0028392.jpg",
+    "licence": "Public domain (1607/1658); Commons PD-old tags. Files from Wellcome (L-numbers) are CC BY 4.0 on Commons (credit Wellcome Collection). The 1658 edition has its own Commons category: https://commons.wikimedia.org/wiki/Category:The_History_of_Four-footed_Beasts_and_Serpents,_1658",
+    "note": "Wellcome scan of a Topsell page; subject not confirmed, may be title page",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S007-08",
+      "mode": "crop",
+      "box": {
+        "x": 0.17,
+        "y": 0.47948,
+        "w": 0.7,
+        "h": 0.48103
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.10985,
+          "y": 0.30455,
+          "w": 0.89015,
+          "h": 0.6117
+        },
+        "engine": "autocrop v1",
+        "score": 0.647,
+        "confidence": 0.849
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.31236,
+          "w": 1.0,
+          "h": 0.68719
+        },
+        {
+          "x": 0.15909,
+          "y": 0.4373,
+          "w": 0.67424,
+          "h": 0.46333
+        },
+        {
+          "x": 0.04545,
+          "y": 0.53101,
+          "w": 0.61742,
+          "h": 0.42429
+        },
+        {
+          "x": 0.26515,
+          "y": 0.53621,
+          "w": 0.67424,
+          "h": 0.46333
+        },
+        {
+          "x": 0.12121,
+          "y": 0.27071,
+          "w": 0.72727,
+          "h": 0.49977
+        }
+      ]
+    }
+  ]
+}

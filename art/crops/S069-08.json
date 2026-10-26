@@ -1,0 +1,75 @@
+{
+  "id": "S069-08",
+  "source": "originals/S069-08.jpg",
+  "source_sha256": "ab9ba549109f0a298daa88434fb609475077a5c4492130d43e88b25ff9026177",
+  "source_size": [
+    960,
+    980
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S069",
+    "index": 8,
+    "title": "Qilang people",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Huang_Qing_Zhigong_Tu,_1769,_Qilang_people_(%E5%A5%87%E6%A5%9E).jpg",
+    "licence": "Public domain (18th c.), Commons PD tags",
+    "note": "Qilang people of the northeast",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S069-08",
+      "mode": "crop",
+      "box": {
+        "x": 0.03457,
+        "y": 0.06774,
+        "w": 0.89096,
+        "h": 0.87277
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.03457,
+          "y": 0.06774,
+          "w": 0.89096,
+          "h": 0.87277
+        },
+        "engine": "autocrop v1",
+        "score": 0.7361,
+        "confidence": 0.492
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.97959
+        },
+        {
+          "x": 0.35904,
+          "y": 0.18758,
+          "w": 0.61702,
+          "h": 0.60443
+        },
+        {
+          "x": 0.0266,
+          "y": 0.13026,
+          "w": 0.67287,
+          "h": 0.65914
+        },
+        {
+          "x": 0.44681,
+          "y": 0.09119,
+          "w": 0.50798,
+          "h": 0.49761
+        },
+        {
+          "x": 0.0,
+          "y": 0.31003,
+          "w": 0.50798,
+          "h": 0.49761
+        }
+      ]
+    }
+  ]
+}

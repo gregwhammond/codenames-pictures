@@ -1,0 +1,75 @@
+{
+  "id": "S070-03",
+  "source": "originals/S070-03.jpg",
+  "source_sha256": "c5b75ee50c131dc215128767891d8eac823d3897f6264dd7346a5ef88fa2f3df",
+  "source_size": [
+    453,
+    350
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S070",
+    "index": 3,
+    "title": "Ship",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tiangong_Kaiwu_Ship.jpg",
+    "licence": "Public domain (1637 woodcuts); Commons PD tags",
+    "note": "Chinese sailing ship",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S070-03",
+      "mode": "crop",
+      "box": {
+        "x": 0.11369,
+        "y": 0.0,
+        "w": 0.77263,
+        "h": 1.0
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.00041,
+          "y": 0.0,
+          "w": 0.77263,
+          "h": 1.0
+        },
+        "engine": "autocrop v1",
+        "score": 0.5196,
+        "confidence": 0.632
+      },
+      "candidates": [
+        {
+          "x": 0.22697,
+          "y": 0.0,
+          "w": 0.77263,
+          "h": 1.0
+        },
+        {
+          "x": 0.0,
+          "y": 0.10681,
+          "w": 0.6901,
+          "h": 0.89319
+        },
+        {
+          "x": 0.52083,
+          "y": 0.37982,
+          "w": 0.47917,
+          "h": 0.62018
+        },
+        {
+          "x": 0.0,
+          "y": 0.16516,
+          "w": 0.47917,
+          "h": 0.62018
+        },
+        {
+          "x": 0.0,
+          "y": 0.37982,
+          "w": 0.47917,
+          "h": 0.62018
+        }
+      ]
+    }
+  ]
+}

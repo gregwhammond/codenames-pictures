@@ -1,0 +1,75 @@
+{
+  "id": "S084-02",
+  "source": "originals/S084-02.jpg",
+  "source_sha256": "80c0fe8dcbbdf26770301f56c461275ff949f24d36bc6b984cd9131ba07a7ba4",
+  "source_size": [
+    767,
+    1024
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S084",
+    "index": 2,
+    "title": "Village of Secoton, 1590",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Village_of_Secoton_Theodor_de_Bry_1590.jpg",
+    "licence": "Public domain; Commons PD. Caveat: many plates (esp. Tertia pars) show violence/cannibalism; pick carefully.",
+    "note": "Bird's-eye view of a village and fields",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S084-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.74902
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.74902
+        },
+        "engine": "autocrop v1",
+        "score": 0.4322,
+        "confidence": 0.894
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.09363,
+          "w": 1.0,
+          "h": 0.74902
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.78125,
+          "h": 0.58517
+        },
+        {
+          "x": 0.27431,
+          "y": 0.0,
+          "w": 0.72569,
+          "h": 0.54356
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.51042,
+          "h": 0.38231
+        },
+        {
+          "x": 0.48958,
+          "y": 0.0,
+          "w": 0.51042,
+          "h": 0.38231
+        }
+      ]
+    }
+  ]
+}

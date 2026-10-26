@@ -1,0 +1,87 @@
+{
+  "id": "S010-09",
+  "source": "originals/S010-09.jpg",
+  "source_sha256": "7e2eadb0cbd479e4307efc4321b34c6dcef3d7dd3705cb9b75f39a9b1b02ca2b",
+  "source_size": [
+    800,
+    1012
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S010",
+    "index": 9,
+    "title": "Ortus sanitatis (Prüss, Strasbourg), image 446",
+    "source_url": "https://www.loc.gov/resource/rbc.2019incun60156/?sp=446",
+    "licence": "Public domain (1491/1497); Commons PD-old. Wellcome L-number files are CC BY 4.0 (credit Wellcome Collection). Wider category: https://commons.wikimedia.org/wiki/Category:Hortus_Sanitatis Added pictures: Wellcome images CC-BY/PD; LoC Rare Book and Prints items generally 'no known restrictions'. The 1514 and unicorn/apes items are related Hortus editions; check the attribution before using. The Twin-tailed Siren/mermaid woodcut exists but was found only on stock sites (Alamy, Bridgeman), so it is not included.",
+    "note": "Single page view; subject not verified",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S010-09",
+      "mode": "crop",
+      "box": {
+        "x": 0.335,
+        "y": 0.08642,
+        "w": 0.3,
+        "h": 0.23715
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0104,
+          "w": 1.0,
+          "h": 0.79051
+        },
+        "engine": "autocrop v1",
+        "score": 0.4407,
+        "confidence": 0.807
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.10401,
+          "w": 1.0,
+          "h": 0.79051
+        },
+        {
+          "x": 0.32566,
+          "y": 0.0104,
+          "w": 0.67434,
+          "h": 0.53308
+        },
+        {
+          "x": 0.0,
+          "y": 0.0104,
+          "w": 0.78289,
+          "h": 0.61889
+        },
+        {
+          "x": 0.19737,
+          "y": 0.0104,
+          "w": 0.45395,
+          "h": 0.35885
+        },
+        {
+          "x": 0.0,
+          "y": 0.0104,
+          "w": 0.50987,
+          "h": 0.40306
+        }
+      ]
+    },
+    {
+      "tile": "S010-09-b",
+      "mode": "crop",
+      "box": {
+        "x": 0.34,
+        "y": 0.56142,
+        "w": 0.3,
+        "h": 0.23715
+      },
+      "status": "approved",
+      "auto": null
+    }
+  ]
+}

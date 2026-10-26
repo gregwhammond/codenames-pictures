@@ -1,0 +1,77 @@
+{
+  "id": "S013-02",
+  "source": "originals/S013-02.jpg",
+  "source_sha256": "bff68dab8a670d3d1f92b841217cd2f094b62cf0709d86a43f919e7b038dca33",
+  "source_size": [
+    960,
+    1944
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S013",
+    "index": 2,
+    "title": "Ripley alchemical scroll, Leonard Smethley 1624 (Princeton)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ripley_alchemical_scroll._Leonard_Smethley,_1624,_after_George_Ripley._Princeton_University_Library.jpg",
+    "licence": "Public domain (PD-old); Wellcome photographs on Commons carry CC BY 4.0 (credit Wellcome Collection). Scrolls are tall and narrow, so use detail crops for cards. Contains some serpents/dragons.",
+    "note": "Smethley's 1624 painted copy of the Ripley roll",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S013-02",
+      "mode": "crop",
+      "box": {
+        "x": 0.22,
+        "y": 0.62228,
+        "w": 0.74,
+        "h": 0.36543
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.2237,
+        "confidence": 1.0,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.49383
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.88947,
+          "h": 0.43925
+        },
+        {
+          "x": 0.0,
+          "y": 0.10916,
+          "w": 1.0,
+          "h": 0.49383
+        },
+        {
+          "x": 0.32632,
+          "y": 0.0,
+          "w": 0.67368,
+          "h": 0.33268
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.61579,
+          "h": 0.30409
+        },
+        {
+          "x": 0.54737,
+          "y": 0.0,
+          "w": 0.45263,
+          "h": 0.22352
+        }
+      ]
+    }
+  ]
+}

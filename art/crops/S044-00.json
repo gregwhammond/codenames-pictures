@@ -1,0 +1,77 @@
+{
+  "id": "S044-00",
+  "source": "originals/S044-00.jpg",
+  "source_sha256": "73b34f05ace8a4cc060358f6fbd2b36c79363b5ff78811b81af2e2b739522a23",
+  "source_size": [
+    960,
+    1472
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S044",
+    "index": 0,
+    "title": "December: a man slaughtering a pig",
+    "source_url": "https://commons.wikimedia.org/wiki/File:December_-_a_man_slaughtering_a_pig_-_Book_of_hours_Simon_de_Varie_-_KB_74_G37a_-_099r_det_randv_1.jpg",
+    "licence": "Public domain on Commons (PD-old)",
+    "note": "Man slaughtering a pig for winter",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S044-00",
+      "mode": "crop",
+      "box": {
+        "x": 0.025,
+        "y": 0.16022,
+        "w": 0.95,
+        "h": 0.61957
+      },
+      "status": "approved",
+      "auto": {
+        "box": null,
+        "engine": "autocrop v1",
+        "score": 0.348,
+        "confidence": 0.857,
+        "mode": "fit"
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.65217
+        },
+        {
+          "x": 0.108,
+          "y": 0.0,
+          "w": 0.892,
+          "h": 0.58174
+        },
+        {
+          "x": 0.0,
+          "y": 0.15652,
+          "w": 1.0,
+          "h": 0.65217
+        },
+        {
+          "x": 0.028,
+          "y": 0.0,
+          "w": 0.672,
+          "h": 0.43826
+        },
+        {
+          "x": 0.38,
+          "y": 0.0,
+          "w": 0.62,
+          "h": 0.40435
+        },
+        {
+          "x": 0.24,
+          "y": 0.0,
+          "w": 0.508,
+          "h": 0.3313
+        }
+      ]
+    }
+  ]
+}

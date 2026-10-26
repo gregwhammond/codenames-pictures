@@ -1,0 +1,75 @@
+{
+  "id": "S099-08",
+  "source": "originals/S099-08.jpg",
+  "source_sha256": "b89f27f2e26c7efe04843fdd70a8ecf20cc51950aef6476a51062222508053fd",
+  "source_size": [
+    361,
+    512
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S099",
+    "index": 8,
+    "title": "Cats' Fifty-Three Stations of the Tokaido (Yoshifuji)",
+    "source_url": "https://artsandculture.google.com/asset/%E3%80%8C%E4%BA%94%E5%8D%81%E4%B8%89%E6%AC%A1%E4%B9%8B%E5%86%85%E7%8C%AB%E4%B9%8B%E6%80%AA%E3%80%8D/TgFS9PSgZqj8ZQ",
+    "licence": "Prints public domain. MFA Boston images: non-commercial terms, so look for Commons copies before use. Google Arts & Culture view-only. Many sheets hold several small pictures, so crop or pick carefully.",
+    "note": "Cats punning on Tokaido station names",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S099-08",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.19746,
+        "w": 1.0,
+        "h": 0.70508
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 0.70508
+        },
+        "engine": "autocrop v1",
+        "score": 0.3788,
+        "confidence": 0.8
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.8893,
+          "h": 0.62703
+        },
+        {
+          "x": 0.32841,
+          "y": 0.0,
+          "w": 0.67159,
+          "h": 0.47352
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.61993,
+          "h": 0.4371
+        },
+        {
+          "x": 0.0,
+          "y": 0.17172,
+          "w": 1.0,
+          "h": 0.70508
+        },
+        {
+          "x": 0.54613,
+          "y": 0.0,
+          "w": 0.45387,
+          "h": 0.32002
+        }
+      ]
+    }
+  ]
+}

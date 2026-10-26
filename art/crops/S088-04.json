@@ -1,0 +1,75 @@
+{
+  "id": "S088-04",
+  "source": "originals/S088-04.jpg",
+  "source_sha256": "8b6934ea91bed889c1c01dd359e5d5f62883c1f7ce9f97e5e2b489c999a91659",
+  "source_size": [
+    909,
+    1173
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S088",
+    "index": 4,
+    "title": "SÁM 66, 73v, Odin, Loki and Hœnir",
+    "source_url": "https://commons.wikimedia.org/wiki/File:S%C3%81M_66,_73v,_Odin,_Loki_and_H%C5%93nir.jpg",
+    "licence": "Public domain on Commons (18th-/17th-c. works, PD-Art); host scans on handrit.is are free to view.",
+    "note": "Three travelling gods",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S088-04",
+      "mode": "crop",
+      "box": {
+        "x": 0.0,
+        "y": 0.22364,
+        "w": 1.0,
+        "h": 0.77494
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.22364,
+          "w": 1.0,
+          "h": 0.77494
+        },
+        "engine": "autocrop v1",
+        "score": 0.282,
+        "confidence": 0.895
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.09362,
+          "w": 1.0,
+          "h": 0.77494
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.78188,
+          "h": 0.60591
+        },
+        {
+          "x": 0.16443,
+          "y": 0.35106,
+          "w": 0.83557,
+          "h": 0.64751
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.51007,
+          "h": 0.39527
+        },
+        {
+          "x": 0.27181,
+          "y": 0.0,
+          "w": 0.72819,
+          "h": 0.5643
+        }
+      ]
+    }
+  ]
+}

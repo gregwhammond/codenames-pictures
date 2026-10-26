@@ -1,0 +1,75 @@
+{
+  "id": "S052-01",
+  "source": "originals/S052-01.jpg",
+  "source_sha256": "015bf623ec0b3ed8e275b4d95f035e38742c552db10688a4c58dbb6f6195d145",
+  "source_size": [
+    960,
+    1466
+  ],
+  "rotate": 0,
+  "meta": {
+    "collection": "S052",
+    "index": 1,
+    "title": "Tab. XXIII",
+    "source_url": "https://commons.wikimedia.org/wiki/File:J.J._Scheuchzer,_Physica_sacra,_tab._XXIII_Wellcome_L0007426.jpg",
+    "licence": "Public domain (Wellcome CC BY 4.0 / PD) Added pictures: Wellcome Collection images CC-BY / PD; engravings 1731-35.",
+    "note": "Physica sacra plate 23",
+    "obtained": "review-page download"
+  },
+  "crops": [
+    {
+      "tile": "S052-01",
+      "mode": "crop",
+      "box": {
+        "x": 0.05,
+        "y": 0.12532,
+        "w": 0.9,
+        "h": 0.58936
+      },
+      "status": "approved",
+      "auto": {
+        "box": {
+          "x": 0.0,
+          "y": 0.02609,
+          "w": 1.0,
+          "h": 0.65484
+        },
+        "engine": "autocrop v1",
+        "score": 0.4715,
+        "confidence": 0.918
+      },
+      "candidates": [
+        {
+          "x": 0.0,
+          "y": 0.10436,
+          "w": 1.0,
+          "h": 0.65484
+        },
+        {
+          "x": 0.12749,
+          "y": 0.0,
+          "w": 0.83665,
+          "h": 0.54788
+        },
+        {
+          "x": 0.03586,
+          "y": 0.32873,
+          "w": 0.89243,
+          "h": 0.5844
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.67331,
+          "h": 0.44091
+        },
+        {
+          "x": 0.38247,
+          "y": 0.01565,
+          "w": 0.61753,
+          "h": 0.40439
+        }
+      ]
+    }
+  ]
+}
