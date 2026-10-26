@@ -80,7 +80,7 @@
         "w": 0.35593,
         "h": 0.5
       },
-      "status": "approved",
+      "status": "rejected",
       "auto": null
     },
     {
@@ -92,7 +92,7 @@
         "w": 0.31322,
         "h": 0.44
       },
-      "status": "approved",
+      "status": "rejected",
       "auto": null
     }
   ]
